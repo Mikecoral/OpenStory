@@ -1,0 +1,68 @@
+![Cover](assets/cover.png)
+<h1 align="center">OpenStory (万象谱)</h1>
+
+OpenStory 是一个基于大语言模型（LLM）和 Agnet-Kernel 的多智能体推演与模拟框架。
+
+本项目中的 `examples/deduction` 示例以中国古典名著《红楼梦》为背景，利用多智能体系统（Multi-Agent System, MAS）技术，在一比一仿真的红楼梦地图中模拟书中人物的日常行为、社交互动与故事推演。
+
+## 🌟 核心特性
+
+- **基于 Agent-Kernel 的动态框架**：底层采用强大的 Agent-Kernel 架构，支持在推演过程中**动态增删智能体**。告别僵化的静态设定，赋予系统无限的扩展能力，让你尽情发挥想象力！
+- **一比一复刻的红楼梦大观园前端**：精心打造的 1:1 仿真可视化交互界面。你不仅能直观地看到智能体在地图上的动态轨迹，更能随时点击查看人物的详细信息、状态变化与互动档案。
+- **富有冲击力的推演剧情**：打破常规的刻板对话，智能体之间将产生深度的化学反应。系统能够根据性格设定与环境变化，自动生成跌宕起伏、精彩绝伦且极具戏剧张力与冲击力的推演剧情！
+- **丰富的插件化机制与高可配性**：涵盖智能体感知、计划、执行、反思等完整生命周期插件，并支持通过 YAML 文件灵活管理系统、环境、动作与智能体配置。
+
+## 🚀 快速开始
+
+### 1. 环境准备
+
+- **Python 版本**：推荐 Python 3.10 或以上。
+- **中间件**：
+  - **Redis**：作为默认的数据总线与缓存，请确保本地 Redis 服务已启动并在 `6379` 端口监听。
+
+### 2. 安装依赖
+```bash
+git clone https://github.com/ZJU-LLMs/Agent-Kernel.git
+cd Agent-Kernel
+
+pip install -e "packages/agentkernel-distributed[all]"
+
+cd ../../..
+```
+
+### 3. 运行推演系统
+
+在项目根目录下，执行以下命令启动模拟引擎：
+
+```bash
+python -m examples.deduction.run_simulation
+```
+
+启动过程中：
+1. 系统会初始化 `Ray` 的运行时环境。
+2. 构建并加载所有的插件、配置文件和《红楼梦》人物数据。
+3. 启动 API Server，默认监听在 `0.0.0.0:8000`。
+
+### 4. 访问可视化界面
+![Frontend Preview](assets/frontend.png)
+当看到终端输出 `API Server started at http://0.0.0.0:8000` 后，在浏览器中打开以下地址：
+
+👉 [http://localhost:8000/frontend/index.html](http://localhost:8000/frontend/index.html)
+
+在界面中，你可以：
+- 查看大观园等场景地图。
+- 点击**开始推演** / **下一回合 (Tick)** 观察人物的行动与交互。
+- 点击左侧人物列表，查看详细的“人物档案”与实时状态。
+
+## ⚙️ 核心配置说明
+
+在 `configs/` 目录下，您可以自定义推演规则：
+
+- `simulation_config.yaml`：全局主入口，配置 Pod 数量、最大 Tick 数及各配置文件的路径。
+- `models_config.yaml`：配置 LLM 模型接口及参数。
+- `system_config.yaml`：系统级配置，如 Messager（消息总线）与 Timer（时钟）。
+
+## 🛠️ 数据生成
+
+如果您需要修改或重新生成《红楼梦》的人物数据，可以参考 `data/raw/` 目录下的生成脚本。例如：
+- `profile_generator.py`：基于 `database.jsonl` 过滤存活角色并生成唯一的编码 ID 与基础设定。
