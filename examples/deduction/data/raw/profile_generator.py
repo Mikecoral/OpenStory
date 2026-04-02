@@ -86,8 +86,8 @@ def filter_data_latest_residence(file_path, target_round):
 # --- Usage Example (Keep path exactly as provided) ---
 if __name__ == "__main__":
     x = 50
-    raw_path = r'C:\Users\ziyji\project\SOS\examples\deduction\data\raw\database.jsonl'
-    out_path = r'C:\Users\ziyji\project\SOS\examples\deduction\data\agents\profiles.jsonl'
+    raw_path = r''
+    out_path = r''
     
     result = filter_data_latest_residence(raw_path, x)
 
