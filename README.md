@@ -1,7 +1,6 @@
 ![Cover](assets/Cover.jpg)
 <h1 align="center">
-  <img src="assets/logo.png" height="70" alt="Logo" style="vertical-align: middle; margin-right: 10px;">
-  <span style="vertical-align: middle;">OpenStory (Wanxiangpu)</span>
+  <img src="assets/logo.png" height="70" alt="Logo" align="absmiddle">&nbsp;OpenStory (Wanxiangpu)
 </h1>
 
 <div align="center">
