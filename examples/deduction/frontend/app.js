@@ -1231,6 +1231,134 @@ function focusCameraOnLocation(location) {
   camera.targetY = location.y + mapData.tileHeight / 2;
 }
 
+function findAgentIdBySpeakerName(speakerName) {
+  const normalizedSpeaker = String(speakerName || '').trim();
+  if (!normalizedSpeaker) return null;
+
+  for (const [id, data] of Object.entries(agentsData || {})) {
+    const profile = data?.profile || {};
+    const candidateNames = [
+      id,
+      formatAgentName(id),
+      profile.id,
+      profile.name,
+      profile['姓名']
+    ].filter(Boolean).map(v => String(v).trim());
+
+    if (candidateNames.includes(normalizedSpeaker)) {
+      return id;
+    }
+  }
+
+  return null;
+}
+
+function getSpeakerAvatarSource(speakerName) {
+  const agentId = findAgentIdBySpeakerName(speakerName);
+  if (agentId) {
+    const customAvatar = customAgentAvatars[agentId];
+    if (customAvatar && customAvatar.type === 'custom' && customAvatar.source) {
+      return customAvatar.source;
+    }
+
+    return `../map/sprite/${formatAgentName(agentId)}.png`;
+  }
+
+  return `../map/sprite/${speakerName}.png`;
+}
+
+function setActiveDialogueSpeaker(speakerName) {
+  const normalized = String(speakerName || '').trim();
+  const lineEls = document.querySelectorAll('#dialogueContent .dialogue-line[data-speaker]');
+  const cardEls = document.querySelectorAll('#dialogueParticipants .dialogue-participant[data-speaker]');
+
+  lineEls.forEach(el => {
+    const isActive = normalized && el.dataset.speaker === normalized;
+    el.classList.toggle('is-speaker-active', !!isActive);
+    el.classList.toggle('is-speaker-dimmed', !!normalized && !isActive);
+  });
+
+  cardEls.forEach(el => {
+    const isActive = normalized && el.dataset.speaker === normalized;
+    el.classList.toggle('is-speaker-active', !!isActive);
+    el.classList.toggle('is-speaker-dimmed', !!normalized && !isActive);
+  });
+}
+
+function clearActiveDialogueSpeaker() {
+  setActiveDialogueSpeaker('');
+}
+
+function bindDialogueHighlightInteractions() {
+  document.querySelectorAll('#dialogueContent .dialogue-line[data-speaker]').forEach(el => {
+    const speaker = el.dataset.speaker;
+    el.addEventListener('mouseenter', () => setActiveDialogueSpeaker(speaker));
+    el.addEventListener('mouseleave', () => clearActiveDialogueSpeaker());
+  });
+
+  document.querySelectorAll('#dialogueParticipants .dialogue-participant[data-speaker]').forEach(el => {
+    const speaker = el.dataset.speaker;
+    el.addEventListener('mouseenter', () => setActiveDialogueSpeaker(speaker));
+    el.addEventListener('mouseleave', () => clearActiveDialogueSpeaker());
+  });
+}
+
+function renderDialogueParticipants(history) {
+  const cardEl = document.getElementById('dialogueParticipantsCard');
+  const listEl = document.getElementById('dialogueParticipants');
+  if (!cardEl || !listEl) return;
+
+  const speakers = [];
+  const seen = new Set();
+
+  for (const line of history || []) {
+    const match = String(line).match(/^(.+?)：(?:\[(.+?)\])?(.*)$/);
+    if (!match) continue;
+    const speaker = String(match[1] || '').trim();
+    if (!speaker || seen.has(speaker)) continue;
+    seen.add(speaker);
+    speakers.push(speaker);
+    if (speakers.length >= 2) break;
+  }
+
+  if (!speakers.length) {
+    listEl.innerHTML = '';
+    cardEl.classList.add('is-hidden');
+    return;
+  }
+
+  listEl.innerHTML = speakers.map(name => {
+    const safeName = escHtml(name);
+    const safeSrc = escHtml(getSpeakerAvatarSource(name));
+    return `
+      <div class="dialogue-participant" data-speaker="${safeName}">
+        <div class="dialogue-participant-frame">
+          <div class="dialogue-participant-corner corner-tl"></div>
+          <div class="dialogue-participant-corner corner-tr"></div>
+          <div class="dialogue-participant-corner corner-bl"></div>
+          <div class="dialogue-participant-corner corner-br"></div>
+          <div class="dialogue-participant-sprite-wrap">
+            <div class="dialogue-participant-halo"></div>
+            <div class="dialogue-participant-floor"></div>
+            <div class="dialogue-participant-badge">绘</div>
+          <img
+            class="dialogue-participant-sprite"
+            src="${safeSrc}"
+            alt="${safeName}"
+            onerror="this.src='../map/sprite/普通人.png'"
+          />
+          </div>
+          <div class="dialogue-participant-nameplate">
+            <div class="dialogue-participant-name">${safeName}</div>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  cardEl.classList.remove('is-hidden');
+}
+
 function setActiveDialogueContext(agentId, tick) {
   activeDialogueContext = getDialogueLocationContext(agentId, tick);
   refreshDialogueSidebar();
@@ -1273,7 +1401,7 @@ function openModal(event, agentId, tick) {
     const speakerBtn = ttsApiKey ? `<button class="tts-speaker-btn" onclick="playTts(this, decodeURIComponent('${safeSpeaker}'), decodeURIComponent('${safeText}'))">🔊</button>` : '';
 
     return `
-      <div class="dialogue-line">
+      <div class="dialogue-line" data-speaker="${escHtml(speaker)}">
         <span class="dialogue-speaker">${escHtml(speaker)}</span>
         ${action ? `<span class="dialogue-action">[${escHtml(action)}]</span>` : ''}
         <span class="dialogue-text">${escHtml(text)}</span>
@@ -1282,13 +1410,17 @@ function openModal(event, agentId, tick) {
     `;
   }).join('');
 
+  renderDialogueParticipants(history);
+  bindDialogueHighlightInteractions();
   setActiveDialogueContext(agentId, tick);
   modal.style.display = 'block';
 }
 
 function closeModal() {
   activeDialogueContext = null;
+  clearActiveDialogueSpeaker();
   refreshDialogueSidebar();
+  renderDialogueParticipants([]);
   renderDialogueMiniMap(Date.now());
   document.getElementById('dialogueModal').style.display = 'none';
 }
