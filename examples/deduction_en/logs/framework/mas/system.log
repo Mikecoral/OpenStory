@@ -1,0 +1,163 @@
+2026-04-01 19:58:21 | INFO     | PID:27900 | agentkernel_distributed.mas.system.system:add_component:38 - Component 'messager' has been added to the system.
+2026-04-01 19:58:21 | INFO     | PID:27900 | agentkernel_distributed.mas.system.system:add_component:38 - Component 'timer' has been added to the system.
+2026-04-01 19:58:21 | INFO     | PID:27900 | agentkernel_distributed.mas.system.system:post_init:50 - Running post_init for all applicable system components...
+2026-04-01 19:58:24 | INFO     | PID:31388 | agentkernel_distributed.mas.system.components.messager:__init__:63 - Messager actor created with config: {
+  "allow_self_messages": false,
+  "allow_kinds": [
+    "from_agent_to_agent",
+    "from_agent_to_user",
+    "from_user_to_agent"
+  ],
+  "block_empty_content": true,
+  "max_content_length": 2000,
+  "blocked_pairs": [],
+  "blocked_senders": [],
+  "blocked_receivers": [],
+  "blocked_keywords": [],
+  "blocked_regex": []
+}
+2026-04-01 19:58:24 | INFO     | PID:33596 | agentkernel_distributed.mas.system.components.timer:__init__:39 - Timer Actor initialized at 2026-04-01T11:58:24.218046+00:00 with config: {"start_tick":0,"timeout_ticks":5}
+2026-04-01 19:58:24 | INFO     | PID:27900 | agentkernel_distributed.mas.system.system:post_init:64 - All applicable system components have been post-initialized.
+2026-04-01 20:02:17 | INFO     | PID:10792 | agentkernel_distributed.mas.system.system:add_component:38 - Component 'messager' has been added to the system.
+2026-04-01 20:02:17 | INFO     | PID:10792 | agentkernel_distributed.mas.system.system:add_component:38 - Component 'timer' has been added to the system.
+2026-04-01 20:02:17 | INFO     | PID:10792 | agentkernel_distributed.mas.system.system:post_init:50 - Running post_init for all applicable system components...
+2026-04-01 20:02:20 | INFO     | PID:27988 | agentkernel_distributed.mas.system.components.messager:__init__:63 - Messager actor created with config: {
+  "allow_self_messages": false,
+  "allow_kinds": [
+    "from_agent_to_agent",
+    "from_agent_to_user",
+    "from_user_to_agent"
+  ],
+  "block_empty_content": true,
+  "max_content_length": 2000,
+  "blocked_pairs": [],
+  "blocked_senders": [],
+  "blocked_receivers": [],
+  "blocked_keywords": [],
+  "blocked_regex": []
+}
+2026-04-01 20:02:20 | INFO     | PID:40104 | agentkernel_distributed.mas.system.components.timer:__init__:39 - Timer Actor initialized at 2026-04-01T12:02:20.204718+00:00 with config: {"start_tick":0,"timeout_ticks":5}
+2026-04-01 20:02:20 | INFO     | PID:10792 | agentkernel_distributed.mas.system.system:post_init:64 - All applicable system components have been post-initialized.
+2026-04-01 20:15:23 | INFO     | PID:10792 | agentkernel_distributed.mas.system.system:close:101 - Closing all applicable system components...
+2026-04-01 20:15:23 | INFO     | PID:10792 | agentkernel_distributed.mas.system.system:close:108 - Component 'messager' has been closed.
+2026-04-01 20:15:23 | INFO     | PID:10792 | agentkernel_distributed.mas.system.system:close:108 - Component 'timer' has been closed.
+2026-04-01 22:25:51 | INFO     | PID:35972 | agentkernel_distributed.mas.system.system:add_component:38 - Component 'messager' has been added to the system.
+2026-04-01 22:25:51 | INFO     | PID:35972 | agentkernel_distributed.mas.system.system:add_component:38 - Component 'timer' has been added to the system.
+2026-04-01 22:25:51 | INFO     | PID:35972 | agentkernel_distributed.mas.system.system:post_init:50 - Running post_init for all applicable system components...
+2026-04-01 22:25:55 | INFO     | PID:47680 | agentkernel_distributed.mas.system.components.messager:__init__:63 - Messager actor created with config: {
+  "allow_self_messages": false,
+  "allow_kinds": [
+    "from_agent_to_agent",
+    "from_agent_to_user",
+    "from_user_to_agent"
+  ],
+  "block_empty_content": true,
+  "max_content_length": 2000,
+  "blocked_pairs": [],
+  "blocked_senders": [],
+  "blocked_receivers": [],
+  "blocked_keywords": [],
+  "blocked_regex": []
+}
+2026-04-01 22:25:55 | INFO     | PID:47688 | agentkernel_distributed.mas.system.components.timer:__init__:39 - Timer Actor initialized at 2026-04-01T14:25:55.480825+00:00 with config: {"start_tick":0,"timeout_ticks":5}
+2026-04-01 22:25:55 | INFO     | PID:35972 | agentkernel_distributed.mas.system.system:post_init:64 - All applicable system components have been post-initialized.
+2026-04-01 22:46:55 | INFO     | PID:33544 | agentkernel_distributed.mas.system.system:add_component:38 - Component 'messager' has been added to the system.
+2026-04-01 22:46:55 | INFO     | PID:33544 | agentkernel_distributed.mas.system.system:add_component:38 - Component 'timer' has been added to the system.
+2026-04-01 22:46:55 | INFO     | PID:33544 | agentkernel_distributed.mas.system.system:post_init:50 - Running post_init for all applicable system components...
+2026-04-01 22:46:59 | INFO     | PID:22320 | agentkernel_distributed.mas.system.components.messager:__init__:63 - Messager actor created with config: {
+  "allow_self_messages": false,
+  "allow_kinds": [
+    "from_agent_to_agent",
+    "from_agent_to_user",
+    "from_user_to_agent"
+  ],
+  "block_empty_content": true,
+  "max_content_length": 2000,
+  "blocked_pairs": [],
+  "blocked_senders": [],
+  "blocked_receivers": [],
+  "blocked_keywords": [],
+  "blocked_regex": []
+}
+2026-04-01 22:46:59 | INFO     | PID:31440 | agentkernel_distributed.mas.system.components.timer:__init__:39 - Timer Actor initialized at 2026-04-01T14:46:59.205713+00:00 with config: {"start_tick":0,"timeout_ticks":5}
+2026-04-01 22:46:59 | INFO     | PID:33544 | agentkernel_distributed.mas.system.system:post_init:64 - All applicable system components have been post-initialized.
+2026-04-01 23:07:20 | INFO     | PID:42056 | agentkernel_distributed.mas.system.system:add_component:38 - Component 'messager' has been added to the system.
+2026-04-01 23:07:20 | INFO     | PID:42056 | agentkernel_distributed.mas.system.system:add_component:38 - Component 'timer' has been added to the system.
+2026-04-01 23:07:20 | INFO     | PID:42056 | agentkernel_distributed.mas.system.system:post_init:50 - Running post_init for all applicable system components...
+2026-04-01 23:07:24 | INFO     | PID:38928 | agentkernel_distributed.mas.system.components.messager:__init__:63 - Messager actor created with config: {
+  "allow_self_messages": false,
+  "allow_kinds": [
+    "from_agent_to_agent",
+    "from_agent_to_user",
+    "from_user_to_agent"
+  ],
+  "block_empty_content": true,
+  "max_content_length": 2000,
+  "blocked_pairs": [],
+  "blocked_senders": [],
+  "blocked_receivers": [],
+  "blocked_keywords": [],
+  "blocked_regex": []
+}
+2026-04-01 23:07:24 | INFO     | PID:31264 | agentkernel_distributed.mas.system.components.timer:__init__:39 - Timer Actor initialized at 2026-04-01T15:07:24.177146+00:00 with config: {"start_tick":0,"timeout_ticks":5}
+2026-04-01 23:07:24 | INFO     | PID:42056 | agentkernel_distributed.mas.system.system:post_init:64 - All applicable system components have been post-initialized.
+2026-04-08 21:24:32 | INFO     | PID:492884 | agentkernel_distributed.mas.system.system:add_component:38 - Component 'messager' has been added to the system.
+2026-04-08 21:24:32 | INFO     | PID:492884 | agentkernel_distributed.mas.system.system:add_component:38 - Component 'timer' has been added to the system.
+2026-04-08 21:24:32 | INFO     | PID:492884 | agentkernel_distributed.mas.system.system:post_init:50 - Running post_init for all applicable system components...
+2026-04-08 21:24:36 | INFO     | PID:526476 | agentkernel_distributed.mas.system.components.timer:__init__:39 - Timer Actor initialized at 2026-04-08T13:24:36.742412+00:00 with config: {"start_tick":0,"timeout_ticks":5}
+2026-04-08 21:24:36 | INFO     | PID:526500 | agentkernel_distributed.mas.system.components.messager:__init__:63 - Messager actor created with config: {
+  "allow_self_messages": false,
+  "allow_kinds": [
+    "from_agent_to_agent",
+    "from_agent_to_user",
+    "from_user_to_agent"
+  ],
+  "block_empty_content": true,
+  "max_content_length": 2000,
+  "blocked_pairs": [],
+  "blocked_senders": [],
+  "blocked_receivers": [],
+  "blocked_keywords": [],
+  "blocked_regex": []
+}
+2026-04-08 21:24:36 | INFO     | PID:492884 | agentkernel_distributed.mas.system.system:post_init:64 - All applicable system components have been post-initialized.
+2026-04-08 21:32:31 | INFO     | PID:516848 | agentkernel_distributed.mas.system.system:add_component:38 - Component 'messager' has been added to the system.
+2026-04-08 21:32:31 | INFO     | PID:516848 | agentkernel_distributed.mas.system.system:add_component:38 - Component 'timer' has been added to the system.
+2026-04-08 21:32:31 | INFO     | PID:516848 | agentkernel_distributed.mas.system.system:post_init:50 - Running post_init for all applicable system components...
+2026-04-08 21:32:35 | INFO     | PID:508864 | agentkernel_distributed.mas.system.components.messager:__init__:63 - Messager actor created with config: {
+  "allow_self_messages": false,
+  "allow_kinds": [
+    "from_agent_to_agent",
+    "from_agent_to_user",
+    "from_user_to_agent"
+  ],
+  "block_empty_content": true,
+  "max_content_length": 2000,
+  "blocked_pairs": [],
+  "blocked_senders": [],
+  "blocked_receivers": [],
+  "blocked_keywords": [],
+  "blocked_regex": []
+}
+2026-04-08 21:32:35 | INFO     | PID:513324 | agentkernel_distributed.mas.system.components.timer:__init__:39 - Timer Actor initialized at 2026-04-08T13:32:35.394276+00:00 with config: {"start_tick":0,"timeout_ticks":5}
+2026-04-08 21:32:35 | INFO     | PID:516848 | agentkernel_distributed.mas.system.system:post_init:64 - All applicable system components have been post-initialized.
+2026-04-08 21:58:05 | INFO     | PID:530144 | agentkernel_distributed.mas.system.system:add_component:38 - Component 'messager' has been added to the system.
+2026-04-08 21:58:05 | INFO     | PID:530144 | agentkernel_distributed.mas.system.system:add_component:38 - Component 'timer' has been added to the system.
+2026-04-08 21:58:05 | INFO     | PID:530144 | agentkernel_distributed.mas.system.system:post_init:50 - Running post_init for all applicable system components...
+2026-04-08 21:58:08 | INFO     | PID:526184 | agentkernel_distributed.mas.system.components.messager:__init__:63 - Messager actor created with config: {
+  "allow_self_messages": false,
+  "allow_kinds": [
+    "from_agent_to_agent",
+    "from_agent_to_user",
+    "from_user_to_agent"
+  ],
+  "block_empty_content": true,
+  "max_content_length": 2000,
+  "blocked_pairs": [],
+  "blocked_senders": [],
+  "blocked_receivers": [],
+  "blocked_keywords": [],
+  "blocked_regex": []
+}
+2026-04-08 21:58:08 | INFO     | PID:526852 | agentkernel_distributed.mas.system.components.timer:__init__:39 - Timer Actor initialized at 2026-04-08T13:58:08.550951+00:00 with config: {"start_tick":0,"timeout_ticks":5}
+2026-04-08 21:58:08 | INFO     | PID:530144 | agentkernel_distributed.mas.system.system:post_init:64 - All applicable system components have been post-initialized.

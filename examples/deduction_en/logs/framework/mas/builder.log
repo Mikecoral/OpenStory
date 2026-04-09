@@ -1,0 +1,232 @@
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:__init__:126 - Initializing Simulation Engine (Builder)...
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:load_config:36 - Loading configuration from project path: D:\Research\OpenStory\examples\deduction
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'environment' config from: D:\Research\OpenStory\examples\deduction\configs\environment_config.yaml
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'actions' config from: D:\Research\OpenStory\examples\deduction\configs\actions_config.yaml
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'agent_templates' config from: D:\Research\OpenStory\examples\deduction\configs\agents_config.yaml
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'system' config from: D:\Research\OpenStory\examples\deduction\configs\system_config.yaml
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'database' config from: D:\Research\OpenStory\examples\deduction\configs\db_config.yaml
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'models' config from: D:\Research\OpenStory\examples\deduction\configs\models_config.yaml
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_profiles' from: D:\Research\OpenStory\examples\deduction\data/agents/profiles_test.jsonl
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_states' from: D:\Research\OpenStory\examples\deduction\data/agents/states.jsonl
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agents_relation' from: D:\Research\OpenStory\examples\deduction\data/relations/relations.jsonl
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:load_config:101 - Configuration loaded and validated successfully.
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:__init__:141 - Using custom controller 'BasicController' from resource_maps.
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:__init__:151 - Using custom pod manager 'BasicPodManager' from resource_maps.
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:init:198 - Ray is initialized.
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:init:203 - ModelRouter Actor and Proxy are created.
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:_load_data_into_config:221 - Injecting loaded data into agent and environment configurations...
+2026-04-01 19:35:31 | DEBUG    | PID:4932 | agentkernel_distributed.mas.builder:_load_data_into_config:234 - Injecting data for 'agents_relation' into env plugin 'BasicRelationPlugin'.
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:_load_data_into_config:241 - Data injection complete.
+2026-04-01 19:35:31 | INFO     | PID:4932 | agentkernel_distributed.mas.builder:_init_pod_manager:314 - PodManager Actor is being created with the name: 'global_pod_manager'
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:__init__:126 - Initializing Simulation Engine (Builder)...
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:load_config:36 - Loading configuration from project path: D:\Research\OpenStory\examples\deduction
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'environment' config from: D:\Research\OpenStory\examples\deduction\configs\environment_config.yaml
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'actions' config from: D:\Research\OpenStory\examples\deduction\configs\actions_config.yaml
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'agent_templates' config from: D:\Research\OpenStory\examples\deduction\configs\agents_config.yaml
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'system' config from: D:\Research\OpenStory\examples\deduction\configs\system_config.yaml
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'database' config from: D:\Research\OpenStory\examples\deduction\configs\db_config.yaml
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'models' config from: D:\Research\OpenStory\examples\deduction\configs\models_config.yaml
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_profiles' from: D:\Research\OpenStory\examples\deduction\data/agents/profiles_test.jsonl
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_states' from: D:\Research\OpenStory\examples\deduction\data/agents/states.jsonl
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agents_relation' from: D:\Research\OpenStory\examples\deduction\data/relations/relations.jsonl
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:load_config:101 - Configuration loaded and validated successfully.
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:__init__:141 - Using custom controller 'BasicController' from resource_maps.
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:__init__:151 - Using custom pod manager 'BasicPodManager' from resource_maps.
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:init:198 - Ray is initialized.
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:init:203 - ModelRouter Actor and Proxy are created.
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:_load_data_into_config:221 - Injecting loaded data into agent and environment configurations...
+2026-04-01 19:48:07 | DEBUG    | PID:5980 | agentkernel_distributed.mas.builder:_load_data_into_config:234 - Injecting data for 'agents_relation' into env plugin 'BasicRelationPlugin'.
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:_load_data_into_config:241 - Data injection complete.
+2026-04-01 19:48:07 | INFO     | PID:5980 | agentkernel_distributed.mas.builder:_init_pod_manager:314 - PodManager Actor is being created with the name: 'global_pod_manager'
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:__init__:126 - Initializing Simulation Engine (Builder)...
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:load_config:36 - Loading configuration from project path: D:\Research\OpenStory\examples\deduction
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'environment' config from: D:\Research\OpenStory\examples\deduction\configs\environment_config.yaml
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'actions' config from: D:\Research\OpenStory\examples\deduction\configs\actions_config.yaml
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'agent_templates' config from: D:\Research\OpenStory\examples\deduction\configs\agents_config.yaml
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'system' config from: D:\Research\OpenStory\examples\deduction\configs\system_config.yaml
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'database' config from: D:\Research\OpenStory\examples\deduction\configs\db_config.yaml
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'models' config from: D:\Research\OpenStory\examples\deduction\configs\models_config.yaml
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_profiles' from: D:\Research\OpenStory\examples\deduction\data/agents/profiles_test.jsonl
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_states' from: D:\Research\OpenStory\examples\deduction\data/agents/states.jsonl
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agents_relation' from: D:\Research\OpenStory\examples\deduction\data/relations/relations.jsonl
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:load_config:101 - Configuration loaded and validated successfully.
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:__init__:141 - Using custom controller 'BasicController' from resource_maps.
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:__init__:151 - Using custom pod manager 'BasicPodManager' from resource_maps.
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:init:198 - Ray is initialized.
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:init:203 - ModelRouter Actor and Proxy are created.
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:_load_data_into_config:221 - Injecting loaded data into agent and environment configurations...
+2026-04-01 19:58:16 | DEBUG    | PID:27900 | agentkernel_distributed.mas.builder:_load_data_into_config:234 - Injecting data for 'agents_relation' into env plugin 'BasicRelationPlugin'.
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:_load_data_into_config:241 - Data injection complete.
+2026-04-01 19:58:16 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:_init_pod_manager:314 - PodManager Actor is being created with the name: 'global_pod_manager'
+2026-04-01 19:58:21 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:_init_pod_manager:322 - MasPodManager and MasPods are created and initialized.
+2026-04-01 19:58:21 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:_init_system:334 - Initializing system components (Timer, Messager, Recorder)...
+2026-04-01 19:58:21 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:_init_system:368 - System object created and populated with all configured components.
+2026-04-01 19:58:24 | INFO     | PID:27900 | agentkernel_distributed.mas.builder:post_init:378 - Post-initialization of system and pod manager complete.
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:__init__:126 - Initializing Simulation Engine (Builder)...
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:load_config:36 - Loading configuration from project path: D:\Research\OpenStory\examples\deduction
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'environment' config from: D:\Research\OpenStory\examples\deduction\configs\environment_config.yaml
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'actions' config from: D:\Research\OpenStory\examples\deduction\configs\actions_config.yaml
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'agent_templates' config from: D:\Research\OpenStory\examples\deduction\configs\agents_config.yaml
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'system' config from: D:\Research\OpenStory\examples\deduction\configs\system_config.yaml
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'database' config from: D:\Research\OpenStory\examples\deduction\configs\db_config.yaml
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'models' config from: D:\Research\OpenStory\examples\deduction\configs\models_config.yaml
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_profiles' from: D:\Research\OpenStory\examples\deduction\data/agents/profiles_test.jsonl
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_states' from: D:\Research\OpenStory\examples\deduction\data/agents/states.jsonl
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agents_relation' from: D:\Research\OpenStory\examples\deduction\data/relations/relations.jsonl
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:load_config:101 - Configuration loaded and validated successfully.
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:__init__:141 - Using custom controller 'BasicController' from resource_maps.
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:__init__:151 - Using custom pod manager 'BasicPodManager' from resource_maps.
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:init:198 - Ray is initialized.
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:init:203 - ModelRouter Actor and Proxy are created.
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:_load_data_into_config:221 - Injecting loaded data into agent and environment configurations...
+2026-04-01 20:02:12 | DEBUG    | PID:10792 | agentkernel_distributed.mas.builder:_load_data_into_config:234 - Injecting data for 'agents_relation' into env plugin 'BasicRelationPlugin'.
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:_load_data_into_config:241 - Data injection complete.
+2026-04-01 20:02:12 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:_init_pod_manager:314 - PodManager Actor is being created with the name: 'global_pod_manager'
+2026-04-01 20:02:17 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:_init_pod_manager:322 - MasPodManager and MasPods are created and initialized.
+2026-04-01 20:02:17 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:_init_system:334 - Initializing system components (Timer, Messager, Recorder)...
+2026-04-01 20:02:17 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:_init_system:368 - System object created and populated with all configured components.
+2026-04-01 20:02:20 | INFO     | PID:10792 | agentkernel_distributed.mas.builder:post_init:378 - Post-initialization of system and pod manager complete.
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:__init__:126 - Initializing Simulation Engine (Builder)...
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:load_config:36 - Loading configuration from project path: D:\Research\OpenStory\examples\deduction
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'environment' config from: D:\Research\OpenStory\examples\deduction\configs\environment_config.yaml
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'actions' config from: D:\Research\OpenStory\examples\deduction\configs\actions_config.yaml
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'agent_templates' config from: D:\Research\OpenStory\examples\deduction\configs\agents_config.yaml
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'system' config from: D:\Research\OpenStory\examples\deduction\configs\system_config.yaml
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'database' config from: D:\Research\OpenStory\examples\deduction\configs\db_config.yaml
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'models' config from: D:\Research\OpenStory\examples\deduction\configs\models_config.yaml
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_profiles' from: D:\Research\OpenStory\examples\deduction\data/agents/profiles_test.jsonl
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_states' from: D:\Research\OpenStory\examples\deduction\data/agents/states.jsonl
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agents_relation' from: D:\Research\OpenStory\examples\deduction\data/relations/relations.jsonl
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:load_config:101 - Configuration loaded and validated successfully.
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:__init__:141 - Using custom controller 'BasicController' from resource_maps.
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:__init__:151 - Using custom pod manager 'BasicPodManager' from resource_maps.
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:init:198 - Ray is initialized.
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:init:203 - ModelRouter Actor and Proxy are created.
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:_load_data_into_config:221 - Injecting loaded data into agent and environment configurations...
+2026-04-01 22:25:42 | DEBUG    | PID:35972 | agentkernel_distributed.mas.builder:_load_data_into_config:234 - Injecting data for 'agents_relation' into env plugin 'BasicRelationPlugin'.
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:_load_data_into_config:241 - Data injection complete.
+2026-04-01 22:25:42 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:_init_pod_manager:314 - PodManager Actor is being created with the name: 'global_pod_manager'
+2026-04-01 22:25:51 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:_init_pod_manager:322 - MasPodManager and MasPods are created and initialized.
+2026-04-01 22:25:51 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:_init_system:334 - Initializing system components (Timer, Messager, Recorder)...
+2026-04-01 22:25:51 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:_init_system:368 - System object created and populated with all configured components.
+2026-04-01 22:25:55 | INFO     | PID:35972 | agentkernel_distributed.mas.builder:post_init:378 - Post-initialization of system and pod manager complete.
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:__init__:126 - Initializing Simulation Engine (Builder)...
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:load_config:36 - Loading configuration from project path: D:\Research\OpenStory\examples\deduction
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'environment' config from: D:\Research\OpenStory\examples\deduction\configs\environment_config.yaml
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'actions' config from: D:\Research\OpenStory\examples\deduction\configs\actions_config.yaml
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'agent_templates' config from: D:\Research\OpenStory\examples\deduction\configs\agents_config.yaml
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'system' config from: D:\Research\OpenStory\examples\deduction\configs\system_config.yaml
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'database' config from: D:\Research\OpenStory\examples\deduction\configs\db_config.yaml
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'models' config from: D:\Research\OpenStory\examples\deduction\configs\models_config.yaml
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_profiles' from: D:\Research\OpenStory\examples\deduction\data/agents/profiles_test.jsonl
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_states' from: D:\Research\OpenStory\examples\deduction\data/agents/states.jsonl
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agents_relation' from: D:\Research\OpenStory\examples\deduction\data/relations/relations.jsonl
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:load_config:101 - Configuration loaded and validated successfully.
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:__init__:141 - Using custom controller 'BasicController' from resource_maps.
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:__init__:151 - Using custom pod manager 'BasicPodManager' from resource_maps.
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:init:198 - Ray is initialized.
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:init:203 - ModelRouter Actor and Proxy are created.
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:_load_data_into_config:221 - Injecting loaded data into agent and environment configurations...
+2026-04-01 22:46:41 | DEBUG    | PID:33544 | agentkernel_distributed.mas.builder:_load_data_into_config:234 - Injecting data for 'agents_relation' into env plugin 'BasicRelationPlugin'.
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:_load_data_into_config:241 - Data injection complete.
+2026-04-01 22:46:41 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:_init_pod_manager:314 - PodManager Actor is being created with the name: 'global_pod_manager'
+2026-04-01 22:46:55 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:_init_pod_manager:322 - MasPodManager and MasPods are created and initialized.
+2026-04-01 22:46:55 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:_init_system:334 - Initializing system components (Timer, Messager, Recorder)...
+2026-04-01 22:46:55 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:_init_system:368 - System object created and populated with all configured components.
+2026-04-01 22:46:59 | INFO     | PID:33544 | agentkernel_distributed.mas.builder:post_init:378 - Post-initialization of system and pod manager complete.
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:__init__:126 - Initializing Simulation Engine (Builder)...
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:load_config:36 - Loading configuration from project path: D:\Research\OpenStory\examples\deduction
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'environment' config from: D:\Research\OpenStory\examples\deduction\configs\environment_config.yaml
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'actions' config from: D:\Research\OpenStory\examples\deduction\configs\actions_config.yaml
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'agent_templates' config from: D:\Research\OpenStory\examples\deduction\configs\agents_config.yaml
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'system' config from: D:\Research\OpenStory\examples\deduction\configs\system_config.yaml
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'database' config from: D:\Research\OpenStory\examples\deduction\configs\db_config.yaml
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'models' config from: D:\Research\OpenStory\examples\deduction\configs\models_config.yaml
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_profiles' from: D:\Research\OpenStory\examples\deduction\data/agents/profiles_test.jsonl
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_states' from: D:\Research\OpenStory\examples\deduction\data/agents/states.jsonl
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agents_relation' from: D:\Research\OpenStory\examples\deduction\data/relations/relations.jsonl
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:load_config:101 - Configuration loaded and validated successfully.
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:__init__:141 - Using custom controller 'BasicController' from resource_maps.
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:__init__:151 - Using custom pod manager 'BasicPodManager' from resource_maps.
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:init:198 - Ray is initialized.
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:init:203 - ModelRouter Actor and Proxy are created.
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:_load_data_into_config:221 - Injecting loaded data into agent and environment configurations...
+2026-04-01 23:07:11 | DEBUG    | PID:42056 | agentkernel_distributed.mas.builder:_load_data_into_config:234 - Injecting data for 'agents_relation' into env plugin 'BasicRelationPlugin'.
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:_load_data_into_config:241 - Data injection complete.
+2026-04-01 23:07:11 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:_init_pod_manager:314 - PodManager Actor is being created with the name: 'global_pod_manager'
+2026-04-01 23:07:20 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:_init_pod_manager:322 - MasPodManager and MasPods are created and initialized.
+2026-04-01 23:07:20 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:_init_system:334 - Initializing system components (Timer, Messager, Recorder)...
+2026-04-01 23:07:20 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:_init_system:368 - System object created and populated with all configured components.
+2026-04-01 23:07:24 | INFO     | PID:42056 | agentkernel_distributed.mas.builder:post_init:378 - Post-initialization of system and pod manager complete.
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:__init__:126 - Initializing Simulation Engine (Builder)...
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:load_config:36 - Loading configuration from project path: D:\Research\OpenStory\examples\deduction_en
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'environment' config from: D:\Research\OpenStory\examples\deduction_en\configs\environment_config.yaml
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'actions' config from: D:\Research\OpenStory\examples\deduction_en\configs\actions_config.yaml
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'agent_templates' config from: D:\Research\OpenStory\examples\deduction_en\configs\agents_config.yaml
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'system' config from: D:\Research\OpenStory\examples\deduction_en\configs\system_config.yaml
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'database' config from: D:\Research\OpenStory\examples\deduction_en\configs\db_config.yaml
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'models' config from: D:\Research\OpenStory\examples\deduction_en\configs\models_config.yaml
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_profiles' from: D:\Research\OpenStory\examples\deduction_en\data/agents/profiles_test.jsonl
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_states' from: D:\Research\OpenStory\examples\deduction_en\data/agents/states.jsonl
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agents_relation' from: D:\Research\OpenStory\examples\deduction_en\data/relations/relations.jsonl
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:load_config:101 - Configuration loaded and validated successfully.
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:__init__:141 - Using custom controller 'BasicController' from resource_maps.
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:__init__:151 - Using custom pod manager 'BasicPodManager' from resource_maps.
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:init:198 - Ray is initialized.
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:init:203 - ModelRouter Actor and Proxy are created.
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:_load_data_into_config:221 - Injecting loaded data into agent and environment configurations...
+2026-04-08 21:24:24 | DEBUG    | PID:492884 | agentkernel_distributed.mas.builder:_load_data_into_config:234 - Injecting data for 'agents_relation' into env plugin 'BasicRelationPlugin'.
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:_load_data_into_config:241 - Data injection complete.
+2026-04-08 21:24:24 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:_init_pod_manager:314 - PodManager Actor is being created with the name: 'global_pod_manager'
+2026-04-08 21:24:32 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:_init_pod_manager:322 - MasPodManager and MasPods are created and initialized.
+2026-04-08 21:24:32 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:_init_system:334 - Initializing system components (Timer, Messager, Recorder)...
+2026-04-08 21:24:32 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:_init_system:368 - System object created and populated with all configured components.
+2026-04-08 21:24:36 | INFO     | PID:492884 | agentkernel_distributed.mas.builder:post_init:378 - Post-initialization of system and pod manager complete.
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:__init__:126 - Initializing Simulation Engine (Builder)...
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:load_config:36 - Loading configuration from project path: D:\Research\OpenStory\examples\deduction_en
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'environment' config from: D:\Research\OpenStory\examples\deduction_en\configs\environment_config.yaml
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'actions' config from: D:\Research\OpenStory\examples\deduction_en\configs\actions_config.yaml
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'agent_templates' config from: D:\Research\OpenStory\examples\deduction_en\configs\agents_config.yaml
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'system' config from: D:\Research\OpenStory\examples\deduction_en\configs\system_config.yaml
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'database' config from: D:\Research\OpenStory\examples\deduction_en\configs\db_config.yaml
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'models' config from: D:\Research\OpenStory\examples\deduction_en\configs\models_config.yaml
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_profiles' from: D:\Research\OpenStory\examples\deduction_en\data/agents/profiles_test.jsonl
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_states' from: D:\Research\OpenStory\examples\deduction_en\data/agents/states.jsonl
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agents_relation' from: D:\Research\OpenStory\examples\deduction_en\data/relations/relations.jsonl
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:load_config:101 - Configuration loaded and validated successfully.
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:__init__:141 - Using custom controller 'BasicController' from resource_maps.
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:__init__:151 - Using custom pod manager 'BasicPodManager' from resource_maps.
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:init:198 - Ray is initialized.
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:init:203 - ModelRouter Actor and Proxy are created.
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:_load_data_into_config:221 - Injecting loaded data into agent and environment configurations...
+2026-04-08 21:32:24 | DEBUG    | PID:516848 | agentkernel_distributed.mas.builder:_load_data_into_config:234 - Injecting data for 'agents_relation' into env plugin 'BasicRelationPlugin'.
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:_load_data_into_config:241 - Data injection complete.
+2026-04-08 21:32:24 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:_init_pod_manager:314 - PodManager Actor is being created with the name: 'global_pod_manager'
+2026-04-08 21:32:31 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:_init_pod_manager:322 - MasPodManager and MasPods are created and initialized.
+2026-04-08 21:32:31 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:_init_system:334 - Initializing system components (Timer, Messager, Recorder)...
+2026-04-08 21:32:31 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:_init_system:368 - System object created and populated with all configured components.
+2026-04-08 21:32:35 | INFO     | PID:516848 | agentkernel_distributed.mas.builder:post_init:378 - Post-initialization of system and pod manager complete.
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:__init__:126 - Initializing Simulation Engine (Builder)...
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:load_config:36 - Loading configuration from project path: D:\Research\OpenStory\examples\deduction_en
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'environment' config from: D:\Research\OpenStory\examples\deduction_en\configs\environment_config.yaml
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'actions' config from: D:\Research\OpenStory\examples\deduction_en\configs\actions_config.yaml
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'agent_templates' config from: D:\Research\OpenStory\examples\deduction_en\configs\agents_config.yaml
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'system' config from: D:\Research\OpenStory\examples\deduction_en\configs\system_config.yaml
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'database' config from: D:\Research\OpenStory\examples\deduction_en\configs\db_config.yaml
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:load_config:56 - Loading 'models' config from: D:\Research\OpenStory\examples\deduction_en\configs\models_config.yaml
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_profiles' from: D:\Research\OpenStory\examples\deduction_en\data/agents/profiles_test.jsonl
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agent_states' from: D:\Research\OpenStory\examples\deduction_en\data/agents/states.jsonl
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:load_config:67 - Loading data source 'agents_relation' from: D:\Research\OpenStory\examples\deduction_en\data/relations/relations.jsonl
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:load_config:101 - Configuration loaded and validated successfully.
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:__init__:141 - Using custom controller 'BasicController' from resource_maps.
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:__init__:151 - Using custom pod manager 'BasicPodManager' from resource_maps.
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:init:198 - Ray is initialized.
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:init:203 - ModelRouter Actor and Proxy are created.
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:_load_data_into_config:221 - Injecting loaded data into agent and environment configurations...
+2026-04-08 21:57:59 | DEBUG    | PID:530144 | agentkernel_distributed.mas.builder:_load_data_into_config:234 - Injecting data for 'agents_relation' into env plugin 'BasicRelationPlugin'.
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:_load_data_into_config:241 - Data injection complete.
+2026-04-08 21:57:59 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:_init_pod_manager:314 - PodManager Actor is being created with the name: 'global_pod_manager'
+2026-04-08 21:58:05 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:_init_pod_manager:322 - MasPodManager and MasPods are created and initialized.
+2026-04-08 21:58:05 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:_init_system:334 - Initializing system components (Timer, Messager, Recorder)...
+2026-04-08 21:58:05 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:_init_system:368 - System object created and populated with all configured components.
+2026-04-08 21:58:08 | INFO     | PID:530144 | agentkernel_distributed.mas.builder:post_init:378 - Post-initialization of system and pod manager complete.
