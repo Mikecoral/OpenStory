@@ -75,17 +75,16 @@ body {
 }
 .time-transition-text {
   font-family: var(--font-display);
-  font-size: 72px;
+  font-size: 54px; /* 英文横排稍微调小一点字体，更精致 */
   color: var(--gold-light);
-  letter-spacing: 12px;
+  letter-spacing: 6px; /* 英文字间距不需要中文那么大 */
   text-shadow: 0 4px 20px rgba(0,0,0,0.8), 0 0 40px rgba(207,168,94,0.3);
   opacity: 0;
   transform: scale(0.9) translateY(20px);
   transition: opacity 1s ease, transform 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-  /* 竖排显示，更有古风感 */
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  white-space: pre-wrap;
+  /* 改为横排居中，且强制不换行 */
+  text-align: center;
+  white-space: nowrap; 
 }
 .time-transition-overlay.active .time-transition-text {
   opacity: 1;
@@ -180,7 +179,6 @@ body {
   top: 50%; left: 50%;
   margin-top: -70px; margin-left: -70px;
   object-fit: contain;
-  /* 移除反向旋转动画，保留人物相对于圆心的固定朝向（由 JS 设置初始旋转角度） */
 }
 
 /* 滑屏容器 */
@@ -226,7 +224,7 @@ body {
 /* ===== 顶栏 ===== */
 .header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 64px; /* 增加一点高度 */
+  height: 64px;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 32px;
   background: rgba(26, 20, 16, 0.95);
@@ -238,27 +236,22 @@ body {
   content: ''; position: absolute; left: 0; right: 0; bottom: -4px;
   height: 2px; background: rgba(207, 168, 94, 0.1);
 }
-
 .header-left { display: flex; align-items: center; gap: 12px; }
-
-/* =========== 👇 修复区域：取消屏幕居中，改为固定左侧距离 =========== */
 .header-center { 
   position: absolute; 
-  left: 350px; /* 改为固定左侧偏移，避免长英文向两边野蛮生长 */
+  left: 350px; /* 固定左侧偏移，避免长英文向两边野蛮生长 */
   display: flex; 
   align-items: center; 
   gap: 16px; 
 }
 .sim-date { 
   font-family: var(--font-display); 
-  font-size: 17px; /* 略微缩小 */
+  font-size: 17px; 
   color: var(--gold-light); 
-  letter-spacing: 1px; /* 缩小英文字间距（原为4px） */
+  letter-spacing: 1px; 
   text-shadow: 0 2px 4px rgba(0,0,0,0.5); 
-  white-space: nowrap; /* 强制不换行 */
+  white-space: nowrap; 
 }
-/* =========== 👆 修复区域结束 =========== */
-
 .header-right { display: flex; align-items: center; gap: 16px; }
 .header-ornament { color: var(--vermillion); font-size: 22px; opacity: 0.9; text-shadow: 0 0 8px rgba(192,57,43,0.4); }
 .header-title { font-family: var(--font-display); font-size: 28px; color: var(--paper); letter-spacing: 8px; text-shadow: 0 2px 8px rgba(0,0,0,0.8); }
