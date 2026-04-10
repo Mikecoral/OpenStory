@@ -190,3 +190,32 @@ Traceback (most recent call last):
   File "D:\Research\OpenStory\packages\agentkernel-distributed\agentkernel_distributed\mas\environment\base\plugin_base.py", line 41, in save_to_db
     raise NotImplementedError(f"Plugin {self.__class__.__name__} does not implement 'save_to_db'")
 NotImplementedError: Plugin BasicRelationPlugin does not implement 'save_to_db'
+2026-04-10 18:28:15 | INFO     | PID:150204 | agentkernel_distributed.mas.environment.base.component_base:init:67 - Plugin 'BasicRelationPlugin' for component 'relation' initialized successfully.
+2026-04-10 18:28:15 | INFO     | PID:158096 | agentkernel_distributed.mas.environment.base.component_base:init:67 - Plugin 'BasicRelationPlugin' for component 'relation' initialized successfully.
+2026-04-10 18:28:15 | INFO     | PID:12148 | agentkernel_distributed.mas.environment.base.component_base:init:67 - Plugin 'BasicRelationPlugin' for component 'relation' initialized successfully.
+2026-04-10 18:28:15 | INFO     | PID:28768 | agentkernel_distributed.mas.environment.base.component_base:init:67 - Plugin 'BasicRelationPlugin' for component 'relation' initialized successfully.
+2026-04-10 18:28:15 | INFO     | PID:158776 | agentkernel_distributed.mas.environment.base.component_base:init:67 - Plugin 'BasicRelationPlugin' for component 'relation' initialized successfully.
+2026-04-10 18:28:17 | INFO     | PID:165688 | agentkernel_distributed.mas.environment.base.component_base:init:67 - Plugin 'BasicRelationPlugin' for component 'relation' initialized successfully.
+2026-04-10 18:28:17 | INFO     | PID:158096 | agentkernel_distributed.mas.environment.environment:save_to_db:82 - Environment Proxy: Saving state for 1 components...
+2026-04-10 18:28:17 | ERROR    | PID:158096 | agentkernel_distributed.mas.environment.environment:save_to_db:89 - Environment Proxy: Error during concurrent component save: Plugin BasicRelationPlugin does not implement 'save_to_db'
+Traceback (most recent call last):
+  File "C:\Users\ziyji\Desktop\proj\OpenStory\packages\agentkernel-distributed\agentkernel_distributed\mas\environment\environment.py", line 86, in save_to_db
+    await asyncio.gather(*save_tasks)
+  File "C:\Users\ziyji\Desktop\proj\OpenStory\packages\agentkernel-distributed\agentkernel_distributed\mas\environment\base\component_base.py", line 124, in forward
+    return await method_to_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ziyji\Desktop\proj\OpenStory\packages\agentkernel-distributed\agentkernel_distributed\mas\environment\base\plugin_base.py", line 41, in save_to_db
+    raise NotImplementedError(f"Plugin {self.__class__.__name__} does not implement 'save_to_db'")
+NotImplementedError: Plugin BasicRelationPlugin does not implement 'save_to_db'
+2026-04-10 18:28:22 | INFO     | PID:158096 | agentkernel_distributed.mas.environment.base.component_base:post_init:75 - Actor 'relation' and its plugins initialized.
+2026-04-10 18:28:22 | INFO     | PID:158096 | agentkernel_distributed.mas.environment.environment:post_init:60 - Environment Proxy: All components initialized.
+2026-04-10 18:28:22 | INFO     | PID:165688 | agentkernel_distributed.mas.environment.base.component_base:post_init:75 - Actor 'relation' and its plugins initialized.
+2026-04-10 18:28:22 | INFO     | PID:165688 | agentkernel_distributed.mas.environment.environment:post_init:60 - Environment Proxy: All components initialized.
+2026-04-10 18:28:22 | INFO     | PID:158776 | agentkernel_distributed.mas.environment.base.component_base:post_init:75 - Actor 'relation' and its plugins initialized.
+2026-04-10 18:28:22 | INFO     | PID:158776 | agentkernel_distributed.mas.environment.environment:post_init:60 - Environment Proxy: All components initialized.
+2026-04-10 18:28:22 | INFO     | PID:150204 | agentkernel_distributed.mas.environment.base.component_base:post_init:75 - Actor 'relation' and its plugins initialized.
+2026-04-10 18:28:22 | INFO     | PID:150204 | agentkernel_distributed.mas.environment.environment:post_init:60 - Environment Proxy: All components initialized.
+2026-04-10 18:28:22 | INFO     | PID:12148 | agentkernel_distributed.mas.environment.base.component_base:post_init:75 - Actor 'relation' and its plugins initialized.
+2026-04-10 18:28:22 | INFO     | PID:12148 | agentkernel_distributed.mas.environment.environment:post_init:60 - Environment Proxy: All components initialized.
+2026-04-10 18:28:22 | INFO     | PID:28768 | agentkernel_distributed.mas.environment.base.component_base:post_init:75 - Actor 'relation' and its plugins initialized.
+2026-04-10 18:28:22 | INFO     | PID:28768 | agentkernel_distributed.mas.environment.environment:post_init:60 - Environment Proxy: All components initialized.

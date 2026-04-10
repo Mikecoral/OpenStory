@@ -74,3 +74,4 @@
 2026-04-01 23:17:27 | DEBUG    | PID:9668 | examples.deduction_en.plugins.agent.profile.BasicProfliePlugin:get_agent_profile_by_id:97 - [贾宝玉][N/A] Successfully retrieved profile of 林黛玉
 2026-04-01 23:17:27 | DEBUG    | PID:4380 | examples.deduction_en.plugins.agent.profile.BasicProfliePlugin:get_agent_profile_by_id:97 - [贾环][N/A] Successfully retrieved profile of 袭人
 2026-04-01 23:17:32 | DEBUG    | PID:42424 | examples.deduction_en.plugins.agent.profile.BasicProfliePlugin:get_agent_profile_by_id:97 - [李纨][N/A] Successfully retrieved profile of 林黛玉
+2026-04-10 18:29:15 | DEBUG    | PID:150204 | examples.deduction_en.plugins.agent.profile.BasicProfliePlugin:get_agent_profile_by_id:96 - [贾宝玉][N/A] Successfully retrieved profile of 林黛玉
