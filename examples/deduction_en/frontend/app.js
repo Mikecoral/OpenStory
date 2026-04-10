@@ -540,9 +540,8 @@ function applyPendingTick() {
   const textEl = document.getElementById('timeTransitionText');
   
   if (overlay && textEl && timeString) {
-    // 👇 修改的地方在这里：使用带空格的坚杠切割，去除多余空格
-    const parts = timeString.split(' | ');
-    textEl.innerHTML = parts.join('<br/>');
+    // 用优雅的暗红色星号 ✦ 把年月日和时间连成一行横排
+    textEl.innerHTML = timeString.split(' | ').join(' <span style="color:var(--vermillion); opacity:0.8;">✦</span> ');
     overlay.classList.add('active');
     setTimeout(() => {
       currentTick = msg.tick;

@@ -93,31 +93,21 @@ class BasicPlanPlugin(PlanPlugin):
     def _format_characters_info(self, all_agent_ids: List[str]) -> str:
         """
         Format character information, distinguishing original characters and new faces
-
-        Args:
-            all_agent_ids: List of all agent IDs
-
-        Returns:
-            str: Formatted character information text
         """
         # Find new faces (not in original list)
         new_faces = [aid for aid in all_agent_ids if aid not in self._original_characters]
 
-        info_parts = ["世界拥有红楼梦80回时存在的全部角色"]
+        info_parts = ["The world currently contains all original characters from Chapter 80 of Dream of the Red Chamber"]
         if new_faces:
-            info_parts.append(f"以及新面孔：{', '.join(new_faces)}")
+            info_parts.append(f"as well as new faces: {', '.join(new_faces)}")
 
-        return "，".join(info_parts)
+        return ", ".join(info_parts)
 
     async def execute(self, current_tick: int) -> None:
         """
         Execute the Plan Plugin at every system tick.
-
-        Args:
-            current_tick (int): The system current tick.
         """
         try:
-            # Access other components via agent.get_component(), then get plugin via get_plugin()
             state_component = self._component.agent.get_component("state")
             profile_component = self._component.agent.get_component("profile")
 
@@ -137,26 +127,20 @@ class BasicPlanPlugin(PlanPlugin):
 
             # If no long_task yet, generate one
             if current_long_task is None:
-                # Generate long_task
                 long_task_str = await self.generate_long_task(
                     agent_id=self.agent_id,
                     current_tick=current_tick,
                     profile=profile
                 )
-
-                # Store generated long_task to state
                 await state_plugin.set_long_task(long_task_str)
-                current_long_task = long_task_str  # Update local variable for hourly plan generation below
+                current_long_task = long_task_str 
                 logger.info(f"[{self.agent_id}][{current_tick}] Generated and stored LongTask")
             else:
                 logger.debug(f"[{self.agent_id}][{current_tick}] LongTask already exists, skipping generation")
 
-            # Generate 12 hourly plans at specific ticks (1, 13, 25, 37...)
-            # Pattern: Starting from tick 1, generate once every 12 ticks
             if current_tick >= 0 and (current_tick) % 12 == 0:
                 logger.info(f"[{self.agent_id}][{current_tick}] Starting to generate 12 hourly plans")
 
-                # Generate 12 hourly plans
                 hourly_plans = await self.generate_hourly_plans(
                     agent_id=self.agent_id,
                     current_tick=current_tick,
@@ -164,7 +148,6 @@ class BasicPlanPlugin(PlanPlugin):
                     long_task=current_long_task
                 )
 
-                # Store hourly plans to state
                 await state_plugin.set_hourly_plans(hourly_plans)
                 logger.info(f"[{self.agent_id}][{current_tick}] Generated and stored 12 hourly plans")
             else:
@@ -176,26 +159,14 @@ class BasicPlanPlugin(PlanPlugin):
     async def generate_long_task(self, agent_id: str, current_tick: int, profile: Dict[str, Any]) -> str:
         """
         Generate LongTask and return in string format
-
-        Args:
-            agent_id: Agent ID
-            current_tick: Current tick number
-            profile: Agent profile data
-
-        Returns:
-            str: String representation of LongTask
         """
         if not profile:
             logger.warning(f"[{agent_id}][{current_tick}] No profile provided, using default configuration")
             profile = {}
 
-        # Extract core motivation
-        motivation = profile.get('核心驱动', '未知驱动')
-
-        # Generate plan using LLM based on character info
+        motivation = profile.get('核心驱动', 'Unknown drive')
         plan = await self._generate_plan_based_on_profile(profile)
 
-        # Create LongTask object
         long_task = LongTask(
             task_description=plan,
             motivation=motivation,
@@ -203,11 +174,7 @@ class BasicPlanPlugin(PlanPlugin):
             created_tick=current_tick,
             status="pending"
         )
-
-        # Log generated LongTask
         logger.info(f"[{agent_id}][{current_tick}] Generated LongTask: {long_task.to_string()}")
-
-        # Return string format
         return long_task.to_string()
 
     def _format_profile_for_prompt(self, profile: Dict[str, Any]) -> str:
@@ -217,8 +184,9 @@ class BasicPlanPlugin(PlanPlugin):
         name = profile.get('id', 'Unknown')
         family = profile.get('家族', 'Unknown')
         gender = profile.get('性别', 'Unknown')
+
         personality = profile.get('性格', 'Unknown')
-        motivation = profile.get('核心驱动', 'Unknown')
+        motivation = profile.get('核心驱动', 'Unknown drive')
         language_style = profile.get('语言风格', 'Unknown')
         background = profile.get('背景经历', 'Unknown')
 
@@ -231,25 +199,25 @@ class BasicPlanPlugin(PlanPlugin):
 
         formatted_text = f"""Character Profile:
 Name: {name}
-Family/Faction: {family}
+Faction: {family}
 Gender: {gender}"""
 
         if father or mother:
             formatted_text += f"\nFamily Relations:"
             if father:
-                formatted_text += f" Father: {father}"
+                formatted_text += f" Father-{father}"
             if mother:
-                formatted_text += f" Mother: {mother}"
+                formatted_text += f" Mother-{mother}"
             if status:
                 formatted_text += f" ({status})"
 
         formatted_text += f"""
 
-Personality Traits: {personality}
+Personality: {personality}
 Core Drive: {motivation}
 Linguistic Style: {language_style}
 
-Background Experience:
+Background:
 {background}"""
 
         if recent_events:
@@ -262,34 +230,36 @@ Background Experience:
         return formatted_text
 
     async def _generate_plan_based_on_profile(self, profile: Dict[str, Any]) -> str:
+        """
+        Generate specific plan using LLM based on character profile
+        """
         formatted_profile = self._format_profile_for_prompt(profile)
         all_agent_ids = await self._get_all_agent_ids()
-        
-        new_faces = [aid for aid in all_agent_ids if aid not in self._original_characters]
-        characters_info = "The world contains all original characters from Chapter 80 of Dream of the Red Chamber."
-        if new_faces:
-            characters_info += f" Also includes new faces: {', '.join(new_faces)}"
+        characters_info = self._format_characters_info(all_agent_ids)
 
-        prompt = f"""You are an agent's long-term plan generator. Please generate a long-term plan that matches the character's personality and motivation based on the following profile. Respond in English.
+        prompt = f"""You are a long-term plan generator for an AI agent. Based on the following character profile, generate a long-term plan that fits the character's personality and motivation.
 
-[Important Context]
-- You are currently in Chapter 80 of "Dream of the Red Chamber".
-- Please generate a plan that fits the current plot.
+[Important Background]
+- You are currently in Chapter 80 of Dream of the Red Chamber.
+- Please generate a plan fitting the current plot context.
 
-[Characters in Current World]
+[Current World Characters]
 {characters_info}
 
 {formatted_profile}
 
 Requirements:
-1. The plan must be closely tied to the character's core drive and personality.
-2. The plan should be specific, feasible, and reflect their behavioral style.
-3. Keep the plan length around 200 words.
-4. Clearly state your task goal, action method, and the specific outcome you want.
-5. [CRITICAL] Write naturally in the first person. Do not use rigid openings like "Because of my drive...".
-6. [CRITICAL] Do not generate daily repetitive routines. Formulate a specific, one-time overarching goal or event.
+1. The plan must closely align with the character's core drive and personality.
+2. The plan should be specific, feasible, and reflect the character's behavioral style.
+3. If there are important past experiences, consider their impact on the plan.
+4. The plan should be achievable within a limited time, not too far-fetched or too short-term.
+5. Keep the plan description around 200 words. MUST BE IN ENGLISH.
+6. Clearly state your task goals, action methods, and specific expected outcomes.
+7. [IMPORTANT] Do not use rigid openings like "Because of my drive..."; express it naturally in the first person.
+8. [IMPORTANT] Do not generate regular repetitive behaviors (e.g., "Do X every day"); instead, generate specific, one-off goals or events.
+9. The plan must be achievable. Do not set unrealistic goals.
 
-Please generate the plan:"""
+Please generate the plan in English:"""
 
         try:
             if self.model:
@@ -298,83 +268,88 @@ Please generate the plan:"""
                 logger.info(f"[{self.agent_id}][N/A] Generated plan using LLM: {plan}")
                 return plan
             else:
+                logger.error(f"[{self.agent_id}][N/A] Model not initialized, cannot generate plan")
                 raise Exception("Model not initialized")
         except Exception as e:
             logger.error(f"[{self.agent_id}][N/A] Failed to generate plan with LLM: {e}")
             raise
 
     async def generate_hourly_plans(self, agent_id: str, current_tick: int, profile: Dict[str, Any], long_task: str = None) -> List[List[Any]]:
+        """
+        Generate 12 hourly detailed action plans
+        """
         if not profile:
+            logger.warning(f"[{agent_id}][{current_tick}] No profile provided, using default configuration")
             profile = {}
 
         formatted_profile = self._format_profile_for_prompt(profile)
         all_agent_ids = await self._get_all_agent_ids()
-        
-        new_faces = [aid for aid in all_agent_ids if aid not in self._original_characters]
-        characters_info = "The world contains all original characters from Chapter 80."
-        if new_faces:
-            characters_info += f" Also includes new faces: {', '.join(new_faces)}"
+        characters_info = self._format_characters_info(all_agent_ids)
 
-        long_task_info = f"\n\n[Long-Term Goal]\n{long_task}" if long_task else ""
+        long_task_info = f"\n\n[Long-term Goal]\n{long_task}" if long_task else ""
 
         if self._available_locations:
-            locations_str = "、".join(self._available_locations)
-            location_rule = f"6. [STRICT RESTRICTION] The location MUST be selected from the following list ONLY:\n   {locations_str}"
+            locations_str = ", ".join(self._available_locations)
+            location_rule = f"6. [STRICT RESTRICTION] Location MUST be selected from the following list. DO NOT invent locations:\n   {locations_str}"
         else:
-            location_rule = "6. The location must be a specific place (e.g., Grand View Garden)."
+            location_rule = "6. Location must be a specific place (e.g., Yihong Court, Xiaoxiang Lodge, etc.)"
 
-        prompt = f"""You are a daily schedule generator for an agent. Please generate a detailed action plan for the 12 periods (shichen/hours) of a day based on the profile. Respond in English.
+        prompt = f"""You are an hourly plan generator for an AI agent. Based on the character profile, generate a detailed action plan for 12 hours (shichens) of a day.
 
-[Important Context]
-- You are currently in Chapter 80 of "Dream of the Red Chamber".
+[Important Background]
+- You are currently in Chapter 80 of Dream of the Red Chamber.
+- Generate a plan fitting the current plot context.
 
-[Characters in Current World]
+[Current World Characters]
 {characters_info}
 
 {formatted_profile}{long_task_info}
 
-Ancient 12 Periods Reference:
-0 - Zi (23:00-1:00): Rest
-1 - Chou (1:00-3:00): Late Night
-2 - Yin (3:00-5:00): Dawn
-3 - Mao (5:00-7:00): Early Morning
-4 - Chen (7:00-9:00): Morning
-5 - Si (9:00-11:00): Late Morning
-6 - Wu (11:00-13:00): Noon
-7 - Wei (13:00-15:00): Afternoon
-8 - Shen (15:00-17:00): Late Afternoon
-9 - You (17:00-19:00): Evening
-10 - Xu (19:00-21:00): Night
-11 - Hai (21:00-23:00): Late Night
+Ancient 12 Shichens mapping:
+0-Zi (23-1): Rest
+1-Chou (1-3): Late night
+2-Yin (3-5): Dawn
+3-Mao (5-7): Early morning
+4-Chen (7-9): Morning
+5-Si (9-11): Late morning
+6-Wu (11-13): Noon
+7-Wei (13-15): Afternoon
+8-Shen (15-17): Late afternoon
+9-You (17-19): Dusk
+10-Xu (19-21): Evening
+11-Hai (21-23): Late night
 
 Requirements:
-1. Generate one specific action for each period (0-11).
-2. Actions must fit the character's personality and core drive.
-3. Actions should be specific: include the action, target character, and location.
-4. [IMPORTANT ADVICE] Most of the time should be spent alone.
-   - Out of 12 periods, only 1-2 should involve interaction with other specific characters (target being a name).
-   - For other periods, fill in "None" or "Self" for the target.
-   - Characters should handle daily routines, rest, or think independently.
-5. [CRITICAL] Target characters must use their FULL NAMES.
-   - If not involving anyone, strictly write "None" or "Self".
-{location_rule}
-7. Keep action descriptions brief (10-20 words).
-8. Evaluate an importance score (1-10) for each action:
-   - 1-3: Trivial daily routines (e.g., eating, resting)
-   - 4-6: General activities (e.g., visiting, reading)
-   - 7-8: Important activities driving the plot (e.g., key dialogues, decisions)
-   - 9-10: Core events with major plot impact (e.g., critical conflicts)
-9. Strictly return in JSON format, without any Markdown blocks or extra text.
+1. Generate a specific action for each hour (0-11).
+2. The actions must match the character's personality, status, and core drive.
+3. Actions must be specific, including the action, target person, and location. All output MUST be in English.
+4. [IMPORTANT] Most of the time should be focused on their own affairs.
+   - Only 1-2 hours a day should involve interacting with other specific characters.
+   - For solo hours, fill "target" as "None".
+5. [CRITICAL] Target person MUST use their full CHINESE Pinyin name format if they are original characters, or simply their name.
+   - Correct: Jia Baoyu, Lin Daiyu, Wang Xifeng
+   - Incorrect: Baoyu, Daiyu, Fengjie
+   - If no specific person, fill "None"
+{location_rule} (Note: you can output Chinese location names for compatibility if required, but try to stick to English descriptions if possible, backend accepts Chinese names for locations).
+7. Keep action descriptions between 10-20 words in English.
+8. Evaluate the importance score (1-10) for each action:
+   - 1-3: Daily routines, minimal plot impact (e.g., dining, resting)
+   - 4-6: General activities, some plot value (e.g., visiting, discussing affairs)
+   - 7-8: Important activities, drives plot (e.g., key dialogue, important decisions)
+   - 9-10: Core events, major plot impact (e.g., major turning point, conflict)
+9. Consider the overall time span and arrange action pacing reasonably.
+10. Strictly return in JSON format. Do not include any other text.
 
-Please return the 12-period plan in the exact JSON format below:
+Please return the 12-hour plan in the following JSON format:
 [
-  {{"action": "Action description", "time": 0, "target": "Target character", "location": "Location", "importance": Score}},
+  {{"action": "action description in English", "time": 0, "target": "target person", "location": "location name", "importance": score}},
   ...
-  {{"action": "Action description", "time": 11, "target": "Target character", "location": "Location", "importance": Score}}
+  {{"action": "action description in English", "time": 11, "target": "target person", "location": "location name", "importance": score}}
 ]"""
 
         try:
             if not self.model:
+                logger.error(f"[{agent_id}][{current_tick}] Model not initialized, cannot generate hourly plans")
                 raise Exception("Model not initialized")
 
             response = await self.model.chat(prompt)
@@ -401,33 +376,24 @@ Please return the 12-period plan in the exact JSON format below:
                 hourly_plans.append(hourly_plan.to_list())
 
             hourly_plans = self._log_target_statistics(hourly_plans, agent_id, current_tick)
+            logger.info(f"[{agent_id}][{current_tick}] Successfully generated 12 hourly plans")
             return hourly_plans
 
+        except json.JSONDecodeError as e:
+            logger.error(f"[{agent_id}][{current_tick}] Failed to parse hourly plan JSON: {e}")
+            logger.error(f"Model returned content: {response}")
+            raise
         except Exception as e:
             logger.error(f"[{agent_id}][{current_tick}] Failed to generate hourly plans: {e}")
             raise
 
     def _log_target_statistics(self, hourly_plans: List[List[Any]], agent_id: str, current_tick: int) -> List[List[Any]]:
-        """
-        Log statistics of hours involving other characters within a day
-
-        Args:
-            hourly_plans: 12 hourly plans list
-            agent_id: Agent ID
-            current_tick: Current tick number
-
-        Returns:
-            List[List[Any]]: Original plans list (unmodified)
-        """
-        # Find all hours involving other characters (target is not "self" or "none")
         plans_with_target = []
         for i, plan in enumerate(hourly_plans):
-            # plan format: [action, time, target, location, importance]
             target = plan[2]
             if target and target not in ["自己", "无", "None", ""]:
                 plans_with_target.append((i, plan))
 
-        # Log statistics
         if len(plans_with_target) > 0:
             logger.info(f"[{agent_id}][{current_tick}] {len(plans_with_target)} hours in a day involve interacting with other characters")
             for _, plan in plans_with_target:
