@@ -89,4 +89,5 @@ If you need to modify or regenerate the character data of *Dream of the Red Cham
 - `profile_generator.py`: Filters surviving characters based on `database.jsonl` and generates unique encoded IDs and basic profiles.
 
 QQ交流群:1091827223
+
 [友链:LINUX.DO](https://linux.do)
