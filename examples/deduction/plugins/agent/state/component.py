@@ -68,3 +68,21 @@ class BasicStateComponent(StateComponent):
         if not self._plugin:
             return []
         return await self._plugin.get_short_term_memory()
+
+    async def get_hourly_plans(self, day: int = None) -> Any:
+        """Delegate get_hourly_plans to plugin."""
+        if not self._plugin:
+            return None
+        return await self._plugin.get_hourly_plans(day)
+
+    async def add_replan_event(self, tick: int, reason: str, day: int, from_hour: int) -> None:
+        """Delegate add_replan_event to plugin."""
+        if not self._plugin:
+            return
+        return await self._plugin.add_replan_event(tick, reason, day, from_hour)
+
+    async def get_replan_log(self) -> List[Any]:
+        """Delegate get_replan_log to plugin."""
+        if not self._plugin:
+            return []
+        return await self._plugin.get_replan_log()

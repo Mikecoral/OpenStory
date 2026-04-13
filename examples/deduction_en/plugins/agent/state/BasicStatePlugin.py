@@ -50,6 +50,9 @@ class BasicStatePlugin(StatePlugin):
         elif isinstance(self.state_data['hourly_plans'], list):
             old_list = self.state_data['hourly_plans']
             self.state_data['hourly_plans'] = {1: old_list}
+        # Initialize replan log (records each time plans are dynamically changed mid-day)
+        if 'replan_log' not in self.state_data:
+            self.state_data['replan_log'] = []
 
     async def init(self) -> None:
         """Initialize StatePlugin, get agent_id from component"""
@@ -116,20 +119,50 @@ class BasicStatePlugin(StatePlugin):
         """
         return await self.get_state('long_task')
 
-    async def set_hourly_plans(self, hourly_plans: list) -> None:
+    async def set_hourly_plans(self, hourly_plans: list, tick: int = None) -> None:
         """
         Set 12 hourly plans, stored by day
 
         Args:
             hourly_plans: 12 hourly plans list, format is List[List[Any]]
+            tick: The tick to use for day calculation. If None, uses self.current_tick.
+                  Pass current_tick explicitly to avoid timing issues since the state
+                  component executes after plan/invoke in the component order.
         """
-        day = (self.current_tick // 12) + 1
+        effective_tick = tick if tick is not None else self.current_tick
+        day = (effective_tick // 12) + 1
         
         if 'hourly_plans' not in self.state_data or not isinstance(self.state_data['hourly_plans'], dict):
             self.state_data['hourly_plans'] = {}
             
         self.state_data['hourly_plans'][day] = hourly_plans
         logger.info(f"[{self.agent_id}][{self.current_tick}] Day {day} 12 hourly plans set, total {len(hourly_plans)} hours")
+
+    async def add_replan_event(self, tick: int, reason: str, day: int, from_hour: int) -> None:
+        """
+        Record a mid-day replan event for frontend display.
+
+        Args:
+            tick: The tick at which replanning occurred
+            reason: Why replanning was triggered
+            day: Which day's plans were changed
+            from_hour: Starting hour of the newly generated plans
+        """
+        if 'replan_log' not in self.state_data:
+            self.state_data['replan_log'] = []
+        self.state_data['replan_log'].append({
+            'tick': tick,
+            'reason': reason,
+            'day': day,
+            'from_hour': from_hour,
+        })
+        logger.info(f"[{self.agent_id}][{tick}] Replan event recorded: day {day}, from hour {from_hour}, reason: {reason}")
+
+    async def get_replan_log(self) -> list:
+        """
+        Return the full list of replan events.
+        """
+        return self.state_data.get('replan_log', [])
 
     async def get_hourly_plans(self, day: int = None) -> Optional[Any]:
         """
