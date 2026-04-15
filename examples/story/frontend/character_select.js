@@ -3,7 +3,7 @@ let selectedCharacter = null;
 
 async function loadCharacters() {
   try {
-    const resp = await fetch('../data/characters.json');
+    const resp = await fetch('/data/characters.json');
     characters = await resp.json();
     renderGrid();
   } catch (e) {
@@ -20,7 +20,7 @@ function renderGrid() {
     card.className = 'char-card';
     card.dataset.id = char.id;
     card.innerHTML = `
-      <img src="${char.sprite}" alt="${char.id}" onerror="this.src='../map/sprite/普通人.png'" />
+      <img src="${char.sprite}" alt="${char.id}" onerror="this.src='/map/sprite/普通人.png'" />
       <span class="char-name">${char.id}</span>
     `;
     card.addEventListener('click', () => selectCharacter(char));
@@ -31,7 +31,7 @@ function renderGrid() {
   const customCard = document.createElement('div');
   customCard.className = 'char-card custom-card';
   customCard.innerHTML = `
-    <img src="../map/sprite/普通人.png" alt="自定义" />
+    <img src="/map/sprite/普通人.png" alt="自定义" />
     <span class="char-name">自定义</span>
   `;
   customCard.addEventListener('click', openCustomModal);
@@ -50,7 +50,7 @@ function selectCharacter(char) {
 function renderDetail(char) {
   document.getElementById('charDetail').innerHTML = `
     <div class="detail-portrait">
-      <img src="${char.sprite}" alt="${char.id}" onerror="this.src='../map/sprite/普通人.png'" />
+      <img src="${char.sprite}" alt="${char.id}" onerror="this.src='/map/sprite/普通人.png'" />
       <div class="detail-name">${char.id}</div>
     </div>
     <div class="detail-info">
@@ -87,7 +87,7 @@ function openCustomModal() {
     '核心驱动': prompt('核心驱动（可留空）：') || '参与大观园复兴',
     '语言风格': '自然',
     '背景经历': prompt('背景经历（可留空）：') || '来历神秘的人物。',
-    sprite: '../map/sprite/普通人.png',
+    sprite: '/map/sprite/普通人.png',
     isCustom: true
   };
   characters.push(customChar);
