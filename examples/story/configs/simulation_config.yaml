@@ -1,17 +1,21 @@
 simulation:
+  pod_size: 5
+  init_batch_size: 5
   max_ticks: 120   # 10天 × 12tick/天
+
+configs:
+  environment: "environment_config.yaml"
+  actions: "actions_config.yaml"
+  agent_templates: "agents_config.yaml"
+  system: "system_config.yaml"
+  database: "db_config.yaml"
+  models: "models_config.yaml"
+
+data:
+  agent_profiles: "data/agents/profiles.jsonl"
+  agent_states: "data/agents/states.jsonl"
+  agents_relation: "data/relations/relations.jsonl"
 
 api_server:
   host: "0.0.0.0"
-  port: 8001        # 与deduction区分，使用8001端口
-
-pod:
-  pod_size: 5
-
-agent_template: "StoryAgent"
-
-db: !include db_config.yaml
-system: !include system_config.yaml
-agents: !include agents_config.yaml
-actions: !include actions_config.yaml
-environment: !include environment_config.yaml
+  port: 8001

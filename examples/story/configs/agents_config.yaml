@@ -1,28 +1,45 @@
-agents:
-  - name: StoryAgent
+templates:
+  - name: "StoryAgent"
     component_order:
-      - perceive
-      - plan
-      - invoke
-      - state
-      - reflect
+      - "perceive"
+      - "plan"
+      - "invoke"
+      - "state"
+      - "reflect"
     components:
-      perceive:
-        plugin: BasicPerceivePlugin
-        module: examples.story.plugins.agent.perceive.BasicPerceivePlugin
-      plan:
-        plugin: BasicPlanPlugin
-        module: examples.story.plugins.agent.plan.BasicPlanPlugin
-      invoke:
-        plugin: BasicInvokePlugin
-        module: examples.story.plugins.agent.invoke.BasicInvokePlugin
-        adapters:
-          redis: RedisKVAdapter
+      profile:
+        plugin:
+          BasicProfilePlugin:
+            adapters:
+              redis: "RedisKVAdapter"
+            profile_data: "agent_profiles"
+
       state:
-        plugin: BasicStatePlugin
-        module: examples.story.plugins.agent.state.BasicStatePlugin
-        adapters:
-          redis: RedisKVAdapter
+        plugin:
+          BasicStatePlugin:
+            adapters:
+              adapter: "RedisKVAdapter"
+            state_data: "agent_states"
+
+      perceive:
+        plugin:
+          BasicPerceivePlugin:
+            adapters:
+              redis: "RedisKVAdapter"
+
+      plan:
+        plugin:
+          BasicPlanPlugin:
+            adapters:
+              redis: "RedisKVAdapter"
+
+      invoke:
+        plugin:
+          BasicInvokePlugin:
+            adapters:
+              redis: "RedisKVAdapter"
+
       reflect:
-        plugin: BasicReflectPlugin
-        module: examples.story.plugins.agent.reflect.BasicReflectPlugin
+        plugin:
+          BasicReflectPlugin:
+            adapters: {}
