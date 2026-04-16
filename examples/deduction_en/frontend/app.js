@@ -305,6 +305,7 @@ function connect() {
   ws.onopen = () => {
     setStatus('connected');
     if (isReconnectingAfterRestart) { isReconnectingAfterRestart = false; window.location.reload(); }
+    ws.send(JSON.stringify({ type: 'get_branch_tree' }));
   };
 
   ws.onmessage = (e) => {
@@ -1756,10 +1757,16 @@ function exitHistoryView() {
   viewingTick = -1;
   viewingBranchId = -1;
   updateHistoryModeBanner();
-  if (Object.keys(agentsData).length > 0) {
-    applyAgentsData(agentsData, currentTick);
+  // Re-apply the latest live tick from history
+  if (tickHistory.length > 0) {
+    applyHistoryTick(tickHistory[tickHistory.length - 1]);
   }
   renderBranchTree();
+}
+
+// Alias so view_tick_ack handler can call a consistent function
+function applyAgentsData(data, tick) {
+  applyHistoryTick({ tick, data });
 }
 
 function updateHistoryModeBanner() {
