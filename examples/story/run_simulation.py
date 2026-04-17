@@ -244,48 +244,53 @@ async def main():
                 if server_module._viewing_tick != -1:
                     viewing_tick = server_module._viewing_tick
                     viewing_branch_id = server_module._viewing_branch_id
-                    viewing_branch = server_module._branches[viewing_branch_id]
-                    max_viewing_tick = max(viewing_branch["ticks"], default=-1)
-
-                    is_current_tip = (
-                        viewing_branch_id == server_module._current_branch_id
-                        and viewing_tick == max_viewing_tick
+                    viewing_branch = next(
+                        (b for b in server_module._branches if b["id"] == viewing_branch_id), None
                     )
+                    if viewing_branch is None:
+                        logger.warning(f"【Branch】Branch {viewing_branch_id} not found — skipping fork")
+                    else:
+                        max_viewing_tick = max(viewing_branch["ticks"], default=-1)
 
-                    if viewing_tick <= max_viewing_tick and not is_current_tip:
-                        snapshot_key = (viewing_branch_id, viewing_tick)
-                        if snapshot_key in server_module._tick_snapshots:
-                            logger.info(f"【Branch】Forking new branch from tick {viewing_tick} on branch {viewing_branch_id}")
-                            # 1. Restore agent states
-                            await pod_manager.restore_all_agents.remote(server_module._tick_snapshots[snapshot_key])
-                            # 2. Reset simulation timer
-                            await system.run('timer', 'set_tick', viewing_tick)
-                            # 3. Restore score + score_events to Redis
-                            if snapshot_key in _score_snapshots:
-                                score_snap = _score_snapshots[snapshot_key]
-                                await _story_redis.set('story:score', score_snap["score"])
-                                await _story_redis.delete('story:score_events')
-                                if score_snap["events"]:
-                                    await _story_redis.rpush('story:score_events', *reversed(score_snap["events"]))
-                                logger.info(f"【Branch】Restored story:score={score_snap['score']} with {len(score_snap['events'])} events")
-                            # 4. Clear all player-assigned tasks
-                            async for key in _story_redis.scan_iter('user_plan:*'):
-                                await _story_redis.delete(key)
-                            logger.info("【Branch】Cleared all user_plan:* keys")
-                            # 5. Create new branch metadata
-                            new_branch = {
-                                "id": len(server_module._branches),
-                                "parent_branch_id": viewing_branch_id,
-                                "fork_tick": viewing_tick,
-                                "ticks": [],
-                            }
-                            server_module._branches.append(new_branch)
-                            server_module._current_branch_id = new_branch["id"]
-                            server_module._first_tick_after_fork = True
-                            logger.info(f"【Branch】Created branch {new_branch['id']} forking at tick {viewing_tick} from branch {viewing_branch_id}")
-                            await broadcast_branch_event("branch_created", {"new_branch_id": new_branch["id"], "fork_tick": viewing_tick})
-                        else:
-                            logger.warning(f"【Branch】Snapshot {snapshot_key} not found — skipping fork")
+                        is_current_tip = (
+                            viewing_branch_id == server_module._current_branch_id
+                            and viewing_tick == max_viewing_tick
+                        )
+
+                        if viewing_tick <= max_viewing_tick and not is_current_tip:
+                            snapshot_key = (viewing_branch_id, viewing_tick)
+                            if snapshot_key in server_module._tick_snapshots:
+                                logger.info(f"【Branch】Forking new branch from tick {viewing_tick} on branch {viewing_branch_id}")
+                                # 1. Restore agent states
+                                await pod_manager.restore_all_agents.remote(server_module._tick_snapshots[snapshot_key])
+                                # 2. Reset simulation timer
+                                await system.run('timer', 'set_tick', viewing_tick)
+                                # 3. Restore score + score_events to Redis
+                                if snapshot_key in _score_snapshots:
+                                    score_snap = _score_snapshots[snapshot_key]
+                                    await _story_redis.set('story:score', score_snap["score"])
+                                    await _story_redis.delete('story:score_events')
+                                    if score_snap["events"]:
+                                        await _story_redis.lpush('story:score_events', *reversed(score_snap["events"]))
+                                    logger.info(f"【Branch】Restored story:score={score_snap['score']} with {len(score_snap['events'])} events")
+                                # 4. Clear all player-assigned tasks
+                                async for key in _story_redis.scan_iter('user_plan:*'):
+                                    await _story_redis.delete(key)
+                                logger.info("【Branch】Cleared all user_plan:* keys")
+                                # 5. Create new branch metadata
+                                new_branch = {
+                                    "id": len(server_module._branches),
+                                    "parent_branch_id": viewing_branch_id,
+                                    "fork_tick": viewing_tick,
+                                    "ticks": [],
+                                }
+                                server_module._branches.append(new_branch)
+                                server_module._current_branch_id = new_branch["id"]
+                                server_module._first_tick_after_fork = True
+                                logger.info(f"【Branch】Created branch {new_branch['id']} forking at tick {viewing_tick} from branch {viewing_branch_id}")
+                                await broadcast_branch_event("branch_created", {"new_branch_id": new_branch["id"], "fork_tick": viewing_tick})
+                            else:
+                                logger.warning(f"【Branch】Snapshot {snapshot_key} not found — skipping fork")
 
                     server_module._viewing_tick = -1
                     server_module._viewing_branch_id = -1
@@ -362,7 +367,7 @@ async def main():
                     for ev_raw in raw_events:
                         try:
                             ev = _json_global.loads(ev_raw)
-                            if ev.get('tick') == broadcast_tick:
+                            if ev.get('tick') == current_tick:
                                 score_events.append(ev)
                         except Exception:
                             pass
