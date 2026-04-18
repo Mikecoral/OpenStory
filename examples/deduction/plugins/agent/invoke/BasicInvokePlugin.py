@@ -100,7 +100,7 @@ class BasicInvokePlugin(InvokePlugin):
                 await state_plugin.set_state('current_action', None)
                 
                 # Record a "resting" short-term memory to prevent Tick missing
-                idle_desc = f"{self.agent_id} currently has no specific plan and is resting slightly."
+                idle_desc = f"{self.agent_id}当前没有具体的计划，正在稍作休息。"
                 await state_plugin.add_short_term_memory(idle_desc, tick=current_tick)
                 return
 
@@ -134,8 +134,8 @@ class BasicInvokePlugin(InvokePlugin):
                     
                     # Record the occupation description
                     occupier_name = occupier.split('.')[-1] # Simple name extraction
-                    occupier_action = occupation_info.get("action", "some affair")
-                    busy_desc = f"Assisting {occupier_name} with {occupier_action}."
+                    occupier_action = occupation_info.get("action", "某事")
+                    busy_desc = f"正在协助{occupier_name}{occupier_action}。"
                     
                     # First add short-term memory to self, ensuring Tick is not missing
                     await state_plugin.add_short_term_memory(busy_desc, tick=current_tick)
@@ -152,8 +152,8 @@ class BasicInvokePlugin(InvokePlugin):
                 occupation_info = await self._get_occupation(current_tick, self.agent_id)
                 if occupation_info:
                     occupier_name = occupation_info.get("occupier", "").split('.')[-1]
-                    occupier_action = occupation_info.get("action", "some affair")
-                    busy_desc = f"Assisting {occupier_name} with {occupier_action}."
+                    occupier_action = occupation_info.get("action", "某事")
+                    busy_desc = f"正在协助{occupier_name}{occupier_action}。"
                     await state_plugin.set_state('occupied_by', occupation_info)
                     await state_plugin.add_short_term_memory(busy_desc, tick=current_tick)
                     await state_plugin.set_state('current_action', busy_desc)
@@ -175,7 +175,7 @@ class BasicInvokePlugin(InvokePlugin):
                 else:
                     # Try to occupy target
                     if not await self._try_occupy_target(current_tick, target, importance, action):
-                        plan_note = f"Note: {target} is currently occupied by someone else and cannot cooperate"
+                        plan_note = f"注意：{target}目前正被其他人占用，无法配合"
                         logger.info(f"[{self.agent_id}][{current_tick}] {plan_note}")
                         # Record to state for frontend display
                         await state_plugin.set_state('current_plan_note', plan_note)
@@ -209,8 +209,8 @@ class BasicInvokePlugin(InvokePlugin):
                     dialogue_history = []
             else:
                 # Use simple template for low importance actions
-                self_name = self_profile.get('id', 'Unknown')
-                description = f"{self_name} is doing {action} at {location}."
+                self_name = self_profile.get('id', '未知')
+                description = f"{self_name}正在{location}执行：{action}。"
                 dialogue_history = []
                 logger.info(f"[{self.agent_id}][{current_tick}] Generated description using simple template (importance {importance})")
 
@@ -464,19 +464,19 @@ class BasicInvokePlugin(InvokePlugin):
             
             memory_text = ""
             if long_memory:
-                memory_text += "[Long-term Memory]\n"
+                memory_text += "[长期记忆]\n"
                 memory_text += "\n".join([f"- {m['content']}" for m in long_memory]) + "\n\n"
             
             if short_memory:
-                memory_text += "[Recent Memory]\n"
+                memory_text += "[近期记忆]\n"
                 memory_text += "\n".join([f"- {m}" for m in short_memory[-5:]])  # Latest 5 memories
                 
             if not memory_text:
-                return "No memory"
+                return "无记忆"
             return memory_text.strip()
         except Exception as e:
             logger.warning(f"Failed to retrieve memory for {agent_id}: {e}")
-            return "No memory"
+            return "无记忆"
 
     async def _generate_execution_description(
         self,
@@ -507,7 +507,7 @@ class BasicInvokePlugin(InvokePlugin):
         Returns:
             Dict[str, Any]: Dictionary containing summary and dialogue history
         """
-        default_res = {"summary": f"{self_profile.get('id', 'Unknown')} is doing {action} at {location}.", "history": []}
+        default_res = {"summary": f"{self_profile.get('id', '未知')}正在{location}执行：{action}。", "history": []}
         if not self.model:
             return default_res
 
@@ -524,8 +524,8 @@ class BasicInvokePlugin(InvokePlugin):
         # Solo action, use simple description
         if len(participants) == 1:
             if absent_people:
-                absent_names = ", ".join(absent_people)
-                summary = f"{self_profile.get('id', 'Unknown')} is preparing to {action} at {location}, but {absent_names} is busy and didn't come."
+                absent_names = "、".join(absent_people)
+                summary = f"{self_profile.get('id', '未知')}准备在{location}执行：{action}，但是{absent_names}正忙没来。"
                 return {"summary": summary, "history": []}
             else:
                 return default_res
@@ -602,7 +602,7 @@ class BasicInvokePlugin(InvokePlugin):
 - 如果有人重伤，必须写出"[XX重伤倒地]"
 - 不要含糊其辞，系统需要根据动作描述判断角色状态
 
-{speaker_name}说："""
+{speaker_name}说：（必须使用中文输出）"""
 
                 response = await self.model.chat(prompt)
                 response = response.strip()
@@ -629,7 +629,8 @@ class BasicInvokePlugin(InvokePlugin):
 - 死亡事件：必须写出"XX死亡"或"XX被打死/杀死/身亡"，不能含糊其辞
 - 重伤事件：必须写出"XX重伤"或"XX奄奄一息"
 - 离场事件：必须写出"XX离开"或"XX消失"
-这些致命信息是系统判断角色状态的关键，务必清晰明确！"""
+这些致命信息是系统判断角色状态的关键，务必清晰明确！
+必须使用中文输出。"""
 
             summary = await self.model.chat(summary_prompt)
             summary = summary.strip()

@@ -1,8 +1,13 @@
 ![Cover](assets/Cover.jpg)
-<h1 align="center" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-  <img src="assets/logo.png" height="70" alt="Logo">
-  <span>OpenStory (万象谱)</span>
+<h1 align="center">
+  <img src="assets/logo.png" height="70" alt="Logo" align="absmiddle">&nbsp;OpenStory (万象谱)
 </h1>
+
+<div align="center">
+
+[English](README.md) | [简体中文](README_zh.md)
+
+</div>
 
 OpenStory 是一个基于大语言模型（LLM）和 [Agent-Kernel](https://github.com/ZJU-LLMs/Agent-Kernel) 开发的多智能体推演与模拟框架。
 

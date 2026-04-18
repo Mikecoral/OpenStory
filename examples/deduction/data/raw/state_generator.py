@@ -125,8 +125,8 @@ def filter_data_latest_residence(file_path, target_round):
 # --- Usage Example ---
 if __name__ == "__main__":
     current_round = 50
-    input_file = r'C:\Users\ziyji\project\SOS\examples\deduction\data\raw\database.jsonl'
-    output_file = r'C:\Users\ziyji\project\SOS\examples\deduction\data\agents\states.jsonl'
+    input_file = r''
+    output_file = r''
     
     result = filter_data_latest_residence(input_file, current_round)
 

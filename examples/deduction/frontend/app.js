@@ -12,6 +12,8 @@ let viewDays = {}; // 记录每个智能体当前查看的是第几天的计划
 let pendingTickData = null; // 缓存后端推理完成的数据，等待用户手动触发展示
 let agentsWithNewAction = new Set(); // 有未读新行动的 agent，头顶显示感叹号
 let eventBubbles = []; // 当前 tick 的事件气泡列表 [{participants, text, createdAt}]
+let activeDialogueContext = null; // 当前打开的对话对应的地图地点与侧栏信息
+let activeDialogueReplay = null; // 当前地图上的自动循环对话回放状态
 
 let tickHistory = []; // 记录已经模拟的 tick 数据历史
 let currentHistoryIndex = -1; // 当前展示的历史索引
@@ -118,7 +120,7 @@ function handleAvatarUpload(event) {
   if (!file) return;
 
   if (!file.type.startsWith('image/')) {
-    alert('请选择图片文件');
+    alert(t('upload_image_error'));
     return;
   }
 
@@ -172,7 +174,7 @@ function renderPresetButtons() {
 
     const tagSpan = document.createElement('span');
     tagSpan.className = 'preset-tag';
-    tagSpan.textContent = isOfficial ? '官方' : '自定义';
+    tagSpan.textContent = isOfficial ? t('official') : t('custom');
 
     wrapper.appendChild(img);
     wrapper.appendChild(nameSpan);
@@ -243,7 +245,7 @@ function selectPresetTemplate(templateKey, clickedBtn) {
 function saveAsPreset() {
   const name = document.getElementById('agentId').value.trim();
   if (!name) {
-    alert('请先输入人物名称');
+    alert(t('error_no_name'));
     return;
   }
 
@@ -289,10 +291,10 @@ function saveAsPreset() {
   userPresets[finalKey] = newPreset;
 
   if (saveUserPresets(userPresets)) {
-    alert(`预设 "${name}" 保存成功！`);
+    alert(t('save_preset_success'));
     renderPresetButtons();
   } else {
-    alert('保存预设失败，请重试');
+    alert(t('save_preset_error'));
   }
 }
 
@@ -302,11 +304,11 @@ function deletePreset(presetKey) {
   const preset = presets[presetKey];
 
   if (preset && preset.isOfficial) {
-    alert('官方预设不可删除');
+    alert(t('official_cannot_delete'));
     return;
   }
 
-  if (!confirm(`确定要删除预设 "${preset?.name || presetKey}" 吗？`)) {
+  if (!confirm(t('confirm_delete_preset'))) {
     return;
   }
 
@@ -800,12 +802,14 @@ function buildEventBubbles() {
       createdAt: performance.now(),
     });
   }
+
+  syncAutoDialogueReplay();
 }
 
 // 推断角色当前状态文字，优先使用后端数据，兜底用前端移动状态
 function getAgentStatusText(id) {
   const d = agentsData[id];
-  if (!d) return '闲逛中';
+  if (!d) return t('status_idle');
 
   // 1. 被他人占用（协助/聊天）
   if (d.occupied_by) {
@@ -834,7 +838,7 @@ function getAgentStatusText(id) {
     return loc ? `前往${loc.name}` : '移动中';
   }
 
-  return '闲逛中';
+  return t('status_idle');
 }
 
 
@@ -998,6 +1002,113 @@ function switchDay(event, id, day) {
   renderDetail(id);
 }
 
+// ===== TTS 功能 =====
+function getSpeakerGender(speaker) {
+  const speakerName = String(speaker || '').trim();
+  if (!speakerName) return '';
+
+  for (const [id, data] of Object.entries(agentsData || {})) {
+    const profile = data && data.profile ? data.profile : {};
+    const candidateNames = [
+      id,
+      formatAgentName(id),
+      profile.id,
+      profile.name,
+      profile['姓名']
+    ].filter(Boolean).map(v => String(v).trim());
+
+    if (!candidateNames.includes(speakerName)) continue;
+
+    return String(
+      profile['性别'] ??
+      profile.gender ??
+      profile['gender'] ??
+      ''
+    ).trim();
+  }
+
+  return '';
+}
+
+async function playTts(btnElement, speaker, text) {
+  const apiKey = localStorage.getItem('dashscope_tts_api_key');
+  if (!apiKey) {
+    alert('请先在设置中配置 DashScope API Key');
+    return;
+  }
+
+  // 避免重复点击
+  if (btnElement.disabled) return;
+  
+  const originalText = btnElement.innerText;
+  btnElement.innerText = '⏳';
+  btnElement.disabled = true;
+
+  try {
+    const gender = getSpeakerGender(speaker);
+
+    // 通过本地后端代理请求，后端会按人物先设计/缓存音色，再执行合成
+    const response = await fetch('http://localhost:8000/api/tts', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        model: 'qwen-voice-design',
+        input: {
+          text: text,
+          speaker: speaker,
+          gender: gender
+        }
+      })
+    });
+
+    if (!response.ok) {
+      const errText = await response.text();
+      throw new Error(`TTS 请求失败: ${response.status} ${errText}`);
+    }
+
+    const contentType = response.headers.get('content-type') || '';
+    let audioUrl;
+    let isBlob = false;
+
+    if (contentType.includes('application/json')) {
+      const data = await response.json();
+      if (data.output && data.output.audio && data.output.audio.url) {
+        audioUrl = data.output.audio.url;
+      } else {
+        throw new Error('未获取到音频 URL');
+      }
+    } else {
+      const audioBlob = await response.blob();
+      audioUrl = URL.createObjectURL(audioBlob);
+      isBlob = true;
+    }
+    
+    const audio = new Audio(audioUrl);
+    audio.onended = () => {
+      btnElement.innerText = originalText;
+      btnElement.disabled = false;
+      if (isBlob) URL.revokeObjectURL(audioUrl);
+    };
+    audio.onerror = () => {
+      alert('音频播放失败');
+      btnElement.innerText = originalText;
+      btnElement.disabled = false;
+      if (isBlob) URL.revokeObjectURL(audioUrl);
+    };
+    
+    await audio.play();
+    btnElement.innerText = '🔊'; // 播放中保持小喇叭图标，直到播放完毕
+  } catch (error) {
+    console.error('TTS Error:', error);
+    alert(error.message);
+    btnElement.innerText = originalText;
+    btnElement.disabled = false;
+  }
+}
+
 // ===== Modal Handlers =====
 function openBubbleModal(bubble) {
   const id = bubble.agentId;
@@ -1023,7 +1134,359 @@ function openBubbleModal(bubble) {
   summaryEl.textContent = mem ? mem.content : bubble.text;
   summaryEl.style.display = 'block';
   content.innerHTML = '<div class="empty-text" style="padding:16px;opacity:0.5;">暂无对话记录</div>';
-  modal.style.display = 'block';
+  setActiveDialogueContext(id, tick);
+  modal.classList.add('open');
+}
+
+function getHourlyPlanForTick(hourlyPlans, tick) {
+  if (tick === null || tick === undefined) return null;
+
+  const day = Math.floor(Number(tick) / 12) + 1;
+  const hour = Number(tick) % 12;
+
+  if (Array.isArray(hourlyPlans)) {
+    return hourlyPlans.find(plan => Array.isArray(plan) && Number(plan[1]) === hour) || null;
+  }
+
+  if (hourlyPlans && typeof hourlyPlans === 'object') {
+    const dayPlans = hourlyPlans[day] || hourlyPlans[String(day)] || [];
+    if (Array.isArray(dayPlans)) {
+      return dayPlans.find(plan => Array.isArray(plan) && Number(plan[1]) === hour) || null;
+    }
+  }
+
+  return null;
+}
+
+function normalizeLocationName(name) {
+  return String(name || '')
+    .trim()
+    .replace(/[，。、“”‘’《》〈〉（）()【】\[\]\s\-_,.;:：]/g, '');
+}
+
+function findMapLocationByName(locationName) {
+  const targetLocName = String(locationName || '').trim();
+  if (!targetLocName || !mapData || !Array.isArray(mapData.locations)) return null;
+
+  const normalizedTarget = normalizeLocationName(targetLocName);
+  let matched = mapData.locations.find(l => normalizeLocationName(l.name) === normalizedTarget);
+  if (!matched) {
+    matched = mapData.locations.find(l => {
+      const normalizedName = normalizeLocationName(l.name);
+      return normalizedName.includes(normalizedTarget) || normalizedTarget.includes(normalizedName);
+    });
+  }
+
+  return matched || null;
+}
+
+function getDialogueLocationContext(agentId, tick) {
+  const d = agentsData[agentId];
+  if (!d) return null;
+
+  let rawLocation = '';
+  let sourceKey = '';
+
+  // 仅在当前 tick 有明确实时位置时，才认为拿到了“实际执行地点”
+  if (Number(d.current_tick) === Number(tick) && d.current_location) {
+    rawLocation = String(d.current_location).trim();
+    sourceKey = rawLocation ? 'dialogue_location_source_current' : '';
+  }
+
+  const matchedLocation = findMapLocationByName(rawLocation);
+
+  return {
+    agentId,
+    tick,
+    rawLocation,
+    displayName: matchedLocation ? matchedLocation.name : rawLocation,
+    matchedLocation,
+    sourceKey
+  };
+}
+
+function refreshDialogueSidebar() {
+  const nameEl = document.getElementById('dialogueLocationName');
+  const metaEl = document.getElementById('dialogueLocationMeta');
+  const overlayEl = document.querySelector('.dream-location-overlay');
+  if (!nameEl || !metaEl || !overlayEl) return;
+
+  const hasActualLocation = !!(activeDialogueContext && activeDialogueContext.matchedLocation && activeDialogueContext.rawLocation);
+  overlayEl.classList.toggle('is-hidden', !hasActualLocation);
+  metaEl.classList.toggle('is-hidden', !hasActualLocation);
+
+  if (!activeDialogueContext || !hasActualLocation) {
+    nameEl.textContent = t('dialogue_location_pending');
+    metaEl.textContent = t('dialogue_location_hint');
+    return;
+  }
+
+  nameEl.textContent = activeDialogueContext.displayName || t('dialogue_location_unknown');
+
+  const sourceText = activeDialogueContext.sourceKey ? ` ${t(activeDialogueContext.sourceKey)}` : '';
+  metaEl.textContent = `${t('dialogue_location_marked')}${sourceText}`;
+}
+
+function focusCameraOnLocation(location) {
+  if (!location || !mapData) return;
+
+  camera.targetX = location.x + mapData.tileWidth / 2;
+  camera.targetY = location.y + mapData.tileHeight / 2;
+}
+
+function findAgentIdBySpeakerName(speakerName) {
+  const normalizedSpeaker = String(speakerName || '').trim();
+  if (!normalizedSpeaker) return null;
+
+  for (const [id, data] of Object.entries(agentsData || {})) {
+    const profile = data?.profile || {};
+    const candidateNames = [
+      id,
+      formatAgentName(id),
+      profile.id,
+      profile.name,
+      profile['姓名']
+    ].filter(Boolean).map(v => String(v).trim());
+
+    if (candidateNames.includes(normalizedSpeaker)) {
+      return id;
+    }
+  }
+
+  return null;
+}
+
+function getSpeakerAvatarSource(speakerName) {
+  const agentId = findAgentIdBySpeakerName(speakerName);
+  if (agentId) {
+    const customAvatar = customAgentAvatars[agentId];
+    if (customAvatar && customAvatar.type === 'custom' && customAvatar.source) {
+      return customAvatar.source;
+    }
+
+    return `../map/sprite/${formatAgentName(agentId)}.png`;
+  }
+
+  return `../map/sprite/${speakerName}.png`;
+}
+
+function parseDialogueHistoryEntries(history) {
+  return (history || []).map(line => {
+    const rawLine = String(line || '');
+    const match = rawLine.match(/^(.+?)：(?:\[(.+?)\])?(.*)$/);
+    if (!match) {
+      return {
+        raw: rawLine,
+        speaker: '',
+        action: '',
+        text: rawLine.trim(),
+        speakerId: null
+      };
+    }
+
+    const [, speaker, action, text] = match;
+    return {
+      raw: rawLine,
+      speaker: String(speaker || '').trim(),
+      action: String(action || '').trim(),
+      text: String(text || '').trim(),
+      speakerId: findAgentIdBySpeakerName(speaker)
+    };
+  }).filter(entry => entry.text);
+}
+
+function createDialogueReplayScene({ sceneKey, agentId, tick, history, participantIds = [], lastSwitchAt = Date.now(), currentIndex = 0, intervalMs = 2600 }) {
+  const entries = parseDialogueHistoryEntries(history);
+  if (!entries.length) return null;
+
+  const resolvedParticipantIds = participantIds.length
+    ? [...new Set(participantIds.filter(Boolean))]
+    : [...new Set(entries.map(entry => entry.speakerId).filter(Boolean))];
+  if (!resolvedParticipantIds.length && agentId) {
+    resolvedParticipantIds.push(agentId);
+  }
+
+  return {
+    sceneKey,
+    agentId,
+    tick,
+    entries,
+    participantIds: resolvedParticipantIds,
+    currentIndex,
+    lastSwitchAt,
+    intervalMs
+  };
+}
+
+function getDialogueTickForAgent(agentId) {
+  const d = agentsData[agentId];
+  if (!d || !d.dialogues) return null;
+
+  if (currentTick !== null && currentTick !== undefined && d.dialogues[currentTick]) {
+    return currentTick;
+  }
+
+  const mems = d.short_term_memory;
+  const mem = mems && mems.length ? mems[mems.length - 1] : null;
+  if (mem && mem.tick !== null && d.dialogues[mem.tick]) {
+    return mem.tick;
+  }
+
+  return null;
+}
+
+function syncAutoDialogueReplay() {
+  const previousScenes = new Map((activeDialogueReplay?.scenes || []).map(scene => [scene.sceneKey, scene]));
+  const scenes = [];
+  const seen = new Set();
+  const now = Date.now();
+
+  for (const bubble of eventBubbles) {
+    if (!bubble.hasDialogue) continue;
+
+    const participantIds = [...new Set((bubble.participants || []).filter(Boolean))];
+    const candidates = [bubble.agentId, ...participantIds].filter(Boolean);
+
+    let sourceAgentId = null;
+    let dialogueTick = null;
+    let history = null;
+
+    for (const candidateId of candidates) {
+      const tick = getDialogueTickForAgent(candidateId);
+      const candidateHistory = tick !== null ? agentsData[candidateId]?.dialogues?.[tick] : null;
+      if (tick !== null && Array.isArray(candidateHistory) && candidateHistory.length) {
+        sourceAgentId = candidateId;
+        dialogueTick = tick;
+        history = candidateHistory;
+        break;
+      }
+    }
+
+    if (!sourceAgentId || dialogueTick === null || !history) continue;
+
+    const sceneKey = `${participantIds.slice().sort().join('|')}|${dialogueTick}`;
+    if (seen.has(sceneKey)) continue;
+    seen.add(sceneKey);
+
+    const prev = previousScenes.get(sceneKey);
+    const scene = createDialogueReplayScene({
+      sceneKey,
+      agentId: sourceAgentId,
+      tick: dialogueTick,
+      history,
+      participantIds,
+      currentIndex: prev ? prev.currentIndex % Math.max(parseDialogueHistoryEntries(history).length, 1) : 0,
+      lastSwitchAt: prev ? prev.lastSwitchAt : now + scenes.length * 500,
+      intervalMs: prev ? prev.intervalMs : 2600
+    });
+
+    if (scene) scenes.push(scene);
+  }
+
+  activeDialogueReplay = scenes.length ? { scenes } : null;
+}
+
+function setActiveDialogueSpeaker(speakerName) {
+  const normalized = String(speakerName || '').trim();
+  const lineEls = document.querySelectorAll('#dialogueContent .dialogue-line[data-speaker]');
+  const cardEls = document.querySelectorAll('#dialogueParticipants .dialogue-participant[data-speaker]');
+
+  lineEls.forEach(el => {
+    const isActive = normalized && el.dataset.speaker === normalized;
+    el.classList.toggle('is-speaker-active', !!isActive);
+    el.classList.toggle('is-speaker-dimmed', !!normalized && !isActive);
+  });
+
+  cardEls.forEach(el => {
+    const isActive = normalized && el.dataset.speaker === normalized;
+    el.classList.toggle('is-speaker-active', !!isActive);
+    el.classList.toggle('is-speaker-dimmed', !!normalized && !isActive);
+  });
+}
+
+function clearActiveDialogueSpeaker() {
+  setActiveDialogueSpeaker('');
+}
+
+function bindDialogueHighlightInteractions() {
+  document.querySelectorAll('#dialogueContent .dialogue-line[data-speaker]').forEach(el => {
+    const speaker = el.dataset.speaker;
+    el.addEventListener('mouseenter', () => setActiveDialogueSpeaker(speaker));
+    el.addEventListener('mouseleave', () => clearActiveDialogueSpeaker());
+  });
+
+  document.querySelectorAll('#dialogueParticipants .dialogue-participant[data-speaker]').forEach(el => {
+    const speaker = el.dataset.speaker;
+    el.addEventListener('mouseenter', () => setActiveDialogueSpeaker(speaker));
+    el.addEventListener('mouseleave', () => clearActiveDialogueSpeaker());
+  });
+}
+
+function renderDialogueParticipants(history) {
+  const cardEl = document.getElementById('dialogueParticipantsCard');
+  const listEl = document.getElementById('dialogueParticipants');
+  if (!cardEl || !listEl) return;
+
+  const speakers = [];
+  const seen = new Set();
+
+  for (const line of history || []) {
+    const match = String(line).match(/^(.+?)：(?:\[(.+?)\])?(.*)$/);
+    if (!match) continue;
+    const speaker = String(match[1] || '').trim();
+    if (!speaker || seen.has(speaker)) continue;
+    seen.add(speaker);
+    speakers.push(speaker);
+    if (speakers.length >= 2) break;
+  }
+
+  if (!speakers.length) {
+    listEl.innerHTML = '';
+    cardEl.classList.add('is-hidden');
+    return;
+  }
+
+  listEl.innerHTML = speakers.map(name => {
+    const safeName = escHtml(name);
+    const safeSrc = escHtml(getSpeakerAvatarSource(name));
+    return `
+      <div class="dialogue-participant" data-speaker="${safeName}">
+        <div class="dialogue-participant-frame">
+          <div class="dialogue-participant-corner corner-tl"></div>
+          <div class="dialogue-participant-corner corner-tr"></div>
+          <div class="dialogue-participant-corner corner-bl"></div>
+          <div class="dialogue-participant-corner corner-br"></div>
+          <div class="dialogue-participant-sprite-wrap">
+            <div class="dialogue-participant-halo"></div>
+            <div class="dialogue-participant-floor"></div>
+            <div class="dialogue-participant-badge">绘</div>
+          <img
+            class="dialogue-participant-sprite"
+            src="${safeSrc}"
+            alt="${safeName}"
+            onerror="this.src='../map/sprite/普通人.png'"
+          />
+          </div>
+          <div class="dialogue-participant-nameplate">
+            <div class="dialogue-participant-name">${safeName}</div>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  cardEl.classList.remove('is-hidden');
+}
+
+function setActiveDialogueContext(agentId, tick) {
+  activeDialogueContext = getDialogueLocationContext(agentId, tick);
+  refreshDialogueSidebar();
+
+  if (activeDialogueContext && activeDialogueContext.matchedLocation) {
+    focusCameraOnLocation(activeDialogueContext.matchedLocation);
+  }
+
+  renderDialogueMiniMap(Date.now());
 }
 
 function openModal(event, agentId, tick) {
@@ -1046,25 +1509,39 @@ function openModal(event, agentId, tick) {
     summaryEl.style.display = 'none';
   }
 
-  content.innerHTML = history.map(line => {
+  content.innerHTML = history.map((line, index) => {
     const match = line.match(/^(.+?)：(?:\[(.+?)\])?(.*)$/);
     if (!match) return `<div class="dialogue-line">${escHtml(line)}</div>`;
 
     const [_, speaker, action, text] = match;
+    const ttsApiKey = localStorage.getItem('dashscope_tts_api_key');
+    const safeSpeaker = encodeURIComponent(speaker).replace(/'/g, "%27");
+    const safeText = encodeURIComponent(text).replace(/'/g, "%27");
+    const speakerBtn = ttsApiKey ? `<button class="tts-speaker-btn" onclick="playTts(this, decodeURIComponent('${safeSpeaker}'), decodeURIComponent('${safeText}'))">🔊</button>` : '';
+
     return `
-      <div class="dialogue-line">
+      <div class="dialogue-line" data-speaker="${escHtml(speaker)}">
         <span class="dialogue-speaker">${escHtml(speaker)}</span>
         ${action ? `<span class="dialogue-action">[${escHtml(action)}]</span>` : ''}
         <span class="dialogue-text">${escHtml(text)}</span>
+        ${speakerBtn}
       </div>
     `;
   }).join('');
 
-  modal.style.display = 'block';
+  renderDialogueParticipants(history);
+  bindDialogueHighlightInteractions();
+  setActiveDialogueContext(agentId, tick);
+  modal.classList.add('open');
 }
 
 function closeModal() {
-  document.getElementById('dialogueModal').style.display = 'none';
+  activeDialogueContext = null;
+  clearActiveDialogueSpeaker();
+  refreshDialogueSidebar();
+  renderDialogueParticipants([]);
+  renderDialogueMiniMap(Date.now());
+  document.getElementById('dialogueModal').classList.remove('open');
 }
 
 // ===== 添加人物功能 =====
@@ -1132,7 +1609,7 @@ function renderManagePresetList() {
       <img src="${preset.avatarSource || '../map/sprite/普通人.png'}" alt="${preset.name}" class="preset-manage-avatar" onerror="this.src='../map/sprite/普通人.png'" />
       <div class="preset-manage-info">
         <span class="preset-manage-name">${preset.name}</span>
-        <span class="preset-manage-tag">${preset.isOfficial ? '官方预设' : '自定义预设'}</span>
+        <span class="preset-manage-tag">${preset.isOfficial ? t('official') : t('custom')}</span>
       </div>
       <div class="preset-manage-actions">
         ${!preset.isOfficial ? `<button class="btn-delete-preset" onclick="deletePreset('${key}'); renderManagePresetList();">删除</button>` : ''}
@@ -1252,10 +1729,8 @@ function handleAddAgentResponse(msg) {
 }
 
 window.onclick = function(event) {
-  const dialogueModal = document.getElementById('dialogueModal');
   const addAgentModal = document.getElementById('addAgentModal');
   const managePresetModal = document.getElementById('managePresetModal');
-  if (event.target === dialogueModal) closeModal();
   if (event.target === addAgentModal) closeAddAgentModal();
   if (event.target === managePresetModal) closeManagePresetModal();
 };
@@ -1351,14 +1826,14 @@ function sendCustomPlan(id) {
 function renderProfile(profile) {
   if (!profile) return '';
   const fields = [
-    { label: '家族', key: '家族' },
-    { label: '性格', key: '性格' },
-    { label: '核心驱动', key: '核心驱动' },
-    { label: '语言风格', key: '语言风格' }
+    { label: t('family_label'), key: '家族' },
+    { label: t('personality_label'), key: '性格' },
+    { label: t('drive_label'), key: '核心驱动' },
+    { label: t('style_label'), key: '语言风格' }
   ];
   
   const items = fields.map(f => {
-    const val = profile[f.key] || '未知';
+    const val = profile[f.key] || t('unknown');
     return `<div class="profile-item">
       <span class="profile-label">${f.label}：</span>
       <span class="profile-value">${escHtml(val)}</span>
@@ -1368,7 +1843,7 @@ function renderProfile(profile) {
   return `<section class="info-section">
     <div class="section-title"><span class="section-icon">志</span>人物志</div>
     <div class="profile-grid">${items}</div>
-    ${profile['背景经历'] ? `<div class="profile-bio"><strong>背景：</strong>${escHtml(profile['背景经历'])}</div>` : ''}
+    ${profile['背景经历'] ? `<div class="profile-bio"><strong>${t('profile_background')}</strong>${escHtml(profile['背景经历'])}</div>` : ''}
   </section>`;
 }
 
@@ -1391,7 +1866,7 @@ function renderExperiences(dialogues, shortTermMemory, agentId) {
     return `
       <div class="experience-card clickable-plan" onclick="openModal(event, '${agentId.replace(/'/g, "\\'")}', ${tick})">
         <div class="experience-header">
-          <span class="experience-tick">Tick ${tick}</span>
+          <span class="experience-tick">${t('time_tick')} ${tick}</span>
           <span class="experience-tag">对话录</span>
         </div>
         <div class="experience-summary">${escHtml(truncate(summary, 80))}</div>
@@ -1590,7 +2065,7 @@ function renderMemory(title, memories, type) {
   const sorted = [...memories].sort((a, b) => (b.tick ?? 0) - (a.tick ?? 0));
   const items = sorted.map(m => `
     <div class="memory-card ${type}-memory">
-      <span class="memory-tick">Tick ${m.tick ?? '?'}</span>
+      <span class="memory-tick">${t('time_tick')} ${m.tick ?? '?'}</span>
       <div class="memory-content">${escHtml(m.content ?? '')}</div>
     </div>`).join('');
   return `<section class="info-section">
@@ -2566,6 +3041,8 @@ function renderLoop() {
   const ctx = canvas.getContext('2d');
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+  renderDialogueMiniMap(Date.now());
+
   if (!mapData || layerCanvases.length === 0) return;
 
   // 相机平滑追随逻辑 (阻尼移动)
@@ -2899,6 +3376,12 @@ function renderLoop() {
   // 2.7 绘制事件气泡
   drawEventBubbles(ctx);
 
+  // 2.8 绘制当前打开对话在地图上的循环气泡
+  drawDialogueReplayBubble(ctx, now);
+
+  // 2.9 绘制当前打开对话对应的地点标记
+  drawDialogueLocationMarker(ctx);
+
   // 3. 绘制地点名称 (当缩放到接近最小时)
   if (camera.zoom <= camera.minZoom * 1.2) {
     drawLocationLabels(ctx);
@@ -2949,6 +3432,172 @@ function drawLocationLabels(ctx) {
     ctx.fillText(loc.name, loc.x, loc.y);
     ctx.shadowBlur = 0;
   });
+}
+
+function drawAnimatedSignalMarker(ctx, markerX, markerY, options = {}) {
+  const now = options.now ?? Date.now();
+  const coreRadius = options.coreRadius ?? 8;
+  const ringRadius = options.ringRadius ?? 28;
+  const label = options.label || '';
+  const showLabel = !!options.showLabel;
+  const font = options.font || 'bold 16px "Noto Serif SC", serif';
+  const lineWidth = options.lineWidth ?? 2;
+  const crosshairWidth = options.crosshairWidth ?? lineWidth;
+
+  const waveA = (Math.sin(now / 260) + 1) / 2;
+  const waveB = (Math.sin(now / 420 + 1.4) + 1) / 2;
+
+  ctx.save();
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+
+  ctx.beginPath();
+  ctx.fillStyle = `rgba(192, 57, 43, ${0.10 + waveA * 0.14})`;
+  ctx.arc(markerX, markerY, ringRadius * (1.45 + waveA * 0.35), 0, Math.PI * 2);
+  ctx.fill();
+
+  const ringConfigs = [
+    { radius: ringRadius * (0.95 + waveA * 0.28), alpha: 0.95, width: lineWidth * 1.2 },
+    { radius: ringRadius * (1.45 + waveB * 0.34), alpha: 0.52 - waveB * 0.16, width: lineWidth },
+    { radius: ringRadius * (1.95 + waveA * 0.42), alpha: 0.28 - waveA * 0.1, width: lineWidth * 0.9 }
+  ];
+
+  for (const ring of ringConfigs) {
+    if (ring.alpha <= 0) continue;
+    ctx.beginPath();
+    ctx.lineWidth = ring.width;
+    ctx.strokeStyle = `rgba(192, 57, 43, ${ring.alpha})`;
+    ctx.arc(markerX, markerY, ring.radius, 0, Math.PI * 2);
+    ctx.stroke();
+  }
+
+  const crossGap = coreRadius * 1.7;
+  const crossLen = ringRadius * 0.9 + waveA * ringRadius * 0.25;
+  ctx.beginPath();
+  ctx.lineWidth = crosshairWidth;
+  ctx.strokeStyle = 'rgba(255, 248, 220, 0.95)';
+  ctx.moveTo(markerX - crossLen, markerY);
+  ctx.lineTo(markerX - crossGap, markerY);
+  ctx.moveTo(markerX + crossGap, markerY);
+  ctx.lineTo(markerX + crossLen, markerY);
+  ctx.moveTo(markerX, markerY - crossLen);
+  ctx.lineTo(markerX, markerY - crossGap);
+  ctx.moveTo(markerX, markerY + crossGap);
+  ctx.lineTo(markerX, markerY + crossLen);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.fillStyle = '#c0392b';
+  ctx.arc(markerX, markerY, coreRadius, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.fillStyle = 'rgba(255, 248, 220, 0.96)';
+  ctx.arc(markerX, markerY, coreRadius * 0.38, 0, Math.PI * 2);
+  ctx.fill();
+
+  if (showLabel && label) {
+    const labelY = markerY - ringRadius * 1.55;
+    ctx.beginPath();
+    ctx.moveTo(markerX, markerY - coreRadius - 4 * (lineWidth / 2));
+    ctx.lineTo(markerX, labelY + ringRadius * 0.35);
+    ctx.lineWidth = lineWidth;
+    ctx.strokeStyle = 'rgba(192, 57, 43, 0.92)';
+    ctx.stroke();
+
+    ctx.font = font;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    const textWidth = ctx.measureText(label).width;
+    const boxWidth = textWidth + ringRadius * 0.9;
+    const boxHeight = ringRadius * 0.95;
+
+    ctx.fillStyle = 'rgba(26, 20, 16, 0.9)';
+    if (ctx.roundRect) {
+      ctx.beginPath();
+      ctx.roundRect(markerX - boxWidth / 2, labelY - boxHeight / 2, boxWidth, boxHeight, ringRadius * 0.22);
+      ctx.fill();
+    } else {
+      ctx.fillRect(markerX - boxWidth / 2, labelY - boxHeight / 2, boxWidth, boxHeight);
+    }
+
+    ctx.fillStyle = '#f7d794';
+    ctx.fillText(label, markerX, labelY);
+  }
+
+  ctx.restore();
+}
+
+function drawDialogueLocationMarker(ctx) {
+  if (!activeDialogueContext || !activeDialogueContext.matchedLocation || !mapData) return;
+
+  const loc = activeDialogueContext.matchedLocation;
+  const markerX = loc.x + mapData.tileWidth / 2;
+  const markerY = loc.y + mapData.tileHeight / 2;
+  const scaleUnit = 1 / camera.zoom;
+
+  drawAnimatedSignalMarker(ctx, markerX, markerY, {
+    now: Date.now(),
+    coreRadius: 8 * scaleUnit,
+    ringRadius: 32 * scaleUnit,
+    lineWidth: 2.8 * scaleUnit,
+    crosshairWidth: 2.4 * scaleUnit,
+    label: activeDialogueContext.displayName || loc.name,
+    showLabel: true,
+    font: `bold ${16 * scaleUnit}px "Noto Serif SC", serif`
+  });
+}
+
+function renderDialogueMiniMap(now = Date.now()) {
+  const canvas = document.getElementById('dialogueMiniMapCanvas');
+  if (!canvas) return;
+
+  const cssWidth = Math.max(canvas.clientWidth || 0, 1);
+  const cssHeight = Math.max(canvas.clientHeight || 0, 1);
+  const dpr = window.devicePixelRatio || 1;
+
+  if (canvas.width !== Math.round(cssWidth * dpr) || canvas.height !== Math.round(cssHeight * dpr)) {
+    canvas.width = Math.round(cssWidth * dpr);
+    canvas.height = Math.round(cssHeight * dpr);
+  }
+
+  const ctx = canvas.getContext('2d');
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.clearRect(0, 0, cssWidth, cssHeight);
+
+  ctx.fillStyle = '#efe4d2';
+  ctx.fillRect(0, 0, cssWidth, cssHeight);
+
+  if (!mapData || !layerCanvases.length) return;
+
+  const scale = Math.min(cssHeight / mapData.pixelWidth, cssWidth / mapData.pixelHeight);
+  const drawWidth = mapData.pixelWidth * scale;
+  const drawHeight = mapData.pixelHeight * scale;
+  const drawX = (cssHeight - drawWidth) / 2;
+  const drawY = (cssWidth - drawHeight) / 2;
+
+  ctx.save();
+  ctx.translate(0, cssHeight);
+  ctx.rotate(-Math.PI / 2);
+
+  for (const layerCanvas of layerCanvases) {
+    ctx.drawImage(layerCanvas, 0, 0, mapData.pixelWidth, mapData.pixelHeight, drawX, drawY, drawWidth, drawHeight);
+  }
+
+  if (activeDialogueContext && activeDialogueContext.matchedLocation) {
+    const loc = activeDialogueContext.matchedLocation;
+    const markerX = drawX + loc.x * scale;
+    const markerY = drawY + loc.y * scale;
+    drawAnimatedSignalMarker(ctx, markerX, markerY, {
+      now,
+      coreRadius: 5.2,
+      ringRadius: 16,
+      lineWidth: 2,
+      crosshairWidth: 1.8
+    });
+  }
+
+  ctx.restore();
 }
 
 function drawTile(ctx, gid, x, y) {
@@ -3088,6 +3737,136 @@ function drawEventBubbles(ctx) {
   }
 
   ctx.restore();
+}
+
+function drawDialogueReplayScene(ctx, replay, now = Date.now()) {
+  if (!replay || !mapData || !replay.entries.length) return;
+
+  if (now - replay.lastSwitchAt >= replay.intervalMs) {
+    replay.currentIndex = (replay.currentIndex + 1) % replay.entries.length;
+    replay.lastSwitchAt = now;
+  }
+
+  const entry = replay.entries[replay.currentIndex];
+  if (!entry) return;
+
+  const tileW = mapData.tileWidth;
+  const tileH = mapData.tileHeight;
+  const fontSize = Math.max(11, 14 / camera.zoom);
+  const nameSize = Math.max(10, 12 / camera.zoom);
+  const paddingX = 14 / camera.zoom;
+  const paddingY = 12 / camera.zoom;
+  const maxBubbleW = 220 / camera.zoom;
+  const lineH = fontSize * 1.35;
+  const cornerR = 10 / camera.zoom;
+  const pulse = (Math.sin(now / 260) + 1) / 2;
+
+  let anchor = null;
+  if (entry.speakerId && agentScreenPositions[entry.speakerId]) {
+    const pos = agentScreenPositions[entry.speakerId];
+    anchor = { x: pos.worldX + tileW / 2, y: pos.worldY + tileH - tileH * 2 };
+  }
+
+  if (!anchor && replay.participantIds.length) {
+    const anchors = replay.participantIds
+      .map(id => agentScreenPositions[id])
+      .filter(Boolean)
+      .map(pos => ({ x: pos.worldX + tileW / 2, y: pos.worldY + tileH - tileH * 2 }));
+    if (anchors.length === 1) {
+      anchor = anchors[0];
+    } else if (anchors.length > 1) {
+      anchor = {
+        x: anchors.reduce((sum, item) => sum + item.x, 0) / anchors.length,
+        y: anchors.reduce((sum, item) => sum + item.y, 0) / anchors.length
+      };
+    }
+  }
+
+  if (!anchor) return;
+
+  const displayText = entry.text.length > 28 ? entry.text.slice(0, 28) + '…' : entry.text;
+
+  ctx.save();
+  ctx.font = `${fontSize}px "ZCOOL XiaoWei", "Noto Serif SC", serif`;
+  const lines = wrapText(ctx, displayText, maxBubbleW - paddingX * 2);
+  ctx.font = `bold ${nameSize}px "Noto Serif SC", serif`;
+  const speakerLabel = entry.speaker || '对话';
+  const speakerWidth = ctx.measureText(speakerLabel).width;
+  ctx.font = `${fontSize}px "ZCOOL XiaoWei", "Noto Serif SC", serif`;
+
+  const contentWidth = Math.max(
+    ...lines.map(line => ctx.measureText(line).width),
+    speakerWidth + 28 / camera.zoom
+  );
+  const bubbleW = Math.min(maxBubbleW, contentWidth + paddingX * 2);
+  const bubbleH = paddingY * 2 + lines.length * lineH + nameSize + 12 / camera.zoom;
+  const bx = anchor.x - bubbleW / 2;
+  const by = anchor.y - bubbleH - 52 / camera.zoom;
+  const tailX = anchor.x;
+  const tailTopY = by + bubbleH - 2 / camera.zoom;
+  const tailTipY = anchor.y - 8 / camera.zoom;
+
+  ctx.beginPath();
+  ctx.moveTo(tailX - 10 / camera.zoom, tailTopY);
+  ctx.lineTo(tailX, tailTipY);
+  ctx.lineTo(tailX + 10 / camera.zoom, tailTopY);
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(36, 22, 12, 0.9)';
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.moveTo(bx + cornerR, by);
+  ctx.lineTo(bx + bubbleW - cornerR, by);
+  ctx.arcTo(bx + bubbleW, by, bx + bubbleW, by + cornerR, cornerR);
+  ctx.lineTo(bx + bubbleW, by + bubbleH - cornerR);
+  ctx.arcTo(bx + bubbleW, by + bubbleH, bx + bubbleW - cornerR, by + bubbleH, cornerR);
+  ctx.lineTo(bx + cornerR, by + bubbleH);
+  ctx.arcTo(bx, by + bubbleH, bx, by + bubbleH - cornerR, cornerR);
+  ctx.lineTo(bx, by + cornerR);
+  ctx.arcTo(bx, by, bx + cornerR, by, cornerR);
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(36, 22, 12, 0.9)';
+  ctx.shadowColor = 'rgba(0,0,0,0.42)';
+  ctx.shadowBlur = 16 / camera.zoom;
+  ctx.fill();
+  ctx.shadowBlur = 0;
+
+  ctx.strokeStyle = `rgba(210, 168, 84, ${0.75 + pulse * 0.2})`;
+  ctx.lineWidth = 1.4 / camera.zoom;
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(bx + 12 / camera.zoom, by + 26 / camera.zoom);
+  ctx.lineTo(bx + bubbleW - 12 / camera.zoom, by + 26 / camera.zoom);
+  ctx.strokeStyle = 'rgba(210, 168, 84, 0.34)';
+  ctx.lineWidth = 1 / camera.zoom;
+  ctx.stroke();
+
+  ctx.font = `bold ${nameSize}px "Noto Serif SC", serif`;
+  ctx.fillStyle = '#f7d794';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'top';
+  ctx.fillText(speakerLabel, anchor.x, by + 8 / camera.zoom);
+
+  ctx.font = `${fontSize}px "ZCOOL XiaoWei", "Noto Serif SC", serif`;
+  ctx.fillStyle = 'rgba(255, 244, 220, 0.97)';
+  lines.forEach((line, i) => {
+    ctx.fillText(line, anchor.x, by + 18 / camera.zoom + nameSize + i * lineH);
+  });
+
+  ctx.beginPath();
+  ctx.arc(anchor.x, anchor.y - 2 / camera.zoom, (9 + pulse * 3) / camera.zoom, 0, Math.PI * 2);
+  ctx.fillStyle = `rgba(255, 210, 120, ${0.08 + pulse * 0.08})`;
+  ctx.fill();
+  ctx.restore();
+}
+
+function drawDialogueReplayBubble(ctx, now = Date.now()) {
+  if (!activeDialogueReplay || !mapData || !Array.isArray(activeDialogueReplay.scenes)) return;
+
+  for (const scene of activeDialogueReplay.scenes) {
+    drawDialogueReplayScene(ctx, scene, now);
+  }
 }
 
 // 将鼠标事件坐标转换为世界坐标
@@ -3338,15 +4117,28 @@ document.addEventListener('DOMContentLoaded', () => {
   // }
 });
 
+// 保存弹窗打开时的初始配置状态
+let initialConfigState = null;
+
 async function openSettingsModal() {
   document.getElementById('settingsModal').style.display = 'block';
   try {
     const res = await fetch('http://localhost:8000/api/config/model');
     if (res.ok) {
       const config = await res.json();
-      document.getElementById('settingsBaseUrl').value = config.base_url || '';
-      document.getElementById('settingsApiKey').value = config.api_key || '';
-      document.getElementById('settingsModel').value = config.model || '';
+      const base_url = config.base_url || '';
+      const api_key = config.api_key || '';
+      const model = config.model || '';
+      
+      document.getElementById('settingsBaseUrl').value = base_url;
+      document.getElementById('settingsApiKey').value = api_key;
+      document.getElementById('settingsModel').value = model;
+      
+      const ttsApiKey = localStorage.getItem('dashscope_tts_api_key') || '';
+      document.getElementById('settingsTtsApiKey').value = ttsApiKey;
+
+      // 记录初始状态以便比较
+      initialConfigState = { base_url, api_key, model, ttsApiKey };
     }
   } catch (e) {
     console.error('Failed to fetch settings:', e);
@@ -3355,15 +4147,51 @@ async function openSettingsModal() {
 
 function closeSettingsModal() {
   document.getElementById('settingsModal').style.display = 'none';
+  initialConfigState = null;
 }
 
 async function saveSettings() {
   const baseUrl = document.getElementById('settingsBaseUrl').value.trim();
   const apiKey = document.getElementById('settingsApiKey').value.trim();
   const model = document.getElementById('settingsModel').value.trim();
+  const ttsApiKey = document.getElementById('settingsTtsApiKey').value.trim();
+
+  // 检查是否发生变化
+  const hasChanges = !initialConfigState || 
+                     initialConfigState.base_url !== baseUrl || 
+                     initialConfigState.api_key !== apiKey || 
+                     initialConfigState.model !== model ||
+                     initialConfigState.ttsApiKey !== ttsApiKey;
+
+  // 如果没有修改配置，直接关闭弹窗即可，避免重启后端
+  if (!hasChanges) {
+    closeSettingsModal();
+    return;
+  }
+
+  // 立即保存前端特有配置
+  localStorage.setItem('dashscope_tts_api_key', ttsApiKey);
+
+  // 检查后端相关配置是否发生变化
+  const hasBackendChanges = !initialConfigState || 
+                     initialConfigState.base_url !== baseUrl || 
+                     initialConfigState.api_key !== apiKey || 
+                     initialConfigState.model !== model;
+
+  if (!hasBackendChanges) {
+    // 只有前端配置发生变化，不需要重启后端
+    alert(t('save_settings_success') || '保存成功！');
+    closeSettingsModal();
+    return;
+  }
 
   if (!apiKey) {
-    alert('请填写 API Key');
+    alert(t('error_no_api_key') || '请填写 API Key');
+    return;
+  }
+
+  // 发生变化时，提示用户修改配置会导致系统重启
+  if (!confirm(t('confirm_save_settings') || '修改模型配置将会重启后端服务，当前进度可能会中断。确定要保存并重启吗？')) {
     return;
   }
 
@@ -3374,15 +4202,15 @@ async function saveSettings() {
       body: JSON.stringify({ base_url: baseUrl, api_key: apiKey, model: model })
     });
     if (res.ok) {
-      alert('保存成功！后端正在自动重启以应用新配置，请稍候。');
+      alert(t('save_settings_success') || '保存成功！后端正在自动重启以应用新配置，请稍候。');
       isReconnectingAfterRestart = true;
       closeSettingsModal();
     } else {
-      alert('保存失败：' + (await res.text()));
+      alert((t('save_settings_error') || '保存失败：') + (await res.text()));
     }
   } catch (e) {
     console.error('Failed to save settings:', e);
-    alert('保存失败，请检查网络连接');
+    alert(t('save_settings_network_error') || '保存失败，请检查网络连接');
   }
 }
 

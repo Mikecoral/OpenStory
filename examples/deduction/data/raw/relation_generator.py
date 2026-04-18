@@ -31,7 +31,7 @@ def filter_relations_by_round(file_path, target_round):
 # --- Usage Example ---
 
 x = 50  # Assume current round is 50
-result = filter_relations_by_round(r'C:\Users\ziyji\project\SOS\examples\deduction\data\raw\relation.jsonl', x)
+result = filter_relations_by_round(r'', x)
 
 # Print result statistics
 print(f"Total relationships established at or before round {x}: {len(result)}")
@@ -42,7 +42,7 @@ for rel in result[:5]:
     print(json.dumps(rel, ensure_ascii=False))
 
 # If you need to save to a new file
-output_path = r'C:\Users\ziyji\project\SOS\examples\deduction\data\relations\relations.jsonl'
+output_path = r''
 # Create directory (if it does not exist)
 os.makedirs(os.path.dirname(output_path), exist_ok=True)
 with open(output_path, 'w', encoding='utf-8') as f_out:

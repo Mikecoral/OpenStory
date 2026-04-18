@@ -1,8 +1,13 @@
 ![Cover](assets/Cover.jpg)
-<h1 align="center" style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-  <img src="assets/logo.png" height="70" alt="Logo">
-  <span>OpenStory (Wanxiangpu)</span>
+<h1 align="center">
+  <img src="assets/logo.png" height="70" alt="Logo" align="absmiddle">&nbsp;OpenStory (Wanxiangpu)
 </h1>
+
+<div align="center">
+
+[English](README.md) | [简体中文](README_zh.md)
+
+</div>
 
 OpenStory is a multi-agent deduction and simulation framework developed based on Large Language Models (LLMs) and [Agent-Kernel](https://github.com/ZJU-LLMs/Agent-Kernel).
 
