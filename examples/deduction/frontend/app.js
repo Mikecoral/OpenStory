@@ -429,9 +429,16 @@ function connect() {
           console.log(`Agent '${msg.agent_id}' added and displayed.`);
         }
       } else if (msg.type === 'branch_tree') {
+        // 仅当树结构实际发生变化时才重新渲染，避免每次 tick 都闪烁刷新
+        const newTreeStr = JSON.stringify(msg.branches || []);
+        const oldTreeStr = JSON.stringify(branchTree);
+        const newBranchId = msg.current_branch_id ?? 0;
+        const branchIdChanged = newBranchId !== currentBranchId;
         branchTree = msg.branches || [];
-        currentBranchId = msg.current_branch_id ?? 0;
-        renderBranchTree();
+        currentBranchId = newBranchId;
+        if (newTreeStr !== oldTreeStr || branchIdChanged) {
+          renderBranchTree();
+        }
 
       } else if (msg.type === 'branch_created') {
         branchTree = msg.branches || [];
@@ -441,13 +448,39 @@ function connect() {
         viewingBranchId = -1;
         updateHistoryModeBanner();
         renderBranchTree();
+        // 刷新人物列表和详情面板，确保显示当前分支状态
+        renderAgentList();
+        if (selectedAgent && agentsData[selectedAgent]) {
+          renderDetail(selectedAgent);
+        }
 
       } else if (msg.type === 'view_tick_ack') {
         if (msg.data) {
           viewingTick = msg.tick;
           viewingBranchId = msg.branch_id;
           isViewingHistory = true;
-          applyAgentsData(msg.data, msg.tick);
+          // 替换 agentsData：完全用快照数据覆盖，清除不属于该快照的旧 agent
+          const newData = msg.data;
+          // 删除快照中不存在的旧 agent
+          Object.keys(agentsData).forEach(id => {
+            if (!newData[id]) delete agentsData[id];
+          });
+          // 重置被选中角色的天数视图，使其与快照 tick 对齐
+          if (selectedAgent && newData[selectedAgent]) {
+            const snapTick = newData[selectedAgent].current_tick ?? msg.tick;
+            viewDays[selectedAgent] = Math.floor(snapTick / 12) + 1;
+          }
+          applyAgentsData(newData, msg.tick);
+          // 强制刷新详情面板（applyHistoryTick 内部也会调用，此处是保险）
+          if (selectedAgent) {
+            if (agentsData[selectedAgent]) {
+              renderDetail(selectedAgent);
+            } else {
+              // 该角色不在此快照中，清空详情面板
+              const panel = document.getElementById('detailPanel');
+              if (panel) panel.innerHTML = '<div class="empty-state"><div class="empty-icon">卷</div><p>该角色在此时间线中尚未出现</p></div>';
+            }
+          }
           updateHistoryModeBanner();
           renderBranchTree();
         }
@@ -4325,6 +4358,7 @@ async function confirmReset() {
       alert('重置请求发送失败，请检查网络连接');
     }
   }
+}
 
 // ── Memory Tree Functions ──────────────────────────────────────────────────
 
@@ -4475,7 +4509,7 @@ function renderBranchTree() {
     const lastTick = Math.max(...ticks);
     const x = tickToX[lastTick] + NODE_R + 8;
     const y = branchToY[branch.id];
-    const label = branch.id === 0 ? '主线' : `分支${branch.id}`;
+    const label = `时间线${branch.id + 1}`;
     html += `<text x="${x}" y="${y + 4}" fill="${color}" font-size="9" opacity="0.7" pointer-events="none">${label}</text>`;
   });
 
@@ -4510,12 +4544,11 @@ function renderBranchLegend() {
   if (!legend || !branchTree) return;
   legend.innerHTML = branchTree.map(branch => {
     const color = BRANCH_COLORS[branch.id % BRANCH_COLORS.length];
-    const label = branch.id === 0 ? '主线' : `分支${branch.id}`;
+    const label = `时间线${branch.id + 1}`;
     const active = branch.id === currentBranchId ? ' (当前)' : '';
     return `<div class="branch-legend-item">
       <div class="branch-legend-dot" style="background:${color}"></div>
       <span>${label}${active}</span>
     </div>`;
   }).join('');
-}
 }

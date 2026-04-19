@@ -76,7 +76,8 @@ function openPlayerDetail() {
 }
 
 // ===== 目标面板：分数更新 =====
-function updateGoalPanel(score, events) {
+// forHistory=true：只更新显示，不触发胜负判断
+function updateGoalPanel(score, events, forHistory = false) {
   if (score === undefined || score === null) return;
 
   // Remove the initial "等待推演开始" placeholder on first real update
@@ -133,9 +134,21 @@ function updateGoalPanel(score, events) {
     while (list.children.length > 30) list.removeChild(list.lastChild);
   }
 
-  // 胜负判断
-  if (score >= 100) showGameResult(true);
-  else if (score <= 0) showGameResult(false);
+  // 胜负判断（历史查看模式下不触发）
+  if (!forHistory) {
+    if (score >= 100) showGameResult(true);
+    else if (score <= 0) showGameResult(false);
+  }
+}
+
+// 用快照中的历史事件（newest-first 数组）重建目标面板
+function restoreGoalPanelFromSnapshot(score, eventsNewestFirst) {
+  if (score === null || score === undefined) return;
+  const list = document.getElementById('goalEventsList');
+  if (list) list.innerHTML = '';
+  // insertBefore(firstChild) 会把每个新条目置顶，所以需从最旧到最新依次添加
+  const eventsOldestFirst = (eventsNewestFirst || []).slice().reverse();
+  updateGoalPanel(score, eventsOldestFirst, true);
 }
 
 // ===== 胜负结局 =====
@@ -221,6 +234,7 @@ let activeDialogueReplay = null; // 当前地图上的自动循环对话回放�
 
 let tickHistory = []; // 记录已经模拟的 tick 数据历史
 let currentHistoryIndex = -1; // 当前展示的历史索引
+let _simulationAgentsSynced = false; // 首次 tick_update 后同步一次 agentsData 与实际模拟角色
 
 // ── 回溯树 / 分支状态 ──────────────────────────────────────────────────────────
 const BRANCH_COLORS = [
@@ -576,6 +590,24 @@ function connect() {
         if (statusDot) {
           statusDot.className = 'status-dot connected';
         }
+      } else if (msg.type === 'game_reset') {
+        // Backend flushed Redis for a new game session (may have wiped the player character
+        // that was registered before the flush). Re-register so the backend can proceed.
+        if (playerCharacter) {
+          fetch('http://localhost:8001/story/set_player', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(playerCharacter)
+          }).catch(e => console.warn('Re-register player after game_reset failed:', e));
+        }
+      } else if (msg.type === 'simulation_ready') {
+        // Backend tick loop is now waiting for user input — enable the start button.
+        if (!pendingTickData) {
+          const startBtn = document.getElementById('startTickBtn');
+          if (startBtn) startBtn.disabled = false;
+          const statusTxt = document.getElementById('statusText');
+          if (statusTxt) statusTxt.textContent = '已连接';
+        }
       } else if (msg.type === 'story_score_update') {
         // 剧情模式：稳定度分数更新
         updateGoalPanel(msg.story_score, msg.score_events || []);
@@ -654,6 +686,13 @@ function connect() {
         isViewingHistory = false;
         viewingTick = -1;
         viewingBranchId = -1;
+        // 重置稳定度面板到 fork 点的历史分数
+        if (msg.restored_score !== null && msg.restored_score !== undefined) {
+          restoreGoalPanelFromSnapshot(msg.restored_score, msg.restored_events || []);
+        } else {
+          const list = document.getElementById('goalEventsList');
+          if (list) list.innerHTML = '';
+        }
         updateHistoryModeBanner();
         renderBranchTree();
         renderAgentList();
@@ -674,6 +713,10 @@ function connect() {
             viewDays[selectedAgent] = Math.floor(snapTick / 12) + 1;
           }
           applyAgentsData(newData, msg.tick);
+          // 恢复该历史节点的稳定度分数与事件列表
+          if (msg.score !== null && msg.score !== undefined) {
+            restoreGoalPanelFromSnapshot(msg.score, msg.score_events || []);
+          }
           if (selectedAgent) {
             if (agentsData[selectedAgent]) {
               renderDetail(selectedAgent);
@@ -734,6 +777,24 @@ let citizenSpriteNames = ['市民1', '市民2', '市民3', '市民4', '市民5']
 let lastCitizenSpawnTime = 0;
 const CITIZEN_SPAWN_INTERVAL = 2000; // 每2秒尝试生成一个市民
 const MAX_CITIZENS = 20; // 最多同时存在的市民数量
+
+// 首次 tick_update 时，将 agentsData 与实际模拟角色同步：
+// 删除预加载进来但后端没有实际运行的角色（如孙悟空未被选中时）。
+// 自定义角色（isCustom: true）不删除。
+function syncSimulationAgents(tickData) {
+  if (_simulationAgentsSynced || !tickData) return;
+  _simulationAgentsSynced = true;
+  const simulationIds = new Set(Object.keys(tickData));
+  Object.keys(agentsData).forEach(id => {
+    if (!simulationIds.has(id)) {
+      const isCustom = agentsData[id] && agentsData[id].profile && agentsData[id].profile.isCustom;
+      if (!isCustom) {
+        delete agentsData[id];
+        delete agentIdleStates[id];
+      }
+    }
+  });
+}
 
 function mergeData(data) {
   if (!data) return;
@@ -872,7 +933,9 @@ function setStatus(state) {
     }
     if (startBtn && applyBtn) {
       const canApply = !!pendingTickData;
-      startBtn.disabled = canApply;
+      // startTickBtn is only re-enabled via simulation_ready, not on mere WS connect,
+      // to prevent the user from clicking before the backend tick loop is ready.
+      startBtn.disabled = true;
       applyBtn.disabled = !canApply;
     }
     if (addAgentBtn) addAgentBtn.disabled = false;
@@ -1003,6 +1066,7 @@ function applyPendingTick() {
       currentTick = msg.tick;
       document.getElementById('tickNum').textContent = msg.tick >= 0 ? msg.tick : '—';
       if (msg.tick >= 0) document.getElementById('simDate').textContent = timeString;
+      syncSimulationAgents(msg.data);
       mergeData(msg.data);
       // 新 tick 数据应用后，所有 agent 标记为有新行动，并生成事件气泡
       Object.keys(agentsData).forEach(id => agentsWithNewAction.add(id));
@@ -1028,6 +1092,7 @@ function applyPendingTick() {
     currentTick = msg.tick;
     document.getElementById('tickNum').textContent = msg.tick >= 0 ? msg.tick : '—';
     if (msg.tick >= 0) document.getElementById('simDate').textContent = timeString;
+    syncSimulationAgents(msg.data);
     mergeData(msg.data);
     Object.keys(agentsData).forEach(id => agentsWithNewAction.add(id));
     buildEventBubbles();
@@ -2420,6 +2485,9 @@ async function loadInitialProfiles() {
     characters.forEach(char => {
       const id = char.id;
       if (!id) return;
+      // Skip 孙悟空 unless the player selected them — backend excludes them from the simulation
+      // when not selected, so preloading would show a ghost character until first tick_update.
+      if (id === '孙悟空' && (!playerCharacter || playerCharacter.id !== id)) return;
       initialData[id] = {
         profile: {
           ...char,
@@ -4590,6 +4658,11 @@ function exitHistoryView() {
   isViewingHistory = false;
   viewingTick = -1;
   viewingBranchId = -1;
+  // Notify backend to clear _viewing_tick so next Start Simulation continues
+  // the current branch rather than forking from the previously viewed tick.
+  if (ws && ws.readyState === WebSocket.OPEN) {
+    ws.send(JSON.stringify({ type: 'reset_view' }));
+  }
   updateHistoryModeBanner();
   if (tickHistory.length > 0) {
     applyHistoryTick(tickHistory[tickHistory.length - 1]);
@@ -4609,7 +4682,23 @@ function updateHistoryModeBanner() {
   if (!banner) return;
   if (isViewingHistory && viewingTick !== -1) {
     banner.style.display = 'flex';
-    if (bannerText) bannerText.textContent = `⏪ 正在查看 Tick ${viewingTick} · 点击"开始推演"将从此处创建新分支`;
+    // Compute the frontier tick of the viewed branch to determine what Start will do.
+    const currentBranch = branchTree.find(b => b.id === currentBranchId);
+    const lastTickOfCurrentBranch = currentBranch && currentBranch.ticks.length > 0
+      ? Math.max(...currentBranch.ticks) : -1;
+    const viewedBranch = branchTree.find(b => b.id === viewingBranchId);
+    const lastTickOfViewedBranch = viewedBranch && viewedBranch.ticks.length > 0
+      ? Math.max(...viewedBranch.ticks) : -1;
+    const isAtCurrentFrontier = viewingBranchId === currentBranchId
+      && viewingTick === lastTickOfCurrentBranch;
+    const isAtOtherFrontier = viewingBranchId !== currentBranchId
+      && viewingTick === lastTickOfViewedBranch;
+    const msg = isAtCurrentFrontier
+      ? `⏩ 正在查看 Tick ${viewingTick} · 点击"开始推演"将在此时间线继续`
+      : isAtOtherFrontier
+        ? `↩ 正在查看 Tick ${viewingTick} · 点击"开始推演"将切换至此时间线并继续`
+        : `⏪ 正在查看 Tick ${viewingTick} · 点击"开始推演"将从此处创建新分支`;
+    if (bannerText) bannerText.textContent = msg;
     if (innerBanner) innerBanner.style.display = 'flex';
     if (innerText) innerText.textContent = `正在查看 Tick ${viewingTick}`;
   } else {
