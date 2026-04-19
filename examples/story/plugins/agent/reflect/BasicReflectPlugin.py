@@ -110,6 +110,22 @@ class BasicReflectPlugin(ReflectPlugin):
             if not current_action:
                 return  # 无行动记录，跳过
 
+            # 若本 agent 是被动参与者（occupied_by 指向另一个 agent），
+            # 则该行动的发起方已经评分，跳过，防止重复计分。
+            occupied_by = await state_plugin.get_state('occupied_by')
+            if occupied_by:
+                if isinstance(occupied_by, str):
+                    import json as _j
+                    try:
+                        occupied_by = _j.loads(occupied_by)
+                    except Exception:
+                        occupied_by = None
+                if isinstance(occupied_by, dict):
+                    occupier = occupied_by.get('occupier')
+                    if occupier and occupier != self.agent_id:
+                        logger.debug(f"[{self.agent_id}][{current_tick}] Skipping score eval: passive participant (occupied by {occupier})")
+                        return
+
             prompt = f"""你是大观园复兴稳定度的评判官。请根据以下人物的行动，判断这个行动对复兴大观园的贡献。
 
 复兴大观园目标：修缮大观园建筑、聚拢人心、恢复往日诗意与繁荣。
@@ -358,6 +374,10 @@ class BasicReflectPlugin(ReflectPlugin):
         try:
             state_component = self._component.agent.get_component("state")
             state_plugin = state_component.get_plugin()
+
+            # 若已被标记为非活跃，直接返回 True，不再重复扣分
+            if not await state_plugin.is_active():
+                return True
 
             short_memories = await state_plugin.get_short_term_memory()
             if not short_memories:
