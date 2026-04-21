@@ -2360,11 +2360,26 @@ function finishLoadingAnimation() {
 
 // ===== Init =====
 // ======== 新增：剧情模式选人逻辑 ========
-function enterStoryModeSetup() {
-  // 隐藏左侧主菜单，显示选人浮层
-  document.getElementById('modeMenuContainer').style.display = 'none';
-  document.getElementById('characterSelectionScreen').classList.remove('hidden');
-  renderPlayerSelection();
+async function enterStoryModeSetup() {
+  const btn = document.querySelector('.mode-btn');
+  const originalText = btn ? btn.innerHTML : '';
+  if (btn) btn.innerHTML = '<span>剧情模式启动中…</span>';
+
+  try {
+    const resp = await fetch('/api/launch-story', { method: 'POST' });
+    const data = await resp.json();
+    if (data.status === 'timeout') {
+      alert('剧情模式服务启动超时，请检查后端日志。');
+      if (btn) btn.innerHTML = originalText;
+      return;
+    }
+  } catch (e) {
+    alert('无法连接到后端服务。');
+    if (btn) btn.innerHTML = originalText;
+    return;
+  }
+
+  window.location.href = 'http://localhost:8001/frontend/character_select.html';
 }
 
 function backToModeSelection() {
@@ -4467,6 +4482,22 @@ async function confirmReset() {
   }
 }
 
+async function returnToMainMenu() {
+  if (!confirm('确认返回主菜单？\n当前推演进度将重置，所有记忆和状态将清空。')) return;
+  try {
+    const res = await fetch('http://localhost:8000/api/reset', { method: 'POST' });
+    if (!res.ok) { alert('重置失败：' + (await res.text())); return; }
+  } catch (e) {
+    alert('重置请求发送失败，请检查网络连接');
+    return;
+  }
+  clearTimeout(reconnectTimer);
+  if (ws) { ws.close(); ws = null; }
+  document.getElementById('appCoreUI').classList.add('hidden');
+  document.getElementById('modeSelectionScreen').classList.remove('hidden');
+}
+window.returnToMainMenu = returnToMainMenu;
+
 // ── Memory Tree Functions ──────────────────────────────────────────────────
 
 function toggleMemoryTree() {
@@ -4740,11 +4771,6 @@ function skipPlayerTurn() {
 // 修改现有的 enterStoryModeSetup 和 enterFreeMode 逻辑
 // 控制全局推演按钮的显示与隐藏
 // ==========================================
-
-const originalEnterStoryModeSetup = window.enterStoryModeSetup;
-window.enterStoryModeSetup = function() {
-  if(originalEnterStoryModeSetup) originalEnterStoryModeSetup();
-};
 
 const originalSelectPlayerCharacter = window.selectPlayerCharacter;
 window.selectPlayerCharacter = async function(name) {
