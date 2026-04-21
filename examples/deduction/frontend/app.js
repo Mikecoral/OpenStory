@@ -4492,7 +4492,12 @@ async function returnToMainMenu() {
     return;
   }
   clearTimeout(reconnectTimer);
-  if (ws) { ws.close(); ws = null; }
+  isReconnectingAfterRestart = false;
+  if (ws) {
+    ws.onclose = null;
+    ws.close();
+    ws = null;
+  }
   document.getElementById('appCoreUI').classList.add('hidden');
   document.getElementById('modeSelectionScreen').classList.remove('hidden');
 }
