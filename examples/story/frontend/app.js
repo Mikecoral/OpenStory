@@ -4643,6 +4643,8 @@ async function returnToMainMenu() {
     alert('重置请求发送失败，请检查网络连接');
     return;
   }
+  clearTimeout(reconnectTimer);
+  if (ws) { ws.onclose = null; ws.close(); ws = null; }
   window.location.href = 'http://localhost:8000/frontend/index.html';
 }
 window.returnToMainMenu = returnToMainMenu;
