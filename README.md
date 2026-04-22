@@ -9,7 +9,7 @@
 
 </div>
 
-## ⭐ Key News
+## 🌟 Key News
 
 ✨ **New Story Mode for *Dream of the Red Chamber* is now available!**  
 We have added a new plot mode for *Dream of the Red Chamber*, allowing you to experience the story through a more guided and event-driven gameplay flow. In this mode, you can follow major plot beats, watch how characters react and influence one another, and explore how different choices or evolving situations may reshape the narrative.
