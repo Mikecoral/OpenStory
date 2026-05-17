@@ -1,0 +1,70 @@
+{
+  "fields": [
+    {
+      "name": "on_actor",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "on_target",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "on_environment",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "trust_level_change",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "house_points_change",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "surveillance_level_change",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "capture_risk_change",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "resistance_reputation_change",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "alarm_triggered",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "magical_trace_left",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "location_safety_change",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

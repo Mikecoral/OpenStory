@@ -1,0 +1,19 @@
+name: PersonalityDim
+traits:
+  type: list_str
+values:
+  type: list_str
+speech_style:
+  type: str
+moral_alignment:
+  type: str
+  option: true
+paranoia_level:
+  type: str
+  option: true
+devotion_to_resistance:
+  type: str
+  option: true
+suspicion_index:
+  type: str
+  option: true

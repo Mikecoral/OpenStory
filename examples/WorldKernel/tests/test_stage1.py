@@ -199,7 +199,7 @@ def _validate_plan(session_dir: Path, stats: _Stats) -> None:
 
 def _validate_templates(session_dir: Path, stats: _Stats) -> None:
     _sep("templates/")
-    expected_dims = {"character": 9, "location": 5, "institution": 6,
+    expected_dims = {"character": 10, "location": 5, "institution": 6,
                      "rule": 4, "action": 4, "relation": 2}
 
     templates_dir = session_dir / "generated" / "templates"

@@ -1,0 +1,26 @@
+name: StateDim
+location:
+  type: LocationRef
+position:
+  type: Position
+current_control_status:
+  type: str
+  option: true
+is_under_scrutiny:
+  type: str
+  option: true
+safe_house_location:
+  type: str
+  option: true
+is_in_hiding:
+  type: str
+  option: true
+LocationRef:
+  location_id:
+    type: str
+    ref: location
+Position:
+  x:
+    type: float
+  y:
+    type: float

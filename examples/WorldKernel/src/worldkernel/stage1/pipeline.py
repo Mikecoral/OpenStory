@@ -99,32 +99,105 @@ def _save_templates(templates_dir: Path, templates: dict[str, EntityTemplate]) -
             _save_json(ent_dir / f"{dim_name}.json", dim_data.model_dump())
 
 
+_AGENT_YAML_TEMPLATE = """\
+# ============================================================
+#  Agent 全局配置模版
+#  定义 Agent 实体的维度组成，每个维度引用独立的类型定义文件
+#  此文件结构固定，不随世界变化
+# ============================================================
+
+name: Agent
+entity_type: character
+
+dimensions:
+
+  # ── 角色档案 ──────────────────────────────────────────────
+  profile:
+    identity:       IdentityDim
+    social_profile: SocialProfileDim
+    capabilities:   CapabilitiesDim
+
+  # ── 性格特质 ──────────────────────────────────────────────
+  personality:
+    personality:    PersonalityDim
+
+  # ── 价值观与记忆 ──────────────────────────────────────────
+  values:
+    goals:          GoalsDim
+    memories:       MemoriesDim
+
+  # ── 运行时状态 ──────────────────────────────────────────────
+  state:
+    state:          StateDim
+"""
+
+_AGENT_DIMS = ["identity", "social_profile", "capabilities",
+               "personality", "goals", "memories", "state"]
+
+_FIELD_GROUPS: dict[str, list[tuple[str, str, list[tuple[str, str]]]]] = {
+    "state": [
+        ("LocationRef", "location", [("location_id", "location_id")]),
+        ("Position", "position", [("position_x", "x"), ("position_y", "y")]),
+    ],
+    "memories": [
+        ("KnowledgeBase", "knowledge",
+         [("world_knowledge", "world_knowledge"), ("social_knowledge", "social_knowledge")]),
+    ],
+}
+
+
+def _build_dim_yaml(dim_name: str, fields: list) -> dict:
+    dim_title = dim_name.title().replace("_", "")
+    content: dict = {"name": f"{dim_title}Dim"}
+
+    groups = _FIELD_GROUPS.get(dim_name, [])
+    grouped_names: set[str] = set()
+    sub_type_defs: list[tuple[str, dict]] = []
+
+    for sub_type_name, parent_field, members in groups:
+        grouped_names.update(orig for orig, _ in members)
+        content[parent_field] = {"type": sub_type_name}
+
+        sub_def: dict = {}
+        for orig_name, new_name in members:
+            field = next((f for f in fields if f.name == orig_name), None)
+            if field:
+                entry: dict = {"type": field.type}
+                if field.ref:
+                    entry["ref"] = field.ref
+                sub_def[new_name] = entry
+        sub_type_defs.append((sub_type_name, sub_def))
+
+    for f in fields:
+        if f.name in grouped_names:
+            continue
+        entry: dict = {"type": f.type}
+        if f.ref:
+            entry["ref"] = f.ref
+        if not f.required:
+            entry["option"] = True
+        content[f.name] = entry
+
+    for sub_name, sub_def in sub_type_defs:
+        content[sub_name] = sub_def
+
+    return content
+
+
 def _save_agent_config(configs_dir: Path, templates: dict[str, EntityTemplate]) -> None:
-    """从生成的 character 模版自动导出 Agent config（分层结构）。"""
     char_template = templates.get("character")
     if not char_template:
         return
 
-    dim_names = list(char_template.dimensions.keys())
-    config = {
-        "name": "Agent",
-        "entity_type": "character",
-        "dimensions": {
-            name: {"type": f"{name.title().replace('_', '')}Dim", "required": True}
-            for name in dim_names
-        },
-    }
-
     configs_dir.mkdir(parents=True, exist_ok=True)
-    _save_yaml(configs_dir / "agent.yaml", config)
+    (configs_dir / "agent.yaml").write_text(_AGENT_YAML_TEMPLATE, encoding="utf-8")
 
     dims_dir = configs_dir / "dims"
     dims_dir.mkdir(parents=True, exist_ok=True)
-    for dim_name, dim_data in char_template.dimensions.items():
-        dim_fields = []
-        for f in dim_data.fields:
-            field_entry: dict = {"name": f.name, "type": f.type, "required": f.required}
-            if f.ref:
-                field_entry["ref"] = f.ref
-            dim_fields.append(field_entry)
-        _save_yaml(dims_dir / f"{dim_name}.yaml", {"fields": dim_fields})
+
+    for dim_name in _AGENT_DIMS:
+        dim_data = char_template.dimensions.get(dim_name)
+        if not dim_data:
+            continue
+        dim_content = _build_dim_yaml(dim_name, dim_data.fields)
+        _save_yaml(dims_dir / f"{dim_name}.yaml", dim_content)

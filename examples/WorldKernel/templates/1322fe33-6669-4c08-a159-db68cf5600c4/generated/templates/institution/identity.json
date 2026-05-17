@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "secret_identity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "cover_organization",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "existence_period_in_dark_times",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

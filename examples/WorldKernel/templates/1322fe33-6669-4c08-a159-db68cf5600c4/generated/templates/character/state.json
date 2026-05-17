@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "location_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "position_x",
+      "type": "float",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "position_y",
+      "type": "float",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "current_control_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_under_scrutiny",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "safe_house_location",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_in_hiding",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "seed_id": "ginny_weasley",
+    "name": "金妮·韦斯莱",
+    "entity_type": "character",
+    "importance": "major",
+    "source_type": "canonical",
+    "confidence": 0.99,
+    "generation_priority": 1,
+    "role_in_world": "格兰芬多六年级生，DA核心，抵抗组织中活跃的行动者"
+  },
+  {
+    "seed_id": "neville_longbottom",
+    "name": "纳威·隆巴顿",
+    "entity_type": "character",
+    "importance": "core",
+    "source_type": "canonical",
+    "confidence": 0.99,
+    "generation_priority": 1,
+    "role_in_world": "格兰芬多学生，DA公开领袖，带领在校生对抗卡罗兄妹"
+  },
+  {
+    "seed_id": "luna_lovegood",
+    "name": "卢娜·洛夫古德",
+    "entity_type": "character",
+    "importance": "major",
+    "source_type": "canonical",
+    "confidence": 0.99,
+    "generation_priority": 1,
+    "role_in_world": "拉文克劳学生，DA成员，多次在危险中传递情报"
+  },
+  {
+    "seed_id": "draco_malfoy",
+    "name": "德拉科·马尔福",
+    "entity_type": "character",
+    "importance": "major",
+    "source_type": "canonical",
+    "confidence": 0.99,
+    "generation_priority": 2,
+    "role_in_world": "斯莱特林学生，因父母压力被迫继续效忠但仍犹豫不定的灰色人物"
+  },
+  {
+    "seed_id": "crabbe_v",
+    "name": "文森特·克拉布",
+    "entity_type": "character",
+    "importance": "minor",
+    "source_type": "canonical",
+    "confidence": 0.98,
+    "generation_priority": 3,
+    "role_in_world": "斯莱特林学生，马尔福的助手，参与食死徒活动"
+  },
+  {
+    "seed_id": "goyle",
+    "name": "格雷戈里·高尔",
+    "entity_type": "character",
+    "importance": "minor",
+    "source_type": "canonical",
+    "confidence": 0.98,
+    "generation_priority": 3,
+    "role_in_world": "马尔福的另一跟班，执行暴力的帮凶"
+  },
+  {
+    "seed_id": "pansy_parkinson",
+    "name": "潘西·帕金森",
+    "entity_type": "character",
+    "importance": "minor",
+    "source_type": "canonical",
+    "confidence": 0.98,
+    "generation_priority": 3,
+    "role_in_world": "斯莱特林女生，支持马尔福并告密"
+  }
+]

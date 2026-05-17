@@ -1,0 +1,32 @@
+[
+  {
+    "seed_id": "severus_snape",
+    "name": "西弗勒斯·斯内普",
+    "entity_type": "character",
+    "importance": "core",
+    "source_type": "canonical",
+    "confidence": 0.99,
+    "generation_priority": 1,
+    "role_in_world": "傀儡校长，双面间谍，表面残酷实际保护学生并执行邓布利多遗命"
+  },
+  {
+    "seed_id": "amicus_carrow",
+    "name": "阿米库斯·卡罗",
+    "entity_type": "character",
+    "importance": "core",
+    "source_type": "canonical",
+    "confidence": 0.99,
+    "generation_priority": 1,
+    "role_in_world": "食死徒教授，黑魔法防御课教师，对学生使用钻心咒，残酷施压"
+  },
+  {
+    "seed_id": "alecto_carrow",
+    "name": "阿莱克托·卡罗",
+    "entity_type": "character",
+    "importance": "core",
+    "source_type": "canonical",
+    "confidence": 0.99,
+    "generation_priority": 1,
+    "role_in_world": "食死徒教授，麻瓜研究课教师，强行灌输纯血统理论，监控学生思想"
+  }
+]

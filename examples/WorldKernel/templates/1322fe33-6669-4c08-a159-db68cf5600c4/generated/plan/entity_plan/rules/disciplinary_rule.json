@@ -1,0 +1,32 @@
+[
+  {
+    "seed_id": "curse_punishment",
+    "name": "钻心咒惩罚条例",
+    "entity_type": "rule",
+    "importance": "core",
+    "source_type": "canonical",
+    "confidence": 0.97,
+    "generation_priority": 1,
+    "role_in_world": "阿米库斯·卡罗在课堂上对违纪学生使用钻心剜骨，以示威慑"
+  },
+  {
+    "seed_id": "detention_forest",
+    "name": "禁林关禁闭",
+    "entity_type": "rule",
+    "importance": "major",
+    "source_type": "canonical",
+    "confidence": 0.95,
+    "generation_priority": 2,
+    "role_in_world": "费尔奇带学生去禁林做苦工，夜晚危险重重"
+  },
+  {
+    "seed_id": "points_abuse",
+    "name": "学院分滥用扣罚",
+    "entity_type": "rule",
+    "importance": "minor",
+    "source_type": "inferred",
+    "confidence": 0.9,
+    "generation_priority": 3,
+    "role_in_world": "食死徒教师随意扣分，打压非斯莱特林学院"
+  }
+]

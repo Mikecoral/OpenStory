@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "skills",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "weaknesses",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "magical_specialty",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "exceptional_ability",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "forbidden_arts_proficiency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "known_patronus",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

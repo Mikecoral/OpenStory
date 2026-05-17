@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "leader",
+      "type": "str",
+      "required": true,
+      "ref": "character"
+    },
+    {
+      "name": "rules",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "decision_process",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "internal_discipline_style",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "punishment_for_betrayal",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "communication_channel_security",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "decision_transparency_to_members",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

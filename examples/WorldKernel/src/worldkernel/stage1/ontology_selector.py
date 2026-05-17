@@ -45,6 +45,9 @@ _FIXED_DIMENSIONS: dict[str, dict[str, list[FieldDef]]] = {
         "state":          [_f("location_id", ref="location"), _f("position_x", "float"), _f("position_y", "float")],
         "visual":         [_f("visual_description"), _f("visual_prompt")],
         "social_profile": [_f("group_id", ref="institution"), _f("reputation")],
+        "memories":       [_f("background_summary"), _f("key_events", "list_str"),
+                           _f("world_knowledge", "list_str"), _f("social_knowledge", "list_str"),
+                           _f("secrets", "list_str")],
         "relations":      [_f("relation_ids", "list_str", ref="relation")],
     },
     "location": {

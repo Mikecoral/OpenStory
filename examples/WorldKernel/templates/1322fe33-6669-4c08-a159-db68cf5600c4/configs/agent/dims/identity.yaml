@@ -1,0 +1,21 @@
+name:
+  type: str
+id:
+  type: str
+role:
+  type: str
+house:
+  type: str
+  option: true
+blood_status:
+  type: str
+  option: true
+year_of_study:
+  type: str
+  option: true
+official_role_title:
+  type: str
+  option: true
+secret_faction:
+  type: str
+  option: true

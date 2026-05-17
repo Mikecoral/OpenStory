@@ -1,0 +1,19 @@
+name: GoalsDim
+short_term_goal:
+  type: str
+long_term_goal:
+  type: str
+motivation:
+  type: str
+hidden_objective:
+  type: str
+  option: true
+survival_priority:
+  type: str
+  option: true
+rebellion_assignment:
+  type: str
+  option: true
+escape_plan_stage:
+  type: str
+  option: true

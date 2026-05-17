@@ -1,0 +1,32 @@
+[
+  {
+    "seed_id": "headmasters_office",
+    "name": "校长办公室",
+    "entity_type": "location",
+    "importance": "core",
+    "source_type": "canonical",
+    "confidence": 0.99,
+    "generation_priority": 1,
+    "role_in_world": "斯内普的统治中心，墙上挂着历任校长画像，包括邓布利多（假像）"
+  },
+  {
+    "seed_id": "filchs_office",
+    "name": "费尔奇办公室",
+    "entity_type": "location",
+    "importance": "major",
+    "source_type": "canonical",
+    "confidence": 0.97,
+    "generation_priority": 2,
+    "role_in_world": "存放没收物品和禁闭记录，洛丽丝夫人协助监视"
+  },
+  {
+    "seed_id": "staff_room",
+    "name": "员工休息室",
+    "entity_type": "location",
+    "importance": "major",
+    "source_type": "inferred",
+    "confidence": 0.9,
+    "generation_priority": 3,
+    "role_in_world": "教工课间聚谈处，麦格、弗立维等教授暗中交换情报"
+  }
+]
