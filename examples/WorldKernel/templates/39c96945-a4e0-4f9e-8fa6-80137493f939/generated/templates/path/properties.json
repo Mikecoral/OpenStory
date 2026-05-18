@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "distance",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "travel_time",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visibility",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "has_magical_traps",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "requires_invisibility",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "patrolled_by_portraits_ghosts",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "lighting_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "acoustic_magic_effects",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

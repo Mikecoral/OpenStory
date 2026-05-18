@@ -1,0 +1,26 @@
+dim_name: EdgeDim
+id:
+  type: str
+from_id:
+  type: str
+to_id:
+  type: str
+type:
+  type: str
+direction:
+  type: str
+relation_subtype:
+  type: str
+  option: true
+is_direct:
+  type: str
+  option: true
+hierarchy_gap:
+  type: str
+  option: true
+ritual_obligation:
+  type: str
+  option: true
+cause_effect_link:
+  type: str
+  option: true

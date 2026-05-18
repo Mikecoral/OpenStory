@@ -1,0 +1,36 @@
+{
+  "steps": [
+    {
+      "step_id": "generate_locations",
+      "generator_type": "location_generator",
+      "target_entity_type": "location",
+      "batch_size": 8,
+      "priority": 1,
+      "description": "生成所有地点实体，包括贵族府邸、私家园林、宗教场所、家族学堂、市井街巷和外姓府邸"
+    },
+    {
+      "step_id": "generate_paths",
+      "generator_type": "path_generator",
+      "target_entity_type": "path",
+      "batch_size": 5,
+      "priority": 2,
+      "description": "生成地点之间的路径和通道，如府内甬道、园内小径、街巷连接"
+    },
+    {
+      "step_id": "generate_characters",
+      "generator_type": "character_generator",
+      "target_entity_type": "character",
+      "batch_size": 8,
+      "priority": 3,
+      "description": "生成所有角色实体，涵盖贵族主子、小姐、丫鬟、仆役、僧道和文人官员"
+    },
+    {
+      "step_id": "generate_relations",
+      "generator_type": "relation_generator",
+      "target_entity_type": "relation",
+      "batch_size": 8,
+      "priority": 4,
+      "description": "生成角色之间的关系，包括血缘、主仆、姻亲、师生、恩怨等"
+    }
+  ]
+}

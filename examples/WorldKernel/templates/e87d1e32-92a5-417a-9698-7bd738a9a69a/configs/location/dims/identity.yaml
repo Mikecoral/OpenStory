@@ -1,0 +1,24 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+description:
+  type: str
+user_type:
+  type: str
+  option: true
+associated_character:
+  type: str
+  option: true
+literary_reference:
+  type: str
+  option: true
+ritual_significance:
+  type: str
+  option: true
+name_origin_poem:
+  type: str
+  option: true

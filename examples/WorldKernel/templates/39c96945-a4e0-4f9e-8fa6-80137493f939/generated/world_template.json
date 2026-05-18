@@ -1,0 +1,409 @@
+{
+  "primary": "magic_school",
+  "secondary": "fortress_siege",
+  "confidence": 0.98,
+  "tags": [
+    "魔法",
+    "学院",
+    "反抗",
+    "战争",
+    "黑暗时期",
+    "衍生",
+    "霍格沃茨"
+  ],
+  "world_name": "霍格沃茨魔法学院",
+  "world_origin_summary": "衍生自《哈利·波特与死亡圣器》时期，伏地魔通过食死徒掌控霍格沃茨，师生在高压下秘密抵抗并最终迎来决战。",
+  "scope": "single_location",
+  "simulation_start": {
+    "time_point": "1997-1998学年开学",
+    "trigger_event": "斯内普就任校长，卡罗兄妹担任黑魔法防御术与麻瓜研究教授，学院进入恐怖统治期",
+    "year": "1997",
+    "narrative_context": "邓布利多死后，魔法部被食死徒渗透，霍格沃茨成为伏地魔政权监控核心，学生与少数教职工暗中组建抵抗网络。"
+  },
+  "location_archetypes": [
+    {
+      "type_id": "teaching_space",
+      "type_name": "教学空间",
+      "description": "承载日间课程与惩罚的教室，因新教授引入残酷教学方式而成为恐惧来源。",
+      "common_fields": [
+        "subject",
+        "professor_id",
+        "capacity",
+        "access_level",
+        "blocked_spells"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "dark_arts_classroom",
+          "name": "黑魔法防御术教室",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "阿米库斯·卡罗对违纪学生施钻心咒的主要场所"
+        }
+      ]
+    },
+    {
+      "type_id": "communal_space",
+      "type_name": "公共区域",
+      "description": "全校师生聚集用餐、集会与社交的核心空间，也是新政权宣布法令的场合。",
+      "common_fields": [
+        "capacity",
+        "access_level",
+        "typical_events",
+        "security_presence"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "great_hall",
+          "name": "大礼堂",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "每日晚餐时卡罗兄妹当众惩罚学生的公开舞台"
+        }
+      ]
+    },
+    {
+      "type_id": "dormitory",
+      "type_name": "宿舍区",
+      "description": "各学院学生住宿及小团体活动的私密空间，入口设口令保护，抵抗组织常在此秘密集会。",
+      "common_fields": [
+        "house",
+        "capacity",
+        "security_level",
+        "common_room_features"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "gryffindor_tower",
+          "name": "格兰芬多塔楼公共休息室",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.96,
+          "generation_priority": 2,
+          "role_in_world": "纳威·隆巴顿等DA核心成员策划抵抗的据点"
+        }
+      ]
+    },
+    {
+      "type_id": "outdoor_space",
+      "type_name": "户外区域",
+      "description": "城堡周围的场地、禁林、湖与温室，既提供自然庇护，也是禁闭惩罚和危险生物出没之处。",
+      "common_fields": [
+        "area_type",
+        "hazard_level",
+        "wildlife",
+        "access_restriction"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "forbidden_forest",
+          "name": "禁林",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 2,
+          "role_in_world": "海格暗中庇护受伤学生及凤凰社信使的隐蔽通道"
+        }
+      ]
+    },
+    {
+      "type_id": "hidden_area",
+      "type_name": "隐藏空间",
+      "description": "仅被少数人知晓的密室、通道和房间，用于秘密集会、存放违禁品或躲避搜查。",
+      "common_fields": [
+        "discovery_method",
+        "security_measures",
+        "known_occupants"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "room_of_requirement",
+          "name": "有求必应屋（DA总部）",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.95,
+          "generation_priority": 1,
+          "role_in_world": "邓布利多军秘密练习防御魔法与组织抵抗的核心地点"
+        }
+      ]
+    },
+    {
+      "type_id": "utility_facility",
+      "type_name": "功能服务区",
+      "description": "提供餐饮、医疗、清洁等后勤服务的区域，家养小精灵在此工作，有时也被用于藏匿。",
+      "common_fields": [
+        "service_type",
+        "staff",
+        "hours",
+        "restricted_items"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "kitchen",
+          "name": "霍格沃茨厨房",
+          "importance": "minor",
+          "source_type": "canonical",
+          "confidence": 0.92,
+          "generation_priority": 3,
+          "role_in_world": "家养小精灵多比（赴死前）协助传递食物与情报"
+        }
+      ]
+    }
+  ],
+  "character_archetypes": [
+    {
+      "type_id": "student",
+      "type_name": "学生",
+      "description": "在食死徒高压管制下坚持学业的年轻巫师，多数人恐惧服从，少数人秘密组织抵抗。",
+      "common_fields": [
+        "house",
+        "year",
+        "blood_status",
+        "da_member",
+        "family_allegiance"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "neville_longbottom",
+          "name": "纳威·隆巴顿",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "DA实际领袖，在父母遭受迫害后成长为反抗核心"
+        }
+      ]
+    },
+    {
+      "type_id": "faculty",
+      "type_name": "教职工",
+      "description": "在恐怖统治下留守的教授和员工，有的被迫合作，有的暗中保护学生，有的伺机反抗。",
+      "common_fields": [
+        "subject",
+        "loyalty",
+        "teaching_years",
+        "allegiance"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "minerva_mcgonagall",
+          "name": "米勒娃·麦格",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "格兰芬多院长兼变形术教授，秘密保护学生并最终领导城堡防御战"
+        }
+      ]
+    },
+    {
+      "type_id": "death_eater_controller",
+      "type_name": "食死徒管控者",
+      "description": "伏地魔直接安插在霍格沃茨的暴力执行者，负责监视、惩罚与思想控制。",
+      "common_fields": [
+        "rank",
+        "cruelty_level",
+        "surveillance_area",
+        "master_affiliation"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "amycus_carrow",
+          "name": "阿米库斯·卡罗",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.97,
+          "generation_priority": 1,
+          "role_in_world": "在课堂上随意对学生施放钻心咒的食死徒教授"
+        }
+      ]
+    },
+    {
+      "type_id": "resident_spirit",
+      "type_name": "幽灵与画像",
+      "description": "城堡中非实体的永久居民，可传递信息、提供历史支持，但食死徒对它们施以严密监控。",
+      "common_fields": [
+        "location_bounds",
+        "era_origin",
+        "loyalty",
+        "communication_method"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "nearly_headless_nick",
+          "name": "差点没头的尼克",
+          "importance": "minor",
+          "source_type": "canonical",
+          "confidence": 0.93,
+          "generation_priority": 3,
+          "role_in_world": "格兰芬多塔楼的常驻幽灵，偶尔传递学生被困消息"
+        }
+      ]
+    },
+    {
+      "type_id": "house_elf",
+      "type_name": "家养小精灵",
+      "description": "受缚于魔法契约的奴仆种族，在厨房工作，部分觉醒个体积极帮助抵抗运动。",
+      "common_fields": [
+        "master",
+        "service_area",
+        "freedom_status",
+        "language"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "dobby",
+          "name": "多比",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.95,
+          "generation_priority": 2,
+          "role_in_world": "效力于霍格沃茨厨房的自由小精灵，冒险帮助哈利一行"
+        }
+      ]
+    },
+    {
+      "type_id": "order_member",
+      "type_name": "凤凰社密使",
+      "description": "邓布利多死后继续反抗伏地魔的地下组织成员，有时潜入城堡执行任务或传递消息。",
+      "common_fields": [
+        "code_name",
+        "mission_type",
+        "cover_identity",
+        "combat_ability"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "kingsley_shacklebolt",
+          "name": "金斯莱·沙克尔",
+          "importance": "minor",
+          "source_type": "canonical",
+          "confidence": 0.94,
+          "generation_priority": 3,
+          "role_in_world": "通过秘密通道与麦格教授联络指挥外部抵抗行动"
+        }
+      ]
+    }
+  ],
+  "rule_archetypes": [
+    {
+      "type_id": "disciplinary_rule",
+      "type_name": "纪律惩罚规则",
+      "description": "新政权设立的恶劣惩罚条款，允许教职工对违规学生直接使用不可饶恕咒进行惩戒。",
+      "common_fields": [
+        "enforcer",
+        "punishment_type",
+        "trigger_condition",
+        "severity",
+        "exception_group"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "unforgivable_detention",
+          "name": "以钻心咒作为禁闭处罚",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 1,
+          "role_in_world": "卡罗兄妹维持恐怖统治的核心手段，迫使多数学生不敢反抗"
+        }
+      ]
+    },
+    {
+      "type_id": "access_control",
+      "type_name": "准入与出行管控",
+      "description": "严格限制师生在城堡内外的活动时间与范围，夜间禁足，特定区域需校级许可。",
+      "common_fields": [
+        "restricted_area",
+        "time_range",
+        "detection_method",
+        "bypass_known"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "curfew_after_supper",
+          "name": "晚餐后宵禁",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.96,
+          "generation_priority": 1,
+          "role_in_world": "严重阻碍DA成员夜间集会与行动自由"
+        }
+      ]
+    },
+    {
+      "type_id": "curriculum_rule",
+      "type_name": "课程与教学规则",
+      "description": "被迫修改的课程大纲，强调黑魔法实战与麻瓜研究歧视性内容，减少防御术理论。",
+      "common_fields": [
+        "subject",
+        "required_level",
+        "practical_test",
+        "textbook_restriction"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "banned_defensive_spells",
+          "name": "禁止教授防御性咒语",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.95,
+          "generation_priority": 2,
+          "role_in_world": "使学生对食死徒的袭击基本无还手之力，加速培养顺从者"
+        }
+      ]
+    },
+    {
+      "type_id": "surveillance_rule",
+      "type_name": "监控与告密规则",
+      "description": "卡罗兄妹安插学生眼线，鼓励相互举报，建立贯穿全院的告密网络。",
+      "common_fields": [
+        "monitoring_method",
+        "reward_type",
+        "target_group",
+        "false_report_penalty"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "snitch_reward",
+          "name": "告密者奖励制度",
+          "importance": "major",
+          "source_type": "inferred",
+          "confidence": 0.88,
+          "generation_priority": 2,
+          "role_in_world": "分化学生群体，使狼人、混血种等边缘学生更易被背叛"
+        }
+      ]
+    }
+  ],
+  "world_constraints": [
+    {
+      "constraint_id": "magical_secrecy",
+      "name": "魔法世界保密法",
+      "description": "所有巫师社群必须向麻瓜隐藏魔法存在，霍格沃茨的骚乱与战斗不得被麻瓜察觉。",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "death_eater_occupation",
+      "name": "食死徒占领导致的信任危机",
+      "description": "斯内普作为名义校长受伏地魔直接管辖，卡罗兄妹掌握实际生杀大权；师生言论与行动时刻处于被监视状态，公开反抗即遭严厉报复。",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "castle_ancient_magic",
+      "name": "霍格沃茨古老防御魔法",
+      "description": "城堡本身存在反幻影移形、禁制麻瓜进入等固有规则；部分走廊和房间对特定人开放，且城堡有自我意志（如移动楼梯、秘密房间），新政权无法完全控制。",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "blood_purity_ideology",
+      "name": "血统纯正主义社会压迫",
+      "description": "伏地魔政权公开推行纯血统至上，麻瓜出身巫师被视为非法，狼人、混血同等情况恶化，校内的非纯血学生面临强制登记或驱逐威胁。",
+      "scope": "global"
+    }
+  ]
+}

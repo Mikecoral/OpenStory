@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "members",
+      "type": "list_str",
+      "required": true,
+      "ref": "character"
+    },
+    {
+      "name": "roles",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "entry_criteria",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "bloodline_requirement",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "gender_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "age_threshold",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "servant_class_exclusion",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

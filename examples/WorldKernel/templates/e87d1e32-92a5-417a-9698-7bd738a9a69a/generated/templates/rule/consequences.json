@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "penalties",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "rewards_for_compliance",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_impact",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "supernatural_cause",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reputation_effect",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "family_standing_change",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

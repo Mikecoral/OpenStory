@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "current_state",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "ownership",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "capacity",
+      "type": "int",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "functional_alteration_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "physical_condition",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "hidden_content_flag",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "atmosphere_gauge",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "alarm_magic_activation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "occupancy_trend",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

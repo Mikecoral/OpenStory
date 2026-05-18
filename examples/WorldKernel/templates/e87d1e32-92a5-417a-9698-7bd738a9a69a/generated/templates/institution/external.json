@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "relations_to_others",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "court_favor_rating",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "monastic_patronage",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "intermarriage_alliance_web",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "official_censor_watch",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

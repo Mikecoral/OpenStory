@@ -1,0 +1,22 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+is_secret_tunnel:
+  type: str
+  option: true
+is_monitored:
+  type: str
+  option: true
+is_blocked:
+  type: str
+  option: true
+requires_password_or_item:
+  type: str
+  option: true
+name_in_history:
+  type: str
+  option: true

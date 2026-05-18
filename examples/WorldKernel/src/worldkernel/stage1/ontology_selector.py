@@ -25,6 +25,7 @@ _SYSTEM = (
 _ENTITY_NAMES: dict[str, str] = {
     "character":   "人物/角色（Character）",
     "location":    "地点/场所（Location）",
+    "path":        "地点路径/通道（Path）",
     "relation":    "关系（Relation）",
     "institution": "机构/组织（Institution）",
     "rule":        "规则/法规（Rule）",
@@ -84,6 +85,13 @@ _FIXED_DIMENSIONS: dict[str, dict[str, list[FieldDef]]] = {
         "effects":       [_f("on_actor"), _f("on_target"), _f("on_environment")],
         "costs":         [_f("time"), _f("resources"), _f("social_cost")],
     },
+    "path": {
+        "identity":   [_f("id"), _f("name"), _f("type")],
+        "endpoints":  [_f("from_id", ref="location"), _f("to_id", ref="location"),
+                       _f("bidirectional", "bool")],
+        "properties": [_f("distance"), _f("travel_time"), _f("visibility")],
+        "conditions": [_f("access_level"), _f("danger_level"), _f("required_items")],
+    },
 }
 
 
@@ -95,6 +103,26 @@ def _format_dimensions(entity_key: str) -> str:
     return "\n".join(lines)
 
 
+def _parse_extra_field(raw: str) -> FieldDef:
+    """解析 LLM 返回的 extra 字段字符串，提取 name 和 type。
+
+    支持格式：
+      "field_name"
+      "field_name: type"
+      "field_name: type (description)"
+    """
+    name = raw.split("(")[0].strip()
+    field_type = "str"
+    if ":" in name:
+        parts = name.split(":", 1)
+        name = parts[0].strip()
+        type_part = parts[1].strip()
+        if type_part in ("str", "int", "float", "bool", "list_str"):
+            field_type = type_part
+    name = name.replace(" ", "_").lower()
+    return FieldDef(name=name, type=field_type, required=False)
+
+
 def _build_entity_template(entity_key: str, llm_data: dict) -> EntityTemplate:
     fixed_dims = _FIXED_DIMENSIONS[entity_key]
     raw_dims = llm_data.get("dimensions", {})
@@ -104,8 +132,8 @@ def _build_entity_template(entity_key: str, llm_data: dict) -> EntityTemplate:
         extra_names = dim_raw.get("extra") or dim_raw.get("special") or []
         existing_names = {f.name for f in fixed_fields}
         extra_fields = [
-            FieldDef(name=n, type="str", required=False)
-            for n in extra_names if n not in existing_names
+            _parse_extra_field(n)
+            for n in extra_names if n.split(":")[0].split("(")[0].strip() not in existing_names
         ]
         dimensions[dim_name] = TemplateDimension(fields=list(fixed_fields) + extra_fields)
     return EntityTemplate(dimensions=dimensions)

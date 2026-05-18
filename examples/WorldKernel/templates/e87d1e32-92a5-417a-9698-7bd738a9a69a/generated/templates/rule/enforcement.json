@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "enforcer",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "mechanism",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "detectability",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "surveillance_method",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "public_awareness",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "enforcement_consistency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "discretion_scope",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

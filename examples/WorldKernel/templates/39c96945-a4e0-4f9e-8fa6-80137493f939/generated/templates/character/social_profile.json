@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "group_id",
+      "type": "str",
+      "required": true,
+      "ref": "institution"
+    },
+    {
+      "name": "reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "faction_role",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "ally_ids",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "enemy_ids",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "informant_network_rank",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "trust_level_by_faction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

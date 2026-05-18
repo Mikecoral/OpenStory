@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "architectural_style",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "color_scheme",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "natural_features",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "decorative_motif",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "lighting_description",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

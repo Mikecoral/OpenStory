@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "usurped_headmaster_portrait",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "forbidden_symbols_and_banners",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "code_name_in_resistance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

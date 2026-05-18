@@ -1,0 +1,28 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "facial_features",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dress_style",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

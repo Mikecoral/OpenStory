@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "strength",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "emotional_bond",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "interest_tie",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "karma_weight",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dependence_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "conflict_potential",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

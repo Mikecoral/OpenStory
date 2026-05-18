@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "dark_mark",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "injury_or_scar",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "disguise_features",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "distinctive_magical_aura",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

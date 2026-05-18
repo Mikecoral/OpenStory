@@ -1,0 +1,16 @@
+dim_name: PersonalityDim
+traits:
+  type: list_str
+values:
+  type: list_str
+speech_style:
+  type: str
+fate_trait:
+  type: str
+  option: true
+literary_allusion:
+  type: str
+  option: true
+emotional_tendency:
+  type: str
+  option: true

@@ -62,5 +62,7 @@ def _extract_json(text: str) -> str:
         elif ch == close_ch:
             depth -= 1
             if depth == 0:
-                return text[start:i + 1]
+                result = text[start:i + 1]
+                result = re.sub(r',\s*([}\]])', r'\1', result)
+                return result
     return text

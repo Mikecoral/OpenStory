@@ -1,0 +1,24 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+description:
+  type: str
+forbidden_alias_in_terror_era:
+  type: str
+  option: true
+associated_key_event:
+  type: str
+  option: true
+faction_affiliation:
+  type: str
+  option: true
+dark_mark_branding:
+  type: str
+  option: true
+historical_significance_change:
+  type: str
+  option: true
