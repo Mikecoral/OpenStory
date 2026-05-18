@@ -1,0 +1,42 @@
+[
+  {
+    "seed_id": "gryffindor_common_room",
+    "name": "格兰芬多公共休息室",
+    "entity_type": "location",
+    "importance": "core",
+    "source_type": "canonical",
+    "confidence": 0.99,
+    "generation_priority": 1,
+    "role_in_world": "抵抗组织核心成员（如纳威、卢娜）的秘密集结点"
+  },
+  {
+    "seed_id": "slytherin_common_room",
+    "name": "斯莱特林公共休息室",
+    "entity_type": "location",
+    "importance": "major",
+    "source_type": "canonical",
+    "confidence": 0.99,
+    "generation_priority": 2,
+    "role_in_world": "食死徒学生和告密者聚集地，卡罗兄妹常在此安插眼线"
+  },
+  {
+    "seed_id": "ravenclaw_common_room",
+    "name": "拉文克劳公共休息室",
+    "entity_type": "location",
+    "importance": "major",
+    "source_type": "canonical",
+    "confidence": 0.99,
+    "generation_priority": 2,
+    "role_in_world": "中立氛围中藏着少量抵抗力量，卢娜与鹰院同学的会面处"
+  },
+  {
+    "seed_id": "hufflepuff_common_room",
+    "name": "赫奇帕奇公共休息室",
+    "entity_type": "location",
+    "importance": "major",
+    "source_type": "canonical",
+    "confidence": 0.99,
+    "generation_priority": 2,
+    "role_in_world": "许多默默支持抵抗的赫奇帕奇学生在此传递信息"
+  }
+]

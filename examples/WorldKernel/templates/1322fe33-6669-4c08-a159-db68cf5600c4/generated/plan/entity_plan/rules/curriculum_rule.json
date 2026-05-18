@@ -1,0 +1,32 @@
+[
+  {
+    "seed_id": "dark_compulsory",
+    "name": "黑魔法防御课强制化",
+    "entity_type": "rule",
+    "importance": "core",
+    "source_type": "canonical",
+    "confidence": 0.99,
+    "generation_priority": 1,
+    "role_in_world": "所有学生必须学习不可饶恕咒，并在实践中相互施咒"
+  },
+  {
+    "seed_id": "muggle_studies_indoctrination",
+    "name": "麻瓜研究洗脑课程",
+    "entity_type": "rule",
+    "importance": "major",
+    "source_type": "canonical",
+    "confidence": 0.99,
+    "generation_priority": 2,
+    "role_in_world": "阿莱克托·卡罗灌输麻瓜低劣论，强制学生举报麻瓜出身者"
+  },
+  {
+    "seed_id": "subject_monitoring",
+    "name": "课堂内容监督",
+    "entity_type": "rule",
+    "importance": "minor",
+    "source_type": "inferred",
+    "confidence": 0.9,
+    "generation_priority": 4,
+    "role_in_world": "食死徒安插眼线（如级长）记录教师授课言论"
+  }
+]

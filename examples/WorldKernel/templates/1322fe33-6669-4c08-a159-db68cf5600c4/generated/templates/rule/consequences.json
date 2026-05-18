@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "penalties",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "rewards_for_compliance",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_visibility_of_penalty",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "penalty_cruelty_scale",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "slytherin_exemption_flag",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "cumulative_multi_penalty_flag",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reward_privilege_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "informant_bonus_option",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

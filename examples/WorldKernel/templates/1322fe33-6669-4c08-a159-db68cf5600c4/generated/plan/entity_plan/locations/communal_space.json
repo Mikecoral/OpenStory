@@ -1,0 +1,42 @@
+[
+  {
+    "seed_id": "great_hall",
+    "name": "大礼堂",
+    "entity_type": "location",
+    "importance": "core",
+    "source_type": "canonical",
+    "confidence": 0.99,
+    "generation_priority": 1,
+    "role_in_world": "全校集合、用餐和宣布新政令的中心场所，食死徒势力昭彰"
+  },
+  {
+    "seed_id": "entrance_hall",
+    "name": "门厅",
+    "entity_type": "location",
+    "importance": "major",
+    "source_type": "canonical",
+    "confidence": 0.97,
+    "generation_priority": 2,
+    "role_in_world": "师生日常通行节点，费尔奇常在此盘查出入人员"
+  },
+  {
+    "seed_id": "kitchens",
+    "name": "厨房",
+    "entity_type": "location",
+    "importance": "major",
+    "source_type": "canonical",
+    "confidence": 0.93,
+    "generation_priority": 3,
+    "role_in_world": "家养小精灵的工作区域，抵抗组织偶尔绕过宵禁来此获取补给"
+  },
+  {
+    "seed_id": "astronomy_tower",
+    "name": "天文塔顶",
+    "entity_type": "location",
+    "importance": "minor",
+    "source_type": "canonical",
+    "confidence": 0.96,
+    "generation_priority": 3,
+    "role_in_world": "占卜课场所，也是少数不受监控的户外空间，可用于秘密信号"
+  }
+]

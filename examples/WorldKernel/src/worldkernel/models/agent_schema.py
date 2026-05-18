@@ -64,10 +64,18 @@ class RelationsDim(BaseModel):
     relation_ids: list[str] = []
 
 
+class MemoriesDim(BaseModel):
+    background_summary: str = ""
+    key_events: list[str] = []
+    world_knowledge: list[str] = []
+    social_knowledge: list[str] = []
+    secrets: list[str] = []
+
+
 # ── Agent 聚合类 ─────────────────────────────────────────────────────
 
 class AgentEntity(BaseModel):
-    """一个完整的 Agent 实例，由 9 个维度组成。"""
+    """一个完整的 Agent 实例，由 10 个维度组成。"""
     identity: IdentityDim
     personality: PersonalityDim = PersonalityDim()
     capabilities: CapabilitiesDim = CapabilitiesDim()
@@ -76,6 +84,7 @@ class AgentEntity(BaseModel):
     state: StateDim = StateDim()
     visual: VisualDim = VisualDim()
     social_profile: SocialProfileDim = SocialProfileDim()
+    memories: MemoriesDim = MemoriesDim()
     relations: RelationsDim = RelationsDim()
 
 

@@ -1,0 +1,26 @@
+name: MemoriesDim
+knowledge:
+  type: KnowledgeBase
+background_summary:
+  type: str
+key_events:
+  type: list_str
+secrets:
+  type: list_str
+traumatic_event:
+  type: str
+  option: true
+clandestine_meeting:
+  type: str
+  option: true
+evidence_of_resistance:
+  type: str
+  option: true
+snapes_encounter:
+  type: str
+  option: true
+KnowledgeBase:
+  world_knowledge:
+    type: list_str
+  social_knowledge:
+    type: list_str

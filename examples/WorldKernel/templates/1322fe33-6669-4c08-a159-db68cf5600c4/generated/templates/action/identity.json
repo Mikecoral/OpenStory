@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "category",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "requires_magic",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "associated_house",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_black_magic",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_resistance_activity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_authorized_by_carrow",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

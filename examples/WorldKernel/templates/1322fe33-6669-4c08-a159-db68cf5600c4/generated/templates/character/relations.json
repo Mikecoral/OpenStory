@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "relation_ids",
+      "type": "list_str",
+      "required": true,
+      "ref": "relation"
+    },
+    {
+      "name": "secret_allies",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "relational_trust_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dependency_chain",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "blackmail_lever",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

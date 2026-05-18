@@ -1,0 +1,22 @@
+[
+  {
+    "seed_id": "library",
+    "name": "图书馆",
+    "entity_type": "location",
+    "importance": "core",
+    "source_type": "canonical",
+    "confidence": 0.99,
+    "generation_priority": 1,
+    "role_in_world": "平斯夫人管控的区域，禁书区被封锁，但抵抗学生偷偷查阅魂器资料"
+  },
+  {
+    "seed_id": "restricted_section",
+    "name": "禁书区",
+    "entity_type": "location",
+    "importance": "major",
+    "source_type": "canonical",
+    "confidence": 0.98,
+    "generation_priority": 2,
+    "role_in_world": "存放黑魔法书籍，被费尔奇加强监管，但哈利等人曾潜入获取失踪冠冕线索"
+  }
+]

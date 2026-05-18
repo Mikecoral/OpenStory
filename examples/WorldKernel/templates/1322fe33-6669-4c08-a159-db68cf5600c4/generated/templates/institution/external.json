@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "relations_to_others",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "enemy_faction_list",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "alliance_network_members",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "public_cover_story",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "actual_perception_by_hostile_force",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}
