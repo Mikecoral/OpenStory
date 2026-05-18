@@ -1,0 +1,22 @@
+dim_name: AccessDim
+permissions:
+  type: str
+access_level:
+  type: str
+access_conditions:
+  type: str
+time_restriction:
+  type: str
+  option: true
+gender_restriction:
+  type: str
+  option: true
+rank_requirement:
+  type: str
+  option: true
+special_event_only:
+  type: str
+  option: true
+guest_permission:
+  type: str
+  option: true

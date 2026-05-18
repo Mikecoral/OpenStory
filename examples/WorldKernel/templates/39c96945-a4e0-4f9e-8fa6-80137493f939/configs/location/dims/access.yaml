@@ -1,0 +1,28 @@
+dim_name: AccessDim
+permissions:
+  type: str
+access_level:
+  type: str
+access_conditions:
+  type: str
+curfew_restriction:
+  type: str
+  option: true
+password_rotation_policy:
+  type: str
+  option: true
+death_eater_guard_presence:
+  type: str
+  option: true
+anti_apparition_charm_coverage:
+  type: str
+  option: true
+surveillance_portrait_network:
+  type: str
+  option: true
+muggleborn_exclusion_flag:
+  type: str
+  option: true
+secret_passage_availability:
+  type: str
+  option: true

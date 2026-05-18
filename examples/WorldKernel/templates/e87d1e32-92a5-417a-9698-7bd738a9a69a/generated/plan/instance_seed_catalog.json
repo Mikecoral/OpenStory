@@ -1,0 +1,579 @@
+{
+  "session_id": "e87d1e32-92a5-417a-9698-7bd738a9a69a",
+  "instance_seeds": {
+    "location": [
+      {
+        "seed_id": "ning_guo_mansion",
+        "name": "宁国府",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "贾氏宗族长房府邸，家族重大事务的中心",
+        "archetype_id": "noble_residence"
+      },
+      {
+        "seed_id": "rong_guo_mansion",
+        "name": "荣国府",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "贾宝玉等主要人物居住地，大观园兴建后的依托",
+        "archetype_id": "noble_residence"
+      },
+      {
+        "seed_id": "jia_she_courtyard",
+        "name": "贾赦别院",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "贾赦一族聚居之处，体现荣府内部的等级分化",
+        "archetype_id": "noble_residence"
+      },
+      {
+        "seed_id": "jia_zhen_compound",
+        "name": "贾珍正院",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "宁国府核心院落，秦可卿丧礼等重要事件发生地",
+        "archetype_id": "noble_residence"
+      },
+      {
+        "seed_id": "grand_view_garden",
+        "name": "大观园",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "省亲别墅与女儿国，象征理想与幻灭的核心空间",
+        "archetype_id": "private_garden"
+      },
+      {
+        "seed_id": "xiao_xiang_guan",
+        "name": "潇湘馆",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "林黛玉居所，以竹为魂，烘托其才情与悲剧命运",
+        "archetype_id": "private_garden"
+      },
+      {
+        "seed_id": "heng_wu_yuan",
+        "name": "蘅芜苑",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "薛宝钗居所，香草环绕，象征其端庄与世俗智慧",
+        "archetype_id": "private_garden"
+      },
+      {
+        "seed_id": "yi_hong_yuan",
+        "name": "怡红院",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "贾宝玉居所，海棠与芭蕉映衬其爱红与性情",
+        "archetype_id": "private_garden"
+      },
+      {
+        "seed_id": "dao_xiang_cun",
+        "name": "稻香村",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "李纨居所，田园风格，反映其守节与教子生活",
+        "archetype_id": "private_garden"
+      },
+      {
+        "seed_id": "long_cui_an",
+        "name": "栊翠庵",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "妙玉修行之地，佛门清净与红梅傲雪的对比",
+        "archetype_id": "private_garden"
+      },
+      {
+        "seed_id": "tie_kan_temple",
+        "name": "铁槛寺",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "贾府家庙，秦可卿停灵、送殡的重要场所",
+        "archetype_id": "religious_site"
+      },
+      {
+        "seed_id": "shui_yue_nunnery",
+        "name": "水月庵",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "贾府香火庵，茉莉粉蔷薇硝事件发源地",
+        "archetype_id": "religious_site"
+      },
+      {
+        "seed_id": "qing_xu_view",
+        "name": "清虚观",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "神前打醮之处，张道士点明姻缘的舞台",
+        "archetype_id": "religious_site"
+      },
+      {
+        "seed_id": "jia_clan_school",
+        "name": "贾氏族学",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "贾家子弟读书科考之地，也暗藏龙蛇混杂",
+        "archetype_id": "family_school"
+      },
+      {
+        "seed_id": "ning_rong_street",
+        "name": "宁荣街",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 3,
+        "role_in_world": "宁荣二府门前大街，市集与仪仗的公共空间",
+        "archetype_id": "street_market"
+      },
+      {
+        "seed_id": "xiao_hua_zhi_lane",
+        "name": "小花枝巷",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.8,
+        "generation_priority": 3,
+        "role_in_world": "贾琏偷娶尤二姐的外宅私巷，体现风月与隐私",
+        "archetype_id": "street_market"
+      },
+      {
+        "seed_id": "lin_fu_mansion",
+        "name": "林府",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "林黛玉故乡，巡盐御史府邸，书香门第的象征",
+        "archetype_id": "other_clan_mansion"
+      },
+      {
+        "seed_id": "zhen_fu_mansion",
+        "name": "甄府",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "江南甄家，与贾家互为镜鉴，暗示盛极而衰",
+        "archetype_id": "other_clan_mansion"
+      },
+      {
+        "seed_id": "xue_fu_mansion",
+        "name": "薛府",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "薛姨妈寓居京城之所，燕窝等日常叙事的舞台",
+        "archetype_id": "other_clan_mansion"
+      },
+      {
+        "seed_id": "wang_fu_mansion",
+        "name": "王府",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "王子腾家族府邸，体现四大家族联姻关系",
+        "archetype_id": "other_clan_mansion"
+      }
+    ],
+    "character": [
+      {
+        "seed_id": "lady_dowager_jia",
+        "name": "贾母",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "贾府最高长辈，家族权威与温情并存的核心",
+        "archetype_id": "noble_master"
+      },
+      {
+        "seed_id": "jia_zheng",
+        "name": "贾政",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "荣国府当家人，科举出身的正统士大夫",
+        "archetype_id": "noble_master"
+      },
+      {
+        "seed_id": "jia_she",
+        "name": "贾赦",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "荣府长房，贪财好色的败家代表",
+        "archetype_id": "noble_master"
+      },
+      {
+        "seed_id": "jia_zhen",
+        "name": "贾珍",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "宁国府当家，荒淫无度引发家族丑闻",
+        "archetype_id": "noble_master"
+      },
+      {
+        "seed_id": "jia_lian",
+        "name": "贾琏",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 2,
+        "role_in_world": "荣府管家，风流好色却有一定能力",
+        "archetype_id": "noble_master"
+      },
+      {
+        "seed_id": "jia_bao_yu",
+        "name": "贾宝玉",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "衔玉而生的主角，反礼教、重情意的核心人物",
+        "archetype_id": "noble_master"
+      },
+      {
+        "seed_id": "jia_huan",
+        "name": "贾环",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 3,
+        "role_in_world": "庶子代表，自卑阴狠，推动家族内部矛盾",
+        "archetype_id": "noble_master"
+      },
+      {
+        "seed_id": "lin_dai_yu",
+        "name": "林黛玉",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "绛珠仙草化身，才情绝世与悲剧命运的核心载体",
+        "archetype_id": "noble_lady"
+      },
+      {
+        "seed_id": "xue_bao_chai",
+        "name": "薛宝钗",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "冷香丸主人，德言容工俱全的世俗理想女性",
+        "archetype_id": "noble_lady"
+      },
+      {
+        "seed_id": "jia_ying_chun",
+        "name": "贾迎春",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "二木头，懦弱顺从，最终被夫家虐待致死",
+        "archetype_id": "noble_lady"
+      },
+      {
+        "seed_id": "jia_tan_chun",
+        "name": "贾探春",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "精明能干的三小姐，兴利除弊却远嫁的悲剧",
+        "archetype_id": "noble_lady"
+      },
+      {
+        "seed_id": "jia_xi_chun",
+        "name": "贾惜春",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "最小小姐，孤介冷漠，最终遁入空门",
+        "archetype_id": "noble_lady"
+      },
+      {
+        "seed_id": "shi_xiang_yun",
+        "name": "史湘云",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "英豪阔大的侯门孤女，醉卧芍药的名场面的主角",
+        "archetype_id": "noble_lady"
+      },
+      {
+        "seed_id": "wang_xi_feng",
+        "name": "王熙凤",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "荣府实际管家，泼辣狠毒与才干并存的灵魂人物",
+        "archetype_id": "noble_lady"
+      },
+      {
+        "seed_id": "li_wan",
+        "name": "李纨",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "寡妇持家，诗社领袖，象征封建贞节与淡泊",
+        "archetype_id": "noble_lady"
+      },
+      {
+        "seed_id": "xi_ren",
+        "name": "袭人",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "宝玉首席丫鬟，温柔忠顺，暗中规劝与保护",
+        "archetype_id": "personal_maid"
+      },
+      {
+        "seed_id": "qing_wen",
+        "name": "晴雯",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "宝玉第二丫鬟，心比天高的反抗型丫鬟典型",
+        "archetype_id": "personal_maid"
+      },
+      {
+        "seed_id": "zi_juan",
+        "name": "紫鹃",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "黛玉贴身丫鬟，忠心耿耿，情同姐妹",
+        "archetype_id": "personal_maid"
+      },
+      {
+        "seed_id": "ying_er",
+        "name": "莺儿",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 3,
+        "role_in_world": "宝钗丫鬟，善编花络，体现宝钗系的精巧",
+        "archetype_id": "personal_maid"
+      },
+      {
+        "seed_id": "si_qi",
+        "name": "司棋",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 3,
+        "role_in_world": "迎春大丫鬟，刚烈爱情悲剧的主角",
+        "archetype_id": "personal_maid"
+      },
+      {
+        "seed_id": "ru_hua",
+        "name": "入画",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 3,
+        "role_in_world": "惜春丫鬟，因兄长寄存财物被逐",
+        "archetype_id": "personal_maid"
+      },
+      {
+        "seed_id": "jiao_da",
+        "name": "焦大",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "宁国府老仆，醉骂揭露贾府肮脏的叛逆者",
+        "archetype_id": "servant"
+      },
+      {
+        "seed_id": "lai_da",
+        "name": "赖大",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.85,
+        "generation_priority": 3,
+        "role_in_world": "荣府大管家，代表有身份的奴才阶层",
+        "archetype_id": "servant"
+      },
+      {
+        "seed_id": "liu_lao_lao",
+        "name": "刘姥姥",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "乡村老妪，三进荣国府，以局外人视角折射贵族生活",
+        "archetype_id": "servant"
+      },
+      {
+        "seed_id": "zhou_rui_home",
+        "name": "周瑞家的",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "冷子兴岳母，王夫人陪房，串联诸多日常事件",
+        "archetype_id": "servant"
+      },
+      {
+        "seed_id": "wu_xin_deng",
+        "name": "吴新登",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.8,
+        "generation_priority": 3,
+        "role_in_world": "库房总管，暗中倒卖物资的经手下人",
+        "archetype_id": "servant"
+      },
+      {
+        "seed_id": "bei_ming",
+        "name": "焙茗",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "宝玉贴身小厮，传递消息、陪同外出的得力助手",
+        "archetype_id": "servant"
+      },
+      {
+        "seed_id": "mang_mang_da_shi",
+        "name": "茫茫大士",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "携顽石入世的大和尚，超自然神力的代表",
+        "archetype_id": "monk_taoist"
+      },
+      {
+        "seed_id": "miao_miao_zhen_ren",
+        "name": "渺渺真人",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "与茫茫大士同行的道士，共同推动因果框架",
+        "archetype_id": "monk_taoist"
+      },
+      {
+        "seed_id": "miao_yu",
+        "name": "妙玉",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "栊翠庵带发修行的尼姑，孤高洁癖的金钗之一",
+        "archetype_id": "monk_taoist"
+      },
+      {
+        "seed_id": "zhen_shi_yin_man",
+        "name": "甄士隐（出家后）",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "看破红尘随仙而去，点化贾雨村的道士",
+        "archetype_id": "monk_taoist"
+      },
+      {
+        "seed_id": "tie_kan_monk",
+        "name": "铁槛寺僧",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "操办贾府丧仪的当家和尚",
+        "archetype_id": "monk_taoist"
+      },
+      {
+        "seed_id": "jia_yu_cun",
+        "name": "贾雨村",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "穷儒起家，官场钻营，贾府衰亡的旁观与推手",
+        "archetype_id": "scholar_official"
+      },
+      {
+        "seed_id": "zhen_shi_yin_civil",
+        "name": "甄士隐（在俗）",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "乡绅雅士，女儿被拐后出家，象征命运转折",
+        "archetype_id": "scholar_official"
+      },
+      {
+        "seed_id": "lin_ru_hai",
+        "name": "林如海",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "前科探花，巡盐御史，黛玉之父，为官清廉",
+        "archetype_id": "scholar_official"
+      },
+      {
+        "seed_id": "bei_jing_wang",
+        "name": "北静王",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "水溶，贤王，与宝玉交好，后赠鹡鸰香念珠",
+        "archetype_id": "scholar_official"
+      },
+      {
+        "seed_id": "wang_zi_teng",
+        "name": "王子腾",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "王夫人兄长，九省统制，外戚势力的顶峰",
+        "archetype_id": "scholar_official"
+      }
+    ]
+  }
+}

@@ -25,20 +25,25 @@ _SERVER_URL = "http://localhost:8100"
 
 _EXPECTED_PATHS = [
     "generated/world_template.json",
-    "generated/plan/steps.json",
     "generated/plan/ontology_hints.json",
-    "generated/plan/entity_plan/locations",
-    "generated/plan/entity_plan/characters",
-    "generated/plan/entity_plan/institutions",
-    "generated/plan/entity_plan/rules",
+    "generated/plan/instance_seed_catalog.json",
+    "generated/plan/execution_plan.json",
+    "generated/plan/world_background.json",
     "generated/templates/character/index.json",
     "generated/templates/location/index.json",
+    "generated/templates/path/index.json",
     "generated/templates/relation/index.json",
     "generated/templates/institution/index.json",
     "generated/templates/rule/index.json",
     "generated/templates/action/index.json",
     "configs/agent/agent.yaml",
     "configs/agent/dims",
+    "configs/location/location.yaml",
+    "configs/location/dims",
+    "configs/path/path.yaml",
+    "configs/path/dims",
+    "configs/relation/relation.yaml",
+    "configs/relation/dims",
 ]
 
 
@@ -94,7 +99,7 @@ def _wait_for_new_session(before: set[str], timeout: float = 600.0) -> str | Non
     return None
 
 
-def _wait_for_stable(session_dir: Path, timeout: float = 300.0) -> None:
+def _wait_for_stable(session_dir: Path, timeout: float = 600.0) -> None:
     """等待 session 目录文件数量稳定。"""
     t0 = time.time()
     prev_count = 0
@@ -154,53 +159,68 @@ def _validate_world_template(session_dir: Path, stats: _Stats) -> None:
 def _validate_plan(session_dir: Path, stats: _Stats) -> None:
     _sep("plan/")
 
-    steps = _load(session_dir, "generated/plan/steps.json")
-    if steps is None:
-        stats.fail("plan/steps.json 不存在")
-    elif len(steps) >= 2:
-        stats.ok(f"steps.json: {len(steps)} 个步骤")
-        s0 = steps[0]
-        if s0.get("step_id") and s0.get("generator_type"):
-            stats.ok(f"steps[0]: step_id={s0['step_id']}, generator_type={s0['generator_type']}")
-        else:
-            stats.fail("steps[0] 缺少 step_id 或 generator_type")
+    # execution_plan.json
+    ep = _load(session_dir, "generated/plan/execution_plan.json")
+    if ep is None:
+        stats.fail("execution_plan.json 不存在")
     else:
-        stats.fail(f"steps.json: 步骤数不足 ({len(steps)})")
+        steps = ep.get("steps", [])
+        if len(steps) >= 4:
+            stats.ok(f"execution_plan.json: {len(steps)} 个步骤")
+        else:
+            stats.fail(f"execution_plan.json: 步骤数不足 ({len(steps)}，期望 ≥4)")
+        if steps:
+            s0 = steps[0]
+            if s0.get("step_id") and s0.get("generator_type"):
+                stats.ok(f"steps[0]: step_id={s0['step_id']}, generator_type={s0['generator_type']}")
+            else:
+                stats.fail("steps[0] 缺少 step_id 或 generator_type")
 
+    # ontology_hints.json
     hints = _load(session_dir, "generated/plan/ontology_hints.json")
     if hints is None:
-        stats.fail("plan/ontology_hints.json 不存在")
+        stats.fail("ontology_hints.json 不存在")
     elif hints.get("character_hints"):
         stats.ok("ontology_hints.character_hints 非空")
     else:
         stats.fail("ontology_hints.character_hints 为空")
 
-    ep_dir = session_dir / "generated" / "plan" / "entity_plan"
-    for category in ("locations", "characters", "institutions", "rules"):
-        cat_dir = ep_dir / category
-        if not cat_dir.exists():
-            stats.fail(f"entity_plan/{category}/ 不存在")
-            continue
-        archetype_files = list(cat_dir.glob("*.json"))
-        if len(archetype_files) >= 2:
-            stats.ok(f"entity_plan/{category}/: {len(archetype_files)} 个 archetype 文件")
-        elif len(archetype_files) == 1:
-            stats.ok(f"entity_plan/{category}/: 1 个 archetype 文件（偏少）")
-        else:
-            stats.fail(f"entity_plan/{category}/: 无 archetype 文件")
-
-        if archetype_files:
-            seeds = json.loads(archetype_files[0].read_text(encoding="utf-8"))
-            if seeds and seeds[0].get("seed_id"):
-                stats.ok(f"entity_plan/{category}/{archetype_files[0].name}: seed_id 非空")
+    # instance_seed_catalog.json
+    catalog = _load(session_dir, "generated/plan/instance_seed_catalog.json")
+    if catalog is None:
+        stats.fail("instance_seed_catalog.json 不存在")
+    else:
+        seeds = catalog.get("instance_seeds", {})
+        for category in ("location", "character"):
+            items = seeds.get(category, [])
+            if len(items) >= 3:
+                stats.ok(f"instance_seeds/{category}: {len(items)} 个种子")
             else:
-                stats.fail(f"entity_plan/{category}/{archetype_files[0].name}: 缺少 seed_id")
+                stats.fail(f"instance_seeds/{category}: 种子数不足 ({len(items)})")
+            if items and items[0].get("seed_id") and items[0].get("archetype_id"):
+                stats.ok(f"instance_seeds/{category}[0]: 含 seed_id + archetype_id")
+            elif items:
+                stats.fail(f"instance_seeds/{category}[0]: 缺少 seed_id 或 archetype_id")
+
+    # world_background.json
+    bg = _load(session_dir, "generated/plan/world_background.json")
+    if bg is None:
+        stats.fail("world_background.json 不存在")
+    else:
+        if bg.get("world_name"):
+            stats.ok(f"world_background.world_name = {bg['world_name']}")
+        else:
+            stats.fail("world_background.world_name 为空")
+        if bg.get("simulation_start", {}).get("trigger_event"):
+            stats.ok("world_background.simulation_start.trigger_event 非空")
+        else:
+            stats.fail("world_background.simulation_start.trigger_event 为空")
 
 
 def _validate_templates(session_dir: Path, stats: _Stats) -> None:
     _sep("templates/")
     expected_dims = {"character": 10, "location": 5, "institution": 6,
-                     "rule": 4, "action": 4, "relation": 2}
+                     "rule": 4, "action": 4, "relation": 2, "path": 4}
 
     templates_dir = session_dir / "generated" / "templates"
     if not templates_dir.exists():

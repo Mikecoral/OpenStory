@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "mission",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "founding_reason",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "purity_of_blood_indoctrination",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "containment_of_rebellious_students",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "concealment_of_horcrux",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

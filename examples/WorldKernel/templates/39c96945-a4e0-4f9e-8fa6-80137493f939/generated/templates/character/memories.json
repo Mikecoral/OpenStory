@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "name": "background_summary",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "key_events",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "world_knowledge",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_knowledge",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "secrets",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "known_horcrux_locations",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "critical_secret_events",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "recent_encounter_log",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "betrayal_memory_flag",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "trust_rating_towards_others",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+dim_name: PropertiesDim
+distance:
+  type: str
+travel_time:
+  type: str
+visibility:
+  type: str
+has_magical_traps:
+  type: str
+  option: true
+requires_invisibility:
+  type: str
+  option: true
+patrolled_by_portraits_ghosts:
+  type: str
+  option: true
+lighting_level:
+  type: str
+  option: true
+acoustic_magic_effects:
+  type: str
+  option: true

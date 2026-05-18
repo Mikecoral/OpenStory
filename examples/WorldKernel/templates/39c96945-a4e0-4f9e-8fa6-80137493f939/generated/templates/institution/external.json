@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "relations_to_others",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "ministry_of_magic_puppet_council_contact",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "order_of_the_phoenix_underground_communication",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "hidden_alliance_with_former_professors",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

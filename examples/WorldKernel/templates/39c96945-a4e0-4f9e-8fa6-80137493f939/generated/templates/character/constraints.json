@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "forbidden_actions",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "taboos",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "curfew_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "assembly_ban",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "snitch_system_threat",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "polyjuice_detection_risk",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "ministry_patrol_interference",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "fields": [
+    {
+      "name": "relation_ids",
+      "type": "list_str",
+      "required": true,
+      "ref": "relation"
+    },
+    {
+      "name": "relation_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "kinship_degree",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

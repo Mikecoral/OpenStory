@@ -131,7 +131,7 @@ class EntitySeed(BaseModel):
     """entity_plan 中各实体列表的通用种子结构。"""
     seed_id: str
     name: str
-    entity_type: str                # location | character | institution | rule
+    entity_type: str = ""           # location | character（由外层 key 确定，可为空）
     importance: str = ""            # core | major | minor
     source_type: str = ""           # canonical | inferred | original
     confidence: float = 0.9
@@ -142,20 +142,13 @@ class EntitySeed(BaseModel):
 class EntityPlan(BaseModel):
     locations: dict[str, list[EntitySeed]] = {}      # archetype_id -> seeds
     characters: dict[str, list[EntitySeed]] = {}
-    institutions: dict[str, list[EntitySeed]] = {}
-    rules: dict[str, list[EntitySeed]] = {}
 
 
 class GenerationStep(BaseModel):
     step_id: str
-    generator_type: str             # world_background_generator | location_generator |
-                                    # character_generator | relation_generator |
-                                    # institution_generator | rule_generator | action_generator
-    depends_on: list[str] = []      # 必须先完成的 step_id 列表
-    target_entity_type: str         # location | character | relation | institution |
-                                    # rule | action | world_background
-    target_seeds: list[str] = []    # 该步骤负责生成的 seed_id（来自 entity_plan）
-    context_refs: list[str] = []    # 需要作为上下文输入的 step_id
+    generator_type: str             # location_generator | path_generator |
+                                    # character_generator | relation_generator
+    target_entity_type: str         # location | path | character | relation
     batch_size: int = 5
     priority: int = 1
     description: str = ""

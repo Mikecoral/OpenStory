@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "bidirectional",
+      "type": "bool",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "from_faction_control",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "to_faction_control",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "has_surveillance_post",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "same_house_region",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

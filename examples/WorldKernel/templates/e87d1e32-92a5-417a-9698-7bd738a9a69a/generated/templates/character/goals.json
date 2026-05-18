@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "short_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "long_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "motivation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "karma_task",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "destiny_goal",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "skills",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "weaknesses",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "special_skill",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "cultivation_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

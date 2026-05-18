@@ -1,0 +1,16 @@
+dim_name: StateDim
+location:
+  location_id:
+    type: str
+    ref: location
+position:
+  x:
+    type: float
+  y:
+    type: float
+current_phase:
+  type: str
+  option: true
+health_status:
+  type: str
+  option: true

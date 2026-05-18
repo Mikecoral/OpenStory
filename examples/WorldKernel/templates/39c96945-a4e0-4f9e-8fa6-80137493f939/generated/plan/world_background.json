@@ -1,0 +1,48 @@
+{
+  "world_name": "霍格沃茨魔法学院",
+  "world_origin_summary": "衍生自《哈利·波特与死亡圣器》时期，伏地魔通过食死徒掌控霍格沃茨，师生在高压下秘密抵抗并最终迎来决战。",
+  "primary": "magic_school",
+  "secondary": "fortress_siege",
+  "tags": [
+    "魔法",
+    "学院",
+    "反抗",
+    "战争",
+    "黑暗时期",
+    "衍生",
+    "霍格沃茨"
+  ],
+  "scope": "single_location",
+  "simulation_start": {
+    "time_point": "1997-1998学年开学",
+    "trigger_event": "斯内普就任校长，卡罗兄妹担任黑魔法防御术与麻瓜研究教授，学院进入恐怖统治期",
+    "year": "1997",
+    "narrative_context": "邓布利多死后，魔法部被食死徒渗透，霍格沃茨成为伏地魔政权监控核心，学生与少数教职工暗中组建抵抗网络。"
+  },
+  "world_constraints": [
+    {
+      "constraint_id": "magical_secrecy",
+      "name": "魔法世界保密法",
+      "description": "所有巫师社群必须向麻瓜隐藏魔法存在，霍格沃茨的骚乱与战斗不得被麻瓜察觉。",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "death_eater_occupation",
+      "name": "食死徒占领导致的信任危机",
+      "description": "斯内普作为名义校长受伏地魔直接管辖，卡罗兄妹掌握实际生杀大权；师生言论与行动时刻处于被监视状态，公开反抗即遭严厉报复。",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "castle_ancient_magic",
+      "name": "霍格沃茨古老防御魔法",
+      "description": "城堡本身存在反幻影移形、禁制麻瓜进入等固有规则；部分走廊和房间对特定人开放，且城堡有自我意志（如移动楼梯、秘密房间），新政权无法完全控制。",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "blood_purity_ideology",
+      "name": "血统纯正主义社会压迫",
+      "description": "伏地魔政权公开推行纯血统至上，麻瓜出身巫师被视为非法，狼人、混血同等情况恶化，校内的非纯血学生面临强制登记或驱逐威胁。",
+      "scope": "global"
+    }
+  ]
+}

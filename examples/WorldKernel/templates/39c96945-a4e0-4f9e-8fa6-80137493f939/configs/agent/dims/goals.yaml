@@ -1,0 +1,19 @@
+dim_name: GoalsDim
+short_term_goal:
+  type: str
+long_term_goal:
+  type: str
+motivation:
+  type: str
+secret_mission:
+  type: str
+  option: true
+hidden_motive:
+  type: str
+  option: true
+survival_priority:
+  type: str
+  option: true
+resistance_contribution:
+  type: str
+  option: true

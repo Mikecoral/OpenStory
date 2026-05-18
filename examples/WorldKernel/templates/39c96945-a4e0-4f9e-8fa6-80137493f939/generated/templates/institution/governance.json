@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "leader",
+      "type": "str",
+      "required": true,
+      "ref": "character"
+    },
+    {
+      "name": "rules",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "decision_process",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "dark_lord_remote_intervention",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "polyjuice_and_death_eater_spies",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "punishment_chamber_protocol",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

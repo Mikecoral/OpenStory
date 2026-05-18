@@ -1,0 +1,25 @@
+dim_name: ConditionsDim
+access_level:
+  type: str
+danger_level:
+  type: str
+required_items:
+  type: str
+needs_password:
+  type: str
+  option: true
+needs_invisibility_cloak:
+  type: str
+  option: true
+needs_marauders_map:
+  type: str
+  option: true
+blocked_by_death_eaters:
+  type: str
+  option: true
+time_restricted_access:
+  type: str
+  option: true
+anti_apparition_warding:
+  type: str
+  option: true

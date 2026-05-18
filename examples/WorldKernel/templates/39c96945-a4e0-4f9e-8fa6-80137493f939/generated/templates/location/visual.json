@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "abnormal_visual_phenomenon",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "illumination_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "decoration_propaganda_elements",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "concealed_visual_illusion",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "magical_hologram_presence",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

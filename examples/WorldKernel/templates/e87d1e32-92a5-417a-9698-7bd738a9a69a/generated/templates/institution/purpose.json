@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "mission",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "founding_reason",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "maintain_feudal_hierarchy",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "prepare_for_imperial_examinations",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "perform_religious_rites",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "preserve_family_reputation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

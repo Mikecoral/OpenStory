@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "name": "permissions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_conditions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "curfew_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "password_rotation_policy",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "death_eater_guard_presence",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "anti_apparition_charm_coverage",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "surveillance_portrait_network",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "muggleborn_exclusion_flag",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secret_passage_availability",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

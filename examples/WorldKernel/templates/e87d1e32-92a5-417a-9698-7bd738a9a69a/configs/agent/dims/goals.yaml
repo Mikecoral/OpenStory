@@ -1,0 +1,13 @@
+dim_name: GoalsDim
+short_term_goal:
+  type: str
+long_term_goal:
+  type: str
+motivation:
+  type: str
+karma_task:
+  type: str
+  option: true
+destiny_goal:
+  type: str
+  option: true

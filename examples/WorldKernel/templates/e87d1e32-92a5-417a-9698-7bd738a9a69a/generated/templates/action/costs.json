@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "time",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "resources",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_cost",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "face_credit_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "family_interests_loss",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "clan_penalty_risk",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "religious_penance_required",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "social_standing_change",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

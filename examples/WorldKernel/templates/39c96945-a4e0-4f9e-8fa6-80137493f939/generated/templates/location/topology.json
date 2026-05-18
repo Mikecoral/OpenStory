@@ -1,0 +1,70 @@
+{
+  "fields": [
+    {
+      "name": "connected_to",
+      "type": "list_str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "parent_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "layer",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "entrance_type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "blocked_or_new_connection_in_terror",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secret_connection_destination",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "spatial_layer_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "segmented_area_flag",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "entrance_hiding_mechanism",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "floo_network_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "magical_localization_enablement",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}
