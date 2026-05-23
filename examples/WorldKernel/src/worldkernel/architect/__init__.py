@@ -1,28 +1,23 @@
-from worldkernel.architect.init_compilers import (
-    ContractCompiler,
-    ExecutionDAGCompiler,
-    InitCompileError,
-    SeedResolver,
-    build_stable_seed_ref,
-)
-from worldkernel.architect.init_loader import InitInputLoadError, InitInputLoader
-from worldkernel.architect.init_models import (
+from worldkernel.architect.init import (
     CompiledWorldBackground,
+    ContractCompiler,
     ExecutionDAG,
+    ExecutionDAGCompiler,
     ExecutionDAGNode,
     InitBuildContext,
+    InitCompileError,
+    InitInputLoadError,
+    InitInputLoader,
     RawStage1Bundle,
     ResolvedSeed,
+    SeedResolver,
+    build_stable_seed_ref,
+    compile_stage1_init_context,
 )
-from worldkernel.architect.init_pipeline import compile_stage1_init_context
-from worldkernel.architect.foundation_bundle import (
-    FoundationBundleBuildError,
-    FoundationBundleBuilder,
-    build_foundation_bundle,
-)
-from worldkernel.architect.registries import (
+from worldkernel.architect.registry import (
     SchemaAmbiguityError,
     SchemaEntry,
+    SchemaLoadError,
     SchemaNotFoundError,
     SchemaRegistry,
     SchemaRegistryError,
@@ -32,32 +27,29 @@ from worldkernel.architect.registries import (
     ToolRegistryError,
     create_default_schema_registry,
     create_default_tool_registry,
-)
-from worldkernel.architect.schema_loader import (
-    SchemaLoadError,
     load_stage1_schema_source,
     load_stage1_session_schema_source,
 )
-from worldkernel.architect.semantic_models import (
+from worldkernel.architect.semantic import (
     FoundationBundle,
+    FoundationBundleBuildError,
+    FoundationBundleBuilder,
+    InitDAGRunner,
     ReferenceIndex,
+    SemanticArtifactRepository,
     SemanticDomainArtifact,
     SemanticGenerationReport,
+    SemanticGenerationState,
     SemanticManifest,
-    ToolArtifactEnvelope,
-)
-from worldkernel.architect.semantic_repository import (
-    SemanticArtifactRepository,
-    load_semantic_repository,
-)
-from worldkernel.architect.semantic_runner import (
-    InitDAGRunner,
     StepDependencyError,
     StepDependencyResolver,
+    StepResultStore,
+    ToolArtifactEnvelope,
+    build_foundation_bundle,
+    load_semantic_repository,
     run_semantic_generation,
+    save_semantic_artifacts,
 )
-from worldkernel.architect.semantic_state import SemanticGenerationState, StepResultStore
-from worldkernel.architect.semantic_storage import save_semantic_artifacts
 from worldkernel.architect.tools import (
     BaseStage2Tool,
     CharacterGenerationTool,

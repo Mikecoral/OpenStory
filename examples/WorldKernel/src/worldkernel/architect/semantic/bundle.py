@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from worldkernel.architect.init_models import InitBuildContext
-from worldkernel.architect.semantic_models import FoundationBundle
-from worldkernel.architect.semantic_state import SemanticGenerationState
+from worldkernel.architect.init.models import InitBuildContext
+from worldkernel.architect.semantic.models import FoundationBundle
+from worldkernel.architect.semantic.state import SemanticGenerationState
 
 
 class FoundationBundleBuildError(RuntimeError):

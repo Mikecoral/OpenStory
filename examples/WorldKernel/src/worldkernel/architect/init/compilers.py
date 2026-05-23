@@ -3,14 +3,14 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from worldkernel.architect.init_models import (
+from worldkernel.architect.init.models import (
     CompiledWorldBackground,
     ExecutionDAG,
     ExecutionDAGNode,
     RawStage1Bundle,
     ResolvedSeed,
 )
-from worldkernel.architect.registries import ToolRegistry
+from worldkernel.architect.registry.core import ToolRegistry
 
 
 class InitCompileError(Exception):

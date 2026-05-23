@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from worldkernel.architect.init_models import RawStage1Bundle
+from worldkernel.architect.init.models import RawStage1Bundle
 
 
 class InitInputLoadError(Exception):

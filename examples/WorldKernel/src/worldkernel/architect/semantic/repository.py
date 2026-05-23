@@ -4,13 +4,13 @@ import json
 from pathlib import Path
 from typing import Any
 
-from worldkernel.architect.semantic_models import (
+from worldkernel.architect.semantic.models import (
     FoundationBundle,
     ReferenceIndex,
     SemanticDomainArtifact,
     SemanticManifest,
 )
-from worldkernel.architect.semantic_storage import _default_output_root
+from worldkernel.architect.semantic.storage import _default_output_root
 
 
 class SemanticArtifactRepository:

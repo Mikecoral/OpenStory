@@ -4,7 +4,7 @@ from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from worldkernel.architect.init_models import (
+from worldkernel.architect.init.models import (
     CompiledWorldBackground,
     ExecutionDAGNode,
     ResolvedSeed,

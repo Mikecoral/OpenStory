@@ -2,10 +2,10 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from worldkernel.architect.init_compilers import ContractCompiler, ExecutionDAGCompiler, SeedResolver
-from worldkernel.architect.init_loader import InitInputLoader
-from worldkernel.architect.init_models import InitBuildContext
-from worldkernel.architect.registries import SchemaRegistry, ToolRegistry
+from worldkernel.architect.init.compilers import ContractCompiler, ExecutionDAGCompiler, SeedResolver
+from worldkernel.architect.init.loader import InitInputLoader
+from worldkernel.architect.init.models import InitBuildContext
+from worldkernel.architect.registry.core import SchemaRegistry, ToolRegistry
 
 
 def compile_stage1_init_context(

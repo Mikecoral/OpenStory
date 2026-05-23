@@ -4,7 +4,7 @@ from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from worldkernel.architect.semantic_models import ToolArtifactEnvelope
+from worldkernel.architect.semantic.models import ToolArtifactEnvelope
 from worldkernel.architect.tools.base import Stage2ToolResult
 
 

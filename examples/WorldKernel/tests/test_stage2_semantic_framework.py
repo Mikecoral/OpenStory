@@ -2,8 +2,6 @@ from __future__ import annotations
 
 import sys
 import unittest
-import uuid
-import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
@@ -156,39 +154,35 @@ class Stage2SemanticRunnerTests(unittest.TestCase):
         self.assertEqual(bundle.locations[0]["identity"]["id"], "loc_1")
         self.assertEqual(bundle.characters[0]["identity"]["id"], "char_1")
 
-        tmpdir = ROOT / "tests" / "debug_outputs" / f"semantic_storage_{uuid.uuid4().hex}"
-        tmpdir.mkdir(parents=True, exist_ok=True)
-        try:
-            report = save_semantic_artifacts(
-                world_id=init_context.world_background.world_id,
-                init_context=init_context,
-                generation_state=state,
-                output_root=tmpdir,
-                debug=True,
-            )
-            self.assertTrue(report.success)
-            self.assertFalse((tmpdir / "bundle" / "foundation_bundle.json").exists())
-            self.assertTrue((tmpdir / "locations" / "locations.json").exists())
-            self.assertTrue((tmpdir / "metadata" / "semantic_manifest.json").exists())
-            self.assertTrue((tmpdir / "metadata" / "reference_index.json").exists())
-            self.assertTrue((tmpdir / "metadata" / "debug" / "init_context.debug.json").exists())
+        tmpdir = ROOT / "tests" / "debug_outputs" / "semantic_storage_case"
+        report = save_semantic_artifacts(
+            world_id=init_context.world_background.world_id,
+            init_context=init_context,
+            generation_state=state,
+            output_root=tmpdir,
+            debug=True,
+        )
+        self.assertTrue(report.success)
+        self.assertFalse((tmpdir / "bundle" / "foundation_bundle.json").exists())
+        self.assertTrue((tmpdir / "locations" / "locations.json").exists())
+        self.assertTrue((tmpdir / "metadata" / "semantic_manifest.json").exists())
+        self.assertTrue((tmpdir / "metadata" / "reference_index.json").exists())
+        self.assertTrue((tmpdir / "metadata" / "debug" / "init_context.debug.json").exists())
 
-            repository = load_semantic_repository(
-                world_id=init_context.world_background.world_id,
-                output_root=tmpdir,
-            )
-            manifest = repository.load_manifest()
-            self.assertEqual(manifest.world_id, init_context.world_background.world_id)
-            self.assertEqual(repository.get_location("loc_1")["identity"]["name"], "Great Hall")
-            self.assertEqual(repository.get_character("char_1")["identity"]["name"], "Harry")
-            rebuilt_bundle = repository.build_foundation_bundle()
-            self.assertEqual(rebuilt_bundle.path_graph[0]["from_location_id"], "loc_1")
-            self.assertEqual(rebuilt_bundle.constraints, init_context.world_background.world_constraints)
+        repository = load_semantic_repository(
+            world_id=init_context.world_background.world_id,
+            output_root=tmpdir,
+        )
+        manifest = repository.load_manifest()
+        self.assertEqual(manifest.world_id, init_context.world_background.world_id)
+        self.assertEqual(repository.get_location("loc_1")["identity"]["name"], "Great Hall")
+        self.assertEqual(repository.get_character("char_1")["identity"]["name"], "Harry")
+        rebuilt_bundle = repository.build_foundation_bundle()
+        self.assertEqual(rebuilt_bundle.path_graph[0]["from_location_id"], "loc_1")
+        self.assertEqual(rebuilt_bundle.constraints, init_context.world_background.world_constraints)
 
-            reference_index_text = (tmpdir / "metadata" / "reference_index.json").read_text(encoding="utf-8")
-            self.assertNotIn("Great Hall", reference_index_text)
-        finally:
-            shutil.rmtree(tmpdir, ignore_errors=True)
+        reference_index_text = (tmpdir / "metadata" / "reference_index.json").read_text(encoding="utf-8")
+        self.assertNotIn("Great Hall", reference_index_text)
 
     def test_foundation_bundle_requires_locations_and_characters(self) -> None:
         init_context = self._init_context()

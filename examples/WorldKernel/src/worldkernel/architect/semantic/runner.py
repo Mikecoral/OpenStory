@@ -3,9 +3,9 @@ from __future__ import annotations
 import asyncio
 from typing import Any
 
-from worldkernel.architect.init_models import ExecutionDAGNode, InitBuildContext
-from worldkernel.architect.registries import SchemaRegistry, ToolRegistry
-from worldkernel.architect.semantic_state import SemanticGenerationState
+from worldkernel.architect.init.models import ExecutionDAGNode, InitBuildContext
+from worldkernel.architect.registry.core import SchemaRegistry, ToolRegistry
+from worldkernel.architect.semantic.state import SemanticGenerationState
 from worldkernel.architect.tools.base import Stage2ToolContext, Stage2ToolRequest, Stage2ToolResult
 
 

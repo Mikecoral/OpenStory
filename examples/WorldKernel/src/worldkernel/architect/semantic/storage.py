@@ -6,14 +6,14 @@ from typing import Any
 
 from pydantic import BaseModel
 
-from worldkernel.architect.init_models import InitBuildContext
-from worldkernel.architect.semantic_models import (
+from worldkernel.architect.init.models import InitBuildContext
+from worldkernel.architect.semantic.models import (
     ReferenceIndex,
     SemanticDomainArtifact,
     SemanticGenerationReport,
     SemanticManifest,
 )
-from worldkernel.architect.semantic_state import SemanticGenerationState
+from worldkernel.architect.semantic.state import SemanticGenerationState
 
 
 ARTIFACT_DOMAIN_PATHS = {
@@ -25,7 +25,7 @@ ARTIFACT_DOMAIN_PATHS = {
 
 
 def _default_output_root(world_id: str) -> Path:
-    worldkernel_root = Path(__file__).resolve().parents[3]
+    worldkernel_root = Path(__file__).resolve().parents[4]
     return worldkernel_root / "worlds" / "generated" / world_id / "stage2" / "semantic"
 
 

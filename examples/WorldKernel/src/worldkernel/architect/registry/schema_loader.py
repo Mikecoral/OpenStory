@@ -8,7 +8,7 @@ from typing import Any
 
 from pydantic import BaseModel
 
-from worldkernel.architect.registries import (
+from worldkernel.architect.registry.core import (
     SchemaEntry,
     SchemaRegistry,
     SchemaRegistryError,
