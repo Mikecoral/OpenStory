@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "name": "permissions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_conditions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "current_password",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "surveillance_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "patrol_frequency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "forbidden_charm_ward",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secret_entrance_hint",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "floo_network_allowed",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "portkey_activation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

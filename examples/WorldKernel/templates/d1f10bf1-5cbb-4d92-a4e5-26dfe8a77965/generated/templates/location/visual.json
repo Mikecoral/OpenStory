@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "dark_mark_projection",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "death_eater_banner_presence",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dementor_patrol_shadows",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "candle_color_shift",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "portrait_watchfulness",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "barred_windows",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "magical_graffiti",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

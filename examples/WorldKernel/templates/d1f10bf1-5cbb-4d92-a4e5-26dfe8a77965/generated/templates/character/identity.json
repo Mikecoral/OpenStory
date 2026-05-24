@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "role",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "faction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "disguise_identity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dark_mark_present",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "order_of_phoenix_rank",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "death_eater_affiliation_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

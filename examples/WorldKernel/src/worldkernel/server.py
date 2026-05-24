@@ -10,6 +10,7 @@ from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
+from worldkernel.constraints import load_generation_constraints
 from worldkernel.llm import client as llm_client
 from worldkernel.stage1.pipeline import Stage1Error, run_stage1
 
@@ -18,11 +19,15 @@ CONFIGS_DIR = BASE_DIR / "configs"
 TEMPLATES_DIR = BASE_DIR / "templates"
 FRONTEND_DIR = BASE_DIR / "frontend"
 
+_constraints = None
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    global _constraints
     load_dotenv(BASE_DIR / ".env")
     llm_client.init(CONFIGS_DIR / "models.yaml")
+    _constraints = load_generation_constraints(CONFIGS_DIR / "architect.yaml")
     yield
 
 
@@ -43,7 +48,7 @@ class ParseRequest(BaseModel):
 
 @app.post("/api/stage1/parse")
 async def parse(req: ParseRequest):
-    session = await run_stage1(req.input)
+    session = await run_stage1(req.input, constraints=_constraints)
     return session
 
 
@@ -69,6 +74,58 @@ async def get_session_file(session_id: str, path: str):
         import yaml
         return yaml.safe_load(file_path.read_text(encoding="utf-8"))
     return json.loads(file_path.read_text(encoding="utf-8"))
+
+
+@app.post("/api/stage2/generate/{session_id}")
+async def stage2_generate(session_id: str):
+    session_dir = TEMPLATES_DIR / session_id
+    if not session_dir.exists():
+        raise HTTPException(status_code=404, detail="session not found")
+
+    from worldkernel.architect import (
+        compile_stage1_init_context,
+        create_default_schema_registry,
+        create_default_tool_registry,
+        load_stage1_session_schema_source,
+        save_semantic_artifacts,
+    )
+    from worldkernel.architect.semantic.runner import InitDAGRunner
+
+    sr = create_default_schema_registry()
+    load_stage1_session_schema_source(
+        session_dir, sr, source_id="visual-e2e", world_id=session_id,
+    )
+    tr = create_default_tool_registry(sr)
+    ctx = compile_stage1_init_context(
+        session_dir, tool_registry=tr, source_id="visual-e2e", world_id=session_id,
+        constraints=_constraints,
+    )
+
+    runner = InitDAGRunner(schema_registry=sr, tool_registry=tr)
+    state = await runner.run_async(ctx)
+
+    loc_result = (
+        state.result_store.get_step_result("generate_locations")
+        if state.result_store.has_step_result("generate_locations")
+        else None
+    )
+    report = save_semantic_artifacts(
+        session_id, ctx, state,
+        output_root=session_dir / "generated" / "artifacts",
+    )
+
+    return {
+        "completed_steps": state.completed_steps,
+        "errors": state.errors,
+        "locations": {
+            "count": len(loc_result.items) if loc_result else 0,
+            "avg_score": (
+                loc_result.provenance.get("quality_summary", {}).get("avg_review_score")
+                if loc_result else None
+            ),
+        },
+        "report": {"success": report.success, "counts": report.counts},
+    }
 
 
 app.mount("/", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")

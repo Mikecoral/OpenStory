@@ -1,0 +1,28 @@
+dim_name: StateDim
+current_state:
+  type: str
+ownership:
+  type: str
+capacity:
+  type: int
+current_occupying_faction:
+  type: str
+  option: true
+last_incident:
+  type: str
+  option: true
+mood_aura:
+  type: str
+  option: true
+restricted_items_stored:
+  type: str
+  option: true
+damage_level:
+  type: str
+  option: true
+contamination_type:
+  type: str
+  option: true
+emotional_ambience:
+  type: str
+  option: true

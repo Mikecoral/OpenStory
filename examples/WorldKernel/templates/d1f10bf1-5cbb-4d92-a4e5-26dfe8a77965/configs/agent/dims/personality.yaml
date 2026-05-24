@@ -1,0 +1,22 @@
+dim_name: PersonalityDim
+traits:
+  type: list_str
+values:
+  type: list_str
+speech_style:
+  type: str
+fear_level:
+  type: str
+  option: true
+defiance_tendency:
+  type: str
+  option: true
+loyalty_test_result:
+  type: str
+  option: true
+paranoia_index:
+  type: str
+  option: true
+mask_of_compliance:
+  type: str
+  option: true

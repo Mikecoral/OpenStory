@@ -1,13 +1,16 @@
 from __future__ import annotations
 
 from worldkernel.architect.tools.base import BaseStage2Tool
+from worldkernel.architect.tools.generators import LocationGenerationTool
 
-
-class LocationGenerationTool(BaseStage2Tool):
-    tool_id = "stage2.location_generator.v1"
-    generator_type = "location_generator"
-    output_schema_alias = "location_profile"
-    capabilities = ("generate_locations",)
+__all__ = [
+    "CharacterGenerationTool",
+    "LocationGenerationTool",
+    "PathGenerationTool",
+    "PathGraphTool",
+    "RelationGenerationTool",
+    "RelationGraphTool",
+]
 
 
 class CharacterGenerationTool(BaseStage2Tool):

@@ -5,30 +5,55 @@ from worldkernel.architect.init.compilers import (
     SeedResolver,
     build_stable_seed_ref,
 )
-from worldkernel.architect.init.loader import InitInputLoadError, InitInputLoader
+from worldkernel.architect.init.loader import (
+    InitInputLoadError,
+    InitInputLoader,
+    load_stage1_artifacts_from_manifest,
+)
 from worldkernel.architect.init.models import (
+    ArtifactManifest,
     CompiledWorldBackground,
     ExecutionDAG,
     ExecutionDAGNode,
+    ExecutionPlanArtifact,
+    ExecutionPlanStepArtifact,
     InitBuildContext,
+    InstanceSeedCatalogArtifact,
     RawStage1Bundle,
     ResolvedSeed,
+    SchemaManifestArtifact,
+    SchemaManifestEntryArtifact,
+    SeedCatalogEntry,
+    Stage1ArtifactBundle,
+    WorldBackgroundArtifact,
+    WorldTemplateArtifact,
 )
 from worldkernel.architect.init.pipeline import compile_stage1_init_context
 
 __all__ = [
+    "ArtifactManifest",
     "CompiledWorldBackground",
     "ContractCompiler",
     "ExecutionDAG",
     "ExecutionDAGCompiler",
     "ExecutionDAGNode",
+    "ExecutionPlanArtifact",
+    "ExecutionPlanStepArtifact",
     "InitBuildContext",
     "InitCompileError",
     "InitInputLoadError",
     "InitInputLoader",
+    "InstanceSeedCatalogArtifact",
     "RawStage1Bundle",
     "ResolvedSeed",
+    "SchemaManifestArtifact",
+    "SchemaManifestEntryArtifact",
+    "SeedCatalogEntry",
     "SeedResolver",
+    "Stage1ArtifactBundle",
+    "WorldBackgroundArtifact",
+    "WorldTemplateArtifact",
     "build_stable_seed_ref",
     "compile_stage1_init_context",
+    "load_stage1_artifacts_from_manifest",
 ]

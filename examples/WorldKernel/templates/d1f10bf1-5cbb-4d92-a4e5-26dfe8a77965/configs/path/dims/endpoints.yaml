@@ -1,0 +1,21 @@
+dim_name: EndpointsDim
+from_id:
+  type: str
+  ref: location
+to_id:
+  type: str
+  ref: location
+bidirectional:
+  type: bool
+requires_password:
+  type: str
+  option: true
+time_restricted:
+  type: str
+  option: true
+is_blocked:
+  type: str
+  option: true
+password_required_direction:
+  type: str
+  option: true

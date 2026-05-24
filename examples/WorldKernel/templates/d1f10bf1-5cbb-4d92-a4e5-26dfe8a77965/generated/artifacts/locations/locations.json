@@ -1,0 +1,255 @@
+{
+  "artifact_type": "location_profile",
+  "items": [
+    {
+      "identity": {
+        "id": "e:霍格沃茨魔法学院:loc:001",
+        "name": "黑魔法防御术教室",
+        "type": "teaching_space",
+        "description": "原教授办公室现在变成了阿米库斯·卡罗施行酷刑和灌输黑魔法的恐怖舞台。教室布置阴沉，墙上挂着被虐待生物的标本，讲台上方悬吊着用于钻心咒练习的假人。空气里弥漫着铁锈和汗水的味道，每个学生都带着恐惧踏入这里。",
+        "code_name": "刑讯室",
+        "alternate_names": "黑魔法防御术教室(官方名称)、卡罗的刑房(学生私下称呼)",
+        "horcrux_related": "false",
+        "danger_rating": "极高，学生在此可能遭受钻心剜骨等不可饶恕咒的实战练习",
+        "historical_significance": "霍格沃茨历史上第一次由食死徒直接授课的黑魔法防御术教室",
+        "dark_magic_resonance": "强烈，长期施放黑魔法留下的负面魔法波动"
+      },
+      "access": {
+        "permissions": "仅限五年级至七年级学生强制参加，斯内普校长和卡罗兄妹拥有完全权限",
+        "access_level": "restricted（但无法逃避）",
+        "access_conditions": "学生必须按时出席，否则将被视为反抗并受到惩罚",
+        "current_password": "",
+        "surveillance_level": "极严，阿米库斯·卡罗全程监视，门口有窥镜和恶咒警报",
+        "patrol_frequency": "课堂期间连续监控，课后不定期由阿莱克托·卡罗巡视",
+        "forbidden_charm_ward": "反幻身咒和反消失咒的结界，防止学生躲藏或逃跑",
+        "secret_entrance_hint": "",
+        "floo_network_allowed": "false",
+        "portkey_activation": "false"
+      },
+      "state": {
+        "current_state": "运作中，每天有不同年级的课程，经常发生体罚和侮辱事件",
+        "ownership": "霍格沃茨（名义上），实际由阿米库斯·卡罗控制",
+        "capacity": 30,
+        "current_occupying_faction": "食死徒（卡罗兄弟）",
+        "last_incident": "三天前一名三年级学生因念错咒语被施钻心剜骨，昏迷后被送去校医院",
+        "mood_aura": "恐惧、压抑、绝望，墙上滴落的黑色液体散发着恶心的硫磺味",
+        "restricted_items_stored": "卡罗的惩罚道具——带刺的藤鞭、浸透恶咒的斗篷、多瓶复方汤剂私藏",
+        "damage_level": "中等（墙壁有咒语烧焦痕迹，地面有血迹未完全清理）",
+        "contamination_type": "黑暗魔法污染（负面情绪凝聚的魔法污染）",
+        "emotional_ambience": "阴冷、令人窒息，学生谈话的声音都会被放大成回声"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:霍格沃茨魔法学院:loc:002",
+        "name": "大礼堂",
+        "type": "communal_space",
+        "description": "曾经闪耀着温暖烛光的宴会厅，如今被施了永久的绿色昏暗照明，天花板映出阴沉的低垂乌云。学院旗帜被食死徒的黑魔标记旗帜取代，教师的讲台后方伏地魔的巨型画像虎视眈眈。每日宵禁签到和公开惩罚都在这里进行，学生们如惊弓之鸟。",
+        "code_name": "阴厅（学生私下称呼）",
+        "alternate_names": "大礼堂",
+        "horcrux_related": "false",
+        "danger_rating": "高，公开处刑和集体惩罚的风险",
+        "historical_significance": "霍格沃茨最古老的场所之一，见证了多次重要事件，如今成为压迫仪式中心",
+        "dark_magic_resonance": "中等（因长期施放不可饶恕咒而积聚）"
+      },
+      "access": {
+        "permissions": "所有师生必须出席早餐和晚餐，缺席视为反抗，卡罗兄妹和斯内普有绝对控制权",
+        "access_level": "forced（强制出席）",
+        "access_conditions": "学生必须在规定时间内就座，不允许提前离开",
+        "current_password": "",
+        "surveillance_level": "极高，阿莱克托·卡罗站在入口处使用摄神取念检查每个进入者的思想，多个窥镜悬浮在横梁上",
+        "patrol_frequency": "每餐时间全程监控，课间也有巡逻猫头鹰",
+        "forbidden_charm_ward": "禁止使用任何魔法（除食物召唤外），违规者立即被处罚",
+        "secret_entrance_hint": "厨房入口（通过水果画可以进入厨房），但少有人敢用",
+        "floo_network_allowed": "false",
+        "portkey_activation": "false"
+      },
+      "state": {
+        "current_state": "每日两次强制集会，夜晚实行宵禁签到，气氛压抑",
+        "ownership": "霍格沃茨，实际由食死徒控制",
+        "capacity": 1000,
+        "current_occupying_faction": "食死徒（卡罗兄妹为主），斯内普傀儡管理",
+        "last_incident": "上周五，一名拉文克劳学生被当众施钻心咒后拖走，至今未归",
+        "mood_aura": "阴森、恐惧、沉默（学生们低头吃饭，窃窃私语是危险的）",
+        "restricted_items_stored": "无，但教师席暗格里藏有卡罗的刑具",
+        "damage_level": "轻微（装饰被更换，长桌上出现咒语烧痕）",
+        "contamination_type": "情感污染（恐惧与服从的负面情绪弥漫）",
+        "emotional_ambience": "冰冷、沉重，哪怕在用餐时也听不到欢笑，只有餐具碰撞声和低泣"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:霍格沃茨魔法学院:loc:003",
+        "name": "格兰芬多公共休息室",
+        "type": "dormitory",
+        "description": "位于汤伯朗塔楼八楼的圆形温暖休息室，壁炉仍在燃烧，但火焰已不似往日热烈。墙上的肖像画警惕地看着每一个进入者，沙发和扶手椅散落，但学生们不敢久留。这里成为格兰芬多抵抗学生秘密集会的据点，纳威常常在宵禁后在此轻声布置任务。",
+        "code_name": "",
+        "alternate_names": "格兰芬多塔楼",
+        "horcrux_related": "false",
+        "danger_rating": "中等（如果被发现策划反抗，会遭受严厉惩罚）",
+        "historical_significance": "格兰芬多学院精神象征，在黑暗时期成为抵抗堡垒",
+        "dark_magic_resonance": ""
+      },
+      "access": {
+        "permissions": "仅对格兰芬多学生开放，口令频繁更换以防食死徒渗透",
+        "access_level": "semi-private（口令保护）",
+        "access_conditions": "必须知道当前口令（由纳威等秘密传递），需要经过胖夫人画像",
+        "current_password": "凤凰涅槃（每两三天更换一次）",
+        "surveillance_level": "中（胖夫人画像会举报可疑行为，但食死徒暂时没有直接监控）",
+        "patrol_frequency": "食死徒巡逻队不定期经过塔楼楼梯，但不常进入",
+        "forbidden_charm_ward": "无官方禁咒，但学生们自行设置了临时防窃听咒",
+        "secret_entrance_hint": "只有胖夫人画像正常入口，无其他已知通道",
+        "floo_network_allowed": "false",
+        "portkey_activation": "false"
+      },
+      "state": {
+        "current_state": "看似正常的公共休息室，实则成为D.A.秘密会议场所，壁炉被用于烧毁情报",
+        "ownership": "霍格沃茨（格兰芬多学院）",
+        "capacity": 40,
+        "current_occupying_faction": "格兰芬多学生（抵抗核心）",
+        "last_incident": "三天前，一名二年级学生无意提及「邓布利多军」被隔壁的斯莱特林学生听到，不久后卡罗兄妹前来搜查，幸好纳威及时销毁了痕迹",
+        "mood_aura": "警惕、紧张但带着希望，壁炉火焰勉强燃烧",
+        "restricted_items_stored": "纳威藏匿的旧D.A.加隆金币（用于联系），以及少量隐身衣和复方汤剂",
+        "damage_level": "轻微（一些家具因咒语痕迹而修复过）",
+        "contamination_type": "无魔法污染，但情感上充满压抑的愤怒和决心",
+        "emotional_ambience": "暗中涌动的不屈与焦虑，每一次脚步声都会引起警惕的寂静"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:霍格沃茨魔法学院:loc:004",
+        "name": "有求必应屋",
+        "type": "secret_space",
+        "description": "位于城堡八楼巨怪棒打傻巴拿巴挂毯对面的神秘房间，当使用者迫切需要它时出现。在黑暗时期，D.A.成员将其变成一间隐蔽的练习室，铺满柔软的垫子，书架上堆放着《标准咒语》和自行复制的防护魔法手册。房间可以变大变小，拒绝食死徒的发现。",
+        "code_name": "",
+        "alternate_names": "来去屋",
+        "horcrux_related": "false",
+        "danger_rating": "高（被发现使用则面临生命危险，且房间本身可能被标记）",
+        "historical_significance": "自邓布利多军成立以来一直是反抗的象征",
+        "dark_magic_resonance": ""
+      },
+      "access": {
+        "permissions": "仅限知道秘密并迫切需要它的人，目前由纳威、金妮等核心D.A.成员使用",
+        "access_level": "secret（需要知道如何召唤且满足特定需求）",
+        "access_conditions": "必须三次走过挂毯对面的墙，并集中精神想着「我们需要一个练习防御咒语的地方」，未带不良意图者无法进入。",
+        "current_password": "",
+        "surveillance_level": "极低（食死徒尚未发现其规律，但卡罗兄妹已有所怀疑）",
+        "patrol_frequency": "无直接巡逻，但城堡八楼有巡逻队经过",
+        "forbidden_charm_ward": "房间自带伪装和排斥咒语，可以变形为扫帚橱等；使用者还可附加混淆咒",
+        "secret_entrance_hint": "挂毯对面砖墙，来回走过三次同时想着需求即可，出口会变成不同的门",
+        "floo_network_allowed": "false",
+        "portkey_activation": "false"
+      },
+      "state": {
+        "current_state": "正在被D.A.秘密使用，每周两次练习，结束后清除痕迹",
+        "ownership": "霍格沃茨，实际上属于邓布利多军的秘密空间",
+        "capacity": 20,
+        "current_occupying_faction": "邓布利多军（格兰芬多、赫奇帕奇、拉文克劳混合）",
+        "last_incident": "上周练习时差点被费尔奇的猫洛丽丝夫人发现，但房间自动改变了外观",
+        "mood_aura": "紧张但充满专注和短暂的希望，墙上贴有「支持哈利」的标语（用消魔法墨水）",
+        "restricted_items_stored": "训练用软垫、魔杖（备用）、飞行咒语书，以及少量反恶咒护符",
+        "damage_level": "无，房间根据需求完美整洁",
+        "contamination_type": "",
+        "emotional_ambience": "斗志昂扬、专注，短暂的喘息与团结感"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:霍格沃茨魔法学院:loc:005",
+        "name": "禁林",
+        "type": "outdoor_area",
+        "description": "霍格沃茨边缘的古老密林，常年阴暗，生长着奇特危险的生物。在黑暗时期，禁林成为逃亡学生躲避食死徒追捕的临时避难所。树木间有隐蔽的洞穴和树屋，海格曾经的小屋已废弃，但偶尔有凤凰社成员留下的物资。食死徒不敢轻易深入，因为林中生物对任何侵入者都充满敌意。",
+        "code_name": "",
+        "alternate_names": "黑森林",
+        "horcrux_related": "false",
+        "danger_rating": "极高（本身充满危险生物，且食死徒可能布置伏击，冬夜寒冷）",
+        "historical_significance": "每次反抗时期都是逃亡者的庇护所，如1993年小天狼星事件",
+        "dark_magic_resonance": ""
+      },
+      "access": {
+        "permissions": "未授权进入将受到处分，但逃亡学生无视规则",
+        "access_level": "forbidden（官方禁止学生进入，但实际处于半失控状态）",
+        "access_conditions": "没有权限，需要小心避开巡逻的食死徒和魔法生物",
+        "current_password": "",
+        "surveillance_level": "低（食死徒在边缘设了监视咒，但林深处难以监控）",
+        "patrol_frequency": "边缘每周有三次巡逻，其余区域无规律",
+        "forbidden_charm_ward": "禁林周围有古老的边界魔法防止麻瓜发现，但对巫师效果弱",
+        "secret_entrance_hint": "从海格小屋后的路径进入，或绕过黑湖边缘的密道",
+        "floo_network_allowed": "false",
+        "portkey_activation": "false"
+      },
+      "state": {
+        "current_state": "部分逃亡学生和抵抗组织成员暗中使用，但生存条件恶劣",
+        "ownership": "霍格沃茨（名义上），实际由林中生物和反抗者零散控制",
+        "capacity": 50,
+        "current_occupying_faction": "无统一控制，有逃亡学生（不超过10人）、马人、独角兽等生物",
+        "last_incident": "昨晚有食死徒小队试图进入抓捕学生，被马人驱退时有缴械咒交火",
+        "mood_aura": "阴森、寒冷、危险（但比城堡内多一份自由）",
+        "restricted_items_stored": "少量隐藏的物资（帐篷、食物、魔药），由凤凰社不定时投放",
+        "damage_level": "自然状态，但有些树木因战斗折断",
+        "contamination_type": "自然腐败与魔法伤痕并存",
+        "emotional_ambience": "恐惧与脆弱交织，夹杂着短暂的解脱感"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:霍格沃茨魔法学院:loc:006",
+        "name": "医疗翼",
+        "type": "functional_area",
+        "description": "位于霍格沃茨城堡四楼的一长排病房，白色床单僵硬地覆盖着病床，药柜里的魔药被严格计数，墙壁上多出一幅卡罗兄妹的肖像画——它们实际上用于监视庞弗雷夫人的每一次诊断和治疗。昔日温暖的壁炉火焰被调暗，窗帘永远半拉，仿佛连阳光都不敢照进这个被恐惧笼罩的角落。庞弗雷夫人仍在此工作，但她治疗学生的纱布下常藏着食死徒的暗语记录，任何‘可疑伤口’都必须上报，否则她本人就会遭受惩罚。病床底下的秘密隔层中，偶尔藏着D.A.成员送来的急救魔药，但一旦被发现，医疗翼将立刻变成刑讯室的一部分。空气中弥漫着白鲜和苦涩的镇定剂气味，夹杂着压抑的啜泣声。",
+        "code_name": "白翼房间",
+        "alternate_names": "病房, 医院侧翼",
+        "horcrux_related": "false",
+        "danger_rating": "中等（来自监视与告密，而非医疗条件本身）",
+        "historical_significance": "曾是邓布利多养伤的避难所，如今成为食死徒控制学生健康以胁迫服从的工具",
+        "dark_magic_resonance": "微弱（残留的钻心咒回响偶尔在午夜让病床震颤）"
+      },
+      "access": {
+        "permissions": "仅限受伤学生、庞弗雷夫人、得到卡罗兄妹授权的教职员工（如斯内普）",
+        "access_level": "受限",
+        "access_conditions": "必须有明确的医疗原因，且庞弗雷夫人必须记录在案；非医疗原因进入需阿米库斯·卡罗的书面批准",
+        "current_password": "无（常规门锁，但庞弗雷夫人常使用无声无息咒打开）",
+        "surveillance_level": "高（卡罗的窃听咒覆盖每个病床，画像也会实时传音）",
+        "patrol_frequency": "每两小时一次（由阿莱克托·卡罗的亲信级长巡逻）",
+        "forbidden_charm_ward": "无（但施放任何非治疗性魔咒都会触发警报）",
+        "secret_entrance_hint": "东侧盥洗室的第三个水龙头下方有一个被遗忘的管道入口，可通往医疗翼的药剂储藏室——那是D.A.成员偶尔使用的秘密通道",
+        "floo_network_allowed": "否",
+        "portkey_activation": "未部署"
+      },
+      "state": {
+        "current_state": "被严密监控的日常运转中，部分病床被永久占用（食死徒惩罚后的学生被强迫卧床‘观察’）",
+        "ownership": "霍格沃茨学院，实际受食死徒政权控制",
+        "capacity": 12,
+        "current_occupying_faction": "食死徒（监视）/ 庞弗雷夫人（名义运营）",
+        "last_incident": "三天前，一名五年级学生因偷偷给被卡罗打伤的同学送止血剂，被发现后当场被施了钻心剜骨，至今躺在最里面的病床上昏迷不醒",
+        "mood_aura": "压抑、恐惧、药水味中混着绝望，壁炉的火星偶尔爆裂出呜咽般的声响",
+        "restricted_items_stored": "在庞弗雷夫人办公室的暗格里，藏有三瓶凤凰眼泪和一件隐形斗篷（属于某位D.A.成员暂存）",
+        "damage_level": "轻度（几扇窗户被咒语震裂，玻璃用胶带粘着）",
+        "contamination_type": "魔法暗影残留（多处诅咒攻击后的黑色淤痕附着在地板缝隙）",
+        "emotional_ambience": "冷冽的悲伤与警惕并存，每一次开门声都让病床上的学生瑟缩"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:霍格沃茨魔法学院:loc:001",
+    "e:霍格沃茨魔法学院:loc:002",
+    "e:霍格沃茨魔法学院:loc:003",
+    "e:霍格沃茨魔法学院:loc:004",
+    "e:霍格沃茨魔法学院:loc:005",
+    "e:霍格沃茨魔法学院:loc:006"
+  ],
+  "upstream_step_ids": [
+    "generate_locations"
+  ],
+  "warnings": [
+    "batch 1 review (score=4.86): 核心地点（大礼堂）的描述深度与主要/次要地点差异不大，可进一步突出其核心地位和历史意义，以更明显区分层级",
+    "item[1]: state.capacity '120个阅读座位，但实际每天使用人数不超过30人' cannot be converted to int",
+    "item[1]: validation failed: 1 validation error for LocationModel\nstate.capacity\n  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='120个阅读座位，但...用人数不超过30人', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/int_parsing"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

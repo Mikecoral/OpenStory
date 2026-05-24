@@ -64,5 +64,20 @@ def _extract_json(text: str) -> str:
             if depth == 0:
                 result = text[start:i + 1]
                 result = re.sub(r',\s*([}\]])', r'\1', result)
-                return result
+                return _repair_json(result)
+    return text
+
+
+def _repair_json(text: str) -> str:
+    """修复 LLM 输出中常见的 JSON 格式错误。
+
+    处理的问题：
+    - 数值后紧跟非 JSON 文本：``80（每座温室大约20-30盆植物）`` → ``80``
+    """
+    # 数值后面紧跟的非 JSON 合法字符全部剥离，包括可能的尾部多余引号
+    text = re.sub(
+        r'(?<=: )(-?\d+(?:\.\d+)?)[^,\]}\"]*"?',
+        r'\1',
+        text,
+    )
     return text

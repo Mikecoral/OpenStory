@@ -4,7 +4,15 @@ import json
 from pathlib import Path
 from typing import Any
 
-from worldkernel.architect.init.models import RawStage1Bundle
+from worldkernel.architect.init.models import (
+    ArtifactManifest,
+    ExecutionPlanArtifact,
+    InstanceSeedCatalogArtifact,
+    SchemaManifestArtifact,
+    Stage1ArtifactBundle,
+    WorldBackgroundArtifact,
+    WorldTemplateArtifact,
+)
 
 
 class InitInputLoadError(Exception):
@@ -12,9 +20,12 @@ class InitInputLoadError(Exception):
 
 
 class InitInputLoader:
+    ARTIFACT_MANIFEST_REL_PATH = Path("generated") / "artifact_manifest.json"
     WORLD_BACKGROUND_REL_PATH = Path("generated") / "plan" / "world_background.json"
     EXECUTION_PLAN_REL_PATH = Path("generated") / "plan" / "execution_plan.json"
     SEED_CATALOG_REL_PATH = Path("generated") / "plan" / "instance_seed_catalog.json"
+    WORLD_TEMPLATE_REL_PATH = Path("generated") / "world_template.json"
+    SCHEMA_MANIFEST_REL_PATH = Path("models") / "schema_manifest.json"
 
     @classmethod
     def from_session_root(
@@ -22,15 +33,52 @@ class InitInputLoader:
         session_root: str | Path,
         source_id: str = "primary",
         world_id: str | None = None,
-    ) -> RawStage1Bundle:
+    ) -> Stage1ArtifactBundle:
         root = Path(session_root)
+        manifest_path = root / cls.ARTIFACT_MANIFEST_REL_PATH
+        if manifest_path.exists():
+            return cls.from_manifest_path(
+                manifest_path=manifest_path,
+                source_id=source_id,
+                world_id=world_id,
+                provenance={"session_root": str(root)},
+            )
         return cls.from_paths(
             world_background_path=root / cls.WORLD_BACKGROUND_REL_PATH,
             execution_plan_path=root / cls.EXECUTION_PLAN_REL_PATH,
             seed_catalog_path=root / cls.SEED_CATALOG_REL_PATH,
+            world_template_path=root / cls.WORLD_TEMPLATE_REL_PATH,
+            schema_manifest_path=root / cls.SCHEMA_MANIFEST_REL_PATH,
             source_id=source_id,
             world_id=world_id,
             provenance={"session_root": str(root)},
+        )
+
+    @classmethod
+    def from_manifest_path(
+        cls,
+        manifest_path: str | Path,
+        source_id: str = "primary",
+        world_id: str | None = None,
+        provenance: dict[str, Any] | None = None,
+    ) -> Stage1ArtifactBundle:
+        manifest_file = Path(manifest_path)
+        manifest = cls._read_model(manifest_file, ArtifactManifest, "artifact_manifest")
+        session_root = manifest_file.parent.parent
+        return cls.from_paths(
+            world_background_path=session_root / manifest.world_background_path,
+            execution_plan_path=session_root / manifest.execution_plan_path,
+            seed_catalog_path=session_root / manifest.instance_seed_catalog_path,
+            world_template_path=(session_root / manifest.world_template_path) if manifest.world_template_path else None,
+            schema_manifest_path=(session_root / manifest.schema_manifest_path) if manifest.schema_manifest_path else None,
+            source_id=source_id,
+            world_id=world_id or manifest.world_id,
+            provenance={
+                "artifact_manifest_path": str(manifest_file),
+                "session_root": str(session_root),
+                **manifest.provenance,
+                **(provenance or {}),
+            },
         )
 
     @classmethod
@@ -39,32 +87,68 @@ class InitInputLoader:
         world_background_path: str | Path,
         execution_plan_path: str | Path,
         seed_catalog_path: str | Path,
+        world_template_path: str | Path | None = None,
+        schema_manifest_path: str | Path | None = None,
         source_id: str = "primary",
         world_id: str | None = None,
         provenance: dict[str, Any] | None = None,
-    ) -> RawStage1Bundle:
+    ) -> Stage1ArtifactBundle:
         world_background_file = Path(world_background_path)
         execution_plan_file = Path(execution_plan_path)
         seed_catalog_file = Path(seed_catalog_path)
 
-        world_background = cls._read_json_object(world_background_file, "world_background")
-        execution_plan = cls._read_json_object(execution_plan_file, "execution_plan")
-        seed_catalog = cls._read_json_object(seed_catalog_file, "seed_catalog")
-        cls._validate_raw_shapes(world_background, execution_plan, seed_catalog)
+        world_background = cls._read_model(world_background_file, WorldBackgroundArtifact, "world_background")
+        execution_plan = cls._read_model(execution_plan_file, ExecutionPlanArtifact, "execution_plan")
+        seed_catalog = cls._read_model(seed_catalog_file, InstanceSeedCatalogArtifact, "seed_catalog")
 
-        resolved_world_id = world_id or str(seed_catalog.get("session_id") or world_background.get("world_name") or source_id)
-        return RawStage1Bundle(
+        world_template = None
+        if world_template_path is not None and Path(world_template_path).exists():
+            world_template = cls._read_model(Path(world_template_path), WorldTemplateArtifact, "world_template")
+
+        schema_manifest = None
+        if schema_manifest_path is not None and Path(schema_manifest_path).exists():
+            schema_manifest = cls._read_model(Path(schema_manifest_path), SchemaManifestArtifact, "schema_manifest")
+
+        resolved_world_id = world_id or seed_catalog.session_id or world_background.world_name or source_id
+        shared_provenance = {
+            "world_background_path": str(world_background_file),
+            "execution_plan_path": str(execution_plan_file),
+            "seed_catalog_path": str(seed_catalog_file),
+            **({"world_template_path": str(world_template_path)} if world_template_path else {}),
+            **({"schema_manifest_path": str(schema_manifest_path)} if schema_manifest_path else {}),
+            **(provenance or {}),
+        }
+        world_background = world_background.model_copy(
+            update={
+                "world_id": resolved_world_id,
+                "source_id": source_id,
+                "provenance": {"artifact": "world_background", **shared_provenance},
+            }
+        )
+        execution_plan = execution_plan.model_copy(
+            update={"provenance": {"artifact": "execution_plan", **shared_provenance}}
+        )
+        seed_catalog = seed_catalog.model_copy(
+            update={"provenance": {"artifact": "instance_seed_catalog", **shared_provenance}}
+        )
+        if world_template is not None:
+            world_template = world_template.model_copy(
+                update={"provenance": {"artifact": "world_template", **shared_provenance}}
+            )
+        if schema_manifest is not None:
+            schema_manifest = schema_manifest.model_copy(
+                update={"provenance": {"artifact": "schema_manifest", **shared_provenance}}
+            )
+
+        return Stage1ArtifactBundle(
             world_background=world_background,
             execution_plan=execution_plan,
             seed_catalog=seed_catalog,
+            schema_manifest=schema_manifest,
+            world_template=world_template,
             world_id=resolved_world_id,
             source_id=source_id,
-            provenance={
-                "world_background_path": str(world_background_file),
-                "execution_plan_path": str(execution_plan_file),
-                "seed_catalog_path": str(seed_catalog_file),
-                **(provenance or {}),
-            },
+            provenance=shared_provenance,
         )
 
     @staticmethod
@@ -79,17 +163,22 @@ class InitInputLoader:
             raise InitInputLoadError(f"{label} must be a JSON object: {path}")
         return data
 
-    @staticmethod
-    def _validate_raw_shapes(
-        world_background: dict[str, Any],
-        execution_plan: dict[str, Any],
-        seed_catalog: dict[str, Any],
-    ) -> None:
-        if "world_constraints" not in world_background:
-            raise InitInputLoadError("world_background missing required field: world_constraints")
-        steps = execution_plan.get("steps")
-        if not isinstance(steps, list):
-            raise InitInputLoadError("execution_plan.steps must be a list")
-        seeds = seed_catalog.get("instance_seeds")
-        if not isinstance(seeds, dict):
-            raise InitInputLoadError("seed_catalog.instance_seeds must be an object")
+    @classmethod
+    def _read_model(cls, path: Path, model_type, label: str):
+        payload = cls._read_json_object(path, label)
+        try:
+            return model_type.model_validate(payload)
+        except Exception as exc:
+            raise InitInputLoadError(f"invalid {label} structure: {path}") from exc
+
+
+def load_stage1_artifacts_from_manifest(
+    manifest_path: str | Path,
+    source_id: str = "primary",
+    world_id: str | None = None,
+) -> Stage1ArtifactBundle:
+    return InitInputLoader.from_manifest_path(
+        manifest_path=manifest_path,
+        source_id=source_id,
+        world_id=world_id,
+    )

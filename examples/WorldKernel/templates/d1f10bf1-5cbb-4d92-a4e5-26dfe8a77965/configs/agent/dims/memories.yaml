@@ -1,0 +1,27 @@
+dim_name: MemoriesDim
+knowledge:
+  world_knowledge:
+    type: list_str
+  social_knowledge:
+    type: list_str
+background_summary:
+  type: str
+key_events:
+  type: list_str
+secrets:
+  type: list_str
+horcrux_location_clues:
+  type: str
+  option: true
+dumbledore_secret_trust:
+  type: str
+  option: true
+snapes_duality_evidence:
+  type: str
+  option: true
+carror_punishment_events:
+  type: str
+  option: true
+password_network_history:
+  type: str
+  option: true

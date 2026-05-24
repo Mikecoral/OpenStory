@@ -20,37 +20,8 @@ from worldkernel.architect.registry.core import (
 class SchemaLoadError(SchemaRegistryError):
     pass
 
-
-DEFAULT_STAGE1_MODEL_SPECS: tuple[dict[str, str], ...] = (
-    {
-        "alias": "location_profile",
-        "file": "location_model.py",
-        "class_name": "LocationModel",
-        "description": "Stage1 generated location model.",
-    },
-    {
-        "alias": "character_profile",
-        "file": "agent_model.py",
-        "class_name": "AgentModel",
-        "description": "Stage1 generated agent model used as the Stage2 character schema.",
-    },
-    {
-        "alias": "path_edge",
-        "file": "path_model.py",
-        "class_name": "PathModel",
-        "description": "Stage1 generated path model.",
-    },
-    {
-        "alias": "relation_edge",
-        "file": "relation_model.py",
-        "class_name": "RelationModel",
-        "description": "Stage1 generated relation model.",
-    },
-)
-
-
 def load_stage1_schema_source(source: SchemaSource, registry: SchemaRegistry) -> SchemaRegistry:
-    specs = _load_manifest_specs(source) or list(DEFAULT_STAGE1_MODEL_SPECS)
+    specs = _load_manifest_specs(source)
     missing: list[str] = []
 
     for spec in specs:
@@ -72,7 +43,7 @@ def load_stage1_schema_source(source: SchemaSource, registry: SchemaRegistry) ->
                 description=spec.get("description", ""),
                 metadata={
                     "model_file": spec.get("file", ""),
-                    "loader": "schema_manifest" if _manifest_path(source).exists() else "stage1_default",
+                    "loader": "schema_manifest",
                     **spec.get("metadata", {}),
                 },
             )
@@ -110,10 +81,10 @@ def _manifest_path(source: SchemaSource) -> Path:
     return source.resolved_models_dir() / "schema_manifest.json"
 
 
-def _load_manifest_specs(source: SchemaSource) -> list[dict[str, Any]] | None:
+def _load_manifest_specs(source: SchemaSource) -> list[dict[str, Any]]:
     manifest_path = _manifest_path(source)
     if not manifest_path.exists():
-        return None
+        raise SchemaLoadError(f"schema manifest not found: {manifest_path}")
     data = json.loads(manifest_path.read_text(encoding="utf-8"))
     specs = data.get("schemas")
     if not isinstance(specs, list):
@@ -132,6 +103,8 @@ def _load_manifest_specs(source: SchemaSource) -> list[dict[str, Any]] | None:
                 "metadata": spec.get("metadata", {}),
             }
         )
+    if not normalized:
+        raise SchemaLoadError(f"schema manifest has no schema entries: {manifest_path}")
     return normalized
 
 

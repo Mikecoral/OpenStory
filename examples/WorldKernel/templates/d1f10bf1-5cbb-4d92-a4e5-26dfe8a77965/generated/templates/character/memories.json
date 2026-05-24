@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "name": "background_summary",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "key_events",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "world_knowledge",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_knowledge",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "secrets",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "horcrux_location_clues",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dumbledore_secret_trust",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "snapes_duality_evidence",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "carror_punishment_events",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "password_network_history",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

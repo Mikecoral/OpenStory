@@ -7,6 +7,7 @@ from worldkernel.architect.init.models import ExecutionDAGNode, InitBuildContext
 from worldkernel.architect.registry.core import SchemaRegistry, ToolRegistry
 from worldkernel.architect.semantic.state import SemanticGenerationState
 from worldkernel.architect.tools.base import Stage2ToolContext, Stage2ToolRequest, Stage2ToolResult
+from worldkernel.architect.tools.identity_allocator import IdentityAllocator
 
 
 class StepDependencyError(RuntimeError):
@@ -50,6 +51,8 @@ class InitDAGRunner:
             },
         )
 
+        allocator = IdentityAllocator(init_context.world_background.world_name or "world")
+
         for step_id in init_context.execution_dag.execution_order:
             node = nodes_by_id[step_id]
             try:
@@ -70,6 +73,7 @@ class InitDAGRunner:
                     schema_registry=self._schema_registry,
                     source_id=init_context.world_background.source_id,
                     world_id=init_context.world_background.world_id,
+                    identity_allocator=allocator,
                     metadata={"step_id": node.step_id, "tool_id": node.tool_id},
                 )
                 result = await tool.run(request, context)

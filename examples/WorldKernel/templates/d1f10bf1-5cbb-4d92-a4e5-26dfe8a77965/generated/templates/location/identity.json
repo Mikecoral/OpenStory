@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "code_name",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "alternate_names",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "horcrux_related",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "danger_rating",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "historical_significance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dark_magic_resonance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

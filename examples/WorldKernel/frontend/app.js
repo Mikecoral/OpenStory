@@ -19,8 +19,15 @@ async function submitInput() {
     }
 
     const data = await resp.json();
+    setStatus(true, 'Stage1 完成，正在生成地点…');
+
+    const stage2Resp = await fetch(`/api/stage2/generate/${data.session_id}`, {
+      method: 'POST',
+    });
+    const stage2 = await stage2Resp.json().catch(() => ({}));
+
     setStatus(false);
-    showResult(data);
+    showResult(data, stage2, stage2Resp.ok);
   } catch (e) {
     setStatus(false);
     showError(e.message);
@@ -44,11 +51,23 @@ function showError(msg) {
   document.getElementById('errorText').textContent = '错误：' + msg;
 }
 
-function showResult(session) {
-  document.getElementById('resultSection').style.display = 'block';
+function showResult(session, stage2, ok) {
+  const s = document.getElementById('resultSection');
+  s.style.display = 'block';
   document.getElementById('sessionId').textContent = 'session: ' + session.session_id;
-  document.getElementById('resultMsg').textContent =
-    '已提交至后端，生成文件保存在 worlds/generated/' + session.session_id + '/';
+
+  let msg = 'Stage1 完成，文件保存在 templates/' + session.session_id + '/';
+  if (ok && stage2.locations) {
+    const loc = stage2.locations;
+    msg += '\n地点生成: ' + loc.count + ' 个';
+    if (loc.avg_score != null) msg += ', 质量评分: ' + loc.avg_score;
+    if (stage2.errors && stage2.errors.length) {
+      msg += '\n警告: ' + stage2.errors.join('; ');
+    }
+  } else if (stage2 && stage2.detail) {
+    msg += '\nStage2 失败: ' + stage2.detail;
+  }
+  document.getElementById('resultMsg').textContent = msg;
 }
 
 document.getElementById('worldInput').addEventListener('keydown', e => {

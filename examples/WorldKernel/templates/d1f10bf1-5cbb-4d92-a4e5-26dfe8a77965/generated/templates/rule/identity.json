@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "scope",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "effective_time_period",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "applicable_area",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "rule_hierarchy",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "rule_classification",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "exemption_condition",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

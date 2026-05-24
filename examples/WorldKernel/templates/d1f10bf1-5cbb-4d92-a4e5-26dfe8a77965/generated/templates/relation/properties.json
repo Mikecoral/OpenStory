@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "strength",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "relation_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "relation_subtype",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "interaction_history",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "conflict_trigger",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "disguise_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

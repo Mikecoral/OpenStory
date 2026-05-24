@@ -1,16 +1,20 @@
 from __future__ import annotations
 
+import logging
 import re
 from typing import Any
 
 from worldkernel.architect.init.models import (
-    CompiledWorldBackground,
     ExecutionDAG,
     ExecutionDAGNode,
-    RawStage1Bundle,
     ResolvedSeed,
+    SeedCatalogEntry,
+    Stage1ArtifactBundle,
+    WorldBackgroundArtifact,
 )
 from worldkernel.architect.registry.core import ToolRegistry
+
+logger = logging.getLogger(__name__)
 
 
 class InitCompileError(Exception):
@@ -18,32 +22,21 @@ class InitCompileError(Exception):
 
 
 class ContractCompiler:
-    def compile(self, bundle: RawStage1Bundle) -> CompiledWorldBackground:
-        raw = bundle.world_background
-        constraints = raw.get("world_constraints", [])
-        if not isinstance(constraints, list):
+    def compile(self, bundle: Stage1ArtifactBundle) -> WorldBackgroundArtifact:
+        world_background = bundle.world_background
+        if not isinstance(world_background.world_constraints, list):
             raise InitCompileError("world_background.world_constraints must be a list")
-        simulation_start = raw.get("simulation_start", {})
-        if simulation_start is None:
-            simulation_start = {}
-        if not isinstance(simulation_start, dict):
+        if not isinstance(world_background.simulation_start, dict):
             raise InitCompileError("world_background.simulation_start must be an object")
-
-        return CompiledWorldBackground(
-            world_id=bundle.world_id,
-            source_id=bundle.source_id,
-            world_name=str(raw.get("world_name", "")),
-            world_origin_summary=str(raw.get("world_origin_summary", "")),
-            primary=str(raw.get("primary", "")),
-            secondary=raw.get("secondary"),
-            tags=list(raw.get("tags", []) or []),
-            scope=str(raw.get("scope", "")),
-            simulation_start=simulation_start,
-            world_constraints=constraints,
-            provenance={
-                "source": "stage1.world_background",
-                **bundle.provenance,
-            },
+        return world_background.model_copy(
+            update={
+                "world_id": bundle.world_id,
+                "source_id": bundle.source_id,
+                "provenance": {
+                    "source": "stage1.world_background",
+                    **world_background.provenance,
+                },
+            }
         )
 
 
@@ -56,79 +49,68 @@ class ExecutionDAGCompiler:
     def __init__(self, tool_registry: ToolRegistry) -> None:
         self._tool_registry = tool_registry
 
-    def compile(self, bundle: RawStage1Bundle) -> ExecutionDAG:
-        raw_steps = bundle.execution_plan.get("steps")
-        if not isinstance(raw_steps, list):
-            raise InitCompileError("execution_plan.steps must be a list")
-
-        normalized_steps: list[tuple[int, dict[str, Any]]] = []
+    def compile(self, bundle: Stage1ArtifactBundle) -> ExecutionDAG:
+        normalized_steps: list[tuple[int, Any]] = []
         seen_step_ids: set[str] = set()
-        for index, step in enumerate(raw_steps):
-            if not isinstance(step, dict):
-                raise InitCompileError(f"execution_plan.steps[{index}] must be an object")
-            step_id = str(step.get("step_id", "")).strip()
+        for index, step in enumerate(bundle.execution_plan.steps):
+            step_id = step.step_id.strip()
             if not step_id:
                 raise InitCompileError(f"execution_plan.steps[{index}] missing step_id")
             if step_id in seen_step_ids:
                 raise InitCompileError(f"duplicate execution step_id: {step_id}")
             seen_step_ids.add(step_id)
-            priority = self._positive_int(step.get("priority", 1), f"step {step_id} priority")
-            batch_size = self._positive_int(step.get("batch_size", 1), f"step {step_id} batch_size")
-            generator_type = str(step.get("generator_type", "")).strip()
+            priority = self._positive_int(step.priority, f"step {step_id} priority")
+            batch_size = self._positive_int(step.batch_size, f"step {step_id} batch_size")
+            generator_type = step.generator_type.strip()
             if not generator_type:
                 raise InitCompileError(f"step {step_id} missing generator_type")
-            target_entity_type = str(step.get("target_entity_type", "")).strip()
+            target_entity_type = step.target_entity_type.strip()
             if not target_entity_type:
                 raise InitCompileError(f"step {step_id} missing target_entity_type")
             self._tool_registry.get_by_generator_type(generator_type)
             normalized_steps.append(
                 (
                     index,
-                    {
-                        **step,
-                        "step_id": step_id,
-                        "priority": priority,
-                        "batch_size": batch_size,
-                        "generator_type": generator_type,
-                        "target_entity_type": target_entity_type,
-                    },
+                    step.model_copy(
+                        update={
+                            "step_id": step_id,
+                            "priority": priority,
+                            "batch_size": batch_size,
+                            "generator_type": generator_type,
+                            "target_entity_type": target_entity_type,
+                        }
+                    ),
                 )
             )
 
-        sorted_steps = sorted(normalized_steps, key=lambda item: (item[1]["priority"], item[0]))
+        sorted_steps = sorted(normalized_steps, key=lambda item: (item[1].priority, item[0]))
         target_to_step_id: dict[str, str] = {}
         nodes: list[ExecutionDAGNode] = []
-        for sorted_index, (_original_index, step) in enumerate(sorted_steps):
-            target = step["target_entity_type"]
+        for sorted_index, (original_index, step) in enumerate(sorted_steps):
             depends_on: list[str] = []
-            for required_target in self.REQUIRED_TARGETS_BY_TARGET.get(target, ()):
+            for required_target in self.REQUIRED_TARGETS_BY_TARGET.get(step.target_entity_type, ()):
                 dependency_step_id = target_to_step_id.get(required_target)
                 if dependency_step_id is None:
                     raise InitCompileError(
-                        f"step {step['step_id']} requires prior target '{required_target}'"
+                        f"step {step.step_id} requires prior target '{required_target}'"
                     )
                 depends_on.append(dependency_step_id)
 
-            tool = self._tool_registry.get_by_generator_type(step["generator_type"])
+            tool = self._tool_registry.get_by_generator_type(step.generator_type)
             nodes.append(
                 ExecutionDAGNode(
-                    step_id=step["step_id"],
-                    generator_type=step["generator_type"],
-                    target_entity_type=target,
-                    batch_size=step["batch_size"],
-                    priority=step["priority"],
-                    description=str(step.get("description", "")),
+                    **step.model_dump(),
                     depends_on=depends_on,
                     tool_id=tool.tool_id,
                     output_schema_alias=tool.output_schema_alias,
                     provenance={
                         "source": "stage1.execution_plan",
-                        "original_index": _original_index,
+                        "original_index": original_index,
                         "execution_index": sorted_index,
                     },
                 )
             )
-            target_to_step_id.setdefault(target, step["step_id"])
+            target_to_step_id.setdefault(step.target_entity_type, step.step_id)
 
         return ExecutionDAG(
             nodes=nodes,
@@ -152,60 +134,65 @@ class ExecutionDAGCompiler:
 class SeedResolver:
     SUPPORTED_ENTITY_TYPES = ("location", "character")
 
-    def resolve(self, bundle: RawStage1Bundle) -> tuple[list[ResolvedSeed], list[ResolvedSeed]]:
-        instance_seeds = bundle.seed_catalog.get("instance_seeds")
-        if not isinstance(instance_seeds, dict):
-            raise InitCompileError("seed_catalog.instance_seeds must be an object")
+    def resolve(
+        self,
+        bundle: Stage1ArtifactBundle,
+        constraints: Any | None = None,
+    ) -> tuple[list[ResolvedSeed], list[ResolvedSeed]]:
         resolved_by_type: dict[str, list[ResolvedSeed]] = {}
+        seed_buckets = bundle.seed_catalog.instance_seeds
         for entity_type in self.SUPPORTED_ENTITY_TYPES:
-            seeds = instance_seeds.get(entity_type, [])
-            if not isinstance(seeds, list):
-                raise InitCompileError(f"seed_catalog.instance_seeds.{entity_type} must be a list")
+            seeds = getattr(seed_buckets, entity_type)
             resolved_by_type[entity_type] = self._resolve_entity_seeds(bundle, entity_type, seeds)
-        return resolved_by_type["location"], resolved_by_type["character"]
+
+        resolved_locations = resolved_by_type["location"]
+        resolved_characters = resolved_by_type["character"]
+
+        if constraints is not None:
+            from worldkernel.constraints import truncate_seeds
+            resolved_locations, loc_warns = truncate_seeds(
+                resolved_locations, constraints.max_locations, "location",
+            )
+            resolved_characters, char_warns = truncate_seeds(
+                resolved_characters, constraints.max_characters, "character",
+            )
+            for w in loc_warns + char_warns:
+                logger.warning(w)
+
+        return resolved_locations, resolved_characters
 
     def _resolve_entity_seeds(
         self,
-        bundle: RawStage1Bundle,
+        bundle: Stage1ArtifactBundle,
         entity_type: str,
-        seeds: list[Any],
+        seeds: list[SeedCatalogEntry],
     ) -> list[ResolvedSeed]:
         resolved: list[ResolvedSeed] = []
         seen_refs: set[str] = set()
-        for index, raw_seed in enumerate(seeds):
-            if not isinstance(raw_seed, dict):
-                raise InitCompileError(f"{entity_type} seed at index {index} must be an object")
-            seed_id = str(raw_seed.get("seed_id", "")).strip()
-            archetype_id = str(raw_seed.get("archetype_id", "")).strip()
-            if not seed_id:
+        for index, seed in enumerate(seeds):
+            if not seed.seed_id.strip():
                 raise InitCompileError(f"{entity_type} seed at index {index} missing seed_id")
-            if not archetype_id:
-                raise InitCompileError(f"{entity_type} seed {seed_id} missing archetype_id")
+            if not seed.archetype_id.strip():
+                raise InitCompileError(f"{entity_type} seed {seed.seed_id} missing archetype_id")
             priority = ExecutionDAGCompiler._positive_int(
-                raw_seed.get("generation_priority", 1),
-                f"{entity_type} seed {seed_id} generation_priority",
+                seed.generation_priority,
+                f"{entity_type} seed {seed.seed_id} generation_priority",
             )
+            normalized_seed = seed.model_copy(update={"generation_priority": priority})
             stable_seed_ref = build_stable_seed_ref(
                 world_id=bundle.world_id,
                 source_id=bundle.source_id,
                 entity_type=entity_type,
-                archetype_id=archetype_id,
-                seed_id=seed_id,
+                archetype_id=normalized_seed.archetype_id,
+                seed_id=normalized_seed.seed_id,
             )
             if stable_seed_ref in seen_refs:
                 raise InitCompileError(f"duplicate resolved seed ref: {stable_seed_ref}")
             seen_refs.add(stable_seed_ref)
             resolved.append(
                 ResolvedSeed(
-                    seed_id=seed_id,
+                    seed=normalized_seed,
                     entity_type=entity_type,
-                    archetype_id=archetype_id,
-                    name=str(raw_seed.get("name", "")),
-                    importance=str(raw_seed.get("importance", "")),
-                    source_type=str(raw_seed.get("source_type", "")),
-                    confidence=float(raw_seed.get("confidence", 0.0) or 0.0),
-                    priority=priority,
-                    role_in_world=str(raw_seed.get("role_in_world", "")),
                     stable_seed_ref=stable_seed_ref,
                     provenance={
                         "source": "stage1.instance_seed_catalog",

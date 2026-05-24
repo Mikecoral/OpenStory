@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "short_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "long_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "motivation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "horcrux_hunt_target",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "intelligence_gathering_objective",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "survival_priority",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "resistance_communication_duty",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "ward_bypass_objective",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

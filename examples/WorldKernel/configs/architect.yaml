@@ -1,0 +1,6 @@
+# WorldKernel generation constraints
+# 0 = unlimited
+
+generation_constraints:
+  max_locations: 7
+  max_characters: 10

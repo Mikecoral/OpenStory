@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "group_id",
+      "type": "str",
+      "required": true,
+      "ref": "institution"
+    },
+    {
+      "name": "reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "resistance_group_role",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "suspicion_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "informant_tag",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "neutrality_credibility",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "familial_vulnerability",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

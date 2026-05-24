@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "secret_name",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "passage_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_under_surveillance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "has_been_tampered",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

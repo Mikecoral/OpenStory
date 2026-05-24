@@ -1,10 +1,14 @@
 from __future__ import annotations
 
 import json
+import logging
 from pathlib import Path
 
+from worldkernel.constraints import GenerationConstraints, truncate_seeds
 from worldkernel.llm.client import chat_json
-from worldkernel.stage1.types import GenerationPlan, IntentResult, WorldTemplate
+from worldkernel.stage1.types import EntitySeed, GenerationPlan, IntentResult, WorldTemplate
+
+logger = logging.getLogger(__name__)
 
 _PROMPT_PATH = Path(__file__).parent / "prompts" / "plan_generation.md"
 
@@ -25,7 +29,11 @@ def _fmt_constraints(constraints: list) -> str:
     return ", ".join(c.name for c in constraints) or "无"
 
 
-async def plan_generation(intent: IntentResult, world_type: WorldTemplate) -> GenerationPlan:
+async def plan_generation(
+    intent: IntentResult,
+    world_type: WorldTemplate,
+    constraints: GenerationConstraints | None = None,
+) -> GenerationPlan:
     type_summary = world_type.world_origin_summary or world_type.primary
     if world_type.secondary:
         type_summary += f"（兼含 {world_type.secondary}）"
@@ -41,6 +49,15 @@ async def plan_generation(intent: IntentResult, world_type: WorldTemplate) -> Ge
         .replace("{{rule_archetypes}}", _fmt_archetypes(world_type.rule_archetypes))
         .replace("{{world_constraints}}", _fmt_constraints(world_type.world_constraints))
     )
+    # Inject hard constraints into prompt
+    if constraints and (constraints.max_locations > 0 or constraints.max_characters > 0):
+        limit_lines: list[str] = []
+        if constraints.max_locations > 0:
+            limit_lines.append(f"- locations 总数（所有 archetype 合计）不超过 {constraints.max_locations} 个")
+        if constraints.max_characters > 0:
+            limit_lines.append(f"- characters 总数（所有 archetype 合计）不超过 {constraints.max_characters} 个")
+        prompt += "\n\n**硬性约束（必须遵守）：**\n" + "\n".join(limit_lines)
+
     raw = await chat_json(prompt, system=_SYSTEM)
     data = json.loads(raw)
 
@@ -53,4 +70,52 @@ async def plan_generation(intent: IntentResult, world_type: WorldTemplate) -> Ge
         if len(data) == 1:
             data = next(iter(data.values()))
 
-    return GenerationPlan.model_validate(data)
+    plan = GenerationPlan.model_validate(data)
+
+    # Post-LLM truncation: enforce limits as safety net
+    if constraints:
+        loc_flat = [s for seeds in plan.entity_plan.locations.values() for s in seeds]
+        char_flat = [s for seeds in plan.entity_plan.characters.values() for s in seeds]
+        loc_kept, loc_warns = truncate_seeds(loc_flat, constraints.max_locations, "location")
+        char_kept, char_warns = truncate_seeds(char_flat, constraints.max_characters, "character")
+        if loc_warns or char_warns:
+            plan = _rebuild_plan_with_kept(plan, loc_kept, char_kept)
+
+    return plan
+
+
+def _rebuild_plan_with_kept(
+    plan: GenerationPlan,
+    loc_kept: list[EntitySeed],
+    char_kept: list[EntitySeed],
+) -> GenerationPlan:
+    """Rebuild EntityPlan dict structure after truncation."""
+    loc_kept_set = set(id(s) for s in loc_kept)
+    char_kept_set = set(id(s) for s in char_kept)
+
+    new_locations: dict[str, list[EntitySeed]] = {}
+    for archetype_id, seeds in plan.entity_plan.locations.items():
+        kept = [s for s in seeds if id(s) in loc_kept_set]
+        if kept:
+            new_locations[archetype_id] = kept
+
+    new_characters: dict[str, list[EntitySeed]] = {}
+    for archetype_id, seeds in plan.entity_plan.characters.items():
+        kept = [s for s in seeds if id(s) in char_kept_set]
+        if kept:
+            new_characters[archetype_id] = kept
+
+    logger.info(
+        "Rebuilt plan after truncation: locations %d->%d, characters %d->%d",
+        sum(len(v) for v in plan.entity_plan.locations.values()),
+        sum(len(v) for v in new_locations.values()),
+        sum(len(v) for v in plan.entity_plan.characters.values()),
+        sum(len(v) for v in new_characters.values()),
+    )
+
+    return plan.model_copy(update={
+        "entity_plan": plan.entity_plan.model_copy(update={
+            "locations": new_locations,
+            "characters": new_characters,
+        }),
+    })

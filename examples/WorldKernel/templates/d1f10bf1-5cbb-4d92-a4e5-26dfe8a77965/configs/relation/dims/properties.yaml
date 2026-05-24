@@ -1,0 +1,20 @@
+dim_name: PropertiesDim
+strength:
+  type: str
+description:
+  type: str
+relation_type:
+  type: str
+  option: true
+relation_subtype:
+  type: str
+  option: true
+interaction_history:
+  type: str
+  option: true
+conflict_trigger:
+  type: str
+  option: true
+disguise_level:
+  type: str
+  option: true

@@ -12,6 +12,7 @@ from worldkernel.stage1.types import (
     WorldTemplate,
 )
 from worldkernel.stage1.world_spec import SessionInfo
+from worldkernel.constraints import GenerationConstraints, load_generation_constraints
 from worldkernel.stage1.generation_planner import plan_generation
 from worldkernel.stage1.intent_parser import parse_intent
 from worldkernel.stage1.ontology_selector import generate_templates
@@ -27,7 +28,12 @@ class Stage1Error(Exception):
         super().__init__(f"Stage 1 failed at [{step}]: {cause}")
 
 
-async def run_stage1(raw_input: str) -> SessionInfo:
+async def run_stage1(
+    raw_input: str,
+    constraints: GenerationConstraints | None = None,
+) -> SessionInfo:
+    if constraints is None:
+        constraints = load_generation_constraints()
     session = SessionInfo(source_input=raw_input)
     out_dir = _TEMPLATES_DIR / session.session_id
 
@@ -42,7 +48,7 @@ async def run_stage1(raw_input: str) -> SessionInfo:
         raise Stage1Error("world_type_classifier", e) from e
 
     try:
-        plan: GenerationPlan = await plan_generation(intent, world_type)
+        plan: GenerationPlan = await plan_generation(intent, world_type, constraints=constraints)
     except Exception as e:
         raise Stage1Error("generation_planner", e) from e
 
@@ -56,6 +62,8 @@ async def run_stage1(raw_input: str) -> SessionInfo:
     _save_templates(out_dir / "generated" / "templates", templates)
     _save_entity_configs(out_dir / "configs", templates)
     _generate_pydantic_models(out_dir / "models", out_dir / "configs")
+    _save_schema_manifest(out_dir / "models")
+    _save_artifact_manifest(out_dir, session.session_id)
 
     return session
 
@@ -288,6 +296,16 @@ _ENTITY_CONFIGS: list[dict] = [
     },
 ]
 
+_STAGE2_SCHEMA_ALIASES_BY_DIR_NAME: dict[str, tuple[str, str]] = {
+    "location": ("location_profile", "Stage1 generated location model."),
+    "agent": (
+        "character_profile",
+        "Stage1 generated agent model used as the Stage2 character schema.",
+    ),
+    "path": ("path_edge", "Stage1 generated path model."),
+    "relation": ("relation_edge", "Stage1 generated relation model."),
+}
+
 _FIELD_GROUPS: dict[str, list[tuple[str, str, list[tuple[str, str]]]]] = {
     "state": [
         ("LocationRef", "location", [("location_id", "location_id")]),
@@ -446,3 +464,38 @@ def _generate_pydantic_models(models_dir: Path, configs_dir: Path) -> None:
 
         model_file = models_dir / f"{cfg['dir_name']}_model.py"
         model_file.write_text("\n".join(lines), encoding="utf-8")
+
+
+def _save_schema_manifest(models_dir: Path) -> None:
+    manifest = {
+        "schemas": [
+            {
+                "alias": alias,
+                "file": f"{cfg['dir_name']}_model.py",
+                "class_name": f"{_to_class_name(cfg['dir_name'])}Model",
+                "version": "v1",
+                "description": description,
+            }
+            for cfg in _ENTITY_CONFIGS
+            if cfg["dir_name"] in _STAGE2_SCHEMA_ALIASES_BY_DIR_NAME
+            for alias, description in [_STAGE2_SCHEMA_ALIASES_BY_DIR_NAME[cfg["dir_name"]]]
+        ]
+    }
+    _save_json(models_dir / "schema_manifest.json", manifest)
+
+
+def _save_artifact_manifest(session_root: Path, session_id: str) -> None:
+    manifest = {
+        "session_id": session_id,
+        "world_id": session_id,
+        "world_background_path": "generated/plan/world_background.json",
+        "execution_plan_path": "generated/plan/execution_plan.json",
+        "instance_seed_catalog_path": "generated/plan/instance_seed_catalog.json",
+        "world_template_path": "generated/world_template.json",
+        "schema_manifest_path": "models/schema_manifest.json",
+        "provenance": {
+            "source": "stage1.pipeline",
+            "session_root": str(session_root),
+        },
+    }
+    _save_json(session_root / "generated" / "artifact_manifest.json", manifest)
