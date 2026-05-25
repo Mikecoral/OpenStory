@@ -1,0 +1,22 @@
+dim_name: PropertiesDim
+distance:
+  type: str
+travel_time:
+  type: str
+visibility:
+  type: str
+invisibility_bool:
+  type: str
+  option: true
+has_thiefs_downfall:
+  type: str
+  option: true
+is_floo_connected:
+  type: str
+  option: true
+anti_apparition_warded:
+  type: str
+  option: true
+patrol_frequency:
+  type: str
+  option: true

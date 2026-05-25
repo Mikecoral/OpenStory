@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "mission",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "founding_reason",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_mission",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secret_mission",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "adaptation_to_war",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "enforcement_of_superiority",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

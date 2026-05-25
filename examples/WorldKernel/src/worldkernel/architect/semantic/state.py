@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field
@@ -9,15 +10,21 @@ from worldkernel.architect.tools.base import Stage2ToolResult
 
 
 class StepResultStore:
-    """In-memory result store that keeps a single reference per step result."""
+    """In-memory result store that keeps a single reference per step result.
+
+    Thread-safe for concurrent async writers via asyncio.Lock.
+    Read methods are lock-free (Python dict reads are safe between await points).
+    """
 
     def __init__(self) -> None:
         self._results_by_step_id: dict[str, Stage2ToolResult] = {}
         self._results_by_artifact_type: dict[str, list[Stage2ToolResult]] = {}
+        self._lock = asyncio.Lock()
 
-    def add_result(self, step_id: str, result: Stage2ToolResult) -> None:
-        self._results_by_step_id[step_id] = result
-        self._results_by_artifact_type.setdefault(result.artifact_type, []).append(result)
+    async def add_result(self, step_id: str, result: Stage2ToolResult) -> None:
+        async with self._lock:
+            self._results_by_step_id[step_id] = result
+            self._results_by_artifact_type.setdefault(result.artifact_type, []).append(result)
 
     def get_step_result(self, step_id: str) -> Stage2ToolResult:
         return self._results_by_step_id[step_id]

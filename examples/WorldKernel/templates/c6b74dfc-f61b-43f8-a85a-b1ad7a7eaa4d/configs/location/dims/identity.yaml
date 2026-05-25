@@ -1,0 +1,21 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+description:
+  type: str
+affiliation:
+  type: str
+  option: true
+hidden_purpose:
+  type: str
+  option: true
+key_event:
+  type: str
+  option: true
+related_to_horcrux:
+  type: str
+  option: true

@@ -1,0 +1,24 @@
+dim_name: EndpointsDim
+from_id:
+  type: str
+  ref: location
+to_id:
+  type: str
+  ref: location
+bidirectional:
+  type: bool
+has_secret_entrance:
+  type: str
+  option: true
+monitored_by_carow:
+  type: str
+  option: true
+connected_to_room_of_requirement:
+  type: str
+  option: true
+floo_network_accessible:
+  type: str
+  option: true
+vanishing_cabinet_pair:
+  type: str
+  option: true

@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "bidirectional",
+      "type": "bool",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "has_secret_entrance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "monitored_by_carow",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "connected_to_room_of_requirement",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "floo_network_accessible",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "vanishing_cabinet_pair",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

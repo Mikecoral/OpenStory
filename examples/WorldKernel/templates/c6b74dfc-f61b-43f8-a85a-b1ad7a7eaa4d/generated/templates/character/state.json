@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "location_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "position_x",
+      "type": "float",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "position_y",
+      "type": "float",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "under_surveillance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "current_hiding_spot",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "invisibility_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "last_interaction_with_carros",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

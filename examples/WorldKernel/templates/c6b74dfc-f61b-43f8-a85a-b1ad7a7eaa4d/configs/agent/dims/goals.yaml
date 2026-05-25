@@ -1,0 +1,19 @@
+dim_name: GoalsDim
+short_term_goal:
+  type: str
+long_term_goal:
+  type: str
+motivation:
+  type: str
+seeking_horcrux:
+  type: str
+  option: true
+planning_escape:
+  type: str
+  option: true
+undermining_carros_regime:
+  type: str
+  option: true
+protecting_other_students:
+  type: str
+  option: true

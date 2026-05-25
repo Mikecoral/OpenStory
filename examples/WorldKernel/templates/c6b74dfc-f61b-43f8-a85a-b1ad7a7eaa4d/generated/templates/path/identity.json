@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "hidden_alias",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "known_to_death_eaters",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "password_protected",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "resistance_codename",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

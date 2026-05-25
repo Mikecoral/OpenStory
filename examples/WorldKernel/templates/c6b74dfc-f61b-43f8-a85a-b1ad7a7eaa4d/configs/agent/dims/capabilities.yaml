@@ -1,0 +1,19 @@
+dim_name: CapabilitiesDim
+skills:
+  type: list_str
+level:
+  type: str
+weaknesses:
+  type: str
+unforgivable_curses_mastery:
+  type: str
+  option: true
+patronus_form:
+  type: str
+  option: true
+occlumency_proficiency:
+  type: str
+  option: true
+galleon_communicator:
+  type: str
+  option: true

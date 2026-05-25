@@ -9,7 +9,7 @@ from worldkernel.architect.init.models import (
     ExecutionDAGNode,
     ResolvedSeed,
 )
-from worldkernel.architect.tools.identity_allocator import IdentityAllocator
+from worldkernel.architect.tools.identity_allocator import IdentityRegistry
 
 
 class Stage2ToolContext(BaseModel):
@@ -18,7 +18,7 @@ class Stage2ToolContext(BaseModel):
     schema_registry: Any
     source_id: str = "primary"
     world_id: str = ""
-    identity_allocator: IdentityAllocator | None = None
+    identity_registry: IdentityRegistry | None = None
     metadata: dict[str, Any] = Field(default_factory=dict)
 
 

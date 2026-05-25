@@ -1,0 +1,19 @@
+dim_name: StateDim
+current_state:
+  type: str
+ownership:
+  type: str
+capacity:
+  type: int
+temporary_defense:
+  type: str
+  option: true
+damage_status:
+  type: str
+  option: true
+secret_gathering:
+  type: str
+  option: true
+hidden_objects:
+  type: str
+  option: true

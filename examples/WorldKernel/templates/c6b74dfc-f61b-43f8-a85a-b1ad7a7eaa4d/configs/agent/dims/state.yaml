@@ -1,0 +1,22 @@
+dim_name: StateDim
+location:
+  location_id:
+    type: str
+    ref: location
+position:
+  x:
+    type: float
+  y:
+    type: float
+under_surveillance:
+  type: str
+  option: true
+current_hiding_spot:
+  type: str
+  option: true
+invisibility_status:
+  type: str
+  option: true
+last_interaction_with_carros:
+  type: str
+  option: true

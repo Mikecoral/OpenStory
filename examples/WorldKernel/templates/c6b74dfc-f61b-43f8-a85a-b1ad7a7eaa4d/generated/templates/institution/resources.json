@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "assets",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "territory",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "restricted_areas",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "communication_blockade",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "confiscated_items",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secret_passages_locations",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

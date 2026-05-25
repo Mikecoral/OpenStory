@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "danger_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "required_items",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "curfew_restricted",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "requires_password",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "has_booby_trap",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "alert_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "requires_invisibility_cloak",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dementor_patrolled",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

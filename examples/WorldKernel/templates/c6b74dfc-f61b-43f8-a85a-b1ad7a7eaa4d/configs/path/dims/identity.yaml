@@ -1,0 +1,19 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+hidden_alias:
+  type: str
+  option: true
+known_to_death_eaters:
+  type: str
+  option: true
+password_protected:
+  type: str
+  option: true
+resistance_codename:
+  type: str
+  option: true

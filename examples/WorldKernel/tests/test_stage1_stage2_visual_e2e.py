@@ -385,18 +385,15 @@ def _run_stage2(session_id: str, session_dir: Path, stats: _Stats) -> None:
     else:
         stats.fail("character seeds 为空")
 
-    # Seed ref validation
-    seed_ok = True
-    for seed in init_context.resolved_location_seeds:
-        if not seed.stable_seed_ref.startswith("seed:"):
-            seed_ok = False
-    for seed in init_context.resolved_character_seeds:
-        if not seed.stable_seed_ref.startswith("seed:"):
-            seed_ok = False
-    if seed_ok:
-        stats.ok("所有 stable_seed_ref 格式正确 (seed:...)")
+    # Seed ID uniqueness validation
+    all_seed_ids = (
+        [s.seed_id for s in init_context.resolved_location_seeds]
+        + [s.seed_id for s in init_context.resolved_character_seeds]
+    )
+    if len(all_seed_ids) == len(set(all_seed_ids)):
+        stats.ok(f"所有 seed_id 唯一 ({len(all_seed_ids)} 个)")
     else:
-        stats.fail("存在格式错误的 stable_seed_ref")
+        stats.fail("存在重复的 seed_id")
 
     # DAG dependencies
     nodes_by_id = {n.step_id: n for n in init_context.execution_dag.nodes}
@@ -435,19 +432,19 @@ def _run_stage2(session_id: str, session_dir: Path, stats: _Stats) -> None:
 
     # Save seed inventory
     seed_lines = ["# Seed Inventory", "", "## Location Seeds", "",
-                  "| Stable Ref | Seed ID | Name | Archetype | Importance | Source Type | Priority |",
-                  "| --- | --- | --- | --- | --- | --- | --- |"]
+                  "| Seed ID | Name | Archetype | Importance | Source Type | Priority |",
+                  "| --- | --- | --- | --- | --- | --- |"]
     for seed in init_context.resolved_location_seeds:
         seed_lines.append(
-            f"| `{seed.stable_seed_ref}` | {seed.seed_id} | {seed.name} "
+            f"| {seed.seed_id} | {seed.name} "
             f"| {seed.archetype_id} | {seed.importance} | {seed.source_type} | {seed.seed.generation_priority} |"
         )
     seed_lines += ["", "## Character Seeds", "",
-                    "| Stable Ref | Seed ID | Name | Archetype | Importance | Source Type | Priority |",
-                    "| --- | --- | --- | --- | --- | --- | --- |"]
+                    "| Seed ID | Name | Archetype | Importance | Source Type | Priority |",
+                    "| --- | --- | --- | --- | --- | --- |"]
     for seed in init_context.resolved_character_seeds:
         seed_lines.append(
-            f"| `{seed.stable_seed_ref}` | {seed.seed_id} | {seed.name} "
+            f"| {seed.seed_id} | {seed.name} "
             f"| {seed.archetype_id} | {seed.importance} | {seed.source_type} | {seed.seed.generation_priority} |"
         )
     _write_text(dbg / "seed_inventory.md", "\n".join(seed_lines))
@@ -589,11 +586,38 @@ def _run_stage2(session_id: str, session_dir: Path, stats: _Stats) -> None:
     else:
         stats.fail("无法获取 generate_locations 结果")
 
-    expected_order = ["generate_locations", "generate_paths", "generate_characters", "generate_relations"]
-    if init_context.execution_dag.execution_order == expected_order:
-        stats.ok(f"执行顺序: {' -> '.join(expected_order)}")
+    # With wave-based parallel execution, execution_order follows topological waves:
+    # Wave 1: [generate_characters, generate_locations] (sorted, parallel)
+    # Wave 2: [generate_paths, generate_relations] (sorted, parallel)
+    # The DAG's execution_order from Stage1 may differ; what matters is that
+    # the runner's actual execution_order respects dependencies.
+    expected_dag_steps = {"generate_locations", "generate_paths", "generate_characters", "generate_relations"}
+    actual_steps = set(init_context.execution_dag.execution_order)
+    if actual_steps == expected_dag_steps:
+        stats.ok(f"DAG 包含全部 4 个步骤")
     else:
-        stats.fail(f"执行顺序异常: {init_context.execution_dag.execution_order}")
+        stats.fail(f"DAG 步骤不完整: {actual_steps}")
+
+    # Verify wave ordering: location/character before paths/relations
+    if generation_state.completed_steps:
+        completed = generation_state.completed_steps
+        loc_idx = completed.index("generate_locations") if "generate_locations" in completed else -1
+        char_idx = completed.index("generate_characters") if "generate_characters" in completed else -1
+        path_idx = completed.index("generate_paths") if "generate_paths" in completed else -1
+        rel_idx = completed.index("generate_relations") if "generate_relations" in completed else -1
+
+        wave_order_ok = True
+        if loc_idx >= 0 and path_idx >= 0 and path_idx < loc_idx:
+            wave_order_ok = False
+        if char_idx >= 0 and rel_idx >= 0 and rel_idx < char_idx:
+            wave_order_ok = False
+
+        if wave_order_ok:
+            stats.ok(f"波次顺序正确: {' -> '.join(completed)}")
+        else:
+            stats.fail(f"波次顺序异常: {completed}")
+    else:
+        stats.fail("无已完成步骤")
 
     # Flow summary
     wt_data = _load(session_dir, "generated/world_template.json") or {}

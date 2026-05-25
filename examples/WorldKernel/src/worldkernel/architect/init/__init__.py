@@ -3,7 +3,6 @@ from worldkernel.architect.init.compilers import (
     ExecutionDAGCompiler,
     InitCompileError,
     SeedResolver,
-    build_stable_seed_ref,
 )
 from worldkernel.architect.init.loader import (
     InitInputLoadError,
@@ -53,7 +52,6 @@ __all__ = [
     "Stage1ArtifactBundle",
     "WorldBackgroundArtifact",
     "WorldTemplateArtifact",
-    "build_stable_seed_ref",
     "compile_stage1_init_context",
     "load_stage1_artifacts_from_manifest",
 ]

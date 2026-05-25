@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import logging
-import re
 from typing import Any
 
 from worldkernel.architect.init.models import (
@@ -168,32 +167,24 @@ class SeedResolver:
         seeds: list[SeedCatalogEntry],
     ) -> list[ResolvedSeed]:
         resolved: list[ResolvedSeed] = []
-        seen_refs: set[str] = set()
+        seen_ids: set[str] = set()
         for index, seed in enumerate(seeds):
             if not seed.seed_id.strip():
                 raise InitCompileError(f"{entity_type} seed at index {index} missing seed_id")
             if not seed.archetype_id.strip():
                 raise InitCompileError(f"{entity_type} seed {seed.seed_id} missing archetype_id")
+            if seed.seed_id in seen_ids:
+                raise InitCompileError(f"duplicate seed_id within {entity_type}: {seed.seed_id}")
+            seen_ids.add(seed.seed_id)
             priority = ExecutionDAGCompiler._positive_int(
                 seed.generation_priority,
                 f"{entity_type} seed {seed.seed_id} generation_priority",
             )
             normalized_seed = seed.model_copy(update={"generation_priority": priority})
-            stable_seed_ref = build_stable_seed_ref(
-                world_id=bundle.world_id,
-                source_id=bundle.source_id,
-                entity_type=entity_type,
-                archetype_id=normalized_seed.archetype_id,
-                seed_id=normalized_seed.seed_id,
-            )
-            if stable_seed_ref in seen_refs:
-                raise InitCompileError(f"duplicate resolved seed ref: {stable_seed_ref}")
-            seen_refs.add(stable_seed_ref)
             resolved.append(
                 ResolvedSeed(
                     seed=normalized_seed,
                     entity_type=entity_type,
-                    stable_seed_ref=stable_seed_ref,
                     provenance={
                         "source": "stage1.instance_seed_catalog",
                         "seed_index": index,
@@ -201,29 +192,3 @@ class SeedResolver:
                 )
             )
         return resolved
-
-
-def build_stable_seed_ref(
-    world_id: str,
-    source_id: str,
-    entity_type: str,
-    archetype_id: str,
-    seed_id: str,
-) -> str:
-    return ":".join(
-        (
-            "seed",
-            _stable_ref_part(world_id),
-            _stable_ref_part(source_id),
-            _stable_ref_part(entity_type),
-            _stable_ref_part(archetype_id),
-            _stable_ref_part(seed_id),
-        )
-    )
-
-
-def _stable_ref_part(value: str) -> str:
-    text = str(value).strip()
-    text = re.sub(r"\s+", "_", text)
-    text = text.replace(":", "_")
-    return text or "unknown"

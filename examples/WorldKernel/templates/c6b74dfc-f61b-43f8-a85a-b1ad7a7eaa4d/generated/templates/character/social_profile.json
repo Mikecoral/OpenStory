@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "group_id",
+      "type": "str",
+      "required": true,
+      "ref": "institution"
+    },
+    {
+      "name": "reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "underground_reputation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "suspicion_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "house_point_standing",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "death_eater_trust_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

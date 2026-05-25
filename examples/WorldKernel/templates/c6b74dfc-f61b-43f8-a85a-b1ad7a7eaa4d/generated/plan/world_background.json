@@ -1,0 +1,47 @@
+{
+  "world_name": "霍格沃茨魔法学院（死亡圣器时期）",
+  "world_origin_summary": "衍生自《哈利·波特》系列第七部《死亡圣器》，1997-1998学年伏地魔通过食死徒傀儡控制霍格沃茨，学院陷入恐怖与抵抗并存的动荡时期。",
+  "primary": "magic_school",
+  "secondary": "warzone",
+  "tags": [
+    "魔法",
+    "学院",
+    "衍生",
+    "战争时期",
+    "黑暗统治",
+    "死亡圣器"
+  ],
+  "scope": "single_location",
+  "simulation_start": {
+    "time_point": "1997年9月1日开学日",
+    "trigger_event": "西弗勒斯·斯内普被任命为霍格沃茨校长，阿米库斯·卡罗与阿莱克托·卡罗兄妹入驻担任黑魔法防御术教授与麻瓜研究教授，全面推行恐怖统治",
+    "year": "1997",
+    "narrative_context": "邓布利多已逝，魔法部沦陷，伏地魔的势力渗透霍格沃茨，学生在严酷管制下秘密组建抵抗力量，同时哈利三人组在外寻找魂器。"
+  },
+  "world_constraints": [
+    {
+      "constraint_id": "magical_secrecy",
+      "name": "魔法世界保密法",
+      "description": "巫师世界对麻瓜隐藏自身存在的根本法则，即使在战乱时期仍需遵守，但食死徒政权可能选择性违反",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "death_eater_occupation",
+      "name": "食死徒占领统治",
+      "description": "霍格沃茨由伏地魔通过斯内普及卡罗兄妹实际控制，公开表达异议、组织反抗或逃离均属严重罪行，面临严酷惩罚甚至死亡",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "horcrux_logic",
+      "name": "魂器毁灭逻辑",
+      "description": "伏地魔的魂器只能通过特定的强大破坏手段（如蛇怪毒牙、厉火、格兰芬多宝剑）才能彻底摧毁，普通魔法无效，影响故事发展方向",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "ancient_magic_protection",
+      "name": "霍格沃茨古老魔法庇护",
+      "description": "霍格沃茨城堡由历代校长和创始人的古老魔法环绕，赋予校园一定的防御力，但该保护在伏地魔控制下被部分压制；不过仍存在某些庇护所（如有求必应屋）不受食死徒完全监视",
+      "scope": "location"
+    }
+  ]
+}

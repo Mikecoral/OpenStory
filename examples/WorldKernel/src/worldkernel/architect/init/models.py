@@ -123,7 +123,6 @@ class ExecutionDAG(BaseModel):
 class ResolvedSeed(BaseModel):
     seed: SeedCatalogEntry
     entity_type: str
-    stable_seed_ref: str
     source: str = "stage1_seed_catalog"
     provenance: dict[str, Any] = Field(default_factory=dict)
 

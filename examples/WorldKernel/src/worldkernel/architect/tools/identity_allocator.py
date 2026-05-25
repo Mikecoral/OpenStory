@@ -1,13 +1,14 @@
-"""Unified entity ID allocator for Stage2 generation.
+"""Unified entity ID management for Stage2 generation.
 
-Assigns persistent, globally unique entity IDs after generation,
-replacing the unreliable LLM-generated identity.id values.
+Split into two classes:
+- IdentityAllocator: deterministic candidate ID generator (pure, stateless)
+- IdentityRegistry: idempotent mapping manager (reuse existing, register new)
 """
 
 from __future__ import annotations
 
 import re
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 from pydantic import BaseModel
 
@@ -16,82 +17,144 @@ if TYPE_CHECKING:
 
 
 class IdentityAllocator:
-    """统一实体 ID 分配器。管理全局唯一性，天然支持子世界层级路径。"""
+    """Deterministic candidate ID generator.
 
-    def __init__(self, world_name: str):
-        self._world_slug = self._to_slug(world_name)
-        self._counter = 0
-        self._allocated: set[str] = set()
-        self._seed_to_entity: dict[str, str] = {}
+    Generates IDs based on sorted seed order, guaranteeing the same
+    seed set always produces the same candidate IDs regardless of
+    call order or retry strategy.
+    """
 
-    def allocate_ids(
+    def __init__(self, world_slug: str):
+        self._world_slug = world_slug
+
+    def generate_for_seeds(
+        self,
+        seeds: list[ResolvedSeed],
+        entity_type: str,
+        existing_ids: set[str] | None = None,
+    ) -> dict[str, str]:
+        """Generate deterministic candidate IDs for a batch of seeds.
+
+        Seeds are sorted by seed_id before counter assignment,
+        ensuring the same seed set always gets the same IDs.
+
+        Args:
+            seeds: Seeds to generate IDs for.
+            entity_type: Entity type prefix (e.g., "loc", "char").
+            existing_ids: Set of already-registered entity IDs.
+                If provided, counter starts after the max existing counter
+                to avoid collisions.
+
+        Returns:
+            Mapping of {seed_id: entity_id}.
+        """
+        start_counter = 0
+        if existing_ids:
+            pattern = re.compile(
+                rf"e:{re.escape(self._world_slug)}:{entity_type}:(\d+)"
+            )
+            for eid in existing_ids:
+                m = pattern.match(eid)
+                if m:
+                    start_counter = max(start_counter, int(m.group(1)))
+
+        sorted_seeds = sorted(seeds, key=lambda s: s.seed_id)
+        result: dict[str, str] = {}
+        for i, seed in enumerate(sorted_seeds, 1):
+            short_id = f"{start_counter + i:03d}"
+            entity_id = f"e:{self._world_slug}:{entity_type}:{short_id}"
+            result[seed.seed_id] = entity_id
+        return result
+
+    @property
+    def world_slug(self) -> str:
+        return self._world_slug
+
+    @staticmethod
+    def to_slug(name: str) -> str:
+        """Convert world_name to slug format.
+
+        Rules: lowercase, spaces to underscores, strip special chars,
+        merge consecutive underscores.
+        """
+        slug = name.lower()
+        slug = re.sub(r"[^a-z0-9]+", "_", slug)
+        slug = slug.strip("_")
+        return slug or "world"
+
+
+class IdentityRegistry:
+    """Idempotent entity ID registry.
+
+    Maintains a mapping of seed_id -> entity_id.
+    - Already registered: reuse existing ID
+    - Not registered: generate candidate ID and register
+
+    Guarantees:
+    - Same seed always gets same entity_id (idempotent)
+    - Deterministic regardless of call order or retry
+    - New seeds don't affect existing mappings
+    """
+
+    def __init__(self, allocator: IdentityAllocator):
+        self._allocator = allocator
+        self._registry: dict[str, str] = {}
+
+    def register_batch(
+        self,
+        seeds: list[ResolvedSeed],
+        entity_type: str,
+    ) -> dict[str, str]:
+        """Batch register seeds. Already-registered seeds are skipped.
+
+        New seeds get candidate IDs starting after the max existing counter
+        to avoid collisions.
+
+        Returns:
+            Mapping of all seeds' {seed_id: entity_id} (both
+            previously registered and newly registered).
+        """
+        new_seeds = [s for s in seeds if s.seed_id not in self._registry]
+        if new_seeds:
+            candidates = self._allocator.generate_for_seeds(
+                new_seeds,
+                entity_type,
+                existing_ids=set(self._registry.values()),
+            )
+            self._registry.update(candidates)
+        return {s.seed_id: self._registry[s.seed_id] for s in seeds}
+
+    def lookup(self, seeds: list[ResolvedSeed]) -> dict[str, str]:
+        """Look up pre-registered seed -> entity_id mappings.
+
+        All seeds must have been registered beforehand via register_batch().
+        """
+        return {s.seed_id: self._registry[s.seed_id] for s in seeds}
+
+    def verify_and_fix(
         self,
         items: list[BaseModel],
         entity_type: str,
         seeds: list[ResolvedSeed],
     ) -> list[str]:
-        """为生成的实体分配 ID，返回分配的 ID 列表。
+        """Verify and fix items' identity.id to match registered values.
 
-        Args:
-            items: 已验证的 Pydantic 模型实例列表，必须有 identity.id 字段。
-            entity_type: 实体类型缩写（"loc", "char", "path", "rel"）。
-            seeds: 对应的种子列表，用于建立 seed_ref → entity_id 映射。
+        For each item, forces identity.id to the entity_id registered
+        for the corresponding seed. All seeds must be pre-registered.
 
         Returns:
-            分配的 entity_id 列表。
+            List of entity IDs (one per item).
         """
-        if len(items) != len(seeds):
-            # items 和 seeds 数量不匹配时，按最小数量分配
-            pass
-
         ids: list[str] = []
         for i, item in enumerate(items):
-            entity_id = self._next_id(entity_type)
-            self._allocated.add(entity_id)
-
-            # 更新 identity.id
+            expected_id = self._registry[seeds[i].seed_id]
             identity = getattr(item, "identity", None)
             if identity is not None and hasattr(identity, "id"):
-                old_id = identity.id
-                identity.id = entity_id
-            else:
-                old_id = ""
-
-            # 记录 seed_ref → entity_id 映射
-            if i < len(seeds):
-                self._seed_to_entity[seeds[i].stable_seed_ref] = entity_id
-
-            ids.append(entity_id)
-
+                identity.id = expected_id
+            ids.append(expected_id)
         return ids
-
-    def resolve_ref(self, seed_ref: str) -> str | None:
-        """将 seed_ref 解析为已分配的 entity_id。"""
-        return self._seed_to_entity.get(seed_ref)
-
-    @property
-    def allocated_count(self) -> int:
-        """已分配的 ID 总数。"""
-        return len(self._allocated)
 
     @property
     def seed_mapping(self) -> dict[str, str]:
-        """seed_ref → entity_id 的完整映射。"""
-        return dict(self._seed_to_entity)
-
-    def _next_id(self, entity_type: str) -> str:
-        """生成下一个全局唯一的实体 ID。"""
-        self._counter += 1
-        short_id = f"{self._counter:03d}"
-        return f"e:{self._world_slug}:{entity_type}:{short_id}"
-
-    @staticmethod
-    def _to_slug(name: str) -> str:
-        """将 world_name 转换为 slug 格式。
-
-        规则：小写、空格转下划线、去除特殊字符、合并连续下划线。
-        """
-        slug = name.lower()
-        slug = re.sub(r"[^a-z0-9一-鿿]+", "_", slug)
-        slug = slug.strip("_")
-        return slug or "world"
+        """Complete seed_id -> entity_id mapping."""
+        return dict(self._registry)

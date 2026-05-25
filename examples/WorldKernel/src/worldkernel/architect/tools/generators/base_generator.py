@@ -15,7 +15,7 @@ from pydantic import BaseModel
 
 from worldkernel.architect.init.models import ResolvedSeed, WorldBackgroundArtifact
 from worldkernel.architect.tools.base import Stage2ToolRequest
-from worldkernel.architect.tools.identity_allocator import IdentityAllocator
+from worldkernel.architect.tools.identity_allocator import IdentityRegistry
 
 if TYPE_CHECKING:
     from worldkernel.architect.registry.core import SchemaEntry
@@ -215,13 +215,24 @@ def build_world_context(request: Stage2ToolRequest) -> dict[str, str]:
 # Seed list formatting
 # ---------------------------------------------------------------------------
 
-def build_seed_list(batch: list[ResolvedSeed]) -> str:
-    """Format a batch of seeds into a readable list for the prompt."""
+def build_seed_list(
+    batch: list[ResolvedSeed],
+    pre_allocated_ids: dict[str, str] | None = None,
+) -> str:
+    """Format a batch of seeds into a readable list for the prompt.
+
+    When *pre_allocated_ids* is provided, includes the pre-allocated entity ID
+    for each seed so the LLM can use it directly as identity.id.
+    """
     parts: list[str] = []
     for i, seed in enumerate(batch, 1):
+        id_line = ""
+        if pre_allocated_ids and seed.seed_id in pre_allocated_ids:
+            entity_id = pre_allocated_ids[seed.seed_id]
+            id_line = f"- id: {entity_id}\n"
         parts.append(
             f"### 种子 {i}\n"
-            f"- stable_seed_ref: {seed.stable_seed_ref}\n"
+            f"{id_line}"
             f"- name: {seed.name}\n"
             f"- archetype_id: {seed.archetype_id}\n"
             f"- importance: {seed.importance}\n"
@@ -278,8 +289,6 @@ def parse_and_validate(
     if not isinstance(raw_data, list):
         raw_data = [raw_data]
 
-    seed_map = {s.stable_seed_ref: s for s in seeds}
-    valid_refs = set(seed_map.keys())
     validated: list[BaseModel] = []
     warnings: list[str] = []
 
@@ -303,21 +312,21 @@ def parse_and_validate(
 def assign_entity_ids(
     items: list[BaseModel],
     seeds: list[ResolvedSeed],
-    allocator: IdentityAllocator,
+    registry: IdentityRegistry,
     entity_type: str,
 ) -> list[str]:
-    """使用 allocator 为已验证的实体分配持久化 ID。
+    """Verify and fix items' identity.id to match registered entity IDs.
 
     Args:
-        items: 已通过 Pydantic 验证的模型实例列表。
-        seeds: 对应的种子列表。
-        allocator: 统一 ID 分配器。
-        entity_type: 实体类型缩写（"loc", "char", "path", "rel"）。
+        items: Validated Pydantic model instances.
+        seeds: Corresponding seed list.
+        registry: Identity registry with pre-registered mappings.
+        entity_type: Entity type abbreviation ("loc", "char", "path", "rel").
 
     Returns:
-        分配的 entity_id 列表。
+        List of entity IDs (one per item).
     """
-    return allocator.allocate_ids(items, entity_type, seeds)
+    return registry.verify_and_fix(items, entity_type, seeds)
 
 
 def _coerce_field_types(

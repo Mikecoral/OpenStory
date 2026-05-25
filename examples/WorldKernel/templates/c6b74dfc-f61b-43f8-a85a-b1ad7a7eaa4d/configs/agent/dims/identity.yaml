@@ -1,0 +1,19 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+role:
+  type: str
+faction:
+  type: str
+  option: true
+secret_identity:
+  type: str
+  option: true
+blood_status:
+  type: str
+  option: true
+death_eater_registration_status:
+  type: str
+  option: true

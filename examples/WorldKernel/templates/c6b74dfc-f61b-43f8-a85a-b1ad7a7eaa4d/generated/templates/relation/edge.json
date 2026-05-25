@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "direction",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "is_secret",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_violent",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "control_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "cooperation_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "has_soul_correspondence",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

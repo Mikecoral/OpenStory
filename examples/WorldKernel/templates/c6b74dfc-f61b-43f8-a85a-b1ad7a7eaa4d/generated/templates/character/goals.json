@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "short_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "long_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "motivation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "seeking_horcrux",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "planning_escape",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "undermining_carros_regime",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "protecting_other_students",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

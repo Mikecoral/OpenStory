@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "relation_ids",
+      "type": "list_str",
+      "required": true,
+      "ref": "relation"
+    },
+    {
+      "name": "trust_level_with_each_contact",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "alliance_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "blackmail_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "patronage_relation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}
