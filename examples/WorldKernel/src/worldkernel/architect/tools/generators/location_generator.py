@@ -239,7 +239,7 @@ class LocationGenerationTool(BaseStage2Tool):
         retried = False
 
         # --- Phase 0: Register batch (idempotent) ---
-        pre_ids = registry.lookup(batch)
+        pre_ids = registry.lookup(batch, "loc")
 
         # --- Phase 1: Generate ---
         gen_prompt = build_generation_prompt(_GENERATION_USER_TEMPLATE, {
