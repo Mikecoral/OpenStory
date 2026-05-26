@@ -113,6 +113,27 @@ def _build_reference_index(domain_artifacts: dict[str, SemanticDomainArtifact]) 
     return index
 
 
+def _build_seed_id_index(generation_state: SemanticGenerationState) -> dict[str, dict[str, str]]:
+    """Extract seed_id -> entity_id mappings from generation results.
+
+    Returns a dict like {"location": {"hogwarts": "e:hp:loc:001"}, "character": {...}}.
+    These mappings are stored in each Stage2ToolResult's provenance by the generators.
+    """
+    index: dict[str, dict[str, str]] = {"location": {}, "character": {}}
+    type_to_key = {
+        "location_profile": "location",
+        "character_profile": "character",
+    }
+    for _, result in generation_state.result_store.iter_results():
+        key = type_to_key.get(result.artifact_type)
+        if key is None:
+            continue
+        mapping = result.provenance.get("seed_to_entity_mapping")
+        if isinstance(mapping, dict):
+            index[key].update(mapping)
+    return index
+
+
 def _build_debug_snapshot(generation_state: SemanticGenerationState) -> dict[str, Any]:
     results = {}
     for step_id, result in generation_state.result_store.iter_results():
@@ -187,8 +208,11 @@ def save_semantic_artifacts(
         },
     )
 
+    seed_id_index = _build_seed_id_index(generation_state)
+
     _write_json(metadata_dir / "semantic_manifest.json", manifest.model_dump(mode="json"))
     _write_json(metadata_dir / "reference_index.json", reference_index.model_dump(mode="json"))
+    _write_json(metadata_dir / "seed_id_index.json", seed_id_index)
     _write_json(metadata_dir / "generation_report.json", report.model_dump(mode="json"))
 
     if debug:

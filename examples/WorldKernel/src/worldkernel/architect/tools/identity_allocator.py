@@ -86,19 +86,25 @@ class IdentityAllocator:
 class IdentityRegistry:
     """Idempotent entity ID registry.
 
-    Maintains a mapping of seed_id -> entity_id.
-    - Already registered: reuse existing ID
-    - Not registered: generate candidate ID and register
+    Maintains a mapping of ``{entity_type}:{seed_id}`` -> entity_id.
+    Keys are scoped by entity_type to prevent cross-type collisions
+    (e.g. a location seed and a character seed sharing the same seed_id).
 
     Guarantees:
     - Same seed always gets same entity_id (idempotent)
     - Deterministic regardless of call order or retry
     - New seeds don't affect existing mappings
+    - Different entity types never collide, even with identical seed_ids
     """
 
     def __init__(self, allocator: IdentityAllocator):
         self._allocator = allocator
         self._registry: dict[str, str] = {}
+
+    @staticmethod
+    def _scoped_key(entity_type: str, seed_id: str) -> str:
+        """Build a composite registry key that scopes seed_id by entity_type."""
+        return f"{entity_type}:{seed_id}"
 
     def register_batch(
         self,
@@ -114,22 +120,26 @@ class IdentityRegistry:
             Mapping of all seeds' {seed_id: entity_id} (both
             previously registered and newly registered).
         """
-        new_seeds = [s for s in seeds if s.seed_id not in self._registry]
+        new_seeds = [
+            s for s in seeds
+            if self._scoped_key(entity_type, s.seed_id) not in self._registry
+        ]
         if new_seeds:
             candidates = self._allocator.generate_for_seeds(
                 new_seeds,
                 entity_type,
                 existing_ids=set(self._registry.values()),
             )
-            self._registry.update(candidates)
-        return {s.seed_id: self._registry[s.seed_id] for s in seeds}
+            for sid, eid in candidates.items():
+                self._registry[self._scoped_key(entity_type, sid)] = eid
+        return {s.seed_id: self._registry[self._scoped_key(entity_type, s.seed_id)] for s in seeds}
 
-    def lookup(self, seeds: list[ResolvedSeed]) -> dict[str, str]:
+    def lookup(self, seeds: list[ResolvedSeed], entity_type: str) -> dict[str, str]:
         """Look up pre-registered seed -> entity_id mappings.
 
         All seeds must have been registered beforehand via register_batch().
         """
-        return {s.seed_id: self._registry[s.seed_id] for s in seeds}
+        return {s.seed_id: self._registry[self._scoped_key(entity_type, s.seed_id)] for s in seeds}
 
     def verify_and_fix(
         self,
@@ -147,14 +157,44 @@ class IdentityRegistry:
         """
         ids: list[str] = []
         for i, item in enumerate(items):
-            expected_id = self._registry[seeds[i].seed_id]
+            expected_id = self._registry[self._scoped_key(entity_type, seeds[i].seed_id)]
             identity = getattr(item, "identity", None)
             if identity is not None and hasattr(identity, "id"):
                 identity.id = expected_id
             ids.append(expected_id)
         return ids
 
+    def allocate_dynamic(self, count: int, entity_type: str) -> list[str]:
+        """Allocate entity IDs for dynamically generated items (no seeds).
+
+        Used when the number of entities is determined by LLM output
+        (e.g., path generation) and cannot be pre-registered.
+
+        Returns:
+            List of entity_id strings, length == count.
+        """
+        class _DynSeed:
+            __slots__ = ("seed_id",)
+            def __init__(self, sid: str):
+                self.seed_id = sid
+
+        synthetic = [_DynSeed(f"__dyn_{entity_type}_{i:03d}") for i in range(count)]
+        self.register_batch(synthetic, entity_type)  # type: ignore[arg-type]
+        return [self._registry[self._scoped_key(entity_type, s.seed_id)] for s in synthetic]
+
+    def seed_mapping_by_type(self, entity_type: str) -> dict[str, str]:
+        """Return seed_id -> entity_id mapping for a specific entity_type.
+
+        Strips the scoped key prefix for external consumption.
+        """
+        prefix = f"{entity_type}:"
+        return {
+            k[len(prefix):]: v
+            for k, v in self._registry.items()
+            if k.startswith(prefix)
+        }
+
     @property
     def seed_mapping(self) -> dict[str, str]:
-        """Complete seed_id -> entity_id mapping."""
+        """Complete scoped_key -> entity_id mapping (for provenance/debugging)."""
         return dict(self._registry)

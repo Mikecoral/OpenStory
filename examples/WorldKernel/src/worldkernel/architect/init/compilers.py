@@ -158,6 +158,13 @@ class SeedResolver:
             for w in loc_warns + char_warns:
                 logger.warning(w)
 
+        # Cross-type seed_id uniqueness check
+        loc_ids = {s.seed_id for s in resolved_locations}
+        char_ids = {s.seed_id for s in resolved_characters}
+        overlap = loc_ids & char_ids
+        if overlap:
+            raise InitCompileError(f"seed_id collision across entity types: {overlap}")
+
         return resolved_locations, resolved_characters
 
     def _resolve_entity_seeds(

@@ -1,5 +1,6 @@
 from worldkernel.architect.tools.base import (
     BaseStage2Tool,
+    SeedReuseProvider,
     Stage2ToolContext,
     Stage2ToolRequest,
     Stage2ToolResult,
