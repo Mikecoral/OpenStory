@@ -21,7 +21,7 @@
 3. **原型契合度**：角色是否准确体现了其 role/archetype 的特征？
 4. **区分度**：同类角色之间是否有足够差异化？
 5. **层级合理性**：core/major/minor 的重要性差异是否在动机复杂度和人设深度上体现出来？
-6. **位置留空合规性**：角色 Schema 中的位置/坐标字段是否严格按照要求填入了空对象 {}（绝不能是 null）？
+6. **地点绑定合规性**：`state.position` 是否严格留空为 {}？`state.location` 是否正确绑定了地点，且格式严格为 {"location_id": "具体的地点ID"}？
 7. **对象格式合规性**：诸如 knowledge 等复合对象字段，是否正确使用了 JSON 字典（如 {"description": "..."}），而不是纯文本字符串？
 
 ## 输出格式
@@ -36,13 +36,13 @@
       "archetype_fit": 0,
       "differentiation": 0,
       "importance_tiering": 0,
-      "position_blank_compliance": 0,
+      "location_binding_compliance": 0,
       "object_format_compliance": 0
     },
     "overall_score": 0.0,
     "issues": ["具体问题描述1", "具体问题描述2"],
     "corrections": [
-      {"index": 0, "field": "personality.traits", "reason": "修正原因", "suggested": "修正后的内容"}
+      {"index": 0, "field": "state.location", "reason": "修正原因", "suggested": {"location_id": "e:xxx"}}
     ]
   },
   "corrected_characters": []
