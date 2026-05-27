@@ -249,6 +249,7 @@ class LocationGenerationTool(BaseStage2Tool):
             "seed_list": build_seed_list(batch, pre_ids),
             "batch_index": str(batch_index),
             "total_batches": str(total_batches),
+            "seed_count": str(len(batch)),
         })
 
         raw_gen = await chat_json(gen_prompt, system=_GENERATION_SYSTEM)
@@ -272,21 +273,26 @@ class LocationGenerationTool(BaseStage2Tool):
                 review_score = review_info.get("overall_score")
                 issues = review_info.get("issues", [])
 
-                if issues:
-                    warnings.append(
-                        f"batch {batch_index} review (score={review_score}): "
-                        + "; ".join(str(i) for i in issues)
-                    )
-
                 # Use corrected locations if available
                 corrected = review_result.get("corrected_locations")
-                if isinstance(corrected, list) and corrected:
+                if issues:
+                    if isinstance(corrected, list) and corrected:
+                        gen_data = corrected
+                        warnings.append(
+                            f"batch {batch_index} review (score={review_score}): "
+                            f"发现 {len(issues)} 个问题并已自动修正"
+                        )
+                    else:
+                        warnings.append(
+                            f"batch {batch_index} review (score={review_score}): "
+                            + "; ".join(str(i) for i in issues)
+                        )
+                        warnings.append(
+                            f"batch {batch_index}: review returned no corrected_locations, "
+                            "using generation output"
+                        )
+                elif isinstance(corrected, list) and corrected:
                     gen_data = corrected
-                else:
-                    warnings.append(
-                        f"batch {batch_index}: review returned no corrected_locations, "
-                        "using generation output"
-                    )
 
                 # Retry if quality is below threshold
                 if review_score is not None and review_score < _QUALITY_THRESHOLD:
@@ -327,6 +333,41 @@ class LocationGenerationTool(BaseStage2Tool):
         validated, val_warnings = parse_and_validate(gen_data, ModelClass, batch)
         warnings.extend(val_warnings)
 
+        # --- Phase 3.5: Completeness check + retry for missing seeds ---
+        if len(validated) < len(batch):
+            missing_count = len(batch) - len(validated)
+            warnings.append(
+                f"batch {batch_index}: generated {len(validated)}/{len(batch)} items, "
+                f"{missing_count} missing; retrying for missing seeds"
+            )
+            generated_ids: set[str] = set()
+            for item in validated:
+                identity = getattr(item, "identity", None)
+                if identity and hasattr(identity, "id") and identity.id:
+                    generated_ids.add(identity.id)
+            missing_seeds = [
+                s for s in batch
+                if pre_ids.get(s.seed_id) not in generated_ids
+            ]
+            if missing_seeds:
+                retry_items, retry_refs, retry_warnings = await self._retry_batch(
+                    batch=missing_seeds,
+                    batch_index=batch_index,
+                    total_batches=total_batches,
+                    world_ctx=world_ctx,
+                    schema_desc=schema_desc,
+                    char_summary=char_summary,
+                    ModelClass=ModelClass,
+                    review_issues=[f"上一轮缺少 {missing_count} 个地点，请为以下种子生成地点"],
+                    registry=registry,
+                    pre_ids=pre_ids,
+                )
+                if retry_items:
+                    validated.extend(retry_items)
+                    warnings.extend(retry_warnings)
+                else:
+                    warnings.append(f"batch {batch_index}: completeness retry also failed")
+
         # --- Phase 4: Verify & fix entity IDs ---
         refs = assign_entity_ids(validated, batch, registry, "loc")
 
@@ -359,6 +400,7 @@ class LocationGenerationTool(BaseStage2Tool):
             "character_seed_summary": char_summary,
             "seed_list": build_seed_list(batch, pre_ids),
             "review_issues": issues_str,
+            "seed_count": str(len(batch)),
         })
 
         try:

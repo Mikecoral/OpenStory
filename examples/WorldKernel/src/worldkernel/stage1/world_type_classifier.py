@@ -50,4 +50,17 @@ async def build_world_template(intent: IntentResult) -> WorldTemplate:
                 flat[k] = v
         data = flat
 
+    # LLM 有时遗漏 seed 的 name 字段，用 seed_id 回填
+    _backfill_seed_names(data)
+
     return WorldTemplate.model_validate(data)
+
+
+def _backfill_seed_names(data: dict) -> None:
+    """Fill missing 'name' in candidate_*_seeds using seed_id as fallback."""
+    for arch_field in ("location_archetypes", "character_archetypes", "rule_archetypes"):
+        for archetype in data.get(arch_field, []):
+            for seed_key in ("candidate_location_seeds", "candidate_character_seeds", "candidate_rule_seeds"):
+                for seed in archetype.get(seed_key, []):
+                    if isinstance(seed, dict) and not seed.get("name"):
+                        seed["name"] = seed.get("seed_id", "")
