@@ -23,6 +23,7 @@
 
 ## 输出要求
 
+**重要：本批次有 {{seed_count}} 个种子，你必须输出恰好 {{seed_count}} 个地点对象的 JSON 数组。不可遗漏任何种子。生成的地点必须是种子列表中的地点**
 输出一个 JSON 数组，每个元素对应一个地点种子。
 每个种子已有预分配的 id（见种子列表），生成时 identity.id 必须严格使用该预分配 id。
 根据种子的 archetype_id、importance、role_in_world 填充各维度字段。

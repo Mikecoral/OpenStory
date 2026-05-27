@@ -7,6 +7,7 @@ Split into two classes:
 
 from __future__ import annotations
 
+import logging
 import re
 from typing import TYPE_CHECKING
 
@@ -14,6 +15,8 @@ from pydantic import BaseModel
 
 if TYPE_CHECKING:
     from worldkernel.architect.init.models import ResolvedSeed
+
+logger = logging.getLogger(__name__)
 
 
 class IdentityAllocator:
@@ -157,6 +160,12 @@ class IdentityRegistry:
         """
         ids: list[str] = []
         for i, item in enumerate(items):
+            if i >= len(seeds):
+                logger.warning(
+                    "verify_and_fix: more items (%d) than seeds (%d), stopping",
+                    len(items), len(seeds),
+                )
+                break
             expected_id = self._registry[self._scoped_key(entity_type, seeds[i].seed_id)]
             identity = getattr(item, "identity", None)
             if identity is not None and hasattr(identity, "id"):

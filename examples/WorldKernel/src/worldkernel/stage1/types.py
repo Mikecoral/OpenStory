@@ -26,7 +26,7 @@ class IntentResult(BaseModel):
 
 class LocationSeed(BaseModel):
     seed_id: str
-    name: str
+    name: str = ""
     importance: str = ""            # core | major | minor
     source_type: str = ""           # canonical | inferred | original
     confidence: float = 0.9
@@ -44,7 +44,7 @@ class LocationArchetype(BaseModel):
 
 class CharacterSeed(BaseModel):
     seed_id: str
-    name: str
+    name: str = ""
     importance: str = ""
     source_type: str = ""
     confidence: float = 0.9
@@ -62,7 +62,7 @@ class CharacterArchetype(BaseModel):
 
 class RuleSeed(BaseModel):
     seed_id: str
-    name: str
+    name: str = ""
     importance: str = ""
     source_type: str = ""
     confidence: float = 0.9
