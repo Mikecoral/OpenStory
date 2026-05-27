@@ -1,0 +1,69 @@
+{
+  "world_id": "e2a5b02f-51ba-46fc-8501-783ef973b08a",
+  "success": false,
+  "source_ids": [
+    "visual-e2e"
+  ],
+  "execution_order": [
+    "generate_characters",
+    "generate_locations",
+    "generate_paths",
+    "generate_relations"
+  ],
+  "completed_steps": [
+    "generate_characters",
+    "generate_locations",
+    "generate_paths"
+  ],
+  "failed_step_id": "generate_relations",
+  "warnings": [
+    "batch 1 review (score=4.71): knowledge字段使用了纯文本字符串，而非JSON字典格式，不符合对象格式合规性要求",
+    "batch 1: Expected 5 items, LLM returned 1",
+    "batch 2 review (score=4.3): 弗立维的 capabilities 中字段 'undergraduate_communication_skill' 应为 schema 中定义的 'underground_communication_skill'（拼写错误或字段替换）; 所有角色的 knowledge 字段均为纯文本字符串，不符合 JSON 字典格式要求（如 {\"description\": \"...\"}）; 阿莱克托·卡罗的 personality.traits 中包含 '忘恩负义'，该特质与角色定位（残虐、偏执）关联较弱，建议替换为更贴切的词，如 '偏执狂' 或 '嗜血'",
+    "review (score=4.71): 路径 path:004（北侧绿化小径）连接黑魔法防御课教室（四楼）与禁林（户外），距离标为'短'、旅行时间5分钟，明显不合理。实际需要从四楼下楼、穿过城堡到户外，至少需10-15分钟，距离应为'中'或'长'。",
+    "graph: path[4]: duplicate edge e:e2a5b02f_51ba_46fc_8501_783ef973b08a:loc:005<->e:e2a5b02f_51ba_46fc_8501_783ef973b08a:loc:006",
+    "graph validation passed after retry"
+  ],
+  "errors": [
+    "generate_relations: RelationGraphTool.run() is not implemented yet"
+  ],
+  "artifact_files": {
+    "location_profile": "locations\\locations.json",
+    "character_profile": "characters\\characters.json",
+    "path_edge": "path_graph\\path_graph.json",
+    "relation_edge": "relation_graph\\relation_graph.json"
+  },
+  "counts": {
+    "location_profile": 4,
+    "character_profile": 5,
+    "path_edge": 4,
+    "relation_edge": 0
+  },
+  "timestamp": "2026-05-27T10:02:20.589191+00:00",
+  "debug_files": {},
+  "provenance": {
+    "stage1_inputs": {
+      "source": "stage1.pipeline",
+      "source_id": "visual-e2e",
+      "world_id": "e2a5b02f-51ba-46fc-8501-783ef973b08a",
+      "world_background_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\e2a5b02f-51ba-46fc-8501-783ef973b08a\\generated\\plan\\world_background.json",
+      "execution_plan_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\e2a5b02f-51ba-46fc-8501-783ef973b08a\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\e2a5b02f-51ba-46fc-8501-783ef973b08a\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\e2a5b02f-51ba-46fc-8501-783ef973b08a\\generated\\world_template.json",
+      "schema_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\e2a5b02f-51ba-46fc-8501-783ef973b08a\\models\\schema_manifest.json",
+      "artifact_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\e2a5b02f-51ba-46fc-8501-783ef973b08a\\generated\\artifact_manifest.json",
+      "session_root": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\e2a5b02f-51ba-46fc-8501-783ef973b08a"
+    },
+    "world_background": {
+      "source": "stage1.pipeline",
+      "artifact": "world_background",
+      "world_background_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\e2a5b02f-51ba-46fc-8501-783ef973b08a\\generated\\plan\\world_background.json",
+      "execution_plan_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\e2a5b02f-51ba-46fc-8501-783ef973b08a\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\e2a5b02f-51ba-46fc-8501-783ef973b08a\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\e2a5b02f-51ba-46fc-8501-783ef973b08a\\generated\\world_template.json",
+      "schema_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\e2a5b02f-51ba-46fc-8501-783ef973b08a\\models\\schema_manifest.json",
+      "artifact_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\e2a5b02f-51ba-46fc-8501-783ef973b08a\\generated\\artifact_manifest.json",
+      "session_root": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\e2a5b02f-51ba-46fc-8501-783ef973b08a"
+    }
+  }
+}

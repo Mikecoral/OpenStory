@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "location_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "position_x",
+      "type": "float",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "position_y",
+      "type": "float",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "current_cover_story",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "suspicion_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "emotional_distress_indicator",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "physical_evidence_of_punishment",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

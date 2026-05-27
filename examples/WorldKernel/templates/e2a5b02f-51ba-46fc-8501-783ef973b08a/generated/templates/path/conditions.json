@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "danger_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "required_items",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "invisibility_required",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "under_surveillance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "alarm_trigger",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "pass_demanded",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "disillusionment_charm_active",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "restricted_hours_usage",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

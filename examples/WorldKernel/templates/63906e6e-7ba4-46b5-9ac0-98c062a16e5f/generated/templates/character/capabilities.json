@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "skills",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "weaknesses",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "dark_magic_proficiency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "resistance_skills",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "occlumency_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "forbidden_spell_knowledge",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

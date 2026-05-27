@@ -1,0 +1,19 @@
+dim_name: ConditionsDim
+access_level:
+  type: str
+danger_level:
+  type: str
+required_items:
+  type: str
+curfew_safety:
+  type: str
+  option: true
+caroport_restriction:
+  type: str
+  option: true
+is_trapped:
+  type: str
+  option: true
+resistance_use_only:
+  type: str
+  option: true

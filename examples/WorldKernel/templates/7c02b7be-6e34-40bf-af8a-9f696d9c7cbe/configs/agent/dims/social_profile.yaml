@@ -1,0 +1,21 @@
+dim_name: SocialProfileDim
+group_id:
+  type: str
+  ref: institution
+reputation:
+  type: str
+secret_organization_affiliation:
+  type: str
+  option: true
+death_eater_reputation:
+  type: str
+  option: true
+student_leadership:
+  type: str
+  option: true
+is_ostracized:
+  type: str
+  option: true
+family_imprisonment_status:
+  type: str
+  option: true

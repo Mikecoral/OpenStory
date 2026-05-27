@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "leader",
+      "type": "str",
+      "required": true,
+      "ref": "character"
+    },
+    {
+      "name": "rules",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "decision_process",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "de_facto_authority",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "rule_of_terror",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secret_governance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

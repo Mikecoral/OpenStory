@@ -1,0 +1,27 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+description:
+  type: str
+occupying_faction:
+  type: str
+  option: true
+secret_alias:
+  type: str
+  option: true
+hiding_capabilities:
+  type: str
+  option: true
+battle_relevance:
+  type: str
+  option: true
+defilement_level:
+  type: str
+  option: true
+institutional_role_changed:
+  type: str
+  option: true

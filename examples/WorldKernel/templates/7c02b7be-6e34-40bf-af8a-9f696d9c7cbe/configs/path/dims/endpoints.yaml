@@ -1,0 +1,21 @@
+dim_name: EndpointsDim
+from_id:
+  type: str
+  ref: location
+to_id:
+  type: str
+  ref: location
+bidirectional:
+  type: bool
+guarded_by:
+  type: str
+  option: true
+has_warded_entrance:
+  type: str
+  option: true
+requires_verbal_passphrase:
+  type: str
+  option: true
+alarm_trigger_condition:
+  type: str
+  option: true

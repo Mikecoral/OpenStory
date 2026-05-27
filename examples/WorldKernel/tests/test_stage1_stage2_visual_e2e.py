@@ -475,7 +475,7 @@ def _run_stage2(session_id: str, session_dir: Path, stats: _Stats) -> None:
     _write_text(dbg / "stage2_context_summary.md", "\n".join(ctx_lines))
 
     # Run InitDAGRunner (real LLM generation)
-    _sep("Stage2: Running Location Generation")
+    _sep("Stage2: Running DAG Generation")
     runner = InitDAGRunner(schema_registry=schema_registry, tool_registry=tool_registry)
     generation_state = asyncio.run(runner.run_async(init_context))
 
@@ -586,7 +586,86 @@ def _run_stage2(session_id: str, session_dir: Path, stats: _Stats) -> None:
     else:
         stats.fail("无法获取 generate_locations 结果")
 
-    # With wave-based parallel execution, execution_order follows topological waves:
+    # Verify character generation results
+    _sep("Stage2: Character Generation Results")
+    if "generate_characters" in generation_state.completed_steps:
+        stats.ok("generate_characters 步骤完成")
+    else:
+        stats.fail(f"generate_characters 未完成: {generation_state.errors}")
+
+    char_result = generation_state.result_store.get_step_result("generate_characters") if generation_state.result_store.has_step_result("generate_characters") else None
+    if char_result:
+        n_items = len(char_result.items)
+        n_seeds = len(init_context.resolved_character_seeds)
+        if n_items >= 1:
+            stats.ok(f"生成 {n_items}/{n_seeds} 个角色")
+        else:
+            stats.fail("未生成任何角色")
+
+        # identity.id 格式验证
+        entity_ids = [item.identity.id for item in char_result.items if hasattr(item, "identity")]
+        id_pattern_ok = all(eid.startswith("e:") and ":char:" in eid for eid in entity_ids)
+        if id_pattern_ok and len(entity_ids) == len(set(entity_ids)):
+            stats.ok(f"{len(entity_ids)} 个角色 identity.id 格式正确且无重复")
+        else:
+            stats.fail(f"identity.id 格式异常或存在重复: {entity_ids[:5]}")
+
+        # seed_to_entity mapping
+        mapping = char_result.provenance.get("seed_to_entity_mapping", {})
+        if len(mapping) >= n_seeds:
+            stats.ok(f"seed_to_entity_mapping 完整 ({len(mapping)}/{n_seeds})")
+        elif len(mapping) >= 1:
+            print(f"  [WARN] seed_to_entity_mapping 部分完成 ({len(mapping)}/{n_seeds})")
+        else:
+            stats.fail(f"seed_to_entity_mapping 为空 (0/{n_seeds})")
+
+        # 质量分数
+        qs = char_result.provenance.get("quality_summary", {})
+        avg = qs.get("avg_review_score", 0)
+        if avg >= 3.0:
+            stats.ok(f"平均质量评分: {avg}")
+        else:
+            stats.fail(f"平均质量评分过低: {avg}")
+
+        # 保存角色数据
+        _write_json(dbg / "stage2_characters.json", [
+            item.model_dump() for item in char_result.items
+        ])
+
+        # 详情输出
+        _sep("Stage2: 角色生成详情")
+        if char_result.items:
+            print(f"  {'#':<3} {'ID':<30} {'Name':<20} {'Role':<20} {'Importance':<10}")
+            print(f"  {'─'*3} {'─'*30} {'─'*20} {'─'*20} {'─'*10}")
+            for i, item in enumerate(char_result.items, 1):
+                identity = getattr(item, "identity", None)
+                if identity:
+                    eid = getattr(identity, "id", "?")
+                    name = getattr(identity, "name", "?")
+                    role = getattr(identity, "role", "?")
+                else:
+                    eid, name, role = "?", "?", "?"
+                importance = "?"
+                for seed in init_context.resolved_character_seeds:
+                    if seed.name == name:
+                        importance = seed.importance
+                        break
+                print(f"  {i:<3} {eid:<30} {name:<20} {role:<20} {importance:<10}")
+
+            if qs:
+                _sep("角色质量评分详情")
+                print(f"  总分: {qs.get('avg_review_score', 'N/A')}")
+                print(f"  种子数: {qs.get('total_seeds', 'N/A')}")
+                print(f"  生成数: {qs.get('total_generated', 'N/A')}")
+                print(f"  重试次数: {qs.get('retry_count', 'N/A')}")
+
+            gen_warnings = char_result.warnings
+            if gen_warnings:
+                _sep("角色生成警告")
+                for w in gen_warnings:
+                    print(f"  [WARN] {w}")
+    else:
+        stats.fail("无法获取 generate_characters 结果")
     # Wave 1: [generate_characters, generate_locations] (sorted, parallel)
     # Wave 2: [generate_paths, generate_relations] (sorted, parallel)
     # The DAG's execution_order from Stage1 may differ; what matters is that
@@ -634,6 +713,14 @@ def _run_stage2(session_id: str, session_dir: Path, stats: _Stats) -> None:
         avg = qs.get("avg_review_score", 0)
         loc_summary = f"{n_items} locations generated, avg_score={avg}"
 
+    # Build character generation summary
+    char_summary = "N/A"
+    if char_result:
+        n_items = len(char_result.items)
+        qs = char_result.provenance.get("quality_summary", {})
+        avg = qs.get("avg_review_score", 0)
+        char_summary = f"{n_items} characters generated, avg_score={avg}"
+
     summary_lines = [
         "# Stage1 -> Stage2 Visual E2E Flow Summary", "",
         "## Input",
@@ -654,6 +741,8 @@ def _run_stage2(session_id: str, session_dir: Path, stats: _Stats) -> None:
         f"- completed_steps: {', '.join(generation_state.completed_steps)}",
         f"- result: {loc_summary}",
         f"- errors: {generation_state.errors or '(none)'}", "",
+        "## Stage2 Character Generation",
+        f"- result: {char_summary}", "",
         "## Debug Outputs",
         "- `dag_visualization.md`: DAG dependency graph",
         "- `seed_inventory.md`: Resolved seed table",

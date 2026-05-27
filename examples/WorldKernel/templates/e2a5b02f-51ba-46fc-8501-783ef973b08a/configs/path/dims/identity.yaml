@@ -1,0 +1,22 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+secret_channel:
+  type: str
+  option: true
+alias_name:
+  type: str
+  option: true
+marked_by_death_eaters:
+  type: str
+  option: true
+phoenix_order_affiliated:
+  type: str
+  option: true
+historical_significance:
+  type: str
+  option: true

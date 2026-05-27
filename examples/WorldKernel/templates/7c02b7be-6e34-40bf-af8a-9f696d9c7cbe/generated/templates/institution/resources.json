@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "assets",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "territory",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "hidden_room_network_access",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "precarious_supply_chain_food",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "confiscated_student_items_stash",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "forbidden_library_access_privileges",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+dim_name: SocialProfileDim
+group_id:
+  type: str
+  ref: institution
+reputation:
+  type: str
+trust_rating_with_peers:
+  type: str
+  option: true
+suspected_by_carros:
+  type: str
+  option: true
+phoenix_contact_status:
+  type: str
+  option: true
+reputation_among_slytherin:
+  type: str
+  option: true

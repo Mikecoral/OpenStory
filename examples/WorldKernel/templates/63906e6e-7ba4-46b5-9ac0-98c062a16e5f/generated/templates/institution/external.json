@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "relations_to_others",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "hostile_relations",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "external_support",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "propaganda_narrative",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "public_scrutiny",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "underground_connections",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

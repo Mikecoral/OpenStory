@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "role",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "war_stance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "public_allegiance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "hidden_identity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "group_role_in_resistance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

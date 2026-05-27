@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "dark_mark_or_concealed_badge",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dress_code_violation_risk",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "injury_or_scar_from_torture",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "disguise_paraphernalia",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

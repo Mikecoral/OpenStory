@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "danger_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "required_items",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "curfew_safety",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "caroport_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_trapped",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "resistance_use_only",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

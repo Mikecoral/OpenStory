@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "current_state",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "ownership",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "capacity",
+      "type": "int",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "hidden_functionality",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "damage_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "soul_fragment_influence",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "prisoner_hideout",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "functional_alteration_by_deatheaters",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

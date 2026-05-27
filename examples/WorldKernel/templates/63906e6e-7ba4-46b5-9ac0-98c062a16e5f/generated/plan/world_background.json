@@ -1,0 +1,41 @@
+{
+  "world_name": "霍格沃茨魔法学院",
+  "world_origin_summary": "衍生自《哈利·波特》系列第七部，食死徒统治下的霍格沃茨，聚焦最终战役前后的校园生态与抵抗运动",
+  "primary": "magic_school",
+  "secondary": "embattled_academy",
+  "tags": [
+    "魔法",
+    "学院",
+    "衍生",
+    "黑暗时期",
+    "抵抗运动",
+    "校园管制"
+  ],
+  "scope": "single_location",
+  "simulation_start": {
+    "time_point": "1997-1998学年开学",
+    "trigger_event": "斯内普就任校长，卡罗兄妹入驻，学院进入恐怖统治期",
+    "year": "1997",
+    "narrative_context": "邓布利多去世后，食死徒通过傀儡政府控制了霍格沃茨，学生在严酷管制下秘密组建抵抗力量"
+  },
+  "world_constraints": [
+    {
+      "constraint_id": "magical_secrecy_law",
+      "name": "魔法世界保密法",
+      "description": "所有巫师必须隐藏魔法存在，不得被麻瓜发现，即使在战争时期也严格遵循",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "death_eater_occupation",
+      "name": "食死徒军事占领",
+      "description": "霍格沃茨被斯内普和卡罗兄妹实际掌控，公开反抗将招致生命危险，但校内存在凤凰社与D.A.的抵抗网络",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "ongoing_horcrux_hunt",
+      "name": "魂器搜索与摧毁",
+      "description": "哈利、罗恩、赫敏在外寻找并摧毁伏地魔的魂器，其结果将直接影响霍格沃茨的命运",
+      "scope": "global"
+    }
+  ]
+}

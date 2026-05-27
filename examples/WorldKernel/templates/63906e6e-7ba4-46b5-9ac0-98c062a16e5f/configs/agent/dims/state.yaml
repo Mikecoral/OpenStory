@@ -1,0 +1,22 @@
+dim_name: StateDim
+location:
+  location_id:
+    type: str
+    ref: location
+position:
+  x:
+    type: float
+  y:
+    type: float
+current_hideout:
+  type: str
+  option: true
+disguise_active:
+  type: str
+  option: true
+last_resistance_meeting:
+  type: str
+  option: true
+alert_level:
+  type: str
+  option: true

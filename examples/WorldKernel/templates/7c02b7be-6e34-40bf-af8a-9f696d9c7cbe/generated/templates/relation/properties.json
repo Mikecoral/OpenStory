@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "strength",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "trust_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "shared_secrets",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "conflict_intensity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "external_pressure",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "loyalty_conflict",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

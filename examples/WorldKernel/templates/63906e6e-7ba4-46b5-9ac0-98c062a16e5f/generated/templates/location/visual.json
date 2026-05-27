@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "dark_mark_graffiti",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "carro_sisters_posters",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "magical_surveillance_orbs",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dark_artifacts_on_display",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "lighting_color_change",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "functional_curse_markings",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "portrait_alterations",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

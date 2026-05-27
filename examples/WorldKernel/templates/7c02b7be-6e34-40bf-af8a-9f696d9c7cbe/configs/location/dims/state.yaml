@@ -1,0 +1,22 @@
+dim_name: StateDim
+current_state:
+  type: str
+ownership:
+  type: str
+capacity:
+  type: int
+usage_state:
+  type: str
+  option: true
+defense_level:
+  type: str
+  option: true
+occupied_by_death_eaters:
+  type: str
+  option: true
+protective_enchantments:
+  type: str
+  option: true
+integrity_status:
+  type: str
+  option: true

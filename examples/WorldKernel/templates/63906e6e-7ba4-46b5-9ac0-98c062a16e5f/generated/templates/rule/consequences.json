@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "penalties",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "rewards_for_compliance",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "penalty_category",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "penalty_duration",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reputation_impact",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "rehabilitative_option",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reward_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

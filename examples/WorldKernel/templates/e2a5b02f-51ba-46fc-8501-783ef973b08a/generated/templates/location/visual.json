@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "atmosphere",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "lighting_conditions",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "smells",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dementions_of_fear",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "announcements_or_symbols",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

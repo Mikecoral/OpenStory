@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "relation_ids",
+      "type": "list_str",
+      "required": true,
+      "ref": "relation"
+    },
+    {
+      "name": "secret_alliances",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "enemies_list",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "blackmail_targets",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "family_bonds_strain",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

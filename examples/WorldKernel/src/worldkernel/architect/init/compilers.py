@@ -60,6 +60,7 @@ class ExecutionDAGCompiler:
             seen_step_ids.add(step_id)
             priority = self._positive_int(step.priority, f"step {step_id} priority")
             batch_size = self._positive_int(step.batch_size, f"step {step_id} batch_size")
+            batch_size = min(batch_size, self._max_batch_size(target_entity_type))
             generator_type = step.generator_type.strip()
             if not generator_type:
                 raise InitCompileError(f"step {step_id} missing generator_type")
@@ -128,6 +129,15 @@ class ExecutionDAGCompiler:
         if parsed <= 0:
             raise InitCompileError(f"{label} must be a positive integer")
         return parsed
+
+    @staticmethod
+    def _max_batch_size(target_entity_type: str) -> int:
+        """Per-entity-type batch size caps to prevent LLM output truncation."""
+        caps = {
+            "character": 3,
+            "location": 4,
+        }
+        return caps.get(target_entity_type, 10)
 
 
 class SeedResolver:

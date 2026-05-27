@@ -1,0 +1,25 @@
+dim_name: CapabilitiesDim
+skills:
+  type: list_str
+level:
+  type: str
+weaknesses:
+  type: str
+defense_against_dark_arts_proficiency:
+  type: str
+  option: true
+dueling_skill:
+  type: str
+  option: true
+clandestine_magic_use:
+  type: str
+  option: true
+patronus_type:
+  type: str
+  option: true
+wordless_magic_mastery:
+  type: str
+  option: true
+special_aptitude:
+  type: str
+  option: true

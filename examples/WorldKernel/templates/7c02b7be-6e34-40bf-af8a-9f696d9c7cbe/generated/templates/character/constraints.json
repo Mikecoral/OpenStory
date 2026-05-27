@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "forbidden_actions",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "taboos",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "curfew_violation_ban",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "unauthorized_dark_magic_ban",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "unregistered_wand_ban",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "muggle_born_contact_ban",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "compulsory_death_eater_rally",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

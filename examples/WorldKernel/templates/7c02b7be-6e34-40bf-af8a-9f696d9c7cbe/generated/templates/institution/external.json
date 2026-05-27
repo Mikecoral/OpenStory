@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "relations_to_others",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "ministry_of_magic_control_puppet",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "propaganda_management_public_image",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "underground_resistance_link_network",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "threat_to_knowledge_and_history",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

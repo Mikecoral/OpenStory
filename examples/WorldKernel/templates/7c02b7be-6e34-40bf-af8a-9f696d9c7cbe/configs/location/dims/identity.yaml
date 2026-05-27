@@ -1,0 +1,24 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+description:
+  type: str
+controller:
+  type: str
+  option: true
+secret_entrance:
+  type: str
+  option: true
+hidden_function:
+  type: str
+  option: true
+narrative_significance:
+  type: str
+  option: true
+historic_allegiance:
+  type: str
+  option: true

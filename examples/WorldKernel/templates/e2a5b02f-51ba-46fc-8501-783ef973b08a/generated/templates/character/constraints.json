@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "forbidden_actions",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "taboos",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "carroll_blackmail_material",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "forbidden_association_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "oath_to_phoenix",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "memory_charm_vulnerability",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

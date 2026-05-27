@@ -1,0 +1,25 @@
+dim_name: PropertiesDim
+distance:
+  type: str
+travel_time:
+  type: str
+visibility:
+  type: str
+magical_barrier:
+  type: str
+  option: true
+illusion_magic:
+  type: str
+  option: true
+time_variant:
+  type: str
+  option: true
+cursed_path:
+  type: str
+  option: true
+guardian_creature:
+  type: str
+  option: true
+anti_apparition_ward:
+  type: str
+  option: true

@@ -1,0 +1,24 @@
+dim_name: EndpointsDim
+from_id:
+  type: str
+  ref: location
+to_id:
+  type: str
+  ref: location
+bidirectional:
+  type: bool
+has_secret_entrance:
+  type: str
+  option: true
+requires_password:
+  type: str
+  option: true
+passage_type:
+  type: str
+  option: true
+is_blocked:
+  type: str
+  option: true
+alternate_endpoints:
+  type: str
+  option: true

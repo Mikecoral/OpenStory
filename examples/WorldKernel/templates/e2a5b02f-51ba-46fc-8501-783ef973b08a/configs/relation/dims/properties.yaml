@@ -1,0 +1,17 @@
+dim_name: PropertiesDim
+strength:
+  type: str
+description:
+  type: str
+interaction_frequency:
+  type: str
+  option: true
+public_visibility:
+  type: str
+  option: true
+coercion_present:
+  type: str
+  option: true
+mutual_benefit:
+  type: str
+  option: true

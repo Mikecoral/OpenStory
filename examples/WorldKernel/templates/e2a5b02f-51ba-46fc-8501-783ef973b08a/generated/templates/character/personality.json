@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "traits",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "values",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "speech_style",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "fear_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "resistance_impulse",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "deception_ability",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "loyalty_toward_allies",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

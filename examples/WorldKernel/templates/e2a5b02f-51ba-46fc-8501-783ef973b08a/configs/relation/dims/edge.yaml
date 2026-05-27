@@ -1,0 +1,29 @@
+dim_name: EdgeDim
+id:
+  type: str
+from_id:
+  type: str
+to_id:
+  type: str
+type:
+  type: str
+direction:
+  type: str
+is_secret:
+  type: str
+  option: true
+is_monitored:
+  type: str
+  option: true
+trust_level:
+  type: str
+  option: true
+allegiance:
+  type: str
+  option: true
+risk_level:
+  type: str
+  option: true
+has_double_agent:
+  type: str
+  option: true

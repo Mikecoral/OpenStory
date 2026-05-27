@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "mission",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "founding_reason",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "survival_objective",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "resistance_mission",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "oppression_goals",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "ideological_indoctrination",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}
