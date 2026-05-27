@@ -1,0 +1,22 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+known_as:
+  type: str
+  option: true
+is_secret:
+  type: str
+  option: true
+is_monitored:
+  type: str
+  option: true
+is_cursed:
+  type: str
+  option: true
+affiliated_group:
+  type: str
+  option: true

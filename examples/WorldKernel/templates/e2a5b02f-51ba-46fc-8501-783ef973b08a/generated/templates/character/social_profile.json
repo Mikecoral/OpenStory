@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "group_id",
+      "type": "str",
+      "required": true,
+      "ref": "institution"
+    },
+    {
+      "name": "reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "trust_rating_with_peers",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "suspected_by_carros",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "phoenix_contact_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reputation_among_slytherin",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

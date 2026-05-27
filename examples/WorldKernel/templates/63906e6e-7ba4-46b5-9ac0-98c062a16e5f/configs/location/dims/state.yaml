@@ -1,0 +1,28 @@
+dim_name: StateDim
+current_state:
+  type: str
+ownership:
+  type: str
+capacity:
+  type: int
+atmosphere_type:
+  type: str
+  option: true
+occupation_utility:
+  type: str
+  option: true
+hidden_capacity_used:
+  type: str
+  option: true
+maintenance_neglect:
+  type: str
+  option: true
+temporary_modifications:
+  type: str
+  option: true
+curse_wards_active:
+  type: str
+  option: true
+contraband_storage_present:
+  type: str
+  option: true

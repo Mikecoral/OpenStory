@@ -1,0 +1,16 @@
+dim_name: PersonalityDim
+traits:
+  type: list_str
+values:
+  type: list_str
+speech_style:
+  type: str
+internal_conflict_severity:
+  type: str
+  option: true
+trust_tendency:
+  type: str
+  option: true
+fear_of_exposure:
+  type: str
+  option: true

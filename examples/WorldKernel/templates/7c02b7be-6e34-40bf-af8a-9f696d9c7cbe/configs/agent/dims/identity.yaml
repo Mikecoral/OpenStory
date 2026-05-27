@@ -1,0 +1,25 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+role:
+  type: str
+blood_status:
+  type: str
+  option: true
+house:
+  type: str
+  option: true
+wartime_stance:
+  type: str
+  option: true
+is_death_eater:
+  type: str
+  option: true
+is_disguised:
+  type: str
+  option: true
+is_da_member:
+  type: str
+  option: true

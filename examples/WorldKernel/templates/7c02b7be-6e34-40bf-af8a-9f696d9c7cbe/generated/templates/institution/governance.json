@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "leader",
+      "type": "str",
+      "required": true,
+      "ref": "character"
+    },
+    {
+      "name": "rules",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "decision_process",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "double_agent_leadership_presence",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "carroll_based_rule_enforcement",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secret_student_council_underground",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "prefect_patrol_system_under_control",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

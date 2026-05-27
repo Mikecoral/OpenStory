@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "background_summary",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "key_events",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "world_knowledge",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_knowledge",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "secrets",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "secret_knowledge",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "compromising_information",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "loyalty_test_events",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "observed_blackmail",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

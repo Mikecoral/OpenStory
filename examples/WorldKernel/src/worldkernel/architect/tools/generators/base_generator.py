@@ -258,6 +258,25 @@ def build_character_summary(
     return "\n".join(lines)
 
 
+def build_location_summary(
+    location_seeds: list[ResolvedSeed],
+    pre_allocated_ids: dict[str, str] | None = None,
+    max_entries: int = 10,
+) -> str:
+    """Summarize location seeds for world context (limited to avoid token overflow)."""
+    if not location_seeds:
+        return "  无地点信息"
+    display = location_seeds[:max_entries]
+    lines: list[str] = []
+    for seed in display:
+        eid = pre_allocated_ids.get(seed.seed_id, "?") if pre_allocated_ids else "?"
+        lines.append(f"  - {eid} | {seed.name}（{seed.archetype_id}，{seed.importance}）：{seed.role_in_world}")
+    remaining = len(location_seeds) - len(display)
+    if remaining > 0:
+        lines.append(f"  ...及其他 {remaining} 个地点")
+    return "\n".join(lines)
+
+
 # ---------------------------------------------------------------------------
 # Prompt building
 # ---------------------------------------------------------------------------

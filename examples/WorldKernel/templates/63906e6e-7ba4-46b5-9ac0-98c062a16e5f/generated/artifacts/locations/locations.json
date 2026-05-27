@@ -1,0 +1,58 @@
+{
+  "artifact_type": "location_profile",
+  "items": [
+    {
+      "identity": {
+        "id": "e:63906e6e_7ba4_46b5_9ac0_98c062a16e5f:loc:001",
+        "name": "黑魔法防御课教室",
+        "type": "teaching_space",
+        "description": "原本明亮的教室如今被阴森的黑魔法咒语书和刑具般的教学道具占据。课桌椅被故意排列成审讯式布局，墙上挂着被折磨的生物标本，黑板上永远留着血红色的“不可饶恕咒”图解。阿米库斯·卡罗常在这里当场演示钻心咒，空气中残留着被惩罚学生的尖叫声和恐惧的魔法残响。据地下抵抗组织的情报，这里曾数次爆发学生与卡罗兄妹的冲突，最终战役时很可能成为关键战场。",
+        "occupying_faction": "食死徒",
+        "secret_alias": "刑讯室",
+        "hiding_capabilities": "无，完全暴露在监视下",
+        "battle_relevance": "高——有望成为最终战役的关键战场，目前已有多次学生反抗冲突发生，卡罗兄妹将此设为防御重点。",
+        "defilement_level": "重度污染，黑魔法残留严重",
+        "institutional_role_changed": "从教学空间转变为恐怖统治和惩罚的象征"
+      },
+      "access": {
+        "permissions": "仅限食死徒教师和经批准的高年级食死徒学生进入，其他学生必须持有特别许可",
+        "access_level": "restricted",
+        "access_conditions": "进入需经过卡罗兄妹或斯内普批准，违者会被当场惩罚",
+        "blood_status_required": "纯血统优先，混血或麻瓜出身者几乎不可能获得许可",
+        "password_required": "false",
+        "patrolled_by_carros": "true",
+        "secret_entrance_available": "false",
+        "time_restrictions": "仅在午餐前后和特定惩罚时间开放，其他时间紧锁",
+        "cleansing_certificate_required": "false",
+        "monitoring_spells_active": "true"
+      },
+      "state": {
+        "current_state": "被食死徒全面控制，每节课都充满暴力和恐惧，普通学生逃避上课",
+        "ownership": "食死徒控制，名义上属于霍格沃茨教育体系",
+        "capacity": 30,
+        "atmosphere_type": "压抑、恐怖、血腥",
+        "occupation_utility": "教学、惩罚、审问、示范黑魔法",
+        "hidden_capacity_used": "false",
+        "maintenance_neglect": "部分教学用具故意损坏以增强威慑力",
+        "temporary_modifications": "增加了黑魔法防护结界，防止学生反抗",
+        "curse_wards_active": "true",
+        "contraband_storage_present": "true"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:63906e6e_7ba4_46b5_9ac0_98c062a16e5f:loc:001"
+  ],
+  "upstream_step_ids": [
+    "generate_locations"
+  ],
+  "warnings": [
+    "batch 1 review (score=4.43): 时间线不一致：描述和battle_relevance中提及的'最终战役中'与学生发生冲突，但当前世界背景设定为魂器搜索阶段，最终战役尚未发生，应改为预期或潜在冲突。"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

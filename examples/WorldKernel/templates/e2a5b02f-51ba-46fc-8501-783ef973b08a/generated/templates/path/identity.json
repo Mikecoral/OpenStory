@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "secret_channel",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "alias_name",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "marked_by_death_eaters",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "phoenix_order_affiliated",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "historical_significance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

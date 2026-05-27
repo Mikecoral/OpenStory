@@ -1,0 +1,65 @@
+{
+  "world_id": "7c02b7be-6e34-40bf-af8a-9f696d9c7cbe",
+  "source_ids": [
+    "visual-e2e"
+  ],
+  "schema_version": "stage2-semantic-v1",
+  "artifact_files": {
+    "location_profile": "locations\\locations.json",
+    "character_profile": "characters\\characters.json",
+    "path_edge": "path_graph\\path_graph.json",
+    "relation_edge": "relation_graph\\relation_graph.json"
+  },
+  "counts": {
+    "location_profile": 7,
+    "character_profile": 0,
+    "path_edge": 0,
+    "relation_edge": 0
+  },
+  "constraints": [
+    {
+      "constraint_id": "magical_secrecy",
+      "name": "魔法世界保密法",
+      "description": "巫师世界必须向麻瓜社会隐藏魔法的存在，任何暴露行为都将受到法律严惩。",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "death_eater_usurpation",
+      "name": "食死徒政权管控",
+      "description": "霍格沃茨已被伏地魔通过傀儡校长斯内普和卡罗兄弟实际控制，公开反抗将招致立即的严酷惩罚与生命威胁。",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "hogwarts_magical_defenses",
+      "name": "霍格沃茨固有魔法壁垒",
+      "description": "城堡内部禁止幻影显形与幻影移形，无法使用门钥匙进入或离开主楼，城堡本身具有防御变形和觉醒的能力（如石墩卫士）。",
+      "scope": "location"
+    }
+  ],
+  "timestamp": "2026-05-27T09:27:35.550161+00:00",
+  "provenance": {
+    "stage1_inputs": {
+      "source": "stage1.pipeline",
+      "source_id": "visual-e2e",
+      "world_id": "7c02b7be-6e34-40bf-af8a-9f696d9c7cbe",
+      "world_background_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\7c02b7be-6e34-40bf-af8a-9f696d9c7cbe\\generated\\plan\\world_background.json",
+      "execution_plan_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\7c02b7be-6e34-40bf-af8a-9f696d9c7cbe\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\7c02b7be-6e34-40bf-af8a-9f696d9c7cbe\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\7c02b7be-6e34-40bf-af8a-9f696d9c7cbe\\generated\\world_template.json",
+      "schema_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\7c02b7be-6e34-40bf-af8a-9f696d9c7cbe\\models\\schema_manifest.json",
+      "artifact_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\7c02b7be-6e34-40bf-af8a-9f696d9c7cbe\\generated\\artifact_manifest.json",
+      "session_root": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\7c02b7be-6e34-40bf-af8a-9f696d9c7cbe"
+    },
+    "world_background": {
+      "source": "stage1.pipeline",
+      "artifact": "world_background",
+      "world_background_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\7c02b7be-6e34-40bf-af8a-9f696d9c7cbe\\generated\\plan\\world_background.json",
+      "execution_plan_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\7c02b7be-6e34-40bf-af8a-9f696d9c7cbe\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\7c02b7be-6e34-40bf-af8a-9f696d9c7cbe\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\7c02b7be-6e34-40bf-af8a-9f696d9c7cbe\\generated\\world_template.json",
+      "schema_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\7c02b7be-6e34-40bf-af8a-9f696d9c7cbe\\models\\schema_manifest.json",
+      "artifact_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\7c02b7be-6e34-40bf-af8a-9f696d9c7cbe\\generated\\artifact_manifest.json",
+      "session_root": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\7c02b7be-6e34-40bf-af8a-9f696d9c7cbe"
+    }
+  }
+}

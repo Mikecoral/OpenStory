@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "known_as",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_secret",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_monitored",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_cursed",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "affiliated_group",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

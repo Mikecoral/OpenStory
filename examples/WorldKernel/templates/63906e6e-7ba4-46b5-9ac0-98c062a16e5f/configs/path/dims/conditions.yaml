@@ -1,0 +1,22 @@
+dim_name: ConditionsDim
+access_level:
+  type: str
+danger_level:
+  type: str
+required_items:
+  type: str
+curfew_restriction:
+  type: str
+  option: true
+patrol_frequency:
+  type: str
+  option: true
+escape_route:
+  type: str
+  option: true
+required_permission:
+  type: str
+  option: true
+last_checked:
+  type: str
+  option: true

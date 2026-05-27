@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "relations_to_others",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "external_support",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "enemy_groups",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "propaganda_portrayal",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "bidirectional",
+      "type": "bool",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "has_secret_entrance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "requires_password",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "passage_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_blocked",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "alternate_endpoints",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

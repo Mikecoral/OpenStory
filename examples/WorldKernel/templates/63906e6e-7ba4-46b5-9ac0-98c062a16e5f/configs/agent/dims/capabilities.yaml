@@ -1,0 +1,19 @@
+dim_name: CapabilitiesDim
+skills:
+  type: list_str
+level:
+  type: str
+weaknesses:
+  type: str
+dark_magic_proficiency:
+  type: str
+  option: true
+resistance_skills:
+  type: str
+  option: true
+occlumency_level:
+  type: str
+  option: true
+forbidden_spell_knowledge:
+  type: str
+  option: true

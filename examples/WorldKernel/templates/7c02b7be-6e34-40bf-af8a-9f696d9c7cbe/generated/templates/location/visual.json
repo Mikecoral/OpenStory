@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "iconic_feature",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "lighting_condition",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "death_eater_insignia",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "damage_state",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "ambient_aura",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

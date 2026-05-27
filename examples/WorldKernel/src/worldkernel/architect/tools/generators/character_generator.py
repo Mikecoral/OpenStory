@@ -138,7 +138,8 @@ class CharacterGenerationTool(BaseStage2Tool):
         schema_desc = introspect_schema(ModelClass, schema_entry=entry)
 
         world_ctx = build_world_context(request)
-        loc_summary = build_location_summary(request.resolved_location_seeds)
+        loc_ids = registry.lookup(request.resolved_location_seeds, "loc")
+        loc_summary = build_location_summary(request.resolved_location_seeds, pre_allocated_ids=loc_ids)
 
         batches = batch_seeds(request.resolved_character_seeds, request.batch_size)
         total_batches = len(batches)
@@ -249,7 +250,7 @@ class CharacterGenerationTool(BaseStage2Tool):
         warnings: list[str] = []
         retried = False
 
-        pre_ids = registry.lookup(batch)
+        pre_ids = registry.lookup(batch, "char")
 
         gen_prompt = build_generation_prompt(_GENERATION_USER_TEMPLATE, {
             **world_ctx,

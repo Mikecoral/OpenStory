@@ -1,0 +1,70 @@
+{
+  "fields": [
+    {
+      "name": "connected_to",
+      "type": "list_str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "parent_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "layer",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "entrance_type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "hidden_passage_connection",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "sealed_door_count",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "one_way_portal_exist",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "room_of_requirement_variant_link",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "war_damaged_sections",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "unauthorized_alternate_route",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dumbledore_portrait_chamber_access",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

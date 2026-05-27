@@ -1,0 +1,19 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+role:
+  type: str
+faction:
+  type: str
+  option: true
+risk_level:
+  type: str
+  option: true
+cover_identity:
+  type: str
+  option: true
+loyalty_status:
+  type: str
+  option: true

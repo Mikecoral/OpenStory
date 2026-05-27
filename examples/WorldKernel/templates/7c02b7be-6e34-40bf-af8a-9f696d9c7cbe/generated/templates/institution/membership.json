@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "members",
+      "type": "list_str",
+      "required": true,
+      "ref": "character"
+    },
+    {
+      "name": "roles",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "entry_criteria",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "forced_membership_among_faculty",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secret_student_resistance_cell",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "loyalty_tests_for_new_members",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "turncoat_identification_protocol",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

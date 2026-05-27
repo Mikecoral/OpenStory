@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "forbidden_actions",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "taboos",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "compromised_actions",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "oath_bindings",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "monitored_communication",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "safehouse_restrictions",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

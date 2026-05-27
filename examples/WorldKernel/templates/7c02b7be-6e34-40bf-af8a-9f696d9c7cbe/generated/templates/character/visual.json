@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "disguise_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "uniform_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "noticeable_scars",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "distinctive_accessory",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

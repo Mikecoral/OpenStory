@@ -1,0 +1,22 @@
+dim_name: StateDim
+location:
+  location_id:
+    type: str
+    ref: location
+position:
+  x:
+    type: float
+  y:
+    type: float
+current_cover_story:
+  type: str
+  option: true
+suspicion_level:
+  type: str
+  option: true
+emotional_distress_indicator:
+  type: str
+  option: true
+physical_evidence_of_punishment:
+  type: str
+  option: true

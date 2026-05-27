@@ -1,0 +1,17 @@
+dim_name: PropertiesDim
+strength:
+  type: str
+description:
+  type: str
+trust_level:
+  type: str
+  option: true
+risk_level:
+  type: str
+  option: true
+interaction_frequency:
+  type: str
+  option: true
+hidden_activity:
+  type: str
+  option: true
