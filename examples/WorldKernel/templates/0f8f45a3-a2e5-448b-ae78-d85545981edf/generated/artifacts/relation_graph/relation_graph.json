@@ -1,0 +1,11 @@
+{
+  "artifact_type": "relation_edge",
+  "items": [],
+  "source_ids": [],
+  "produced_refs": [],
+  "upstream_step_ids": [],
+  "warnings": [],
+  "provenance": {
+    "result_count": 0
+  }
+}

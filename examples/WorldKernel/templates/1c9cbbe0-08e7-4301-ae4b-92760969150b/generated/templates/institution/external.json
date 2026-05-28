@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "relations_to_others",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "enemy_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "alliance_network",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "intelligence_rating",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "public_fear_factor",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "diplomatic_standing",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

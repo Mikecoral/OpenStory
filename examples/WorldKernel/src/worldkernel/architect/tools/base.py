@@ -61,6 +61,14 @@ class Stage2ToolRequest(BaseModel):
                 return result.items if hasattr(result, "items") else []
         return []
 
+    @property
+    def upstream_characters(self) -> list[Any]:
+        """Extract character items from upstream artifacts (for RelationTool)."""
+        for result in self.upstream_artifacts.values():
+            if hasattr(result, "artifact_type") and result.artifact_type == "character_profile":
+                return result.items if hasattr(result, "items") else []
+        return []
+
 
 class Stage2ToolResult(BaseModel):
     model_config = ConfigDict(arbitrary_types_allowed=True)

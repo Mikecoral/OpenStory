@@ -1,0 +1,22 @@
+dim_name: ConditionsDim
+access_level:
+  type: str
+danger_level:
+  type: str
+required_items:
+  type: str
+required_skills:
+  type: str
+  option: true
+time_restriction:
+  type: str
+  option: true
+password_or_charm:
+  type: str
+  option: true
+associated_rule_ids:
+  type: str
+  option: true
+activation_trigger:
+  type: str
+  option: true

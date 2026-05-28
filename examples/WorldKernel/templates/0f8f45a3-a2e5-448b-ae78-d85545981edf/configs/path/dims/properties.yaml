@@ -1,0 +1,19 @@
+dim_name: PropertiesDim
+distance:
+  type: str
+travel_time:
+  type: str
+visibility:
+  type: str
+stealth_travel_suitability:
+  type: str
+  option: true
+magical_enhancements:
+  type: str
+  option: true
+visibility_under_detection_charm:
+  type: str
+  option: true
+acoustic_privacy:
+  type: str
+  option: true

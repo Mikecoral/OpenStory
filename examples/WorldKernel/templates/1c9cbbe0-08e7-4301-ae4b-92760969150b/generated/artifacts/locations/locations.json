@@ -1,0 +1,251 @@
+{
+  "artifact_type": "location_profile",
+  "items": [
+    {
+      "identity": {
+        "id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:001",
+        "name": "黑魔法防御课教室",
+        "type": "teaching_space",
+        "description": "原本用于教导防御魔法的教室已被彻底改造。讲台旁增设了一排锈迹斑斑的刑具架，墙上悬挂着被施了永久粘合咒的绞刑架模型，黑板上的粉笔字写着‘纯血统至上’。空气里弥漫着铁锈和恐惧的气味，座位被重新排列成审讯式的半圆，所有麻瓜出身的学生必须坐在最前排以便监视。卡罗兄妹的黑魔法防御课实际上是一堂残酷的体罚课，‘钻心剜骨’被当作普通惩罚咒语随意施展。",
+        "dark_alias": "惩罚厅",
+        "symbolic_significance": "象征着食死徒对教育的扭曲与恐怖统治的核心",
+        "resistance_code_name": "刑讯室",
+        "occupied_purpose": "负责宣传教育恐怖和惩罚反抗者"
+      },
+      "access": {
+        "permissions": "仅限卡罗兄妹、斯内普及受命的高级食死徒进入；学生只有在被点到名或受罚时才能踏入",
+        "access_level": "高",
+        "access_conditions": "须由阿米库斯·卡罗本人允许或持有特殊口令（口令每日更换，由恐惧维持）",
+        "surveillance_spells": "施有窃听咒、监测咒（可追踪闯入者的魔法波动）和驱散光明咒",
+        "secret_passages": "",
+        "alert_level": "",
+        "curfew_restriction": "宵禁后禁止任何学生进入，违者直接施以钻心剜骨",
+        "blood_status_checkpoint": "纯血统学生可免于大多数惩罚，混血学生须出示级长证明，麻瓜出身者绝对禁止无故进入"
+      },
+      "state": {
+        "current_state": "恐怖统治下的改造教室，日常使用中充满虐待与恐吓",
+        "ownership": "阿米库斯·卡罗（黑魔法防御术教授）",
+        "capacity": 30,
+        "atmosphere_index": "10",
+        "damage_level": "无结构性损坏，但墙壁因频繁施放恶咒而留下焦痕和裂痕",
+        "temporary_purpose": "惩罚、审讯、强制灌输黑魔法与纯血统意识形态",
+        "occupation_stage": "完全占领并持续使用",
+        "terror_rating": "10"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:003",
+        "name": "大礼堂",
+        "type": "communal_space",
+        "description": "霍格沃茨曾经最温暖光明的公共空间，如今被黑色与银色装饰覆盖。四大学院的旗帜被降下，取而代之的是伏地魔的黑魔标记和斯莱特林的绿色银蛇旗。天花板不再映照天空，而是永远笼罩着阴云。每餐前强制全体学生高呼‘霍格沃茨永远属于黑魔王’，麻瓜出身者被安排在单独的‘贱民区’长桌。邓布利多的肖像已被移除，留下空荡荡的金色画框。火焰杯台座被改造成一个露天刑台，用于临时处决或公然羞辱。",
+        "dark_alias": "黑厅",
+        "symbolic_significance": "从团结象征沦为分裂与压迫的舞台",
+        "resistance_code_name": "广场",
+        "occupied_purpose": "展示食死徒权威、监视全校、公开执行奖惩与恐怖宣传"
+      },
+      "access": {
+        "permissions": "全校师生必须出席每天三餐和所有集会，缺席者按叛徒处理",
+        "access_level": "公共（强制参加）",
+        "access_conditions": "无自由选择权，进入即表示服从，迟到或早退将受鞭刑",
+        "surveillance_spells": "天花板施有全景监测咒，卡罗兄妹的席位设有防窃听屏障，四个角落各有一只隐形的侦测蝇",
+        "secret_passages": "",
+        "alert_level": "集会期间高度警戒，额外部署摄魂怪在天花板飘荡",
+        "curfew_restriction": "宵禁后大礼堂关闭，由石像鬼守卫，非授权进入即触发警报",
+        "blood_status_checkpoint": "麻瓜出身学生座位被划出红色警示线，纯血统学生可自由走动，混血需佩戴身份臂章"
+      },
+      "state": {
+        "current_state": "占领改造后长期使用，压抑且戒备森严",
+        "ownership": "名义上归斯内普（校长）控制，实际由阿莱克托·卡罗及巡逻的食死徒管理",
+        "capacity": 800,
+        "atmosphere_index": "2",
+        "damage_level": "轻微：邓布利多的肖像被移除，四院旗帜被撕毁，石墙上有新刻的黑魔标记",
+        "temporary_purpose": "日常用餐、集会、惩罚仪式、食死徒命令颁布",
+        "occupation_stage": "长期占领且运作稳定",
+        "terror_rating": "9"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:004",
+        "name": "格兰芬多塔楼",
+        "type": "dormitory",
+        "description": "格兰芬多学生的宿舍区域，胖夫人画像守卫在入口，但食死徒施加了额外的侵入咒。公共休息室的壁炉依然燃烧，但炉火旁常有人低声讨论反抗计划。纳威·隆巴顿定期在这里召集DA成员进行秘密训练，使用防窃听咒掩盖谈话。宿舍内床铺之间的帷幔被用作传递信息的暗格。楼下走廊常有食死徒巡逻队经过。",
+        "dark_alias": "",
+        "symbolic_significance": "狮院不屈精神的最后堡垒",
+        "resistance_code_name": "狮子巢",
+        "occupied_purpose": "学生日常住所，也是抵抗组织（DA残余）的主要秘密会议点"
+      },
+      "access": {
+        "permissions": "仅限格兰芬多学生通过口令进入（口令每日更换，由级长口头通知）",
+        "access_level": "中等",
+        "access_conditions": "必须知道当天口令，陌生人强行进入会被胖夫人尖叫报警",
+        "surveillance_spells": "已有多次食死徒施放的窃听咒被扫出，但无法完全根除",
+        "secret_passages": "连接霍格莫德的通道已被封堵，但壁炉后有一条通往厨房的密道（由家养小精灵协助维护）",
+        "alert_level": "",
+        "curfew_restriction": "宵禁后禁止离开塔楼，但内部活动不受限制（食死徒定期抽查）",
+        "blood_status_checkpoint": "麻瓜出身格兰芬多学生被特别标记，但级长尽力保护仍能入住"
+      },
+      "state": {
+        "current_state": "受严格监视但仍保持内部团结与抵抗活动",
+        "ownership": "名义上归斯内普管辖，实际由格兰芬多级长（纳威·隆巴顿主导）维持秩序",
+        "capacity": 200,
+        "atmosphere_index": "5",
+        "damage_level": "无结构性损伤，但公共休息室地毯有几处被焚烧的小洞（由秘密训练造成）",
+        "temporary_purpose": "住宿、抵抗组织据点、情报交换站",
+        "occupation_stage": "受敌视势力的渗透式监控",
+        "terror_rating": "6"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:002",
+        "name": "禁林边缘",
+        "type": "outdoor_area",
+        "description": "禁林与城堡草坪之间的过渡地带，密布着扭曲的古树和荆棘丛。这里是学生冒险和秘密进出城堡的主要通道之一，也是海格的小屋旧址（如今被食死徒用作临时哨站）。夜晚常有狼人巡逻队和摄魂怪出没，但抵抗组织利用树根的洞穴隐藏补给品。斯普劳特教授偷偷在这里种植反击所需的魔鬼网和咬人甘蓝。",
+        "dark_alias": "",
+        "symbolic_significance": "自由与危险的分界线，抵抗的暗流通道",
+        "resistance_code_name": "阴影线",
+        "occupied_purpose": "秘密通道、物资隐藏点、危险生物的缓冲区"
+      },
+      "access": {
+        "permissions": "仅允许纯血统学生或持有教师签字的通行证在日间进入，斯内普保留随时禁入权",
+        "access_level": "限制区域",
+        "access_conditions": "必须登记并获得巡逻食死徒许可，但DA成员通过非法路径（如扫帚、隐形衣）绕过管控",
+        "surveillance_spells": "食死徒在主要路径上施了踪丝和触发警报咒，但树林深处未被完全覆盖",
+        "secret_passages": "有一条通往霍格莫德蜂蜜公爵地窖的隐秘小径（被岩石和藤蔓覆盖）",
+        "alert_level": "",
+        "curfew_restriction": "宵禁后严格禁止进入，违者将被巡逻队当场施咒",
+        "blood_status_checkpoint": "麻瓜出身者一旦被发现将立即被带回审讯"
+      },
+      "state": {
+        "current_state": "高度警戒状态，部分区域被食死徒巡逻队控制，但抵抗活动仍然频繁",
+        "ownership": "食死徒巡逻队名义上控制，斯普劳特教授保有部分种植权",
+        "capacity": 50,
+        "atmosphere_index": "7",
+        "damage_level": "轻度：有几棵树被黑魔法烧焦，地面有少量爆炸坑",
+        "temporary_purpose": "秘密进出通道、资源采集、抵抗组织物资交换",
+        "occupation_stage": "部分控制与渗透",
+        "terror_rating": "7"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:005",
+        "name": "校长办公室",
+        "type": "admin_office",
+        "description": "位于城堡八楼，狮鹫石像后方圆形石室，天花板上前任校长的肖像画被邓布利多的空画框取代，房间内充斥着斯内普私人的黑暗魔法物品与药水。巨大的橡木办公桌上摊放着处分名单与食死徒命令文件，壁炉中燃烧着绿色的火焰，常年不熄。房间一角设有一个被施加摄神取念咒的审讯椅，斯内普常在此对嫌疑人进行精神压迫。",
+        "dark_alias": "黑塔指挥室",
+        "symbolic_significance": "正被篡夺的校长权威的黑暗图腾",
+        "resistance_code_name": "",
+        "occupied_purpose": "食死徒统治的神经中枢"
+      },
+      "access": {
+        "permissions": "仅限校长、食死徒高层、获得斯内普亲自许可者",
+        "access_level": "最高安全级别",
+        "access_conditions": "必须通过石像口令验证，仅限纯血统巫师，携带魔法痕迹扫描咒语",
+        "surveillance_spells": "多重窃听咒和跟踪咒，反幻身咒纱网，任何进入者都会被记录",
+        "secret_passages": "一幅挂毯后方隐藏有通往斯内普私人储藏室的秘密通道",
+        "alert_level": "常备最高警戒",
+        "curfew_restriction": "严格宵禁时段，夜间禁止任何学生靠近",
+        "blood_status_checkpoint": "石像入口处自动检测血统，麻瓜出身者进入即触发警报"
+      },
+      "state": {
+        "current_state": "被改造为食死徒镇压中心，邓布利多的遗物被移除，墙上挂满黑暗装饰",
+        "ownership": "西弗勒斯·斯内普（名义校长）",
+        "capacity": 15,
+        "atmosphere_index": "极度压抑，令人窒息的黑暗",
+        "damage_level": "完好",
+        "temporary_purpose": "斯内普日常办公与审讯室",
+        "occupation_stage": "完全占领",
+        "terror_rating": "极高"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:007",
+        "name": "有求必应屋",
+        "type": "hidden_space",
+        "description": "位于八楼挂毯对面墙壁上的魔法空间，能够根据使用者需求变化室内布局与功能。此时被抵抗组织秘密召唤为‘DA总部’，内部呈现乱中有序的防御工事：软垫堆成的障碍物用于练习缴械咒，墙上贴满了模拟食死徒假人靶，角落堆放着偷来的违禁药品和伪装材料。空气中弥漫着紧张而坚定的魔法气息。",
+        "dark_alias": "密室",
+        "symbolic_significance": "希望与抵抗的避难所",
+        "resistance_code_name": "七楼货仓",
+        "occupied_purpose": "秘密抵抗集会、防御训练、情报交换"
+      },
+      "access": {
+        "permissions": "仅限佩戴伪造DA徽章且知晓存在口令的抵抗组织成员",
+        "access_level": "高度机密",
+        "access_conditions": "使用者必须集中思想默念‘为抵抗集会’并依次通过三层口令：第一层是房间门外暗号，第二层是根据当周秘密短语，第三层是对反幻身咒的即时反应",
+        "surveillance_spells": "屋内设有反侦测结界，阻止任何追踪魔法进入；屋外走廊有食死徒布置的感应咒语，能察觉人员进出频率，但无法获知空间内具体活动。食死徒已掌握此空间大致存在，但无法破解其变化特性。",
+        "secret_passages": "无已知秘密通道，但可通过进出时的特定路线混淆跟踪",
+        "alert_level": "动态中等级别，集会时升至最高",
+        "curfew_restriction": "通常使用时间限于宵禁后；但存在风险",
+        "blood_status_checkpoint": "无，以口令为准"
+      },
+      "state": {
+        "current_state": "秘密运作中，内部被改编为小型反抗基地",
+        "ownership": "无固定所有者，由DA集体秘密管理",
+        "capacity": 40,
+        "atmosphere_index": "紧张而充满决心",
+        "damage_level": "完好（内部可随时恢复）",
+        "temporary_purpose": "抵抗组织指挥中心与训练场",
+        "occupation_stage": "被抵抗组织秘密使用，食死徒未完全控制",
+        "terror_rating": "中等（成员自身心理压力大）"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:006",
+        "name": "禁书区",
+        "type": "library_archive",
+        "description": "位于霍格沃茨图书馆最深处，被铁链封锁的书籍区域。书架上排列着各种黑魔法古籍、魂器相关著作和诅咒教科书。空气中弥漫着陈旧的尘埃与若有若无的诅咒微光。食死徒在此增设了监控咒语，任何翻阅禁书的行为都会被记录并上报。",
+        "dark_alias": "黑魔法书架",
+        "symbolic_significance": "被压制的知识的危险牢笼",
+        "resistance_code_name": "",
+        "occupied_purpose": "强制黑魔法教学与监控资源库"
+      },
+      "access": {
+        "permissions": "仅限获得平斯夫人或卡罗兄妹签发的特殊许可的高级学生与教师",
+        "access_level": "严格管制",
+        "access_conditions": "必须出示书面许可，并在制服上佩戴显眼的监控徽章，限制每次最多借阅两本书且须当场归还",
+        "surveillance_spells": "内置窃听咒和追踪咒，每本书附有‘借阅者印记’魔法",
+        "secret_passages": "无",
+        "alert_level": "持续高度警惕",
+        "curfew_restriction": "宵禁后禁止进入",
+        "blood_status_checkpoint": "入口处有血统检测，麻瓜出身者禁止接近"
+      },
+      "state": {
+        "current_state": "受到食死徒严密监控，书籍被重新分类，黑暗魔法内容被突出展示",
+        "ownership": "霍格沃茨图书馆，实际控制权在卡罗兄妹手中",
+        "capacity": 20,
+        "atmosphere_index": "阴沉且危险",
+        "damage_level": "完好",
+        "temporary_purpose": "强制执行黑魔法学习的资源库",
+        "occupation_stage": "完全占领",
+        "terror_rating": "高"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:001",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:003",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:004",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:002",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:005",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:007",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:006"
+  ],
+  "upstream_step_ids": [
+    "generate_locations"
+  ],
+  "warnings": [
+    "batch 1 review (score=4.9): 发现 2 个问题并已自动修正",
+    "batch 2 review (score=4.71): 发现 4 个问题并已自动修正"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

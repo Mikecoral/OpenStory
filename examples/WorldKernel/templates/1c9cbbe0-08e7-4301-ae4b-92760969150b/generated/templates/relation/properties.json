@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "strength",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "relationship_duration",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "public_perception",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "resistance_affiliation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "punishment_risk",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "emotional_tone",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "power_dynamic",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

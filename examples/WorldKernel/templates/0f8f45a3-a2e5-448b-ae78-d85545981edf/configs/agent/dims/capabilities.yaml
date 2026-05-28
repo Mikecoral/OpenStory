@@ -1,0 +1,13 @@
+dim_name: CapabilitiesDim
+skills:
+  type: list_str
+level:
+  type: str
+weaknesses:
+  type: str
+combat_skill_level:
+  type: str
+  option: true
+magical_proficiency:
+  type: str
+  option: true

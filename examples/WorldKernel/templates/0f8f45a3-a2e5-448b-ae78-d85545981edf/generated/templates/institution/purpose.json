@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "mission",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "founding_reason",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "secret_agenda",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "wartime_objectives",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "concealed_educational_goals",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "propaganda_function",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

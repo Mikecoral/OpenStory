@@ -1,0 +1,22 @@
+dim_name: PersonalityDim
+traits:
+  type: list_str
+values:
+  type: list_str
+speech_style:
+  type: str
+fear_level:
+  type: str
+  option: true
+bravery_index:
+  type: str
+  option: true
+suspicion_level:
+  type: str
+  option: true
+ideological_flexibility:
+  type: str
+  option: true
+response_to_oppression:
+  type: str
+  option: true

@@ -27,6 +27,9 @@
 1. `identity.id` 必须严格使用预分配 id。
 2. **`state.position` 必须严格填入空对象 {}！**
 3. **`state.location` 必须绑定具体地点，格式必须为 {"location_id": "对应的地点ID"}！**
-4. **所有需要嵌套对象的字段（如 knowledge 等），必须输出为合法的 JSON 对象（字典），绝不能直接输出纯文本字符串！**
+4. **所有需要嵌套对象的字段（如 knowledge 等），必须输出为合法的 JSON 字典，绝不能直接输出纯文本字符串或列表！** 例如 `memories.knowledge` 必须为：
+   ```json
+   {"world_knowledge": ["条目1", "条目2"], "social_knowledge": ["条目1"]}
+   ```
 
 请特别注意审核反馈中提到的问题，针对性改进。

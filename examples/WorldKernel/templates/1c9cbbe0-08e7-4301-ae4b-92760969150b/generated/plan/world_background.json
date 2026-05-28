@@ -1,0 +1,49 @@
+{
+  "world_name": "霍格沃茨魔法学院",
+  "world_origin_summary": "衍生自《哈利·波特与死亡圣器》，在伏地魔政权控制下，霍格沃茨沦为恐怖统治的战场，学生与教师秘密组织抵抗，最终迎来霍格沃茨之战",
+  "primary": "magic_school",
+  "secondary": "war_occupied_academy",
+  "tags": [
+    "魔法",
+    "霍格沃茨",
+    "食死徒统治",
+    "战争时期",
+    "第七部",
+    "黑暗年代",
+    "魔法教育",
+    "恐怖统治"
+  ],
+  "scope": "single_location",
+  "simulation_start": {
+    "time_point": "1997-1998学年开学第一周",
+    "trigger_event": "斯内普公开就任校长，卡罗兄妹上任教授，开始实施严酷的纪律改革",
+    "year": "1997",
+    "narrative_context": "哈利、罗恩、赫敏在外寻找魂器，霍格沃茨内部在食死徒把控下出现严苛的体罚和强制黑魔法教育，DA残余组织秘密运作"
+  },
+  "world_constraints": [
+    {
+      "constraint_id": "magical_secrecy_law",
+      "name": "魔法保密法",
+      "description": "国际巫师联合会依法禁止巫师在麻瓜面前展示魔法，违者受严重惩罚",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "voldemort_power_structure",
+      "name": "伏地魔政权控制",
+      "description": "魔法部落入食死徒控制，霍格沃茨归伏地魔直接管辖，斯内普代表他行使权力",
+      "scope": "faction"
+    },
+    {
+      "constraint_id": "hogwarts_ancient_magic",
+      "name": "霍格沃茨古老魔法保护",
+      "description": "城堡本身具有强大的防护魔法和千年积淀，食死徒无法完全破解；邓布利多的影响仍在",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "horcrux_hunt",
+      "name": "魂器狩猎进程",
+      "description": "哈利、罗恩、赫敏持续在外摧毁魂器，外部进展直接影响校内反抗节奏",
+      "scope": "global"
+    }
+  ]
+}

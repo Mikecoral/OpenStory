@@ -1,0 +1,22 @@
+dim_name: AccessDim
+permissions:
+  type: str
+access_level:
+  type: str
+access_conditions:
+  type: str
+surveillance_spells:
+  type: str
+  option: true
+secret_passages:
+  type: str
+  option: true
+alert_level:
+  type: str
+  option: true
+curfew_restriction:
+  type: str
+  option: true
+blood_status_checkpoint:
+  type: str
+  option: true

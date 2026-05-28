@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "bidirectional",
+      "type": "bool",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "secret_entry",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "monitored_end",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "alternate_end",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "guard_post_nearby",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

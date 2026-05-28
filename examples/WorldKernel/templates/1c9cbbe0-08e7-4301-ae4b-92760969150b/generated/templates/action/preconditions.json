@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "required_state",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "required_items",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "hidden_condition",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "monitoring_state",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "permission_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "forbidden_actions",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "taboos",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "surveillance_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "action_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "information_access",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reporting_obligation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "oath_binds",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "mission",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "founding_reason",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "secret_agenda",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "moral_compass",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "long_term_goal",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "propaganda_narrative",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "contingency_objective",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

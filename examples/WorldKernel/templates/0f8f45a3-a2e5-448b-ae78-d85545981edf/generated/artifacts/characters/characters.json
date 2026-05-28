@@ -1,0 +1,925 @@
+{
+  "artifact_type": "character_profile",
+  "items": [
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:008",
+        "name": "纳威·隆巴顿",
+        "role": "student",
+        "house": "格兰芬多"
+      },
+      "social_profile": {
+        "group_id": "邓布利多军(D.A.)",
+        "reputation": "勇敢无畏、坚定反抗的领袖",
+        "death_eater_affiliation": "敌人",
+        "relationships_with_key_figures": "{'哈利·波特': '挚友与精神支柱，继承其反抗遗志', '赫敏·格兰杰': '战术指导者，通过书信保持联络', '金妮·韦斯莱': '亲密战友，共同策划抵抗行动', '卢娜·洛夫古德': '被绑架前同为D.A.核心成员', '斯内普': '表面服从，内心极度不信任', '卡罗兄妹': '公开仇敌，多次遭受其惩罚'}",
+        "house_reputation": "格兰芬多最后的脊梁，以勇气闻名"
+      },
+      "capabilities": {
+        "skills": [
+          "魔咒学（擅长防御性咒语，如统统石化、除你武器）",
+          "草药学（天赋极高，熟知魔法植物用途）",
+          "变形术（中级，曾成功将斯内普的袍子变成粉色）",
+          "黑魔法防御术（实战经验丰富，在抵抗行动中磨练）",
+          "领导力（能在高压下组织团队，鼓舞士气）"
+        ],
+        "level": "advanced",
+        "weaknesses": "缺乏自信的低谷期记忆；对失败有强烈恐惧；有时在决策中过于谨慎导致错失时机；魔咒威力因情绪波动不稳定",
+        "combat_skill_level": "high",
+        "magical_proficiency": "excellent (实战导向)"
+      },
+      "personality": {
+        "traits": [
+          "坚韧不拔",
+          "责任心极强",
+          "外表木讷但内心炽热",
+          "忠诚",
+          "在压力下反而愈发冷静"
+        ],
+        "values": [
+          "正义与自由高于一切",
+          "保护弱小",
+          "反抗暴政",
+          "友谊与信任"
+        ],
+        "speech_style": "语速有时缓慢但坚定；常用具体例证而非抽象说教；会在关键时刻说出简短有力的宣言；紧张时偶有结巴",
+        "loyalty_to_dumbledores_army": "绝对忠诚，实质领导者",
+        "faction_lean": "反食死徒抵抗派"
+      },
+      "goals": {
+        "short_term_goal": "巩固D.A.网络，保护一年级新生免遭卡罗兄妹的恶意惩罚；寻找安全的集会地点",
+        "long_term_goal": "在最终决战到来时带领校内抵抗力量配合外部反击，推翻食死徒对霍格沃茨的控制",
+        "motivation": "对哈利离校前嘱托的责任感；父母被食死徒折磨致疯的个人仇恨；对邓布利多信念的继承",
+        "survival_priority": "中等（在必要时刻愿意牺牲自己换取整体胜利）",
+        "resistance_commitment": "最高级别"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "伏地魔复活并控制魔法部的现状",
+            "食死徒对麻瓜出身的迫害政策",
+            "霍格沃茨大部分隐藏通道的位置",
+            "基本黑魔法防御术与反咒知识"
+          ],
+          "social_knowledge": [
+            "D.A.成员的名单和特长",
+            "校内同情者的分布（如部分级长、教授）",
+            "卡罗兄妹日常巡逻的规律",
+            "斯内普的某些可疑行踪（曾暗示其可能并非完全忠诚）"
+          ]
+        },
+        "background_summary": "纯血统巫师，父母均为傲罗，被贝拉特里克斯·莱斯特兰奇用钻心咒折磨致疯，由祖母抚养长大。幼年魔法天赋迟滞，常被嘲笑，但在邓布利多和哈利的鼓励下逐渐成长。六年级时加入D.A.，参与神秘事务司之战，展现出非凡勇气。七年级学期初，在食死徒统治下主动承担起重建D.A.的重任。",
+        "key_events": [
+          "一年级时在格兰芬多公共休息室阻止哈利三人组夜游被发现（未成功）",
+          "六年级加入D.A.并参与神秘事务司之战",
+          "邓布利多葬礼后与金妮、卢娜等秘密恢复D.A.活动",
+          "在开学宴上公开反击卡罗兄妹的侮辱，挨了第一个钻心咒",
+          "利用有求必应屋建立秘密集会点，暗中保护被食死徒针对的同学"
+        ],
+        "secrets": [
+          "他知道有求必应屋中的垃圾堆下有拉文克劳的冠冕（但不知是魂器）",
+          "曾私下用双面镜与哈利联络过一次，获知对方仍在活动",
+          "暗中保留了一本赫敏留下的《霍格沃茨：一段校史》（内有D.A.密码）"
+        ],
+        "secret_resistance_history": "自开学第一周起与金妮、卢娜组成三人核心，逐步扩大D.A.；曾协助三名麻瓜出身学生通过秘密通道逃离学校",
+        "key_alliances_knowledge": "明确知晓哈利、罗恩、赫敏在外寻找魂器（但不知细节）；与金妮、卢娜、西莫、迪安等有直接联系"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:003"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "status_in_school": "",
+        "current_location_description": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:005",
+        "name": "金妮·韦斯莱",
+        "role": "student",
+        "house": "格兰芬多"
+      },
+      "social_profile": {
+        "group_id": "邓布利多军(D.A.)",
+        "reputation": "机敏果敢的情报核心",
+        "death_eater_affiliation": "敌人",
+        "relationships_with_key_figures": "{'哈利·波特': '暗中恋人，通过书信保持情感联络', '纳威·隆巴顿': '并肩作战的左右手，共同领导D.A.', '卢娜·洛夫古德': '密友，在卢娜被绑架前经常交换情报', '罗恩·韦斯莱': '哥哥，彼此担忧但默契信任', '斯内普': '表面警惕，实际利用家族身份降低其注意', '卡罗兄妹': '公开挑衅与暗地周旋的对象'}",
+        "house_reputation": "韦斯莱家的最后一员在校内，备受关注"
+      },
+      "capabilities": {
+        "skills": [
+          "魔咒学（精通多种实用魔咒，如无声咒、盔甲护身）",
+          "隐身与潜行（擅长利用城堡结构躲避巡逻）",
+          "情报收集（能高效从低年级学生和家养小精灵处获取信息）",
+          "战斗魔咒（熟练使用缴械咒、昏迷咒等）",
+          "魁地奇技巧（灵敏反应有助于实战闪避）"
+        ],
+        "level": "intermediate/advanced",
+        "weaknesses": "情感冲动时容易暴露计划；对哥哥和哈利的过度担忧影响判断；女性身份在食死徒歧视下易被低估",
+        "combat_skill_level": "high",
+        "magical_proficiency": "good"
+      },
+      "personality": {
+        "traits": [
+          "活泼外向",
+          "足智多谋",
+          "口齿伶俐",
+          "勇气充沛",
+          "善于社交"
+        ],
+        "values": [
+          "家庭与亲情",
+          "自由与平等",
+          "忠诚与正义",
+          "智慧斗争而非鲁莽"
+        ],
+        "speech_style": "语速轻快，常用反问和讽刺；在与食死徒周旋时能灵活切换语气（外表顺从，暗含机锋）；私下对同伴直率幽默",
+        "loyalty_to_dumbledores_army": "极高",
+        "faction_lean": "激进抵抗派"
+      },
+      "goals": {
+        "short_term_goal": "维持与家养小精灵的秘密联络网，确保被压迫学生获得食物和庇护；传递校内情报给纳威和外部联络人",
+        "long_term_goal": "在决战时刻为哈利提供准确的内应情报，并尽可能减少学生伤亡",
+        "motivation": "保护家人和朋友；对食死徒暴政的憎恨；对哈利的爱与支持",
+        "survival_priority": "中低（愿为任务冒险）",
+        "resistance_commitment": "高"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "食死徒对混血巫师和麻瓜出身的分类政策",
+            "霍格沃茨大多数暗道和秘密房间",
+            "基本反幻影移形咒的限制范围"
+          ],
+          "social_knowledge": [
+            "全校所有D.A.成员的代号和任务",
+            "哪些教授暗中同情抵抗（如麦格、弗立维）",
+            "家养小精灵（多比死后，其他小精灵态度变化）",
+            "斯内普的日常巡视路线"
+          ]
+        },
+        "background_summary": "韦斯莱家最小的孩子，在充满爱的家庭中长大，童年曾因日记本被伏地魔附身控制（第二学年），因此对黑魔法有深刻的个人仇恨。五年级加入D.A.并参与神秘事务司之战，展现出超常的战斗能力。七年级学期初主动留在学校，成为抵抗力量的核心情报员。",
+        "key_events": [
+          "二年级被汤姆·里德尔的日记控制，差点危及学校",
+          "五年级加入D.A.，在神秘事务司协助哈利",
+          "六年级与哈利秘密交往，知晓魂器任务大致方向",
+          "七年级开学后与纳威共同重建D.A.，成功让三名麻瓜出身学生逃脱",
+          "利用魁地奇训练掩护，多次探查有求必应屋的变化"
+        ],
+        "secrets": [
+          "她知道哈利在校外寻找魂器的具体线索（但未告知纳威）",
+          "暗中保存了哈利给她的双面镜碎片用于紧急联络",
+          "曾独自潜入黑魔法防御课教室偷取卡罗兄妹的惩罚记录"
+        ],
+        "secret_resistance_history": "参与并策划了开学初的‘级长沙漏’破坏行动（干扰点名制度），为逃亡学生赢得时间",
+        "key_alliances_knowledge": "与纳威、卢娜、西莫、迪安、张秋等有直接联系；通过书信与哈利保持联络"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:003"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "status_in_school": "",
+        "current_location_description": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:006",
+        "name": "卢娜·洛夫古德",
+        "role": "student",
+        "house": "拉文克劳"
+      },
+      "social_profile": {
+        "group_id": "邓布利多军(D.A.)",
+        "reputation": "异想天开但极其敏锐的预言者",
+        "death_eater_affiliation": "敌人（已遭绑架）",
+        "relationships_with_key_figures": "{'哈利·波特': '忠实朋友，曾帮助他理解夜骐和魂器秘密', '纳威·隆巴顿': 'D.A.战友，提供独特视角的建议', '金妮·韦斯莱': '最亲密的女友，共享秘密阅读习惯', '谢诺菲留斯·洛夫古德': '父亲，目前被迫与食死徒合作（但内心挣扎）', '卡罗兄妹': '公开蔑视，因此成为首要抓捕目标'}",
+        "house_reputation": "拉文克劳‘怪人’但受部分低年级敬佩"
+      },
+      "capabilities": {
+        "skills": [
+          "魔咒学（擅长无声咒，思维快速）",
+          "神秘学（对夜骐、骚扰虻等奇幻生物有深刻理解）",
+          "观察力（敏锐察觉被忽略的细节）",
+          "医疗（基础急救知识，曾帮助受伤同学）",
+          "反审讯（用看似天真的回答迷惑审问者）"
+        ],
+        "level": "intermediate",
+        "weaknesses": "过于相信自己的直觉，有时与现实脱节；在食死徒恐惧下容易显得孤僻；缺乏正规战斗中的人际支持",
+        "combat_skill_level": "medium",
+        "magical_proficiency": "good"
+      },
+      "personality": {
+        "traits": [
+          "天真与智慧并存",
+          "超然物外",
+          "坚忍不拔",
+          "直率坦诚",
+          "善良（对敌人也保持怪异同情）"
+        ],
+        "values": [
+          "真理（即使世人嘲笑）",
+          "友谊与忠诚",
+          "想象力的力量",
+          "反抗不公"
+        ],
+        "speech_style": "声音轻柔而飘忽不定，常使用比喻和奇特词汇（如‘骚扰虻’、‘弯角鼾兽’）；面对食死徒时故意装傻，实则传递暗语；对朋友完全坦诚，语出惊人但精准",
+        "loyalty_to_dumbledores_army": "忠诚但未直接领导",
+        "faction_lean": "抵抗派（以独特方式）"
+      },
+      "goals": {
+        "short_term_goal": "在被关押（或释放后）保持信念，利用‘预言家’身份迷惑食死徒；回归后迅速恢复与D.A.的联络",
+        "long_term_goal": "帮助哈利完成最终目标，证明异类也有改变世界的力量",
+        "motivation": "对父亲的爱与担忧；对食死徒掩盖真相的愤怒；对魔法世界多样性的信仰",
+        "survival_priority": "高（她相信活下去才能见证真相）",
+        "resistance_commitment": "高（但方式隐秘）"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "霍格沃茨隐藏房间和通道（多于一般学生）",
+            "夜骐的生物特性及用途",
+            "食死徒的审讯手段与弱点",
+            "《唱唱反调》印刷网络残骸"
+          ],
+          "social_knowledge": [
+            "哪些低年级拉文克劳可以信任",
+            "父亲被迫与食死徒合作的压力",
+            "D.A.成员在金妮/纳威处的联络方式",
+            "被绑架前掌握的校内抵抗‘暗语’系统"
+          ]
+        },
+        "background_summary": "独生女，母亲早年因实验咒语意外去世，与父亲谢诺菲留斯相依为命，从小被同龄人当作怪胎。四年级时被发现能看见夜骐，五年级加入D.A.并与哈利、金妮建立深厚友谊。七年级开学后因发表支持哈利的言论且知晓《唱唱反调》阵营，成为食死徒重点监视对象，不久后被强行绑架（但数值模拟中设定她目前仍在学校被囚禁）。",
+        "key_events": [
+          "三年级第一次看到夜骐",
+          "五年级加入D.A.，参加神秘事务司之战",
+          "六年级与金妮共享《唱唱反调》文章，嘲讽食死徒",
+          "七年级开学后拒绝向卡罗兄妹低头，被公开侮辱并关禁闭",
+          "在一次夜游中被食死徒抓住，关押在黑魔法防御课教室地下的临时囚室"
+        ],
+        "secrets": [
+          "她曾在禁林边缘看到纳吉尼（蛇）活动，但未对任何人说",
+          "她了解一个拉文克劳塔楼的隐藏小阳台，可用于疏散",
+          "她认为斯内普有隐藏动机，曾对金妮说‘他的眼睛不像坏人’"
+        ],
+        "secret_resistance_history": "在被关押前协助纳威设计了一套隐形墨水联络法；曾利用《唱唱反调》中的‘广告’广播抵抗暗语（被食死徒察觉后停止）",
+        "key_alliances_knowledge": "与纳威、金妮关系最密；知道哈利一行在外但不知具体位置；认识西莫、迪安等次要抵抗成员"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:001"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "status_in_school": "",
+        "current_location_description": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:009",
+        "name": "西莫·斐尼甘",
+        "role": "student",
+        "house": "Gryffindor"
+      },
+      "social_profile": {
+        "group_id": "student",
+        "reputation": "相对低调但可靠，以爆炸魔法著称，在D.A.中负责破坏性任务",
+        "death_eater_affiliation": "",
+        "relationships_with_key_figures": "",
+        "house_reputation": "Gryffindor"
+      },
+      "capabilities": {
+        "skills": [
+          "爆炸咒（擅长制造爆炸）",
+          "变形术（初级）",
+          "黑魔法防御术（基础）"
+        ],
+        "level": "中级",
+        "weaknesses": "施法不稳定有时失控, 面对食死徒时容易紧张",
+        "combat_skill_level": "",
+        "magical_proficiency": ""
+      },
+      "personality": {
+        "traits": [
+          "勇敢",
+          "急躁",
+          "忠诚"
+        ],
+        "values": [
+          "反对暴政",
+          "保护朋友"
+        ],
+        "speech_style": "带有爱尔兰口音，说话直率，偶尔冲动",
+        "loyalty_to_dumbledores_army": "高",
+        "faction_lean": ""
+      },
+      "goals": {
+        "short_term_goal": "协助纳威制造分散食死徒注意力的爆炸",
+        "long_term_goal": "帮助哈利击败伏地魔",
+        "motivation": "为被杀害的亲人朋友复仇，渴望自由",
+        "survival_priority": "中等",
+        "resistance_commitment": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "爆炸咒高级应用",
+            "霍格沃茨密道"
+          ],
+          "social_knowledge": [
+            "信任纳威·隆巴顿",
+            "与金妮·韦斯莱保持联系"
+          ]
+        },
+        "background_summary": "来自巫师家庭，擅长爆炸咒，五年级时加入D.A.，在食死徒控制下继续抵抗",
+        "key_events": [
+          "在邓布利多葬礼后加入抵抗活动",
+          "协助纳威在黑魔法防御课上制造骚乱"
+        ],
+        "secrets": [
+          "偷偷保存了一批弗雷德和乔治留下的恶作剧产品",
+          "知道有求必应屋的部分使用方法"
+        ],
+        "secret_resistance_history": "",
+        "key_alliances_knowledge": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:003"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "status_in_school": "格兰芬多六年级学生，D.A.活跃成员",
+        "current_location_description": "格兰芬多公共休息室，与纳威等人秘密策划"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:007",
+        "name": "米勒娃·麦格",
+        "role": "faculty",
+        "house": "Gryffindor"
+      },
+      "social_profile": {
+        "group_id": "faculty",
+        "reputation": "深受尊敬的变形术大师，表面服从斯内普，实际暗中保护学生",
+        "death_eater_affiliation": "无",
+        "relationships_with_key_figures": "与斯内普明面合作暗地对抗, 与邓布利多曾是亲密同事",
+        "house_reputation": "作为格兰芬多院长备受爱戴"
+      },
+      "capabilities": {
+        "skills": [
+          "变形术（大师级）",
+          "无杖魔法",
+          "摄神取念（略懂）",
+          "决斗高手"
+        ],
+        "level": "极高",
+        "weaknesses": "不愿直接暴露身份对抗食死徒以免连累学生, 年龄增长体力有限",
+        "combat_skill_level": "极高",
+        "magical_proficiency": "大师级"
+      },
+      "personality": {
+        "traits": [
+          "严厉",
+          "公正",
+          "勇敢",
+          "冷静"
+        ],
+        "values": [
+          "保护学生",
+          "反抗暴政",
+          "维护正义"
+        ],
+        "speech_style": "严厉但公正，用词精确，苏格兰口音",
+        "loyalty_to_dumbledores_army": "极高（但秘密）",
+        "faction_lean": "凤凰社"
+      },
+      "goals": {
+        "short_term_goal": "监视食死徒行动，保护格兰芬多学生免受卡罗兄妹过度惩罚",
+        "long_term_goal": "在关键时刻引领霍格沃茨反击，为哈利创造条件",
+        "motivation": "对邓布利多的忠诚和对邪恶的仇恨",
+        "survival_priority": "高",
+        "resistance_commitment": "极高"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "变形术最深奥义",
+            "霍格沃茨古代魔法防御机制"
+          ],
+          "social_knowledge": [
+            "信任斯内普？实际上不完全信任",
+            "了解纳威的抵抗活动",
+            "与庞弗雷夫人保持秘密合作"
+          ]
+        },
+        "background_summary": "霍格沃茨副校长兼格兰芬多院长，变形术大师。邓布利多去世后被迫服从食死徒统治，但秘密组织抵抗",
+        "key_events": [
+          "在邓布利多死后被迫担任副校长支持斯内普",
+          "多次暗中庇护被卡罗兄妹欺负的学生",
+          "与纳威等D.A.成员秘密沟通"
+        ],
+        "secrets": [
+          "知道凤凰社部分联系渠道",
+          "暗中保护真正的格兰芬多宝剑"
+        ],
+        "secret_resistance_history": "",
+        "key_alliances_knowledge": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:007"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "status_in_school": "变形术教授兼格兰芬多院长，名义上服从斯内普",
+        "current_location_description": "变形课教室，正在利用授课间隙观察学生状态"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:004",
+        "name": "菲利乌斯·弗立维",
+        "role": "faculty",
+        "house": "Ravenclaw"
+      },
+      "social_profile": {
+        "group_id": "faculty",
+        "reputation": "表面中立，实则同情抵抗，在魔咒课上暗中庇护学生",
+        "death_eater_affiliation": "无但被迫合作",
+        "relationships_with_key_figures": "与麦格教授保持默契, 对斯内普心存怀疑",
+        "house_reputation": "作为拉文克劳院长，重视学生安全"
+      },
+      "capabilities": {
+        "skills": [
+          "魔咒学（大师级）",
+          "决斗冠军级（年轻时）",
+          "飞行咒（特别擅长）"
+        ],
+        "level": "非常高",
+        "weaknesses": "身材矮小在物理冲突中不利, 不愿彻底公开对抗食死徒",
+        "combat_skill_level": "高（但避免战斗）",
+        "magical_proficiency": "大师级"
+      },
+      "personality": {
+        "traits": [
+          "聪明",
+          "谨慎",
+          "幽默",
+          "善良"
+        ],
+        "values": [
+          "知识",
+          "自由",
+          "保护学生"
+        ],
+        "speech_style": "轻快，带尖细的声音，常用小动作和眨眼",
+        "loyalty_to_dumbledores_army": "中等（暗中支持）",
+        "faction_lean": "倾向于凤凰社但不公开"
+      },
+      "goals": {
+        "short_term_goal": "确保魔咒课不受食死徒干扰，保护拉文克劳学生",
+        "long_term_goal": "在最终决战中选择正确一方，帮助推翻伏地魔",
+        "motivation": "对和平的渴望和对邪恶的厌恶",
+        "survival_priority": "高",
+        "resistance_commitment": "中等（不主动但会援助）"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "魔咒学最高水平",
+            "霍格沃茨隐藏咒语"
+          ],
+          "social_knowledge": [
+            "了解D.A.的成员但假装不知",
+            "与卢娜·洛夫古德的父亲有交情"
+          ]
+        },
+        "background_summary": "魔咒学教授，拉文克劳院长，曾获决斗冠军。在食死徒控制下保持低调，但暗中用微小方式帮助学生",
+        "key_events": [
+          "秘密帮助学生修改魔咒以规避卡罗兄妹检查",
+          "在课堂上巧妙讽刺黑魔法",
+          "与麦格教授私下交换情报"
+        ],
+        "secrets": [
+          "保留了一些禁止使用的魔咒知识以备不时之需",
+          "与霍格莫德的某些人保持联系"
+        ],
+        "secret_resistance_history": "",
+        "key_alliances_knowledge": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:002"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "status_in_school": "魔咒学教授兼拉文克劳院长，名义上配合食死徒统治",
+        "current_location_description": "大礼堂，正与同事们用餐，暗中观察阿米库斯·卡罗的动向"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:010",
+        "name": "西弗勒斯·斯内普",
+        "role": "death_eater_staff",
+        "house": "斯莱特林"
+      },
+      "social_profile": {
+        "group_id": "食死徒",
+        "reputation": "恐惧与猜忌并存，学生视其为暴君，部分食死徒怀疑其忠诚，邓布利多旧部则知晓其双重身份",
+        "death_eater_affiliation": "表面忠诚于伏地魔，实为凤凰社间谍",
+        "relationships_with_key_figures": "对哈利·波特怀有复杂保护欲（源于莉莉），表面冷酷, 与麦格教授暗中默契，共同保护学生, 被卡罗兄妹怀疑但不敢公开质疑",
+        "house_reputation": "作为斯莱特林院长，斯莱特林学生对其既敬畏又依附"
+      },
+      "capabilities": {
+        "skills": [
+          "大脑封闭术大师",
+          "魔药学大师",
+          "无杖魔法",
+          "摄神取念",
+          "黑魔法防御术极高"
+        ],
+        "level": "传奇级巫师",
+        "weaknesses": "对莉莉·波特的执念是情感突破口，大脑封闭术在极度痛苦时可能动摇",
+        "combat_skill_level": "顶尖",
+        "magical_proficiency": "精通几乎所有魔法领域"
+      },
+      "personality": {
+        "traits": [
+          "冷漠",
+          "隐忍",
+          "自我牺牲",
+          "极度克制",
+          "语言尖刻"
+        ],
+        "values": [
+          "对莉莉的誓言高于一切",
+          "保护霍格沃茨的学生（以扭曲的方式）",
+          "完成邓布利多的遗命"
+        ],
+        "speech_style": "低沉、缓慢、充满讽刺，常用简短命令式句子",
+        "loyalty_to_dumbledores_army": "暗中支持，但不能显露",
+        "faction_lean": "凤凰社（秘密）"
+      },
+      "goals": {
+        "short_term_goal": "维持食死徒对霍格沃茨的控制假象，同时最小化学生伤亡",
+        "long_term_goal": "帮助哈利击败伏地魔，完成邓布利多嘱托，以死赎罪",
+        "motivation": "对莉莉永恒的爱与愧疚，以及邓布利多的信任",
+        "survival_priority": "中——必要时可牺牲自己",
+        "resistance_commitment": "极高（但完全隐蔽）"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "伏地魔魂器数量及部分位置",
+            "大脑封闭术高级技巧",
+            "霍格沃茨密道与防御魔法"
+          ],
+          "social_knowledge": [
+            "卡罗兄妹的监视布防",
+            "凤凰社部分成员身份",
+            "D.A.主要活动模式（但装作不知）"
+          ]
+        },
+        "background_summary": "出生于混血家庭，童年饱受父亲虐待，与莉莉·伊万斯是青梅竹马。因加入食死徒而失去莉莉，后投诚邓布利多成为双重间谍。十七年来在光明与黑暗间行走，内心充满痛苦与悔恨。",
+        "key_events": [
+          "1997年邓布利多被杀，斯内普按计划成为新校长",
+          "在校长办公室与麦格秘密达成非正式谅解",
+          "多次暗中修改卡罗兄妹的惩罚名单，挽救学生性命",
+          "通过守护神引导哈利找到格兰芬多宝剑"
+        ],
+        "secrets": [
+          "真实身份是凤凰社间谍，邓布利多的死是两人共同策划",
+          "仍然深爱莉莉，守护神与其相同",
+          "知道自己是第七个魂器的间接知情者（通过邓布利多暗示）"
+        ],
+        "secret_resistance_history": "曾直接向邓布利多效忠，执行了最危险的卧底任务；间接协助D.A.多次",
+        "key_alliances_knowledge": "邓布利多（已故）, 麦格（隐性同盟）, 菲尼亚斯·奈杰勒斯画像（传递消息）"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:005"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "status_in_school": "校长，食死徒傀儡领袖",
+        "current_location_description": "阴冷的校长办公室，墙上挂满历代校长肖像，斯内普独自坐在书桌后，指尖轻抚魔杖，目光沉静地注视着窗外的禁林"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:002",
+        "name": "阿米库斯·卡罗",
+        "role": "death_eater_staff",
+        "house": "无"
+      },
+      "social_profile": {
+        "group_id": "食死徒核心",
+        "reputation": "恐惧：全校师生闻之色变的酷刑实施者",
+        "death_eater_affiliation": "伏地魔的忠实走狗，享受暴力",
+        "relationships_with_key_figures": "妹妹阿莱克托·卡罗是其唯一信任之人, 对斯内普表面服从，私下嘲笑其‘软弱’, 与费尔奇合作监视城堡",
+        "house_reputation": "被所有学院仇视，连斯莱特林也避之不及"
+      },
+      "capabilities": {
+        "skills": [
+          "钻心咒（精通）",
+          "赦免咒（用于折磨）",
+          "黑魔法防御术（实战型）",
+          "恐吓审讯"
+        ],
+        "level": "实战型黑巫师，中等偏上",
+        "weaknesses": "鲁莽、易怒，缺乏战略头脑，对妹妹的保护是明显软肋",
+        "combat_skill_level": "高",
+        "magical_proficiency": "黑魔法专精，其他领域平庸"
+      },
+      "personality": {
+        "traits": [
+          "残暴",
+          "虐待狂",
+          "狂热",
+          "易怒",
+          "粗鄙"
+        ],
+        "values": [
+          "纯血统至上",
+          "力量即正义",
+          "通过恐惧维持统治"
+        ],
+        "speech_style": "大喊大叫，口吻粗俗，常用威胁和脏话，笑声刺耳",
+        "loyalty_to_dumbledores_army": "极端敌对",
+        "faction_lean": "食死徒铁杆"
+      },
+      "goals": {
+        "short_term_goal": "抓住并公开惩罚D.A.成员，杀鸡儆猴",
+        "long_term_goal": "彻底铲除霍格沃茨的反抗力量，成为伏地魔最器重的打手",
+        "motivation": "嗜血欲望和对纯血统的狂热信仰",
+        "survival_priority": "高——他珍视自己的性命",
+        "resistance_commitment": "无"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "食死徒内部秘密通讯方式",
+            "霍格沃茨的禁林弱点和巡逻漏洞",
+            "残酷刑法的心理效果"
+          ],
+          "social_knowledge": [
+            "部分D.A.成员的身份（通过告密，但不完全）",
+            "学生之间的派系关系",
+            "城堡里所有非魔法监控盲区"
+          ]
+        },
+        "background_summary": "出身于纯血统但没落的卡罗家族，与妹妹从小被培养成黑巫师。第一次巫师战争期间便加入食死徒，犯下多起虐杀麻瓜和混血巫师的罪行。伏地魔复出后再度活跃，被派往霍格沃茨执行镇压任务。",
+        "key_events": [
+          "在课堂上对学生施钻心咒作为‘惩戒示范’",
+          "协助阿莱克托建立告密网",
+          "与斯内普因处罚力度产生多次冲突"
+        ],
+        "secrets": [
+          "曾秘密折磨并杀害一名试图逃跑的赫奇帕奇学生，将尸体处理掉",
+          "暗中收藏被惩罚学生的牙齿和指甲作为‘战利品’"
+        ],
+        "secret_resistance_history": "无",
+        "key_alliances_knowledge": "伏地魔直接命令, 阿莱克托·卡罗, 费尔奇"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:001"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "status_in_school": "黑魔法防御术教师，食死徒镇压者",
+        "current_location_description": "黑魔法防御课教室的黑板被换成‘纯血统宣言’，课桌上摆放着刑具，空气中弥漫着血腥味和恐惧。阿米库斯正悠闲地用魔杖敲打桌面，等待下一个倒霉的学生到来。"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:001",
+        "name": "阿莱克托·卡罗",
+        "role": "death_eater_staff",
+        "house": "无"
+      },
+      "social_profile": {
+        "group_id": "食死徒情报/监督",
+        "reputation": "阴险告密者，学生称其‘蛇眼’",
+        "death_eater_affiliation": "伏地魔的情报爪牙，负责意识形态监控",
+        "relationships_with_key_figures": "与哥哥阿米库斯·卡罗是完美搭档：他负责暴力，她负责渗透, 对斯内普表面恭敬，暗中监视其言行, 利用级长和部分斯莱特林学生建立告密网络",
+        "house_reputation": "被所有学院视为‘移动的监听咒’，连最亲近的学生也不信任她"
+      },
+      "capabilities": {
+        "skills": [
+          "摄神取念（浅层）",
+          "心理操控",
+          "审讯技巧（非暴力施压）",
+          "麻瓜研究（歪曲教材）",
+          "布局告密网络"
+        ],
+        "level": "中等黑巫师，专长情报与心理战",
+        "weaknesses": "不擅长正面战斗，依赖哥哥保护；对‘麻瓜低劣’的偏见会误判情报",
+        "combat_skill_level": "低-中",
+        "magical_proficiency": "偏重摄神取念和心理魔法，实战一般"
+      },
+      "personality": {
+        "traits": [
+          "阴险",
+          "多疑",
+          "善于伪装",
+          "控制欲强",
+          "油滑"
+        ],
+        "values": [
+          "纯血统至上",
+          "监视即安全",
+          "通过告密获得权力"
+        ],
+        "speech_style": "轻声细语，伪善温和，时常微笑着说出威胁的话，喜欢用暗示而非直接命令",
+        "loyalty_to_dumbledores_army": "极端敌对",
+        "faction_lean": "食死徒铁杆"
+      },
+      "goals": {
+        "short_term_goal": "揪出D.A.核心成员，瓦解其组织架构",
+        "long_term_goal": "在霍格沃茨建立全监控体系，成为伏地魔在校园的‘眼睛’，获得更多权力",
+        "motivation": "对混乱和告密的病态享受，以及对麻瓜的深刻仇恨",
+        "survival_priority": "非常高——她谨慎从不犯险",
+        "resistance_commitment": "无"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "食死徒情报传递加密方法",
+            "霍格沃茨的画像网络监视能力",
+            "学生思想波动的常见征兆"
+          ],
+          "social_knowledge": [
+            "大量学生的家庭背景和混血信息",
+            "各学院内部冲突点",
+            "教师中可能的同情者（如麦格）但缺乏证据"
+          ]
+        },
+        "background_summary": "卡罗兄妹中的妹妹，自幼擅长挑拨离间并乐在其中。第一次战争时主要负责渗透和策反，伏地魔倒台后装死逃过审判。复出后主动要求负责麻瓜研究课，以便更名正言顺地监视学生思想。",
+        "key_events": [
+          "将麻瓜研究改成‘麻瓜低劣论’洗脑课程",
+          "买通数名级长建立每日汇报制度",
+          "假装同情混血学生，套取情报后交由哥哥处置",
+          "曾在公共休息室安插窃听魔咒"
+        ],
+        "secrets": [
+          "暗中与魔法部的食死徒官员保持联系，试图架空斯内普",
+          "随身携带一份秘密名单，记录所有可疑学生（包括部分斯莱特林）",
+          "曾利用复方汤剂伪装成拉文克劳学生混入暗中观察"
+        ],
+        "secret_resistance_history": "无",
+        "key_alliances_knowledge": "阿米库斯·卡罗, 部分斯莱特林级长, 魔法部食死徒情报官约克"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:002"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "status_in_school": "麻瓜研究教师，食死徒监督者",
+        "current_location_description": "大礼堂用餐时间，阿莱克托·卡罗坐在教师席边缘，面带微笑地扫视每位学生，手指轻轻敲击桌面，似乎在记数。她偶尔与身旁的学生‘亲切’交谈，实则套取信息。"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:003",
+        "name": "阿格斯·费尔奇",
+        "role": "administrator",
+        "house": ""
+      },
+      "social_profile": {
+        "group_id": "school_staff",
+        "reputation": "低劣（被学生憎恶，被食死徒利用）",
+        "death_eater_affiliation": "合作者",
+        "relationships_with_key_figures": "{'西弗勒斯·斯内普': '服从但恐惧，斯内普容忍他的存在', '阿米库斯·卡罗': '直接上司，协助执行酷刑', '阿莱克托·卡罗': '同样服从，帮忙监视学生'}",
+        "house_reputation": "无（哑炮）"
+      },
+      "capabilities": {
+        "skills": [
+          "巡逻与监控",
+          "熟悉城堡密道",
+          "使用体罚工具",
+          "猫洛丽丝夫人协助追踪"
+        ],
+        "level": "低（无魔法能力，仅靠物理手段）",
+        "weaknesses": "哑炮, 缺乏魔法对抗能力, 易被学生戏弄和欺骗",
+        "combat_skill_level": "极低",
+        "magical_proficiency": "无"
+      },
+      "personality": {
+        "traits": [
+          "暴躁",
+          "记仇",
+          "残忍",
+          "服从权威",
+          "疑心重",
+          "刻薄"
+        ],
+        "values": [
+          "秩序与纪律",
+          "对巫师学生的报复",
+          "食死徒统治下的权力"
+        ],
+        "speech_style": "粗鲁、咒骂、威胁性低吼，常用“泥巴种”“小偷”等侮辱性词汇",
+        "loyalty_to_dumbledores_army": "false",
+        "faction_lean": "食死徒合作者"
+      },
+      "goals": {
+        "short_term_goal": "抓住违反宵禁的学生并施以严厉惩罚",
+        "long_term_goal": "成为食死徒体制下更受信任的爪牙，彻底清除校内反抗力量",
+        "motivation": "对巫师（尤其是学生）的多年怨恨，以及通过食死徒获取尊重与权力的渴望",
+        "survival_priority": "高",
+        "resistance_commitment": "零"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "霍格沃茨城堡所有已知秘密通道和幽灵出没地点",
+            "食死徒在城堡内实行的残酷惩罚规则",
+            "部分魂器传闻（道听途说）但不知详情"
+          ],
+          "social_knowledge": [
+            "卡罗兄妹的脾气与偏好",
+            "斯内普表面上支持食死徒但私下对部分学生宽松的矛盾行为",
+            "格兰芬多公共休息室入口变动规律（通过监视得知）"
+          ]
+        },
+        "background_summary": "作为霍格沃茨唯一的哑炮管理员，费尔奇在校园服务了数十年，始终被学生嘲笑和忽视。食死徒占领后，他主动投靠卡罗兄妹，成为执行暴力管制的重要帮凶。他利用丰富的密道知识和对城堡的熟悉，配合洛丽丝夫人日夜巡逻，维护恐怖纪律。",
+        "key_events": [
+          "协助卡罗兄妹公开惩罚违抗D.A.的学生",
+          "利用洛丽丝夫人在走廊蹲守哈利的踪迹（未成功）",
+          "在宵禁时抓捕多名格兰芬多学生并送去接受钻心剜骨",
+          "被纳威·隆巴顿用反恶咒误伤，更加仇恨抵抗组织"
+        ],
+        "secrets": [
+          "知道一条通往霍格莫德的密道，但未报告给食死徒，以防自己失去利用价值",
+          "私下羡慕纯血统巫师的魔力，并嫉妒斯内普的地位",
+          "曾偷偷收集学生被没收的物品，准备战后变卖"
+        ],
+        "secret_resistance_history": "",
+        "key_alliances_knowledge": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:001"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "status_in_school": "管理员，食死徒合作者，负责宵禁与体罚执行",
+        "current_location_description": "黑魔法防御课教室，正协助阿米库斯·卡罗对一名被抓到的学生施刑"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:008",
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:005",
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:006",
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:009",
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:007",
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:004",
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:010",
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:002",
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:001",
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:char:003"
+  ],
+  "upstream_step_ids": [
+    "generate_characters"
+  ],
+  "warnings": [
+    "batch 3 review (score=4.71): 角色数据中存在重复条目：阿米库斯·卡罗出现了两次，第一次的 social_profile 为 null 且不完整，第二次包含了完整数据。需删除重复的不完整条目。"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

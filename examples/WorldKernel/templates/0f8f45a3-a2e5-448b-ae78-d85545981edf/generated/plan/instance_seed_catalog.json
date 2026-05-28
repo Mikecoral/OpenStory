@@ -1,0 +1,179 @@
+{
+  "session_id": "0f8f45a3-a2e5-448b-ae78-d85545981edf",
+  "instance_seeds": {
+    "location": [
+      {
+        "seed_id": "dark_arts_classroom",
+        "name": "黑魔法防御课教室",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "卡罗兄妹实施惩罚和灌输黑暗魔法的核心场所",
+        "archetype_id": "teaching_space"
+      },
+      {
+        "seed_id": "transfiguration_classroom",
+        "name": "变形课教室",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "麦格教授继续授课并暗中保护学生的空间",
+        "archetype_id": "teaching_space"
+      },
+      {
+        "seed_id": "great_hall",
+        "name": "大礼堂",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "全校强制集会、监视用餐与食死徒宣传的场所",
+        "archetype_id": "communal_space"
+      },
+      {
+        "seed_id": "gryffindor_common_room",
+        "name": "格兰芬多公共休息室",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.97,
+        "generation_priority": 2,
+        "role_in_world": "学生抵抗组织的秘密集会与策划地点",
+        "archetype_id": "communal_space"
+      },
+      {
+        "seed_id": "gryffindor_tower",
+        "name": "格兰芬多塔楼",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "学生夜间休息与躲避监控的宿舍区域",
+        "archetype_id": "dormitory"
+      },
+      {
+        "seed_id": "headmasters_office",
+        "name": "校长办公室",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "斯内普实施统治与食死徒高层决策的权柄中枢",
+        "archetype_id": "restricted_area"
+      },
+      {
+        "seed_id": "hogwarts_kitchens",
+        "name": "霍格沃茨厨房",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.96,
+        "generation_priority": 2,
+        "role_in_world": "家养小精灵劳动区，学生可秘密获取食物和情报",
+        "archetype_id": "service_support"
+      }
+    ],
+    "character": [
+      {
+        "seed_id": "neville_longbottom",
+        "name": "纳威·隆巴顿",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "校内D.A.抵抗运动的领袖，冒险保护其他学生",
+        "archetype_id": "student"
+      },
+      {
+        "seed_id": "ginny_weasley",
+        "name": "金妮·韦斯莱",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "积极参与抵抗，传递情报并协助隐藏学生",
+        "archetype_id": "student"
+      },
+      {
+        "seed_id": "luna_lovegood",
+        "name": "卢娜·洛夫古德",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 2,
+        "role_in_world": "被食死徒绑架后仍保持信念，后期获救并参与反抗",
+        "archetype_id": "student"
+      },
+      {
+        "seed_id": "seamus_finnigan",
+        "name": "西莫·斐尼甘",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 3,
+        "role_in_world": "格兰芬多学生，协助纳威进行破坏与防御工作",
+        "archetype_id": "student"
+      },
+      {
+        "seed_id": "minerva_mcgonagall",
+        "name": "米勒娃·麦格",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "在明面服从食死徒，暗中保护学生并准备决战",
+        "archetype_id": "faculty"
+      },
+      {
+        "seed_id": "filius_flitwick",
+        "name": "菲利乌斯·弗立维",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.96,
+        "generation_priority": 2,
+        "role_in_world": "魔咒学教授，表面中立实际倾向抵抗，提供微小帮助",
+        "archetype_id": "faculty"
+      },
+      {
+        "seed_id": "severus_snape",
+        "name": "西弗勒斯·斯内普",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "食死徒任命的校长，双重间谍，执行伏地魔命令但暗中保护学生",
+        "archetype_id": "death_eater_staff"
+      },
+      {
+        "seed_id": "amycus_carrow",
+        "name": "阿米库斯·卡罗",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.97,
+        "generation_priority": 1,
+        "role_in_world": "黑魔法防御术教师，残忍惩罚反抗学生，食死徒核心打手",
+        "archetype_id": "death_eater_staff"
+      },
+      {
+        "seed_id": "alecto_carrow",
+        "name": "阿莱克托·卡罗",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.97,
+        "generation_priority": 2,
+        "role_in_world": "麻瓜研究教师，负责监督与告密，控制学生言行",
+        "archetype_id": "death_eater_staff"
+      },
+      {
+        "seed_id": "argus_filch",
+        "name": "阿格斯·费尔奇",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 3,
+        "role_in_world": "管理员，勾结食死徒，严格执行宵禁与体罚规则",
+        "archetype_id": "administrator"
+      }
+    ]
+  }
+}

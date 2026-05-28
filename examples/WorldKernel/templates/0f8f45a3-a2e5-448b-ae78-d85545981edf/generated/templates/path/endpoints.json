@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "bidirectional",
+      "type": "bool",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "endpoint_surveillance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "connection_type_description",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_guarded",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

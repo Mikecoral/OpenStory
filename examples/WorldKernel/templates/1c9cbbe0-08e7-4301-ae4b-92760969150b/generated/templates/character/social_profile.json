@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "group_id",
+      "type": "str",
+      "required": true,
+      "ref": "institution"
+    },
+    {
+      "name": "reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "allies",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "enemies",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "network",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "trust_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "notoriety",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "protector",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "informer",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}
