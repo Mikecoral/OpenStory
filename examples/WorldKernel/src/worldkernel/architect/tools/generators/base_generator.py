@@ -401,5 +401,31 @@ def _coerce_field_types(
                 dim[field_key] = float(val)
             except (TypeError, ValueError):
                 warnings.append(f"item[{idx}]: {path} '{val}' cannot be converted to float")
+        elif (
+            isinstance(expected, type)
+            and issubclass(expected, BaseModel)
+            and not isinstance(val, dict)
+        ):
+            # LLM 把嵌套对象字段输出为列表或字符串时，尝试 coerce 成字典
+            if isinstance(val, list):
+                # 找第一个 list[str] 类型字段，将列表内容映射进去
+                # 处理 [{"description": "..."}, ...] 这种 LLM 常见错误格式
+                coerced: dict[str, Any] = {}
+                for fname, finfo in expected.model_fields.items():
+                    ann = finfo.annotation
+                    origin = getattr(ann, "__origin__", None)
+                    if origin is list:
+                        str_vals = []
+                        for item in val:
+                            if isinstance(item, str):
+                                str_vals.append(item)
+                            elif isinstance(item, dict):
+                                str_vals.append(item.get("description", str(item)))
+                        coerced[fname] = str_vals
+                        break
+                dim[field_key] = coerced
+            else:
+                # 字符串或其他标量 → 空字典让 Pydantic 使用字段默认值
+                dim[field_key] = {}
 
     return item_data

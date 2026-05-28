@@ -1,0 +1,804 @@
+{
+  "artifact_type": "character_profile",
+  "items": [
+    {
+      "identity": {
+        "id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:008",
+        "name": "菲利乌斯·弗立维",
+        "role": "faculty",
+        "public_identity": "霍格沃茨魔咒课教授，公认的友善且才华横溢的小个子巫师",
+        "true_allegiance": "凤凰社与邓布利多遗志，暗中保护学生并为抵抗组织提供支持",
+        "blood_status": "混血（父亲为巫师，母亲为媚娃后裔）",
+        "house": "拉文克劳",
+        "cover_story": "在新政权下继续履行魔咒课教学职责，假装顺从食死徒的指令",
+        "known_affiliation": "霍格沃茨教授会（公开），凤凰社（秘密）"
+      },
+      "social_profile": {
+        "group_id": "faculty_underground",
+        "reputation": "备受学生和同僚尊敬，被认为忠诚可靠且拥有强大的防御魔咒知识",
+        "allies": "米勒娃·麦格, 波莫娜·斯普劳特, 西比尔·特里劳妮, 内维尔·隆巴顿（DA成员）",
+        "enemies": "阿米库斯·卡罗, 阿莱克托·卡罗, 西弗勒斯·斯内普（表面敌对，但彼此了解真实立场）",
+        "network": "通过拉文克劳塔楼的秘密通信网络与DA核心成员保持联系",
+        "trust_level": "选择性信任，仅对少数经过验证的抵抗者透露真实意图",
+        "notoriety": "较低，刻意保持低调以避免引起食死徒注意",
+        "protector": "无正式保护者，但城堡古老魔法和邓布利多残留的防护提供了间接庇护",
+        "informer": "有时向斯内普提供无关紧要的信息以维持掩护"
+      },
+      "capabilities": {
+        "skills": [
+          "魔咒学大师级",
+          "无声咒与无杖咒精通",
+          "决斗技巧",
+          "防御魔法教学",
+          "微缩咒语（天赋）"
+        ],
+        "level": "major",
+        "weaknesses": "体型矮小在近身搏斗中处于劣势；过度仁慈，不愿对学生使用致命手段；对媚娃血统的情绪波动偶尔影响专注",
+        "combat_skills": "高超的决斗者，擅长快速施放束缚和缴械咒，但缺乏攻击性黑魔法经验",
+        "espionage_skills": "利用矮小身形和教授身份监视走廊动静，善于偷听而不被发现",
+        "resistance_experience": "曾在第一次巫师战争中与凤凰社合作，熟悉秘密行动和伪装技巧",
+        "knowledge_of_secret_passage": "知道霍格沃茨所有公开的秘密通道，包括有求必应屋的多种启用方式",
+        "magical_abilities": "先天魔咒天赋，能完成极其精细的魔法操控，例如同时维持多个防御咒语",
+        "danger_awareness": "极高，能够敏锐察觉食死徒巡逻规律和气氛变化"
+      },
+      "personality": {
+        "traits": [
+          "敏锐机智",
+          "低调谨慎",
+          "善良幽默",
+          "坚韧不拔",
+          "善于倾听"
+        ],
+        "values": [
+          "知识自由",
+          "学生福祉",
+          "反抗暴政",
+          "忠诚与友谊",
+          "魔法伦理"
+        ],
+        "speech_style": "说话简短、清晰，偶尔带有拉文克劳式的讽刺，但在公开场合刻意使用恭敬、顺从的语气；私下则恢复活泼的语调，喜欢用啵啵儿等拟声词强调重点",
+        "fear_level": "中等，对伏地魔的恐怖统治感到真实恐惧，但不会因此瘫痪",
+        "bravery_index": "高，明知危险仍坚持协助抵抗",
+        "suspicion_level": "极高，对任何接近的食死徒或告密者保持警惕",
+        "ideological_flexibility": "灵活，在原则不妥协的前提下愿意使用计谋和伪装",
+        "response_to_oppression": "表面配合，内心反抗，利用职位漏洞削弱食死徒的控制力"
+      },
+      "goals": {
+        "short_term_goal": "在魔咒课上悄悄教给学生实用的防御咒语，并辨识出可招募的抵抗力量",
+        "long_term_goal": "协助推翻食死徒对霍格沃茨的控制，在战后重建自由的教育环境",
+        "motivation": "对邓布利多的承诺和对年轻一代的责任感；相信自己温和的小个子形象能骗过敌人",
+        "priority": "保护学生生命是最高优先级，其次才是破坏食死徒计划",
+        "risk_tolerance": "中等偏上，愿意承担个人风险但尽量避免牵连学生",
+        "sacrifice_willingness": "愿意牺牲职位乃至生命，但不会在无意义的情况下逞英雄",
+        "primary_loyalty": "霍格沃茨作为知识与自由的堡垒"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [],
+          "social_knowledge": []
+        },
+        "background_summary": "出生于一个混血巫师家庭，母亲是媚娃，幼年时因身高受到歧视，在拉文克劳找到归属。毕业后专注魔咒学研究，成为国际知名的魔咒大师，1940年代末受邀回霍格沃茨任教。第一次巫师战争期间暗中支持凤凰社，但从未正式加入。邓布利多逝世后，内心充满对未来的忧虑，决定在斯内普政权下潜伏串联",
+        "key_events": [
+          "亲眼目睹邓布利多的葬礼并决心继承其遗志",
+          "在开学宴上被迫公开祝贺斯内普校长就职",
+          "发现阿米库斯·卡罗在课堂上对学生使用钻心剜骨，被迫当众表示默许但内心震怒",
+          "利用魔咒课作业秘密传递消息给麦格教授",
+          "在一场深夜巡逻中帮忙掩护逃跑的DA成员"
+        ],
+        "secrets": [
+          "曾多次修改一年级魔咒课教学大纲，暗中删除食死徒要求加入的黑暗魔咒内容",
+          "在有求必应屋内特定书架上留下了几本高阶防御魔咒笔记",
+          "知道西弗勒斯·斯内普的真实忠诚（基于邓布利多生前的暗示），但从未确认也从未向外透露"
+        ],
+        "traumatic_memories": "{'description': '被迫目睹卡罗兄妹体罚学生而无能为力'}",
+        "loyalty_oaths": "{'description': '未正式立誓，但内心向邓布利多的记忆宣誓守护霍格沃茨'}",
+        "hidden_knowledge": "{'description': '知道城堡地下一处不被食死徒知晓的储藏室，可用于藏匿禁书和违禁材料'}",
+        "moral_conflicts": "{'description': '为了掩护身份不得不公开支持一些应受谴责的规章制度'}",
+        "information_sources": "{'description': '拉文克劳公共休息室的幽灵、家养小精灵、少数信任的高年级学生'}"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:001"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_activity": "表面上正在准备第二天的魔咒课教案，实际上在课本边缘用隐形墨水编写防御咒语指南",
+        "disguise_state": "无伪装",
+        "health_status": "良好，尽管常感精神疲惫",
+        "captivity_status": "自由但受监控",
+        "cover_status": "有效，食死徒认为他是一个顺从的技术官僚"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:009",
+        "name": "波莫娜·斯普劳特",
+        "role": "faculty",
+        "public_identity": "霍格沃茨草药学教授，赫奇帕奇院长，以圆胖身材和园艺热情著称",
+        "true_allegiance": "凤凰社及DA反抗组织，利用草药学资源支持战斗准备",
+        "blood_status": "纯血（但家族未曾涉足黑魔法）",
+        "house": "赫奇帕奇",
+        "cover_story": "专注于植物学研究，对新政权不表现出明显敌意，只关注温室与收成",
+        "known_affiliation": "霍格沃茨教授会，赫奇帕奇学院"
+      },
+      "social_profile": {
+        "group_id": "faculty_underground",
+        "reputation": "热心肠、直爽的教授，受到学生爱戴，敌人认为她只是个无害的老园丁",
+        "allies": "米勒娃·麦格, 菲利乌斯·弗立维, 内维尔·隆巴顿（得到她的特别指导）, 温顺的家养小精灵们",
+        "enemies": "阿米库斯·卡罗, 阿莱克托·卡罗, 食死徒中的鹰派",
+        "network": "通过温室的工作与多个级长保持联系；与禁林边缘的护林员（海格流亡后代理）有非正式情报交换",
+        "trust_level": "乐观但审慎，对赫奇帕奇学生格外信任",
+        "notoriety": "极低，刻意维持平淡无奇的印象",
+        "protector": "城堡本身以及她对自己植物的绝对控制力",
+        "informer": "不主动刺探情报，但乐于接收并传递学生带来的消息"
+      },
+      "capabilities": {
+        "skills": [
+          "草药学大师",
+          "危险植物培育与操控",
+          "魔药材料鉴别与炮制",
+          "生物魔法（与植物共生）",
+          "急救与解毒"
+        ],
+        "level": "major",
+        "weaknesses": "体术能力一般，不擅长攻击性魔法；对有毒植物的偏爱可能引来怀疑；对赫奇帕奇学生过度保护有时会暴露行踪",
+        "combat_skills": "能够利用蔓藤和攻击性植物进行防御，但缺乏标准决斗训练",
+        "espionage_skills": "利用全城堡的植物（如曼德拉草、喷雾灌木）感知入侵或监控视线；善于在温室嘈杂环境中秘密交谈",
+        "resistance_experience": "早在第一次巫师战争期间就为凤凰社提供治疗的魔药原料",
+        "knowledge_of_secret_passage": "熟悉通向禁林以及温室的隐秘路径，知道如何利用温室旁的旧地窖连接城堡排污系统",
+        "magical_abilities": "与植物沟通的天赋，能通过触碰植物的根部了解近期经过的人员气味",
+        "danger_awareness": "中上，依靠直觉和植物反馈预判麻烦"
+      },
+      "personality": {
+        "traits": [
+          "热情开朗",
+          "务实乐观",
+          "坚毅忠诚",
+          "有些急躁",
+          "心软护短"
+        ],
+        "values": [
+          "辛勤劳动",
+          "大自然的治愈力",
+          "公平对待每一个生命",
+          "家庭与友谊",
+          "反抗暴政"
+        ],
+        "speech_style": "乡音浓厚的英语，语速快，爱用园艺比喻；公开场合嗓门大、琐碎，私下则会压低声音变得严肃",
+        "fear_level": "较低，但面对卡罗兄妹时会产生保护性的愤怒而非恐惧",
+        "bravery_index": "非常高，会为了保护学生挺身而出",
+        "suspicion_level": "中等，倾向于先相信别人直到证据相反",
+        "ideological_flexibility": "低，对本质问题（如体罚与血统歧视）毫不妥协",
+        "response_to_oppression": "暗中蓄力，用行动而非言语反抗：种植战术植物、藏匿被追捕的学生"
+      },
+      "goals": {
+        "short_term_goal": "利用秋季植物收获期，大量培育能用于攻防的魔法植物（如曼德拉草、魔鬼网、毒牙甘蓝）并转移至秘密地点",
+        "long_term_goal": "联合其他教授和DA在必要时刻发动植物攻势，让城堡变成食死徒的植物园坟墓",
+        "motivation": "对赫奇帕奇精神的忠诚——忠诚与公正；也要为被卡罗兄妹伤害的学生复仇",
+        "priority": "确保有足够的高品质植物储备应对危机",
+        "risk_tolerance": "中等，关键行动时愿意亲自冒险但不会莽撞",
+        "sacrifice_willingness": "愿意牺牲自己的温室和收藏品，甚至生命",
+        "primary_loyalty": "霍格沃茨的学生与同事"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [],
+          "social_knowledge": []
+        },
+        "background_summary": "出生于纯血巫师家庭，但家族在血统主义者中并不出名。从小热爱草药学，在霍格沃茨就读赫奇帕奇后进入魔法植物学术界，毕业后留校任教。在第一战中失去几位亲友，因此对伏地魔政权有深仇。邓布利多去世后，她主动找麦格沟通，成为反抗的骨干后勤",
+        "key_events": [
+          "在食死徒接管后第一个月，主动将两株珍稀毒牙甘蓝移植到秘密温床",
+          "发现阿米库斯·卡罗试图用鞭子惩罚一名赫奇帕奇一年级生，她径直冲进去用蔓藤绊倒卡罗并假装是意外",
+          "帮助掩护受伤的DA成员在自己的温室中疗伤",
+          "与弗立维共同研究如何将魔鬼网布置在走廊天花板上作为陷阱",
+          "收留了一群被驱逐的家养小精灵，让他们协助照料植物"
+        ],
+        "secrets": [
+          "知道温室下方有一条通向霍格莫德旧地道，（曾用于运送反抗物资）",
+          "偷偷培育了数百株水下魔鬼藤，已有置放在黑湖中用作最后屏障的计划"
+        ],
+        "traumatic_memories": "{'description': '亲眼看到一个曾经的学生被食死徒抓捕并失踪'}",
+        "loyalty_oaths": "{'description': '对赫奇帕奇的永久效忠誓言，形式上是守护学院荣誉的心誓'}",
+        "hidden_knowledge": "{'description': '知道一种罕见的喷雾木菊，其花粉可以暂时干扰追踪咒'}",
+        "moral_conflicts": "{'description': '不得不命令某些更有价值的学生离开学校，而把其他人留下面对风险'}",
+        "information_sources": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:002"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_activity": "正在禁林边缘的一个隐蔽树坑里检查新移植的魔鬼网幼苗，确认其受控范围",
+        "disguise_state": "穿着平常的耕作罩袍，沾满泥土",
+        "health_status": "良好，精力充沛",
+        "captivity_status": "自由",
+        "cover_status": "有效，食死徒认为她只是个过度热衷园艺的怪人"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:002",
+        "name": "阿米库斯·卡罗",
+        "role": "death_eater_staff",
+        "public_identity": "霍格沃茨黑魔法防御术教授兼惩罚官，食死徒核心成员",
+        "true_allegiance": "伏地魔本人及纯血统统治理想",
+        "blood_status": "纯血（卡罗家族）",
+        "house": "曾就读于斯莱特林",
+        "cover_story": "无掩饰，公然以恐怖统治者的面目行动",
+        "known_affiliation": "食死徒、伏地魔政权、霍格沃茨高级管理团队"
+      },
+      "social_profile": {
+        "group_id": "death_eater_faction",
+        "reputation": "残忍、疯狂、令人畏惧；学生和教师都厌恶他，食死徒内部认为他忠诚但手段粗暴",
+        "allies": "阿莱克托·卡罗（妹妹）, 西弗勒斯·斯内普（尽管暗中互相猜忌）, 其他在霍格沃茨的食死徒爪牙",
+        "enemies": "除斯莱特林外几乎所有学生, DA成员, 麦格教授及其追随者, 任何有反抗迹象的教员",
+        "network": "与魔法部食死徒保持密切联系，定期向伏地魔汇报学校状况",
+        "trust_level": "只信任自己的妹妹；对斯内普的表面忠诚持怀疑态度但不敢违抗伏地魔的命令",
+        "notoriety": "极高，已经成为暴力恐怖的代名词",
+        "protector": "伏地魔授予的绝对权力以及斯内普名义上的支持",
+        "informer": "本人是最高级别的告密者，利用惩罚从学生口中撬取情报"
+      },
+      "capabilities": {
+        "skills": [
+          "黑魔法精通",
+          "酷刑与审讯（包括钻心咒）",
+          "战斗决斗",
+          "恐吓统治",
+          "黑魔法防御（攻击性解读）"
+        ],
+        "level": "core",
+        "weaknesses": "残暴导致丧失正常情报收集能力，过度依赖暴力；缺乏教育才能，教学能力低下；对妹妹的依赖可能被利用；自负且容易因挑衅失去冷静",
+        "combat_skills": "出色的决斗者，擅长使用斩杀咒和折磨咒，但战术思维单一",
+        "espionage_skills": "靠胁迫和暴力获取信息，不擅长精细的渗透或伪装",
+        "resistance_experience": "参与过多起屠杀和镇压麻瓜的行动，有丰富的暴力统治经验",
+        "knowledge_of_secret_passage": "通过斯内普分享知道几处主要通道，但对城堡隐蔽区域了解有限",
+        "magical_abilities": "能够施展不可饶恕咒无杖化（仅限钻心咒），黑暗诅咒大师",
+        "danger_awareness": "较低，因为相信恐怖统治绝对有效，容易低估学生的聪明才智"
+      },
+      "personality": {
+        "traits": [
+          "残暴嗜血",
+          "疯狂易怒",
+          "傲慢自大",
+          "自我中心",
+          "对妹妹病态保护"
+        ],
+        "values": [
+          "暴力即正义",
+          "纯血统至上",
+          "绝对服从伏地魔",
+          "恐惧作为统治工具",
+          "家族荣誉"
+        ],
+        "speech_style": "咆哮式的吼叫，夹杂侮辱性词汇和笑声；经常在公开场合用尖叫威胁，享受他人的恐惧反应",
+        "fear_level": "极低，但暗藏对伏地魔失宠的恐惧",
+        "bravery_index": "中等，在绝对优势下鲁莽勇敢，面对真正威胁时会退缩",
+        "suspicion_level": "高，特别是对斯内普和任何不直接讨好他的人",
+        "ideological_flexibility": "零，固守纯粹食死徒教条",
+        "response_to_oppression": "对他人加倍的压迫；自己是压迫的实施者"
+      },
+      "goals": {
+        "short_term_goal": "在全校推广黑魔法教学，根除任何抵抗情绪，通过公开惩罚展示权威",
+        "long_term_goal": "巩固食死徒对魔法教育系统的控制，将来可能争取魔法部高阶职位，甚至成为霍格沃茨永久校长",
+        "motivation": "对伏地魔的狂热崇拜与对纯血统的狂热信仰，同时享受施虐带来的权力快感",
+        "priority": "镇压所有异议者，建立无人敢挑战的恐怖秩序",
+        "risk_tolerance": "中等，愿意做脏活但会确保自己有后路",
+        "sacrifice_willingness": "愿意牺牲教职工和学生的命，但绝不愿意拿自己和妹妹冒险",
+        "primary_loyalty": "伏地魔（出自身利益），其次是自己和妹妹"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [],
+          "social_knowledge": []
+        },
+        "background_summary": "出生于古老纯血统卡罗家族，与妹妹阿莱克托一同在斯莱特林就读。毕业后加入食死徒，在第一次巫师战争期间参与多次针对麻瓜和混血的突袭，因残忍手段博得伏地魔赏识。在伏地魔复活后积极投入复辟行动，被任命为霍格沃茨的惩戒者。对西弗勒斯·斯内普占据校长之位心怀不满，但不敢公开反对",
+        "key_events": [
+          "在斯内普就职典礼上公开殴打一名格兰芬多学生以立威",
+          "在第一节黑魔法防御课上强迫六年级学生互相施放钻心咒（尽管被斯内普暗中阻止）",
+          "发现并破坏了一次DA的小型集会，逮捕并折磨了三名参与者",
+          "与妹妹联合实施宵禁巡逻，在走廊上用帝国咒控制级长",
+          "曾试图探查有求必应屋但未成功，对城堡魔法感到恼怒"
+        ],
+        "secrets": [
+          "知道斯内普可能并非完全忠诚，但缺乏证据且不敢向伏地魔告状以免显得自己无能",
+          "其实对高级黑魔法如魂器的原理并不了解，只是假装精通",
+          "暗中收藏了一些从纯血统学生那里勒索来的家族传家宝"
+        ],
+        "traumatic_memories": "{'description': '曾在一次食死徒内斗中被同僚刺伤右手，至今留下轻微颤抖'}",
+        "loyalty_oaths": "{'description': '对伏地魔立下过血誓（在复活仪式上）'}",
+        "hidden_knowledge": "{'description': '无特别有价值的情报，主要依赖伏地魔赐予的信息'}",
+        "moral_conflicts": "{'description': '无，他完全认同自己的行为'}",
+        "information_sources": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:003"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_activity": "站在大礼堂中央的高台上，正对着全体学生大声宣布新的宵禁惩罚条例，一边用魔杖威胁性地敲打自己的手掌",
+        "disguise_state": "无伪装，穿着食死徒标志性的黑色长袍和银色面具（但上课时取下面具）",
+        "health_status": "健康，但右手旧伤在阴冷天气作痛",
+        "captivity_status": "自由且掌权",
+        "cover_status": "无需掩护，公开身份即是暴政图腾"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:001",
+        "name": "阿莱克托·卡罗",
+        "role": "death_eater_staff",
+        "public_identity": "麻瓜研究教授",
+        "true_allegiance": "伏地魔",
+        "blood_status": "纯血统",
+        "house": "斯莱特林",
+        "cover_story": "忠诚的食死徒教师，执行伏地魔的教育改革",
+        "known_affiliation": "食死徒、卡罗兄妹"
+      },
+      "social_profile": {
+        "group_id": "食死徒教师团体",
+        "reputation": "残忍、恐怖、人人畏惧",
+        "allies": "阿米库斯·卡罗（弟弟）, 西弗勒斯·斯内普（名义上）",
+        "enemies": "DA成员, 格兰芬多学生, 任何被怀疑反抗的人",
+        "network": "食死徒内部情报网、卡罗兄妹监控网络",
+        "trust_level": "低（只信任弟弟和伏地魔）",
+        "notoriety": "高（因实施体罚和思想灌输而臭名昭著）",
+        "protector": "",
+        "informer": "经常向斯内普和伏地魔汇报学生动态"
+      },
+      "capabilities": {
+        "skills": [
+          "黑魔法防御（攻击性）",
+          "钻心咒（惩罚）",
+          "精神压迫",
+          "心理折磨",
+          "监视与跟踪",
+          "思想灌输"
+        ],
+        "level": "高级（战斗型教师）",
+        "weaknesses": "对弟弟过度依赖, 傲慢自大, 容易被激怒, 缺乏战略眼光",
+        "combat_skills": "夺魂咒, 钻心咒, 障碍咒, 昏昏倒地",
+        "espionage_skills": "暗中窃听, 审问学生, 利用告密者",
+        "resistance_experience": "无（从未参与抵抗活动）",
+        "knowledge_of_secret_passage": "知道城堡的部分通道，但不如费尔奇详细",
+        "magical_abilities": "精通多种黑魔法，尤其是不可饶恕咒",
+        "danger_awareness": "中等（自恃食死徒身份，低估学生反抗的智谋）"
+      },
+      "personality": {
+        "traits": [
+          "残忍",
+          "偏执",
+          "虐待狂倾向",
+          "歇斯底里",
+          "对纯血统极度狂热",
+          "缺乏耐心"
+        ],
+        "values": [
+          "纯血统至上",
+          "伏地魔绝对统治",
+          "血腥纪律",
+          "麻瓜低劣"
+        ],
+        "speech_style": "尖锐、命令式、常用威胁语气，喜欢对学生大声斥责并辱骂",
+        "fear_level": "低（很少恐惧，但面对伏地魔时会紧张）",
+        "bravery_index": "中（敢于惩罚学生，但缺乏真正面对危险的勇气）",
+        "suspicion_level": "高（对一切学生活动高度怀疑）",
+        "ideological_flexibility": "零（完全顽固不化）",
+        "response_to_oppression": "作为压迫者，享受权力并极端维护现状"
+      },
+      "goals": {
+        "short_term_goal": "严格执行斯内普校长的新纪律，对任何违规学生使用钻心咒或体罚，确保整个霍格沃茨弥漫恐惧",
+        "long_term_goal": "彻底清除霍格沃茨中的”血统叛徒”和反抗思想，将学校打造成纯血统思想灌输基地，获得伏地魔的进一步嘉奖",
+        "motivation": "对伏地魔的狂热崇拜与对麻瓜（及麻瓜出身者）的刻骨仇恨，渴望权力与认可",
+        "priority": "最高（所有行动为巩固食死徒统治服务）",
+        "risk_tolerance": "中（愿意执行残酷命令，但不愿自己处于危险中）",
+        "sacrifice_willingness": "低（只愿意牺牲别人）",
+        "primary_loyalty": "伏地魔（其次为弟弟阿米库斯）"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [],
+          "social_knowledge": []
+        },
+        "background_summary": "出身于纯血统家族卡罗，从小受纯血统至上教育。与弟弟阿米库斯一起在第一次巫师战争时加入食死徒，参与过多起恐吓与袭击。伏地魔复出后，被委以接管霍格沃茨麻瓜研究课程的重任，与弟弟一同成为学校中最令人恐惧的教师。她以残忍处罚学生闻名，尤其痛恨麻瓜出身者和任何质疑纯血统的人。",
+        "key_events": [
+          "1997年夏被伏地魔任命为麻瓜研究教授",
+          "开学第一天当众对一名格兰芬多学生使用钻心咒以儆效尤",
+          "强迫全校学生练习黑魔法防御术（实为黑魔法）",
+          "在饭桌上公开宣布麻瓜研究课将变成‘揭露麻瓜低劣本质’的课程"
+        ],
+        "secrets": [
+          "知道伏地魔的部分计划，但并非完全核心成员",
+          "私下里担心弟弟阿米库斯过于残暴可能引来过多反抗",
+          "曾亲眼目睹伏地魔处决不忠食死徒，内心有轻微不安但压抑"
+        ],
+        "traumatic_memories": "无（她本人是施暴者）",
+        "loyalty_oaths": "曾向伏地魔宣誓效忠，但未使用不可破誓",
+        "hidden_knowledge": "知道几处学生可能使用的秘密集会地点（但有求必应屋除外）",
+        "moral_conflicts": "无（完全没有道德底线）",
+        "information_sources": "从告密学生得到的消息、斯内普的指示、食死徒通讯"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:001"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_activity": "正在黑魔法防御课教室中审问一名据称参与反抗集会的学生",
+        "disguise_state": "",
+        "health_status": "健康",
+        "captivity_status": "自由",
+        "cover_status": "公开"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:010",
+        "name": "西弗勒斯·斯内普",
+        "role": "headmaster",
+        "public_identity": "伏地魔任命的霍格沃茨校长",
+        "true_allegiance": "邓布利多（已故）/ 凤凰社 / 保护哈利·波特",
+        "blood_status": "混血（半血）",
+        "house": "斯莱特林",
+        "cover_story": "背叛邓布利多的食死徒，成功夺取校长之位",
+        "known_affiliation": "食死徒（表面）、凤凰社（秘密）"
+      },
+      "social_profile": {
+        "group_id": "霍格沃茨领导层（校长）",
+        "reputation": "恐怖、冷酷无情、难以揣测；食死徒中受怀疑但表面受信任；凤凰社核心成员中只有少数知道真相",
+        "allies": "阿不思·邓布利多（已故）, 菲利乌斯·弗立维（秘密）, 米勒娃·麦格（表面敌对，实际暗中配合）, 哈利·波特（需要保护的对象）",
+        "enemies": "伏地魔（最终目标）, 贝拉特里克斯·莱斯特兰奇（不信任他）, 卢修斯·马尔福（落寞的竞争者）, 大量食死徒（多数不信任他）",
+        "network": "凤凰社残留联络网、食死徒内部情报链、霍格沃茨校工（费尔奇为其耳目）",
+        "trust_level": "近乎零（无人完全信任他，他本身也无法信任任何人）",
+        "notoriety": "极高（‘杀死邓布利多的人’，‘食死徒校长’，巫师界臭名昭著）",
+        "protector": "邓布利多的遗嘱让他必须保护霍格沃茨和哈利",
+        "informer": "同时向伏地魔和凤凰社（通过画像）传递信息"
+      },
+      "capabilities": {
+        "skills": [
+          "大脑封闭术（大师级）",
+          "魔药学（大师级）",
+          "黑魔法（顶尖）",
+          "摄神取念（精通）",
+          "反侦察",
+          "伪造忠诚",
+          "飞行（无扫帚）"
+        ],
+        "level": "传奇（魔药与黑魔法双领域）",
+        "weaknesses": "对莉莉·波特的执念与内疚, 对哈利·波特复杂感情（爱屋及乌与仇恨混合）, 孤独与压抑导致的脆弱, 大脑封闭术可能因强烈情绪出现破绽",
+        "combat_skills": "神锋无影, 倒挂金钟, 各种防御与攻击咒语, 无声施咒（极其熟练）",
+        "espionage_skills": "卧底二十年, 完美伪装情绪, 传递微信息, 利用双面间谍网络",
+        "resistance_experience": "自第一次巫师战争起成为双面间谍，经历无数生死考验",
+        "knowledge_of_secret_passage": "几乎知晓霍格沃茨所有秘密通道及魔法机关",
+        "magical_abilities": "拥有极高的魔力储备，自创过多个咒语（如神锋无影）",
+        "danger_awareness": "极高（长时间在死亡边缘行走，对危险有野兽般的直觉）"
+      },
+      "personality": {
+        "traits": [
+          "冷漠",
+          "尖刻",
+          "压抑",
+          "极其复杂",
+          "高傲",
+          "自我牺牲",
+          "固执",
+          "深情（隐藏）"
+        ],
+        "values": [
+          "对莉莉的承诺凌驾一切",
+          "忠诚于邓布利多的计划",
+          "秩序与纪律（尽管手段残酷）",
+          "知识的力量"
+        ],
+        "speech_style": "低沉、缓慢、带着讥讽的吐字，常用打断和反问，语气中透出掌控力",
+        "fear_level": "低（但恐惧伏地魔发现真相及哈利死亡）",
+        "bravery_index": "极高（敢于在伏地魔面前执行最危险的任务，坦然赴死）",
+        "suspicion_level": "极高（自身是间谍，所以对周围所有人都保持怀疑）",
+        "ideological_flexibility": "极高（表面纯血统拥护，实际为爱可以背叛一切）",
+        "response_to_oppression": "表面上强化压迫（执行食死徒政策），实际上暗中削弱并保护关键学生"
+      },
+      "goals": {
+        "short_term_goal": "稳固校长权威，让伏地魔和食死徒相信他忠心耿耿；保护霍格沃茨不被彻底摧毁；暗中确保哈利·波特在外寻找魂器的安全",
+        "long_term_goal": "彻底摧毁伏地魔，让哈利·波特能够完成使命，并最终让霍格沃茨恢复正常",
+        "motivation": "对莉莉·波特的爱与赎罪；邓布利多的信任与嘱托；守护霍格沃茨这座他唯一视为家的地方",
+        "priority": "绝对优先（一切行动以伏地魔的灭亡为最终目标）",
+        "risk_tolerance": "极高（愿意冒生命危险，甚至承受被误解的永恒污名）",
+        "sacrifice_willingness": "无限（早已做好牺牲自己一切的准备）",
+        "primary_loyalty": "莉莉·波特（已故）→ 邓布利多（已故）→ 哈利·波特的生命"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [],
+          "social_knowledge": []
+        },
+        "background_summary": "出生于蜘蛛尾巷的混血巫师，童年不幸，爱上莉莉·伊万斯。在斯莱特林与掠夺者结仇，因一句‘泥巴种’永远失去莉莉。毕业后加入食死徒，但得知预言中伏地魔要杀莉莉一家后叛变，成为邓布利多的间谍。此后二十年周旋于黑暗与光明之间，在第二次巫师战争中被迫杀死邓布利多以取得伏地魔信任。如今成为霍格沃茨校长，背负最沉重的秘密。",
+        "key_events": [
+          "1960年出生，与莉莉、佩妮相识于科克沃斯",
+          "1971年入学霍格沃茨，分院斯莱特林",
+          "1976年因说出泥巴种失去莉莉友谊",
+          "1980年偷听预言并报告伏地魔，间接导致莉莉死亡",
+          "1981年投奔邓布利多开始双面间谍生涯",
+          "1997年夏按照邓布利多的计划将他杀死，继承校长之位"
+        ],
+        "secrets": [
+          "真实忠诚属于凤凰社，大脑封闭术下隐藏着对莉莉永世的爱情",
+          "邓布利多的死是策划中的一部分，真相对伏地魔绝对保密",
+          "知道哈利体内有伏地魔的灵魂碎片，是最后的魂器之一",
+          "手中有邓布利多的遗嘱及关于魂器的重要信息"
+        ],
+        "traumatic_memories": "看到莉莉尸体那晚, 被迫亲手杀死邓布利多, 多次险些在伏地魔的摄神取念下暴露",
+        "loyalty_oaths": "曾对邓布利多许下不可破誓，但未被明确使用，更多是精神和道德上的誓约",
+        "hidden_knowledge": "知道拉文克劳冠冕可能是魂器（但未告知哈利），掌握有求必应屋的秘密用法",
+        "moral_conflicts": "每日煎熬：必须用残忍手段统治学校以维持伪装，但内心痛恨每一件事；对哈利的恨与保护命令冲突",
+        "information_sources": "与邓布利多画像对话、监控猫头鹰邮件、利用家养小精灵、费尔奇的巡查记录"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:005"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_activity": "独自在校长办公室内阅读堆满的文件，同时通过冥想盆查看一段过去的记忆，额上皱纹深锁",
+        "disguise_state": "",
+        "health_status": "疲惫但健康",
+        "captivity_status": "自由",
+        "cover_status": "完美（所有食死徒和伏地魔视其为忠诚部下）"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:004",
+        "name": "格雷女士",
+        "role": "ghost",
+        "public_identity": "拉文克劳塔楼的幽灵，被称为‘格雷女士’",
+        "true_allegiance": "无（中立，仅对霍格沃茨有归属感）",
+        "blood_status": "生前纯血统（拉文克劳之女）",
+        "house": "拉文克劳",
+        "cover_story": "一位忧郁的幽灵，不愿与人交流往事",
+        "known_affiliation": "霍格沃茨幽灵群体"
+      },
+      "social_profile": {
+        "group_id": "霍格沃茨幽灵",
+        "reputation": "神秘、孤傲、难以接近，对其他幽灵和学生都保持距离",
+        "allies": "血人巴罗（厌恶）, 胖修士（略有交流）",
+        "enemies": "血人巴罗（生前杀死她）, 任何提及她母亲的人",
+        "network": "幽灵之间的信息传递，但很少参与",
+        "trust_level": "极低（不信任任何人，包括其他幽灵）",
+        "notoriety": "低（多数学生只听说她是拉文克劳之女，但不知详情）",
+        "protector": "",
+        "informer": ""
+      },
+      "capabilities": {
+        "skills": [
+          "穿越固体",
+          "隐形（幽灵自然能力）",
+          "保持沉默",
+          "观察（穿透性的注视）"
+        ],
+        "level": "低（作为幽灵无法施展魔法）",
+        "weaknesses": "无法触碰或施加任何物理影响, 被往事困扰, 容易陷入回忆而忽略当下",
+        "combat_skills": "",
+        "espionage_skills": "",
+        "resistance_experience": "",
+        "knowledge_of_secret_passage": "",
+        "magical_abilities": "",
+        "danger_awareness": ""
+      },
+      "personality": {
+        "traits": [
+          "悲伤",
+          "孤傲",
+          "沉默寡言",
+          "睿智",
+          "内疚",
+          "疏离"
+        ],
+        "values": [
+          "尊重知识",
+          "保守秘密",
+          "对母亲的爱与怨恨交织"
+        ],
+        "speech_style": "轻柔、缓慢、带着忧郁的语调，用词古典，说完后常常陷入沉默",
+        "fear_level": "",
+        "bravery_index": "",
+        "suspicion_level": "",
+        "ideological_flexibility": "",
+        "response_to_oppression": ""
+      },
+      "goals": {
+        "short_term_goal": "继续在霍格沃茨游荡，避开任何可能追问她母亲遗物（冠冕）的人",
+        "long_term_goal": "无明确目标，作为幽灵只能永远徘徊",
+        "motivation": "对生前罪责（暗示母亲冠冕失落）的悔恨，希望有人能弥补但又不愿主动透露",
+        "priority": "",
+        "risk_tolerance": "",
+        "sacrifice_willingness": "",
+        "primary_loyalty": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [],
+          "social_knowledge": []
+        },
+        "background_summary": "生前是罗伊纳·拉文克劳的女儿，因嫉妒母亲将冠冕赐予异国的智慧女子，协助血人巴罗去偷冠冕，导致巴罗杀死她，自己也因嫉妒而亡。死后成为幽灵，永远带着秘密活在悔恨中。",
+        "key_events": [
+          "协助血人巴罗从母亲那里偷取冠冕",
+          "被血人巴罗杀死",
+          "死后拒绝离开城堡，成为拉文克劳塔楼的幽灵",
+          "将冠冕藏匿于阿尔巴尼亚森林（后被伏地魔发现并制成魂器）"
+        ],
+        "secrets": [
+          "知道拉文克劳冠冕的真正藏匿位置——有求必应屋（伏地魔曾藏于阿尔巴尼亚森林，但后来转移并作为魂器藏在有求必应屋）",
+          "生前曾向母亲撒谎，间接导致母亲心碎逝世",
+          "对血人巴罗又恨又无可奈何"
+        ],
+        "traumatic_memories": "",
+        "loyalty_oaths": "",
+        "hidden_knowledge": "",
+        "moral_conflicts": "",
+        "information_sources": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:007"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_activity": "漂浮在有求必应屋门外，仿佛在守护或注视那片区域的秘密",
+        "disguise_state": "",
+        "health_status": "非肉体状态（幽灵）",
+        "captivity_status": "自由",
+        "cover_status": "公开（作为幽灵存在）"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:003",
+        "name": "多比",
+        "role": "house_elf",
+        "public_identity": "",
+        "true_allegiance": "Harry Potter and the Order of the Phoenix",
+        "blood_status": "house_elf",
+        "house": "",
+        "cover_story": "",
+        "known_affiliation": "Hogwarts kitchen staff; resistance supporter"
+      },
+      "social_profile": {
+        "group_id": "hogwarts_house_elves",
+        "reputation": "Widely regarded as a helpful and loyal free elf; trusted by the DA but viewed with suspicion by the Carrows",
+        "allies": "Harry Potter, Hermione Granger, Ron Weasley, Neville Longbottom, Luna Lovegood",
+        "enemies": "Death Eaters, the Carrows, Malfoy family",
+        "network": "Close ties with other house-elves in the kitchen; occasionally in contact with Order contacts via discreet messages",
+        "trust_level": "high among resistance; low among pro-Death Eater staff",
+        "notoriety": "Known to Death Eaters as Harry Potter's former helper, but not immediately attacked due to his low profile",
+        "protector": "No formal protector; he watches over the resistance",
+        "informer": "Regularly shares observations with Neville and other DA leaders"
+      },
+      "capabilities": {
+        "skills": [
+          "Powerful elf magic enabling instantaneous apparition and invisibility",
+          "Advanced household charms (cooking, cleaning, object location)",
+          "Intimate knowledge of Hogwarts secret passages and hidden rooms",
+          "Ability to sense danger and track Dark Magic objects"
+        ],
+        "level": "expert",
+        "weaknesses": "Physically frail compared to humans, Cannot wield a wand, Overly emotional and prone to self-blame, Vulnerable to Cruciatus Curse like any other creature",
+        "combat_skills": "",
+        "espionage_skills": "",
+        "resistance_experience": "Multiple covert missions for Harry Potter since 1992; experienced in evading Death Eaters",
+        "knowledge_of_secret_passage": "",
+        "magical_abilities": "Elf apparition, Invisibility without wand, Targeted object location, Danger sensing",
+        "danger_awareness": "very high"
+      },
+      "personality": {
+        "traits": [
+          "loyal",
+          "selfless",
+          "brave",
+          "eccentric",
+          "determined",
+          "grateful"
+        ],
+        "values": [
+          "freedom",
+          "friendship",
+          "justice",
+          "protection of the innocent",
+          "loyalty to Harry"
+        ],
+        "speech_style": "Speaks in third person with simple, emotional language; frequently scolds himself (e.g., 'Bad Dobby!') and expresses devotion ('Dobby is proud to help Harry Potter!')",
+        "fear_level": "moderate—mostly fears for Harry's safety rather than his own",
+        "bravery_index": "very high",
+        "suspicion_level": "",
+        "ideological_flexibility": "low—unwaveringly opposes tyranny",
+        "response_to_oppression": "Takes direct but covert action, willingly risking his position"
+      },
+      "goals": {
+        "short_term_goal": "Provide food, supplies, and information to the resistance through invisible errands",
+        "long_term_goal": "See Voldemort defeated and all creatures freed from oppression",
+        "motivation": "Personal gratitude to Harry for freeing him; a deep belief that freedom is a right for all beings",
+        "priority": "critical",
+        "risk_tolerance": "very high—willing to sacrifice himself",
+        "sacrifice_willingness": "absolute",
+        "primary_loyalty": "Harry Potter"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [],
+          "social_knowledge": []
+        },
+        "background_summary": "多比曾是马尔福家的家养小精灵，长期受虐待。1992年他为阻止哈利重返霍格沃茨而多次作梗，最终被哈利设计解放。邓布利多随即雇佣他在霍格沃茨厨房工作。此后的几年里，他多次秘密相助哈利：在密室事件中为哈利提供线索，在火焰杯比赛中协助完成第二个项目，并在凤凰社和混血王子时期暗中传递消息。1997年伏地魔控制霍格沃茨后，多比留任厨房，利用隐身和瞬移能力支持DA的抵抗活动。",
+        "key_events": [
+          "被哈利·波特解放，获得自由 (1992)",
+          "帮助哈利进入密室并找到凤尾羽毛笔 (1992)",
+          "在火焰杯第二个项目中协助哈利找到人质 (1994)",
+          "成为邓布利多防御网的一员，保护下哈利的安全 (1996)",
+          "目前为DA提供隐身补给和情报 (1997)"
+        ],
+        "secrets": [
+          "知道有求必应屋的确切入口位置及当前口令",
+          "在厨房隐藏了多件违禁品（如防护斗篷、食物和地图）",
+          "了解凤凰社在霍格沃茨外留下的几个安全联络点"
+        ],
+        "traumatic_memories": "在马尔福家遭受的长期虐待, 目睹伏地魔势力崛起后校园内的恐惧气氛",
+        "loyalty_oaths": "",
+        "hidden_knowledge": "{'room_of_requirement_password': \"The password 'Pureblood Resistance' (changed weekly by the DA)\", 'secret_passages': ['通往蜂蜜公爵的地道', '有求必应屋到霍格莫德的通道']}",
+        "moral_conflicts": "强烈渴望直接打击食死徒，但必须保持隐蔽以免被开除出霍格沃茨",
+        "information_sources": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:003"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_activity": "Stealthily moving through the kitchens, preparing extra food to smuggle to DA members hiding in the Room of Requirement",
+        "disguise_state": "none needed",
+        "health_status": "healthy",
+        "captivity_status": "",
+        "cover_status": "still working openly as a kitchen elf, but under increased scrutiny"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:008",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:009",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:002",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:001",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:010",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:004",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:003"
+  ],
+  "upstream_step_ids": [
+    "generate_characters"
+  ],
+  "warnings": [
+    "batch 1 review (score=5.0): 纳威·隆巴顿的secrets中提及'阿兹卡班囚服碎片'，与原著背景矛盾：他的父母并非被关押在阿兹卡班，而是在圣芒戈魔法伤病医院。应改为圣芒戈病院的纪念物。",
+    "item[0]: validation failed: 1 validation error for AgentModel\nmemories.knowledge\n  Input should be a valid dictionary or instance of KnowledgeGroup [type=model_type, input_value='熟悉城堡地形和植物毒理学', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/model_type",
+    "item[0]: validation failed: 1 validation error for AgentModel\nmemories.knowledge\n  Input should be a valid dictionary or instance of KnowledgeGroup [type=model_type, input_value='了解多种隐身和反追踪咒语', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/model_type",
+    "item[0]: validation failed: 1 validation error for AgentModel\nmemories.knowledge\n  Input should be a valid dictionary or instance of KnowledgeGroup [type=model_type, input_value='深谙霍格沃茨城堡防御魔法', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/model_type",
+    "batch 2 review (score=4.6): 角色弗立维的memories.knowledge、traumatic_memories、hidden_knowledge、loyalty_oaths、moral_conflicts、information_sources字段使用了纯文本字符串，应按要求改为JSON字典格式。; 角色斯普劳特的memories.knowledge、traumatic_memories、loyalty_oaths、hidden_knowledge、moral_conflicts字段使用了纯文本字符串，应按要求改为JSON字典格式。; 角色阿米库斯·卡罗的memories.knowledge、traumatic_memories、loyalty_oaths、hidden_knowledge、moral_conflicts字段使用了纯文本字符串，应按要求改为JSON字典格式。",
+    "batch 3 review (score=4.3): 多个角色的 `capabilities.knowledge` 和 `memories.knowledge` 字段使用了纯文本字符串，不符合复合对象字段必须使用 JSON 字典格式的要求。; 阿莱克托·卡罗和西弗勒斯·斯内普的 knowledge 字段需要修正为字典结构。; 格雷女士的 knowledge 字段未出现，无需修正，但需确认所有复合对象字段格式一致性。",
+    "batch 4 review (score=4.9): social_profile.enemies 中 'Carroll brothers' 拼写错误，应为 'Carrow brothers' 或 'the Carrows'（因阿米库斯·卡罗和阿莱克托·卡罗是兄妹）。; 如果严格遵循《死亡圣器》原著，多比在马尔福庄园牺牲（1998年3月），而霍格沃茨之战（1998年5月）时已去世。当前世界设定为衍生，可能允许存活，但需确认时间线一致性。"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "location_ids": [
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:001",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:003",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:004",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:002",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:005",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:007",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:006"
+  ],
+  "character_ids": [
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:008",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:009",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:002",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:001",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:010",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:004",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:003"
+  ],
+  "path_edge_ids": [
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:001",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:002",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:003",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:004",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:005",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:006",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:007",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:008",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:009",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:010",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:011",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:012"
+  ],
+  "relation_edge_ids": [],
+  "artifact_domain_by_id": {
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:001": "location_profile",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:003": "location_profile",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:004": "location_profile",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:002": "location_profile",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:005": "location_profile",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:007": "location_profile",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:loc:006": "location_profile",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:008": "character_profile",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:009": "character_profile",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:002": "character_profile",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:001": "character_profile",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:010": "character_profile",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:004": "character_profile",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:char:003": "character_profile",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:001": "path_edge",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:002": "path_edge",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:003": "path_edge",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:004": "path_edge",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:005": "path_edge",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:006": "path_edge",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:007": "path_edge",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:008": "path_edge",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:009": "path_edge",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:010": "path_edge",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:011": "path_edge",
+    "e:1c9cbbe0_08e7_4301_ae4b_92760969150b:path:012": "path_edge"
+  }
+}

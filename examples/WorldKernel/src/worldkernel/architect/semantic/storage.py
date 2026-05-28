@@ -46,6 +46,10 @@ def _extract_item_id(item: Any) -> str | None:
         identity = getattr(item, "identity", None)
         if identity is not None and hasattr(identity, "id"):
             return getattr(identity, "id")
+        # relation_edge: id lives in edge.id
+        edge = getattr(item, "edge", None)
+        if edge is not None and hasattr(edge, "id"):
+            return getattr(edge, "id") or None
         item = item.model_dump(mode="json")
     if isinstance(item, dict):
         if isinstance(item.get("id"), str):
@@ -53,6 +57,9 @@ def _extract_item_id(item: Any) -> str | None:
         identity = item.get("identity")
         if isinstance(identity, dict) and isinstance(identity.get("id"), str):
             return identity["id"]
+        edge = item.get("edge")
+        if isinstance(edge, dict) and isinstance(edge.get("id"), str):
+            return edge["id"]
     return None
 
 

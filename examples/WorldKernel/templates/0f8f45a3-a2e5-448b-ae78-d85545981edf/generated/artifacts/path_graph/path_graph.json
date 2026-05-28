@@ -1,0 +1,407 @@
+{
+  "artifact_type": "path_edge",
+  "items": [
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:001",
+        "name": "黑魔法与变形课走廊",
+        "type": "走廊",
+        "secret_passage": "",
+        "surveillance_level": "高",
+        "atmosphere_description": "阴森的长廊，墙壁上挂着食死徒布下的魔法监视眼，学生们低头疾走，不敢停留。",
+        "associated_resistance_network": "D.A.成员利用课间避开巡逻交替传递信息"
+      },
+      "endpoints": {
+        "from_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:001",
+        "to_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:007",
+        "bidirectional": true,
+        "endpoint_surveillance": "黑魔法防御课教室门口常有卡罗兄妹徘徊",
+        "connection_type_description": "一条连接两间教室的普通走廊，但被食死徒施加了追踪魔法",
+        "is_guarded": ""
+      },
+      "properties": {
+        "distance": "短",
+        "travel_time": "1分钟",
+        "visibility": "公开",
+        "stealth_travel_suitability": "低（需避开巡逻）",
+        "magical_enhancements": "入口处有魔法监视眼，走动会触发警报",
+        "visibility_under_detection_charm": "",
+        "acoustic_privacy": ""
+      },
+      "conditions": {
+        "access_level": "开放（上课时段）",
+        "danger_level": "中（遇见食死徒可能被盘问）",
+        "required_items": "无",
+        "required_skills": "低调行走",
+        "time_restriction": "课间10分钟，夜晚宵禁后禁止通行",
+        "password_or_charm": "",
+        "associated_rule_ids": "",
+        "activation_trigger": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:002",
+        "name": "教学楼至大礼堂主楼梯",
+        "type": "楼梯",
+        "secret_passage": "",
+        "surveillance_level": "高",
+        "atmosphere_description": "曾经热闹的楼梯如今寂静无声，石阶上残留着血迹，每层平台都有食死徒画像监视。",
+        "associated_resistance_network": "D.A.成员利用活板楼梯的变向规律甩开追踪"
+      },
+      "endpoints": {
+        "from_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:001",
+        "to_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:002",
+        "bidirectional": true,
+        "endpoint_surveillance": "大礼堂入口处两名食死徒守卫长期站岗",
+        "connection_type_description": "",
+        "is_guarded": ""
+      },
+      "properties": {
+        "distance": "中",
+        "travel_time": "3分钟",
+        "visibility": "公开",
+        "stealth_travel_suitability": "低（必经之路，无法避开）",
+        "magical_enhancements": "楼梯会随机移动，增加逃逸机会",
+        "visibility_under_detection_charm": "",
+        "acoustic_privacy": ""
+      },
+      "conditions": {
+        "access_level": "开放（但需接受检查）",
+        "danger_level": "高（随机搜身、施咒检查）",
+        "required_items": "佩戴学院徽章",
+        "required_skills": "",
+        "time_restriction": "宵禁后禁止通行，违者关禁闭",
+        "password_or_charm": "",
+        "associated_rule_ids": "",
+        "activation_trigger": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:003",
+        "name": "变形课教室直达大礼堂侧门",
+        "type": "走廊",
+        "secret_passage": "",
+        "surveillance_level": "中",
+        "atmosphere_description": "一条较短的通道，墙上挂着被替换的麻瓜研究海报，角落里堆着被没收的违禁品。",
+        "associated_resistance_network": "偶尔用于快速传递紧急口信"
+      },
+      "endpoints": {
+        "from_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:007",
+        "to_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:002",
+        "bidirectional": true,
+        "endpoint_surveillance": "侧门有恶作剧陷阱，但未被食死徒重点监控",
+        "connection_type_description": "",
+        "is_guarded": ""
+      },
+      "properties": {
+        "distance": "短",
+        "travel_time": "1分钟",
+        "visibility": "半公开",
+        "stealth_travel_suitability": "中（需绕过守卫视线）",
+        "magical_enhancements": "变形课教室出口有隐形踏板",
+        "visibility_under_detection_charm": "",
+        "acoustic_privacy": ""
+      },
+      "conditions": {
+        "access_level": "开放（但侧门常被锁）",
+        "danger_level": "低（巡逻次数较少）",
+        "required_items": "无",
+        "required_skills": "基本的开锁咒或熟知咒语",
+        "time_restriction": "",
+        "password_or_charm": "",
+        "associated_rule_ids": "",
+        "activation_trigger": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:004",
+        "name": "大礼堂通往厨房的楼梯",
+        "type": "楼梯",
+        "secret_passage": "",
+        "surveillance_level": "低",
+        "atmosphere_description": "直通地下的石阶，光线昏暗，弥漫着食物香气。家养小精灵偶尔探头张望。",
+        "associated_resistance_network": "D.A.利用厨房送来的食物夹带密信"
+      },
+      "endpoints": {
+        "from_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:002",
+        "to_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:006",
+        "bidirectional": true,
+        "endpoint_surveillance": "厨房入口有一道隐形屏障，只允许家养小精灵通过",
+        "connection_type_description": "",
+        "is_guarded": ""
+      },
+      "properties": {
+        "distance": "短",
+        "travel_time": "2分钟",
+        "visibility": "隐蔽",
+        "stealth_travel_suitability": "高（不常被巡逻）",
+        "magical_enhancements": "楼梯上施加了消声咒",
+        "visibility_under_detection_charm": "",
+        "acoustic_privacy": ""
+      },
+      "conditions": {
+        "access_level": "开放（但需知道正确口令）",
+        "danger_level": "低（家养小精灵会帮忙掩护）",
+        "required_items": "无",
+        "required_skills": "",
+        "time_restriction": "",
+        "password_or_charm": "对墙砖敲三下并说出‘黄油啤酒’",
+        "associated_rule_ids": "",
+        "activation_trigger": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:005",
+        "name": "大礼堂通往格兰芬多塔楼的螺旋阶梯",
+        "type": "楼梯",
+        "secret_passage": "",
+        "surveillance_level": "高",
+        "atmosphere_description": "一段由魔法石旋转的阶梯，每级台阶刻着恶咒符文，踩错会被弹飞。顶层胖夫人画像终日紧张。",
+        "associated_resistance_network": "胖夫人故意用错误口令拖延食死徒"
+      },
+      "endpoints": {
+        "from_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:002",
+        "to_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:003",
+        "bidirectional": true,
+        "endpoint_surveillance": "楼梯底部有食死徒临时哨站",
+        "connection_type_description": "",
+        "is_guarded": ""
+      },
+      "properties": {
+        "distance": "中",
+        "travel_time": "4分钟",
+        "visibility": "公开",
+        "stealth_travel_suitability": "低（唯一通道，必有守卫）",
+        "magical_enhancements": "阶梯会旋转变化，需正确踩点",
+        "visibility_under_detection_charm": "",
+        "acoustic_privacy": ""
+      },
+      "conditions": {
+        "access_level": "仅限格兰芬多学生（需口令）",
+        "danger_level": "中（误入者遭恶咒攻击）",
+        "required_items": "无",
+        "required_skills": "",
+        "time_restriction": "",
+        "password_or_charm": "胖夫人要求每日口令，由斯内普设定",
+        "associated_rule_ids": "",
+        "activation_trigger": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:006",
+        "name": "格兰芬多公共休息室内室通道",
+        "type": "楼梯",
+        "secret_passage": "",
+        "surveillance_level": "极低",
+        "atmosphere_description": "一段狭窄的石阶通往塔顶宿舍层，墙壁上贴着格兰芬多的旧徽章，火把忽明忽暗。",
+        "associated_resistance_network": "D.A.成员在宿舍阁楼秘密存放书籍"
+      },
+      "endpoints": {
+        "from_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:003",
+        "to_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:004",
+        "bidirectional": true,
+        "endpoint_surveillance": "公共休息室入口有胖夫人把守，但内部无监视",
+        "connection_type_description": "",
+        "is_guarded": ""
+      },
+      "properties": {
+        "distance": "极短",
+        "travel_time": "30秒",
+        "visibility": "隐蔽（只对格兰芬多开放）",
+        "stealth_travel_suitability": "高（内部通道）",
+        "magical_enhancements": "楼梯有防窃听魔法",
+        "visibility_under_detection_charm": "",
+        "acoustic_privacy": ""
+      },
+      "conditions": {
+        "access_level": "仅限格兰芬多学生",
+        "danger_level": "安全",
+        "required_items": "无",
+        "required_skills": "",
+        "time_restriction": "",
+        "password_or_charm": "",
+        "associated_rule_ids": "",
+        "activation_trigger": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:007",
+        "name": "格兰芬多塔楼至校长办公室的密道",
+        "type": "密道",
+        "secret_passage": "",
+        "surveillance_level": "中",
+        "atmosphere_description": "一条蜿蜒的密道隐藏在挂毯后，石壁上渗出绿色液体，尽头是一扇需要念咒才能打开的石门。",
+        "associated_resistance_network": "D.A.试图通过密道收集情报，但被斯内普觉察"
+      },
+      "endpoints": {
+        "from_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:004",
+        "to_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:005",
+        "bidirectional": false,
+        "endpoint_surveillance": "校长办公室门口有石像鬼守卫，且斯内普用摄神取念检测来人",
+        "connection_type_description": "",
+        "is_guarded": ""
+      },
+      "properties": {
+        "distance": "中",
+        "travel_time": "5分钟",
+        "visibility": "秘密（鲜为人知）",
+        "stealth_travel_suitability": "极高（密道内无监控）",
+        "magical_enhancements": "密道内有咒语陷阱，防止闯入",
+        "visibility_under_detection_charm": "",
+        "acoustic_privacy": ""
+      },
+      "conditions": {
+        "access_level": "限制（需知道咒语）",
+        "danger_level": "高（密道尽头可能遭遇斯内普）",
+        "required_items": "斯内普的私人魔杖？或特定口令",
+        "required_skills": "",
+        "time_restriction": "",
+        "password_or_charm": "对石门使用‘阿咯呣 咔嚓’并说出‘我为邓布利多而来’",
+        "associated_rule_ids": "",
+        "activation_trigger": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:008",
+        "name": "黑魔法防御课教室直通校长办公室的暗梯",
+        "type": "楼梯",
+        "secret_passage": "",
+        "surveillance_level": "极高",
+        "atmosphere_description": "隐藏的螺旋台阶，仅供食死徒骨干使用，台阶上刻着痛苦的尖叫声和血迹。",
+        "associated_resistance_network": "无（完全被食死徒控制）"
+      },
+      "endpoints": {
+        "from_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:001",
+        "to_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:005",
+        "bidirectional": true,
+        "endpoint_surveillance": "两端均有食死徒随时监视",
+        "connection_type_description": "",
+        "is_guarded": ""
+      },
+      "properties": {
+        "distance": "短",
+        "travel_time": "1分钟",
+        "visibility": "隐蔽（但被食死徒垄断）",
+        "stealth_travel_suitability": "极低（有魔法印记）",
+        "magical_enhancements": "楼梯被黑暗魔法强化，外人踏上即被锁舌咒",
+        "visibility_under_detection_charm": "",
+        "acoustic_privacy": ""
+      },
+      "conditions": {
+        "access_level": "仅限食死徒或斯内普允许",
+        "danger_level": "致命（擅自进入被处决）",
+        "required_items": "黑魔标记或暗语",
+        "required_skills": "",
+        "time_restriction": "",
+        "password_or_charm": "",
+        "associated_rule_ids": "",
+        "activation_trigger": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:009",
+        "name": "厨房至格兰芬多塔楼的地下通道",
+        "type": "通道",
+        "secret_passage": "",
+        "surveillance_level": "低",
+        "atmosphere_description": "一条废弃的管道，曾经用于运送物资，现在被家养小精灵悄悄维护，管道壁上画着反抗涂鸦。",
+        "associated_resistance_network": "D.A.利用此通道运输违禁品和食物"
+      },
+      "endpoints": {
+        "from_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:006",
+        "to_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:003",
+        "bidirectional": true,
+        "endpoint_surveillance": "管道两端被伪装成墙砖，需用魔杖轻敲",
+        "connection_type_description": "",
+        "is_guarded": ""
+      },
+      "properties": {
+        "distance": "中",
+        "travel_time": "6分钟",
+        "visibility": "秘密（仅少数人知道）",
+        "stealth_travel_suitability": "高（管道内视野封闭）",
+        "magical_enhancements": "管道内施有空间扩展咒",
+        "visibility_under_detection_charm": "",
+        "acoustic_privacy": ""
+      },
+      "conditions": {
+        "access_level": "限制（需D.A.成员提供口令）",
+        "danger_level": "低（偶尔有老鼠出没）",
+        "required_items": "隐形斗篷更佳",
+        "required_skills": "",
+        "time_restriction": "",
+        "password_or_charm": "在入口砖上轻敲两下并低语‘凤凰社’",
+        "associated_rule_ids": "",
+        "activation_trigger": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:010",
+        "name": "变形课教室至格兰芬多塔楼的壁垒走廊",
+        "type": "走廊",
+        "secret_passage": "",
+        "surveillance_level": "中",
+        "atmosphere_description": "连接两塔的露天走廊，一侧是庭院，另一侧是玻璃窗。食死徒常在此巡逻，但下雨天会躲进室内。",
+        "associated_resistance_network": "D.A.在暴风雨夜利用雷声掩护集会"
+      },
+      "endpoints": {
+        "from_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:007",
+        "to_id": "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:loc:003",
+        "bidirectional": true,
+        "endpoint_surveillance": "走廊中部设有食死徒固定岗哨",
+        "connection_type_description": "",
+        "is_guarded": ""
+      },
+      "properties": {
+        "distance": "中",
+        "travel_time": "3分钟",
+        "visibility": "公开",
+        "stealth_travel_suitability": "低（暴露在视野下）",
+        "magical_enhancements": "玻璃窗被施加了侦测魔法",
+        "visibility_under_detection_charm": "",
+        "acoustic_privacy": ""
+      },
+      "conditions": {
+        "access_level": "开放（但需经过岗哨）",
+        "danger_level": "中（可能被抽查）",
+        "required_items": "无",
+        "required_skills": "",
+        "time_restriction": "下雨天岗哨减少，相对安全",
+        "password_or_charm": "",
+        "associated_rule_ids": "",
+        "activation_trigger": ""
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:001",
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:002",
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:003",
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:004",
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:005",
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:006",
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:007",
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:008",
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:009",
+    "e:0f8f45a3_a2e5_448b_ae78_d85545981edf:path:010"
+  ],
+  "upstream_step_ids": [
+    "generate_paths"
+  ],
+  "warnings": [],
+  "provenance": {
+    "result_count": 1
+  }
+}

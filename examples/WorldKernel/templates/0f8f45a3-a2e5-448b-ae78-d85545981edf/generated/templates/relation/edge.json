@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "direction",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "relationship_category",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "covert_classification",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "influence_scope",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

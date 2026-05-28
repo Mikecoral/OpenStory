@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "distance",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "travel_time",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visibility",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "magical_properties",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "environment",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "noise_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "scent",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "traps_exist",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "mood",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

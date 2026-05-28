@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "authority",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "legitimacy",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "issuing_authority_department",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "legitimacy_basis",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_falsified_or_modified",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "publication_method",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

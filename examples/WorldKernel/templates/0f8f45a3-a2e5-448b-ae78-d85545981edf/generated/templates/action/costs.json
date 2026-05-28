@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "name": "time",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "resources",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_cost",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "wand_movement_complexity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "magical_energy_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "risk_of_detection",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "social_cost_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "curfew_violation_risk",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "physical_endurance_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "resource_consumption",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

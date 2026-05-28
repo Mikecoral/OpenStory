@@ -1,0 +1,32 @@
+dim_name: EdgeDim
+id:
+  type: str
+from_id:
+  type: str
+to_id:
+  type: str
+type:
+  type: str
+direction:
+  type: str
+has_secret_allegiance:
+  type: str
+  option: true
+trust_level:
+  type: str
+  option: true
+monitoring_intensity:
+  type: str
+  option: true
+blood_status_relevance:
+  type: str
+  option: true
+communication_channel:
+  type: str
+  option: true
+is_publicly_known:
+  type: str
+  option: true
+spy_risk_level:
+  type: str
+  option: true

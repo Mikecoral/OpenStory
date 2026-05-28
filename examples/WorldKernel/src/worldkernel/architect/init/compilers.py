@@ -60,13 +60,13 @@ class ExecutionDAGCompiler:
             seen_step_ids.add(step_id)
             priority = self._positive_int(step.priority, f"step {step_id} priority")
             batch_size = self._positive_int(step.batch_size, f"step {step_id} batch_size")
-            batch_size = min(batch_size, self._max_batch_size(target_entity_type))
             generator_type = step.generator_type.strip()
             if not generator_type:
                 raise InitCompileError(f"step {step_id} missing generator_type")
             target_entity_type = step.target_entity_type.strip()
             if not target_entity_type:
                 raise InitCompileError(f"step {step_id} missing target_entity_type")
+            batch_size = min(batch_size, self._max_batch_size(target_entity_type))
             self._tool_registry.get_by_generator_type(generator_type)
             normalized_steps.append(
                 (

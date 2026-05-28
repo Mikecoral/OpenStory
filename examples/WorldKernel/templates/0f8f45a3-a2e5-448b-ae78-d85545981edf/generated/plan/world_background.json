@@ -1,0 +1,48 @@
+{
+  "world_name": "霍格沃茨魔法学院",
+  "world_origin_summary": "衍生自《哈利·波特》系列第七部《死亡圣器》，展现食死徒控制下的霍格沃茨在最终决战前夕的压抑氛围与抵抗暗流",
+  "primary": "magic_school",
+  "secondary": "war_front_school",
+  "tags": [
+    "魔法",
+    "学院",
+    "衍生",
+    "黑暗时期",
+    "霍格沃茨",
+    "死亡圣器",
+    "食死徒统治"
+  ],
+  "scope": "single_location",
+  "simulation_start": {
+    "time_point": "1997-1998学年开学",
+    "trigger_event": "斯内普就任校长，卡罗兄妹入驻，学院进入恐怖统治期",
+    "year": "1997",
+    "narrative_context": "邓布利多去世后，食死徒通过傀儡魔法部控制了霍格沃茨，学生在严酷管制下秘密组建抵抗力量，同时哈利等人在外寻找魂器"
+  },
+  "world_constraints": [
+    {
+      "constraint_id": "magical_secrecy",
+      "name": "国际保密法",
+      "description": "巫师界必须对麻瓜隐藏魔法的存在，校园内任何魔法展示不得被麻瓜察觉",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "death_eater_occupation",
+      "name": "食死徒占领统治",
+      "description": "霍格沃茨已被伏地魔势力实际控制，斯内普任校长，卡罗兄妹执行暴政，公开反对即遭酷刑",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "magical_barriers",
+      "name": "城堡魔法屏障",
+      "description": "霍格沃茨拥有古老魔法保护：禁止幻影移形、麻瓜驱逐咒、反闯入咒等，但食死徒已破解部分控制权限",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "secret_resistance",
+      "name": "秘密抵抗网络",
+      "description": "以纳威、金妮、卢娜等学生为主体的D.A.组织仍在暗中活动，利用有求必应屋等秘密空间联络",
+      "scope": "faction"
+    }
+  ]
+}

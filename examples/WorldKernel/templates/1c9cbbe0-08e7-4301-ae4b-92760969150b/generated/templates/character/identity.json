@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "role",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_identity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "true_allegiance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "blood_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "house",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "cover_story",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "known_affiliation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

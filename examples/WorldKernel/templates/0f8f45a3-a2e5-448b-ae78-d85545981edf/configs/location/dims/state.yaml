@@ -1,0 +1,10 @@
+dim_name: StateDim
+current_state:
+  type: str
+ownership:
+  type: str
+capacity:
+  type: int
+atmosphere_description:
+  type: str
+  option: true

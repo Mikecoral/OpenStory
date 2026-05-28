@@ -1,0 +1,22 @@
+dim_name: StateDim
+current_state:
+  type: str
+ownership:
+  type: str
+capacity:
+  type: int
+atmosphere_index:
+  type: str
+  option: true
+damage_level:
+  type: str
+  option: true
+temporary_purpose:
+  type: str
+  option: true
+occupation_stage:
+  type: str
+  option: true
+terror_rating:
+  type: str
+  option: true

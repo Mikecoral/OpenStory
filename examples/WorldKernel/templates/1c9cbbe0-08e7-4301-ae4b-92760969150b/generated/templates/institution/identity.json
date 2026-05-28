@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "cover_name",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "symbol",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "faction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "public_facing_name",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "operational_alias",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

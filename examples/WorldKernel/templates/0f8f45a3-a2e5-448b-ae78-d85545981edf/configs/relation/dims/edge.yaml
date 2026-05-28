@@ -1,0 +1,20 @@
+dim_name: EdgeDim
+id:
+  type: str
+from_id:
+  type: str
+to_id:
+  type: str
+type:
+  type: str
+direction:
+  type: str
+relationship_category:
+  type: str
+  option: true
+covert_classification:
+  type: str
+  option: true
+influence_scope:
+  type: str
+  option: true

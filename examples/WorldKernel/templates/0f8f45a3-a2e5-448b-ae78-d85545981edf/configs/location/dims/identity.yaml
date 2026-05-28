@@ -1,0 +1,12 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+description:
+  type: str
+functional_category:
+  type: str
+  option: true

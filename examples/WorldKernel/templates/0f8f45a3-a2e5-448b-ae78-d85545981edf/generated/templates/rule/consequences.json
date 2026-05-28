@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "penalties",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "rewards_for_compliance",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "severity_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "exemplary_punishment",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reward_privileges",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "cumulative_penalty_escalation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "session_id": "1c9cbbe0-08e7-4301-ae4b-92760969150b",
+  "instance_seeds": {
+    "location": [
+      {
+        "seed_id": "dark_arts_classroom",
+        "name": "黑魔法防御课教室",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "卡罗兄妹实施惩罚与灌输恐怖教育的主要场所",
+        "archetype_id": "teaching_space"
+      },
+      {
+        "seed_id": "great_hall",
+        "name": "大礼堂",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "全校集会、用餐与食死徒发布命令的核心场所",
+        "archetype_id": "communal_space"
+      },
+      {
+        "seed_id": "gryffindor_tower",
+        "name": "格兰芬多塔楼",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "学生主要居住地，抵抗组织的秘密会议点之一",
+        "archetype_id": "dormitory"
+      },
+      {
+        "seed_id": "forbidden_forest_edge",
+        "name": "禁林边缘",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "学生秘密进出城堡的通道，也是危险生物的边界",
+        "archetype_id": "outdoor_area"
+      },
+      {
+        "seed_id": "headmasters_office",
+        "name": "校长办公室",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "斯内普行使校长权力、监视师生的核心区域",
+        "archetype_id": "admin_office"
+      },
+      {
+        "seed_id": "room_of_requirement",
+        "name": "有求必应屋",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "抵抗组织集会、藏匿物品、练习防御魔法的主要秘密场所",
+        "archetype_id": "hidden_space"
+      },
+      {
+        "seed_id": "restricted_section",
+        "name": "禁书区",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 3,
+        "role_in_world": "保存黑暗魔法与魂器知识的高风险区域，受食死徒严密监控",
+        "archetype_id": "library_archive"
+      }
+    ],
+    "character": [
+      {
+        "seed_id": "neville_longbottom",
+        "name": "纳威·隆巴顿",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "校内公开反抗食死徒统治的学生领袖，重组DA组织",
+        "archetype_id": "student"
+      },
+      {
+        "seed_id": "luna_lovegood",
+        "name": "卢娜·洛夫古德",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "以独特视角支持抵抗行动，传递重要情报的精神支柱",
+        "archetype_id": "student"
+      },
+      {
+        "seed_id": "minerva_mcgonagall",
+        "name": "米勒娃·麦格",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "表面服从食死徒，暗中保护学生并准备反击的资深教授",
+        "archetype_id": "faculty"
+      },
+      {
+        "seed_id": "philius_flitwick",
+        "name": "菲利乌斯·弗立维",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "利用魔咒课教学掩护，暗中协助抵抗组织进行防御训练",
+        "archetype_id": "faculty"
+      },
+      {
+        "seed_id": "pomona_sprout",
+        "name": "波莫娜·斯普劳特",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "草药学教授，在禁林附近种植反击所需的植物材料",
+        "archetype_id": "faculty"
+      },
+      {
+        "seed_id": "amycus_carrow",
+        "name": "阿米库斯·卡罗",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "黑魔法防御术教师兼惩罚官，实施残酷体罚和血统歧视",
+        "archetype_id": "death_eater_staff"
+      },
+      {
+        "seed_id": "alecto_carrow",
+        "name": "阿莱克托·卡罗",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "麻瓜研究教授，强制执行食死徒意识形态的监视者",
+        "archetype_id": "death_eater_staff"
+      },
+      {
+        "seed_id": "severus_snape",
+        "name": "西弗勒斯·斯内普",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "表面上为伏地魔效力的校长，实际是邓布利多的双面间谍",
+        "archetype_id": "headmaster"
+      },
+      {
+        "seed_id": "grey_lady",
+        "name": "格雷女士",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "拉文克劳塔楼的幽灵，掌握拉文克劳冠冕的隐藏地点线索",
+        "archetype_id": "ghost"
+      },
+      {
+        "seed_id": "dobby",
+        "name": "多比",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 2,
+        "role_in_world": "以自由家养小精灵身份在厨房工作，利用隐形能力帮助抵抗组织",
+        "archetype_id": "house_elf"
+      }
+    ]
+  }
+}

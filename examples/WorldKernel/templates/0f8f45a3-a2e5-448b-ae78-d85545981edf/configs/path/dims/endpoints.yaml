@@ -1,0 +1,18 @@
+dim_name: EndpointsDim
+from_id:
+  type: str
+  ref: location
+to_id:
+  type: str
+  ref: location
+bidirectional:
+  type: bool
+endpoint_surveillance:
+  type: str
+  option: true
+connection_type_description:
+  type: str
+  option: true
+is_guarded:
+  type: str
+  option: true

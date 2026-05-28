@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "permissions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_conditions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "surveillance_spells",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secret_passages",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "alert_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "curfew_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "blood_status_checkpoint",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+description:
+  type: str
+dark_alias:
+  type: str
+  option: true
+symbolic_significance:
+  type: str
+  option: true
+resistance_code_name:
+  type: str
+  option: true
+occupied_purpose:
+  type: str
+  option: true

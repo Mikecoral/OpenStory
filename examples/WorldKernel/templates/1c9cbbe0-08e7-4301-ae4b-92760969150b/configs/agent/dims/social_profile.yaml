@@ -1,0 +1,27 @@
+dim_name: SocialProfileDim
+group_id:
+  type: str
+  ref: institution
+reputation:
+  type: str
+allies:
+  type: str
+  option: true
+enemies:
+  type: str
+  option: true
+network:
+  type: str
+  option: true
+trust_level:
+  type: str
+  option: true
+notoriety:
+  type: str
+  option: true
+protector:
+  type: str
+  option: true
+informer:
+  type: str
+  option: true

@@ -666,6 +666,139 @@ def _run_stage2(session_id: str, session_dir: Path, stats: _Stats) -> None:
                     print(f"  [WARN] {w}")
     else:
         stats.fail("无法获取 generate_characters 结果")
+
+    # Verify relation generation results
+    _sep("Stage2: Relation Generation Results")
+    if "generate_relations" in generation_state.completed_steps:
+        stats.ok("generate_relations 步骤完成")
+    else:
+        stats.fail(f"generate_relations 未完成: {generation_state.errors}")
+
+    rel_result = (
+        generation_state.result_store.get_step_result("generate_relations")
+        if generation_state.result_store.has_step_result("generate_relations")
+        else None
+    )
+    rel_summary = "N/A"
+    if rel_result:
+        n_items = len(rel_result.items)
+        if n_items >= 1:
+            stats.ok(f"生成 {n_items} 条关系")
+        else:
+            stats.fail("未生成任何关系")
+
+        # Build valid character ID set for endpoint validation
+        valid_char_ids: set[str] = set()
+        if char_result:
+            for item in char_result.items:
+                identity = getattr(item, "identity", None)
+                if identity and hasattr(identity, "id"):
+                    valid_char_ids.add(identity.id)
+
+        # Validate edge endpoints, self-loops, coverage, type diversity
+        invalid_endpoints = 0
+        self_loops = 0
+        edge_types: set[str] = set()
+        covered_chars: set[str] = set()
+        for rel in rel_result.items:
+            edge = getattr(rel, "edge", None)
+            if edge is None:
+                continue
+            from_id = getattr(edge, "from_id", "")
+            to_id = getattr(edge, "to_id", "")
+            edge_type = getattr(edge, "type", "")
+            if valid_char_ids and from_id not in valid_char_ids:
+                invalid_endpoints += 1
+            if valid_char_ids and to_id not in valid_char_ids:
+                invalid_endpoints += 1
+            if from_id == to_id:
+                self_loops += 1
+            if edge_type:
+                edge_types.add(edge_type)
+            if from_id:
+                covered_chars.add(from_id)
+            if to_id:
+                covered_chars.add(to_id)
+
+        if invalid_endpoints == 0:
+            stats.ok("所有关系端点 ID 有效")
+        else:
+            stats.fail(f"{invalid_endpoints} 个无效端点 ID")
+
+        if self_loops == 0:
+            stats.ok("无自环关系")
+        else:
+            stats.fail(f"{self_loops} 条自环关系")
+
+        if valid_char_ids:
+            uncovered = valid_char_ids - covered_chars
+            if not uncovered:
+                stats.ok(f"全角色覆盖 ({len(valid_char_ids)}/{len(valid_char_ids)})")
+            else:
+                stats.fail(
+                    f"{len(uncovered)} 个角色无关系: "
+                    + ", ".join(sorted(uncovered)[:3])
+                    + ("..." if len(uncovered) > 3 else "")
+                )
+
+        if len(edge_types) >= 3:
+            stats.ok(f"关系类型多样: {len(edge_types)} 种 ({', '.join(sorted(edge_types)[:5])})")
+        elif len(edge_types) >= 1:
+            print(f"  [WARN] 关系类型偏少: {len(edge_types)} 种 ({', '.join(sorted(edge_types))})")
+        else:
+            stats.fail("未检测到任何关系类型")
+
+        qs = rel_result.provenance.get("quality_summary", {})
+        review_score = qs.get("review_score")
+        if review_score is not None:
+            if review_score >= 3.0:
+                stats.ok(f"质量评分: {review_score}")
+            else:
+                print(f"  [WARN] 质量评分偏低: {review_score}")
+
+        _write_json(dbg / "stage2_relations.json", [
+            item.model_dump() for item in rel_result.items
+        ])
+
+        _sep("Stage2: 关系生成详情")
+        if rel_result.items:
+            print(f"  {'#':<3} {'ID':<30} {'From':<30} {'To':<30} {'Type':<15} {'Strength':<10}")
+            print(f"  {'─'*3} {'─'*30} {'─'*30} {'─'*30} {'─'*15} {'─'*10}")
+            for i, rel in enumerate(rel_result.items, 1):
+                edge = getattr(rel, "edge", None)
+                props = getattr(rel, "properties", None)
+                if edge:
+                    eid = getattr(edge, "id", "?")
+                    from_id = getattr(edge, "from_id", "?")
+                    to_id = getattr(edge, "to_id", "?")
+                    rel_type = getattr(edge, "type", "?")
+                else:
+                    eid, from_id, to_id, rel_type = "?", "?", "?", "?"
+                strength = getattr(props, "strength", "?") if props else "?"
+                print(f"  {i:<3} {eid:<30} {from_id:<30} {to_id:<30} {rel_type:<15} {strength:<10}")
+
+        if qs:
+            _sep("关系质量摘要")
+            print(f"  总关系数: {qs.get('total_relations', 'N/A')}")
+            print(f"  数量范围: {qs.get('relation_count_bounds', 'N/A')}")
+            print(f"  质量评分: {qs.get('review_score', 'N/A')}")
+            print(f"  重试次数: {qs.get('retry_count', 'N/A')}")
+            graph_issues = qs.get("graph_issues", [])
+            if graph_issues:
+                print("  图验证问题:")
+                for issue in graph_issues:
+                    print(f"    - {issue}")
+
+        gen_warnings = rel_result.warnings
+        if gen_warnings:
+            _sep("关系生成警告")
+            for w in gen_warnings[:10]:
+                print(f"  [WARN] {w}")
+
+        rel_summary = f"{n_items} relations, review_score={review_score}, types={len(edge_types)}"
+    else:
+        stats.fail("无法获取 generate_relations 结果")
+
     # Wave 1: [generate_characters, generate_locations] (sorted, parallel)
     # Wave 2: [generate_paths, generate_relations] (sorted, parallel)
     # The DAG's execution_order from Stage1 may differ; what matters is that
@@ -743,12 +876,16 @@ def _run_stage2(session_id: str, session_dir: Path, stats: _Stats) -> None:
         f"- errors: {generation_state.errors or '(none)'}", "",
         "## Stage2 Character Generation",
         f"- result: {char_summary}", "",
+        "## Stage2 Relation Generation",
+        f"- result: {rel_summary}", "",
         "## Debug Outputs",
         "- `dag_visualization.md`: DAG dependency graph",
         "- `seed_inventory.md`: Resolved seed table",
         "- `stage2_context_summary.md`: InitBuildContext summary",
         "- `schema_registry_snapshot.json`: Registered schemas",
         "- `stage2_locations.json`: Generated location data",
+        "- `stage2_characters.json`: Generated character data",
+        "- `stage2_relations.json`: Generated relation data",
         "- `stage2_semantic/`: Full semantic generation debug output",
     ]
     _write_text(dbg / "flow_summary.md", "\n".join(summary_lines))
