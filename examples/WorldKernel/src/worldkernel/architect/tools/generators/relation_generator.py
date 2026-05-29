@@ -287,13 +287,25 @@ class RelationGenerationTool(BaseStage2Tool):
                 else:
                     all_warnings.extend(f"graph retry still has: {i}" for i in re_graph_issues)
                     all_warnings.extend(re_val_warnings)
-                    all_warnings.append("graph retry failed, keeping best-effort output")
-                    validated = re_validated  # keep re-validated even if imperfect
+                    all_warnings.append("graph retry failed")
+                    raise RuntimeError(
+                        f"RelationGenerationTool: graph retry still has issues: {re_graph_issues}. "
+                        f"Warnings: {'; '.join(all_warnings)}"
+                    )
             else:
-                all_warnings.append("graph retry failed, using original validated output")
+                all_warnings.append("graph retry failed")
+                raise RuntimeError(
+                    f"RelationGenerationTool: graph retry produced no data. "
+                    f"Warnings: {'; '.join(all_warnings)}"
+                )
 
         # --- Phase 5: Allocate IDs ---
-        entity_ids = registry.allocate_dynamic(len(validated), "rel")
+        if not validated:
+            raise RuntimeError(
+                f"RelationGenerationTool: produced 0 relations. "
+                f"Warnings: {'; '.join(all_warnings)}"
+            )
+        entity_ids = registry.allocate_for_relations(validated)
         for item, eid in zip(validated, entity_ids):
             edge = getattr(item, "edge", None)
             if edge is not None and hasattr(edge, "id"):

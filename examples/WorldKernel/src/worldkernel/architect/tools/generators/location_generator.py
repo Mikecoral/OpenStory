@@ -192,6 +192,53 @@ class LocationGenerationTool(BaseStage2Tool):
                 "no locations generated"
             )
 
+        # 6.5. Overall completeness check + consolidated retry
+        total_seeds = len(request.resolved_location_seeds)
+        if len(all_items) < total_seeds:
+            # Collect missing seeds
+            generated_ids: set[str] = set()
+            for item in all_items:
+                identity = getattr(item, "identity", None)
+                if identity and hasattr(identity, "id") and identity.id:
+                    generated_ids.add(identity.id)
+
+            all_seeds = request.resolved_location_seeds
+            pre_ids = registry.lookup(all_seeds, "loc")
+            missing_seeds = [
+                s for s in all_seeds
+                if pre_ids.get(s.seed_id) not in generated_ids
+            ]
+
+            if missing_seeds:
+                all_warnings.append(
+                    f"consolidated retry: {len(missing_seeds)} seeds missing, "
+                    f"retrying as one batch"
+                )
+                try:
+                    items, refs, retry_warnings, _score, _retried = await self._process_batch(
+                        batch=missing_seeds,
+                        batch_index=total_batches + 1,
+                        total_batches=total_batches + 1,
+                        world_ctx=world_ctx,
+                        schema_desc=schema_desc,
+                        char_summary=char_summary,
+                        ModelClass=ModelClass,
+                        registry=registry,
+                    )
+                    all_items.extend(items)
+                    all_refs.extend(refs)
+                    all_warnings.extend(retry_warnings)
+                except Exception as exc:
+                    all_warnings.append(f"consolidated retry failed: {exc}")
+
+            # Final check
+            if len(all_items) < total_seeds:
+                raise RuntimeError(
+                    f"LocationGenerationTool: generated {len(all_items)}/{total_seeds} locations, "
+                    f"{total_seeds - len(all_items)} seeds missing after all retries. "
+                    f"Warnings: {'; '.join(all_warnings)}"
+                )
+
         # 7. Build quality summary
         quality_summary = self._build_quality_summary(
             total_seeds=len(request.resolved_location_seeds),
@@ -366,7 +413,10 @@ class LocationGenerationTool(BaseStage2Tool):
                     validated.extend(retry_items)
                     warnings.extend(retry_warnings)
                 else:
-                    warnings.append(f"batch {batch_index}: completeness retry also failed")
+                    raise RuntimeError(
+                        f"LocationGenerationTool: batch {batch_index} completeness retry failed, "
+                        f"{missing_count} seeds still missing. Warnings: {'; '.join(warnings)}"
+                    )
 
         # --- Phase 4: Verify & fix entity IDs ---
         refs = assign_entity_ids(validated, batch, registry, "loc")

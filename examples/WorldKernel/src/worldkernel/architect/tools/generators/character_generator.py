@@ -179,9 +179,57 @@ class CharacterGenerationTool(BaseStage2Tool):
                 all_warnings.append(f"batch {batch_index}/{total_batches} failed with exception: {exc}")
 
         if not all_items:
-            logger.error(f"CharacterGenerationTool: all {total_batches} batches failed")
-            all_warnings.append("致命错误: 所有批次均未能生成合规的角色数据。请查看本报告中的详细 Validation Error。")
-            # 注意：这里不再 raise RuntimeError，保证 warnings 能顺利写入报告
+            raise RuntimeError(
+                f"CharacterGenerationTool: all {total_batches} batches failed, "
+                f"no characters generated. Warnings: {'; '.join(all_warnings)}"
+            )
+
+        # Overall completeness check + consolidated retry
+        total_seeds = len(request.resolved_character_seeds)
+        if len(all_items) < total_seeds:
+            # Collect missing seeds
+            generated_ids: set[str] = set()
+            for item in all_items:
+                identity = getattr(item, "identity", None)
+                if identity and hasattr(identity, "id") and identity.id:
+                    generated_ids.add(identity.id)
+
+            all_seeds = request.resolved_character_seeds
+            pre_ids = registry.lookup(all_seeds, "char")
+            missing_seeds = [
+                s for s in all_seeds
+                if pre_ids.get(s.seed_id) not in generated_ids
+            ]
+
+            if missing_seeds:
+                all_warnings.append(
+                    f"consolidated retry: {len(missing_seeds)} seeds missing, "
+                    f"retrying as one batch"
+                )
+                try:
+                    items, refs, retry_warnings, _score, _retried = await self._process_batch(
+                        batch=missing_seeds,
+                        batch_index=total_batches + 1,
+                        total_batches=total_batches + 1,
+                        world_ctx=world_ctx,
+                        schema_desc=schema_desc,
+                        loc_summary=loc_summary,
+                        ModelClass=ModelClass,
+                        registry=registry,
+                    )
+                    all_items.extend(items)
+                    all_refs.extend(refs)
+                    all_warnings.extend(retry_warnings)
+                except Exception as exc:
+                    all_warnings.append(f"consolidated retry failed: {exc}")
+
+            # Final check
+            if len(all_items) < total_seeds:
+                raise RuntimeError(
+                    f"CharacterGenerationTool: generated {len(all_items)}/{total_seeds} characters, "
+                    f"{total_seeds - len(all_items)} seeds missing after all retries. "
+                    f"Warnings: {'; '.join(all_warnings)}"
+                )
 
         quality_summary = self._build_quality_summary(
             total_seeds=len(request.resolved_character_seeds),
@@ -226,15 +274,6 @@ class CharacterGenerationTool(BaseStage2Tool):
         if not isinstance(gen_data, list):
             return [gen_data]
         return gen_data
-            
-        # 2. 应对大模型外面包双层列表：[ [ {...}, {...} ] ]
-        if isinstance(gen_data, list):
-            # 如果列表里只有1个元素，且这个元素还是个列表，就把里面的真列表剥出来
-            if len(gen_data) == 1 and isinstance(gen_data[0], list):
-                return gen_data[0]
-            return gen_data
-            
-        return [gen_data]
 
     async def _process_batch(
         self,
@@ -259,6 +298,7 @@ class CharacterGenerationTool(BaseStage2Tool):
             "seed_list": build_seed_list(batch, pre_ids),
             "batch_index": str(batch_index),
             "total_batches": str(total_batches),
+            "seed_count": str(len(batch)),
         })
 
         raw_gen = await chat_json(gen_prompt, system=_GENERATION_SYSTEM)
@@ -279,17 +319,23 @@ class CharacterGenerationTool(BaseStage2Tool):
                 review_score = review_info.get("overall_score")
                 issues = review_info.get("issues", [])
 
-                if issues:
-                    warnings.append(
-                        f"batch {batch_index} review (score={review_score}): "
-                        + "; ".join(str(i) for i in issues)
-                    )
-
+                # Use corrected characters if available
                 corrected = review_result.get("corrected_characters")
-                if isinstance(corrected, list) and corrected:
+                if issues:
+                    if isinstance(corrected, list) and corrected:
+                        gen_data = corrected
+                        warnings.append(
+                            f"batch {batch_index} review (score={review_score}): "
+                            f"发现 {len(issues)} 个问题并已自动修正"
+                        )
+                    else:
+                        warnings.append(
+                            f"batch {batch_index} review (score={review_score}): "
+                            + "; ".join(str(i) for i in issues)
+                        )
+                        warnings.append(f"batch {batch_index}: review returned no corrected_characters")
+                elif isinstance(corrected, list) and corrected:
                     gen_data = corrected
-                else:
-                    warnings.append(f"batch {batch_index}: review returned no corrected_characters")
 
                 if review_score is not None and review_score < _QUALITY_THRESHOLD:
                     retried = True
@@ -317,27 +363,73 @@ class CharacterGenerationTool(BaseStage2Tool):
         except Exception as review_exc:
             warnings.append(f"batch {batch_index}: review step failed ({review_exc})")
 
-        # 【核心修正】逐个校验，绝不连坐崩溃
+        # 【核心修正】逐个校验，按名称匹配 seed，绝不连坐崩溃
+        seed_by_name = {s.name: s for s in batch}
         validated = []
         valid_seeds = []
         for i, item_data in enumerate(gen_data):
-            if i >= len(batch):
-                warnings.append(f"batch {batch_index}: LLM returned extra items, ignored.")
-                break
-            seed = batch[i]
-            
-            # 独立验证单个角色
-            item_val, item_warns = parse_and_validate([item_data], ModelClass, [seed])
+            if not isinstance(item_data, dict):
+                warnings.append(f"batch {batch_index}: item[{i}] is not a dict, skipped")
+                continue
+
+            # 按名称匹配 seed
+            item_name = ""
+            id_obj = item_data.get("identity")
+            if isinstance(id_obj, dict):
+                item_name = id_obj.get("name", "")
+
+            matched_seed = seed_by_name.get(item_name)
+            if matched_seed is None:
+                # fallback: 按位置索引（跳过已使用的 seed）
+                used = {s.seed_id for s in valid_seeds}
+                for s in batch:
+                    if s.seed_id not in used:
+                        matched_seed = s
+                        warnings.append(f"batch {batch_index}: item '{item_name}' matched by positional fallback")
+                        break
+
+            if matched_seed is None:
+                warnings.append(f"batch {batch_index}: item[{i}] '{item_name}' has no matching seed, skipped")
+                continue
+
+            item_val, item_warns = parse_and_validate([item_data], ModelClass, [matched_seed])
             warnings.extend(item_warns)
-            
             if item_val:
                 validated.append(item_val[0])
-                valid_seeds.append(seed)
+                valid_seeds.append(matched_seed)
 
-        if len(gen_data) < len(batch):
-            warnings.append(f"batch {batch_index}: Expected {len(batch)} items, LLM returned {len(gen_data)}")
+        # 完整性检查 + 缺失种子重试
+        if len(validated) < len(batch):
+            missing_count = len(batch) - len(validated)
+            warnings.append(
+                f"batch {batch_index}: generated {len(validated)}/{len(batch)} items, "
+                f"{missing_count} missing; retrying for missing seeds"
+            )
+            generated_names = {getattr(getattr(v, 'identity', None), 'name', '') for v in validated}
+            missing_seeds = [s for s in batch if s.name not in generated_names]
+            if missing_seeds:
+                retry_items, retry_refs, retry_warnings = await self._retry_batch(
+                    batch=missing_seeds,
+                    batch_index=batch_index,
+                    total_batches=total_batches,
+                    world_ctx=world_ctx,
+                    schema_desc=schema_desc,
+                    loc_summary=loc_summary,
+                    ModelClass=ModelClass,
+                    review_issues=[f"上一轮缺少 {missing_count} 个角色，请为以下种子生成角色"],
+                    registry=registry,
+                    pre_ids=pre_ids,
+                )
+                if retry_items:
+                    validated.extend(retry_items)
+                    valid_seeds.extend(missing_seeds)
+                    warnings.extend(retry_warnings)
+                else:
+                    raise RuntimeError(
+                        f"CharacterGenerationTool: batch {batch_index} completeness retry failed, "
+                        f"{missing_count} seeds still missing. Warnings: {'; '.join(warnings)}"
+                    )
 
-        # 因为 validated 和 valid_seeds 长度绝对一致，底层方法再也不会抛出 ValueError 导致整批崩溃
         refs = assign_entity_ids(validated, valid_seeds, registry, "char")
 
         return validated, refs, warnings, review_score, retried
@@ -364,23 +456,37 @@ class CharacterGenerationTool(BaseStage2Tool):
             "location_seed_summary": loc_summary,
             "seed_list": build_seed_list(batch, pre_ids),
             "review_issues": issues_str,
+            "seed_count": str(len(batch)),
         })
 
         try:
             raw_retry = await chat_json(retry_prompt, system=_RETRY_SYSTEM)
             retry_data = self._unwrap_json_list(_safe_json_loads(raw_retry))
 
+            seed_by_name = {s.name: s for s in batch}
             validated = []
             valid_seeds = []
             for i, item_data in enumerate(retry_data):
-                if i >= len(batch):
-                    break
-                seed = batch[i]
-                item_val, item_warns = parse_and_validate([item_data], ModelClass, [seed])
+                if not isinstance(item_data, dict):
+                    continue
+                item_name = ""
+                id_obj = item_data.get("identity")
+                if isinstance(id_obj, dict):
+                    item_name = id_obj.get("name", "")
+                matched_seed = seed_by_name.get(item_name)
+                if matched_seed is None:
+                    used = {s.seed_id for s in valid_seeds}
+                    for s in batch:
+                        if s.seed_id not in used:
+                            matched_seed = s
+                            break
+                if matched_seed is None:
+                    continue
+                item_val, item_warns = parse_and_validate([item_data], ModelClass, [matched_seed])
                 warnings.extend(item_warns)
                 if item_val:
                     validated.append(item_val[0])
-                    valid_seeds.append(seed)
+                    valid_seeds.append(matched_seed)
 
             warnings.append(f"batch {batch_index}: retried due to low quality score")
             refs = assign_entity_ids(validated, valid_seeds, registry, "char")

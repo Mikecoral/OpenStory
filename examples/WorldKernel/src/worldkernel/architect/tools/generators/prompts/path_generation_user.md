@@ -31,7 +31,7 @@
 bidirectional=true 表示双向通行，false 表示单向。
 
 世界特有字段应结合世界背景知识合理填写。
-路径的距离、时间、访问条件应与两端地点的空间关系一致。
+路径的访问条件应与两端地点的空间关系一致。
 
 输出格式示例：
 ```json
@@ -45,11 +45,6 @@ bidirectional=true 表示双向通行，false 表示单向。
       "from_id": "e:world_slug:loc:001",
       "to_id": "e:world_slug:loc:002",
       "bidirectional": true
-    },
-    "properties": {
-      "distance": "短",
-      "travel_time": "1分钟",
-      "visibility": "公开"
     },
     "conditions": {
       "access_level": "开放",

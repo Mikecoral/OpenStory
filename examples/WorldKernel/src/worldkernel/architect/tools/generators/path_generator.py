@@ -93,7 +93,7 @@ _GENERATION_SYSTEM = (
     "每条路径必须严格遵循给定的 schema 结构，包含所有维度。"
     "endpoints.from_id 和 endpoints.to_id 必须使用地点列表中提供的有效 ID。"
     "禁止自环，无序对不可重复。"
-    "路径的距离、时间、访问条件应与两端地点的空间关系一致。"
+    "路径的访问条件应与两端地点的空间关系一致。"
     "只输出合法 JSON，不输出任何解释、标注或额外文字。"
 )
 
@@ -243,6 +243,10 @@ class PathGenerationTool(BaseStage2Tool):
         validated, fix_warnings = self._fix_endpoint_ids(validated, location_ids, location_id_map)
         all_warnings.extend(fix_warnings)
 
+        # --- Phase 3.7: Dedup ---
+        validated, dedup_warnings = self._dedup_paths(validated)
+        all_warnings.extend(dedup_warnings)
+
         # --- Phase 4: Graph validation ---
         graph_issues = self._validate_path_graph(
             validated, location_ids, min_paths, max_paths,
@@ -258,6 +262,12 @@ class PathGenerationTool(BaseStage2Tool):
             )
             if retry_data:
                 re_validated, re_val_warnings = parse_and_validate(retry_data, ModelClass, [])
+                re_validated, re_fix_warnings = self._fix_endpoint_ids(
+                    re_validated, location_ids, location_id_map,
+                )
+                all_warnings.extend(re_fix_warnings)
+                re_validated, re_dedup_warnings = self._dedup_paths(re_validated)
+                all_warnings.extend(re_dedup_warnings)
                 re_graph_issues = self._validate_path_graph(
                     re_validated, location_ids, min_paths, max_paths,
                 )
@@ -268,14 +278,25 @@ class PathGenerationTool(BaseStage2Tool):
                 else:
                     all_warnings.extend(f"graph retry still has: {i}" for i in re_graph_issues)
                     all_warnings.extend(re_val_warnings)
-                    all_warnings.append("graph retry failed, returning empty path set")
-                    validated = []
+                    all_warnings.append("graph retry failed")
+                    raise RuntimeError(
+                        f"PathGenerationTool: graph retry still has issues: {re_graph_issues}. "
+                        f"Warnings: {'; '.join(all_warnings)}"
+                    )
             else:
-                all_warnings.append("graph retry failed, returning empty path set")
-                validated = []
+                all_warnings.append("graph retry failed")
+                raise RuntimeError(
+                    f"PathGenerationTool: graph retry produced no data. "
+                    f"Warnings: {'; '.join(all_warnings)}"
+                )
 
         # --- Phase 5: Allocate IDs ---
-        entity_ids = registry.allocate_dynamic(len(validated), "path")
+        if not validated:
+            raise RuntimeError(
+                f"PathGenerationTool: produced 0 paths. "
+                f"Warnings: {'; '.join(all_warnings)}"
+            )
+        entity_ids = registry.allocate_for_paths(validated)
         for item, eid in zip(validated, entity_ids):
             identity = getattr(item, "identity", None)
             if identity is not None and hasattr(identity, "id"):
@@ -374,6 +395,31 @@ class PathGenerationTool(BaseStage2Tool):
                         setattr(ep, attr, fixed)
                         warnings.append(f"auto-corrected {attr}: '{val}' -> '{fixed}'")
         return paths, warnings
+
+    # ------------------------------------------------------------------
+    # Dedup
+    # ------------------------------------------------------------------
+
+    @staticmethod
+    def _dedup_paths(paths: list[BaseModel]) -> tuple[list[BaseModel], list[str]]:
+        """Remove duplicate undirected edges, keeping first occurrence."""
+        seen: set[tuple[str, str]] = set()
+        deduped: list[BaseModel] = []
+        warnings: list[str] = []
+        for i, path in enumerate(paths):
+            ep = getattr(path, "endpoints", None)
+            if ep is None:
+                deduped.append(path)
+                continue
+            src = getattr(ep, "from_id", "")
+            dst = getattr(ep, "to_id", "")
+            edge = (min(src, dst), max(src, dst))
+            if edge in seen:
+                warnings.append(f"dedup: removed duplicate edge {src}<->{dst} at index {i}")
+                continue
+            seen.add(edge)
+            deduped.append(path)
+        return deduped, warnings
 
     # ------------------------------------------------------------------
     # Path count bounds

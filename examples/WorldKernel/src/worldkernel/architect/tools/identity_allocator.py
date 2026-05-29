@@ -152,25 +152,69 @@ class IdentityRegistry:
     ) -> list[str]:
         """Verify and fix items' identity.id to match registered values.
 
-        For each item, forces identity.id to the entity_id registered
-        for the corresponding seed. All seeds must be pre-registered.
+        Matches items to seeds by name (not positional index), so LLM
+        reordering does not cause ID mismatches. Falls back to ID reverse
+        lookup, then positional index.
 
         Returns:
             List of entity IDs (one per item).
         """
+        seed_by_name: dict[str, ResolvedSeed] = {}
+        for s in seeds:
+            if s.name:
+                seed_by_name[s.name] = s
+
+        # Build reverse lookup: entity_id -> seed (for ID-based fallback)
+        id_to_seed: dict[str, ResolvedSeed] = {}
+        for s in seeds:
+            eid = self._registry.get(self._scoped_key(entity_type, s.seed_id))
+            if eid:
+                id_to_seed[eid] = s
+
+        used_seed_ids: set[str] = set()
         ids: list[str] = []
-        for i, item in enumerate(items):
-            if i >= len(seeds):
-                logger.warning(
-                    "verify_and_fix: more items (%d) than seeds (%d), stopping",
-                    len(items), len(seeds),
-                )
-                break
-            expected_id = self._registry[self._scoped_key(entity_type, seeds[i].seed_id)]
+        fallback_index = 0
+
+        for item in items:
             identity = getattr(item, "identity", None)
+            item_name = getattr(identity, "name", "") if identity else ""
+            item_id = getattr(identity, "id", "") if identity else ""
+
+            matched_seed: ResolvedSeed | None = None
+
+            # Strategy 1: match by name
+            if item_name and item_name in seed_by_name:
+                matched_seed = seed_by_name[item_name]
+
+            # Strategy 2: reverse lookup by pre-allocated id
+            if matched_seed is None and item_id and item_id in id_to_seed:
+                matched_seed = id_to_seed[item_id]
+
+            # Strategy 3: positional index fallback (skip already-used seeds)
+            if matched_seed is None:
+                while fallback_index < len(seeds) and seeds[fallback_index].seed_id in used_seed_ids:
+                    fallback_index += 1
+                if fallback_index < len(seeds):
+                    matched_seed = seeds[fallback_index]
+                    fallback_index += 1
+                    logger.warning(
+                        "verify_and_fix: item '%s' matched by positional fallback",
+                        item_name or "(unnamed)",
+                    )
+
+            if matched_seed is None:
+                logger.warning(
+                    "verify_and_fix: no seed match for item '%s', skipping",
+                    item_name or "(unnamed)",
+                )
+                continue
+
+            used_seed_ids.add(matched_seed.seed_id)
+            expected_id = self._registry[self._scoped_key(entity_type, matched_seed.seed_id)]
             if identity is not None and hasattr(identity, "id"):
                 identity.id = expected_id
             ids.append(expected_id)
+
         return ids
 
     def allocate_dynamic(self, count: int, entity_type: str) -> list[str]:
@@ -190,6 +234,54 @@ class IdentityRegistry:
         synthetic = [_DynSeed(f"__dyn_{entity_type}_{i:03d}") for i in range(count)]
         self.register_batch(synthetic, entity_type)  # type: ignore[arg-type]
         return [self._registry[self._scoped_key(entity_type, s.seed_id)] for s in synthetic]
+
+    def allocate_for_paths(self, paths: list[BaseModel]) -> list[str]:
+        """Allocate deterministic IDs for paths based on sorted endpoint pairs.
+
+        Same undirected edge (A-B or B-A) always gets the same entity_id,
+        regardless of LLM output order or retry.
+        """
+        class _EdgeSeed:
+            __slots__ = ("seed_id",)
+            def __init__(self, sid: str):
+                self.seed_id = sid
+
+        seeds: list[_EdgeSeed] = []
+        for path in paths:
+            ep = getattr(path, "endpoints", None)
+            if ep is None:
+                continue
+            src = getattr(ep, "from_id", "")
+            dst = getattr(ep, "to_id", "")
+            pair = tuple(sorted([src, dst]))
+            seeds.append(_EdgeSeed(f"{pair[0]}->{pair[1]}"))
+
+        self.register_batch(seeds, "path")  # type: ignore[arg-type]
+        return [self._registry[self._scoped_key("path", s.seed_id)] for s in seeds]
+
+    def allocate_for_relations(self, relations: list[BaseModel]) -> list[str]:
+        """Allocate deterministic IDs for relations based on (from_id, to_id, type).
+
+        Same directed relation (A->B with same type) always gets the same entity_id,
+        regardless of LLM output order or retry.
+        """
+        class _RelSeed:
+            __slots__ = ("seed_id",)
+            def __init__(self, sid: str):
+                self.seed_id = sid
+
+        seeds: list[_RelSeed] = []
+        for rel in relations:
+            edge = getattr(rel, "edge", None)
+            if edge is None:
+                continue
+            src = getattr(edge, "from_id", "")
+            dst = getattr(edge, "to_id", "")
+            rel_type = getattr(edge, "type", "")
+            seeds.append(_RelSeed(f"{src}->{dst}:{rel_type}"))
+
+        self.register_batch(seeds, "rel")  # type: ignore[arg-type]
+        return [self._registry[self._scoped_key("rel", s.seed_id)] for s in seeds]
 
     def seed_mapping_by_type(self, entity_type: str) -> dict[str, str]:
         """Return seed_id -> entity_id mapping for a specific entity_type.

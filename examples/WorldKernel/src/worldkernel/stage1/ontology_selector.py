@@ -89,7 +89,6 @@ _FIXED_DIMENSIONS: dict[str, dict[str, list[FieldDef]]] = {
         "identity":   [_f("id"), _f("name"), _f("type")],
         "endpoints":  [_f("from_id", ref="location"), _f("to_id", ref="location"),
                        _f("bidirectional", "bool")],
-        "properties": [_f("distance"), _f("travel_time"), _f("visibility")],
         "conditions": [_f("access_level"), _f("danger_level"), _f("required_items")],
     },
 }
