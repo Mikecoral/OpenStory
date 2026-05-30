@@ -128,6 +128,59 @@ async def stage2_generate(session_id: str):
     }
 
 
+@app.post("/api/spatial/generate/{session_id}")
+async def spatial_generate(session_id: str):
+    semantic_root = TEMPLATES_DIR / session_id / "generated" / "artifacts"
+    if not semantic_root.exists():
+        raise HTTPException(status_code=404, detail="semantic artifacts not found; run Stage2 first")
+
+    from worldkernel.architect.spatial.config import load_spatial_generation_config
+    from worldkernel.architect.spatial.input_assembler import (
+        SpatialInputAssembler,
+        SpatialInputAssemblyError,
+    )
+    from worldkernel.architect.spatial.models import SpatialBuildInput
+    from worldkernel.architect.spatial.region_packer import RegionPacker
+    from worldkernel.architect.spatial.route_rasterizer import RouteRasterizer
+    from worldkernel.architect.spatial.topology_layout import TopologyLayoutGenerator
+
+    config = load_spatial_generation_config(CONFIGS_DIR / "architect.yaml")
+
+    try:
+        assembler = SpatialInputAssembler()
+        build_input = assembler.assemble(world_id=session_id, semantic_root=semantic_root)
+    except SpatialInputAssemblyError as exc:
+        raise HTTPException(status_code=422, detail=str(exc))
+
+    layout_gen = TopologyLayoutGenerator()
+    layout_plan = layout_gen.generate(build_input, config)
+
+    packer = RegionPacker()
+    packing_result = packer.pack(layout_plan, build_input, config)
+
+    rasterizer = RouteRasterizer()
+    raster_result = rasterizer.rasterize(build_input, layout_plan, packing_result, config)
+
+    all_warnings = packing_result.warnings + raster_result.warnings
+
+    return {
+        "world_id": session_id,
+        "grid": {
+            "width": config.canvas.grid_width,
+            "height": config.canvas.grid_height,
+            "tile_size": config.canvas.tile_size,
+        },
+        "regions": [r.model_dump(mode="json") for r in packing_result.regions],
+        "routes": [r.model_dump(mode="json") for r in raster_result.routes],
+        "layout": [loc.model_dump(mode="json") for loc in layout_plan.locations],
+        "warnings": [w.model_dump(mode="json") for w in all_warnings],
+        "provenance": {
+            "packing": packing_result.provenance,
+            "routing": raster_result.provenance,
+        },
+    }
+
+
 app.mount("/", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")
 
 

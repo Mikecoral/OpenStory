@@ -21,8 +21,6 @@ from worldkernel.architect.semantic import (
     run_semantic_generation,
     save_semantic_artifacts,
 )
-from worldkernel.architect.spatial import MapTopologyBuilder, save_topology_artifacts
-
 __all__ = [
     "ExecutionDAG",
     "FoundationBundle",
@@ -39,8 +37,6 @@ __all__ = [
     "load_semantic_repository",
     "load_stage1_artifacts_from_manifest",
     "load_stage1_session_schema_source",
-    "MapTopologyBuilder",
     "run_semantic_generation",
     "save_semantic_artifacts",
-    "save_topology_artifacts",
 ]

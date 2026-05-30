@@ -29,6 +29,18 @@
         <span class="session-id" id="sessionId"></span>
       </div>
       <p id="resultMsg" style="color:#94a3b8;margin-top:.5rem"></p>
+      <button id="spatialBtn" onclick="generateSpatial()" style="display:none">生成空间地图</button>
+    </section>
+
+    <section class="map-section" id="mapSection" style="display:none">
+      <div class="result-header">
+        <h2>空间地图</h2>
+        <span class="session-id" id="mapInfo"></span>
+      </div>
+      <div class="map-container">
+        <canvas id="mapCanvas"></canvas>
+      </div>
+      <div id="mapWarnings" class="map-warnings" style="display:none"></div>
     </section>
 
     <section class="error-section" id="errorSection" style="display:none">

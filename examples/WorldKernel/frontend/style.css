@@ -158,6 +158,49 @@ pre {
   color: #fca5a5;
 }
 
+button#spatialBtn {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1.2rem;
+  background: #059669;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button#spatialBtn:hover { background: #047857; }
+button#spatialBtn:disabled { background: #064e3b; cursor: not-allowed; }
+
+.map-section {
+  background: #1e2130;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.map-container {
+  padding: 1rem;
+  overflow: auto;
+  text-align: center;
+}
+
+#mapCanvas {
+  border: 1px solid #334155;
+  border-radius: 4px;
+  max-width: 100%;
+  image-rendering: pixelated;
+}
+
+.map-warnings {
+  padding: 0.6rem 1.25rem;
+  background: #422006;
+  border-top: 1px solid #92400e;
+  color: #fcd34d;
+  font-size: 0.85rem;
+}
+
 .tag {
   display: inline-block;
   padding: 0.15rem 0.5rem;
