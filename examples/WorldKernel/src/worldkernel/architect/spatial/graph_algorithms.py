@@ -247,3 +247,67 @@ def astar_orthogonal(
                 heapq.heappush(open_set, (f_new, h(nx, ny), nx, ny))
 
     return None
+
+
+def astar_weighted_orthogonal(
+    width: int,
+    height: int,
+    start: tuple[int, int],
+    goal: tuple[int, int],
+    cost_fn,
+    min_step_cost: float = 0.3,
+) -> list[tuple[int, int]] | None:
+    """Orthogonal A* with a per-tile movement cost callback.
+
+    ``cost_fn(x, y)`` should return a positive cost for passable tiles, or
+    ``None``/``inf`` to make the tile impassable.
+    """
+    sx, sy = start
+    gx, gy = goal
+    if width <= 0 or height <= 0:
+        return None
+    if not (0 <= sx < width and 0 <= sy < height):
+        return None
+    if not (0 <= gx < width and 0 <= gy < height):
+        return None
+    if start == goal:
+        return [start]
+
+    def h(x: int, y: int) -> float:
+        return (abs(x - gx) + abs(y - gy)) * min_step_cost
+
+    open_set: list[tuple[float, float, int, int]] = []
+    heapq.heappush(open_set, (h(sx, sy), 0.0, sx, sy))
+
+    g_score: dict[tuple[int, int], float] = {(sx, sy): 0.0}
+    came_from: dict[tuple[int, int], tuple[int, int]] = {}
+    directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
+
+    while open_set:
+        f, _, cx, cy = heapq.heappop(open_set)
+        if (cx, cy) == (gx, gy):
+            path: list[tuple[int, int]] = [(cx, cy)]
+            while (cx, cy) in came_from:
+                cx, cy = came_from[(cx, cy)]
+                path.append((cx, cy))
+            path.reverse()
+            return path
+
+        current_g = g_score[(cx, cy)]
+        if f > current_g + h(cx, cy) + 1e-9:
+            continue
+
+        for dx, dy in directions:
+            nx, ny = cx + dx, cy + dy
+            if not (0 <= nx < width and 0 <= ny < height):
+                continue
+            step_cost = cost_fn(nx, ny)
+            if step_cost is None or step_cost == float("inf"):
+                continue
+            tentative_g = current_g + float(step_cost)
+            if tentative_g < g_score.get((nx, ny), float("inf")):
+                g_score[(nx, ny)] = tentative_g
+                came_from[(nx, ny)] = (cx, cy)
+                heapq.heappush(open_set, (tentative_g + h(nx, ny), h(nx, ny), nx, ny))
+
+    return None

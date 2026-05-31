@@ -136,6 +136,7 @@ class SpatialRoute(BaseModel):
 
 class RouteRasterizationResult(BaseModel):
     routes: list[SpatialRoute] = Field(default_factory=list)
+    road_tiles: list[GridPoint] = Field(default_factory=list)
     collision_grid: list[list[int]] = Field(default_factory=list)
     warnings: list[SpatialInputWarning] = Field(default_factory=list)
     provenance: dict[str, Any] = Field(default_factory=dict)

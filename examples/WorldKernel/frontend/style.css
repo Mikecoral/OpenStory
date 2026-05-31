@@ -189,8 +189,8 @@ button#spatialBtn:disabled { background: #064e3b; cursor: not-allowed; }
 #mapCanvas {
   border: 1px solid #334155;
   border-radius: 4px;
-  max-width: 100%;
-  image-rendering: pixelated;
+  display: block;
+  margin: 0 auto;
 }
 
 .map-warnings {

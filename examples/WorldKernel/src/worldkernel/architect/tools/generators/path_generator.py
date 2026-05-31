@@ -435,7 +435,8 @@ class PathGenerationTool(BaseStage2Tool):
         if n_locations <= 1:
             return 0, 0
         min_paths = n_locations - 1
-        max_paths = min(n_locations * 2, n_locations * (n_locations - 1) // 2)
+        sparse_cap = (n_locations * 3 + 1) // 2
+        max_paths = min(sparse_cap, n_locations + 8, n_locations * (n_locations - 1) // 2)
         return min_paths, max_paths
 
     # ------------------------------------------------------------------

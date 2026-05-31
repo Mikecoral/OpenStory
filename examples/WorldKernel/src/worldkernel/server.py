@@ -161,6 +161,24 @@ async def spatial_generate(session_id: str):
     rasterizer = RouteRasterizer()
     raster_result = rasterizer.rasterize(build_input, layout_plan, packing_result, config)
 
+    import logging
+    _log = logging.getLogger("worldkernel.spatial")
+    _log.info(
+        "Spatial generate: paths=%d synthetic_edges=%d regions=%d routes=%d warnings=%d",
+        len(build_input.paths), len(layout_plan.synthetic_edges),
+        len(packing_result.regions), len(raster_result.routes),
+        len(raster_result.warnings),
+    )
+
+    # If no routes were generated, return error with all warnings
+    if not raster_result.routes:
+        all_warns = packing_result.warnings + raster_result.warnings
+        error_msgs = [w.message for w in all_warns if w.code in ("no_semantic_paths", "route_generation_failed")]
+        raise HTTPException(
+            status_code=422,
+            detail=error_msgs[0] if error_msgs else "No routes generated",
+        )
+
     all_warnings = packing_result.warnings + raster_result.warnings
 
     return {
@@ -171,8 +189,18 @@ async def spatial_generate(session_id: str):
             "tile_size": config.canvas.tile_size,
         },
         "regions": [r.model_dump(mode="json") for r in packing_result.regions],
-        "routes": [r.model_dump(mode="json") for r in raster_result.routes],
-        "layout": [loc.model_dump(mode="json") for loc in layout_plan.locations],
+        "road_tiles": [{"x": t.x, "y": t.y} for t in raster_result.road_tiles],
+        "routes": [
+            {
+                "path_edge_id": r.path_edge_id,
+                "from_location_id": r.from_location_id,
+                "to_location_id": r.to_location_id,
+                "route_tiles": [{"x": t.x, "y": t.y} for t in r.route_tiles],
+                "route_type": r.route_type,
+                "access_tags": r.access_tags,
+            }
+            for r in raster_result.routes
+        ],
         "warnings": [w.model_dump(mode="json") for w in all_warnings],
         "provenance": {
             "packing": packing_result.provenance,
@@ -185,4 +213,11 @@ app.mount("/", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="fronte
 
 
 if __name__ == "__main__":
-    uvicorn.run("worldkernel.server:app", host="0.0.0.0", port=8100, reload=True)
+    uvicorn.run(
+        "worldkernel.server:app",
+        host="0.0.0.0",
+        port=8100,
+        reload=True,
+        reload_dirs=[str(Path(__file__).parent)],  # only watch src/worldkernel/
+        reload_excludes=["**/templates/**", "**/__pycache__/**"],
+    )

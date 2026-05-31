@@ -94,11 +94,16 @@ async function generateSpatial() {
 }
 
 function renderSpatialMap(data) {
+  try {
   const section = document.getElementById('mapSection');
   section.style.display = 'block';
 
   const grid = data.grid;
   const regions = data.regions;
+  const routes = data.routes || [];
+  const roadTiles = (data.road_tiles && data.road_tiles.length)
+    ? data.road_tiles
+    : collectUniqueRouteTiles(routes);
   const tilePx = 4;
   const canvasW = grid.width * tilePx;
   const canvasH = grid.height * tilePx;
@@ -160,48 +165,14 @@ function renderSpatialMap(data) {
     ctx.fillText(r.name || r.location_id, cx, cy);
   }
 
-  // 路径渲染（tile 填充，在区域之上）
-  const routes = data.routes || [];
-  for (const route of routes) {
-    const tiles = route.route_tiles || [];
-    if (tiles.length < 1) continue;
-
-    const isSynthetic = route.route_type === 'synthetic';
-    const isSecret = (route.access_tags || []).includes('secret');
-
-    let tileColor;
-    if (isSynthetic) {
-      tileColor = 'rgba(251,191,36,0.7)';  // 黄色
-    } else if (isSecret) {
-      tileColor = 'rgba(239,68,68,0.7)';   // 红色
-    } else {
-      tileColor = 'rgba(148,163,184,0.7)';  // 灰蓝
-    }
-
-    // 填充每个 route tile
-    ctx.fillStyle = tileColor;
-    for (const t of tiles) {
-      ctx.fillRect(t.x * tilePx + 1, t.y * tilePx + 1, tilePx - 2, tilePx - 2);
-    }
-
-    // 连线（路径中心线，增强可见性）
-    if (tiles.length >= 2) {
-      ctx.strokeStyle = isSynthetic
-        ? 'rgba(251,191,36,0.9)'
-        : isSecret
-          ? 'rgba(239,68,68,0.9)'
-          : 'rgba(200,210,230,0.9)';
-      ctx.lineWidth = 2;
-      if (isSynthetic) ctx.setLineDash([3, 2]);
-
-      ctx.beginPath();
-      ctx.moveTo(tiles[0].x * tilePx + tilePx / 2, tiles[0].y * tilePx + tilePx / 2);
-      for (let i = 1; i < tiles.length; i++) {
-        ctx.lineTo(tiles[i].x * tilePx + tilePx / 2, tiles[i].y * tilePx + tilePx / 2);
-      }
-      ctx.stroke();
-      ctx.setLineDash([]);
-    }
+  // Draw the merged physical road network once instead of every semantic path.
+  ctx.fillStyle = 'rgba(15, 23, 42, 0.9)';
+  for (const t of roadTiles) {
+    ctx.fillRect((t.x - 0.25) * tilePx, (t.y - 0.25) * tilePx, tilePx * 1.5, tilePx * 1.5);
+  }
+  ctx.fillStyle = '#38bdf8';
+  for (const t of roadTiles) {
+    ctx.fillRect(t.x * tilePx, t.y * tilePx, tilePx, tilePx);
   }
 
   // 入口点（在最上层）
@@ -215,9 +186,18 @@ function renderSpatialMap(data) {
     ctx.stroke();
   }
 
+  // 调试：画布左上角显示 route 数量
+  ctx.fillStyle = '#000';
+  ctx.fillRect(4, 4, 200, 20);
+  ctx.fillStyle = '#0f0';
+  ctx.font = 'bold 14px monospace';
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'top';
+  ctx.fillText('DEBUG routes=' + routes.length + ' roads=' + roadTiles.length + ' regions=' + regions.length, 8, 6);
+
   // 信息
   document.getElementById('mapInfo').textContent =
-    `${regions.length} 个地点, ${routes.length} 条路径, ${grid.width}×${grid.height} 格`;
+    `${regions.length} 个地点, ${routes.length} 条路径, ${roadTiles.length} 个道路格, ${grid.width}×${grid.height} 格`;
 
   // 警告
   const warns = data.warnings || [];
@@ -228,6 +208,23 @@ function renderSpatialMap(data) {
   } else {
     warnDiv.style.display = 'none';
   }
+  } catch (err) {
+    console.error('renderSpatialMap error:', err);
+  }
+}
+
+function collectUniqueRouteTiles(routes) {
+  const seen = new Set();
+  const tiles = [];
+  for (const route of routes || []) {
+    for (const t of route.route_tiles || []) {
+      const key = `${t.x},${t.y}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      tiles.push(t);
+    }
+  }
+  return tiles;
 }
 
 document.getElementById('worldInput').addEventListener('keydown', e => {

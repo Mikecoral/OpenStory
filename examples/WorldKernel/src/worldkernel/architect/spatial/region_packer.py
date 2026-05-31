@@ -138,6 +138,13 @@ class RegionPacker:
             placed_rects[nid] = (region.x, region.y, region.width, region.height)
             placed_approaches[nid] = self._approach_point(region)
 
+        placed = [
+            self._repair_entrance_after_packing(
+                region, placed_rects, grid_w, grid_h, margin, min_gap,
+            )
+            for region in placed
+        ]
+
         return RegionPackingResult(
             regions=placed,
             warnings=warnings,
@@ -296,8 +303,9 @@ class RegionPacker:
         the new rectangle, but the min_gap buffer around the rectangle is fine
         because approach tiles are already in the corridor zone guaranteed by _is_valid.
         """
+        candidate = (x, y, w, h)
         for ax, ay in placed_approaches.values():
-            if x <= ax < x + w and y <= ay < y + h:
+            if cls._point_too_close_to_rect(ax, ay, candidate, min_gap):
                 return False
         return True
 
@@ -530,6 +538,37 @@ class RegionPacker:
         if region.entrance_x == region.x:
             return region.entrance_x - 1, region.entrance_y
         return region.entrance_x + 1, region.entrance_y
+
+    @classmethod
+    def _repair_entrance_after_packing(
+        cls,
+        region: SpatialRegion,
+        placed_rects: dict[str, tuple[int, int, int, int]],
+        grid_w: int,
+        grid_h: int,
+        margin: int,
+        min_gap: int,
+    ) -> SpatialRegion:
+        rx, ry, rw, rh = region.x, region.y, region.width, region.height
+        own_rect = (rx, ry, rw, rh)
+        entrances = [
+            ((rx + rw // 2, ry + rh - 1), (rx + rw // 2, ry + rh)),
+            ((rx + rw - 1, ry + rh // 2), (rx + rw, ry + rh // 2)),
+            ((rx, ry + rh // 2), (rx - 1, ry + rh // 2)),
+            ((rx + rw // 2, ry), (rx + rw // 2, ry - 1)),
+        ]
+        other_rects = [
+            rect for loc_id, rect in placed_rects.items()
+            if loc_id != region.location_id and rect != own_rect
+        ]
+        for entrance, approach in entrances:
+            ax, ay = approach
+            if ax < margin or ay < margin or ax >= grid_w - margin or ay >= grid_h - margin:
+                continue
+            if any(cls._point_too_close_to_rect(ax, ay, rect, min_gap) for rect in other_rects):
+                continue
+            return region.model_copy(update={"entrance_x": entrance[0], "entrance_y": entrance[1]})
+        return region
 
     @staticmethod
     def _rect_gap(
