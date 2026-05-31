@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "relations_to_others",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_facade",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "espionage_network",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "ally_signals",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

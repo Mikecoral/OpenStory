@@ -1,0 +1,449 @@
+{
+  "artifact_type": "relation_edge",
+  "items": [
+    {
+      "edge": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:013",
+        "from_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:006",
+        "to_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:002",
+        "type": "灌溉者",
+        "direction": "单向",
+        "mythical_causality": "",
+        "prophecy_link": "",
+        "temporal_marker": "",
+        "spatial_context": "",
+        "fate_class": ""
+      },
+      "properties": {
+        "strength": "",
+        "description": "",
+        "divine_origin": "",
+        "karmic_weight": "",
+        "transformation_catalyst": "",
+        "social_power": "",
+        "emotional_bond": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:003",
+        "from_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:002",
+        "to_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:006",
+        "type": "还泪者",
+        "direction": "单向",
+        "mythical_causality": "",
+        "prophecy_link": "",
+        "temporal_marker": "",
+        "spatial_context": "",
+        "fate_class": ""
+      },
+      "properties": {
+        "strength": "",
+        "description": "",
+        "divine_origin": "",
+        "karmic_weight": "",
+        "transformation_catalyst": "",
+        "social_power": "",
+        "emotional_bond": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:007",
+        "from_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:004",
+        "to_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:005",
+        "type": "同行道友",
+        "direction": "双向",
+        "mythical_causality": "",
+        "prophecy_link": "",
+        "temporal_marker": "",
+        "spatial_context": "",
+        "fate_class": ""
+      },
+      "properties": {
+        "strength": "",
+        "description": "",
+        "divine_origin": "",
+        "karmic_weight": "",
+        "transformation_catalyst": "",
+        "social_power": "",
+        "emotional_bond": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:010",
+        "from_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:005",
+        "to_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:004",
+        "type": "同行道友",
+        "direction": "双向",
+        "mythical_causality": "",
+        "prophecy_link": "",
+        "temporal_marker": "",
+        "spatial_context": "",
+        "fate_class": ""
+      },
+      "properties": {
+        "strength": "",
+        "description": "",
+        "divine_origin": "",
+        "karmic_weight": "",
+        "transformation_catalyst": "",
+        "social_power": "",
+        "emotional_bond": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:008",
+        "from_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:004",
+        "to_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:006",
+        "type": "护送者",
+        "direction": "单向",
+        "mythical_causality": "",
+        "prophecy_link": "",
+        "temporal_marker": "",
+        "spatial_context": "",
+        "fate_class": ""
+      },
+      "properties": {
+        "strength": "",
+        "description": "",
+        "divine_origin": "",
+        "karmic_weight": "",
+        "transformation_catalyst": "",
+        "social_power": "",
+        "emotional_bond": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:011",
+        "from_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:005",
+        "to_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:006",
+        "type": "护送者",
+        "direction": "单向",
+        "mythical_causality": "",
+        "prophecy_link": "",
+        "temporal_marker": "",
+        "spatial_context": "",
+        "fate_class": ""
+      },
+      "properties": {
+        "strength": "",
+        "description": "",
+        "divine_origin": "",
+        "karmic_weight": "",
+        "transformation_catalyst": "",
+        "social_power": "",
+        "emotional_bond": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:009",
+        "from_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:004",
+        "to_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:008",
+        "type": "托梦者",
+        "direction": "单向",
+        "mythical_causality": "",
+        "prophecy_link": "",
+        "temporal_marker": "",
+        "spatial_context": "",
+        "fate_class": ""
+      },
+      "properties": {
+        "strength": "",
+        "description": "",
+        "divine_origin": "",
+        "karmic_weight": "",
+        "transformation_catalyst": "",
+        "social_power": "",
+        "emotional_bond": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:012",
+        "from_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:005",
+        "to_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:008",
+        "type": "托梦者",
+        "direction": "单向",
+        "mythical_causality": "",
+        "prophecy_link": "",
+        "temporal_marker": "",
+        "spatial_context": "",
+        "fate_class": ""
+      },
+      "properties": {
+        "strength": "",
+        "description": "",
+        "divine_origin": "",
+        "karmic_weight": "",
+        "transformation_catalyst": "",
+        "social_power": "",
+        "emotional_bond": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:016",
+        "from_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:008",
+        "to_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:001",
+        "type": "资助者",
+        "direction": "单向",
+        "mythical_causality": "",
+        "prophecy_link": "",
+        "temporal_marker": "",
+        "spatial_context": "",
+        "fate_class": ""
+      },
+      "properties": {
+        "strength": "",
+        "description": "",
+        "divine_origin": "",
+        "karmic_weight": "",
+        "transformation_catalyst": "",
+        "social_power": "",
+        "emotional_bond": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:002",
+        "from_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:001",
+        "to_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:008",
+        "type": "受恩者",
+        "direction": "单向",
+        "mythical_causality": "",
+        "prophecy_link": "",
+        "temporal_marker": "",
+        "spatial_context": "",
+        "fate_class": ""
+      },
+      "properties": {
+        "strength": "",
+        "description": "",
+        "divine_origin": "",
+        "karmic_weight": "",
+        "transformation_catalyst": "",
+        "social_power": "",
+        "emotional_bond": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:017",
+        "from_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:008",
+        "to_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:003",
+        "type": "主人",
+        "direction": "单向",
+        "mythical_causality": "",
+        "prophecy_link": "",
+        "temporal_marker": "",
+        "spatial_context": "",
+        "fate_class": ""
+      },
+      "properties": {
+        "strength": "",
+        "description": "",
+        "divine_origin": "",
+        "karmic_weight": "",
+        "transformation_catalyst": "",
+        "social_power": "",
+        "emotional_bond": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:006",
+        "from_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:003",
+        "to_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:008",
+        "type": "仆从",
+        "direction": "单向",
+        "mythical_causality": "",
+        "prophecy_link": "",
+        "temporal_marker": "",
+        "spatial_context": "",
+        "fate_class": ""
+      },
+      "properties": {
+        "strength": "",
+        "description": "",
+        "divine_origin": "",
+        "karmic_weight": "",
+        "transformation_catalyst": "",
+        "social_power": "",
+        "emotional_bond": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:018",
+        "from_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:008",
+        "to_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:007",
+        "type": "父亲",
+        "direction": "单向",
+        "mythical_causality": "",
+        "prophecy_link": "",
+        "temporal_marker": "",
+        "spatial_context": "",
+        "fate_class": ""
+      },
+      "properties": {
+        "strength": "",
+        "description": "",
+        "divine_origin": "",
+        "karmic_weight": "",
+        "transformation_catalyst": "",
+        "social_power": "",
+        "emotional_bond": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:015",
+        "from_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:007",
+        "to_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:008",
+        "type": "女儿",
+        "direction": "单向",
+        "mythical_causality": "",
+        "prophecy_link": "",
+        "temporal_marker": "",
+        "spatial_context": "",
+        "fate_class": ""
+      },
+      "properties": {
+        "strength": "",
+        "description": "",
+        "divine_origin": "",
+        "karmic_weight": "",
+        "transformation_catalyst": "",
+        "social_power": "",
+        "emotional_bond": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:005",
+        "from_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:003",
+        "to_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:007",
+        "type": "侍女",
+        "direction": "单向",
+        "mythical_causality": "",
+        "prophecy_link": "",
+        "temporal_marker": "",
+        "spatial_context": "",
+        "fate_class": ""
+      },
+      "properties": {
+        "strength": "",
+        "description": "",
+        "divine_origin": "",
+        "karmic_weight": "",
+        "transformation_catalyst": "",
+        "social_power": "",
+        "emotional_bond": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:014",
+        "from_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:007",
+        "to_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:003",
+        "type": "主人",
+        "direction": "单向",
+        "mythical_causality": "",
+        "prophecy_link": "",
+        "temporal_marker": "",
+        "spatial_context": "",
+        "fate_class": ""
+      },
+      "properties": {
+        "strength": "",
+        "description": "",
+        "divine_origin": "",
+        "karmic_weight": "",
+        "transformation_catalyst": "",
+        "social_power": "",
+        "emotional_bond": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:001",
+        "from_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:001",
+        "to_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:003",
+        "type": "爱慕者",
+        "direction": "单向",
+        "mythical_causality": "",
+        "prophecy_link": "",
+        "temporal_marker": "",
+        "spatial_context": "",
+        "fate_class": ""
+      },
+      "properties": {
+        "strength": "",
+        "description": "",
+        "divine_origin": "",
+        "karmic_weight": "",
+        "transformation_catalyst": "",
+        "social_power": "",
+        "emotional_bond": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:004",
+        "from_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:003",
+        "to_id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:char:001",
+        "type": "回眸者",
+        "direction": "单向",
+        "mythical_causality": "",
+        "prophecy_link": "",
+        "temporal_marker": "",
+        "spatial_context": "",
+        "fate_class": ""
+      },
+      "properties": {
+        "strength": "",
+        "description": "",
+        "divine_origin": "",
+        "karmic_weight": "",
+        "transformation_catalyst": "",
+        "social_power": "",
+        "emotional_bond": ""
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:013",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:003",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:007",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:010",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:008",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:011",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:009",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:012",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:016",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:002",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:017",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:006",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:018",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:015",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:005",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:014",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:001",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:rel:004"
+  ],
+  "upstream_step_ids": [
+    "generate_relations"
+  ],
+  "warnings": [],
+  "provenance": {
+    "result_count": 1
+  }
+}

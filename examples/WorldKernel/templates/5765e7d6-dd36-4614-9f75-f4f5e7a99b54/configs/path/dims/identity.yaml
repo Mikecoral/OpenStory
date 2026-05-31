@@ -1,0 +1,19 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+symbolic_significance:
+  type: str
+  option: true
+physical_material:
+  type: str
+  option: true
+path_myth_status:
+  type: str
+  option: true
+narrative_phase:
+  type: str
+  option: true

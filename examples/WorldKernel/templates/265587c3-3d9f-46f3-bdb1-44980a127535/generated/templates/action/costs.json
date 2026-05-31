@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "time",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "resources",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_cost",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "punishment_severity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "exposure_risk_to_deatheaters",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "loyalty_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "resource_depletion_consequence",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "time_slot_restriction_penalty",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "skills",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "weaknesses",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "dark_arts_defense_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "nonverbal_magic_proficiency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "illegal_spells_known",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "polyjuice_awareness",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

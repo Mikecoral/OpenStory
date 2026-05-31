@@ -1,0 +1,236 @@
+{
+  "artifact_type": "location_profile",
+  "items": [
+    {
+      "identity": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:loc:001",
+        "name": "大荒山无稽崖青埂峰",
+        "type": "mythical_realm",
+        "description": "大荒山无稽崖青埂峰乃女娲炼石补天之所遗，一片荒凉之地，满山顽石，寸草不生。青埂峰上，一块高经十二丈、方经二十四丈的巨石横卧，石上字迹分明，记载了通灵宝玉的来历。此地远离凡尘，终日云遮雾绕，风声如诉，仿佛在诉说远古的传说。",
+        "mythological_layer": "神话起源地，位于大荒山，属于仙界边缘",
+        "narrative_function": "故事起点，通灵宝玉石头的出身地，石头在此被一僧一道点化，携入红尘。",
+        "associated_objects": "通灵宝玉（顽石），女娲补天遗石",
+        "symbolic_meaning": "荒凉与起点，顽石之顽固与灵性，从无稽到有事的转变"
+      },
+      "access": {
+        "permissions": "仙界与凡人不可轻易到达，唯有神仙或得到引路者可至。",
+        "access_level": "神话层级（最高）",
+        "access_conditions": "需要神仙法术或梦境穿越，凡人无法找到。",
+        "immortal_access_condition": "仙人可随意往来，凡人需在特定机缘下（如甄士隐梦境）得以一瞥。",
+        "mortal_perception": "凡人即使在梦中见到，也无法分辨真假，只是一种幻象。",
+        "time_constraint": "永恒存在，但仅在某些关键时刻显现于人前。",
+        "special_entrance_requirement": "无固定入口，随仙缘而现。"
+      },
+      "state": {
+        "current_state": "荒凉寂寥，顽石已化美玉入世，青埂峰留有空位。",
+        "ownership": "无主，属仙界自然之地。",
+        "capacity": 999999,
+        "seasonal_state": "四季混沌，终年云雾弥漫，无分明季节。",
+        "atmosphere": "苍茫、古老、神秘，风声呜咽，石头沉默。",
+        "temporal_markers": "神话纪元，时间流逝缓慢，与人间不同。",
+        "functional_cycle": "无特定循环，只在剧情需要时出现。"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:loc:004",
+        "name": "灵河岸上",
+        "type": "mythical_realm",
+        "description": "灵河乃仙界一条清澈的仙河，河岸绿草如茵，奇花异草遍布。神瑛侍者每日以灵河之水浇灌岸边一株绛珠仙草，使其得久延岁月。河岸幽静，流水潺潺，仙草摇曳，充满祥和与生机。",
+        "mythological_layer": "仙界中的一处美景，属于灵河畔",
+        "narrative_function": "木石前盟的缔结地，神瑛与绛珠因果起点",
+        "associated_objects": "绛珠仙草，灵河水",
+        "symbolic_meaning": "滋养与回报，以泪还恩的起点"
+      },
+      "access": {
+        "permissions": "仙界灵河，非仙人不得擅入。",
+        "access_level": "神话层级",
+        "access_conditions": "需有仙籍或神瑛侍者身份，凡人无法感知。",
+        "immortal_access_condition": "仙人们自由往来，但多为神瑛侍者常驻。",
+        "mortal_perception": "凡人完全不可见，除非在极深的梦境中。",
+        "time_constraint": "永恒存在，但植物生长受仙界时间影响。",
+        "special_entrance_requirement": ""
+      },
+      "state": {
+        "current_state": "神瑛侍者下凡后，灵河岸上依旧，但绛珠仙草已脱胎下凡，只留下空空的草痕。",
+        "ownership": "无主，属于仙界公共区域。",
+        "capacity": 999999,
+        "seasonal_state": "仙草四季常青，灵河永不干涸。",
+        "atmosphere": "宁静、清幽、充满仙气。",
+        "temporal_markers": "神话纪元，神瑛侍者浇灌的往事已成过去。",
+        "functional_cycle": "仙草成长与仙露定期浇灌，现浇灌行为停止。"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:loc:007",
+        "name": "甄士隐宅",
+        "type": "residence",
+        "description": "甄士隐宅位于姑苏阊门十里街仁清巷内，是一座典型的乡绅庭院。宅院不大但雅致，青砖黛瓦，院落中植有花木，书房通透。正厅悬挂“真事隐”匾额，暗示命运。宅中常有稚子英莲嬉戏，丫鬟娇杏往来。夏日午后，甄士隐于书房伏案小憩，便有梦境引入太虚幻境。",
+        "mythological_layer": "人间界，但与仙界有梦境连通",
+        "narrative_function": "甄士隐一家生活的舞台，梦幻与现实交汇，英莲被拐的悲剧起点，贾雨村命运的转折点。",
+        "associated_objects": "英莲、娇杏、甄士隐书房、梦境中的僧道",
+        "symbolic_meaning": "隐与显，盛衰无常，红尘烟火与仙缘暗示"
+      },
+      "access": {
+        "permissions": "甄士隐及其家人居住，外来访客需通报。",
+        "access_level": "私人住宅（凡人层级）",
+        "access_conditions": "甄士隐家人可自由出入，外人需由门房通报。",
+        "immortal_access_condition": "仙人可以入梦的方式进入宅中，或化作僧道敲门。",
+        "mortal_perception": "凡人视之为普通宅院，但甄士隐梦中可感知仙气。",
+        "time_constraint": "日常开放，夜晚闭门。",
+        "special_entrance_requirement": ""
+      },
+      "state": {
+        "current_state": "甄士隐尚在家中居住，家道未败，表面安宁。",
+        "ownership": "甄士隐",
+        "capacity": 15,
+        "seasonal_state": "夏日炎热，院落树荫蝉鸣。",
+        "atmosphere": "闲适安逸，但隐约有不详预兆（如英莲失踪前的宁静）。",
+        "temporal_markers": "甄士隐一梦到太虚的时刻，尚未发生变故。",
+        "functional_cycle": "日常起居、会客、读书。夜间有梦。"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:loc:003",
+        "name": "葫芦庙",
+        "type": "temple",
+        "description": "葫芦庙位于甄士隐宅隔壁，是一座小而古旧的佛教寺庙，因形状似葫芦得名。庙门破旧，香火冷清，寺内只有一位老僧和少许泥塑佛像。庙旁有一间闲置的僧房，贾雨村落魄时暂居于此，靠卖字为生。庙虽小，却因贾雨村与甄士隐的往来而成为命运交汇点。",
+        "mythological_layer": "人间界，普通寺庙",
+        "narrative_function": "贾雨村居住地，甄士隐赠银之地，书生发迹前的重要转折点。",
+        "associated_objects": "贾雨村的行囊、笔墨、老僧",
+        "symbolic_meaning": "葫芦形状暗喻“福禄”，世事变幻莫测；庙小却藏乾坤。"
+      },
+      "access": {
+        "permissions": "公共寺庙，信徒可进香，但贾雨村的僧房为租住。",
+        "access_level": "公共宗教场所",
+        "access_conditions": "白天对公众开放，夜间贾雨村居所外人不得入。",
+        "immortal_access_condition": "仙人可随意入内，但未见明显活动。",
+        "mortal_perception": "凡人视为寻常小庙，香客稀少。",
+        "time_constraint": "寺庙日常开放，无特殊时间限制。",
+        "special_entrance_requirement": ""
+      },
+      "state": {
+        "current_state": "贾雨村暂居于此，甄士隐常来拜访。",
+        "ownership": "寺庙归僧众所有，贾雨村租住僧房。",
+        "capacity": 30,
+        "seasonal_state": "夏日炎热，庙内阴凉。",
+        "atmosphere": "冷清、简陋、带着书香与落魄之气。",
+        "temporal_markers": "贾雨村准备参加科举前夕。",
+        "functional_cycle": "贾雨村白天卖字，晚上读书。初一十五香火略多。"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:loc:005",
+        "name": "十里街",
+        "type": "street_alley",
+        "description": "一条青石板铺就的街道，两旁是斑驳的店铺门板与零落的幌子，偶尔有挑担小贩吆喝而过。街面不宽，却连着甄府侧门与葫芦庙山门，是凡人足音与佛堂钟声交错的市井通道。",
+        "mythological_layer": "",
+        "narrative_function": "",
+        "associated_objects": "",
+        "symbolic_meaning": ""
+      },
+      "access": {
+        "permissions": "公共通行",
+        "access_level": "public",
+        "access_conditions": "无限制，日夜开放",
+        "immortal_access_condition": "",
+        "mortal_perception": "",
+        "time_constraint": "",
+        "special_entrance_requirement": ""
+      },
+      "state": {
+        "current_state": "日常营业与行人往来，偶有流浪汉蜷缩檐下",
+        "ownership": "姑苏府衙管辖之下",
+        "capacity": 200,
+        "seasonal_state": "",
+        "atmosphere": "",
+        "temporal_markers": "",
+        "functional_cycle": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:loc:002",
+        "name": "姑苏河岸",
+        "type": "natural_scenery",
+        "description": "姑苏城外一段平缓的河岸，柳丝垂水，芦苇萧疏。河水缓缓东流，水光映着天边云影。此处人迹较少，偶见僧道缓步徐行，或有好风自水上吹来，仿佛在虚无间交织着仙凡两界的低语。",
+        "mythological_layer": "",
+        "narrative_function": "",
+        "associated_objects": "",
+        "symbolic_meaning": ""
+      },
+      "access": {
+        "permissions": "开放空间，可自由驻足",
+        "access_level": "public",
+        "access_conditions": "无限制，但夜半时分或雨后路滑",
+        "immortal_access_condition": "",
+        "mortal_perception": "",
+        "time_constraint": "",
+        "special_entrance_requirement": ""
+      },
+      "state": {
+        "current_state": "自然野趣，水草丰茂，偶有渔舟泊岸",
+        "ownership": "属于姑苏城外公共河滩",
+        "capacity": 50,
+        "seasonal_state": "",
+        "atmosphere": "",
+        "temporal_markers": "",
+        "functional_cycle": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:loc:006",
+        "name": "葫芦庙",
+        "type": "religious_building",
+        "description": "位于十里街旁一座小庙，山门破旧，院内古槐参天。正殿供着弥勒佛像，香火稀疏。廊下常有流浪僧道歇脚，是甄士隐梦中遇僧道处，也是贾雨村暂居读书之所，世事炎凉于此悄然流转。",
+        "mythological_layer": "",
+        "narrative_function": "",
+        "associated_objects": "",
+        "symbolic_meaning": ""
+      },
+      "access": {
+        "permissions": "对公众开放，但正殿早晚有定时关闭",
+        "access_level": "public",
+        "access_conditions": "平日可自由进出，夜间及法会时段需遵守寺规",
+        "immortal_access_condition": "",
+        "mortal_perception": "",
+        "time_constraint": "",
+        "special_entrance_requirement": ""
+      },
+      "state": {
+        "current_state": "日常开放，香客寥寥，殿内有些许积尘，僧人在偏房禅坐",
+        "ownership": "寺院自管，受姑苏府衙名义管辖",
+        "capacity": 80,
+        "seasonal_state": "",
+        "atmosphere": "",
+        "temporal_markers": "",
+        "functional_cycle": ""
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:loc:001",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:loc:004",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:loc:007",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:loc:003",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:loc:005",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:loc:002",
+    "e:5765e7d6_dd36_4614_9f75_f4f5e7a99b54:loc:006"
+  ],
+  "upstream_step_ids": [
+    "generate_locations"
+  ],
+  "warnings": [
+    "batch 2 review (score=4.0): 发现 1 个问题并已自动修正"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

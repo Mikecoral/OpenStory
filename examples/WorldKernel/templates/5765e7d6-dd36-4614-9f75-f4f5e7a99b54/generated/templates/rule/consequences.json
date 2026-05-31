@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "penalties",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "rewards_for_compliance",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "causal_penalty_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "compensation_cycle",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "social_status_penalty",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "karmic_reward",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "direction",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "mythical_causality",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "prophecy_link",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "temporal_marker",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "spatial_context",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "fate_class",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

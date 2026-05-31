@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "scope",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "village_applicable",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "ninja_rank_applicable",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "tailed_beast_relevant",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "five_kage_summit_related",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

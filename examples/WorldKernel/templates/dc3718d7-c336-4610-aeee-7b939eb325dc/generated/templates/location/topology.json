@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "connected_to",
+      "type": "list_str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "parent_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "layer",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "entrance_type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "secret_connections",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "blocked_passages",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "floo_network_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "apparition_allowed",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "portkey_enabled",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

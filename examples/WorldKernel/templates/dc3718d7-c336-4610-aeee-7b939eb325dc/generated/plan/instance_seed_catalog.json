@@ -1,0 +1,149 @@
+{
+  "session_id": "dc3718d7-c336-4610-aeee-7b939eb325dc",
+  "instance_seeds": {
+    "location": [
+      {
+        "seed_id": "dark_arts_classroom",
+        "name": "黑魔法防御课教室",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "卡罗兄妹实施惩罚和管制教学的核心场所",
+        "archetype_id": "teaching_space"
+      },
+      {
+        "seed_id": "great_hall",
+        "name": "大礼堂",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "全校强制集会、用餐及食死徒宣扬政策的场所",
+        "archetype_id": "communal_space"
+      },
+      {
+        "seed_id": "gryffindor_common_room",
+        "name": "格兰芬多公共休息室",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "学生秘密讨论和反抗活动的据点之一",
+        "archetype_id": "dormitory"
+      },
+      {
+        "seed_id": "room_of_requirement",
+        "name": "有求必应屋",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "DA成员秘密训练和藏匿物品的地方",
+        "archetype_id": "secret_base"
+      },
+      {
+        "seed_id": "headmaster_office",
+        "name": "校长办公室",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "斯内普（名义校长）与食死徒掌控学校的行政中心",
+        "archetype_id": "admin_office"
+      },
+      {
+        "seed_id": "hogwarts_library",
+        "name": "霍格沃茨图书馆",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "学生寻找禁书和反抗信息的重要地点",
+        "archetype_id": "library"
+      },
+      {
+        "seed_id": "hospital_wing",
+        "name": "医疗翼",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "受惩罚学生接受治疗的场所，庞弗雷夫人暗中保护学生",
+        "archetype_id": "medical_wing"
+      }
+    ],
+    "character": [
+      {
+        "seed_id": "neville_longbottom",
+        "name": "纳威·隆巴顿",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "校内反抗食死徒统治的公开领袖，DA实际负责人",
+        "archetype_id": "student"
+      },
+      {
+        "seed_id": "luna_lovegood",
+        "name": "卢娜·洛夫古德",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "DA核心成员，以古怪言行掩护反抗活动",
+        "archetype_id": "student"
+      },
+      {
+        "seed_id": "ginny_weasley",
+        "name": "金妮·韦斯莱",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "DA活跃成员，秘密串联其他学院学生",
+        "archetype_id": "student"
+      },
+      {
+        "seed_id": "minerva_mcgonagall",
+        "name": "米勒娃·麦格",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "变形课教授，暗中保护学生并维持学院传统",
+        "archetype_id": "faculty"
+      },
+      {
+        "seed_id": "amycus_carrow",
+        "name": "阿米库斯·卡罗",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "黑魔法防御术教师，以酷刑惩罚学生",
+        "archetype_id": "death_eater_staff"
+      },
+      {
+        "seed_id": "alector_carrow",
+        "name": "阿莱克托·卡罗",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "麻瓜研究教师，强制推行纯血统理念",
+        "archetype_id": "death_eater_staff"
+      },
+      {
+        "seed_id": "severus_snape",
+        "name": "西弗勒斯·斯内普",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "名义校长兼间谍，暗中保护学生并执行邓布利多的计划",
+        "archetype_id": "phoenix_resistance"
+      }
+    ]
+  }
+}

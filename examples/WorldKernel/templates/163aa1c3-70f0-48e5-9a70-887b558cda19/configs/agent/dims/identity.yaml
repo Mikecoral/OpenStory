@@ -1,0 +1,22 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+role:
+  type: str
+ninja_rank:
+  type: str
+  option: true
+affiliation:
+  type: str
+  option: true
+bloodline_limit:
+  type: str
+  option: true
+political_stance:
+  type: str
+  option: true
+relation_to_summit:
+  type: str
+  option: true

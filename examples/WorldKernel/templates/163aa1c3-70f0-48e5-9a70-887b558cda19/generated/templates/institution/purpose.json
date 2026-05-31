@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "mission",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "founding_reason",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "current_strategic_objectives",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "ideology_or_motto",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "primary_activities",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "role_in_shinobi_balance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "attitude_towards_tailed_beasts",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

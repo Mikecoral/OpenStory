@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "current_state",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "ownership",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "capacity",
+      "type": "int",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "seasonal_state",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "atmosphere",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "temporal_markers",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "functional_cycle",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

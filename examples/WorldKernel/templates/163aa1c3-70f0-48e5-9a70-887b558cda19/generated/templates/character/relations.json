@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "relation_ids",
+      "type": "list_str",
+      "required": true,
+      "ref": "relation"
+    },
+    {
+      "name": "alliance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "enmity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "master_apprentice",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "clan_relations",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

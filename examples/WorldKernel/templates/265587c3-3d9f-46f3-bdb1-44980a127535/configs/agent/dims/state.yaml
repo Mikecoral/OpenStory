@@ -1,0 +1,22 @@
+dim_name: StateDim
+location:
+  location_id:
+    type: str
+    ref: location
+position:
+  x:
+    type: float
+  y:
+    type: float
+hidden_object_inventory:
+  type: str
+  option: true
+current_curfew_compliance:
+  type: str
+  option: true
+wand_ownership_verified:
+  type: str
+  option: true
+magical_tracking_status:
+  type: str
+  option: true

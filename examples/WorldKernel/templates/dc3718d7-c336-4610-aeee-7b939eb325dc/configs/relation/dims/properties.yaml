@@ -1,0 +1,20 @@
+dim_name: PropertiesDim
+strength:
+  type: str
+description:
+  type: str
+duration:
+  type: str
+  option: true
+trigger_event:
+  type: str
+  option: true
+historical_context:
+  type: str
+  option: true
+conditional_constraints:
+  type: str
+  option: true
+mutual_knowledge:
+  type: str
+  option: true

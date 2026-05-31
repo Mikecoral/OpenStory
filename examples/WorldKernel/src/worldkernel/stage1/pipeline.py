@@ -389,6 +389,16 @@ def _to_class_name(snake: str) -> str:
     return "".join(part.capitalize() for part in snake.split("_"))
 
 
+def _sanitize_identifier(name: str) -> str:
+    """Convert arbitrary string (possibly Chinese with fullwidth punctuation) to a valid Python identifier."""
+    import re
+    result = re.sub(r'[^\w]', '_', name, flags=re.UNICODE)
+    result = re.sub(r'_+', '_', result).strip('_')
+    if result and result[0].isdigit():
+        result = '_' + result
+    return result or 'field'
+
+
 def _generate_pydantic_models(models_dir: Path, configs_dir: Path) -> None:
     models_dir.mkdir(parents=True, exist_ok=True)
 
@@ -435,20 +445,23 @@ def _generate_pydantic_models(models_dir: Path, configs_dir: Path) -> None:
                 for fname, fval in group_fields.items():
                     ftype = fval.get("type", "str")
                     py_type, default = _PY_TYPE_MAP.get(ftype, ("str", '""'))
-                    lines.append(f"    {fname}: {py_type} = {default}")
+                    safe_fname = _sanitize_identifier(fname)
+                    lines.append(f"    {safe_fname}: {py_type} = {default}")
                 lines.append("")
                 lines.append("")
 
             lines.append(f"class {dim_class_name}(BaseModel):")
             has_fields = False
             for field_name, group_class, _group_fields in nested_groups:
-                lines.append(f"    {field_name}: {group_class} = {group_class}()")
+                safe_field_name = _sanitize_identifier(field_name)
+                lines.append(f"    {safe_field_name}: {group_class} = {group_class}()")
                 has_fields = True
             for fname, fval in flat_fields:
                 ftype = fval.get("type", "str")
                 py_type, default = _PY_TYPE_MAP.get(ftype, ("str", '""'))
                 comment = "  # world-specific" if fval.get("option") else ""
-                lines.append(f"    {fname}: {py_type} = {default}{comment}")
+                safe_fname = _sanitize_identifier(fname)
+                lines.append(f"    {safe_fname}: {py_type} = {default}{comment}")
                 has_fields = True
             if not has_fields:
                 lines.append("    pass")

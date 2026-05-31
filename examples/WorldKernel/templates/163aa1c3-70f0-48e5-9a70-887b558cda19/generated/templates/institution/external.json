@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "relations_to_others",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "diplomatic_standing",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "existing_alliances_treaties",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "participation_in_five_kage_summit",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "stance_on_akatsuki",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "relationship_with_land_daimyo",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

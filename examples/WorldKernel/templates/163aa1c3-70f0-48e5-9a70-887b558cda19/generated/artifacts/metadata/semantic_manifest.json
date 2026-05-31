@@ -1,0 +1,71 @@
+{
+  "world_id": "163aa1c3-70f0-48e5-9a70-887b558cda19",
+  "source_ids": [
+    "visual-e2e"
+  ],
+  "schema_version": "stage2-semantic-v1",
+  "artifact_files": {
+    "location_profile": "locations\\locations.json",
+    "character_profile": "characters\\characters.json",
+    "path_edge": "path_graph\\path_graph.json",
+    "relation_edge": "relation_graph\\relation_graph.json"
+  },
+  "counts": {
+    "location_profile": 14,
+    "character_profile": 15,
+    "path_edge": 23,
+    "relation_edge": 31
+  },
+  "constraints": [
+    {
+      "constraint_id": "chakra_energy_system",
+      "name": "查克拉能量体系",
+      "description": "忍者使用忍术的基础能量，由身体能量和精神能量混合而成，是忍界一切战斗能力的根本前提",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "great_ninja_village_political_structure",
+      "name": "五大忍者村政治结构",
+      "description": "忍界由五大国及其所属忍者村主导，每个村子由影领导，接受所属国大名的财政支持，但同时享有军事自治权",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "tailed_beast_balance",
+      "name": "尾兽力量平衡",
+      "description": "九只尾兽被分配并封印在五个人柱力体内，维持忍界军事力量微妙平衡；任何一只尾兽被捕获都会打破均衡",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "neutral_ground_inviolability",
+      "name": "中立领土不可侵犯",
+      "description": "铁之国作为永久中立国，主办五影会谈时所有参与者默认遵守不在此地使用武力或发动袭击的约定",
+      "scope": "location"
+    }
+  ],
+  "timestamp": "2026-05-31T08:16:29.549869+00:00",
+  "provenance": {
+    "stage1_inputs": {
+      "source": "stage1.pipeline",
+      "source_id": "visual-e2e",
+      "world_id": "163aa1c3-70f0-48e5-9a70-887b558cda19",
+      "world_background_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\163aa1c3-70f0-48e5-9a70-887b558cda19\\generated\\plan\\world_background.json",
+      "execution_plan_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\163aa1c3-70f0-48e5-9a70-887b558cda19\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\163aa1c3-70f0-48e5-9a70-887b558cda19\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\163aa1c3-70f0-48e5-9a70-887b558cda19\\generated\\world_template.json",
+      "schema_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\163aa1c3-70f0-48e5-9a70-887b558cda19\\models\\schema_manifest.json",
+      "artifact_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\163aa1c3-70f0-48e5-9a70-887b558cda19\\generated\\artifact_manifest.json",
+      "session_root": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\163aa1c3-70f0-48e5-9a70-887b558cda19"
+    },
+    "world_background": {
+      "source": "stage1.pipeline",
+      "artifact": "world_background",
+      "world_background_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\163aa1c3-70f0-48e5-9a70-887b558cda19\\generated\\plan\\world_background.json",
+      "execution_plan_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\163aa1c3-70f0-48e5-9a70-887b558cda19\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\163aa1c3-70f0-48e5-9a70-887b558cda19\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\163aa1c3-70f0-48e5-9a70-887b558cda19\\generated\\world_template.json",
+      "schema_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\163aa1c3-70f0-48e5-9a70-887b558cda19\\models\\schema_manifest.json",
+      "artifact_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\163aa1c3-70f0-48e5-9a70-887b558cda19\\generated\\artifact_manifest.json",
+      "session_root": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\163aa1c3-70f0-48e5-9a70-887b558cda19"
+    }
+  }
+}

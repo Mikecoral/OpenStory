@@ -1,0 +1,24 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+description:
+  type: str
+is_contested_zone:
+  type: str
+  option: true
+secret_purpose:
+  type: str
+  option: true
+historical_significance:
+  type: str
+  option: true
+current_occupant_faction:
+  type: str
+  option: true
+known_alias:
+  type: str
+  option: true

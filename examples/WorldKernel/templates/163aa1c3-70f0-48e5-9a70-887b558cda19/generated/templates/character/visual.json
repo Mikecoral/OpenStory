@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "attire_style",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "headband_symbol",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "distinctive_mark",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

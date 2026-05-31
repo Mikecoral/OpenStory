@@ -1,0 +1,868 @@
+{
+  "artifact_type": "path_edge",
+  "items": [
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:006",
+        "name": "木叶村中心主干道",
+        "type": "内部通道",
+        "affiliated_village": "木叶隐村",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:009",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:003",
+        "bidirectional": true,
+        "distance_km": "1",
+        "checkpoints": "0",
+        "passes_neutral_territory": "",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "pass_required": "",
+        "rank_restriction": "",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:016",
+        "name": "砂隐村主街",
+        "type": "内部通道",
+        "affiliated_village": "砂隐村",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:013",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:007",
+        "bidirectional": true,
+        "distance_km": "1.5",
+        "checkpoints": "",
+        "passes_neutral_territory": "",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "pass_required": "",
+        "rank_restriction": "",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:019",
+        "name": "雾隐村水网主航道",
+        "type": "内部水路",
+        "affiliated_village": "雾隐村",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:008",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:011",
+        "bidirectional": true,
+        "distance_km": "2",
+        "checkpoints": "1",
+        "passes_neutral_territory": "",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "限定时段",
+        "danger_level": "低",
+        "required_items": "无",
+        "pass_required": "",
+        "rank_restriction": "",
+        "night_travel_allowed": "false",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:015",
+        "name": "岩隐村岩窟隧道",
+        "type": "内部隧道",
+        "affiliated_village": "岩隐村",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:006",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:014",
+        "bidirectional": true,
+        "distance_km": "0.8",
+        "checkpoints": "",
+        "passes_neutral_territory": "",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "pass_required": "",
+        "rank_restriction": "",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:023",
+        "name": "云隐村雷云阶",
+        "type": "内部台阶",
+        "affiliated_village": "云隐村",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:010",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:012",
+        "bidirectional": true,
+        "distance_km": "1.2",
+        "checkpoints": "2",
+        "passes_neutral_territory": "",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "雷遁忍术识别",
+        "pass_required": "",
+        "rank_restriction": "",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:007",
+        "name": "铁之国中央广场",
+        "type": "广场通道",
+        "affiliated_village": "铁之国",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:004",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:005",
+        "bidirectional": true,
+        "distance_km": "0.3",
+        "checkpoints": "",
+        "passes_neutral_territory": "true",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "pass_required": "",
+        "rank_restriction": "",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:005",
+        "name": "火之国大名街道",
+        "type": "主干道",
+        "affiliated_village": "木叶隐村",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:009",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:002",
+        "bidirectional": true,
+        "distance_km": "50",
+        "checkpoints": "3",
+        "passes_neutral_territory": "",
+        "pilgrimage_route": "",
+        "trade_cities": "火之都城郊镇"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "无",
+        "pass_required": "",
+        "rank_restriction": "无",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:003",
+        "name": "火影专用联络道",
+        "type": "秘密通道",
+        "affiliated_village": "木叶隐村",
+        "path_type": "保密路线",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:003",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:002",
+        "bidirectional": true,
+        "distance_km": "48",
+        "checkpoints": "1",
+        "passes_neutral_territory": "",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "受限",
+        "danger_level": "低",
+        "required_items": "火影令符",
+        "pass_required": "",
+        "rank_restriction": "上忍以上",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:022",
+        "name": "风火同盟路线",
+        "type": "国际通道",
+        "affiliated_village": "木叶隐村",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "同盟补给线",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:009",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:013",
+        "bidirectional": true,
+        "distance_km": "800",
+        "checkpoints": "5",
+        "passes_neutral_territory": "true",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "中",
+        "required_items": "通行证",
+        "pass_required": "",
+        "rank_restriction": "中忍以上",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "晓组织袭击风险",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:014",
+        "name": "风土边境走廊",
+        "type": "边境通道",
+        "affiliated_village": "砂隐村",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "边境贸易",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:013",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:006",
+        "bidirectional": true,
+        "distance_km": "700",
+        "checkpoints": "7",
+        "passes_neutral_territory": "true",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "受限",
+        "danger_level": "高",
+        "required_items": "国境通行证",
+        "pass_required": "",
+        "rank_restriction": "",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "边境冲突",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:013",
+        "name": "土雷对峙线",
+        "type": "战区路线",
+        "affiliated_village": "",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "军事前线",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:006",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:010",
+        "bidirectional": true,
+        "distance_km": "500",
+        "checkpoints": "10",
+        "passes_neutral_territory": "",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "封闭",
+        "danger_level": "致命",
+        "required_items": "战争许可",
+        "pass_required": "",
+        "rank_restriction": "",
+        "night_travel_allowed": "false",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "雷影部队/岩影部队",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:021",
+        "name": "雷火旧战场",
+        "type": "历史路线",
+        "affiliated_village": "",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "修复关系",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:010",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:009",
+        "bidirectional": true,
+        "distance_km": "900",
+        "checkpoints": "6",
+        "passes_neutral_territory": "true",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "谨慎",
+        "danger_level": "高",
+        "required_items": "外交使团证明",
+        "pass_required": "",
+        "rank_restriction": "上忍带队",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "残余云隐忍者",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:017",
+        "name": "水火光暗路线",
+        "type": "秘密水路",
+        "affiliated_village": "雾隐村",
+        "path_type": "暗部专用",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:008",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:009",
+        "bidirectional": true,
+        "distance_km": "1200",
+        "checkpoints": "3",
+        "passes_neutral_territory": "true",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "秘密",
+        "danger_level": "中",
+        "required_items": "暗部令牌",
+        "pass_required": "",
+        "rank_restriction": "",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "",
+        "trap_density": "",
+        "special_ability_needed": "水遁或冰遁",
+        "time_window": "夜间"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:010",
+        "name": "木叶代表团路线",
+        "type": "峰会通路",
+        "affiliated_village": "木叶隐村",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:009",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:004",
+        "bidirectional": true,
+        "distance_km": "300",
+        "checkpoints": "4",
+        "passes_neutral_territory": "true",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "无",
+        "pass_required": "",
+        "rank_restriction": "无",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:012",
+        "name": "砂隐代表团路线",
+        "type": "峰会通路",
+        "affiliated_village": "砂隐村",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:013",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:004",
+        "bidirectional": true,
+        "distance_km": "600",
+        "checkpoints": "5",
+        "passes_neutral_territory": "true",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "中",
+        "required_items": "沙漠补给",
+        "pass_required": "",
+        "rank_restriction": "",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "true",
+        "hostile_threat_level": "",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:009",
+        "name": "雾隐代表团路线",
+        "type": "峰会通路",
+        "affiliated_village": "雾隐村",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:008",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:004",
+        "bidirectional": true,
+        "distance_km": "1500",
+        "checkpoints": "6",
+        "passes_neutral_territory": "true",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "中",
+        "required_items": "航海工具",
+        "pass_required": "",
+        "rank_restriction": "",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "海盗",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:008",
+        "name": "岩隐代表团路线",
+        "type": "峰会通路",
+        "affiliated_village": "岩隐村",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:006",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:004",
+        "bidirectional": true,
+        "distance_km": "900",
+        "checkpoints": "7",
+        "passes_neutral_territory": "true",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "中",
+        "required_items": "向导",
+        "pass_required": "",
+        "rank_restriction": "",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "true",
+        "hostile_threat_level": "",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:011",
+        "name": "云隐代表团路线",
+        "type": "峰会通路",
+        "affiliated_village": "云隐村",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:010",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:004",
+        "bidirectional": true,
+        "distance_km": "1100",
+        "checkpoints": "8",
+        "passes_neutral_territory": "true",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "高",
+        "required_items": "雷遁抗性装备",
+        "pass_required": "",
+        "rank_restriction": "",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "雷云风暴",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:002",
+        "name": "晓之潜入路线",
+        "type": "秘密通道",
+        "affiliated_village": "晓组织",
+        "path_type": "渗透路径",
+        "under_surveillance": "false",
+        "barrier_type": "",
+        "strategic_significance": "",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:001",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:005",
+        "bidirectional": true,
+        "distance_km": "10",
+        "checkpoints": "0",
+        "passes_neutral_territory": "true",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "秘密",
+        "danger_level": "致命",
+        "required_items": "幻术破解术",
+        "pass_required": "",
+        "rank_restriction": "",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "",
+        "trap_density": "中等",
+        "special_ability_needed": "隐身术",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:001",
+        "name": "晓之突袭路线",
+        "type": "秘密通道",
+        "affiliated_village": "晓组织",
+        "path_type": "渗透路径",
+        "under_surveillance": "false",
+        "barrier_type": "",
+        "strategic_significance": "",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:001",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:004",
+        "bidirectional": true,
+        "distance_km": "8",
+        "checkpoints": "1",
+        "passes_neutral_territory": "true",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "秘密",
+        "danger_level": "致命",
+        "required_items": "暗杀装备",
+        "pass_required": "",
+        "rank_restriction": "",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "",
+        "trap_density": "",
+        "special_ability_needed": "空间忍术",
+        "time_window": "五影会谈期间"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:004",
+        "name": "大名参议路线",
+        "type": "外交通道",
+        "affiliated_village": "火之国",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:002",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:004",
+        "bidirectional": true,
+        "distance_km": "280",
+        "checkpoints": "3",
+        "passes_neutral_territory": "true",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "无",
+        "pass_required": "",
+        "rank_restriction": "无",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:018",
+        "name": "水雷暗中航道",
+        "type": "秘密海上路线",
+        "affiliated_village": "雾隐村",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "情报交换",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:008",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:010",
+        "bidirectional": true,
+        "distance_km": "800",
+        "checkpoints": "2",
+        "passes_neutral_territory": "true",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "秘密",
+        "danger_level": "高",
+        "required_items": "密文协议",
+        "pass_required": "",
+        "rank_restriction": "",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "",
+        "hostile_threat_level": "水之国暗部",
+        "trap_density": "",
+        "special_ability_needed": "水路导航",
+        "time_window": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:020",
+        "name": "风沙海上通道",
+        "type": "贸易航线",
+        "affiliated_village": "砂隐村",
+        "path_type": "",
+        "under_surveillance": "",
+        "barrier_type": "",
+        "strategic_significance": "",
+        "historical_artifact": ""
+      },
+      "endpoints": {
+        "from_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:013",
+        "to_id": "e:163aa1c3_70f0_48e5_9a70_887b558cda19:loc:008",
+        "bidirectional": true,
+        "distance_km": "1400",
+        "checkpoints": "4",
+        "passes_neutral_territory": "true",
+        "pilgrimage_route": "",
+        "trade_cities": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "高",
+        "required_items": "船票",
+        "pass_required": "",
+        "rank_restriction": "",
+        "night_travel_allowed": "",
+        "weather_vulnerability": "true",
+        "hostile_threat_level": "台风",
+        "trap_density": "",
+        "special_ability_needed": "",
+        "time_window": ""
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:006",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:016",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:019",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:015",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:023",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:007",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:005",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:003",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:022",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:014",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:013",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:021",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:017",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:010",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:012",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:009",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:008",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:011",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:002",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:001",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:004",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:018",
+    "e:163aa1c3_70f0_48e5_9a70_887b558cda19:path:020"
+  ],
+  "upstream_step_ids": [
+    "generate_paths"
+  ],
+  "warnings": [],
+  "provenance": {
+    "result_count": 1
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "group_id",
+      "type": "str",
+      "required": true,
+      "ref": "institution"
+    },
+    {
+      "name": "reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "trust_rating_with_carols",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "membership_in_resistance_cell",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "informer_suspicion_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "house_prefect_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "relationship_with_snape",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+dim_name: CapabilitiesDim
+skills:
+  type: list_str
+level:
+  type: str
+weaknesses:
+  type: str
+occlumency_proficiency:
+  type: str
+  option: true
+animagus_form:
+  type: str
+  option: true
+patronus_type:
+  type: str
+  option: true
+dark_arts_knowledge:
+  type: str
+  option: true
+illegal_spell_mastery:
+  type: str
+  option: true
+undercover_communication_skills:
+  type: str
+  option: true

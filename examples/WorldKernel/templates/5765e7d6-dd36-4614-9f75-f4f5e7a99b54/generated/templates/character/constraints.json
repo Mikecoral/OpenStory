@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "forbidden_actions",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "taboos",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "heavenly_secrecy_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "destiny_immutable_chain",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "sacred_forbidden_boundaries",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "ritual_and_social_taboo",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

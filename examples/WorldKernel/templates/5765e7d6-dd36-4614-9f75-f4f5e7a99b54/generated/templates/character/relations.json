@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "relation_ids",
+      "type": "list_str",
+      "required": true,
+      "ref": "relation"
+    },
+    {
+      "name": "karmic_causal_pair",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "divine_mortal_connection",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "blood_and_fate_link",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "master_servant_debt",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

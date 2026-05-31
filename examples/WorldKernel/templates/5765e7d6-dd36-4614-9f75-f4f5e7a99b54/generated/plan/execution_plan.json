@@ -1,0 +1,36 @@
+{
+  "steps": [
+    {
+      "step_id": "generate_locations",
+      "generator_type": "location_generator",
+      "target_entity_type": "location",
+      "batch_size": 7,
+      "priority": 1,
+      "description": "生成所有地点实体，包括神话仙境、住宅、寺庙、街道、自然景观、官府场所，共7个"
+    },
+    {
+      "step_id": "generate_paths",
+      "generator_type": "path_generator",
+      "target_entity_type": "path",
+      "batch_size": 5,
+      "priority": 2,
+      "description": "生成地点之间的路径/通道，如十里街连接甄宅与葫芦庙，灵河岸通往红尘等"
+    },
+    {
+      "step_id": "generate_characters",
+      "generator_type": "character_generator",
+      "target_entity_type": "character",
+      "batch_size": 8,
+      "priority": 3,
+      "description": "生成所有角色实体，包括神仙异人、下凡仙人、书生、乡绅、丫鬟、儿童，共8个"
+    },
+    {
+      "step_id": "generate_relations",
+      "generator_type": "relation_generator",
+      "target_entity_type": "relation",
+      "batch_size": 10,
+      "priority": 4,
+      "description": "生成角色之间的关系，重点覆盖神话因果、尘世姻缘、主仆恩遇等"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "current_state",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "ownership",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "capacity",
+      "type": "int",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "condition_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "garrison_count",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "hidden_feature_available",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "evidence_of_resistance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "curfew_applicable",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

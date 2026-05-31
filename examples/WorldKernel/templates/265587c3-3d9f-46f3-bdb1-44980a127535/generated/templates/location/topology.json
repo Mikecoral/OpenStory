@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "name": "connected_to",
+      "type": "list_str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "parent_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "layer",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "entrance_type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "secret_passages",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "restricted_zone",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "floor_number",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "nearby_landmarks",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "escape_route",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "layer_override",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

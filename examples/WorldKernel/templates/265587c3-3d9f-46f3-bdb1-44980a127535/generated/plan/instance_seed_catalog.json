@@ -1,0 +1,169 @@
+{
+  "session_id": "265587c3-3d9f-46f3-bdb1-44980a127535",
+  "instance_seeds": {
+    "location": [
+      {
+        "seed_id": "dark_arts_classroom",
+        "name": "黑魔法防御课教室",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "卡罗兄妹实施惩罚与恐怖教学的核心场所",
+        "archetype_id": "teaching_space"
+      },
+      {
+        "seed_id": "transfiguration_classroom",
+        "name": "变形课教室",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "麦格教授暗中保护学生、维持正常教学的阵地",
+        "archetype_id": "teaching_space"
+      },
+      {
+        "seed_id": "great_hall",
+        "name": "大礼堂",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "全校强制集会、用餐及下达新规的焦点空间",
+        "archetype_id": "communal_space"
+      },
+      {
+        "seed_id": "gryffindor_tower",
+        "name": "格兰芬多塔楼",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 2,
+        "role_in_world": "学生抵抗小组的主要秘密集会与藏身地",
+        "archetype_id": "dormitory"
+      },
+      {
+        "seed_id": "forbidden_forest",
+        "name": "禁林",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.97,
+        "generation_priority": 2,
+        "role_in_world": "秘密传递情报、藏匿违禁物品的野外空间",
+        "archetype_id": "outdoor_space"
+      },
+      {
+        "seed_id": "library",
+        "name": "图书馆",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 2,
+        "role_in_world": "禁书区藏有抵抗相关的黑魔法防御知识，平斯夫人暗中提供帮助",
+        "archetype_id": "functional_area"
+      },
+      {
+        "seed_id": "room_of_requirement",
+        "name": "有求必应屋",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "D.A.抵抗组织的活动总部，后被食死徒焚毁",
+        "archetype_id": "hidden_space"
+      }
+    ],
+    "character": [
+      {
+        "seed_id": "neville_longbottom",
+        "name": "纳威·隆巴顿",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "校内公开抵抗运动的领袖，重建D.A.",
+        "archetype_id": "student"
+      },
+      {
+        "seed_id": "luna_lovegood",
+        "name": "卢娜·洛夫古德",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 2,
+        "role_in_world": "支持抵抗的拉文克劳学生，提供灵感和隐藏资源",
+        "archetype_id": "student"
+      },
+      {
+        "seed_id": "ginny_weasley",
+        "name": "金妮·韦斯莱",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 2,
+        "role_in_world": "格兰芬多抵抗核心成员之一，负责联络与行动执行",
+        "archetype_id": "student"
+      },
+      {
+        "seed_id": "minerva_mcgonagall",
+        "name": "米勒娃·麦格",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "代理校长，表面服从食死徒，暗中保护学生与抵抗行为",
+        "archetype_id": "faculty"
+      },
+      {
+        "seed_id": "filius_flitwick",
+        "name": "菲利乌斯·弗立维",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 2,
+        "role_in_world": "拉文克劳院长，利用咒语技巧协助抵抗，传递信息",
+        "archetype_id": "faculty"
+      },
+      {
+        "seed_id": "amycus_carrow",
+        "name": "阿米库斯·卡罗",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "食死徒派来的黑魔法防御术教授，负责惩罚与恐怖统治",
+        "archetype_id": "death_eater_staff"
+      },
+      {
+        "seed_id": "alecto_carrow",
+        "name": "阿莱克托·卡罗",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "食死徒派来的麻瓜研究教授，监视学生与执行宵禁",
+        "archetype_id": "death_eater_staff"
+      },
+      {
+        "seed_id": "nearly_headless_nick",
+        "name": "差点没头的尼克",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "格兰芬多塔的幽灵，为学生提供警告与精神支持",
+        "archetype_id": "ghost_portrait"
+      },
+      {
+        "seed_id": "kreacher",
+        "name": "克利切",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.85,
+        "generation_priority": 3,
+        "role_in_world": "霍格沃茨厨房的家养小精灵，暗中为抵抗小组提供食物与信息",
+        "archetype_id": "house_elf"
+      }
+    ]
+  }
+}

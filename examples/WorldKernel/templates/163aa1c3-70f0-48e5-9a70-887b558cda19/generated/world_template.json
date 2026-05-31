@@ -1,0 +1,449 @@
+{
+  "primary": "ninja_political_summit",
+  "secondary": null,
+  "confidence": 0.95,
+  "tags": [
+    "忍者",
+    "五影会谈",
+    "政治博弈",
+    "忍界大战",
+    "衍生"
+  ],
+  "world_name": "火影忍者五影会谈时期",
+  "world_origin_summary": "衍生自《火影忍者》系列第四次忍界大战前夕，五大忍者村为应对晓组织威胁召开史无前例的五影会谈",
+  "scope": "region",
+  "simulation_start": {
+    "time_point": "五影会谈召开前夕",
+    "trigger_event": "晓组织捕获并封印尾兽，云隐村提议召开五影会谈共商对策",
+    "year": "忍者历约1200年",
+    "narrative_context": "晓组织收集尾兽的计划日益逼近，五大忍者村之间的历史恩怨与利益冲突在外部威胁下被迫寻求合作"
+  },
+  "location_archetypes": [
+    {
+      "type_id": "summit_venue",
+      "type_name": "会谈场地",
+      "description": "五影及随从正式会晤的场所，象征忍界最高级别的外交场合",
+      "common_fields": [
+        "host_village",
+        "capacity",
+        "security_level",
+        "ambient_level"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "iron_country_meeting_hall",
+          "name": "铁之国会议大厅",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "五影会谈的正式举办地，中立国铁之国领土"
+        }
+      ]
+    },
+    {
+      "type_id": "hidden_village",
+      "type_name": "隐村",
+      "description": "五大国所属忍者村，是忍者政治、军事和生活的核心单位",
+      "common_fields": [
+        "kage_name",
+        "village_population",
+        "primary_nature_release",
+        "military_strength"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "konohagakure",
+          "name": "木叶隐村",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "主角所在的忍者村，火影所在之地，忍界变革的发源地"
+        }
+      ]
+    },
+    {
+      "type_id": "training_ground",
+      "type_name": "训练场",
+      "description": "忍者日常训练、演习和比试的场地，也是村内力量展示的空间",
+      "common_fields": [
+        "location_type",
+        "capacity",
+        "accessible_to",
+        "special_features"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "training_ground_7",
+          "name": "训练场第七号",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.95,
+          "generation_priority": 2,
+          "role_in_world": "木叶下忍经常使用的训练场地，见证了第七班的成长"
+        }
+      ]
+    },
+    {
+      "type_id": "hokage_residence",
+      "type_name": "影之官邸",
+      "description": "历代火影的办公与居住场所，也是村内最高决策的象征",
+      "common_fields": [
+        "current_resident",
+        "historical_significance",
+        "guard_level",
+        "secret_passages"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "hokage_building",
+          "name": "火影大楼",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 1,
+          "role_in_world": "第五代火影纲手的办公地点，木叶行政中枢"
+        }
+      ]
+    },
+    {
+      "type_id": "akatsuki_hideout",
+      "type_name": "晓组织据点",
+      "description": "晓组织成员秘密活动的藏身处，通常位于偏远或隐蔽地带",
+      "common_fields": [
+        "location_region",
+        "security_mechanisms",
+        "current_occupants",
+        "purpose"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "rain_village_tower",
+          "name": "雨隐村高塔",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.97,
+          "generation_priority": 2,
+          "role_in_world": "晓组织首领佩恩的长期据点，控制雨隐村的象征"
+        }
+      ]
+    },
+    {
+      "type_id": "daimyo_palace",
+      "type_name": "大名宫殿",
+      "description": "五大国大名的居所与政治中心，名义上高于忍者村",
+      "common_fields": [
+        "country",
+        "daimyo_name",
+        "political_influence",
+        "luxury_level"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "fire_country_daimyo_palace",
+          "name": "火之国大名宫殿",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.9,
+          "generation_priority": 3,
+          "role_in_world": "火之国最高统治者居住地，对木叶村有财政和名义上的控制权"
+        }
+      ]
+    }
+  ],
+  "character_archetypes": [
+    {
+      "type_id": "kage",
+      "type_name": "影",
+      "description": "五大忍者村的最高领袖，掌握村内军政大权，代表该村参加五影会谈",
+      "common_fields": [
+        "village",
+        "nature_releases",
+        "political_leaning",
+        "tail_beast_possession"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "tsunade",
+          "name": "纲手",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "第五代火影，木叶的最高代表，以医疗忍者和赌徒闻名"
+        }
+      ]
+    },
+    {
+      "type_id": "elite_jounin",
+      "type_name": "精英上忍",
+      "description": "忍村中战斗力和声誉极高的上忍，常担任影卫或村内关键任务",
+      "common_fields": [
+        "village",
+        "specialty",
+        "mentor_to",
+        "rank"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "kakashi_hatake",
+          "name": "旗木卡卡西",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "木叶精英上忍，第七班导师，被誉为复制忍者"
+        }
+      ]
+    },
+    {
+      "type_id": "anbu_operative",
+      "type_name": "暗部忍者",
+      "description": "直属影指挥的精英特务部队，负责暗杀、情报和秘密行动",
+      "common_fields": [
+        "village",
+        "code_name",
+        "mission_type",
+        "loyalty"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "sai",
+          "name": "佐井",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.95,
+          "generation_priority": 2,
+          "role_in_world": "原根组织成员，后加入第七班，擅长绘画忍术"
+        }
+      ]
+    },
+    {
+      "type_id": "akatsuki_member",
+      "type_name": "晓组织成员",
+      "description": "S级叛忍组成的恐怖组织成员，以收集尾兽为目标，是五影会谈的根本威胁",
+      "common_fields": [
+        "ring_finger",
+        "partner",
+        "nature_release",
+        "tail_beast_target"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "pain",
+          "name": "佩恩",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "晓组织名义首领，六道佩恩的实际控制者，以和平之名行恐怖之实"
+        }
+      ]
+    },
+    {
+      "type_id": "genin",
+      "type_name": "下忍",
+      "description": "最低等级的忍者，通常是刚从忍者学校毕业的年轻一代，是村子的未来",
+      "common_fields": [
+        "village",
+        "team",
+        "sensei",
+        "potential"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "naruto_uzumaki",
+          "name": "漩涡鸣人",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "九尾人柱力，木叶下忍，以成为火影为目标，是剧情核心"
+        }
+      ]
+    },
+    {
+      "type_id": "daimyo",
+      "type_name": "大名",
+      "description": "五大国的世俗统治者，经济上支持忍者村，拥有财政权和部分政治影响",
+      "common_fields": [
+        "country",
+        "wealth_level",
+        "attitude_toward_ninja",
+        "influence_power"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "fire_daimyo",
+          "name": "火之国大名",
+          "importance": "minor",
+          "source_type": "canonical",
+          "confidence": 0.88,
+          "generation_priority": 3,
+          "role_in_world": "火之国的统治者，对木叶费用拨款和首领更替有发言权"
+        }
+      ]
+    },
+    {
+      "type_id": "civilian",
+      "type_name": "平民",
+      "description": "没有忍者能力的普通村民，构成社会主体，忍者战争的直接受害者",
+      "common_fields": [
+        "village_or_city",
+        "occupation",
+        "attitude_toward_ninja",
+        "vulnerability"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "teuchi_ramen_shop",
+          "name": "手打一乐拉面店主",
+          "importance": "minor",
+          "source_type": "canonical",
+          "confidence": 0.9,
+          "generation_priority": 3,
+          "role_in_world": "木叶村平民代表，鸣人常光顾的拉面店老板"
+        }
+      ]
+    }
+  ],
+  "rule_archetypes": [
+    {
+      "type_id": "ninja_rank_system",
+      "type_name": "忍者等级制度",
+      "description": "按照能力和经验划分忍者的等级体系，决定任务授权和职责范围",
+      "common_fields": [
+        "rank_name",
+        "minimum_age",
+        "promotion_criteria",
+        "mission_eligibility"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "genin_chunin_jounin",
+          "name": "下忍-中忍-上忍晋升体系",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "忍者世界的根本等级制度，经过中忍选拔考试晋升"
+        }
+      ]
+    },
+    {
+      "type_id": "mission_rank",
+      "type_name": "任务等级分类",
+      "description": "根据难度和危险程度将任务分为S、A、B、C、D等级，对应不同等级忍者执行",
+      "common_fields": [
+        "rank_letter",
+        "danger_level",
+        "reward_range",
+        "required_ninja_rank"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "srank_mission_system",
+          "name": "S级任务体系",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.95,
+          "generation_priority": 2,
+          "role_in_world": "最高难度任务，通常涉及国家机密或S级忍者，只有精英上忍或影方可执行"
+        }
+      ]
+    },
+    {
+      "type_id": "village_alliance",
+      "type_name": "村际同盟协议",
+      "description": "不同忍者村之间通过缔结条约建立的正式外交关系，规定军事互助和经济合作",
+      "common_fields": [
+        "signatory_villages",
+        "treaty_type",
+        "effective_period",
+        "obligations"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "alliance_treaty_iron_country",
+          "name": "铁之国中立条约",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.93,
+          "generation_priority": 2,
+          "role_in_world": "铁之国作为中立国主办五影会谈，约定不参与忍者纷争"
+        }
+      ]
+    },
+    {
+      "type_id": "tail_beast_control",
+      "type_name": "尾兽管控协议",
+      "description": "五大国关于尾兽分配的平衡协议，每村持有特定尾兽以维持军事实力平衡",
+      "common_fields": [
+        "assigned_village",
+        "jinchuriki",
+        "tail_count",
+        "containment_measures"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "tailed_beast_distribution",
+          "name": "尾兽分配协议",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 1,
+          "role_in_world": "五影会谈的核心议题之一，旨在重新分配或保护尾兽不落入晓组织之手"
+        }
+      ]
+    },
+    {
+      "type_id": "combined_military_command",
+      "type_name": "联合作战指挥链",
+      "description": "五影会谈后建立忍界联军时的临时军事指挥结构，用于协调五大国兵力",
+      "common_fields": [
+        "commander",
+        "unit_divisions",
+        "chain_of_command",
+        "communication_protocol"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "shinobi_alliance_chain",
+          "name": "忍者联军指挥体系",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.94,
+          "generation_priority": 2,
+          "role_in_world": "五影会谈后组建的对抗晓组织的联合军事指挥框架"
+        }
+      ]
+    }
+  ],
+  "world_constraints": [
+    {
+      "constraint_id": "chakra_energy_system",
+      "name": "查克拉能量体系",
+      "description": "忍者使用忍术的基础能量，由身体能量和精神能量混合而成，是忍界一切战斗能力的根本前提",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "great_ninja_village_political_structure",
+      "name": "五大忍者村政治结构",
+      "description": "忍界由五大国及其所属忍者村主导，每个村子由影领导，接受所属国大名的财政支持，但同时享有军事自治权",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "tailed_beast_balance",
+      "name": "尾兽力量平衡",
+      "description": "九只尾兽被分配并封印在五个人柱力体内，维持忍界军事力量微妙平衡；任何一只尾兽被捕获都会打破均衡",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "neutral_ground_inviolability",
+      "name": "中立领土不可侵犯",
+      "description": "铁之国作为永久中立国，主办五影会谈时所有参与者默认遵守不在此地使用武力或发动袭击的约定",
+      "scope": "location"
+    }
+  ]
+}

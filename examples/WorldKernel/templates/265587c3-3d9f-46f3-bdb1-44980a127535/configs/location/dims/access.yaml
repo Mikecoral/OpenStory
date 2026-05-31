@@ -1,0 +1,25 @@
+dim_name: AccessDim
+permissions:
+  type: str
+access_level:
+  type: str
+access_conditions:
+  type: str
+password_required:
+  type: str
+  option: true
+cursed_entry:
+  type: str
+  option: true
+monitoring_level:
+  type: str
+  option: true
+time_restriction:
+  type: str
+  option: true
+invisibility_required:
+  type: str
+  option: true
+alarm_triggered:
+  type: str
+  option: true

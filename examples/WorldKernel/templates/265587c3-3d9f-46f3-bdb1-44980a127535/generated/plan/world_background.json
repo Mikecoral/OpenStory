@@ -1,0 +1,48 @@
+{
+  "world_name": "霍格沃茨魔法学院",
+  "world_origin_summary": "衍生自《哈利·波特与死亡圣器》，食死徒傀儡政权控制下的霍格沃茨，学生与教职工在恐怖中坚守并秘密抵抗",
+  "primary": "magic_school",
+  "secondary": null,
+  "tags": [
+    "魔法",
+    "学院",
+    "衍生",
+    "黑暗时期",
+    "战争",
+    "压迫",
+    "抵抗"
+  ],
+  "scope": "single_location",
+  "simulation_start": {
+    "time_point": "1997-1998学年开学",
+    "trigger_event": "西弗勒斯·斯内普就任校长，阿米库斯·卡罗和阿莱克特·卡罗兄妹被派往学校担任黑魔法防御术与麻瓜研究教授",
+    "year": "1997",
+    "narrative_context": "哈利·波特在外寻找魂器，霍格沃茨由食死徒监控，学生以纳威·隆巴顿为核心组成秘密抵抗组织"
+  },
+  "world_constraints": [
+    {
+      "constraint_id": "magical_secrecy",
+      "name": "魔法世界保密法",
+      "description": "巫师不得在麻瓜面前主动暴露魔法存在，霍格沃茨本身受麻瓜驱逐咒保护",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "death_eater_occupation",
+      "name": "食死徒军事占领",
+      "description": "学校由伏地魔任命的斯内普校长与卡罗兄妹实际控制，任何公开反抗都面临生命危险",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "hogwarts_ancient_protections",
+      "name": "霍格沃茨古老魔法保护",
+      "description": "城堡固有防御：禁止幻影移形、禁止麻瓜进入、校内不能制造魂器，同时也保护校内人员不受外界直接攻击",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "house_system_hierarchy",
+      "name": "学院制度与派系分歧",
+      "description": "四大学院传统深刻影响社交、忠诚与资源分配，斯莱特林被食死徒优待，其他学院受压制",
+      "scope": "global"
+    }
+  ]
+}

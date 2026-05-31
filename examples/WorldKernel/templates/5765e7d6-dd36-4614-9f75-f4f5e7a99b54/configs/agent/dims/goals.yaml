@@ -1,0 +1,19 @@
+dim_name: GoalsDim
+short_term_goal:
+  type: str
+long_term_goal:
+  type: str
+motivation:
+  type: str
+celestial_mission_fullfillment:
+  type: str
+  option: true
+karmic_debt_repayment:
+  type: str
+  option: true
+earthly_ambition:
+  type: str
+  option: true
+destiny_fulfillment_path:
+  type: str
+  option: true

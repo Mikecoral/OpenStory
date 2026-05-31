@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "forbidden_actions",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "taboos",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "banned_books_possession",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "curfew_violation_penalty",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "prohibited_association_with_muggleborns",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "mandatory_dark_arts_attendance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "restricted_owl_use",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "forbidden_use_of_protego_maxima",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

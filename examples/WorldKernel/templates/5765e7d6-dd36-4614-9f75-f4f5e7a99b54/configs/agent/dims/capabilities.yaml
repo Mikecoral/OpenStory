@@ -1,0 +1,19 @@
+dim_name: CapabilitiesDim
+skills:
+  type: list_str
+level:
+  type: str
+weaknesses:
+  type: str
+divine_residual_power:
+  type: str
+  option: true
+prophetic_insight:
+  type: str
+  option: true
+anomaly_detection:
+  type: str
+  option: true
+moral_sensitivity:
+  type: str
+  option: true

@@ -1,0 +1,265 @@
+{
+  "artifact_type": "location_profile",
+  "items": [
+    {
+      "identity": {
+        "id": "e:265587c3_3d9f_46f3_bdb1_44980a127535:loc:001",
+        "name": "黑魔法防御课教室",
+        "type": "teaching_space",
+        "description": "位于城堡三楼东翼的阴森教室，原本明亮的窗户已被永久钉死，只留几缕昏暗的光线斜射在布满抓痕的讲台上。空气中弥漫着铁锈和汗水的腥味，课桌椅排列松散，在黑板上方悬挂着巨大的“咒立停”标志——那其实是卡罗兄妹用来随时施虐的暗号。墙角的橱柜里塞满了被诅咒的物品，其中一些仍带着受害学生的血迹。整个房间透露出持续的恐惧和暴力的气息。",
+        "region": "城堡三楼东翼",
+        "historical_significance": "过去曾是邓布利多担任校长时展示防御咒语的教学场所，现在成为食死徒恐怖统治的象征。",
+        "secret_type": "刑讯室",
+        "occupier_status": "由阿米库斯·卡罗完全控制，阿莱克托·卡罗经常辅助",
+        "is_signposted": "false"
+      },
+      "access": {
+        "permissions": "仅限黑魔法防御术课学生及卡罗兄妹进入；其他师生未经许可不得入内",
+        "access_level": "restricted",
+        "access_conditions": "必须在卡罗兄妹在场时才能进入，任何迟到或早退都会招致钻心咒惩罚",
+        "password_required": "false",
+        "cursed_entry": "true",
+        "monitoring_level": "极高——教室被施了‘窃听咒’和‘视野扩展咒’，卡罗兄妹可在校长办公室远程监视",
+        "time_restriction": "仅在卡罗兄妹设定的课程时间内开放，其他时间锁死并施有防扰咒",
+        "invisibility_required": "",
+        "alarm_triggered": "true"
+      },
+      "state": {
+        "current_state": "教室处于持续警戒状态，墙上有新增的惩罚记录刻痕，地板因频繁的钻心咒练习而出现焦黑斑点。黑板上常留有‘钻心剜骨’的魔咒轨迹。",
+        "ownership": "阿米库斯·卡罗",
+        "capacity": 40,
+        "condition_status": "良好但充满恶意痕迹",
+        "garrison_count": "2",
+        "hidden_feature_available": "true",
+        "evidence_of_resistance": "少数学生在墙壁缝隙中刻下了‘D.A.永不消亡’的小字，在橱柜后藏匿了失效的防咒手套",
+        "curfew_applicable": "true"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:265587c3_3d9f_46f3_bdb1_44980a127535:loc:007",
+        "name": "变形课教室",
+        "type": "classroom",
+        "description": "位于城堡三楼的一间宽敞教室，墙上挂满了各种动物变形过程的挂图，讲台上放着麦格教授使用的教具。食死徒控制下，这里表面上继续正常教学，但麦格教授常利用变形咒语暗中为抵抗学生传递消息或临时改变物品用途以避开监视。",
+        "region": "城堡三楼",
+        "historical_significance": "麦格教授曾在这里多次保护学生免受食死徒惩罚，也是她维护最后一丝正常教学秩序的前线。",
+        "secret_type": "隐蔽通讯点",
+        "occupier_status": "食死徒定期巡楼但较少直接干预课堂内容，卡罗兄妹偶尔突击检查。",
+        "is_signposted": "false"
+      },
+      "access": {
+        "permissions": "仅限选修变形课的霍格沃茨学生及麦格教授进入，食死徒持搜查令可强行闯入",
+        "access_level": "medium",
+        "access_conditions": "上课时间开放；非上课时间需麦格教授的许可或特殊口令（如“石墩出阵”）",
+        "password_required": "false",
+        "cursed_entry": "false",
+        "monitoring_level": "high",
+        "time_restriction": "宵禁后严禁进入",
+        "invisibility_required": "false",
+        "alarm_triggered": "false"
+      },
+      "state": {
+        "current_state": "正常上课，但讲台下的抽屉暗格藏有麦格教授转换形态的信件和地图，课桌下刻有D.A.联络暗号",
+        "ownership": "霍格沃茨学校财产，实际由麦格教授管理",
+        "capacity": 30,
+        "condition_status": "良好，但部分变形挂图被食死徒撕毁后由麦格用魔法修复",
+        "garrison_count": "0",
+        "hidden_feature_available": "true",
+        "evidence_of_resistance": "讲台底部有被施过无痕伸展咒的隐蔽夹层，存放学生传递的抵抗情报",
+        "curfew_applicable": "true"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:265587c3_3d9f_46f3_bdb1_44980a127535:loc:003",
+        "name": "大礼堂",
+        "type": "communal_hall",
+        "description": "霍格沃茨最为宏伟的大厅，穹顶施有魔法光学模拟天象，四张学院长桌和教工席整齐排列。食死徒占领后，原本富丽堂皇的装饰被黑魔标记旗帜覆盖，礼堂成为强制集会、宣布法令以及公开惩罚反抗者的场所。",
+        "region": "城堡一层中央",
+        "historical_significance": "历来是全校师生共同用餐、举行重要仪式的核心空间，如今象征食死徒的恐怖统治。",
+        "secret_type": "公开监视点与地下消息交汇处",
+        "occupier_status": "每顿晚餐必有食死徒监督，阿米库斯·卡罗经常在此时惩罚违禁学生",
+        "is_signposted": "true"
+      },
+      "access": {
+        "permissions": "全校师生强制参加每日用餐及集会；宵禁后禁止进入；食死徒拥有绝对通行权",
+        "access_level": "high",
+        "access_conditions": "用餐时间大门敞开，但需经过斯内普或卡罗兄妹的点名；特殊集会（如抓捕反抗者）时可能封锁所有出口",
+        "password_required": "false",
+        "cursed_entry": "false",
+        "monitoring_level": "extreme",
+        "time_restriction": "宵禁后(晚8点后)严禁逗留，违者施钻心咒",
+        "invisibility_required": "false",
+        "alarm_triggered": "true"
+      },
+      "state": {
+        "current_state": "天花板挂着巨大黑魔标记旗帜，四院旗帜被移除；教工席上食死徒占据主座，学院长桌上学生的自由交谈被严格限制",
+        "ownership": "霍格沃茨，实际被食死徒控制用于维持秩序",
+        "capacity": 600,
+        "condition_status": "表面华丽但有被黑魔法痕迹污染的角落，墙壁新增了监听咒语符文",
+        "garrison_count": "4",
+        "hidden_feature_available": "false",
+        "evidence_of_resistance": "多比曾在此显形留下反抗传单，后遭清除，但地砖下仍有学生刻下的‘D.A.仍在’字样",
+        "curfew_applicable": "true"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:265587c3_3d9f_46f3_bdb1_44980a127535:loc:004",
+        "name": "格兰芬多塔楼",
+        "type": "dormitory",
+        "description": "位于城堡七楼的格兰芬多公共休息室和宿舍区，由胖夫人的肖像守卫入口。食死徒统治下，这里成为少数仍有安全感的据点，纳威、金妮等抵抗核心成员常利用公共休息室的壁炉后面隐藏的密道和活板地板进行秘密集会。",
+        "region": "城堡七楼西侧",
+        "historical_significance": "邓布利多及历代格兰芬多领袖的聚集地；如今是校内抵抗运动的心脏，多次组织夜间隐身行动。",
+        "secret_type": "抵抗活动总部",
+        "occupier_status": "食死徒无法直接进入公共休息室（需口令），但派有斯莱特林线人混入监视",
+        "is_signposted": "true"
+      },
+      "access": {
+        "permissions": "仅限格兰芬多学生及获得学院许可的教师（麦格、弗立维等）进入，女性宿舍男性不得入内（但魔法可绕过）",
+        "access_level": "very high",
+        "access_conditions": "必须在胖夫人面前说出正确口令（口令频繁更换，由抵抗小组内部传递）；食死徒无法通过，但可能派遣卧底骗取口令",
+        "password_required": "true",
+        "cursed_entry": "false",
+        "monitoring_level": "medium",
+        "time_restriction": "宵禁后原则上禁止出入，但公共休息室内活动不受限",
+        "invisibility_required": "false",
+        "alarm_triggered": "false"
+      },
+      "state": {
+        "current_state": "表面维持日常氛围，壁炉里的火焰总是温暖；但壁炉后方的石墙被纳威等人挖出一个隐蔽空间，存放复制的宝剑、增多的魔药和地图；宿舍床下藏有损坏的银色哨子作为联络信号。",
+        "ownership": "霍格沃茨，由格兰芬多学院师生共同守护",
+        "capacity": 60,
+        "condition_status": "良好，但公共休息室窗帘被施了抗窥视咒，以防户外摄像",
+        "garrison_count": "0",
+        "hidden_feature_available": "true",
+        "evidence_of_resistance": "公共休息室一角新添了一张倒置的圣杯图案涂鸦，象征D.A.的延续；少数学生枕下存放带有‘D.A.’字样的信件。",
+        "curfew_applicable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:265587c3_3d9f_46f3_bdb1_44980a127535:loc:002",
+        "name": "禁林",
+        "type": "outdoor_space",
+        "description": "霍格沃茨城堡北侧一大片幽暗的古森林，古木参天，藤蔓缠绕，光线常年昏暗。林间密布着形形色色的魔法生物和诡异声响，偶尔能瞥见马人、夜骐和八眼巨蛛的影子。这条边界模糊的荒野地带是学生们平日被严令禁止进入的危险区域，但在食死徒统治的学年里，因为巡逻稀疏、魔法追踪不易，它反而成了抵抗组织秘密传递情报和藏匿违禁物品的天然庇护所。树根下的空洞、枯树洞和幽谷深处的石板下藏着魔药、书籍和信件。",
+        "region": "",
+        "historical_significance": "",
+        "secret_type": "",
+        "occupier_status": "",
+        "is_signposted": ""
+      },
+      "access": {
+        "permissions": "仅限获得特许的高年级学生或教师进入，低年级与无护伴者禁止；食死徒巡逻时亦有权进入搜查，但实际上畏于危险生物极少深入",
+        "access_level": "restricted_public",
+        "access_conditions": "需持有经过院长签字的通行许可，或由教授陪同；抵抗组织成员常利用夜色掩护和隐身衣悄然潜入，但也提防夜骐和蜘蛛的袭击",
+        "password_required": "false",
+        "cursed_entry": "false",
+        "monitoring_level": "low",
+        "time_restriction": "建议在日出后至日落前进入，夜晚极度危险",
+        "invisibility_required": "false",
+        "alarm_triggered": ""
+      },
+      "state": {
+        "current_state": "野生原始状态，保持着高度的魔法生态活性，但近期由于抵抗组织的使用而出现若干隐蔽的小径和临时藏匿点",
+        "ownership": "霍格沃茨魔法学院",
+        "capacity": 10000,
+        "condition_status": "年久未维护，自然侵蚀严重，但魔法生物繁衍旺盛",
+        "garrison_count": "0",
+        "hidden_feature_available": "true",
+        "evidence_of_resistance": "true",
+        "curfew_applicable": "true"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:265587c3_3d9f_46f3_bdb1_44980a127535:loc:005",
+        "name": "图书馆",
+        "type": "functional_area",
+        "description": "霍格沃茨城堡四楼一侧的巨大藏书室，穹顶高悬，温暖的黄色灯光洒在一排排高耸的书架上。空气中飘散着陈旧的羊皮纸和墨水味。普通阅览区向所有学生开放，但深处铁栅栏后的禁书区则由阿莱克托·卡罗亲自盯紧，只有持有正式授权的教师或高年级学生才能接近。管理员平斯夫人表面严厉地维持秩序，却在暗中为抵抗成员留出特定书籍、用无声咒语掩盖借阅痕迹，甚至将禁书区的关键理论知识藏在其他书脊里。",
+        "region": "",
+        "historical_significance": "",
+        "secret_type": "",
+        "occupier_status": "",
+        "is_signposted": ""
+      },
+      "access": {
+        "permissions": "所有学生可进入普通阅览区；禁书区需要任意教师或卡罗兄妹签名许可；平斯夫人掌握备用口令，仅限校内抵抗核心成员知晓",
+        "access_level": "restricted_authorised",
+        "access_conditions": "进入需穿戴整齐，保持绝对安静；禁书区入口处有魔咒检测，携带未授权的魔法物品可能触发警报；平斯夫人常以巡逻为掩护，在书架间传递纸条",
+        "password_required": "true",
+        "cursed_entry": "false",
+        "monitoring_level": "high",
+        "time_restriction": "早晨八点至晚上八点（宵禁后关闭，但在卡罗的禁令下可能提前清场）",
+        "invisibility_required": "false",
+        "alarm_triggered": "false"
+      },
+      "state": {
+        "current_state": "正常运营，但气氛压抑，阿莱克托·卡罗每日不定时巡视禁书区，平斯夫人表面上全力配合，暗中却在书架后设立小型的误导咒和隐藏书架",
+        "ownership": "霍格沃茨魔法学院",
+        "capacity": 200,
+        "condition_status": "良好，书籍保存完好，但禁书区的铁链和封印比往年增多",
+        "garrison_count": "0",
+        "hidden_feature_available": "true",
+        "evidence_of_resistance": "true",
+        "curfew_applicable": "true"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:265587c3_3d9f_46f3_bdb1_44980a127535:loc:006",
+        "name": "有求必应屋",
+        "type": "hidden_space",
+        "description": "位于霍格沃茨城堡八楼巨怪挂毯对面的一堵空白墙壁后，是一间只对急需它的人显现的神奇房间。在1997-1998学年，它被纳威·隆巴顿的D.A.抵抗组织反复改造为一间宽敞的训练室：四壁挂满陈旧魔法地图和倒伏的练习假人，角落里堆放着从各处收集来的魔药瓶、旧课本和防御咒语笔记，地上散落着使用过后的魔杖火光痕迹。这间房间偶尔也会变为储藏室或避难所，用于藏匿被卡罗兄妹追捕的学生。然而，这座秘密基地的寿命已在倒数——据传闻，克拉布和马尔福已经嗅到了它的异样，学期末它将在一场厉火中彻底焚毁。",
+        "region": "",
+        "historical_significance": "",
+        "secret_type": "",
+        "occupier_status": "",
+        "is_signposted": ""
+      },
+      "access": {
+        "permissions": "仅限知晓其存在并带着明确需求走过入口三次的巫师才能进入；D.A.成员约定暗号为集中意念默念“我需要一个训练室”并在八楼走廊来回踱步三次",
+        "access_level": "secret",
+        "access_conditions": "必须在走廊无人时使用，避免被食死徒监控的学生看到；进入后房间会自动隔绝外界声音，但进出需保持警惕，以免留下痕迹",
+        "password_required": "false",
+        "cursed_entry": "false",
+        "monitoring_level": "low",
+        "time_restriction": "任意时间均可，但建议在宵禁后使用以规避卡罗兄妹的巡逻",
+        "invisibility_required": "false",
+        "alarm_triggered": "false"
+      },
+      "state": {
+        "current_state": "功能完善，房间内部可根据使用者的需求小幅变形；当前被D.A.用作训练和存放违禁物品的据点，墙壁上留有练习黑魔法防御术的焦痕和破碎的训练靶子，气味中混杂着火焰、尘土和一丝秘密的希望",
+        "ownership": "霍格沃茨城堡固有魔法（无明确所有者，但食死徒尚未正式发现）",
+        "capacity": 50,
+        "condition_status": "良好，但持续高强度使用可能导致自我恢复速度下降，且已出现轻微的魔法不稳定（偶然关闭后无法立即召唤）",
+        "garrison_count": "0",
+        "hidden_feature_available": "true",
+        "evidence_of_resistance": "true",
+        "curfew_applicable": "false"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:265587c3_3d9f_46f3_bdb1_44980a127535:loc:001",
+    "e:265587c3_3d9f_46f3_bdb1_44980a127535:loc:007",
+    "e:265587c3_3d9f_46f3_bdb1_44980a127535:loc:003",
+    "e:265587c3_3d9f_46f3_bdb1_44980a127535:loc:004",
+    "e:265587c3_3d9f_46f3_bdb1_44980a127535:loc:002",
+    "e:265587c3_3d9f_46f3_bdb1_44980a127535:loc:005",
+    "e:265587c3_3d9f_46f3_bdb1_44980a127535:loc:006"
+  ],
+  "upstream_step_ids": [
+    "generate_locations"
+  ],
+  "warnings": [
+    "batch 1: generated 1/4 items, 3 missing; retrying for missing seeds",
+    "batch 1: retried due to low quality score"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

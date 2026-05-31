@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "members",
+      "type": "list_str",
+      "required": true,
+      "ref": "character"
+    },
+    {
+      "name": "roles",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "entry_criteria",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "total_active_members",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "member_rank_distribution",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "elite_units_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "clan_affiliations",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "jinchuriki_possession",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "anbu_or_black_ops_existence",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

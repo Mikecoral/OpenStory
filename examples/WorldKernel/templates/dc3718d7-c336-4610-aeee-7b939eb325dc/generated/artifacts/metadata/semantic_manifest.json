@@ -1,0 +1,71 @@
+{
+  "world_id": "dc3718d7-c336-4610-aeee-7b939eb325dc",
+  "source_ids": [
+    "visual-e2e"
+  ],
+  "schema_version": "stage2-semantic-v1",
+  "artifact_files": {
+    "location_profile": "locations\\locations.json",
+    "character_profile": "characters\\characters.json",
+    "path_edge": "path_graph\\path_graph.json",
+    "relation_edge": "relation_graph\\relation_graph.json"
+  },
+  "counts": {
+    "location_profile": 7,
+    "character_profile": 7,
+    "path_edge": 10,
+    "relation_edge": 11
+  },
+  "constraints": [
+    {
+      "constraint_id": "magical_secrecy",
+      "name": "巫师保密法",
+      "description": "巫师世界必须对麻瓜隐藏魔法存在，食死徒虽掌权但延续此原则以免引起麻瓜干预。",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "death_eater_occupation",
+      "name": "食死徒军事占领",
+      "description": "霍格沃茨被伏地魔势力全面控制，校长斯内普表面忠诚，卡罗兄妹实施恐怖统治，公开反抗将招致死亡或囚禁。",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "ancient_magic_binding",
+      "name": "古代魔法契约",
+      "description": "霍格沃茨城堡本身被古老魔法保护与约束，例如不能有食死徒直接杀死城堡内的学生（非契约杀死），以及邓布利多遗留下的灵魂画像限制。",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "resistance_network",
+      "name": "潜在抵抗组织",
+      "description": "尽管压制严厉，凤凰社残留成员、DA及校级反抗力量（如麦格、斯拉格霍恩等）仍在暗中活动，利用城堡秘密通道与有求必应屋构建了有限但有效的抵抗网络。",
+      "scope": "faction"
+    }
+  ],
+  "timestamp": "2026-05-31T07:29:21.645017+00:00",
+  "provenance": {
+    "stage1_inputs": {
+      "source": "stage1.pipeline",
+      "source_id": "visual-e2e",
+      "world_id": "dc3718d7-c336-4610-aeee-7b939eb325dc",
+      "world_background_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\dc3718d7-c336-4610-aeee-7b939eb325dc\\generated\\plan\\world_background.json",
+      "execution_plan_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\dc3718d7-c336-4610-aeee-7b939eb325dc\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\dc3718d7-c336-4610-aeee-7b939eb325dc\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\dc3718d7-c336-4610-aeee-7b939eb325dc\\generated\\world_template.json",
+      "schema_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\dc3718d7-c336-4610-aeee-7b939eb325dc\\models\\schema_manifest.json",
+      "artifact_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\dc3718d7-c336-4610-aeee-7b939eb325dc\\generated\\artifact_manifest.json",
+      "session_root": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\dc3718d7-c336-4610-aeee-7b939eb325dc"
+    },
+    "world_background": {
+      "source": "stage1.pipeline",
+      "artifact": "world_background",
+      "world_background_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\dc3718d7-c336-4610-aeee-7b939eb325dc\\generated\\plan\\world_background.json",
+      "execution_plan_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\dc3718d7-c336-4610-aeee-7b939eb325dc\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\dc3718d7-c336-4610-aeee-7b939eb325dc\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\dc3718d7-c336-4610-aeee-7b939eb325dc\\generated\\world_template.json",
+      "schema_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\dc3718d7-c336-4610-aeee-7b939eb325dc\\models\\schema_manifest.json",
+      "artifact_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\dc3718d7-c336-4610-aeee-7b939eb325dc\\generated\\artifact_manifest.json",
+      "session_root": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\dc3718d7-c336-4610-aeee-7b939eb325dc"
+    }
+  }
+}

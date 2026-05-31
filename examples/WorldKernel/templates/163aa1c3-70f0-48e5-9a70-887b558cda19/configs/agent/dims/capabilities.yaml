@@ -1,0 +1,22 @@
+dim_name: CapabilitiesDim
+skills:
+  type: list_str
+level:
+  type: str
+weaknesses:
+  type: str
+ninjutsu_type:
+  type: str
+  option: true
+taijutsu_rank:
+  type: str
+  option: true
+genjutsu_ability:
+  type: str
+  option: true
+special_ability:
+  type: str
+  option: true
+chakra_nature:
+  type: str
+  option: true

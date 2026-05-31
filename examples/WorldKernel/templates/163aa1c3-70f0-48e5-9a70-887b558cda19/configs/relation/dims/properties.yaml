@@ -1,0 +1,17 @@
+dim_name: PropertiesDim
+strength:
+  type: str
+description:
+  type: str
+trust_level:
+  type: str
+  option: true
+power_balance:
+  type: str
+  option: true
+shared_goals:
+  type: str
+  option: true
+conflict_history:
+  type: str
+  option: true

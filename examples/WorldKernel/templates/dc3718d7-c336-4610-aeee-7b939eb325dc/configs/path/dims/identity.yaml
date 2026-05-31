@@ -1,0 +1,19 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+is_secret:
+  type: str
+  option: true
+currently_active:
+  type: str
+  option: true
+known_to_carers:
+  type: str
+  option: true
+historical_significance:
+  type: str
+  option: true

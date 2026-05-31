@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "group_id",
+      "type": "str",
+      "required": true,
+      "ref": "institution"
+    },
+    {
+      "name": "reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "da_member_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "caro_favorability",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "slytherin_secret_sympathy",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "house_peer_trust_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}
