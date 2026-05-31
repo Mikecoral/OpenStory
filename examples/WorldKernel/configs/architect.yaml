@@ -2,5 +2,5 @@
 # 0 = unlimited
 
 generation_constraints:
-  max_locations: 14
-  max_characters: 20
+  max_locations: 7
+  max_characters: 10
