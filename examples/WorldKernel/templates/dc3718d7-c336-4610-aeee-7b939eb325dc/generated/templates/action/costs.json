@@ -1,0 +1,70 @@
+{
+  "fields": [
+    {
+      "name": "time",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "resources",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_cost",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "punishment_risk_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "detention_duration",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "house_point_loss",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "social_standing_loss",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "loyalty_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "life_threat_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "physical_harm_chance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "resource_depletion_rare_item",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

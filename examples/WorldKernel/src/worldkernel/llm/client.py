@@ -20,7 +20,7 @@ def init(config_path: Path) -> None:
             "WORLDKERNEL_API_KEY is not set. "
             "Copy .env.example to .env and fill in your API key."
         )
-    _openai = AsyncOpenAI(api_key=api_key, base_url=cfg.get("base_url"))
+    _openai = AsyncOpenAI(api_key=api_key, base_url=cfg.get("base_url"), max_retries=3)
     _model = cfg["model"]
 
 

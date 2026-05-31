@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "required_state",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "required_items",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "allowed_time_window",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "allowed_location_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "requires_authorization",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "requires_secret_knowledge",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "cannot_be_observed_by_carols",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

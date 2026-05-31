@@ -1,0 +1,19 @@
+dim_name: PersonalityDim
+traits:
+  type: list_str
+values:
+  type: list_str
+speech_style:
+  type: str
+prophecy_tied_trait:
+  type: str
+  option: true
+former_life_temperament:
+  type: str
+  option: true
+emotional_bond_mark:
+  type: str
+  option: true
+fate_imprint:
+  type: str
+  option: true

@@ -1,0 +1,21 @@
+dim_name: SocialProfileDim
+group_id:
+  type: str
+  ref: institution
+reputation:
+  type: str
+trust_rating_with_carols:
+  type: str
+  option: true
+membership_in_resistance_cell:
+  type: str
+  option: true
+informer_suspicion_level:
+  type: str
+  option: true
+house_prefect_status:
+  type: str
+  option: true
+relationship_with_snape:
+  type: str
+  option: true

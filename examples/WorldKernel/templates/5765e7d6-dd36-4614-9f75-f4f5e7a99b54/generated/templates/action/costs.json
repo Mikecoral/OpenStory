@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "time",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "resources",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_cost",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "emotional_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "lifespan_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "karma_debt",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "status_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "freedom_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "moral_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

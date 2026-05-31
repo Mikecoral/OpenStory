@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "traits",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "values",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "speech_style",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "prophecy_tied_trait",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "former_life_temperament",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "emotional_bond_mark",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "fate_imprint",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

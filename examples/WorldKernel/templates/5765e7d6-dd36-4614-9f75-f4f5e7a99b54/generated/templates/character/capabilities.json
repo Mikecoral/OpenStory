@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "skills",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "weaknesses",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "divine_residual_power",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "prophetic_insight",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "anomaly_detection",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "moral_sensitivity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

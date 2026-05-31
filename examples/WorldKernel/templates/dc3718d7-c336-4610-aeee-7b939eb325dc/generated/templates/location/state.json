@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "current_state",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "ownership",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "capacity",
+      "type": "int",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "physical_integrity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "magical_ward_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "functional_alteration",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "current_usage_intensity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secret_modifications",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

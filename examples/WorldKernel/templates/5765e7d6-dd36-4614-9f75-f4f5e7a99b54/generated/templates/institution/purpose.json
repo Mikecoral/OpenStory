@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "mission",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "founding_reason",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "causal_scope",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "social_function",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "religious_function",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "bidirectional",
+      "type": "bool",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "connection_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "narrative_importance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "psychological_distance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "layered_realm",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

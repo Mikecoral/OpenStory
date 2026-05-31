@@ -1,0 +1,22 @@
+dim_name: PersonalityDim
+traits:
+  type: list_str
+values:
+  type: list_str
+speech_style:
+  type: str
+fear_of_authority:
+  type: str
+  option: true
+loyalty_to_resistance:
+  type: str
+  option: true
+tolerance_for_dark_magic:
+  type: str
+  option: true
+suspicion_towards_others:
+  type: str
+  option: true
+sense_of_humor_under_pressure:
+  type: str
+  option: true

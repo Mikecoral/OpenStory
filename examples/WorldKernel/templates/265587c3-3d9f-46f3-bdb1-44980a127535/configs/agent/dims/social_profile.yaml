@@ -1,0 +1,18 @@
+dim_name: SocialProfileDim
+group_id:
+  type: str
+  ref: institution
+reputation:
+  type: str
+da_member_status:
+  type: str
+  option: true
+caro_favorability:
+  type: str
+  option: true
+slytherin_secret_sympathy:
+  type: str
+  option: true
+house_peer_trust_level:
+  type: str
+  option: true

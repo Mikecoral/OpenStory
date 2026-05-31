@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "category",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "required_allegiance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secrecy_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_resistance_action",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "magical_discipline",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "needs_incantation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

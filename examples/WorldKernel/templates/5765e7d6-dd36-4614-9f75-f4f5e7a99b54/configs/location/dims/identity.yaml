@@ -1,0 +1,21 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+description:
+  type: str
+mythological_layer:
+  type: str
+  option: true
+narrative_function:
+  type: str
+  option: true
+associated_objects:
+  type: str
+  option: true
+symbolic_meaning:
+  type: str
+  option: true

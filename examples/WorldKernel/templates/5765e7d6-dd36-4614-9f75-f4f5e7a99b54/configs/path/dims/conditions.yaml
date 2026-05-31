@@ -1,0 +1,19 @@
+dim_name: ConditionsDim
+access_level:
+  type: str
+danger_level:
+  type: str
+required_items:
+  type: str
+access_condition_description:
+  type: str
+  option: true
+danger_source:
+  type: str
+  option: true
+temporal_significance:
+  type: str
+  option: true
+emotional_requirement:
+  type: str
+  option: true

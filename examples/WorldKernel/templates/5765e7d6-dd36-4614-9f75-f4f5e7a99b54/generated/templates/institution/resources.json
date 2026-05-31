@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "assets",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "territory",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "supernatural_assets",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "economic_base",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "sacred_objects",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

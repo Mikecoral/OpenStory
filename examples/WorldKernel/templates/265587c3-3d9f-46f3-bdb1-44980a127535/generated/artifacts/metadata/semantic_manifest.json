@@ -1,0 +1,71 @@
+{
+  "world_id": "265587c3-3d9f-46f3-bdb1-44980a127535",
+  "source_ids": [
+    "visual-e2e"
+  ],
+  "schema_version": "stage2-semantic-v1",
+  "artifact_files": {
+    "location_profile": "locations\\locations.json",
+    "character_profile": "characters\\characters.json",
+    "path_edge": "path_graph\\path_graph.json",
+    "relation_edge": "relation_graph\\relation_graph.json"
+  },
+  "counts": {
+    "location_profile": 7,
+    "character_profile": 9,
+    "path_edge": 0,
+    "relation_edge": 0
+  },
+  "constraints": [
+    {
+      "constraint_id": "magical_secrecy",
+      "name": "魔法世界保密法",
+      "description": "巫师不得在麻瓜面前主动暴露魔法存在，霍格沃茨本身受麻瓜驱逐咒保护",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "death_eater_occupation",
+      "name": "食死徒军事占领",
+      "description": "学校由伏地魔任命的斯内普校长与卡罗兄妹实际控制，任何公开反抗都面临生命危险",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "hogwarts_ancient_protections",
+      "name": "霍格沃茨古老魔法保护",
+      "description": "城堡固有防御：禁止幻影移形、禁止麻瓜进入、校内不能制造魂器，同时也保护校内人员不受外界直接攻击",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "house_system_hierarchy",
+      "name": "学院制度与派系分歧",
+      "description": "四大学院传统深刻影响社交、忠诚与资源分配，斯莱特林被食死徒优待，其他学院受压制",
+      "scope": "global"
+    }
+  ],
+  "timestamp": "2026-05-30T13:39:38.577120+00:00",
+  "provenance": {
+    "stage1_inputs": {
+      "source": "stage1.pipeline",
+      "source_id": "visual-e2e",
+      "world_id": "265587c3-3d9f-46f3-bdb1-44980a127535",
+      "world_background_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\265587c3-3d9f-46f3-bdb1-44980a127535\\generated\\plan\\world_background.json",
+      "execution_plan_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\265587c3-3d9f-46f3-bdb1-44980a127535\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\265587c3-3d9f-46f3-bdb1-44980a127535\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\265587c3-3d9f-46f3-bdb1-44980a127535\\generated\\world_template.json",
+      "schema_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\265587c3-3d9f-46f3-bdb1-44980a127535\\models\\schema_manifest.json",
+      "artifact_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\265587c3-3d9f-46f3-bdb1-44980a127535\\generated\\artifact_manifest.json",
+      "session_root": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\265587c3-3d9f-46f3-bdb1-44980a127535"
+    },
+    "world_background": {
+      "source": "stage1.pipeline",
+      "artifact": "world_background",
+      "world_background_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\265587c3-3d9f-46f3-bdb1-44980a127535\\generated\\plan\\world_background.json",
+      "execution_plan_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\265587c3-3d9f-46f3-bdb1-44980a127535\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\265587c3-3d9f-46f3-bdb1-44980a127535\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\265587c3-3d9f-46f3-bdb1-44980a127535\\generated\\world_template.json",
+      "schema_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\265587c3-3d9f-46f3-bdb1-44980a127535\\models\\schema_manifest.json",
+      "artifact_manifest_path": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\265587c3-3d9f-46f3-bdb1-44980a127535\\generated\\artifact_manifest.json",
+      "session_root": "D:\\world_kernel_zdz\\OpenStory\\examples\\WorldKernel\\templates\\265587c3-3d9f-46f3-bdb1-44980a127535"
+    }
+  }
+}

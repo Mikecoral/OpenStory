@@ -1,0 +1,16 @@
+dim_name: AccessDim
+permissions:
+  type: str
+access_level:
+  type: str
+access_conditions:
+  type: str
+requires_special_permit:
+  type: str
+  option: true
+barrier_type:
+  type: str
+  option: true
+neutral_zone:
+  type: str
+  option: true

@@ -1,0 +1,861 @@
+{
+  "artifact_type": "character_profile",
+  "items": [
+    {
+      "identity": {
+        "id": "e:dc3718d7_c336_4610_aeee_7b939eb325dc:char:006",
+        "name": "纳威·隆巴顿",
+        "role": "student",
+        "blood_status": "纯血统",
+        "faction": "反抗军",
+        "public_role": "普通格兰芬多学生",
+        "secret_role": "DA实际负责人",
+        "house": "格兰芬多",
+        "year": "7"
+      },
+      "social_profile": {
+        "group_id": "格兰芬多学院",
+        "reputation": "勇敢坚韧的领袖，深受同学信赖",
+        "trust_rating_with_carols": "1",
+        "membership_in_resistance_cell": "DA核心领导人",
+        "informer_suspicion_level": "1",
+        "house_prefect_status": "曾担任级长，后因反抗活动被撤职",
+        "relationship_with_snape": "表面恭敬，内心极度憎恨"
+      },
+      "capabilities": {
+        "skills": [
+          "草药学大师",
+          "铁甲咒精通",
+          "变形术高深",
+          "黑魔法防御术实战经验",
+          "领导与组织能力",
+          "秘密通信魔法"
+        ],
+        "level": "高级战法师（同龄顶尖）",
+        "weaknesses": "有时过于冲动, 对记忆咒抵抗力较弱, 心理创伤导致的情绪波动",
+        "occlumency_proficiency": "中等（经历过训练）",
+        "animagus_form": "",
+        "patronus_type": "雄狮",
+        "dark_arts_knowledge": "了解但拒绝使用",
+        "illegal_spell_mastery": "掌握若干未被许可的防御咒",
+        "undercover_communication_skills": "使用隐身斗篷、双面镜、守护神传信等"
+      },
+      "personality": {
+        "traits": [
+          "勇敢",
+          "坚韧不拔",
+          "忠诚",
+          "责任感强",
+          "表面沉默但内心炽热"
+        ],
+        "values": [
+          "正义",
+          "友谊",
+          "不屈服于暴政",
+          "保护弱者"
+        ],
+        "speech_style": "平时言语谨慎、简洁，但在DA内部充满激情和鼓励",
+        "fear_of_authority": "2",
+        "loyalty_to_resistance": "10",
+        "tolerance_for_dark_magic": "1",
+        "suspicion_towards_others": "6",
+        "sense_of_humor_under_pressure": "3"
+      },
+      "goals": {
+        "short_term_goal": "在卡罗兄妹的监视下安全组织下一次DA秘密训练",
+        "long_term_goal": "推翻食死徒对霍格沃茨的统治，配合外部凤凰社终结战争",
+        "motivation": "为父母复仇、证明自己、保护无辜同学",
+        "survive_carol_harassment": "",
+        "protect_muggleborn_friends": "true",
+        "gather_intelligence_on_death_eaters": "true",
+        "rebuild_dumbledores_army": "true",
+        "sabotage_carol_reign": "true",
+        "find_horcrux_information": "false"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "霍格沃茨城堡所有已知秘密通道",
+            "食死徒在城堡的巡逻规律",
+            "古代魔法契约对食死徒的限制范围",
+            "各种高阶防御咒语和破解恶咒的方法"
+          ],
+          "social_knowledge": [
+            "DA成员的真实身份和可信度",
+            "各学院反对食死徒的学生名单",
+            "斯内普与卡罗兄妹之间的微妙关系",
+            "凤凰社残余成员的联络方式（部分）"
+          ]
+        },
+        "background_summary": "隆巴顿家族纯血后裔，父母被贝拉特里克斯折磨至疯，由祖母抚养长大。七年级成为格兰芬多级长，邓布利多军创始成员之一。斯内普上任后秘密接管DA，利用有求必应屋训练同伴。曾在卡洛的惩罚中遭受钻心咒但拒不屈服，赢得广泛尊敬。",
+        "key_events": [
+          "一年级时在格兰芬多公共休息室帮哈利阻止马尔福",
+          "四年级公开支持哈利参加三强争霸赛",
+          "五年级加入邓布利多军并参与魔法部神秘事务司之战",
+          "六年级目睹邓布利多之死",
+          "七年级初在霍格沃茨特快上组织学生抵制食死徒招募",
+          "在多处秘密地点组织DA集会，已被卡罗兄妹盯上"
+        ],
+        "secrets": [
+          "知道有求必应屋的具体位置和开启方法",
+          "曾帮助多名麻瓜出身学生秘密离开霍格沃茨",
+          "私藏格兰芬多宝剑的复制品用于训练",
+          "与麦格教授保持秘密联系"
+        ],
+        "witnessed_cruciatus_cast": "",
+        "attended_secret_da_meeting": "",
+        "knows_room_of_requirement_location": "",
+        "carried_messages_for_order": "",
+        "hidden_muggleborn_escape_route": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:dc3718d7_c336_4610_aeee_7b939eb325dc:loc:007"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_hiding_status": "",
+        "under_surveillance_flag": "",
+        "injury_level": "",
+        "polyjuice_disguise_active": "",
+        "last_safe_room_visited": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:dc3718d7_c336_4610_aeee_7b939eb325dc:char:004",
+        "name": "卢娜·洛夫古德",
+        "role": "student",
+        "blood_status": "纯血统",
+        "faction": "反抗军",
+        "public_role": "拉文克劳怪人、相信各种古怪生物",
+        "secret_role": "DA核心情报员与通信员",
+        "house": "拉文克劳",
+        "year": "6"
+      },
+      "social_profile": {
+        "group_id": "拉文克劳学院",
+        "reputation": "被多数人视为古怪，但少数密友深知其聪慧与忠诚",
+        "trust_rating_with_carols": "0",
+        "membership_in_resistance_cell": "DA核心成员",
+        "informer_suspicion_level": "2",
+        "house_prefect_status": "未担任级长",
+        "relationship_with_snape": "表面礼貌疏离，实际看穿其内心矛盾"
+      },
+      "capabilities": {
+        "skills": [
+          "高超的智慧",
+          "魔咒学天赋",
+          "对神奇生物知识渊博",
+          "隐蔽行动",
+          "破译隐藏信息",
+          "精神防御咒语"
+        ],
+        "level": "高级巫师",
+        "weaknesses": "常被低估导致轻视风险, 体能较弱, 对人际猜忌不够敏感",
+        "occlumency_proficiency": "中等偏上（天生抗性）",
+        "animagus_form": "",
+        "patronus_type": "野兔",
+        "dark_arts_knowledge": "了解但排斥",
+        "illegal_spell_mastery": "掌握探查类禁咒如摄神取念的弱化版",
+        "undercover_communication_skills": "使用自创的编码留言、隐身守护神传信、利用拉文克劳公共休息室谜语传递信息"
+      },
+      "personality": {
+        "traits": [
+          "直觉敏锐",
+          "特立独行",
+          "无所畏惧",
+          "善良而超然",
+          "有惊人观察力"
+        ],
+        "values": [
+          "诚实",
+          "同情心",
+          "想象力",
+          "保护朋友"
+        ],
+        "speech_style": "漫不经心、带有神秘感的语调，常说出看似离奇却暗含真相的话语",
+        "fear_of_authority": "1",
+        "loyalty_to_resistance": "9",
+        "tolerance_for_dark_magic": "2",
+        "suspicion_towards_others": "4",
+        "sense_of_humor_under_pressure": "8"
+      },
+      "goals": {
+        "short_term_goal": "利用图书馆禁书区寻找食死徒弱点情报",
+        "long_term_goal": "帮助哈利波特找到摧毁伏地魔的关键信息",
+        "motivation": "相信正义终将胜利，忠于友谊和真相",
+        "survive_carol_harassment": "true",
+        "protect_muggleborn_friends": "",
+        "gather_intelligence_on_death_eaters": "true",
+        "rebuild_dumbledores_army": "",
+        "sabotage_carol_reign": "",
+        "find_horcrux_information": "true"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "神奇生物的秘密用途（如护树罗锅可干扰魔法锁）",
+            "拉文克劳公共休息室谜语逻辑",
+            "古代魔法契约中的漏洞",
+            "食死徒在禁林的活动规律"
+          ],
+          "social_knowledge": [
+            "拉文克劳内同情反抗的学生名单",
+            "各学院级长中谁是食死徒线人",
+            "金妮、纳威、卢娜三者之间的秘密联络暗号",
+            "新加入DA成员的可信度评估"
+          ]
+        },
+        "background_summary": "出生于知识丰富的魔法家庭，母亲早逝，父亲出版《唱唱反调》。在霍格沃茨因古怪行为遭孤立，但与哈利、金妮等人成为密友。五年级加入DA，六年级食死徒掌权后成为反抗军情报核心，利用自己不被注意的形象秘密传递消息。",
+        "key_events": [
+          "五年级随哈利去神秘事务司寻找预言球",
+          "六年级目睹邓布利多之死",
+          "七年级初在火车上帮金妮转移违禁书籍",
+          "多次利用拉文克劳公共休息室的鹰状青铜门环设置暗语警示",
+          "被卡罗兄妹短期拘禁盘问但未暴露DA"
+        ],
+        "secrets": [
+          "知道霍格沃茨城堡至少10条不为人知的小通道",
+          "帮助麻瓜出身学生用夜骐偷运出学校",
+          "私藏一本记录食死徒巡逻时间表的笔记",
+          "知道斯内普并非真心效忠伏地魔（推测）"
+        ],
+        "witnessed_cruciatus_cast": "",
+        "attended_secret_da_meeting": "",
+        "knows_room_of_requirement_location": "",
+        "carried_messages_for_order": "",
+        "hidden_muggleborn_escape_route": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:dc3718d7_c336_4610_aeee_7b939eb325dc:loc:005"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_hiding_status": "",
+        "under_surveillance_flag": "",
+        "injury_level": "",
+        "polyjuice_disguise_active": "",
+        "last_safe_room_visited": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:dc3718d7_c336_4610_aeee_7b939eb325dc:char:003",
+        "name": "金妮·韦斯莱",
+        "role": "student",
+        "blood_status": "纯血统",
+        "faction": "反抗军",
+        "public_role": "格兰芬多魁地奇明星、普通学生",
+        "secret_role": "DA活跃成员、跨学院联络员",
+        "house": "格兰芬多",
+        "year": "6"
+      },
+      "social_profile": {
+        "group_id": "格兰芬多学院",
+        "reputation": "活力四射、勇敢果断，在低年级中很有号召力",
+        "trust_rating_with_carols": "1",
+        "membership_in_resistance_cell": "DA活跃成员",
+        "informer_suspicion_level": "3",
+        "house_prefect_status": "未担任级长（因哥哥曾是级长而主动避开）",
+        "relationship_with_snape": "公开冷嘲热讽，但避免正面冲突"
+      },
+      "capabilities": {
+        "skills": [
+          "变形术高级",
+          "蝙蝠精咒精通",
+          "魁地奇飞行技巧",
+          "隐秘行动",
+          "说服与领导能力",
+          "诅咒破解基础"
+        ],
+        "level": "高级巫师（实战经验丰富）",
+        "weaknesses": "对家人安危过度敏感, 有时过于冒险, 容易被间谍利用情感",
+        "occlumency_proficiency": "中等",
+        "animagus_form": "",
+        "patronus_type": "马",
+        "dark_arts_knowledge": "了解但不使用",
+        "illegal_spell_mastery": "掌握几个经过修改的实战咒语",
+        "undercover_communication_skills": "使用变形物品传递信息、魁地奇球场秘密暗号、利用家养小精灵网络"
+      },
+      "personality": {
+        "traits": [
+          "果敢",
+          "幽默风趣",
+          "独立",
+          "富有同情心",
+          "善于交际"
+        ],
+        "values": [
+          "家庭",
+          "自由",
+          "平等",
+          "乐观抗争"
+        ],
+        "speech_style": "快人快语，带有讽刺机智，必要时可以非常严肃",
+        "fear_of_authority": "2",
+        "loyalty_to_resistance": "9",
+        "tolerance_for_dark_magic": "1",
+        "suspicion_towards_others": "3",
+        "sense_of_humor_under_pressure": "9"
+      },
+      "goals": {
+        "short_term_goal": "安全串联赫奇帕奇和拉文克劳中可能的反抗学生",
+        "long_term_goal": "为哈利返回霍格沃茨做好准备，保护所有无辜学生",
+        "motivation": "继承韦斯莱家人的抗争精神，保护朋友与家人",
+        "survive_carol_harassment": "",
+        "protect_muggleborn_friends": "true",
+        "gather_intelligence_on_death_eaters": "true",
+        "rebuild_dumbledores_army": "false",
+        "sabotage_carol_reign": "true",
+        "find_horcrux_information": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "家庭魔法（飞路网改造、魔法物品伪装）",
+            "魁地奇球场下的秘密通道",
+            "卡洛兄妹的惩罚室设置",
+            "学校周围食死徒岗哨分布"
+          ],
+          "social_knowledge": [
+            "赫奇帕奇中愿意反抗的学生名单",
+            "拉文克劳中几名中立观望者",
+            "斯莱特林内并非所有人都支持食死徒的证据",
+            "一年级新生中谁是纯血统家庭来的潜在线人"
+          ]
+        },
+        "background_summary": "韦斯莱家最小的女儿，在纯血统但贫穷的家庭中长大。二年级曾受里德尔日记控制，后克服阴影。五年级加入DA并参与魔法部战斗。六年级与哈利发展恋情（暑假已结束），食死徒掌权后留在霍格沃茨成为反抗重要纽带，利用其广受欢迎的性格联络各学院。",
+        "key_events": [
+          "二年级密室事件中险些遇害",
+          "四年级偷偷帮助哈利准备三强争霸赛项目",
+          "五年级在魔法部大厅与食死徒战斗",
+          "六年级担任格兰芬多魁地奇队队长",
+          "七年级初在火车上与食死徒搜查队斗智",
+          "多次在格兰芬多公共休息室秘密召集低年级学生加入DA"
+        ],
+        "secrets": [
+          "知道有求必应屋的位置并曾参与改装",
+          "私下收藏一把带诅咒的匕首准备对付食死徒",
+          "曾帮助两名麻瓜出身学生伪装成纯血统留在学校",
+          "通过一个特殊的韦斯莱飞路网联络点与哥哥们保持联系"
+        ],
+        "witnessed_cruciatus_cast": "",
+        "attended_secret_da_meeting": "",
+        "knows_room_of_requirement_location": "",
+        "carried_messages_for_order": "",
+        "hidden_muggleborn_escape_route": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:dc3718d7_c336_4610_aeee_7b939eb325dc:loc:003"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_hiding_status": "",
+        "under_surveillance_flag": "",
+        "injury_level": "",
+        "polyjuice_disguise_active": "",
+        "last_safe_room_visited": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:dc3718d7_c336_4610_aeee_7b939eb325dc:char:005",
+        "name": "米勒娃·麦格",
+        "role": "faculty",
+        "blood_status": "half-blood",
+        "faction": "Order of the Phoenix (underground)",
+        "public_role": "Transfiguration Professor",
+        "secret_role": "Protector of students, secret DA supporter",
+        "house": "Gryffindor",
+        "year": ""
+      },
+      "social_profile": {
+        "group_id": "faculty",
+        "reputation": "Strict but fair, secretly trusted by students",
+        "trust_rating_with_carols": "very low, barely concealed hostility",
+        "membership_in_resistance_cell": "Senior advisor to remnants of Order",
+        "informer_suspicion_level": "Not suspected as informer, but under surveillance",
+        "house_prefect_status": "Head of Gryffindor",
+        "relationship_with_snape": "Professional, mutual distrust"
+      },
+      "capabilities": {
+        "skills": [
+          "Transfiguration (master)",
+          "Occlumency",
+          "Duelling",
+          "Non-verbal magic",
+          "Animagus (tabby cat)"
+        ],
+        "level": "expert",
+        "weaknesses": "Stubbornness, Emotional attachment to students, Can be outnumbered by Death Eaters",
+        "occlumency_proficiency": "Skilled",
+        "animagus_form": "Tabby cat",
+        "patronus_type": "Tabby cat (same as form)",
+        "dark_arts_knowledge": "Limited, but knows enough to defend",
+        "illegal_spell_mastery": "Unforgivable Curses: knows theory but refuses to use",
+        "undercover_communication_skills": "High, uses Patronus messages and secret passages"
+      },
+      "personality": {
+        "traits": [
+          "Strict",
+          "Principled",
+          "Courageous",
+          "Loyal",
+          "Pragmatic"
+        ],
+        "values": [
+          "Justice",
+          "Student safety",
+          "Integrity",
+          "Order"
+        ],
+        "speech_style": "Formal, precise, occasionally sharp wit",
+        "fear_of_authority": "No, respects authority but questions wrong ones",
+        "loyalty_to_resistance": "Absolute",
+        "tolerance_for_dark_magic": "Zero tolerance, but recognizes necessary evils",
+        "suspicion_towards_others": "Cautious, especially around Slytherins",
+        "sense_of_humor_under_pressure": "Dry, subtle"
+      },
+      "goals": {
+        "short_term_goal": "Protect students from Carols' punishments and minimize casualties",
+        "long_term_goal": "Aid Harry Potter's mission to defeat Voldemort and restore Hogwarts",
+        "motivation": "Duty to Dumbledore's legacy and love for Hogwarts",
+        "survive_carol_harassment": "true",
+        "protect_muggleborn_friends": "true",
+        "gather_intelligence_on_death_eaters": "true",
+        "rebuild_dumbledores_army": "true",
+        "sabotage_carol_reign": "true",
+        "find_horcrux_information": "false"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "Advanced Transfiguration theory",
+            "Hogwarts secret passages",
+            "Defensive magic",
+            "Occlumency techniques"
+          ],
+          "social_knowledge": [
+            "Knew Dumbledore's plans for Harry",
+            "Knows Snape's true loyalty (or doubts)",
+            "Knows the DA members' identities",
+            "Relations with Order of the Phoenix members"
+          ]
+        },
+        "background_summary": "Long-serving Transfiguration professor and Head of Gryffindor. Former Auror. Deeply loyal to Dumbledore. After his death, she remains at Hogwarts to protect the school.",
+        "key_events": [
+          "Witnessed Dumbledore's death",
+          "Fought in the Battle of the Astronomy Tower",
+          "Became acting headmistress briefly before Snape's appointment",
+          "Secretly met with Molly Weasley and other Order members to coordinate protection"
+        ],
+        "secrets": [
+          "Knows the location of the Room of Requirement and used it to hide DA activities",
+          "Has a Animagus form (tabby cat) used for reconnaissance",
+          "Kept a Portkey for emergency escape in her office",
+          "Corresponds with Harry Potter via Patronus"
+        ],
+        "witnessed_cruciatus_cast": "false",
+        "attended_secret_da_meeting": "true",
+        "knows_room_of_requirement_location": "true",
+        "carried_messages_for_order": "true",
+        "hidden_muggleborn_escape_route": "true"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:dc3718d7_c336_4610_aeee_7b939eb325dc:loc:003"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_hiding_status": "Not hiding, but cautious",
+        "under_surveillance_flag": "true",
+        "injury_level": "None",
+        "polyjuice_disguise_active": "false",
+        "last_safe_room_visited": "e:dc3718d7_c336_4610_aeee_7b939eb325dc:loc:003"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:dc3718d7_c336_4610_aeee_7b939eb325dc:char:002",
+        "name": "阿米库斯·卡罗",
+        "role": "death_eater_staff",
+        "blood_status": "pure-blood",
+        "faction": "Death Eaters",
+        "public_role": "Defence Against the Dark Arts Teacher",
+        "secret_role": "",
+        "house": "Slytherin (alumnus)",
+        "year": ""
+      },
+      "social_profile": {
+        "group_id": "death_eaters",
+        "reputation": "Brutal and sadistic, feared by students",
+        "trust_rating_with_carols": "Trusted sister",
+        "membership_in_resistance_cell": "None",
+        "informer_suspicion_level": "High (he is the enforcer)",
+        "house_prefect_status": "",
+        "relationship_with_snape": "Contemptuous, but obeys orders"
+      },
+      "capabilities": {
+        "skills": [
+          "Cruciatus Curse",
+          "Imperius Curse",
+          "Dark Arts torture",
+          "Intimidation",
+          "Duelling"
+        ],
+        "level": "competent",
+        "weaknesses": "Sadistic tendencies impair judgement, Overconfident, Underestimates students",
+        "occlumency_proficiency": "",
+        "animagus_form": "",
+        "patronus_type": "",
+        "dark_arts_knowledge": "Extensive, especially torture curses",
+        "illegal_spell_mastery": "Proficient in Unforgivable Curses",
+        "undercover_communication_skills": ""
+      },
+      "personality": {
+        "traits": [
+          "Sadistic",
+          "Brutal",
+          "Arrogant",
+          "Intolerant",
+          "Cowardly when challenged"
+        ],
+        "values": [
+          "Pure-blood supremacy",
+          "Fear as control",
+          "Loyalty to Voldemort"
+        ],
+        "speech_style": "Grating, mocking, often shouting",
+        "fear_of_authority": "Scared of Voldemort and Snape",
+        "loyalty_to_resistance": "",
+        "tolerance_for_dark_magic": "Embraces it",
+        "suspicion_towards_others": "",
+        "sense_of_humor_under_pressure": "Cruel laughter"
+      },
+      "goals": {
+        "short_term_goal": "Crush any dissent in Hogwarts using terror",
+        "long_term_goal": "Earn Voldemort's favour and gain more power",
+        "motivation": "Pure-blood fanaticism and love of cruelty",
+        "survive_carol_harassment": "false",
+        "protect_muggleborn_friends": "false",
+        "gather_intelligence_on_death_eaters": "false",
+        "rebuild_dumbledores_army": "",
+        "sabotage_carol_reign": "false",
+        "find_horcrux_information": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "Dark Arts practical applications",
+            "Hogwarts discipline system",
+            "Torture methods"
+          ],
+          "social_knowledge": [
+            "Knows most student faces",
+            "Knows some Order members",
+            "Suspicious of Snape"
+          ]
+        },
+        "background_summary": "Slytherin alumnus, joined Death Eaters early. Known for torturing Muggle-borns. Appointed with his sister to control Hogwarts.",
+        "key_events": [
+          "Participated in attacks on Muggle families",
+          "Tortured students in DADA classes",
+          "Enforced curfew and punishment"
+        ],
+        "secrets": [
+          "Secretly fears Voldemort's wrath",
+          "Knows that some Slytherins are aiding the resistance but hasn't reported",
+          "Has a stash of stolen Dark artifacts"
+        ],
+        "witnessed_cruciatus_cast": "",
+        "attended_secret_da_meeting": "",
+        "knows_room_of_requirement_location": "",
+        "carried_messages_for_order": "",
+        "hidden_muggleborn_escape_route": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:dc3718d7_c336_4610_aeee_7b939eb325dc:loc:001"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_hiding_status": "Openly present",
+        "under_surveillance_flag": "false",
+        "injury_level": "None",
+        "polyjuice_disguise_active": "",
+        "last_safe_room_visited": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:dc3718d7_c336_4610_aeee_7b939eb325dc:char:001",
+        "name": "阿莱克托·卡罗",
+        "role": "death_eater_staff",
+        "blood_status": "pure-blood",
+        "faction": "Death Eaters",
+        "public_role": "Muggle Studies Teacher",
+        "secret_role": "",
+        "house": "Slytherin (alumna)",
+        "year": ""
+      },
+      "social_profile": {
+        "group_id": "death_eaters",
+        "reputation": "Fanatical, strict indoctrinator",
+        "trust_rating_with_carols": "Close sister",
+        "membership_in_resistance_cell": "None",
+        "informer_suspicion_level": "High",
+        "house_prefect_status": "",
+        "relationship_with_snape": "Cold, respectful"
+      },
+      "capabilities": {
+        "skills": [
+          "Imperius Curse",
+          "Legilimency",
+          "Propaganda",
+          "Charms",
+          "Interrogation"
+        ],
+        "level": "competent",
+        "weaknesses": "Overconfidence in Muggle-hatred, Not as skilled dueller as brother",
+        "occlumency_proficiency": "",
+        "animagus_form": "",
+        "patronus_type": "",
+        "dark_arts_knowledge": "Moderate, focused on mind control",
+        "illegal_spell_mastery": "",
+        "undercover_communication_skills": ""
+      },
+      "personality": {
+        "traits": [
+          "Fanatical",
+          "Calculating",
+          "Cold",
+          "Intolerant",
+          "Patient"
+        ],
+        "values": [
+          "Pure-blood purity",
+          "Eradication of Muggle influence",
+          "Order through fear"
+        ],
+        "speech_style": "Smooth, lecturing, condescending",
+        "fear_of_authority": "Respect for Voldemort",
+        "loyalty_to_resistance": "",
+        "tolerance_for_dark_magic": "High",
+        "suspicion_towards_others": "",
+        "sense_of_humor_under_pressure": ""
+      },
+      "goals": {
+        "short_term_goal": "Convert students to pure-blood ideology",
+        "long_term_goal": "Identify Muggle-borns and resistance for punishment",
+        "motivation": "Zealotry and desire for recognition",
+        "survive_carol_harassment": "",
+        "protect_muggleborn_friends": "",
+        "gather_intelligence_on_death_eaters": "",
+        "rebuild_dumbledores_army": "",
+        "sabotage_carol_reign": "",
+        "find_horcrux_information": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "Muggle weaknesses",
+            "Dark Arts tracking spells",
+            "Propaganda techniques"
+          ],
+          "social_knowledge": [
+            "Knows which students are half-blood or Muggle-born",
+            "Knows some staff are resistant"
+          ]
+        },
+        "background_summary": "Sister of Amycus Carrow, equally cruel. Teaches Muggle Studies as a course on Muggle inferiority.",
+        "key_events": [
+          "Rewrote Muggle Studies curriculum",
+          "Interrogated students suspected of Muggle sympathies",
+          "Used Legilimency to extract information"
+        ],
+        "secrets": [
+          "Has a personal list of suspected Muggle-borns she plans to turn in",
+          "Knows some passwords to common rooms but not all"
+        ],
+        "witnessed_cruciatus_cast": "",
+        "attended_secret_da_meeting": "",
+        "knows_room_of_requirement_location": "",
+        "carried_messages_for_order": "",
+        "hidden_muggleborn_escape_route": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:dc3718d7_c336_4610_aeee_7b939eb325dc:loc:001"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_hiding_status": "Openly present",
+        "under_surveillance_flag": "false",
+        "injury_level": "None",
+        "polyjuice_disguise_active": "",
+        "last_safe_room_visited": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:dc3718d7_c336_4610_aeee_7b939eb325dc:char:007",
+        "name": "西弗勒斯·斯内普",
+        "role": "phoenix_resistance",
+        "blood_status": "混血",
+        "faction": "食死徒（表面）/ 凤凰社（实际）",
+        "public_role": "霍格沃茨校长",
+        "secret_role": "凤凰社间谍，邓布利多计划的执行者",
+        "house": "斯莱特林",
+        "year": "校长，曾任魔药学、黑魔法防御术教授"
+      },
+      "social_profile": {
+        "group_id": "staff",
+        "reputation": "全校畏惧的对象，食死徒信任他但部分怀疑，凤凰社和抵抗组织认为他背叛了邓布利多",
+        "trust_rating_with_carols": "70",
+        "membership_in_resistance_cell": "非DA成员，但暗中协助凤凰社和麦格",
+        "informer_suspicion_level": "20",
+        "house_prefect_status": "无",
+        "relationship_with_snape": "self"
+      },
+      "capabilities": {
+        "skills": [
+          "大脑封闭术大师",
+          "摄神取念大师",
+          "魔药学大师",
+          "黑魔法防御术精通",
+          "无声咒与无杖咒",
+          "飞行（扫帚）",
+          "双面间谍技巧"
+        ],
+        "level": "传奇",
+        "weaknesses": "对莉莉·波特的愧疚和执念, 对黑魔标记的服从（被迫）, 无法完全隐藏对哈利的保护意图, 情感压抑导致判断偶尔失误",
+        "occlumency_proficiency": "100",
+        "animagus_form": "",
+        "patronus_type": "牝鹿",
+        "dark_arts_knowledge": "90",
+        "illegal_spell_mastery": "神锋无影, 倒挂金钟, 钻心剜骨（被迫使用）",
+        "undercover_communication_skills": "95"
+      },
+      "personality": {
+        "traits": [
+          "冷酷",
+          "精明",
+          "隐忍",
+          "复杂",
+          "忠贞",
+          "刻薄",
+          "自我牺牲"
+        ],
+        "values": [
+          "对莉莉·波特的爱与赎罪",
+          "邓布利多的信任与使命",
+          "保护霍格沃茨的学生（尤其是哈利）",
+          "击败伏地魔"
+        ],
+        "speech_style": "低沉的嗓音，带着讥讽和拖腔，极少流露感情，命令式或简洁回答",
+        "fear_of_authority": "10",
+        "loyalty_to_resistance": "95",
+        "tolerance_for_dark_magic": "70",
+        "suspicion_towards_others": "85",
+        "sense_of_humor_under_pressure": "5"
+      },
+      "goals": {
+        "short_term_goal": "稳住卡罗兄妹的控制，避免学生大规模伤亡，同时暗中压制最残暴的惩罚",
+        "long_term_goal": "执行邓布利多的计划，确保哈利最终消灭伏地魔",
+        "motivation": "对莉莉的爱与对伏地魔的仇恨，加上对邓布利多的承诺",
+        "survive_carol_harassment": "false",
+        "protect_muggleborn_friends": "true",
+        "gather_intelligence_on_death_eaters": "true",
+        "rebuild_dumbledores_army": "false",
+        "sabotage_carol_reign": "true",
+        "find_horcrux_information": "true"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "黑魔法与大脑封闭术的深层知识",
+            "霍格沃茨秘密通道与城堡魔法",
+            "食死徒的行动计划和人员名单",
+            "伏地魔魂器的大致数量和可能位置",
+            "邓布利多家族历史与格林德沃事件"
+          ],
+          "social_knowledge": [
+            "卢修斯·马尔福的腐败关系",
+            "食死徒内部的权力斗争",
+            "凤凰社残余成员的身份（但不全知道）",
+            "霍格沃茨教师中谁在暗中反抗",
+            "哈利·波特的思维模式（来自大脑封闭术训练）"
+          ]
+        },
+        "background_summary": "出生于蜘蛛尾巷的混血巫师，童年被麻瓜父亲虐待，与莉莉·伊万斯青梅竹马但加入食死徒后失去她。在莉莉被杀后背叛伏地魔，成为邓布利多的间谍。十七年来在凤凰社和食死徒间周旋，最终为保护哈利的牺牲计划而杀死邓布利多，背负全世界的骂名，独自执行最危险的任务。",
+        "key_events": [
+          "向伏地魔透露预言信息导致波特夫妇被害",
+          "请求邓布利多保护莉莉，从此成为双面间谍",
+          "在尖叫棚屋中杀死邓布利多以获得伏地魔的信任",
+          "就任霍格沃茨校长，在食死徒统治下维持表面忠诚",
+          "在麦格等人的暗中质疑下依然保护学生"
+        ],
+        "secrets": [
+          "仍然深爱莉莉·波特，守护神是牝鹿",
+          "邓布利多的死是他与邓布利多共同筹划的",
+          "暗中将格兰芬多宝剑送给哈利",
+          "知道有求必应屋的用途但假装不知",
+          "正在解读邓布利多留下的关于魂器的信息"
+        ],
+        "witnessed_cruciatus_cast": "true",
+        "attended_secret_da_meeting": "false",
+        "knows_room_of_requirement_location": "true",
+        "carried_messages_for_order": "true",
+        "hidden_muggleborn_escape_route": "true"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:dc3718d7_c336_4610_aeee_7b939eb325dc:loc:004"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_hiding_status": "公开",
+        "under_surveillance_flag": "true",
+        "injury_level": "0",
+        "polyjuice_disguise_active": "false",
+        "last_safe_room_visited": ""
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:dc3718d7_c336_4610_aeee_7b939eb325dc:char:006",
+    "e:dc3718d7_c336_4610_aeee_7b939eb325dc:char:004",
+    "e:dc3718d7_c336_4610_aeee_7b939eb325dc:char:003",
+    "e:dc3718d7_c336_4610_aeee_7b939eb325dc:char:005",
+    "e:dc3718d7_c336_4610_aeee_7b939eb325dc:char:002",
+    "e:dc3718d7_c336_4610_aeee_7b939eb325dc:char:001",
+    "e:dc3718d7_c336_4610_aeee_7b939eb325dc:char:007"
+  ],
+  "upstream_step_ids": [
+    "generate_characters"
+  ],
+  "warnings": [],
+  "provenance": {
+    "result_count": 1
+  }
+}

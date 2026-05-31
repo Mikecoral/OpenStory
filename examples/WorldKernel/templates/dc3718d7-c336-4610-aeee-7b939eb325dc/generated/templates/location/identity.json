@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "is_contested_zone",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secret_purpose",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "historical_significance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "current_occupant_faction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "known_alias",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

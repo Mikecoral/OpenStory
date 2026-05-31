@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "short_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "long_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "motivation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "escape_school_priority",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "protect_fellow_students",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "undermine_carregime",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "survival_over_honor",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

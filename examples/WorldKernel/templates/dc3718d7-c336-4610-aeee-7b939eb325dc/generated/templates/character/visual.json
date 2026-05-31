@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "wears_da_artifact",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dark_mark_visible",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "invisibility_cloak_carried",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "battle_scars",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "camouflage_attire",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

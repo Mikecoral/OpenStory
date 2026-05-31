@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "bidirectional",
+      "type": "bool",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "requires_password",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "requires_specific_item",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_monitored",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "has_threshold_enchantment",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

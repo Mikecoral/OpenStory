@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "direction",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "power_dynamics",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secret_contact",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "loyalty_based",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "monitoring_role",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "allegiance_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

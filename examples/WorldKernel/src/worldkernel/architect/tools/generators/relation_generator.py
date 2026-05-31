@@ -101,9 +101,18 @@ def _load_prompt(name: str) -> str:
 _GENERATION_SYSTEM = (
     "你是一个世界关系网络生成器。"
     "根据已生成的角色列表和世界背景，生成这些角色之间的有向关系网络。"
-    "每条关系必须严格遵循给定的 schema 结构，包含所有维度。"
+    "每条关系只包含 edge 字段，edge 只有五个字段：id（留空）、from_id、to_id、type、direction。"
+    "不要输出 properties 或任何其他字段。"
+    "生成前，先根据世界来源、社会结构和角色构成推导出本世界特有的关系类型词汇——"
+    "不同世界的关系标签应有本质差异，不能套用通用标签。"
+    "edge.type 必须是稳定的身份/社会关系标签，词汇来自本世界的文化语境，"
+    "能回答「他们之间是什么关系」，禁止用事件或动作描述。"
+    "优先使用描述两人纽带的对称标签，而非从单方视角出发的角色标签。"
+    "direction 的选择规则：若关系对两端语义相同，用一条 direction=双向 的边；"
+    "只有两端关系类型或语义明显不同时，才分别用两条 direction=单向 的边。"
+    "禁止：对同一对角色生成相同 type 的两条单向边——应合并为一条双向边。"
     "edge.from_id 和 edge.to_id 必须使用角色列表中提供的有效 ID，绝不能使用名字。"
-    "禁止自环（from_id != to_id）。A→B 与 B→A 是两条独立关系，可同时存在。"
+    "禁止自环（from_id != to_id）。"
     "每个角色必须至少出现在一条关系的任一端点（不能有孤立角色）。"
     "只输出合法 JSON，不输出任何解释、标注或额外文字。"
 )
@@ -124,6 +133,7 @@ _RETRY_SYSTEM = (
     "你是一个世界关系网络生成器。"
     "之前生成的关系数据质量不达标，请根据审核反馈重新生成完整的关系列表。"
     "edge.from_id 和 edge.to_id 必须使用角色列表中的有效 ID，不能使用名字。"
+    "edge.type 必须是稳定的身份/社会关系标签，能回答'他们之间是什么关系'，禁止用事件或动作描述。"
     "每个角色必须至少参与一条关系，core 角色至少参与 2 条关系。"
     "只输出合法 JSON，不输出任何解释、标注或额外文字。"
 )
@@ -462,6 +472,8 @@ class RelationGenerationTool(BaseStage2Tool):
         covered: set[str] = set()
         char_degree: dict[str, int] = {cid: 0 for cid in character_ids}
         edge_types: set[str] = set()
+        # track (pair, type, direction) to detect splittable bidirectional edges
+        unidirectional_pairs: dict[tuple, int] = {}  # (frozenset({src,dst}), type) -> count
 
         for i, rel in enumerate(relations):
             edge = getattr(rel, "edge", None)
@@ -484,7 +496,6 @@ class RelationGenerationTool(BaseStage2Tool):
                 issues.append(f"relation[{i}]: self-loop on '{src}'")
                 continue
 
-            # Directed graph — A→B and B→A are distinct (no dedup)
             covered.add(src)
             covered.add(dst)
             char_degree[src] = char_degree.get(src, 0) + 1
@@ -493,6 +504,20 @@ class RelationGenerationTool(BaseStage2Tool):
             edge_type = getattr(edge, "type", "")
             if edge_type:
                 edge_types.add(edge_type)
+
+            direction = getattr(edge, "direction", "")
+            if direction == "单向" and edge_type:
+                key = (frozenset({src, dst}), edge_type)
+                unidirectional_pairs[key] = unidirectional_pairs.get(key, 0) + 1
+
+        # Soft: same-type single edges that should be merged into one bidirectional edge
+        mergeable = [(pair, t) for (pair, t), cnt in unidirectional_pairs.items() if cnt >= 2]
+        if mergeable:
+            sample = [f"{sorted(pair)} type='{t}'" for pair, t in mergeable[:3]]
+            issues.append(
+                f"warn: {len(mergeable)} pair(s) have duplicate single-direction edges with same type "
+                f"(should be merged into one direction=双向 edge): {'; '.join(sample)}"
+            )
 
         # Hard: all characters must appear in at least one relation
         uncovered = character_ids - covered

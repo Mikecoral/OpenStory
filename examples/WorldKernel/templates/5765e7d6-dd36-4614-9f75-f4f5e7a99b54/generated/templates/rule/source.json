@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "authority",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "legitimacy",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "divine_authority_entity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "prophetic_origin",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "feudal_legal_basis",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "monk_taoist_revelation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+dim_name: EdgeDim
+id:
+  type: str
+from_id:
+  type: str
+to_id:
+  type: str
+type:
+  type: str
+direction:
+  type: str
+political_stance:
+  type: str
+  option: true
+allegiance:
+  type: str
+  option: true
+visibility:
+  type: str
+  option: true
+authority_level:
+  type: str
+  option: true
+collaboration_secret:
+  type: str
+  option: true
+hostility_level:
+  type: str
+  option: true
+emotional_bond:
+  type: str
+  option: true
+supervision_role:
+  type: str
+  option: true

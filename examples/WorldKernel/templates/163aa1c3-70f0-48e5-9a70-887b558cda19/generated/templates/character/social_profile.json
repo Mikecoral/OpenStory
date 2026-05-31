@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "group_id",
+      "type": "str",
+      "required": true,
+      "ref": "institution"
+    },
+    {
+      "name": "reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "organization_rank",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "fame",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "social_network",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "bounty",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

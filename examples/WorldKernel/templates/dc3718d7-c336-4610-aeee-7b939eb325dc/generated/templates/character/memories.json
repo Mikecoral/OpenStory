@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "name": "background_summary",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "key_events",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "world_knowledge",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_knowledge",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "secrets",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "witnessed_cruciatus_cast",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "attended_secret_da_meeting",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "knows_room_of_requirement_location",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "carried_messages_for_order",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "hidden_muggleborn_escape_route",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

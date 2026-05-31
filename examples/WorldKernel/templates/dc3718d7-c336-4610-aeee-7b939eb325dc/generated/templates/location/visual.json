@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "decorative_propaganda",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "mood_aura",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dark_mark_signs",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "evidence_of_resistance_elements",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "lighting_conditions",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

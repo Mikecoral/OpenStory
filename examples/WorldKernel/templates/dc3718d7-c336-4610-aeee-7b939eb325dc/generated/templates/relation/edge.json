@@ -1,0 +1,82 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "direction",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "political_stance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "allegiance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "visibility",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "authority_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "collaboration_secret",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "hostility_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "emotional_bond",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "supervision_role",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

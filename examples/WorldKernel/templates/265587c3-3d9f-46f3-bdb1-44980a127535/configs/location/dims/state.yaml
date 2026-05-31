@@ -1,0 +1,22 @@
+dim_name: StateDim
+current_state:
+  type: str
+ownership:
+  type: str
+capacity:
+  type: int
+condition_status:
+  type: str
+  option: true
+garrison_count:
+  type: str
+  option: true
+hidden_feature_available:
+  type: str
+  option: true
+evidence_of_resistance:
+  type: str
+  option: true
+curfew_applicable:
+  type: str
+  option: true

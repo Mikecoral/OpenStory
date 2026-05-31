@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "enforcer",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "mechanism",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "detectability",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "enforcer_role",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "monitoring_method",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "detection_avoidance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "frequency_of_inspection",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "informant_network",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

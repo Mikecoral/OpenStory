@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "scope",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "mythological_causal_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "scope_phenomenon",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "rule_origin_story",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "applicable_realms",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

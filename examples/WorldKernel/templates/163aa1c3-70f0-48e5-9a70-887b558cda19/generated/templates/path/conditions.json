@@ -1,0 +1,70 @@
+{
+  "fields": [
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "danger_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "required_items",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "pass_required",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "rank_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "night_travel_allowed",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "weather_vulnerability",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "hostile_threat_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "trap_density",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "special_ability_needed",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "time_window",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

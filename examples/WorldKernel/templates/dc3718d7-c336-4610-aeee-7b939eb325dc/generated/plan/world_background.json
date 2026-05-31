@@ -1,0 +1,48 @@
+{
+  "world_name": "霍格沃茨魔法学院",
+  "world_origin_summary": "衍生自《哈利·波特》系列第七部，食死徒统治下的霍格沃茨，学生在恐怖管制中秘密结成反抗力量，为最终大战积蓄力量。",
+  "primary": "magic_school",
+  "secondary": "war_period",
+  "tags": [
+    "魔法",
+    "学院",
+    "衍生",
+    "黑暗时期",
+    "战争",
+    "反抗",
+    "霍格沃茨"
+  ],
+  "scope": "single_location",
+  "simulation_start": {
+    "time_point": "1997-1998学年开学",
+    "trigger_event": "斯内普就任校长，卡罗兄妹入驻并实施严酷惩罚措施",
+    "year": "1997",
+    "narrative_context": "邓布利多去世后，食死徒通过傀儡魔法部控制霍格沃茨，学院进入黑暗统治时期，学生在麦格等教师的暗中保护下秘密重建DA组织。"
+  },
+  "world_constraints": [
+    {
+      "constraint_id": "magical_secrecy",
+      "name": "巫师保密法",
+      "description": "巫师世界必须对麻瓜隐藏魔法存在，食死徒虽掌权但延续此原则以免引起麻瓜干预。",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "death_eater_occupation",
+      "name": "食死徒军事占领",
+      "description": "霍格沃茨被伏地魔势力全面控制，校长斯内普表面忠诚，卡罗兄妹实施恐怖统治，公开反抗将招致死亡或囚禁。",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "ancient_magic_binding",
+      "name": "古代魔法契约",
+      "description": "霍格沃茨城堡本身被古老魔法保护与约束，例如不能有食死徒直接杀死城堡内的学生（非契约杀死），以及邓布利多遗留下的灵魂画像限制。",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "resistance_network",
+      "name": "潜在抵抗组织",
+      "description": "尽管压制严厉，凤凰社残留成员、DA及校级反抗力量（如麦格、斯拉格霍恩等）仍在暗中活动，利用城堡秘密通道与有求必应屋构建了有限但有效的抵抗网络。",
+      "scope": "faction"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "disguise_mode",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dark_mark_if_deatheater",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "uniform_misalignment",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "visible_injuries",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

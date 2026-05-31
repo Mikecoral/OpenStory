@@ -1,0 +1,21 @@
+dim_name: EndpointsDim
+from_id:
+  type: str
+  ref: location
+to_id:
+  type: str
+  ref: location
+bidirectional:
+  type: bool
+connection_type:
+  type: str
+  option: true
+narrative_importance:
+  type: str
+  option: true
+psychological_distance:
+  type: str
+  option: true
+layered_realm:
+  type: str
+  option: true

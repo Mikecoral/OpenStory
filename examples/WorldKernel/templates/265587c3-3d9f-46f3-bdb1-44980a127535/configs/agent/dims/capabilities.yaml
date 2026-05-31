@@ -1,0 +1,19 @@
+dim_name: CapabilitiesDim
+skills:
+  type: list_str
+level:
+  type: str
+weaknesses:
+  type: str
+dark_arts_defense_level:
+  type: str
+  option: true
+nonverbal_magic_proficiency:
+  type: str
+  option: true
+illegal_spells_known:
+  type: str
+  option: true
+polyjuice_awareness:
+  type: str
+  option: true

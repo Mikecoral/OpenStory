@@ -1,0 +1,19 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+role:
+  type: str
+blood_status:
+  type: str
+  option: true
+wand_core:
+  type: str
+  option: true
+patronus_form:
+  type: str
+  option: true
+family_background:
+  type: str
+  option: true

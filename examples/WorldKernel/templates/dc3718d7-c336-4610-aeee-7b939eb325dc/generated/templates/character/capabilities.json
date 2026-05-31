@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "skills",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "weaknesses",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "occlumency_proficiency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "animagus_form",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "patronus_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dark_arts_knowledge",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "illegal_spell_mastery",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "undercover_communication_skills",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}
