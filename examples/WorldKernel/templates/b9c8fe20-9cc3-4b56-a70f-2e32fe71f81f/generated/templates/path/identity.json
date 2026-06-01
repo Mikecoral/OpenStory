@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "hidden",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "monitored",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "magical_properties",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "requires_magic",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "known_to_resistance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "known_to_death_eaters",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

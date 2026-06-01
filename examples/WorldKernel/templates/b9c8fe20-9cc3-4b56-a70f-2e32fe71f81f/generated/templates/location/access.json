@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "permissions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_conditions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "curfew_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "password_required",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "danger_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "lock_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "surveillance_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

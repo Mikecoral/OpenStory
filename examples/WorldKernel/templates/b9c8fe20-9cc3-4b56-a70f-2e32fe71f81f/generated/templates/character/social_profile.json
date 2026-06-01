@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "group_id",
+      "type": "str",
+      "required": true,
+      "ref": "institution"
+    },
+    {
+      "name": "reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "faction_reputation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "surveillance_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "codename",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "trust_circle",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "public_perception",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

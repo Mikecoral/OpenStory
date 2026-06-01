@@ -1,0 +1,16 @@
+dim_name: GoalsDim
+short_term_goal:
+  type: str
+long_term_goal:
+  type: str
+motivation:
+  type: str
+hidden_agenda:
+  type: str
+  option: true
+desperate_goal:
+  type: str
+  option: true
+secondary_goal:
+  type: str
+  option: true

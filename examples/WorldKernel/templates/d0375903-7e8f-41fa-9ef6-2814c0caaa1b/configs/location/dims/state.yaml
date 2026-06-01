@@ -1,0 +1,22 @@
+dim_name: StateDim
+current_state:
+  type: str
+ownership:
+  type: str
+capacity:
+  type: int
+current_event_occurring:
+  type: str
+  option: true
+maintenance_status:
+  type: str
+  option: true
+significance_state:
+  type: str
+  option: true
+administrator_person_id:
+  type: str
+  option: true
+ritual_owner_person_id:
+  type: str
+  option: true

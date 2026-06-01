@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "bidirectional",
+      "type": "bool",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "security_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "time_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secret_passage",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "jurisdiction_owner",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

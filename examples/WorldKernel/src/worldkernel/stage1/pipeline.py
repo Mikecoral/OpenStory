@@ -256,12 +256,6 @@ dimensions:
     edge:
       type: EdgeDim
       path: dims/edge.yaml
-
-  # ── 关系属性 ──────────────────────────────────────────────
-  properties:
-    properties:
-      type: PropertiesDim
-      path: dims/properties.yaml
 """
 
 _ENTITY_CONFIGS: list[dict] = [
@@ -292,7 +286,7 @@ _ENTITY_CONFIGS: list[dict] = [
         "source_entity": "relation",
         "template": _RELATION_YAML_TEMPLATE,
         "main_file": "relation.yaml",
-        "dims": ["edge", "properties"],
+        "dims": ["edge"],
     },
 ]
 

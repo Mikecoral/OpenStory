@@ -1,0 +1,22 @@
+dim_name: CapabilitiesDim
+skills:
+  type: list_str
+level:
+  type: str
+weaknesses:
+  type: str
+special_knowledge:
+  type: str
+  option: true
+unique_skills:
+  type: str
+  option: true
+quack_remedies:
+  type: str
+  option: true
+literary_talent:
+  type: str
+  option: true
+manipulation_techniques:
+  type: str
+  option: true

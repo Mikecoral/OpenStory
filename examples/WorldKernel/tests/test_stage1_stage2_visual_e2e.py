@@ -286,7 +286,7 @@ def _validate_templates(session_dir: Path, stats: _Stats) -> None:
     _sep("templates/")
     expected_dims = {
         "character": 10, "location": 5, "institution": 6,
-        "rule": 4, "action": 4, "relation": 2, "path": 3,
+        "rule": 4, "action": 4, "relation": 1, "path": 3,
     }
     templates_dir = session_dir / "generated" / "templates"
     if not templates_dir.exists():
@@ -762,20 +762,19 @@ def _run_stage2(session_id: str, session_dir: Path, stats: _Stats) -> None:
 
         _sep("Stage2: 关系生成详情")
         if rel_result.items:
-            print(f"  {'#':<3} {'ID':<30} {'From':<30} {'To':<30} {'Type':<15} {'Strength':<10}")
+            print(f"  {'#':<3} {'ID':<30} {'From':<30} {'To':<30} {'Type':<15} {'Direction':<10}")
             print(f"  {'─'*3} {'─'*30} {'─'*30} {'─'*30} {'─'*15} {'─'*10}")
             for i, rel in enumerate(rel_result.items, 1):
                 edge = getattr(rel, "edge", None)
-                props = getattr(rel, "properties", None)
                 if edge:
                     eid = getattr(edge, "id", "?")
                     from_id = getattr(edge, "from_id", "?")
                     to_id = getattr(edge, "to_id", "?")
                     rel_type = getattr(edge, "type", "?")
+                    direction = getattr(edge, "direction", "?")
                 else:
-                    eid, from_id, to_id, rel_type = "?", "?", "?", "?"
-                strength = getattr(props, "strength", "?") if props else "?"
-                print(f"  {i:<3} {eid:<30} {from_id:<30} {to_id:<30} {rel_type:<15} {strength:<10}")
+                    eid, from_id, to_id, rel_type, direction = "?", "?", "?", "?", "?"
+                print(f"  {i:<3} {eid:<30} {from_id:<30} {to_id:<30} {rel_type:<15} {direction:<10}")
 
         if qs:
             _sep("关系质量摘要")

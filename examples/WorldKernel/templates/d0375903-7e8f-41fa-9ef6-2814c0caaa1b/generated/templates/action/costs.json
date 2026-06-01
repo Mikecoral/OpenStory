@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "time",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "resources",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_cost",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "reputation_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "karma_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "resource_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "time_of_day",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

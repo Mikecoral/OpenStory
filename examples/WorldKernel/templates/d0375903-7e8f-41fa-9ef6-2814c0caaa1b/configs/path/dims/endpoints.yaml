@@ -1,0 +1,21 @@
+dim_name: EndpointsDim
+from_id:
+  type: str
+  ref: location
+to_id:
+  type: str
+  ref: location
+bidirectional:
+  type: bool
+security_level:
+  type: str
+  option: true
+time_restriction:
+  type: str
+  option: true
+secret_passage:
+  type: str
+  option: true
+jurisdiction_owner:
+  type: str
+  option: true

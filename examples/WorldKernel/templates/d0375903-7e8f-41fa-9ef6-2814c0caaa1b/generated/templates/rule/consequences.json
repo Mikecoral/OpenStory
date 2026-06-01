@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "penalties",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "rewards_for_compliance",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "penalty_severity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "collateral_liability",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "execution_flow",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "exception_conditions",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

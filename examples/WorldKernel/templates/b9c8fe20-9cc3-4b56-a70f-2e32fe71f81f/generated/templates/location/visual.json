@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "atmosphere",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "lighting_condition",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "decorative_features",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "magical_effects",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "assets",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "territory",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "economic_source",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "special_artifacts",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "property_ownership_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "annual_budget_or_tribute",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

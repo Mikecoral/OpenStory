@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "current_state",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "ownership",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "capacity",
+      "type": "int",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "current_event_occurring",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "maintenance_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "significance_state",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "administrator_person_id",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "ritual_owner_person_id",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

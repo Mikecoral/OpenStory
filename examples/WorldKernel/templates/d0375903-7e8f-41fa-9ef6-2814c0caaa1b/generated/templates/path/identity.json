@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "usage_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "symbolic_significance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "associated_items",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

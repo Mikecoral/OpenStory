@@ -1,0 +1,992 @@
+{
+  "artifact_type": "path_edge",
+  "items": [
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:014",
+        "name": "活板门通道",
+        "type": "地下通道",
+        "hidden": "false",
+        "monitored": "false",
+        "magical_properties": "厨房的家养小精灵可瞬间移动至大礼堂",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:005",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:014",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "curfew_restricted": "false",
+        "patrolled": "false",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:010",
+        "name": "格兰芬多塔楼楼梯",
+        "type": "楼梯",
+        "hidden": "false",
+        "monitored": "true",
+        "magical_properties": "每级台阶会随机移动，但食死徒已使它们固定",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:005",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:008",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "中等",
+        "required_items": "魔杖",
+        "curfew_restricted": "true",
+        "patrolled": "true",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "食死徒的监视咒覆盖楼梯转角",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:013",
+        "name": "赫奇帕奇地下走廊",
+        "type": "走廊",
+        "hidden": "true",
+        "monitored": "false",
+        "magical_properties": "墙壁会渗出水汽，减弱声音传播",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "false"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:005",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:013",
+        "bidirectional": true,
+        "secret_route": "true",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "true",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "受限",
+        "danger_level": "安全",
+        "required_items": "无",
+        "curfew_restricted": "false",
+        "patrolled": "false",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "隐蔽",
+        "detection_charm": "",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:017",
+        "name": "塔楼高层楼梯",
+        "type": "楼梯",
+        "hidden": "false",
+        "monitored": "true",
+        "magical_properties": "台阶在夜间会微微发光",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:005",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:019",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "中等",
+        "required_items": "无",
+        "curfew_restricted": "true",
+        "patrolled": "true",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:006",
+        "name": "偏僻走廊",
+        "type": "走廊",
+        "hidden": "false",
+        "monitored": "true",
+        "magical_properties": "角落里残留着黑魔法的阴冷气息",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:005",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:003",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "危险",
+        "required_items": "魔杖",
+        "curfew_restricted": "true",
+        "patrolled": "true",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "卡罗兄妹的恶咒徘徊在通道中",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:012",
+        "name": "医疗翼走廊",
+        "type": "走廊",
+        "hidden": "false",
+        "monitored": "false",
+        "magical_properties": "走廊墙壁上画有浮现的草药插图",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:005",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:012",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "中等",
+        "required_items": "无",
+        "curfew_restricted": "false",
+        "patrolled": "false",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "庞弗雷女士的感知咒可探知走廊动静",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:015",
+        "name": "中央楼梯",
+        "type": "楼梯",
+        "hidden": "false",
+        "monitored": "true",
+        "magical_properties": "楼梯会突然变化方向，食死徒已将其固化",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:005",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:015",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "中等",
+        "required_items": "无",
+        "curfew_restricted": "true",
+        "patrolled": "true",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "平斯夫人的反窃听咒与食死徒侦测咒叠加",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:004",
+        "name": "船屋-城堡门厅通道",
+        "type": "门厅",
+        "hidden": "false",
+        "monitored": "false",
+        "magical_properties": "入口处的石像会低语警告入侵者",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:005",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:002",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "true",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "curfew_restricted": "false",
+        "patrolled": "false",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:016",
+        "name": "魁地奇球场草坪小路",
+        "type": "户外小路",
+        "hidden": "false",
+        "monitored": "true",
+        "magical_properties": "草地被施了不被允许的生长咒，变得格外刺脚",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:005",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:017",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "中等",
+        "required_items": "无",
+        "curfew_restricted": "true",
+        "patrolled": "true",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "食死徒安置了窥探水晶球在球场门柱上",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:011",
+        "name": "温室小径",
+        "type": "户外小路",
+        "hidden": "false",
+        "monitored": "false",
+        "magical_properties": "两旁种植的咬人甘蓝会攻击未经许可的路人",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:005",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:010",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "厚手套（可选）",
+        "curfew_restricted": "false",
+        "patrolled": "false",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:023",
+        "name": "赫奇帕奇地道",
+        "type": "地道",
+        "hidden": "true",
+        "monitored": "false",
+        "magical_properties": "地道壁上的砖块可以互相传话",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "false"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:014",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:013",
+        "bidirectional": true,
+        "secret_route": "true",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "true",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "隐藏",
+        "danger_level": "安全",
+        "required_items": "无",
+        "curfew_restricted": "false",
+        "patrolled": "false",
+        "safe_house": "true",
+        "trap": "false",
+        "visibility": "隐蔽",
+        "detection_charm": "",
+        "permission_needed": "赫奇帕奇学生或受邀者",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:024",
+        "name": "地下甬道",
+        "type": "地道",
+        "hidden": "false",
+        "monitored": "false",
+        "magical_properties": "空气中弥漫着魔药蒸汽，有微弱致幻效果",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:014",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:016",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "防毒面具（建议）",
+        "curfew_restricted": "false",
+        "patrolled": "false",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:018",
+        "name": "男生宿舍楼梯",
+        "type": "楼梯",
+        "hidden": "false",
+        "monitored": "false",
+        "magical_properties": "楼梯会自动缩短以适应身高",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:008",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:006",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "curfew_restricted": "false",
+        "patrolled": "false",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "",
+        "permission_needed": "仅限格兰芬多男生",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:019",
+        "name": "女生宿舍魔法楼梯",
+        "type": "楼梯",
+        "hidden": "false",
+        "monitored": "false",
+        "magical_properties": "若男性试图登上，楼梯会变成滑梯",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:008",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:007",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "禁止男性上行，女性可正常通行",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "受限",
+        "danger_level": "安全",
+        "required_items": "无",
+        "curfew_restricted": "false",
+        "patrolled": "false",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "",
+        "permission_needed": "女性",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:002",
+        "name": "天文塔螺旋梯",
+        "type": "楼梯",
+        "hidden": "false",
+        "monitored": "true",
+        "magical_properties": "每一级台阶都用魔法加固，防止摔落",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:019",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:001",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "危险",
+        "required_items": "魔杖",
+        "curfew_restricted": "true",
+        "patrolled": "true",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "永久性窥探咒覆盖塔顶区域",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:025",
+        "name": "八楼走廊",
+        "type": "走廊",
+        "hidden": "false",
+        "monitored": "true",
+        "magical_properties": "挂毯对面的墙壁偶尔会显示门把手的轮廓",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "false"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:019",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:018",
+        "bidirectional": true,
+        "secret_route": "true",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "隐藏",
+        "danger_level": "中等",
+        "required_items": "需要勇敢且秘密的意图",
+        "curfew_restricted": "true",
+        "patrolled": "true",
+        "safe_house": "true",
+        "trap": "false",
+        "visibility": "隐蔽",
+        "detection_charm": "有求必应屋自带反侦测咒语",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:001",
+        "name": "高层阴森走廊",
+        "type": "走廊",
+        "hidden": "false",
+        "monitored": "true",
+        "magical_properties": "墙上炭笔涂写的‘我看见了死亡’在黑魔法下闪烁",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:003",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:001",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "危险",
+        "required_items": "魔杖",
+        "curfew_restricted": "true",
+        "patrolled": "true",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "食死徒的恶咒使走廊像迷宫一样扭曲",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:007",
+        "name": "图书馆走廊",
+        "type": "走廊",
+        "hidden": "false",
+        "monitored": "true",
+        "magical_properties": "平斯夫人的银针经常巡视这里",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:003",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:015",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "中等",
+        "required_items": "无",
+        "curfew_restricted": "true",
+        "patrolled": "true",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "平斯夫人的监控咒与食死徒的侦测咒叠加",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:022",
+        "name": "医疗翼-图书馆连廊",
+        "type": "走廊",
+        "hidden": "false",
+        "monitored": "false",
+        "magical_properties": "墙壁上的医疗图画会预示疾病",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:012",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:015",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "curfew_restricted": "false",
+        "patrolled": "false",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:020",
+        "name": "校长密廊",
+        "type": "秘密通道",
+        "hidden": "true",
+        "monitored": "true",
+        "magical_properties": "只有通过斯内普级的魔法才能感知到入口",
+        "requires_magic": "true",
+        "known_to_resistance": "false",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:009",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:018",
+        "bidirectional": false,
+        "secret_route": "true",
+        "requires_password": "true",
+        "password": "只有斯内普知道的口令",
+        "associated_map": "",
+        "one_way_if_condition": "只从校长办公室通往有求必应屋，反向需要额外口令",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "隐藏",
+        "danger_level": "致命",
+        "required_items": "斯内普的许可或黑魔法能力",
+        "curfew_restricted": "false",
+        "patrolled": "false",
+        "safe_house": "false",
+        "trap": "true",
+        "visibility": "隐蔽",
+        "detection_charm": "斯内普放置的严厉咒语，未经许可者会触发攻击",
+        "permission_needed": "斯内普本人或伏地魔",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:008",
+        "name": "禁林北径",
+        "type": "户外小路",
+        "hidden": "false",
+        "monitored": "false",
+        "magical_properties": "树干上刻有马人符文",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:010",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:004",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "危险",
+        "required_items": "魔杖、荧光闪烁咒",
+        "curfew_restricted": "false",
+        "patrolled": "false",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:003",
+        "name": "湖岸泥泞路",
+        "type": "户外小路",
+        "hidden": "false",
+        "monitored": "false",
+        "magical_properties": "湖面上映出变形的倒影",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:004",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:002",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "中等",
+        "required_items": "无",
+        "curfew_restricted": "false",
+        "patrolled": "false",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:009",
+        "name": "魁地奇球场-禁林边缘",
+        "type": "户外小路",
+        "hidden": "false",
+        "monitored": "true",
+        "magical_properties": "草地与林地交界处有轻微变形点",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:004",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:017",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "中等",
+        "required_items": "无",
+        "curfew_restricted": "true",
+        "patrolled": "true",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "食死徒在树梢布置了监视岗",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:005",
+        "name": "湖岸草坡",
+        "type": "户外小路",
+        "hidden": "false",
+        "monitored": "false",
+        "magical_properties": "这里长着罕见的悲啼曼陀罗，会发出哭声",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:017",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:002",
+        "bidirectional": true,
+        "secret_route": "false",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "",
+        "one_way_if_condition": "",
+        "escape_route": "false",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "curfew_restricted": "false",
+        "patrolled": "false",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "可见",
+        "detection_charm": "",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:021",
+        "name": "蜜蜂公爵秘密出口",
+        "type": "秘密通道",
+        "hidden": "true",
+        "monitored": "false",
+        "magical_properties": "通道两端有防探测咒，墙壁会发出糖果香味",
+        "requires_magic": "false",
+        "known_to_resistance": "true",
+        "known_to_death_eaters": "true"
+      },
+      "endpoints": {
+        "from_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:011",
+        "to_id": "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:loc:015",
+        "bidirectional": true,
+        "secret_route": "true",
+        "requires_password": "false",
+        "password": "",
+        "associated_map": "活点地图",
+        "one_way_if_condition": "",
+        "escape_route": "true",
+        "blocked_by_enemy": "false"
+      },
+      "conditions": {
+        "access_level": "隐藏",
+        "danger_level": "危险",
+        "required_items": "隐身衣或幻身咒（强烈建议）",
+        "curfew_restricted": "false",
+        "patrolled": "false",
+        "safe_house": "false",
+        "trap": "false",
+        "visibility": "隐蔽",
+        "detection_charm": "微弱，但食死徒已知晓存在",
+        "permission_needed": "",
+        "emergency_disable": "false"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:014",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:010",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:013",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:017",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:006",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:012",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:015",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:004",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:016",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:011",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:023",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:024",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:018",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:019",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:002",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:025",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:001",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:007",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:022",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:020",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:008",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:003",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:009",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:005",
+    "e:b9c8fe20_9cc3_4b56_a70f_2e32fe71f81f:path:021"
+  ],
+  "upstream_step_ids": [
+    "generate_paths"
+  ],
+  "warnings": [],
+  "provenance": {
+    "result_count": 1
+  }
+}

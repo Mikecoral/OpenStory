@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "current_state",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "ownership",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "capacity",
+      "type": "int",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "safety_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "magical_barrier",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "current_activity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "damage_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "residual_magic",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

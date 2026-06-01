@@ -1,0 +1,502 @@
+{
+  "artifact_type": "location_profile",
+  "items": [
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:013",
+        "name": "薛府院落",
+        "type": "住宅院区",
+        "description": "薛蟠与夏金桂的婚房院落，位于薛府东侧。院墙高耸，青砖灰瓦，正房三间带耳房，厢房为香菱与宝蟾的住处。庭院中央有一株老槐树，树下青石台阶常被泼水结冰，是夏金桂刻意羞辱香菱时留下的痕迹。屋内陈设虽富丽，但空气中弥漫着压抑与戾气，经常传出摔打声与哭喊声。",
+        "symbolic_meaning": "封建妻妾斗争的血腥舞台，正妻权威对妾室尊严的彻底践踏",
+        "associated_plot_events": "夏金桂指使宝蟾给香菱下马威，逼迫香菱改名‘秋菱’；薛蟠在夏金桂挑唆下毒打香菱；香菱病中仍被驱使做粗活",
+        "historical_literary_reference": "《红楼梦》第八十回‘美香菱屈受贪夫棒’核心场景",
+        "custom_function": "妻妾日常居住与冲突爆发地"
+      },
+      "access": {
+        "permissions": "薛蟠与夏金桂可随意使用所有房间；香菱仅限自己住处及奉命活动区域；宝蟾作为夏金桂心腹可在院内及正房自由走动但需及时报告；其他仆妇需通报方可进入正房",
+        "access_level": "私人住宅，严格等级制",
+        "access_conditions": "白天主人允许时奴仆可进出，夜间锁院；薛蟠外出时夏金桂常独揽院门钥匙",
+        "social_hierarchy_level": "主子（薛蟠、夏金桂）为最上层，妾室（香菱）次之，通房丫鬟（宝蟾）再次，粗使仆妇最低",
+        "specific_access_rules": "香菱不得任意进入正房内间，须先叩帘获准；宝蟾作为夏金桂心腹，可随意出入，但须报告主人行踪",
+        "ceremonial_use_restriction": "无正式礼仪用途，家族祭祀时薛蟠单独外出参加，院落不开放",
+        "seasonal_access_conditions": ""
+      },
+      "state": {
+        "current_state": "妻妾争斗激化中，物品常有砸损，香菱所居厢房阴冷潮湿，已被夏金桂限制饮食与医药",
+        "ownership": "薛蟠（户主），实际使用主导权归夏金桂",
+        "capacity": 10,
+        "current_event_occurring": "香菱被罚跪在槐树下半日，宝蟾奉命监视",
+        "maintenance_status": "略显脏乱，夏金桂刻意不让人打扫香菱区域",
+        "significance_state": "核心冲突地，气氛最紧张",
+        "administrator_person_id": "夏金桂",
+        "ritual_owner_person_id": "薛蟠"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:004",
+        "name": "贾母正房",
+        "type": "住宅院区",
+        "description": "位于荣国府西路最深处，五间大敞厅连通，内设紫檀架子、大理石屏风，炕上铺着猩红洋毡。东梢间是贾母寝卧，西梢间供佛像。正堂悬‘福寿康宁’匾额，两侧多宝阁陈设古玩字画。窗外种有数株海棠与芭蕉，春日花开时香气穿帘。此处是贾府礼法与温情的象征，子孙晨昏定省、节庆宴集皆在此。",
+        "symbolic_meaning": "贾府家族权威与凝聚力的物理核心，也是封建家长制下最后的温情庇护所",
+        "associated_plot_events": "宝玉常来请安，贾母问及香菱病情；迎春回门时在此向贾母哭诉孙绍祖虐待；贾母感叹家族运数",
+        "historical_literary_reference": "《红楼梦》全书贾母居所，多处重要家族会议与情感高潮发生地",
+        "custom_function": "家族最高权威起居室，兼作非正式议事厅与收容晚辈的庇护所"
+      },
+      "access": {
+        "permissions": "贾母、邢夫人、王夫人、宝玉、黛玉、迎春等直系主子可自由进出；贾琏、薛蟠等外姓女婿须通报后方可入内；所有奴仆须在廊外听候，贴身丫鬟（如鸳鸯）可随侍入内",
+        "access_level": "家族核心内宅，高度封闭",
+        "access_conditions": "每日早晚贾母起床与就寝后，丫鬟通报方可进入；贾母午休时全院静默，非紧急不得惊扰",
+        "social_hierarchy_level": "贾母本人为至高，其余主子按辈分与亲疏排序，奴仆一律不得入正堂",
+        "specific_access_rules": "外姓女眷（如夏金桂）须有邀请方可入内；薛姨妈来访必先拜见贾母，由专人引导",
+        "ceremonial_use_restriction": "元宵、中秋等节庆开放全族共聚；丧礼期间转为灵堂部署",
+        "seasonal_access_conditions": ""
+      },
+      "state": {
+        "current_state": "贾母精神尚好，日常有鸳鸯、琥珀伺候，常有晚辈前来请安问候",
+        "ownership": "贾母（荣国府最高辈分主人）",
+        "capacity": 30,
+        "current_event_occurring": "宝玉正搀扶贾母去东厢房看新开的石榴花",
+        "maintenance_status": "保持整洁，每日由鸳鸯带人拂拭，香炉常燃檀香",
+        "significance_state": "家族权威稳定，但隐约有衰败氛围",
+        "administrator_person_id": "贾母",
+        "ritual_owner_person_id": "贾母"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:008",
+        "name": "王夫人院落",
+        "type": "住宅院区",
+        "description": "位于贾母正房东侧，小三合院，正房三间，左右厢房为丫鬟住所。院内种有数竿翠竹，石阶青苔斑驳。王夫人常在正堂炕上捻珠诵经，案头摆着《金刚经》与账册。西间是宝玉偶尔来歇息的地方，东间存放家族礼器与敕封文书。气氛肃穆且压抑，少有人敢高声谈笑。",
+        "symbolic_meaning": "封建礼教与家族秩序的维护者日常活动场域",
+        "associated_plot_events": "王夫人处理香菱被虐时的态度（主张息事宁人）；训斥宝玉不可干预薛家内务；与薛姨妈商议如何应对夏金桂的跋扈",
+        "historical_literary_reference": "《红楼梦》中王夫人众多管家决策的舞台",
+        "custom_function": "家族内部事务决策辅助中心，兼作宝玉教育督导场所"
+      },
+      "access": {
+        "permissions": "王夫人、贾政、宝玉、元春（回家省亲时）可自由进出；其他夫人（如邢夫人）需由丫鬟传话；奴仆仅限彩云、玉钏儿等心腹可进正房",
+        "access_level": "内宅，等级严格但略低于贾母正房",
+        "access_conditions": "日常白天开放，王夫人礼佛时段正房锁门，留言可转交丫鬟",
+        "social_hierarchy_level": "王夫人为主子，其余主子按辈分，奴仆中彩云地位略高",
+        "specific_access_rules": "薛姨妈作为同辈可直入；夏金桂等外姓新妇须由王夫人召见方入",
+        "ceremonial_use_restriction": "无重大仪式功能，仅年节时贾母过来赏钱",
+        "seasonal_access_conditions": ""
+      },
+      "state": {
+        "current_state": "王夫人近日因薛家之事烦心，时常垂泪，彩云在旁劝慰",
+        "ownership": "王夫人（贾政正妻，实际管理院落）",
+        "capacity": 15,
+        "current_event_occurring": "王夫人正翻看香菱托人送来的求救字条，又气又无奈",
+        "maintenance_status": "整洁有序，但香案烛台略显陈旧",
+        "significance_state": "平静中酝酿不安，王夫人权威受夏金桂挑战",
+        "administrator_person_id": "王夫人",
+        "ritual_owner_person_id": "王夫人"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:015",
+        "name": "迎春紫菱洲",
+        "type": "住宅院区",
+        "description": "大观园东北角一处临水院落，以水塘中遍植菱角而得名。院门匾额‘紫菱洲’三字已剥落，墙边苔藓厚积。正房三间，东次间是迎春旧日绣房，如今蛛网暗结，西次间书房书册散乱。院内一株老柳枯了一半，池中菱叶稀落，水色浑浊。迎春出嫁后此处仅有偶尔打扫，充满人去楼空的萧索。",
+        "symbolic_meaning": "贵族女子被婚姻吞噬命运的空间隐喻，昔日欢笑与今日凄凉对比",
+        "associated_plot_events": "迎春回门贾府，在此处短暂歇息并向贾母、宝玉哭诉孙绍祖的殴打与羞辱；宝钗、黛玉前来探望劝慰",
+        "historical_literary_reference": "《红楼梦》第七十九回‘薛文龙悔娶河东狮 贾迎春误嫁中山狼’提及紫菱洲，第八十回迎春回门场景",
+        "custom_function": "迎春婚前住所，婚后暂居点，姐妹间情感交流场所"
+      },
+      "access": {
+        "permissions": "迎春本人为主人，回门期间可自由使用；宝玉、黛玉、宝钗等姐妹可随意进入探望；其他奴仆须获迎春或王夫人允许方可进入",
+        "access_level": "已出嫁小姐的空置故居，临时恢复使用",
+        "access_conditions": "日常锁门，仅打扫丫鬟持有钥匙；回门期间迎春入住，钥匙交与她贴身丫鬟可自由进出",
+        "social_hierarchy_level": "迎春虽为出嫁女，但仍是贾府小姐，地位高于一般奴仆；薛蟠、夏金桂等外姓无由入内",
+        "specific_access_rules": "孙绍祖不得进入（贾府规矩女婿不入内宅）；迎春带回来的孙家丫鬟暂歇于后罩房",
+        "ceremonial_use_restriction": "无正式礼仪用途",
+        "seasonal_access_conditions": ""
+      },
+      "state": {
+        "current_state": "迎春回门，暂住三间正房，缺衣少食，面色憔悴，房中仅有简单铺盖",
+        "ownership": "贾府（归属王夫人管辖），迎春暂时使用",
+        "capacity": 8,
+        "current_event_occurring": "宝玉前来探望，见迎春颈上瘀痕，二人抱头痛哭",
+        "maintenance_status": "长期疏于打理，屋顶瓦片松动，窗纸破损，池水泛绿",
+        "significance_state": "荒废中透出哀伤，成为家族衰败的缩影",
+        "administrator_person_id": "王夫人",
+        "ritual_owner_person_id": "迎春"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:012",
+        "name": "薛蟠内室",
+        "type": "内室",
+        "description": "位于薛家院落深处的正房，陈设俗艳堆砌，绣帐锦被下暗藏铁锁与鞭痕。墙上挂着薛蟠从西市买来的赤金泥金画，与墙角香菱跪过的蒲团形成刺目对比。窗棂严闭，透不进一丝月光，室内常年弥漫着酒气、药味和压抑的哭声。这里是薛蟠、夏金桂实施暴力的核心场所，香菱日夜受辱之地。",
+        "symbolic_meaning": "封建家庭妻妾制度下私刑暗室的具象化，暴力与压迫未受制约的缩影",
+        "associated_plot_events": "夏金桂指使宝蟾将香菱锁于内室施以鞭笞；薛蟠酒后踢打香菱；宝蟾在此传递刁难指令",
+        "historical_literary_reference": "",
+        "custom_function": "薛蟠私密起居与内宅矛盾爆发的主战场"
+      },
+      "access": {
+        "permissions": "仅薛蟠、夏金桂、香菱、宝蟾可以自由出入；其他奴仆须得召唤方可进入",
+        "access_level": "private",
+        "access_conditions": "主人许可或传唤",
+        "social_hierarchy_level": "内室——家族最高等级私密空间，外男与低等仆役绝对禁止",
+        "specific_access_rules": "薛蟠不在时，夏金桂可单方面禁止任何人入内；香菱被罚期间常被锁在房中",
+        "ceremonial_use_restriction": "",
+        "seasonal_access_conditions": ""
+      },
+      "state": {
+        "current_state": "日常使用中，但气氛如暴风雨前夕，香菱常被囚禁于此",
+        "ownership": "薛蟠",
+        "capacity": 8,
+        "current_event_occurring": "香菱刚因打碎花瓶被夏金桂责打，正跪在炭渣上认错",
+        "maintenance_status": "表面整洁实则阴郁，陈设日趋颓败",
+        "significance_state": "次要但关键的家庭冲突中心",
+        "administrator_person_id": "夏金桂（实际掌权者）",
+        "ritual_owner_person_id": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:002",
+        "name": "大观园",
+        "type": "园林景观",
+        "description": "贾府为元春省亲特建的私家园林，占地三里半，楼阁参差，溪涧环绕。正门五间，白石台阶，内藏沁芳闸、稻香村、栊翠庵等众多景致。然而时过境迁，元春已逝，省亲不再，园中芳草萋萋，亭台油漆剥落，飞檐蛛网密布。昔日欢声笑语被秋虫的悲鸣取代，只有迎春回门时短暂唤起一点生机。它是封建贵族由盛转衰的活标本，也是宝玉、黛玉等人青春梦境最后的庇护所。",
+        "symbolic_meaning": "盛极而衰的具象化，理想桃花源与现实残酷之间的裂缝",
+        "associated_plot_events": "迎春回门在后花园游赏；宝玉为香菱求疗妒方后穿过大观园返回；香菱此前在大观园与众人联诗、学诗；王夫人查检大观园导致晴雯被逐的前奏仍在阴影中",
+        "historical_literary_reference": "直接出自《红楼梦》第十七至十八回，是小说核心空间",
+        "custom_function": "贾府主要人物居住、游乐、社交的综合舞台"
+      },
+      "access": {
+        "permissions": "贾府主子、重要亲戚及贴身奴仆可自由出入；外客需由管家层层通报",
+        "access_level": "semi-private",
+        "access_conditions": "白天对家族成员基本开放，夜间锁园，钥匙由贾琏掌管",
+        "social_hierarchy_level": "贵族私园，代表贾府最高规格的社交场域",
+        "specific_access_rules": "",
+        "ceremonial_use_restriction": "曾经专为元春省亲举行庆典，当前已无特殊限制",
+        "seasonal_access_conditions": "冬季湖泊结冰时部分水路禁止通行，但园林整体仍可使用"
+      },
+      "state": {
+        "current_state": "维持但日趋破败，多处院门虚掩，花木无人精心修剪",
+        "ownership": "贾府（归贾政、贾母等共同体所有）",
+        "capacity": 600,
+        "current_event_occurring": "迎春今日回门，众人在缀锦阁短暂话旧，后院荒草已没过膝盖",
+        "maintenance_status": "严重失修，去年暴雨冲坏的石板路至今未补",
+        "significance_state": "核心——贾府象征与人物命运的容器",
+        "administrator_person_id": "贾琏（总管事务）、李纨（协助管理内务）",
+        "ritual_owner_person_id": "贾母（名义上的最高拥有者）"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:011",
+        "name": "潇湘馆",
+        "type": "院落",
+        "description": "位于大观园东南角，院内翠竹千竿，凤尾森森，一条小溪蜿蜒流过，竹桥横架。房舍以湘妃竹为材，窗纱用软烟罗，内设笔砚书册，琴棋满架。黛玉的咏絮才情与孤寡身世化为月光下的竹影，清冷而凄美。如今因黛玉旧疾复发，院落里弥漫着药香，紫鹃常对着凋落的竹叶发呆。",
+        "symbolic_meaning": "诗性灵魂与高洁不群的栖居，亦是泪尽而亡的前奏",
+        "associated_plot_events": "黛玉在此养病，宝玉每日探视；香菱曾在此向黛玉学诗；宝钗也曾来访劝慰",
+        "historical_literary_reference": "",
+        "custom_function": "林黛玉的起居与创作空间"
+      },
+      "access": {
+        "permissions": "黛玉、紫鹃、雪雁等贴身丫鬟自由进出；宝玉可随时来访；其他姐妹需先通报",
+        "access_level": "private",
+        "access_conditions": "需黛玉首肯或长辈引荐",
+        "social_hierarchy_level": "小姐闺房，属于大观园内半私密空间",
+        "specific_access_rules": "外男除宝玉外一律禁止入内；夜间关闭院门",
+        "ceremonial_use_restriction": "",
+        "seasonal_access_conditions": ""
+      },
+      "state": {
+        "current_state": "主人久病，院落清寂，竹叶常未扫",
+        "ownership": "贾府，实际由林黛玉居住",
+        "capacity": 12,
+        "current_event_occurring": "黛玉刚刚咳血，紫鹃正在煎药，窗外传来大观园中迎春回门的隐约说笑声",
+        "maintenance_status": "日常清洁尚可，但竹丛与屋檐已现凋敝",
+        "significance_state": "重要——承载主要人物悲欢离合的关键场所",
+        "administrator_person_id": "林黛玉（主理内务）、紫鹃（日常管理）",
+        "ritual_owner_person_id": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:003",
+        "name": "蘅芜苑",
+        "type": "院落",
+        "description": "大观园北部的院落，四壁爬满蔷薇、杜若、蘼芜等香草，藤蔓低垂，不见奢华。室内陈设素朴，一架素纱屏，一张书案，笔墨整齐，针线筐中搁着未完成的绣品。宝钗常坐于窗下读书做活，言语寡淡却立场坚定。这里没有竹的孤傲，却有草的坚韧，象征宝钗圆融而不失锋芒的处世哲学。",
+        "symbolic_meaning": "中庸、务实与隐忍同强的女性价值观",
+        "associated_plot_events": "宝钗在此接待宝玉谈论金玉姻缘；薛姨妈时常于此商议家务；香菱偶尔来此诉苦，宝钗暗中周济",
+        "historical_literary_reference": "",
+        "custom_function": "薛宝钗起居、理家及接待亲友的核心场所"
+      },
+      "access": {
+        "permissions": "宝钗、莺儿等贴身丫鬟自由出入；薛姨妈、宝玉、黛玉等亲戚可随时拜访；其他奴仆需通报",
+        "access_level": "semi-private",
+        "access_conditions": "白天一般开放，夜间锁门",
+        "social_hierarchy_level": "小姐闺房，略低于潇湘馆的私密程度",
+        "specific_access_rules": "外男除宝玉外不得入内；薛蟠即使来大观园也不便进入",
+        "ceremonial_use_restriction": "",
+        "seasonal_access_conditions": ""
+      },
+      "state": {
+        "current_state": "整洁有序，宝钗正为薛蟠家事烦恼，眉头微蹙",
+        "ownership": "贾府，由薛宝钗居住",
+        "capacity": 18,
+        "current_event_occurring": "宝钗刚刚得知香菱又被夏金桂刁难，正打发莺儿去送药膏，忧心不已",
+        "maintenance_status": "良好，香草藤蔓修剪得宜",
+        "significance_state": "重要——体现薛家分支与贾家联姻的关联地",
+        "administrator_person_id": "薛宝钗（日常管理）、莺儿（协助）",
+        "ritual_owner_person_id": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:007",
+        "name": "天齐庙",
+        "type": "寺庙宗教场所",
+        "description": "天齐庙坐落于京城外东郊，是一座香火颇盛的东岳神庙。庙宇虽不甚宏丽，却因王道士（人称‘王一贴’）的膏药而远近闻名。正殿供奉东岳大帝，两侧配殿有药王、财神等。殿前古柏参天，香炉中青烟袅袅，墙角堆着陈旧膏药罐子，空气中弥漫着草药与香烛的混合气味。后院有几间僧寮，王道士便在其中一间熬制膏药。此时正值秋日，庙中人迹寥寥，更显荒凉。",
+        "symbolic_meaning": "既代表民间信仰的世俗化，也暗喻贾府寻求虚幻的‘疗妒’偏方，折射出家族无法挽回的颓势。",
+        "associated_plot_events": "贾宝玉因香菱受虐而心中烦闷，随仆人来天齐庙散心，偶遇王道士，求取‘疗妒汤’药方；王道士胡诌一副偏方，宝玉半信半疑而返。",
+        "historical_literary_reference": "出自《红楼梦》第八十回‘美香菱屈受贪夫棒 王道士胡诌妒妇方’，天齐庙是王道士行医卖药之地。",
+        "custom_function": "作为宗教场所，同时是民间膏药贩卖点；王道士在此接待求药者，兼营符咒之类。"
+      },
+      "access": {
+        "permissions": "对所有民众开放，但内院僧寮及制药室仅限庙内道士及有特殊关系者进入。",
+        "access_level": "public",
+        "access_conditions": "无特殊条件，贾府主子如宝玉可随意出入，仆从亦可在殿外等候。",
+        "social_hierarchy_level": "3",
+        "specific_access_rules": "王道士的制药室一般不让外人进入，宝玉因身份特殊得以登堂入室。",
+        "ceremonial_use_restriction": "东岳大帝圣诞时有官方祭祀，但日常活动无严格限制。",
+        "seasonal_access_conditions": "常年开放，但冬季香火较少。"
+      },
+      "state": {
+        "current_state": "香火冷落，庙宇略显破败，墙皮剥落，瓦缝生草。王道士制药的陶罐堆积在后院，一副潦倒景象。",
+        "ownership": "名义上属于京城寺庙公产，实际由王道士（王一贴）租用正殿及后院，自营膏药生意。",
+        "capacity": 150,
+        "current_event_occurring": "宝玉刚刚离去，王道士正将剩余的‘疗妒汤’药渣倒掉，独自念叨着方才应付公子哥儿的说辞。",
+        "maintenance_status": "疏于修缮，殿顶有多处漏雨迹象，神像金漆剥落。",
+        "significance_state": "对外仍保持一座普通寺庙的面目，但内部已高度商业化。",
+        "administrator_person_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:person:031",
+        "ritual_owner_person_id": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:006",
+        "name": "水月庵",
+        "type": "寺庙宗教场所",
+        "description": "水月庵位于贾府后街不远处，是一座小巧的尼姑庵，因暮鼓晨钟与门前池水映月得名。庵内仅有一尊观音像，两株老槐，十数间净室。姑子们常往来贾府走动，为太太小姐们讲经、祈福。此庵近年因贾府施舍减少，香火渐衰，庭院中落叶堆积无人扫，显得寂寥。",
+        "symbolic_meaning": "水月庵是贾府佛事由盛转衰的缩影，暗示家族精神支柱的动摇。",
+        "associated_plot_events": "姑子们常来贾府串门，传递消息，偶尔也参与抄经、放生等活动，但在第八十回中并未直接出现重要情节。",
+        "historical_literary_reference": "《红楼梦》中多次提及尼姑庵，水月庵是闲笔所及的一处，与栊翠庵相对照，更显世俗化。",
+        "custom_function": "供尼姑修行，同时也为附近宅眷提供宗教服务（如放焰口、诵经、解签等）。"
+      },
+      "access": {
+        "permissions": "对女性香客开放，男性一般不得入内（除非是贾府男丁随行）。",
+        "access_level": "semi-public",
+        "access_conditions": "需事先知会庵主，或由熟识姑子引导。贾府女眷可随意往来。",
+        "social_hierarchy_level": "4",
+        "specific_access_rules": "男性只能在佛堂短暂参拜，不得进入后院尼舍。",
+        "ceremonial_use_restriction": "仅供小型法事，无重大官方典礼。",
+        "seasonal_access_conditions": "全年开放，但冬日傍晚后闭庵。"
+      },
+      "state": {
+        "current_state": "庭院萧瑟，香炉冷淡，只有一两名小尼姑在打瞌睡。正殿观音像前的长明灯豆大昏暗。",
+        "ownership": "由住持尼姑管理，名义上属于寺庙公产，实际依赖贾府等大户布施。",
+        "capacity": 30,
+        "current_event_occurring": "无特殊事件，偶尔有仆妇代主子来上香。",
+        "maintenance_status": "屋顶瓦片松动，窗纸破损，暂无人修缮。",
+        "significance_state": "水月庵已从昔日的热闹变得冷清，姑子们只能勉强维持。",
+        "administrator_person_id": "",
+        "ritual_owner_person_id": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:005",
+        "name": "荣禧堂",
+        "type": "公共厅堂",
+        "description": "荣禧堂为荣国府正厅，位于贾府中轴线核心，五开间三进，琉璃瓦顶，雕梁画栋，正中高悬御赐‘荣禧堂’匾额，下方设紫檀木大座，两侧陈设青铜鼎彝、大理石插屏。地面铺青石砖，平日里洒扫得纤尘不染。此处是贾府举行家族大典、接圣旨、迎贵宾的场所，也是权力与礼法的象征。堂前有东西两廊连通内院，廊下悬着各色鹦鹉画眉。此刻虽无大典，但空气中仍弥漫着淡淡的檀香，仆从垂手立侍，肃然无声。",
+        "symbolic_meaning": "贾府鼎盛时期权威与荣耀的集中体现，如今堂内气氛却隐隐透着日薄西山的压抑，华丽的外壳下家族根基已虚。",
+        "associated_plot_events": "在第八十回中未直接描写荣禧堂发生重大事件，但它作为贾府核心始终是家族权力运作的背景。迎春出嫁前曾在此叩别贾母；宝玉每日晨昏定省亦经此堂。",
+        "historical_literary_reference": "《红楼梦》第三回林黛玉进贾府时，荣禧堂即其与贾母、王夫人等初次会面的地方，也是‘荣国府’名称的由来之一。",
+        "custom_function": "举行祭祀、婚丧、接驾、拜寿等重大仪式的正厅，也是贾政等男性主人待客议政的正式场所。"
+      },
+      "access": {
+        "permissions": "仅限贾府主子、贵客及有差事的仆从进入，闲杂人等不得擅入。",
+        "access_level": "restricted",
+        "access_conditions": "需经通报许可，非重大日子外人极少获准进入。主子可直接出入，仆从只能在外廊伺候。",
+        "social_hierarchy_level": "1",
+        "specific_access_rules": "女性仆人不得随意进入厅内，女眷需由侧门通往后堂。日常只有管事仆妇打扫时才入内。",
+        "ceremonial_use_restriction": "平时空置，非典礼时正门紧闭，众人由侧廊绕行。",
+        "seasonal_access_conditions": "无季节限制，但严寒酷暑时只在必要时开启。"
+      },
+      "state": {
+        "current_state": "整洁庄严，一切器用如新，但仔细观察可见紫檀椅背有一道细微裂痕，插屏边角略有磨损，暗示维护已不如前。堂内无人，只有两个小厮守在外廊打盹。",
+        "ownership": "属于荣国府公产，由贾政一支主导，实则为贾氏家族共有。",
+        "capacity": 100,
+        "current_event_occurring": "无庆典或会议，堂内寂静，仅有风吹帘栊的声音。",
+        "maintenance_status": "日常有人清扫，但大修金漆已推迟多年，些微残败处无人敢报。",
+        "significance_state": "依然维持着象征性的威严，但已不如十年前那般光鲜隆重，折射家族经济拮据。",
+        "administrator_person_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:person:026",
+        "ritual_owner_person_id": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:014",
+        "name": "议事厅",
+        "type": "公共厅堂",
+        "description": "议事厅位于荣国府内院东侧，与王夫人正房相邻，是一间三开间的敞厅。厅内摆着花梨木桌椅，案上堆着账册、对牌、茶叶罐子等杂物，墙上挂着‘勤慎’二字匾额。此处原是王夫人日常理事之处，凤姐协理宁荣二府后，成为她处理家务、支派银钱、裁决纠纷的办公场所。厅内常有仆妇进出回事，算盘声与争执声不绝于耳，地上偶尔可见泼洒的茶渍。第八十回中，此处正是凤姐为香菱受虐一事暗中叹气、却无力干预的所在。",
+        "symbolic_meaning": "象征贾府日常权力运作的核心，也是家族内部矛盾集中爆发的前沿。凤姐在此威势犹在，但已显力不从心。",
+        "associated_plot_events": "凤姐在此听取仆妇报告夏金桂闹事、香菱挨打等消息，与平儿商议对策，但因贾府家规及薛蟠性格而束手无策。",
+        "historical_literary_reference": "《红楼梦》中‘议事厅’出现多次，是凤姐理家的主要场景，如第五十一回‘胡庸医乱用虎狼药’中凤姐在此处置袭人家事。",
+        "custom_function": "处理家族内部行政事务，包括审批银钱支用、人事调配、婚丧礼仪安排、处理下人间纠纷等。"
+      },
+      "access": {
+        "permissions": "贾府管事主子、有职权的管家（如林之孝家的、来旺媳妇等）可进入请示，一般仆妇需在廊下候传。",
+        "access_level": "restricted",
+        "access_conditions": "需有正当缘由，且不得高声喧哗。凤姐在场时秩序尤其严格。",
+        "social_hierarchy_level": "2",
+        "specific_access_rules": "男仆非必要不得进入内院议事厅，需由婆子传话。宝钗、探春等女眷可偶尔旁听。",
+        "ceremonial_use_restriction": "不用于典礼，纯属办公室性质。",
+        "seasonal_access_conditions": "每日早晚由仆妇洒扫，除年节短暂休停外，常年运作。"
+      },
+      "state": {
+        "current_state": "厅内账册堆积如山，对牌散乱，案上有未喝完的茶碗。凤姐近日因香菱之事心情烦闷，很少亲自坐镇，多由平儿代为传话。仆妇们见凤姐脸色不好，皆战战兢兢，办事效率低落。",
+        "ownership": "属于荣国府公产，使用管理权归王夫人、凤姐。",
+        "capacity": 20,
+        "current_event_occurring": "此刻平儿正代凤姐传话，驳回了几笔不必要的开支，并嘱咐几个婆子不得在贾母面前提及香菱受虐之事，以免勾起老人家烦恼。",
+        "maintenance_status": "日常使用频繁，桌椅有磨损，案上蜡油滴落，但无人特别维护。",
+        "significance_state": "依旧是贾府权力的晴雨表，气氛紧张压抑，预示着更大的风暴即将到来。",
+        "administrator_person_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:person:024",
+        "ritual_owner_person_id": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:010",
+        "name": "香菱居室",
+        "type": "内宅院落",
+        "description": "位于薛蟠新居后院角落的一间狭小耳房，仅有一扇朝向内院的木窗，窗纸已破旧。室内陈设简陋，一张硬木榻上铺着褪色的靛蓝褥子，墙角堆着几件换洗衣物；地面青砖凹凸不平，因潮湿泛着霉味。窗台上搁着半罐粗茶与一只缺口的瓷碗。此处是香菱被罚跪、挨打、受冷遇的密闭空间，因夏金桂下令‘不许给她好屋子住’，连夜晚取暖的炭火都常被克扣。空气中常年弥漫着泪水和尘土的混合气息，榻前地上可见膝盖长跪磨出的凹痕。",
+        "symbolic_meaning": "香菱从‘甄英莲’到‘秋菱’再沦至此陋室的悲剧缩影，象征封建妾室尊严与生命的彻底物化。",
+        "associated_plot_events": "夏金桂借故罚香菱跪在碎瓷片上；薛蟠酒后踢打香菱后将其关在此屋数日；香菱病中无人照看，于此处独自咳血。",
+        "historical_literary_reference": "《红楼梦》第八十回中‘香菱住于薛蟠新居的厢房’，此处为具象化演绎。",
+        "custom_function": "妻妾争斗的受害者物理与心理监禁场所"
+      },
+      "access": {
+        "permissions": "香菱本人可进出，但无锁钥，实为软禁；薛蟠、夏金桂可随时闯入；其他奴仆须得夏金桂许可方可送物。",
+        "access_level": "restricted",
+        "access_conditions": "需由夏金桂或薛蟠传唤，或香菱被迫开门接受盘问；夜间从外锁闭。",
+        "social_hierarchy_level": "极低（妾室住所，且被刻意降格）",
+        "specific_access_rules": "香菱不得私自离开此屋前往前院；宝蟾以‘送饭’为借口常来监视。",
+        "ceremonial_use_restriction": "",
+        "seasonal_access_conditions": "冬季窗缝透风，无额外取暖；夏季闷热潮湿，蚊虫叮咬，均无法改善。"
+      },
+      "state": {
+        "current_state": "破败、阴暗、潮湿，被用作惩罚性封闭居所。",
+        "ownership": "薛蟠名下，但实际由夏金桂控制使用。",
+        "capacity": 1,
+        "current_event_occurring": "香菱刚被罚跪一日，此刻正蜷缩在榻上忍痛流泪。",
+        "maintenance_status": "年久失修，无人修缮，仅维持最基本的遮风挡雨。",
+        "significance_state": "经夏金桂刻意贬损后，成为羞辱香菱的道具。",
+        "administrator_person_id": "__夏金桂__",
+        "ritual_owner_person_id": "__薛蟠__"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:009",
+        "name": "夏金桂正房",
+        "type": "内宅院落",
+        "description": "薛蟠新居中轴线上的主院落正房，五开间带前廊，檐下挂有漆面斑驳的‘内肃堂’匾额。室内铺设水磨砖，陈设考究：紫檀木雕花架子床悬着大红帐幔，妆奁台摆满胭脂水粉与签押文书，八仙桌旁置有刻着‘护身符’的铜镜。西次间设一张小炕，是夏金桂日常小憩、审问香菱的私密处。此屋不仅是主人起居所，更暗藏夏金桂设计对付香菱的阴谋工具（如假意赠药实则下毒）。空气中弥漫浓郁的香料味，却掩不住一丝因香菱跪地洒出的药酒气味。",
+        "symbolic_meaning": "妻妾秩序中正妻权威的威慑空间，亦是妒火燃烧的核心战场。",
+        "associated_plot_events": "夏金桂在此处与宝蟾密谋构陷香菱；薛蟠被夏金桂哭闹哄骗后，在此签署将香菱降为粗使丫头的文书。",
+        "historical_literary_reference": "《红楼梦》第八十回中夏金桂正房虽未正面描写，但薛蟠新居的‘内肃堂’可推论为此处，常作为夏金桂发威、审问香菱的隐含背景。",
+        "custom_function": "内宅权力中枢，兼作审讯、行刑决策等非公开活动"
+      },
+      "access": {
+        "permissions": "夏金桂本人、薛蟠、宝蟾可自由出入；香菱只能在被传唤时跪在门槛外回话；其他仆妇需通报后方可进入。",
+        "access_level": "restricted",
+        "access_conditions": "仆从须由宝蟾或夏金桂贴身丫鬟引领，且不得滞留；香菱进入前须跪禀。",
+        "social_hierarchy_level": "高（正妻内寝，妾室与低等奴仆禁入）。",
+        "specific_access_rules": "每逢初一、十五夏金桂在此设香案祭祖，外部仆役一律回避。",
+        "ceremonial_use_restriction": "",
+        "seasonal_access_conditions": "夏季门窗紧闭以防窥视，冬季有炭火熏香，常年保持闷热压抑氛围。"
+      },
+      "state": {
+        "current_state": "表面体面整洁，实为工于心计的斗室，部分陈设带有暗格（藏书信、药包）。",
+        "ownership": "薛蟠与夏金桂共有，夏金桂实际支配。",
+        "capacity": 8,
+        "current_event_occurring": "夏金桂正与宝蟾低声商议如何利用薛蟠的怒气进一步整治香菱。",
+        "maintenance_status": "每日精心打扫，器物光鲜，但暗处藏有磨损的刑具（如柳条、跪垫）。",
+        "significance_state": "作为家庭内斗的正殿，重要性随夏金桂的计谋而提升。",
+        "administrator_person_id": "__夏金桂__",
+        "ritual_owner_person_id": "__薛蟠__"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:001",
+        "name": "怡红院",
+        "type": "内宅院落",
+        "description": "大观园内东路院落，为贾宝玉起居读书之处。院门题‘怡红快绿’，院内植有数株海棠与芭蕉，正厅悬贾政亲笔‘绛芸轩’匾额。室内设多宝阁、书架、古瓷瓶，纱帐为粉色，四时鲜花不断。然因贾府日益拮据，院内陈设已显旧色：雨过天青的瓷缸有裂纹，书案上的笔洗边缘缺了一处。丫鬟们仍勤快洒扫，但宝玉常觉孤闷，王夫人不时派老妈子来巡查。此院是宝玉逃避礼教、怜香惜玉的乌托邦，亦是《红楼梦》第八十回中宝玉听闻香菱遭遇后心中郁结之处。",
+        "symbolic_meaning": "封建家族中短暂保留诗情与纯真的碎片，却难逃衰败浪潮的侵蚀。",
+        "associated_plot_events": "宝玉听到迎春回门哭泣后，在怡红院夜叹；宝钗差莺儿送来治伤的药散（嘱宝玉勿声张）；宝玉在此写下‘疗妒汤’偏方并琢磨送至薛家。",
+        "historical_literary_reference": "直接脱胎于《红楼梦》大观园中的怡红院。",
+        "custom_function": "宝玉日常居所、众丫鬟聚会处、大观园内部分消息中转站"
+      },
+      "access": {
+        "permissions": "宝玉及其贴身丫鬟可随意进出；贾政、王夫人、李纨等长辈可经通报后进入；其他姐妹如宝钗、黛玉需由丫鬟引领；外男一概不得入。",
+        "access_level": "private",
+        "access_conditions": "夜间落锁，宝玉床前婢女值守；宝玉外出时，丫鬟可接待来访者。",
+        "social_hierarchy_level": "高（主子院落，但属内宅，非正室）。",
+        "specific_access_rules": "贾母或王夫人临查时，全院须立即肃清杂物、焚香整容。",
+        "ceremonial_use_restriction": "",
+        "seasonal_access_conditions": "冬春之交海棠盛开时，宝玉有‘花朝祭’私习，丫鬟可不必回避。"
+      },
+      "state": {
+        "current_state": "表面整洁，实则因经费缩减，花木更换、茶果供应皆不如前，庭院可见枯叶被扫至角落。",
+        "ownership": "贾府家族资产，由贾母划归宝玉使用。",
+        "capacity": 20,
+        "current_event_occurring": "宝玉刚从薛家回来，独自坐在书案前对着‘疗妒汤’方子发怔，袭人在门外轻轻叹气。",
+        "maintenance_status": "日常由袭人、晴雯等丫鬟打理，但修葺油漆因府中库银短缺已暂停。",
+        "significance_state": "仍为贾府悉心维护的核心院落之一，但破败迹象已不能全然遮掩。",
+        "administrator_person_id": "__袭人__",
+        "ritual_owner_person_id": "__贾宝玉__"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:013",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:004",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:008",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:015",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:012",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:002",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:011",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:003",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:007",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:006",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:005",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:014",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:010",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:009",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:001"
+  ],
+  "upstream_step_ids": [
+    "generate_locations"
+  ],
+  "warnings": [
+    "batch 1 review (score=4.4): 发现 1 个问题并已自动修正",
+    "batch 2 review (score=4.71): 发现 2 个问题并已自动修正",
+    "batch 3 review (score=4.57): 发现 3 个问题并已自动修正",
+    "batch 4 review (score=4.7): 发现 2 个问题并已自动修正"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

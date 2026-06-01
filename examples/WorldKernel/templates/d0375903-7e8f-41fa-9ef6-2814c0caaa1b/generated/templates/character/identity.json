@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "role",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "family_rank",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "lineage",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "marital_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_legitimate",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "house_branch",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "generation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}
