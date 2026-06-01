@@ -1,0 +1,76 @@
+{
+  "fields": [
+    {
+      "name": "penalties",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "rewards_for_compliance",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "corporal_punishment",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "forced_labor",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "torture_methods",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "collective_punishment",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reporting_obligation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "severity_levels",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "public_shaming",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "clemency_conditions",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "point_bias",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "house_point_manipulation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

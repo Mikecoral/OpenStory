@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "forbidden_actions",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "taboos",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "curfew_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "report_duty",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "punishment_vulnerability",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "association_ban",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "password_compliance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

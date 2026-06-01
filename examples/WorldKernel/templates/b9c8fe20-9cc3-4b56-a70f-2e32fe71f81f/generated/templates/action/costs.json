@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "time",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "resources",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_cost",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "magical_energy_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "risk_of_discovery",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "requires_recharge",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "moral_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "relationship_impact",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "alert_level_increase",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+role:
+  type: str
+family_rank:
+  type: str
+  option: true
+lineage:
+  type: str
+  option: true
+marital_status:
+  type: str
+  option: true
+is_legitimate:
+  type: str
+  option: true
+house_branch:
+  type: str
+  option: true
+generation:
+  type: str
+  option: true

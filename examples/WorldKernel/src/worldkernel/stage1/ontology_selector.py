@@ -62,8 +62,7 @@ _FIXED_DIMENSIONS: dict[str, dict[str, list[FieldDef]]] = {
                       _f("layer"), _f("entrance_type")],
     },
     "relation": {
-        "edge":       [_f("id"), _f("from_id"), _f("to_id"), _f("type"), _f("direction")],
-        "properties": [_f("strength"), _f("description")],
+        "edge": [_f("id"), _f("from_id"), _f("to_id"), _f("type"), _f("direction")],
     },
     "institution": {
         "identity":   [_f("id"), _f("name"), _f("type")],
@@ -92,6 +91,10 @@ _FIXED_DIMENSIONS: dict[str, dict[str, list[FieldDef]]] = {
         "conditions": [_f("access_level"), _f("danger_level"), _f("required_items")],
     },
 }
+
+
+# Entities whose dimensions must not receive LLM-generated extra fields.
+_FIXED_ONLY_ENTITIES: set[str] = {"relation"}
 
 
 def _format_dimensions(entity_key: str) -> str:
@@ -128,7 +131,7 @@ def _build_entity_template(entity_key: str, llm_data: dict) -> EntityTemplate:
     dimensions: dict[str, TemplateDimension] = {}
     for dim_name, fixed_fields in fixed_dims.items():
         dim_raw = raw_dims.get(dim_name, {})
-        extra_names = dim_raw.get("extra") or dim_raw.get("special") or []
+        extra_names = [] if entity_key in _FIXED_ONLY_ENTITIES else (dim_raw.get("extra") or dim_raw.get("special") or [])
         existing_names = {f.name for f in fixed_fields}
         extra_fields = [
             _parse_extra_field(n)

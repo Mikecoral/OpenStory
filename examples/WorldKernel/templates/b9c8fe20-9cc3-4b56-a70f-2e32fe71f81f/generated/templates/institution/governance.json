@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "leader",
+      "type": "str",
+      "required": true,
+      "ref": "character"
+    },
+    {
+      "name": "rules",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "decision_process",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "oversight_body",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "punishment_procedures",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "decision_transparency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "external_command_chain",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "disciplinary_committee",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "spy_system",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

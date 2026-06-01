@@ -1,0 +1,16 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+usage_level:
+  type: str
+  option: true
+symbolic_significance:
+  type: str
+  option: true
+associated_items:
+  type: str
+  option: true

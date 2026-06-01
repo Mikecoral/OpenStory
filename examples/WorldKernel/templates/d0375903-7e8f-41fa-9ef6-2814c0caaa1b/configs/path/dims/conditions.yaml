@@ -1,0 +1,19 @@
+dim_name: ConditionsDim
+access_level:
+  type: str
+danger_level:
+  type: str
+required_items:
+  type: str
+weather_effect:
+  type: str
+  option: true
+cleaning_status:
+  type: str
+  option: true
+guard_presence:
+  type: str
+  option: true
+religious_fix:
+  type: str
+  option: true

@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "danger_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "required_items",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "weather_effect",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "cleaning_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "guard_presence",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "religious_fix",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

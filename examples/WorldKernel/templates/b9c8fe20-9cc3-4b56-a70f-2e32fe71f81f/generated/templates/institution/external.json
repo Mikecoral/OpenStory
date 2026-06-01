@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "relations_to_others",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "death_eater_prestige",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "resistance_infiltration_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "international_relations",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "propaganda_campaign",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "public_fear_factor",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "external_scrutiny",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

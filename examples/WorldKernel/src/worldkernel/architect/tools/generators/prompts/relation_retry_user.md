@@ -16,7 +16,11 @@
 
 ## 关系 Schema 结构
 
-每条关系只含 `edge` 字段：`id`（留空）、`from_id`、`to_id`、`type`、`direction`。不输出 `properties` 或其他字段。
+每条关系只包含 `edge` 字段：
+
+```
+{"edge": {"id": "", "from_id": "角色ID", "to_id": "角色ID", "type": "关系标签", "direction": "单向|双向"}}
+```
 
 ## 关系数量要求
 

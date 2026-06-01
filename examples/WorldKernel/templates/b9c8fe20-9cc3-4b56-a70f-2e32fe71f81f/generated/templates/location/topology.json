@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "connected_to",
+      "type": "list_str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "parent_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "layer",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "entrance_type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "secret_passages",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "password_condition",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "unplottable",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "apparition_restricted",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "floor_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

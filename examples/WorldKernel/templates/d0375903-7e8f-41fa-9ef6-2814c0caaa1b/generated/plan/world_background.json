@@ -1,0 +1,48 @@
+{
+  "world_name": "贾府与大观园",
+  "world_origin_summary": "衍生自《红楼梦》第八十回，聚焦于贾府内部矛盾激化、香菱受虐、王道士胡诌等情节，展现封建家族走向衰败的必然趋势。",
+  "primary": "feudal_manor",
+  "secondary": "literary_derived",
+  "tags": [
+    "封建贵族",
+    "家族衰败",
+    "衍生世界",
+    "红楼梦第八十回",
+    "清代背景",
+    "大观园",
+    "家庭内部争斗"
+  ],
+  "scope": "region",
+  "simulation_start": {
+    "time_point": "第八十回开篇，香菱进入薛蟠新居后受到夏金桂欺凌",
+    "trigger_event": "薛蟠娶夏金桂，夏金桂进门后挑拨薛蟠与香菱的关系，开始实施虐待",
+    "year": "乾隆年间（约18世纪中期）",
+    "narrative_context": "贾府已显衰败征兆，大观园内气氛压抑，香菱命运急转直下，迎春嫁入孙家后遭虐待，宝玉在天齐庙遇见王道士，探索疗妒偏方"
+  },
+  "world_constraints": [
+    {
+      "constraint_id": "feudal_patriarchy",
+      "name": "封建父权等级制",
+      "description": "男性家长拥有至高权力，女性地位低下，婚姻和人生由家族利益决定，个人意志被压制",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "concubine_system",
+      "name": "妻妾嫡庶制度",
+      "description": "正妻地位高于妾室，妾室及其子女权益微弱，嫡庶有别深入社会结构",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "family_reputation_pressure",
+      "name": "家族名誉至上",
+      "description": "所有成员的行为须维护贾府门面，内部矛盾常被掩盖，不可外扬",
+      "scope": "faction"
+    },
+    {
+      "constraint_id": "caste_of_servitude",
+      "name": "奴仆人身依附",
+      "description": "奴仆属于主家财产，可买卖、赐人，且奴仆后代仍为奴，无法轻易改变身份",
+      "scope": "global"
+    }
+  ]
+}

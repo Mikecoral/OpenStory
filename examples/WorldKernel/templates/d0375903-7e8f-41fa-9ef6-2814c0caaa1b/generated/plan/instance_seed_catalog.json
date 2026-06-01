@@ -1,0 +1,309 @@
+{
+  "session_id": "d0375903-7e8f-41fa-9ef6-2814c0caaa1b",
+  "instance_seeds": {
+    "location": [
+      {
+        "seed_id": "xue_fu_yuan_luo",
+        "name": "薛府院落",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "夏金桂与香菱、宝蟾等人物主要活动场所，妻妾争斗的核心空间",
+        "archetype_id": "住宅院区"
+      },
+      {
+        "seed_id": "jia_mu_zheng_fang",
+        "name": "贾母正房",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "贾府最高权威的起居处，宝玉、黛玉等常来请安",
+        "archetype_id": "住宅院区"
+      },
+      {
+        "seed_id": "wang_fu_ren_yuan",
+        "name": "王夫人院落",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 2,
+        "role_in_world": "王夫人日常居所，常处理家族内部事务",
+        "archetype_id": "住宅院区"
+      },
+      {
+        "seed_id": "ying_chun_zi_ling_zhou",
+        "name": "迎春紫菱洲",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.97,
+        "generation_priority": 2,
+        "role_in_world": "迎春出嫁前住所，后成为其回门暂居之处",
+        "archetype_id": "住宅院区"
+      },
+      {
+        "seed_id": "xue_chan_nei_shi",
+        "name": "薛蟠内室",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "薛蟠与夏金桂、香菱等发生冲突的私密空间",
+        "archetype_id": "住宅院区"
+      },
+      {
+        "seed_id": "da_guan_yuan_zong_ti",
+        "name": "大观园",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "宝玉、黛玉等主要人物活动的核心园林，也是迎春回门游赏之处",
+        "archetype_id": "园林景观"
+      },
+      {
+        "seed_id": "xiao_xiang_guan",
+        "name": "潇湘馆",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "林黛玉居所，大观园中的诗意空间",
+        "archetype_id": "园林景观"
+      },
+      {
+        "seed_id": "heng_wu_yuan",
+        "name": "蘅芜苑",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "薛宝钗居所，体现其沉稳性格的院落",
+        "archetype_id": "园林景观"
+      },
+      {
+        "seed_id": "tian_qi_miao",
+        "name": "天齐庙",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "王道士（王一贴）所在神庙，宝玉等人求取膏药之处",
+        "archetype_id": "寺庙宗教场所"
+      },
+      {
+        "seed_id": "shui_yue_an",
+        "name": "水月庵",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 3,
+        "role_in_world": "姑子们常往来的尼姑庵，暗示贾府佛事盛衰",
+        "archetype_id": "寺庙宗教场所"
+      },
+      {
+        "seed_id": "rong_xi_tang",
+        "name": "荣禧堂",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "贾府举行重大仪式与接待贵客的正厅",
+        "archetype_id": "公共厅堂"
+      },
+      {
+        "seed_id": "yi_shi_ting",
+        "name": "议事厅",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.97,
+        "generation_priority": 2,
+        "role_in_world": "凤姐协理宁荣二府日常事务的办公场所",
+        "archetype_id": "公共厅堂"
+      },
+      {
+        "seed_id": "xiang_ling_ju_shi",
+        "name": "香菱居室",
+        "importance": "core",
+        "source_type": "inferred",
+        "confidence": 0.9,
+        "generation_priority": 1,
+        "role_in_world": "香菱受夏金桂欺凌、被罚跪等情节发生的密闭空间",
+        "archetype_id": "内宅院落"
+      },
+      {
+        "seed_id": "xia_jin_gui_zheng_fang",
+        "name": "夏金桂正房",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.88,
+        "generation_priority": 2,
+        "role_in_world": "夏金桂策划挑事、发号施令的内房",
+        "archetype_id": "内宅院落"
+      },
+      {
+        "seed_id": "bao_yu_yi_hong_yuan",
+        "name": "怡红院",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "宝玉起居的核心院落，亦是众丫鬟聚集之处",
+        "archetype_id": "内宅院落"
+      }
+    ],
+    "character": [
+      {
+        "seed_id": "xue_pan",
+        "name": "薛蟠",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "夏金桂的丈夫，性格暴虐，纵容正妻虐待香菱",
+        "archetype_id": "主子（少爷/小姐）"
+      },
+      {
+        "seed_id": "jia_bao_yu",
+        "name": "贾宝玉",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "贾府核心人物，同情香菱，在天齐庙向王道士求治妒方",
+        "archetype_id": "主子（少爷/小姐）"
+      },
+      {
+        "seed_id": "jia_ying_chun",
+        "name": "贾迎春",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "孙绍祖之妻，回门哭诉受虐待，体现贵族女性的婚姻悲剧",
+        "archetype_id": "主子（少爷/小姐）"
+      },
+      {
+        "seed_id": "xiang_ling",
+        "name": "香菱",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "薛蟠之妾，受夏金桂百般折磨，是妻妾斗争的核心受害者",
+        "archetype_id": "妾室与丫鬟"
+      },
+      {
+        "seed_id": "bao_chan",
+        "name": "宝蟾",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 2,
+        "role_in_world": "夏金桂的贴身丫鬟，助纣为虐，阴毒奴仆的代表",
+        "archetype_id": "妾室与丫鬟"
+      },
+      {
+        "seed_id": "ying_er",
+        "name": "莺儿",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 3,
+        "role_in_world": "薛宝钗的丫鬟，偶尔传递信息，展现奴仆等级",
+        "archetype_id": "妾室与丫鬟"
+      },
+      {
+        "seed_id": "xia_jin_gui",
+        "name": "夏金桂",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "薛蟠正妻，善妒凶悍，对香菱施加肉体与精神虐待",
+        "archetype_id": "恶毒主母/正妻"
+      },
+      {
+        "seed_id": "wang_fu_ren",
+        "name": "王夫人",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "贾政正妻，宝玉之母，维护家族礼法与秩序",
+        "archetype_id": "恶毒主母/正妻"
+      },
+      {
+        "seed_id": "xue_yi_ma",
+        "name": "薛姨妈",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "薛蟠之母，对夏金桂行为无可奈何，体现长辈的无力",
+        "archetype_id": "恶毒主母/正妻"
+      },
+      {
+        "seed_id": "wang_dao_shi",
+        "name": "王道士",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "天齐庙道士，自称‘王一贴，开给宝玉‘疗妒汤’偏方，展现民间医者形象",
+        "archetype_id": "民间医者/道士"
+      },
+      {
+        "seed_id": "jia_ying_chun_married",
+        "name": "贾迎春（出嫁）",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "孙绍祖之妻，回门哭诉夫家虐待，反映封建婚姻对女性的压迫",
+        "archetype_id": "出嫁小姐"
+      },
+      {
+        "seed_id": "bao_chan_servant",
+        "name": "宝蟾",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 2,
+        "role_in_world": "夏金桂的走狗，设计陷害香菱，制造家庭纠纷",
+        "archetype_id": "阴毒奴仆"
+      },
+      {
+        "seed_id": "xia_pei_fang_zhang_ma",
+        "name": "张妈",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "夏金桂陪房老奴，为虎作伥，协助实施毒计",
+        "archetype_id": "阴毒奴仆"
+      },
+      {
+        "seed_id": "ping_er",
+        "name": "平儿",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "王熙凤通房丫鬟兼得力助手，管理内务，同情香菱",
+        "archetype_id": "管家/管事"
+      },
+      {
+        "seed_id": "zhou_rui_jia_de",
+        "name": "周瑞家的",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 3,
+        "role_in_world": "王夫人陪房，负责传话与日常杂务",
+        "archetype_id": "管家/管事"
+      }
+    ]
+  }
+}

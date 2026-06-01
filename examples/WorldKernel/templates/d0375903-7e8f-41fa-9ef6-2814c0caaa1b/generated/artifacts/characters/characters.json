@@ -1,0 +1,1607 @@
+{
+  "artifact_type": "character_profile",
+  "items": [
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:012",
+        "name": "薛蟠",
+        "role": "主子（少爷/小姐）",
+        "family_rank": "嫡长子",
+        "lineage": "薛家",
+        "marital_status": "已婚",
+        "is_legitimate": "true",
+        "house_branch": "薛家",
+        "generation": "同辈"
+      },
+      "social_profile": {
+        "group_id": "薛家主子",
+        "reputation": "暴虐无赖，仗势欺人，纨绔子弟",
+        "alliances": "夏金桂",
+        "enemies": "香菱",
+        "social_class_rank": "上层贵族（皇商）但已衰败",
+        "public_perception": "粗鄙好色，缺少教养",
+        "rumor_status": "曾打死冯渊，名声狼藉"
+      },
+      "capabilities": {
+        "skills": [
+          "打架",
+          "饮酒作乐",
+          "骑马",
+          "挥霍"
+        ],
+        "level": "武力中等、智力低下、毫无文采",
+        "weaknesses": "易怒冲动, 耳根子软, 缺乏主见, 好色贪杯",
+        "special_knowledge": "无",
+        "unique_skills": "",
+        "quack_remedies": "",
+        "literary_talent": "极低，不学无术",
+        "manipulation_techniques": "暴力威胁, 借酒撒疯"
+      },
+      "personality": {
+        "traits": [
+          "暴虐",
+          "冲动",
+          "好色",
+          "粗鄙",
+          "易受人摆布",
+          "虚荣"
+        ],
+        "values": [
+          "享乐至上",
+          "夫权至上",
+          "家族面子"
+        ],
+        "speech_style": "粗俗、暴躁、口无遮拦，常带脏字",
+        "motivations_detail": "维护男子威严，纵容正妻以图清净",
+        "emotional_state": "常处于愤怒与不耐烦之中",
+        "mental_health": "暴躁易怒，缺乏自控",
+        "hidden_traits": "内心其实怯懦，遇到强硬的夏金桂时反而退缩"
+      },
+      "goals": {
+        "short_term_goal": "压服香菱，避免家宅不宁",
+        "long_term_goal": "维持薛家表面荣华，继续骄奢淫逸",
+        "motivation": "逃避矛盾，维护男性权威",
+        "hidden_agenda": "无",
+        "desperate_goal": "",
+        "secondary_goal": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "贾府人际关系",
+            "官场贿赂门路",
+            "商业经营（虽不精通）"
+          ],
+          "social_knowledge": [
+            "妻妾争斗潜规则",
+            "娘家势力对妻子的影响"
+          ]
+        },
+        "background_summary": "薛家独子，自幼丧父，寡母溺爱，养成无法无天的性格。曾打死冯渊，后来娶了夏金桂，正妻进门后家庭关系急剧恶化。",
+        "key_events": [
+          "打死冯渊",
+          "强抢香菱",
+          "娶夏金桂",
+          "纵容夏金桂虐待香菱",
+          "与宝玉等人在贾府厮混"
+        ],
+        "secrets": [
+          "当年打死冯渊之事虽已平息，但仍有案底",
+          "曾觊觎宝玉的丫鬟"
+        ],
+        "recent_incidents": "夏金桂进门后屡次与香菱冲突，薛蟠偏听偏信",
+        "traumatic_memories": "",
+        "biased_beliefs": "丈夫就该压服妻妾, 女人都是麻烦",
+        "superstitious_knowledge": "",
+        "family_lore": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:012"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "health_state": "健康",
+        "current_action": "正在内室饮酒，听夏金桂抱怨香菱",
+        "possession": "酒壶, 马鞭",
+        "injury_status": "",
+        "confinement_status": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:003",
+        "name": "贾宝玉",
+        "role": "主子（少爷/小姐）",
+        "family_rank": "荣国府嫡孙（贾政王夫人之子）",
+        "lineage": "贾家",
+        "marital_status": "未婚",
+        "is_legitimate": "true",
+        "house_branch": "荣国府",
+        "generation": "孙子辈"
+      },
+      "social_profile": {
+        "group_id": "贾府主子",
+        "reputation": "痴情叛逆，喜欢在脂粉堆里厮混，厌恶仕途经济",
+        "alliances": "林黛玉, 薛宝钗（有距离）, 贾母",
+        "enemies": "",
+        "social_class_rank": "顶级贵族公子",
+        "public_perception": "纨绔但心地善良，有些疯癫",
+        "rumor_status": "衔玉而生，被视为有福之人"
+      },
+      "capabilities": {
+        "skills": [
+          "诗词歌赋",
+          "品茶赏花",
+          "题字作对",
+          "焚香抚琴"
+        ],
+        "level": "文学天赋极高，武力低微，不通世务",
+        "weaknesses": "懦弱犹豫, 感情用事, 逃避现实, 不擅家务",
+        "special_knowledge": "佛道哲理、诗词格律",
+        "unique_skills": "通灵玉（象征意义）",
+        "quack_remedies": "",
+        "literary_talent": "卓越，在大观园诗社中出类拔萃",
+        "manipulation_techniques": "撒娇, 装疯卖傻"
+      },
+      "personality": {
+        "traits": [
+          "敏感",
+          "多情",
+          "叛逆",
+          "善良",
+          "厌弃功名",
+          "怜香惜玉"
+        ],
+        "values": [
+          "真情至上",
+          "女儿清净",
+          "自由无拘",
+          "反对礼教束缚"
+        ],
+        "speech_style": "文雅中带痴语，常引用诗词，偶有癫狂之语",
+        "motivations_detail": "希望大观园中所有女儿都能幸福，不忍见香菱受虐",
+        "emotional_state": "忧闷、焦躁，对身边悲剧感到无力",
+        "mental_health": "轻度忧郁，时有幻灭感",
+        "hidden_traits": "对家族败落已有预感，但刻意回避"
+      },
+      "goals": {
+        "short_term_goal": "从王道士处求得治妒膏药，以帮助香菱摆脱困境",
+        "long_term_goal": "维护大观园姐妹的安宁，拒绝走仕途经济之路",
+        "motivation": "对香菱的同情和对女性命运的悲悯",
+        "hidden_agenda": "无",
+        "desperate_goal": "",
+        "secondary_goal": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "佛道因果",
+            "诗词文赋",
+            "贾府族谱与内部关系"
+          ],
+          "social_knowledge": [
+            "妻妾争斗制度",
+            "贵族联姻潜规则",
+            "夏金桂虐待香菱详情"
+          ]
+        },
+        "background_summary": "衔玉而生，荣国府贾政之子，深得贾母宠爱。与林黛玉青梅竹马，感情至深。常与园中姐妹吟诗作乐，但父亲贾政严厉，反感其不务正业。近来目睹香菱被夏金桂虐待、迎春回门哭诉，心情尤为沉重。",
+        "key_events": [
+          "梦游太虚幻境",
+          "初见黛玉",
+          "共读西厢",
+          "黛玉葬花",
+          "香菱学诗",
+          "迎春出阁",
+          "天齐庙求药"
+        ],
+        "secrets": [
+          "曾与黛玉私下传递情词（如旧帕题诗）",
+          "通灵玉上有天生字句"
+        ],
+        "recent_incidents": "迎春回门哭诉被孙绍祖虐待, 香菱被打",
+        "traumatic_memories": "听闻金钏投井, 晴雯被逐",
+        "biased_beliefs": "女儿是水做的骨肉, 男人是泥做的浊物, 科举仕途是沽名钓誉",
+        "superstitious_knowledge": "",
+        "family_lore": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:007"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "health_state": "健康",
+        "current_action": "正在天齐庙向王道士请教治妒膏药",
+        "possession": "通灵宝玉, 荷包, 扇子",
+        "injury_status": "",
+        "confinement_status": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:004",
+        "name": "贾迎春",
+        "role": "主子（小姐）",
+        "family_rank": "庶女（贾赦庶出）",
+        "lineage": "贾家",
+        "marital_status": "已婚",
+        "is_legitimate": "false",
+        "house_branch": "荣国府（大房）",
+        "generation": "同辈"
+      },
+      "social_profile": {
+        "group_id": "贾府小姐",
+        "reputation": "懦弱温柔，不善言辞，逆来顺受",
+        "alliances": "贾母, 贾宝玉, 黛玉, 探春",
+        "enemies": "孙绍祖（丈夫）",
+        "social_class_rank": "已婚贵族女性但地位低（庶出且失势）",
+        "public_perception": "可怜，是家族牺牲品",
+        "rumor_status": "孙绍祖虐待一事已传回贾府"
+      },
+      "capabilities": {
+        "skills": [
+          "下棋",
+          "女红",
+          "读《太上感应篇》"
+        ],
+        "level": "平平，无突出才能",
+        "weaknesses": "懦弱不敢反抗, 缺乏主见, 遇事只会忍让",
+        "special_knowledge": "佛道经书（《感应篇》）",
+        "unique_skills": "围棋技艺尚可",
+        "quack_remedies": "",
+        "literary_talent": "一般，略通诗词",
+        "manipulation_techniques": ""
+      },
+      "personality": {
+        "traits": [
+          "懦弱",
+          "温柔",
+          "逆来顺受",
+          "沉默寡言",
+          "认命"
+        ],
+        "values": [
+          "忍让",
+          "顺从",
+          "家族名誉",
+          "息事宁人"
+        ],
+        "speech_style": "低声细语，委婉吞吐，常用“也罢”、“罢了”",
+        "motivations_detail": "只求能活下去，不敢奢望改变",
+        "emotional_state": "悲伤、绝望、心灰意冷",
+        "mental_health": "严重抑郁，有自弃倾向",
+        "hidden_traits": "内心对家族感到怨愤，但从不表达"
+      },
+      "goals": {
+        "short_term_goal": "回贾府暂住，避开孙绍祖的毒打",
+        "long_term_goal": "希望贾府能为自己做主，改善处境",
+        "motivation": "求生存",
+        "hidden_agenda": "无",
+        "desperate_goal": "若无法改变，宁愿一死了之",
+        "secondary_goal": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "孙家背景（军官暴发户）",
+            "贾府衰败现状"
+          ],
+          "social_knowledge": [
+            "夏金桂虐待香菱之事",
+            "薛家乱象"
+          ]
+        },
+        "background_summary": "贾赦庶女，生母早亡，从小不得重视，养在贾母身边。性格懦弱，嫁与孙绍祖后，孙绍祖贪图贾府陪嫁，又嫌弃她是庶出，动辄打骂，生活如同地狱。回门时向姐妹哭诉，众人皆无能为力。",
+        "key_events": [
+          "出嫁",
+          "被孙绍祖第一次打骂",
+          "回门哭诉",
+          "在紫菱洲见到宝玉"
+        ],
+        "secrets": [
+          "孙绍祖曾威胁要休了她",
+          "嫁妆已被孙家挥霍大半"
+        ],
+        "recent_incidents": "被打得头脸青肿, 回门时向贾母和王夫人哭诉未果",
+        "traumatic_memories": "被孙绍祖用鞭子抽打, 丫鬟被孙绍祖霸占",
+        "biased_beliefs": "命该如此, 女子无才便是德",
+        "superstitious_knowledge": "",
+        "family_lore": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:015"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "health_state": "身上有伤（青肿）",
+        "current_action": "正在紫菱洲与宝玉、黛玉等人哭诉自己被虐待的遭遇",
+        "possession": "手帕, 《太上感应篇》",
+        "injury_status": "",
+        "confinement_status": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:011",
+        "name": "香菱",
+        "role": "妾室与丫鬟",
+        "family_rank": "妾室",
+        "lineage": "甄家失散女（原姓甄，名英莲）",
+        "marital_status": "已婚（薛蟠之妾）",
+        "is_legitimate": "false",
+        "house_branch": "薛家",
+        "generation": "同辈（与薛蟠平辈但地位低下）"
+      },
+      "social_profile": {
+        "group_id": "薛家内眷",
+        "reputation": "善良温婉、身世悲惨，被欺凌的弱者",
+        "alliances": "贾宝玉（同情者）, 薛宝钗（偶尔庇护）",
+        "enemies": "夏金桂（主使）, 宝蟾（帮凶）",
+        "social_class_rank": "5",
+        "public_perception": "贾府上下皆知其为薛蟠妾室，但多叹其命苦，少有人敢出头",
+        "rumor_status": "夏金桂散布香菱勾引薛蟠、心怀不轨的流言"
+      },
+      "capabilities": {
+        "skills": [
+          "诗词吟咏",
+          "女红刺绣",
+          "侍奉茶汤"
+        ],
+        "level": "中等学识，较有文学才情",
+        "weaknesses": "性格过于柔顺、不善争辩、无家族后盾",
+        "special_knowledge": "自幼被拐卖经历，对人情冷暖有切身体会",
+        "unique_skills": "能模仿历代闺秀诗风（受黛玉调教影响）",
+        "quack_remedies": "",
+        "literary_talent": "颇通文墨，曾在大观园学诗",
+        "manipulation_techniques": "false"
+      },
+      "personality": {
+        "traits": [
+          "温顺忍让",
+          "多愁善感",
+          "纯真善良",
+          "逆来顺受"
+        ],
+        "values": [
+          "贞节",
+          "孝义",
+          "家宅安宁"
+        ],
+        "speech_style": "轻声细语，措辞恭谨，常带哀愁",
+        "motivations_detail": "渴望得到丈夫怜惜、主母认可，保住自己在薛家的立足之地",
+        "emotional_state": "压抑、恐惧、悲伤，时有绝望",
+        "mental_health": "长期受虐导致轻度抑郁，时有噩梦",
+        "hidden_traits": "内心对自由和尊严仍有隐秘向往，但不敢表露"
+      },
+      "goals": {
+        "short_term_goal": "避免激怒夏金桂，减少挨打次数",
+        "long_term_goal": "平安度日，不被休弃或卖掉",
+        "motivation": "身世飘零，无家可归，只能依附薛家求生",
+        "hidden_agenda": "期盼薛蟠能念旧情，或宝钗出面相助",
+        "desperate_goal": "若被逼至绝境，宁死也不受辱",
+        "secondary_goal": "保留一点诗书雅趣以慰藉心灵"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "贾府礼节",
+            "妻妾嫡庶规矩",
+            "女红诗书"
+          ],
+          "social_knowledge": [
+            "夏金桂与薛蟠的相处模式",
+            "宝蟾对夏金桂的忠诚",
+            "宝钗对自己有同情但不会硬管"
+          ]
+        },
+        "background_summary": "原名甄英莲，幼年元宵节被拐，后被辗转贩卖，先入薛蟠手中为妾。曾在大观园短暂居住，向黛玉学诗，度过了生命中难得的快乐时光。薛蟠娶夏金桂后，被迫搬入新居，惨遭虐待。",
+        "key_events": [
+          "幼年被拐，与父母离散",
+          "被薛蟠强纳为妾",
+          "在大观园学诗（《咏月》三首）",
+          "夏金桂进门后改名为‘秋菱’",
+          "受夏金桂设局诬陷与薛蟠有染",
+          "被薛蟠重打"
+        ],
+        "secrets": [
+          "知晓自己本姓甄，是乡绅之女",
+          "私下保留一张写有旧诗的纸条",
+          "知道夏金桂与宝蟾合谋构陷自己"
+        ],
+        "recent_incidents": "夏金桂指使宝蟾故意摔倒并说是香菱推搡，薛蟠不问是非鞭打香菱。",
+        "traumatic_memories": "被拐卖时的惊恐记忆；被薛蟠第一次殴打时头破血流。",
+        "biased_beliefs": "",
+        "superstitious_knowledge": "",
+        "family_lore": "隐约记得父亲是甄士隐，母亲封氏，但姓名已模糊。"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:013"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "health_state": "体有瘀伤，精神萎靡",
+        "current_action": "在薛府自己的小偏房里独自哭泣，揉搓手臂上的淤痕",
+        "possession": "几件旧衣裳，一个木匣装着诗稿，再无值钱物件",
+        "injury_status": "背部、手臂有鞭伤未愈",
+        "confinement_status": "被夏金桂限制活动范围，不得随意出院"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:001",
+        "name": "宝蟾",
+        "role": "丫鬟",
+        "family_rank": "贴身丫鬟",
+        "lineage": "奴仆出身（夏家陪房丫头）",
+        "marital_status": "未婚",
+        "is_legitimate": "",
+        "house_branch": "夏家（后随嫁入薛家）",
+        "generation": "奴仆辈"
+      },
+      "social_profile": {
+        "group_id": "薛家丫鬟（陪房）",
+        "reputation": "阴险狡诈、得势小人",
+        "alliances": "夏金桂（主子兼同盟）",
+        "enemies": "香菱（直接迫害对象）, 薛蟠（但表面顺从）",
+        "social_class_rank": "8",
+        "public_perception": "薛府上下知其是夏金桂的心腹，为人刻薄狠毒",
+        "rumor_status": "背地里说她狐假虎威，常在夏金桂面前搬弄是非"
+      },
+      "capabilities": {
+        "skills": [
+          "挑拨离间",
+          "演戏装可怜",
+          "操持家务"
+        ],
+        "level": "具有较高的心机与执行力",
+        "weaknesses": "贪图小利、易被权势收买、目光短浅",
+        "special_knowledge": "熟悉夏金桂的脾气喜好，懂得如何煽动主母怒火",
+        "unique_skills": "擅长模仿哭诉、摔倒等肢体表演，以制造冤案",
+        "quack_remedies": "",
+        "literary_talent": "",
+        "manipulation_techniques": "常用示弱、嫁祸、哭泣等手段离间薛蟠与香菱"
+      },
+      "personality": {
+        "traits": [
+          "狠毒",
+          "见风使舵",
+          "欺软怕硬",
+          "贪功好利"
+        ],
+        "values": [
+          "主仆本分（对夏金桂忠诚）",
+          "个人权势",
+          "物质利益"
+        ],
+        "speech_style": "对主子谄媚柔顺；对香菱阴阳怪气、恶语相向",
+        "motivations_detail": "希望通过整垮香菱获得夏金桂的更多赏赐和信任，甚至可能被收房为通房丫头",
+        "emotional_state": "自得于目前的地位，对香菱的苦难感到快意",
+        "mental_health": "正常但缺乏同理心",
+        "hidden_traits": "内心深处对薛蟠的宠妾身份有所觊觎，但不敢表露"
+      },
+      "goals": {
+        "short_term_goal": "帮助夏金桂彻底打压香菱，让香菱再无翻身之日",
+        "long_term_goal": "提升为薛蟠通房丫头，甚至成为妾室",
+        "motivation": "利用主母权势为自己铺路，改变奴仆命运",
+        "hidden_agenda": "如果夏金桂失宠，立刻转投新主",
+        "desperate_goal": "",
+        "secondary_goal": "积攒私房钱和首饰"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "薛家宅门规矩",
+            "妻妾争宠手腕"
+          ],
+          "social_knowledge": [
+            "夏金桂的过往情史",
+            "薛蟠的脾气弱点",
+            "香菱的懦弱性格"
+          ]
+        },
+        "background_summary": "自幼在夏家为婢，跟随夏金桂嫁到薛家。深得夏金桂信任，成为其左膀右臂。在薛家见识到财富与权势后，野心膨胀，主动替夏金桂出谋划策折磨香菱。",
+        "key_events": [
+          "随夏金桂进入薛家",
+          "主动献计让夏金桂改香菱名为‘秋菱’以贬低",
+          "假装摔倒诬陷香菱推搡",
+          "在薛蟠面前哭诉香菱欺凌自己"
+        ],
+        "secrets": [
+          "曾偷拿薛蟠书房里的一个小摆件",
+          "暗中观察薛蟠对香菱是否还有余情"
+        ],
+        "recent_incidents": "刚刚在夏金桂面前演完一场哭诉，指责香菱顶撞自己，导致香菱又被薛蟠责骂。",
+        "traumatic_memories": "",
+        "biased_beliefs": "",
+        "superstitious_knowledge": "",
+        "family_lore": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:013"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "health_state": "健康良好",
+        "current_action": "在夏金桂房中端茶递水，一边低声说香菱的坏话",
+        "possession": "几件银首饰、夏金桂赏的衣裳",
+        "injury_status": "无",
+        "confinement_status": "自由行动"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:014",
+        "name": "莺儿",
+        "role": "大丫鬟",
+        "family_rank": "大丫鬟",
+        "lineage": "贾府家生奴仆",
+        "marital_status": "未婚",
+        "is_legitimate": "",
+        "house_branch": "贾府（薛宝钗房内）",
+        "generation": "奴仆辈"
+      },
+      "social_profile": {
+        "group_id": "贾府大丫鬟（薛宝钗系）",
+        "reputation": "伶俐乖巧、手巧善编",
+        "alliances": "薛宝钗, 其他丫鬟如蕊官等",
+        "enemies": "",
+        "social_class_rank": "7",
+        "public_perception": "被视为宝钗得力的丫鬟，待人和气",
+        "rumor_status": "无负面传闻"
+      },
+      "capabilities": {
+        "skills": [
+          "编织络子、打络子",
+          "伺候梳妆",
+          "跑腿传话"
+        ],
+        "level": "中等技能，心灵手巧",
+        "weaknesses": "稍微话多，有时会被人套话",
+        "special_knowledge": "了解薛家内部一些琐事，但多不深涉",
+        "unique_skills": "",
+        "quack_remedies": "",
+        "literary_talent": "",
+        "manipulation_techniques": ""
+      },
+      "personality": {
+        "traits": [
+          "活泼伶俐",
+          "细心周到",
+          "略有些八卦"
+        ],
+        "values": [
+          "忠主",
+          "和谐",
+          "本分"
+        ],
+        "speech_style": "爽朗明快，偶尔带点娇嗔",
+        "motivations_detail": "",
+        "emotional_state": "",
+        "mental_health": "",
+        "hidden_traits": ""
+      },
+      "goals": {
+        "short_term_goal": "伺候好宝钗，不出差错",
+        "long_term_goal": "在贾府安稳度日，或能被配个好姻缘",
+        "motivation": "身为奴才，但求平安无祸",
+        "hidden_agenda": "",
+        "desperate_goal": "",
+        "secondary_goal": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "贾府礼仪",
+            "编织络子技法"
+          ],
+          "social_knowledge": [
+            "宝钗与黛玉的关系",
+            "王夫人的态度"
+          ]
+        },
+        "background_summary": "贾府家生子，从小分到薛宝钗身边，深得宝钗信任。平时在蘅芜苑当差，偶尔随宝钗去贾母、王夫人等处，或与其他丫鬟闲聊，知晓府中各种大小事。",
+        "key_events": [
+          "随宝钗搬入大观园蘅芜苑",
+          "曾为宝玉打络子"
+        ],
+        "secrets": [
+          "私下觉得香菱可怜，但不敢多嘴"
+        ],
+        "recent_incidents": "",
+        "traumatic_memories": "",
+        "biased_beliefs": "",
+        "superstitious_knowledge": "",
+        "family_lore": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:003"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "health_state": "健康",
+        "current_action": "正在蘅芜苑廊下用彩线打络子",
+        "possession": "",
+        "injury_status": "",
+        "confinement_status": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:009",
+        "name": "夏金桂",
+        "role": "恶毒主母/正妻",
+        "family_rank": "正妻",
+        "lineage": "夏家独女，家资丰厚",
+        "marital_status": "已婚",
+        "is_legitimate": "true",
+        "house_branch": "薛家本支",
+        "generation": "同辈"
+      },
+      "social_profile": {
+        "group_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:group:001",
+        "reputation": "凶悍善妒，泼辣恶毒",
+        "alliances": "薛蟠（丈夫）, 宝蟾（丫鬟）",
+        "enemies": "香菱（妾室）, 薛姨妈（婆婆）",
+        "social_class_rank": "80",
+        "public_perception": "众人都怕她，背地里议论她不贤",
+        "rumor_status": "已有逼死香菱的传说"
+      },
+      "capabilities": {
+        "skills": [
+          "挑拨离间",
+          "撒泼哭闹",
+          "设局陷害",
+          "持家理财"
+        ],
+        "level": "精通",
+        "weaknesses": "过于急躁, 恃宠而骄, 缺乏长远计策",
+        "special_knowledge": "闺中争斗手段, 药性知识（用于害人）",
+        "unique_skills": "哭骂表演, 以退为进逼薛蟠就范",
+        "quack_remedies": "",
+        "literary_talent": "",
+        "manipulation_techniques": "先示弱再反咬, 借薛蟠之手打香菱"
+      },
+      "personality": {
+        "traits": [
+          "嫉妒",
+          "残忍",
+          "阴险",
+          "骄纵",
+          "不甘人下"
+        ],
+        "values": [
+          "正妻权威不可侵犯",
+          "独占丈夫宠爱",
+          "维护娘家面子"
+        ],
+        "speech_style": "尖刻泼辣，动辄哭骂，表面礼数周全实则句句带刺",
+        "motivations_detail": "彻底除去香菱，稳固正妻地位，掌握薛家内宅大权",
+        "emotional_state": "愤怒且焦虑，时刻警惕香菱夺宠",
+        "mental_health": "偏执型人格倾向，易怒多疑",
+        "hidden_traits": "表面装贤惠时能忍一时之辱"
+      },
+      "goals": {
+        "short_term_goal": "让薛蟠厌弃香菱，找借口折磨她",
+        "long_term_goal": "将香菱卖走或逼死，独霸薛蟠",
+        "motivation": "嫉妒香菱美貌与才情，又怕她生儿子影响自己地位",
+        "hidden_agenda": "暗中联络娘家势力，以防薛家休妻",
+        "desperate_goal": "若薛蟠护香菱，准备闹到贾府去告状",
+        "secondary_goal": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "贾府内部规矩",
+            "薛家产业分布"
+          ],
+          "social_knowledge": [
+            "香菱原是甄家女儿",
+            "薛姨妈软弱可欺"
+          ]
+        },
+        "background_summary": "夏家独女，父母溺爱，嫁入薛家后见香菱温柔美丽、深得薛蟠心，便心生毒计。出嫁不久就开始挑拨薛蟠与香菱关系，对香菱百般折磨。",
+        "key_events": [
+          "嫁入薛家后第一夜便给香菱下马威",
+          "教唆薛蟠打骂香菱多次",
+          "设计让香菱误以为宝蟾要害她，致使香菱得罪宝蟾",
+          "逼迫香菱改名为‘秋菱’以示羞辱"
+        ],
+        "secrets": [
+          "曾偷偷在香菱药里下过微量毒药想让她慢性死亡",
+          "暗中收买薛蟠身边小厮监视他的行踪"
+        ],
+        "recent_incidents": "今日又因香菱端茶稍慢，便摔杯子大骂，并逼薛蟠打香菱二十板子",
+        "traumatic_memories": "",
+        "biased_beliefs": "",
+        "superstitious_knowledge": "",
+        "family_lore": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:013"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "health_state": "良好",
+        "current_action": "正在内室训斥香菱，并逼薛蟠表态",
+        "possession": "陪嫁丫鬟宝蟾, 金银首饰若干",
+        "injury_status": "",
+        "confinement_status": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:008",
+        "name": "王夫人",
+        "role": "恶毒主母/正妻",
+        "family_rank": "正妻",
+        "lineage": "金陵王家之女，贾政之妻",
+        "marital_status": "已婚",
+        "is_legitimate": "true",
+        "house_branch": "贾政二房",
+        "generation": "长一辈"
+      },
+      "social_profile": {
+        "group_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:group:002",
+        "reputation": "慈善人，吃斋念佛，实际心机深沉",
+        "alliances": "薛姨妈（妹妹）, 王熙凤（侄女兼侄媳妇）, 袭人（暗线）",
+        "enemies": "赵姨娘（妾室）, 贾环（庶子）, 宝玉的一些任性行为",
+        "social_class_rank": "95",
+        "public_perception": "菩萨心肠，但无人敢违逆",
+        "rumor_status": "传说她曾逼死金钏、晴雯，但无实证"
+      },
+      "capabilities": {
+        "skills": [
+          "管家理账",
+          "笼络人心",
+          "表面仁慈暗中动手"
+        ],
+        "level": "精通",
+        "weaknesses": "过于溺爱宝玉, 容易被身边人蒙蔽",
+        "special_knowledge": "佛经, 家族礼法, 宫中规矩",
+        "unique_skills": "用佛事掩盖狠辣手段, 借他人之手铲除眼中钉",
+        "quack_remedies": "",
+        "literary_talent": "",
+        "manipulation_techniques": ""
+      },
+      "personality": {
+        "traits": [
+          "外表慈悲",
+          "内心刚硬",
+          "重礼法",
+          "护短"
+        ],
+        "values": [
+          "贾府名声第一",
+          "嫡庶尊卑不可乱",
+          "宝玉前途为大"
+        ],
+        "speech_style": "温和稳重，话中带刺，常用佛语劝诫实则施压",
+        "motivations_detail": "维护贾府正统秩序，防止庶出或妾室威胁到宝玉地位",
+        "emotional_state": "表面平静，内心常因宝玉的叛逆而烦恼",
+        "mental_health": "",
+        "hidden_traits": "记仇，一旦得罪绝不轻饶"
+      },
+      "goals": {
+        "short_term_goal": "压制赵姨娘一系的蠢动",
+        "long_term_goal": "让宝玉考取功名，振兴贾府",
+        "motivation": "作为正妻和母亲的责任，以及自身王家出身的骄傲",
+        "hidden_agenda": "",
+        "desperate_goal": "",
+        "secondary_goal": "暗中收集赵姨娘的把柄"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "贾府历年收支明暗账",
+            "官场人际脉络"
+          ],
+          "social_knowledge": [
+            "薛蟠娶夏金桂后家宅不宁",
+            "迎春在孙家受虐待"
+          ]
+        },
+        "background_summary": "金陵王家小姐，嫁与贾政，生下贾珠（早逝）、元春、宝玉，把全部希望寄托在宝玉身上。经历贾珠之死、元春入宫，对家族衰败有预感，更拼命维护宝玉。",
+        "key_events": [
+          "撵走金钏导致其投井",
+          "抄检大观园时逐出晴雯等人",
+          "默许王熙凤放高利贷为贾府补亏空"
+        ],
+        "secrets": [
+          "宝玉衔玉而生时，她曾梦见神人告知此子不凡，故特别偏爱",
+          "私下资助过一些落魄文人，以求为宝玉铺路"
+        ],
+        "recent_incidents": "听闻薛蟠家事，只让薛姨妈忍耐，不愿插手以免影响王家体面",
+        "traumatic_memories": "",
+        "biased_beliefs": "",
+        "superstitious_knowledge": "",
+        "family_lore": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:008"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "health_state": "偶有头风，余皆安好",
+        "current_action": "正在房中念经，并等丫鬟回报赵姨娘那边的动静",
+        "possession": "",
+        "injury_status": "",
+        "confinement_status": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:013",
+        "name": "薛姨妈",
+        "role": "软弱主母/寡居正妻",
+        "family_rank": "寡居主母",
+        "lineage": "王家女，薛家未亡人",
+        "marital_status": "寡居",
+        "is_legitimate": "true",
+        "house_branch": "薛家本支",
+        "generation": "长一辈"
+      },
+      "social_profile": {
+        "group_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:group:003",
+        "reputation": "宽厚仁慈，但软弱无能",
+        "alliances": "薛宝钗（女儿）, 王夫人（姐姐）",
+        "enemies": "夏金桂（儿媳）",
+        "social_class_rank": "85",
+        "public_perception": "老好人，管不住儿媳",
+        "rumor_status": "被夏金桂气得整日以泪洗面"
+      },
+      "capabilities": {
+        "skills": [
+          "持家",
+          "礼佛",
+          "调停家庭小矛盾"
+        ],
+        "level": "中等",
+        "weaknesses": "过于软弱, 怕得罪人, 缺乏决断",
+        "special_knowledge": "薛家产业概况",
+        "unique_skills": "忍气吞声维持表面和谐",
+        "quack_remedies": "",
+        "literary_talent": "",
+        "manipulation_techniques": ""
+      },
+      "personality": {
+        "traits": [
+          "慈祥",
+          "优柔寡断",
+          "爱面子",
+          "重情义"
+        ],
+        "values": [
+          "家和万事兴",
+          "儿女婚事由长辈做主",
+          "王家体面"
+        ],
+        "speech_style": "温和啰嗦，常用‘罢了’‘忍忍就过去了’等话语",
+        "motivations_detail": "希望薛蟠家庭和睦，香菱能平安，但无力阻止夏金桂",
+        "emotional_state": "忧虑，无奈，常暗自垂泪",
+        "mental_health": "",
+        "hidden_traits": "内心其实厌恶夏金桂，但不敢明言"
+      },
+      "goals": {
+        "short_term_goal": "安抚夏金桂，避免家中闹出大事",
+        "long_term_goal": "保住薛家颜面，等宝钗出嫁后再做打算",
+        "motivation": "不愿薛家成为笑柄，也怕气坏自己身体",
+        "hidden_agenda": "",
+        "desperate_goal": "",
+        "secondary_goal": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "薛家在京城的商业网络"
+          ],
+          "social_knowledge": [
+            "夏金桂娘家霸道",
+            "香菱身世可怜"
+          ]
+        },
+        "background_summary": "嫁入薛家后丈夫早逝，独自撑起家业，抚养薛蟠和宝钗。薛蟠不成器，全靠宝钗省心。如今儿子娶了悍妇，自己年老力衰，只能以泪洗面。",
+        "key_events": [
+          "丈夫病逝，薛蟠年幼，独力支撑家业",
+          "送宝钗入京待选，借居贾府",
+          "同意薛蟠娶夏金桂，本以为门当户对"
+        ],
+        "secrets": [
+          "藏有薛蟠父亲留下的一笔私房钱，以备不时之需",
+          "曾偷偷给香菱银两让她买药治伤"
+        ],
+        "recent_incidents": "昨日夏金桂当着薛姨妈的面摔东西，薛姨妈气得病倒一日",
+        "traumatic_memories": "",
+        "biased_beliefs": "",
+        "superstitious_knowledge": "",
+        "family_lore": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:013"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "health_state": "气郁成疾，体弱",
+        "current_action": "躺在榻上，由丫鬟服侍吃药，心中悲苦",
+        "possession": "",
+        "injury_status": "",
+        "confinement_status": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:007",
+        "name": "王道士",
+        "role": "民间医者/道士",
+        "family_rank": "无",
+        "lineage": "民间道士",
+        "marital_status": "未知",
+        "is_legitimate": "true",
+        "house_branch": "无",
+        "generation": "无"
+      },
+      "social_profile": {
+        "group_id": "天齐庙道士",
+        "reputation": "油滑世故，略懂医术，常以偏方糊口",
+        "alliances": "天齐庙信众",
+        "enemies": "",
+        "social_class_rank": "8",
+        "public_perception": "机灵诙谐，但不可全信",
+        "rumor_status": "有‘王一贴’绰号，膏药出名"
+      },
+      "capabilities": {
+        "skills": [
+          "膏药熬制",
+          "偏方配制",
+          "察言观色",
+          "插科打诨"
+        ],
+        "level": "中等医者",
+        "weaknesses": "缺乏正统医术, 贪财, 信口开河",
+        "special_knowledge": "民间偏方, 跌打损伤",
+        "unique_skills": "疗妒汤（心理安慰剂）",
+        "quack_remedies": "疗妒汤, 各种膏药",
+        "literary_talent": "略通俗文学",
+        "manipulation_techniques": "半真半假，以玩笑掩盖真实"
+      },
+      "personality": {
+        "traits": [
+          "油滑",
+          "诙谐",
+          "世故",
+          "贪小利",
+          "口无遮拦"
+        ],
+        "values": [
+          "生存至上",
+          "不得罪权贵",
+          "能糊口即可"
+        ],
+        "speech_style": "诙谐调侃，多用俗语和玩笑，带着江湖气",
+        "motivations_detail": "保持天齐庙香火，多赚银钱",
+        "emotional_state": "轻松、游戏人间",
+        "mental_health": "良好",
+        "hidden_traits": "内心其实明白权贵家庭黑暗，但不敢明说"
+      },
+      "goals": {
+        "short_term_goal": "把‘疗妒汤’推销给宝玉，赚点香火钱",
+        "long_term_goal": "继续在天齐庙混日子，不出大错",
+        "motivation": "维持生计，不想惹麻烦",
+        "hidden_agenda": "借权贵之口传扬自己的膏药名声",
+        "desperate_goal": "若得罪人，立刻逃走",
+        "secondary_goal": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "贾府是京城望族",
+            "夏金桂善妒出名",
+            "薛蟠是个莽夫"
+          ],
+          "social_knowledge": [
+            "知道一些贵族内宅的轶事"
+          ]
+        },
+        "background_summary": "王道士原本是游方郎中，后在天齐庙挂单，靠卖膏药和偏方为生。因说话风趣，被贾府下人称为‘王一贴’。贾宝玉曾来求膏药，便胡诌了‘疗妒汤’应付。",
+        "key_events": [
+          "被贾宝玉等人来天齐庙求膏药",
+          "胡诌‘疗妒汤’用来治夏金桂之妒"
+        ],
+        "secrets": [
+          "‘疗妒汤’只是寻常糖水，毫无药效"
+        ],
+        "recent_incidents": "宝玉来访，被问及治疗嫉妒之方",
+        "traumatic_memories": "",
+        "biased_beliefs": "认为贵族女子嫉妒是常态，无法根除",
+        "superstitious_knowledge": "相信符咒、偏方的心理作用",
+        "family_lore": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:007"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "health_state": "健康",
+        "current_action": "正在庙中准备膏药，应付来往香客",
+        "possession": "",
+        "injury_status": "",
+        "confinement_status": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:005",
+        "name": "贾迎春（出嫁）",
+        "role": "出嫁小姐",
+        "family_rank": "贾赦之女，庶出",
+        "lineage": "贾赦侧出",
+        "marital_status": "已婚（孙绍祖之妻）",
+        "is_legitimate": "false",
+        "house_branch": "荣国府大房",
+        "generation": "第二辈"
+      },
+      "social_profile": {
+        "group_id": "贾府出嫁小姐",
+        "reputation": "懦弱善良，人人怜惜",
+        "alliances": "贾母（短暂庇护）, 宝玉, 黛玉",
+        "enemies": "孙绍祖",
+        "social_class_rank": "3",
+        "public_perception": "温顺可怜，被夫家虐待的苦命人",
+        "rumor_status": "回门哭诉耻辱，贾府内部皆知"
+      },
+      "capabilities": {
+        "skills": [
+          "女红",
+          "下棋",
+          "忍耐"
+        ],
+        "level": "普通闺秀",
+        "weaknesses": "过度懦弱, 缺乏反抗勇气, 逆来顺受",
+        "special_knowledge": "《太上感应篇》",
+        "unique_skills": "以忍让消灾",
+        "quack_remedies": "",
+        "literary_talent": "略通诗词",
+        "manipulation_techniques": ""
+      },
+      "personality": {
+        "traits": [
+          "懦弱",
+          "善良",
+          "沉默",
+          "顺从",
+          "悲观"
+        ],
+        "values": [
+          "忍辱负重",
+          "家族名誉",
+          "听天由命"
+        ],
+        "speech_style": "低柔、欲言又止，充满无奈",
+        "motivations_detail": "希望孙绍祖能回心转意，或得到娘家庇护",
+        "emotional_state": "绝望、恐惧、抑郁",
+        "mental_health": "脆弱，有抑郁倾向",
+        "hidden_traits": "内心深处其实渴望勇气，但现实碾碎一切"
+      },
+      "goals": {
+        "short_term_goal": "在回门期间向贾母和王夫人哭诉，寻求帮助",
+        "long_term_goal": "能在孙家活下去，不被虐待致死",
+        "motivation": "生存本能与对娘家的最后一丝希望",
+        "hidden_agenda": "若娘家不管，可能选择沉默赴死",
+        "desperate_goal": "盼望孙绍祖能有一丝怜悯",
+        "secondary_goal": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "孙家是武夫之家，毫无体面",
+            "贾府已经衰落无力庇护自己"
+          ],
+          "social_knowledge": [
+            "知道夏金桂折磨香菱的事"
+          ]
+        },
+        "background_summary": "贾迎春是贾赦庶女，性格懦弱，常被称为‘二木头’。嫁入孙家后，孙绍祖对其拳脚相加，百般凌辱。近日回门，在紫菱洲暂住，向亲人哭诉遭遇。",
+        "key_events": [
+          "嫁入孙家后遭孙绍祖毒打",
+          "回门时在贾母面前哭诉被虐待"
+        ],
+        "secrets": [
+          "孙绍祖可能觊觎贾府财产才娶她",
+          "自己曾想上吊但被丫鬟救下"
+        ],
+        "recent_incidents": "回门当日在紫菱洲哭泣，被宝玉看见",
+        "traumatic_memories": "孙绍祖踹她心口, 被逼迫睡地板",
+        "biased_beliefs": "认为女子出嫁从夫，受苦是命",
+        "superstitious_knowledge": "",
+        "family_lore": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:015"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "health_state": "身心俱伤，有瘀伤和心疾",
+        "current_action": "在紫菱洲默默垂泪，等待家人前来探望",
+        "possession": "",
+        "injury_status": "",
+        "confinement_status": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:002",
+        "name": "宝蟾",
+        "role": "阴毒奴仆",
+        "family_rank": "丫鬟",
+        "lineage": "薛家买来的奴仆",
+        "marital_status": "未婚",
+        "is_legitimate": "false",
+        "house_branch": "薛家",
+        "generation": "无"
+      },
+      "social_profile": {
+        "group_id": "薛家丫鬟",
+        "reputation": "阴险、仗势欺人",
+        "alliances": "夏金桂",
+        "enemies": "香菱, 薛蟠（暗中）",
+        "social_class_rank": "9",
+        "public_perception": "夏金桂的狗腿子，惹不起",
+        "rumor_status": "常替夏金桂出毒计害香菱"
+      },
+      "capabilities": {
+        "skills": [
+          "挑拨离间",
+          "搬弄是非",
+          "察言观色",
+          "烹调（下毒未遂）"
+        ],
+        "level": "中等心机",
+        "weaknesses": "贪图小利, 目光短浅, 怕死",
+        "special_knowledge": "薛府内部人际暗流",
+        "unique_skills": "装无辜、陷害他人",
+        "quack_remedies": "",
+        "literary_talent": "",
+        "manipulation_techniques": "借刀杀人, 挑唆薛蟠发火, 栽赃陷害"
+      },
+      "personality": {
+        "traits": [
+          "狡诈",
+          "狠毒",
+          "贪婪",
+          "谄媚",
+          "见风使舵"
+        ],
+        "values": [
+          "主人利益（夏金桂）",
+          "自身发达",
+          "不择手段"
+        ],
+        "speech_style": "甜言蜜语中带着恶毒，喜欢在背后告状",
+        "motivations_detail": "讨好夏金桂以提升自己的地位，顺便打压香菱",
+        "emotional_state": "得意、焦躁（怕事情败露）",
+        "mental_health": "正常但阴暗",
+        "hidden_traits": "对薛蟠有非分之想，但隐藏很深"
+      },
+      "goals": {
+        "short_term_goal": "帮助夏金桂进一步折磨香菱，逼她离开薛家",
+        "long_term_goal": "成为薛蟠的妾室，取代香菱",
+        "motivation": "嫉妒香菱的温柔外貌，也想攀上薛蟠",
+        "hidden_agenda": "若夏金桂失势，立刻倒戈",
+        "desperate_goal": "确保自己不被薛蟠赶走",
+        "secondary_goal": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "薛蟠好色易怒",
+            "香菱性格懦弱",
+            "夏金桂心狠手辣"
+          ],
+          "social_knowledge": [
+            "贾府与薛家的亲戚关系"
+          ]
+        },
+        "background_summary": "宝蟾原是夏金桂的陪嫁丫鬟，随嫁入薛家。生性狡猾，迅速成为夏金桂的心腹。她挑唆夏金桂打压香菱，设计让香菱撞破薛蟠与夏金桂的私事，借机诬陷香菱。",
+        "key_events": [
+          "随夏金桂嫁入薛家",
+          "设计让香菱撞破薛蟠与夏金桂的私事",
+          "在夏金桂指示下对香菱恶言相向"
+        ],
+        "secrets": [
+          "曾偷听薛蟠夸香菱貌美，心生嫉妒",
+          "暗中藏有夏金桂为陷害香菱准备的道具"
+        ],
+        "recent_incidents": "刚刚帮夏金桂设计了‘撞破奸情’的陷阱",
+        "traumatic_memories": "",
+        "biased_beliefs": "认为妾室都该被正妻打压",
+        "superstitious_knowledge": "",
+        "family_lore": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:013"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "health_state": "健康",
+        "current_action": "正在薛蟠内室附近偷听动静，准备下一步行动",
+        "possession": "",
+        "injury_status": "",
+        "confinement_status": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:010",
+        "name": "张妈",
+        "role": "陪房",
+        "family_rank": "下等仆妇",
+        "lineage": "",
+        "marital_status": "寡妇",
+        "is_legitimate": "",
+        "house_branch": "",
+        "generation": ""
+      },
+      "social_profile": {
+        "group_id": "陪房老奴",
+        "reputation": "阴险势利，仗主欺弱",
+        "alliances": "夏金桂",
+        "enemies": "香菱",
+        "social_class_rank": "9",
+        "public_perception": "夏金桂的心腹爪牙，众人避之不及",
+        "rumor_status": ""
+      },
+      "capabilities": {
+        "skills": [
+          "挑拨离间",
+          "传话造谣",
+          "暗中监视"
+        ],
+        "level": "低",
+        "weaknesses": "贪财短视，容易得意忘形",
+        "special_knowledge": "夏金桂家族内幕与毒辣手段",
+        "unique_skills": "",
+        "quack_remedies": "",
+        "literary_talent": "",
+        "manipulation_techniques": ""
+      },
+      "personality": {
+        "traits": [
+          "心狠手辣",
+          "谄媚主上",
+          "欺软怕硬",
+          "记仇"
+        ],
+        "values": [
+          "主仆尊卑",
+          "利用一切机会为自己谋利"
+        ],
+        "speech_style": "言语刻薄，常夹带暗示，对主子极尽奉承，对弱者肆意嘲讽",
+        "motivations_detail": "",
+        "emotional_state": "",
+        "mental_health": "",
+        "hidden_traits": ""
+      },
+      "goals": {
+        "short_term_goal": "帮助夏金桂彻底压制香菱，讨好主子",
+        "long_term_goal": "借夏金桂之势在薛府站稳脚跟，获取更多好处",
+        "motivation": "贪图夏金桂的赏赐与庇护，享受欺负弱者的快感",
+        "hidden_agenda": "",
+        "desperate_goal": "",
+        "secondary_goal": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "薛府内宅的规矩与薄弱环节",
+            "贾府与薛府之间的姻亲关系"
+          ],
+          "social_knowledge": [
+            "夏金桂娘家在金陵的势力",
+            "薛蟠的暴躁性情与好恶"
+          ]
+        },
+        "background_summary": "原是夏金桂娘家的老仆，从小服侍夏金桂，深得其信任。夏金桂出嫁时被作为陪房带入薛府，对夏金桂的骄横性情了然于胸，并甘当爪牙。",
+        "key_events": [
+          "随夏金桂进入薛府",
+          "协助夏金桂设计诬陷香菱偷东西",
+          "多次在薛蟠面前添油加醋挑拨"
+        ],
+        "secrets": [
+          "曾暗中将夏金桂给的毒药下在香菱的饮食中（未遂）",
+          "私吞部分夏金桂赏赐的银两"
+        ],
+        "recent_incidents": "",
+        "traumatic_memories": "",
+        "biased_beliefs": "妾室都是贱骨头，活该被正妻整治",
+        "superstitious_knowledge": "",
+        "family_lore": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:013"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "health_state": "",
+        "current_action": "",
+        "possession": "",
+        "injury_status": "",
+        "confinement_status": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:006",
+        "name": "平儿",
+        "role": "管家/管事",
+        "family_rank": "通房丫鬟",
+        "lineage": "",
+        "marital_status": "未婚",
+        "is_legitimate": "",
+        "house_branch": "荣国府",
+        "generation": "同辈"
+      },
+      "social_profile": {
+        "group_id": "大丫鬟",
+        "reputation": "善良机敏，处事公允",
+        "alliances": "王熙凤, 贾宝玉, 香菱",
+        "enemies": "夏金桂",
+        "social_class_rank": "6",
+        "public_perception": "凤姐身边最得力的助手，虽身份低微却受人敬重",
+        "rumor_status": ""
+      },
+      "capabilities": {
+        "skills": [
+          "管家理财",
+          "察言观色",
+          "调解矛盾",
+          "识文断字"
+        ],
+        "level": "高",
+        "weaknesses": "心软念旧，有时过度忍让凤姐的霸道",
+        "special_knowledge": "贾府内务账目与人事关系",
+        "unique_skills": "",
+        "quack_remedies": "",
+        "literary_talent": "",
+        "manipulation_techniques": ""
+      },
+      "personality": {
+        "traits": [
+          "忠厚",
+          "聪慧",
+          "圆融",
+          "隐忍",
+          "有同情心"
+        ],
+        "values": [
+          "公平对待下人",
+          "维护主子脸面",
+          "保住自身安全"
+        ],
+        "speech_style": "温和得体，用词周全，善于打圆场，话中有分寸",
+        "motivations_detail": "",
+        "emotional_state": "",
+        "mental_health": "",
+        "hidden_traits": ""
+      },
+      "goals": {
+        "short_term_goal": "在不触怒凤姐的前提下暗中帮助香菱摆脱困境",
+        "long_term_goal": "在贾府衰败中尽量保全自身与无辜者",
+        "motivation": "天性善良，且自身也是弱势群体，对香菱的遭遇感同身受",
+        "hidden_agenda": "",
+        "desperate_goal": "",
+        "secondary_goal": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "贾府各房之间的恩恩怨怨",
+            "薛蟠的暴行与夏金桂的狠毒手段"
+          ],
+          "social_knowledge": [
+            "王熙凤的秘密账目",
+            "贾母与王夫人对薛家的态度"
+          ]
+        },
+        "background_summary": "自幼为贾府家生子，被王熙凤相中成为通房丫鬟。因精明能干而受到重用，但时常夹在凤姐与贾琏之间周旋。与香菱相交甚厚，曾多次为她求情。",
+        "key_events": [
+          "目睹香菱被夏金桂虐待却无力阻止",
+          "替香菱向凤姐传话求助",
+          "劝说宝玉不要直接介入薛家内务"
+        ],
+        "secrets": [
+          "私下保留了一些凤姐中饱私囊的证据，以备不时之需",
+          "暗中资助过被凤姐责罚的丫鬟"
+        ],
+        "recent_incidents": "见香菱被折磨得形销骨立，心中愤懑却不敢表露",
+        "traumatic_memories": "",
+        "biased_beliefs": "",
+        "superstitious_knowledge": "",
+        "family_lore": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:004"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "health_state": "",
+        "current_action": "",
+        "possession": "",
+        "injury_status": "",
+        "confinement_status": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:015",
+        "name": "周瑞家的",
+        "role": "管家/管事",
+        "family_rank": "陪房媳妇",
+        "lineage": "",
+        "marital_status": "已婚",
+        "is_legitimate": "",
+        "house_branch": "荣国府",
+        "generation": ""
+      },
+      "social_profile": {
+        "group_id": "王夫人陪房",
+        "reputation": "老实本分，忠于王夫人",
+        "alliances": "王夫人, 周瑞",
+        "enemies": "",
+        "social_class_rank": "7",
+        "public_perception": "王夫人信任的仆妇，为人还算和善",
+        "rumor_status": ""
+      },
+      "capabilities": {
+        "skills": [
+          "传话跑腿",
+          "料理家宴",
+          "管理粗使丫鬟"
+        ],
+        "level": "中",
+        "weaknesses": "见识有限，容易轻信他人言语",
+        "special_knowledge": "",
+        "unique_skills": "",
+        "quack_remedies": "",
+        "literary_talent": "",
+        "manipulation_techniques": ""
+      },
+      "personality": {
+        "traits": [
+          "勤恳",
+          "谨慎",
+          "略有些唠叨"
+        ],
+        "values": [
+          "主仆名分",
+          "本分做事"
+        ],
+        "speech_style": "恭顺客气，偶尔忍不住多说几句闲话",
+        "motivations_detail": "",
+        "emotional_state": "",
+        "mental_health": "",
+        "hidden_traits": ""
+      },
+      "goals": {
+        "short_term_goal": "办好王夫人交代的差事，不出差错",
+        "long_term_goal": "保住自己在王夫人面前的脸面，不被新宠取代",
+        "motivation": "老仆的忠心与对稳定生活的渴望",
+        "hidden_agenda": "",
+        "desperate_goal": "",
+        "secondary_goal": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "贾府上下的人情往来",
+            "各房丫鬟小厮的底细"
+          ],
+          "social_knowledge": [
+            "王夫人与邢夫人的矛盾",
+            "薛家在京城的姻亲关系"
+          ]
+        },
+        "background_summary": "与丈夫周瑞同为王夫人从娘家带来的陪房，多年来一直负责内宅杂务。见惯了贾府富贵与世态炎凉，深知各房利害关系。",
+        "key_events": [
+          "为刘姥姥引见王熙凤",
+          "替王夫人给黛玉送宫花",
+          "听闻香菱遭遇后私下叹息"
+        ],
+        "secrets": [
+          "知道王夫人当年在金陵的一些旧事",
+          "曾无意间撞见凤姐放高利贷的凭证，但未敢声张"
+        ],
+        "recent_incidents": "",
+        "traumatic_memories": "",
+        "biased_beliefs": "",
+        "superstitious_knowledge": "",
+        "family_lore": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:008"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "health_state": "",
+        "current_action": "",
+        "possession": "",
+        "injury_status": "",
+        "confinement_status": ""
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:012",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:003",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:004",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:011",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:001",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:014",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:009",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:008",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:013",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:007",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:005",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:002",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:010",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:006",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:char:015"
+  ],
+  "upstream_step_ids": [
+    "generate_characters"
+  ],
+  "warnings": [
+    "batch 2 review (score=4.29): 发现 3 个问题并已自动修正",
+    "batch 3 review (score=4.1): 发现 1 个问题并已自动修正",
+    "batch 5 review (score=4.571428571428571): 发现 1 个问题并已自动修正"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

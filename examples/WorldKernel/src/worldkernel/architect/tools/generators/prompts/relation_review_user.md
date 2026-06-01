@@ -10,9 +10,15 @@
 
 {{character_summary}}
 
-## 关系 Schema 要求
+## 关系 Schema 结构
 
-每条关系只含 `edge` 字段，结构为：`id`（留空）、`from_id`、`to_id`、`type`、`direction`。不包含 `properties` 或其他字段。
+每条关系只包含 `edge` 字段，结构为：
+
+```
+{"edge": {"id": "", "from_id": "角色ID", "to_id": "角色ID", "type": "关系标签", "direction": "单向|双向"}}
+```
+
+注意：`edge.id` 留空字符串是正确的，由系统在后续步骤自动分配，**不得将其视为错误**。
 
 ## 待审核的关系数据
 

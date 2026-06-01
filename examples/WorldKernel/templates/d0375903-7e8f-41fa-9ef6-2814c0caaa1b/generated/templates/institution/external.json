@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "relations_to_others",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "relations_with_other_institutions",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "political_influence",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "superstitious_or_medical_association",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}
