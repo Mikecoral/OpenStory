@@ -1,0 +1,22 @@
+{
+  "fields": [
+    {
+      "name": "relation_ids",
+      "type": "list_str",
+      "required": true,
+      "ref": "relation"
+    },
+    {
+      "name": "relationship_quality_map",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "allied_debt",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

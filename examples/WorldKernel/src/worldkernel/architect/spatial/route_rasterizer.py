@@ -362,7 +362,7 @@ class RouteRasterizer:
             )
 
             if route is not None:
-                route.route_type = "synthetic"
+                route = route.model_copy(update={"route_type": "synthetic"})
                 routes.append(route)
                 warnings.append(SpatialInputWarning(
                     code="synthetic_route_added",

@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "direction",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "historical_event",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "faction_alignment",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "house_dynamic",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "special_bond",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "narrative_role",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+dim_name: StateDim
+current_state:
+  type: str
+ownership:
+  type: str
+capacity:
+  type: int
+cursed_status:
+  type: str
+  option: true
+sealed_status:
+  type: str
+  option: true
+transformable:
+  type: str
+  option: true
+damage_state:
+  type: str
+  option: true
+seasonal_variation:
+  type: str
+  option: true
+magical_instability:
+  type: str
+  option: true

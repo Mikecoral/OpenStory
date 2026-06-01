@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "danger_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "required_items",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "time_window",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "pass_required",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "gender_rule",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "supervisor_control",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "emergency_override",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

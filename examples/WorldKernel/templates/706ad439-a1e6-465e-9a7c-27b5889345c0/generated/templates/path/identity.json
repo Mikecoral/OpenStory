@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "belongs_to_household",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "path_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_inside_garden",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "hierarchy_rank",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "connected_courtyard",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

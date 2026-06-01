@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "group_id",
+      "type": "str",
+      "required": true,
+      "ref": "institution"
+    },
+    {
+      "name": "reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "standing_in_rong_ning_houses",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reputation_among_servants",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "alliance_with_other_noble_families",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "appraisal_by_elder_matrons",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "criticized_or_admired_by_peers",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "role_in_family_power_structure",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+dim_name: EndpointsDim
+from_id:
+  type: str
+  ref: location
+to_id:
+  type: str
+  ref: location
+bidirectional:
+  type: bool
+physical_form:
+  type: str
+  option: true
+traffic_restriction:
+  type: str
+  option: true
+guarded_by:
+  type: str
+  option: true
+ritual_use:
+  type: str
+  option: true
+seasonal_condition:
+  type: str
+  option: true

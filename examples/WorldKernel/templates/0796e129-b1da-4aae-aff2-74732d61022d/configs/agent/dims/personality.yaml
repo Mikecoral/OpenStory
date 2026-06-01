@@ -1,0 +1,16 @@
+dim_name: PersonalityDim
+traits:
+  type: list_str
+values:
+  type: list_str
+speech_style:
+  type: str
+nickname:
+  type: str
+  option: true
+quirks:
+  type: str
+  option: true
+patronus_form:
+  type: str
+  option: true

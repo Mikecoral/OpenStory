@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "enforcer",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "mechanism",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "detectability",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "supervisory_role",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "detection_method",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "frequency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "exceptions",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

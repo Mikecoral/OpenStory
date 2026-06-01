@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "bidirectional",
+      "type": "bool",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "intermediate_points",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "connection_visibility",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "portal_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "distance_or_time",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

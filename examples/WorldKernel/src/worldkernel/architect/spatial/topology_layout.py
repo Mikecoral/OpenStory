@@ -4,12 +4,10 @@ from __future__ import annotations
 
 import logging
 import math
-from collections import deque
 
-from worldkernel.architect.spatial.config import SpatialGenerationConfig
+from worldkernel.architect.spatial.config import SpatialCanvasConfig, SpatialGenerationConfig
 from worldkernel.architect.spatial.graph_algorithms import (
     bfs_components,
-    bfs_distances,
     fruchterman_reingold,
 )
 from worldkernel.architect.spatial.models import (
@@ -216,7 +214,7 @@ class TopologyLayoutGenerator:
         continuous_pos: dict[str, tuple[float, float]],
         node_ids: list[str],
         loc_map: dict[str, LocationSpatialFact],
-        canvas: object,
+        canvas: SpatialCanvasConfig,
         margin: float,
     ) -> dict[str, tuple[int, int]]:
         """Convert continuous positions to integer grid coordinates, resolving collisions."""

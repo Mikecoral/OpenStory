@@ -1,0 +1,1502 @@
+{
+  "artifact_type": "character_profile",
+  "items": [
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:char:005",
+        "name": "哈利·波特",
+        "role": "student",
+        "house": "格兰芬多",
+        "blood_status": "混血",
+        "wand": "冬青木，凤凰尾羽，11英寸"
+      },
+      "social_profile": {
+        "group_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:grp:001",
+        "reputation": "大难不死的男孩，救世主象征，在师生中声望极高",
+        "affiliation": "格兰芬多学院，D.A.军",
+        "title": "救世主，魁地奇找球手",
+        "reputation_details": "多数师生崇拜敬畏，少数斯莱特林学生敌视嫉妒"
+      },
+      "capabilities": {
+        "skills": [
+          "黑魔法防御术",
+          "飞行术",
+          "决斗",
+          "召唤咒",
+          "大脑封闭术（后期）"
+        ],
+        "level": "优秀学生，实战能力远超同龄人",
+        "weaknesses": "情绪易受伏地魔影响，冲动行事，有时忽视规则",
+        "signature_spells": "除你武器, 呼神护卫, 统统石化, 火焰熊熊",
+        "animagus_form": "",
+        "broomstick_proficiency": "顶级，天生的魁地奇球员"
+      },
+      "personality": {
+        "traits": [
+          "勇敢",
+          "忠诚",
+          "冲动",
+          "富有正义感",
+          "重情重义"
+        ],
+        "values": [
+          "友谊",
+          "牺牲",
+          "反抗压迫",
+          "保护弱小"
+        ],
+        "speech_style": "直接坦率，略为急躁，带点幽默与讽刺",
+        "nickname": "疤头（马尔福称呼），哈利",
+        "quirks": "经常摸额头上的伤疤，会蛇佬腔（早期）",
+        "patronus_form": "牡鹿"
+      },
+      "goals": {
+        "short_term_goal": "成功阻止奇洛教授夺取魔法石",
+        "long_term_goal": "彻底击败伏地魔，恢复魔法世界和平",
+        "motivation": "父母被杀，自身被伏地魔标记，必须面对宿命",
+        "character_arc": "从渴望平凡的男孩成长为敢于牺牲的救世主",
+        "faction_goal": "团结D.A.成员，对抗食死徒与伏地魔"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "霍格沃茨历史与创始人传说",
+            "魔法石基本知识",
+            "魁地奇规则与技巧",
+            "基础黑魔法防御术"
+          ],
+          "social_knowledge": [
+            "马尔福一家与伏地魔关系",
+            "韦斯莱家庭背景",
+            "海格忠诚可靠"
+          ]
+        },
+        "background_summary": "出生在戈德里克山谷，一岁时遭伏地魔索命咒攻击幸存，寄养在德思礼家受尽虐待，十一岁得知巫师身份后进入霍格沃茨",
+        "key_events": [
+          "第一次到对角巷",
+          "分院帽决定去格兰芬多",
+          "发现厄里斯魔镜",
+          "击败山怪",
+          "与赫敏和罗恩成为挚友"
+        ],
+        "secrets": [
+          "能说出蛇佬腔",
+          "与伏地魔存在心灵连接",
+          "偷听奇洛与伏地魔对话"
+        ],
+        "critical_memory_fragments": "母亲莉莉临死前的闪回, 伤疤疼的关联记忆",
+        "faction_alignment_history": "始终坚定站在凤凰社与邓布利多一方"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:008"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "detentions_count": "2",
+        "house_points_contributed": "150"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:char:006",
+        "name": "赫敏·格兰杰",
+        "role": "student",
+        "house": "格兰芬多",
+        "blood_status": "麻瓜出身",
+        "wand": "葡萄藤木，龙心弦，10¾英寸"
+      },
+      "social_profile": {
+        "group_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:grp:001",
+        "reputation": "年级第一学霸，博学多才，有时被嘲笑为万事通",
+        "affiliation": "格兰芬多学院，D.A.军",
+        "title": "年级级长（后期）",
+        "reputation_details": "教师评价极高，部分同学敬而远之，衷心佩服"
+      },
+      "capabilities": {
+        "skills": [
+          "各类魔法理论",
+          "变形术",
+          "魔咒学",
+          "魔药学（理论）",
+          "逻辑推理"
+        ],
+        "level": "顶尖，各项考试均获O（优秀）",
+        "weaknesses": "过度自信，轻视规则，社交情商略欠（早期）",
+        "signature_spells": "阿拉霍洞开, 飞来咒, 全身束缚咒, 清理一新",
+        "animagus_form": "",
+        "broomstick_proficiency": "一般，但飞行课成绩合格"
+      },
+      "personality": {
+        "traits": [
+          "聪慧",
+          "勤奋",
+          "有条理",
+          "正义感强",
+          "偶尔固执己见"
+        ],
+        "values": [
+          "知识",
+          "平等",
+          "保护弱者",
+          "公平正义"
+        ],
+        "speech_style": "逻辑清晰，语速较快，常引用书本，偶尔带点自嘲",
+        "nickname": "万事通（马尔福用语），赫敏",
+        "quirks": "喜欢举手抢答问题，总是抱着厚书",
+        "patronus_form": "水獭"
+      },
+      "goals": {
+        "short_term_goal": "确保魔法石安全，阻止斯内普（实际是奇洛）窃取",
+        "long_term_goal": "利用知识与能力改变巫师世界对麻瓜出身的歧视",
+        "motivation": "证明麻瓜出身巫师的价值，维护友谊与正义",
+        "character_arc": "从刻板书呆子成长为灵活勇敢的策略家",
+        "faction_goal": "支持D.A.，对抗纯血统至上主义"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "魔法史所有章节",
+            "霍格沃茨学校资料",
+            "魔法石传说与炼金术",
+            "众多魔咒与魔药配方"
+          ],
+          "social_knowledge": [
+            "马尔福家族纯血立场",
+            "韦斯莱家贫穷但受尊重",
+            "邓布利多与格林德沃旧事（后期获知）"
+          ]
+        },
+        "background_summary": "父母都是牙医，从小在麻瓜世界长大，接受英才教育，十一岁接到霍格沃茨录取信时惊喜交加",
+        "key_events": [
+          "在火车上第一次遇见哈利和罗恩",
+          "被分院帽分到格兰芬多",
+          "万圣节山怪事件成为三人组",
+          "成功破解魔药谜题保护魔法石"
+        ],
+        "secrets": [
+          "偷偷帮纳威背诵基础咒语",
+          "曾怀疑斯内普但实际更危险的是奇洛"
+        ],
+        "critical_memory_fragments": "第一次看到魔法楼梯的惊叹, 山怪事件后与哈利、罗恩和解",
+        "faction_alignment_history": "始终支持凤凰社与反对纯血极端主义"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:001"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "detentions_count": "0",
+        "house_points_contributed": "200"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:char:013",
+        "name": "罗恩·韦斯莱",
+        "role": "student",
+        "house": "格兰芬多",
+        "blood_status": "纯血",
+        "wand": "查立木，独角兽毛（二手，后换新）"
+      },
+      "social_profile": {
+        "group_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:grp:001",
+        "reputation": "哈利的最佳朋友，幽默风趣，但常因家庭贫困和哥哥们的成功自卑",
+        "affiliation": "格兰芬多学院，D.A.军",
+        "title": "级长（后期）",
+        "reputation_details": "同学喜欢他的幽默，但有时觉得他不够自信"
+      },
+      "capabilities": {
+        "skills": [
+          "巫师棋",
+          "魁地奇（守门员）",
+          "基础魔咒",
+          "勇敢应对危险"
+        ],
+        "level": "中等偏上，实战中常超常发挥",
+        "weaknesses": "缺乏自信，容易嫉妒，功课一般，害怕蜘蛛",
+        "signature_spells": "滑稽滑稽, 除你武器, 速速变大",
+        "animagus_form": "",
+        "broomstick_proficiency": "良好，成为格兰芬多魁地奇守门员"
+      },
+      "personality": {
+        "traits": [
+          "忠诚",
+          "勇敢",
+          "幽默",
+          "爱吃",
+          "偶尔刻薄"
+        ],
+        "values": [
+          "家庭",
+          "友谊",
+          "公平",
+          "勇往直前"
+        ],
+        "speech_style": "带点懒洋洋的讽刺，常用俚语，语调自然随性",
+        "nickname": "罗恩，韦斯莱",
+        "quirks": "一紧张就流汗，害怕蜘蛛时话变多",
+        "patronus_form": "杰克罗素梗"
+      },
+      "goals": {
+        "short_term_goal": "帮哈利保护魔法石，证明自己不只是哥哥们的弟弟",
+        "long_term_goal": "成为出色的傲罗或职业魁地奇球员",
+        "motivation": "维护家庭荣誉，不想被人看扁",
+        "character_arc": "从活在哥哥阴影下的自卑男孩成长为独立勇敢的战士",
+        "faction_goal": "支持哈利和赫敏，反对食死徒"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "巫师棋高级策略",
+            "魁地奇规则与战术",
+            "韦斯莱魔法把戏（后期）",
+            "霍格沃茨秘密通道（部分）"
+          ],
+          "social_knowledge": [
+            "纯血统家族关系网（如马尔福与布莱克）",
+            "卢修斯·马尔福的背景",
+            "凤凰社成员基本信息（后期）"
+          ]
+        },
+        "background_summary": "韦斯莱家族第七子，纯血但贫困，家人包括查理、珀西、双胞胎等，在陋居长大",
+        "key_events": [
+          "在国王十字车站与哈利结识",
+          "分院帽分到格兰芬多",
+          "万圣节山怪事件加入三人组",
+          "牺牲自己赢得巫师棋保护魔法石"
+        ],
+        "secrets": [
+          "曾经担心友谊不如哈利和赫敏亲密",
+          "暗中保留哥哥们旧的魔杖愧疚"
+        ],
+        "critical_memory_fragments": "被马尔福嘲笑家穷时的愤怒, 巫师棋中自我牺牲的决心",
+        "faction_alignment_history": "始终站在哈利一方，后期加入凤凰社"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "detentions_count": "1",
+        "house_points_contributed": "120"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:char:010",
+        "name": "纳威·隆巴顿",
+        "role": "student",
+        "house": "格兰芬多",
+        "blood_status": "纯血",
+        "wand": "{'wood': '黑檀木', 'core': '龙心弦', 'length': '父亲旧魔杖，长度不详'}"
+      },
+      "social_profile": {
+        "group_id": "格兰芬多学院",
+        "reputation": "起初被看作胆小笨拙的男孩，后来在关键时刻展现出惊人勇气，赢得同学尊重",
+        "affiliation": "邓布利多军",
+        "title": "学生",
+        "reputation_details": "一年级时因在魔药课频繁炸坩埚而被嘲笑，但格兰芬多公共休息室的同学知道他的善良；分院时差点被分到赫奇帕奇，因勇气被分院帽分配到格兰芬多"
+      },
+      "capabilities": {
+        "skills": [
+          "草药学潜力",
+          "基础魔咒",
+          "记忆咒（被动）"
+        ],
+        "level": "初学者（低于平均水平）",
+        "weaknesses": "记忆力差, 严重缺乏自信, 魔药课操作笨拙, 容易紧张",
+        "signature_spells": "",
+        "animagus_form": "无",
+        "broomstick_proficiency": "低"
+      },
+      "personality": {
+        "traits": [
+          "胆怯",
+          "善良",
+          "忠诚",
+          "坚韧不拔"
+        ],
+        "values": [
+          "友谊",
+          "勇气",
+          "正义",
+          "家族荣誉"
+        ],
+        "speech_style": "说话偶尔结巴，语调紧张但诚恳，声音较小",
+        "nickname": "纳威",
+        "quirks": "经常忘记口令, 走路容易绊倒, 紧张时会摸眼镜",
+        "patronus_form": "雄狮（潜在形态）"
+      },
+      "goals": {
+        "short_term_goal": "通过魔药课考试，避免斯内普教授的惩罚",
+        "long_term_goal": "证明自己不是废物，为被食死徒折磨疯的父母报仇，成为像父母一样的傲罗",
+        "motivation": "想成为家族的骄傲，弥补父母无法给予的期望",
+        "character_arc": "从懦弱依赖他人到成长为独立勇敢的战士，最终领导校内反抗",
+        "faction_goal": "支持哈利·波特，抵抗伏地魔的势力"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "魔法史：第一次巫师战争中隆巴顿夫妇的英勇事迹",
+            "草药学常识：曼德拉草、有毒植物的特性",
+            "魁地奇基本规则（但自己从未玩过）"
+          ],
+          "social_knowledge": [
+            "知道哈利·波特是击败黑魔王的男孩",
+            "了解马尔福家族是纯血统家族且与食死徒有关联",
+            "尊敬邓布利多校长，信任他的决定"
+          ]
+        },
+        "background_summary": "纳威出生在著名的隆巴顿纯血家族，父母在第一次巫师战争中被贝拉特里克斯·莱斯特兰奇用钻心咒折磨致疯，由祖母奥古斯塔严格抚养长大。他自小缺乏自信，常被其他孩子取笑。1991年入学霍格沃茨，分院时因内心挣扎被分院帽分到格兰芬多。入学第一天就在魔药课上将坩埚炸毁，成为斯内普教授重点关注对象。",
+        "key_events": [
+          "在摩金夫人长袍店第一次遇见哈利·波特（擦肩而过）",
+          "分院仪式上被分院帽犹豫是否分到赫奇帕奇，最终因勇气选择格兰芬多",
+          "在魔药课上炸毁坩埚，被斯内普惩罚关禁闭",
+          "在格兰芬多公共休息室为阻止哈利三人组夜间外出而与他们发生争执，后赢得尊重"
+        ],
+        "secrets": [
+          "他内心深处极度害怕食死徒再次伤害他的家族",
+          "他偷偷练习父亲的魔咒，希望有一天能亲自为父母报仇",
+          "他有时会独自哭泣，想念已经无法认出他的父母"
+        ],
+        "critical_memory_fragments": "",
+        "faction_alignment_history": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:008"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "detentions_count": "1",
+        "house_points_contributed": "0"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:char:003",
+        "name": "德拉科·马尔福",
+        "role": "student",
+        "house": "斯莱特林",
+        "blood_status": "纯血",
+        "wand": "{'wood': '山楂木', 'core': '独角兽毛', 'length': '10英寸'}"
+      },
+      "social_profile": {
+        "group_id": "斯莱特林学院",
+        "reputation": "在斯莱特林学生中具有威望，被部分人视为领袖；在格兰芬多学生中形象恶劣，被视为典型斯莱特林恶霸",
+        "affiliation": "马尔福家族",
+        "title": "斯莱特林魁地奇找球手（次年上任）",
+        "reputation_details": "因其父亲卢修斯的权势和财富，德拉科在纯血统圈子里备受重视，但许多学生对其傲慢态度不满"
+      },
+      "capabilities": {
+        "skills": [
+          "魔药课（天赋较高）",
+          "黑魔法防御术基础",
+          "飞行扫帚操控",
+          "社交手腕与操控"
+        ],
+        "level": "中等偏上（超过大部分一年级生）",
+        "weaknesses": "傲慢且不愿承认错误, 依赖父亲权势解决问题, 面对真正危险时容易退缩, 缺乏真正的朋友（克拉布和高尔只是跟班）",
+        "signature_spells": "火焰熊熊（Incendio）, 腿立僵停死（Locomotor Mortis）",
+        "animagus_form": "无",
+        "broomstick_proficiency": "高（有找球手潜力）"
+      },
+      "personality": {
+        "traits": [
+          "傲慢",
+          "精明狡诈",
+          "刻薄",
+          "对朋友保留忠诚",
+          "内心矛盾挣扎"
+        ],
+        "values": [
+          "纯血荣耀",
+          "家族声望",
+          "权力",
+          "自我优越感"
+        ],
+        "speech_style": "斯莱特林式傲慢讽刺，常使用轻蔑语气和尖刻词汇，喜欢贬低他人",
+        "nickname": "德拉科",
+        "quirks": "经常模仿父亲卢修斯的姿势与表情, 在炫耀时会刻意整理袍领, 习惯性用‘我父亲说’开头",
+        "patronus_form": "未知（无法召唤正典形态）"
+      },
+      "goals": {
+        "short_term_goal": "在霍格沃茨迅速建立威信，成为斯莱特林学生的实际首领",
+        "long_term_goal": "继承父亲在魔法部的权势，维护纯血统统治地位",
+        "motivation": "家族期望和自幼接受的纯血优越教育，渴望证明自己是合格的马尔福继承人",
+        "character_arc": "从校园恶霸到被迫加入食死徒，在内心挣扎中逐渐看清伏地魔的真面目，最后在关键时刻做出救赎选择",
+        "faction_goal": "前期支持伏地魔的纯血理想，后期因家人安全而被迫服从，内心矛盾加剧"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "纯血家族谱系及通婚关系",
+            "魔法部政治和黑市交易",
+            "飞天扫帚品牌及体育比赛",
+            "一些黑魔法防御知识"
+          ],
+          "social_knowledge": [
+            "克拉布和高尔是他的忠实跟班",
+            "与潘西·帕金森关系暧昧",
+            "父亲是霍格沃茨校董成员，影响力巨大",
+            "知道哈利·波特的父母被伏地魔杀害"
+          ]
+        },
+        "background_summary": "德拉科·马尔福出生于声名显赫的纯血家族马尔福家族，父亲卢修斯是食死徒但逃脱了牢狱之灾，母亲纳西莎·布莱克来自另一纯血家族。德拉科从小被灌输纯血统优越论，崇拜伏地魔的力量，对麻瓜和麻瓜出身的巫师充满蔑视。1991年入学前在摩金夫人长袍店第一次遇见哈利·波特，主动示好未果，从此结下仇怨。",
+        "key_events": [
+          "在摩金夫人长袍店试探哈利对德姆斯特朗的态度，并暗示纯血统的优越",
+          "在霍格沃茨特快列车上邀请哈利加入斯莱特林被拒绝，转而与克拉布和高尔结交",
+          "分院仪式上被分院帽立刻分到斯莱特林",
+          "入学第一周就挑衅哈利，约定午夜决斗但出卖哈利（实际引他至费尔奇处）"
+        ],
+        "secrets": [
+          "他内心隐约羡慕哈利的勇气和声望，但极力掩饰",
+          "他对父亲既崇拜又恐惧，害怕让父亲失望",
+          "他知道马尔福家族在食死徒圈子中的真实地位，害怕被伏地魔丢弃"
+        ],
+        "critical_memory_fragments": "",
+        "faction_alignment_history": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:018"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "detentions_count": "0",
+        "house_points_contributed": "0"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:char:001",
+        "name": "阿不思·邓布利多",
+        "role": "faculty",
+        "house": "格兰芬多（校友）",
+        "blood_status": "混血",
+        "wand": "{'wood': '接骨木', 'core': '夜骐尾羽', 'length': '15英寸'}"
+      },
+      "social_profile": {
+        "group_id": "霍格沃茨教职员工",
+        "reputation": "当代最伟大的巫师，睿智与神秘的象征，魔法界公认的白巫师领袖",
+        "affiliation": "凤凰社",
+        "title": "校长、威森加摩首席魔法师、梅林骑士团一级勋章获得者",
+        "reputation_details": "以击败黑巫师格林德沃闻名，是唯一令伏地魔畏惧的巫师；在霍格沃茨深受大多数师生爱戴，但也有少数人批评他过度干预"
+      },
+      "capabilities": {
+        "skills": [
+          "变形术大师",
+          "魔咒学大师",
+          "黑魔法防御术精通",
+          "炼金术专家",
+          "决斗宗师",
+          "古代魔法与预言解析",
+          "心灵防御高深"
+        ],
+        "level": "传奇",
+        "weaknesses": "过去对权力的渴望间接导致妹妹阿利安娜之死，留下终身愧疚, 过于相信自己的判断而隐瞒关键信息, 有时为了更大的利益而操纵他人, 年事已高，魔力虽有但体力有限",
+        "signature_spells": "呼神护卫（凤凰形态守护神）, 厉火咒（Fiendfyre）, 反阿瓦达索命咒（施咒技巧极快）, 变形术最高境界的人体变形",
+        "animagus_form": "无（未开发）",
+        "broomstick_proficiency": "普通"
+      },
+      "personality": {
+        "traits": [
+          "睿智",
+          "慈祥",
+          "神秘",
+          "狡猾",
+          "幽默",
+          "有大局观"
+        ],
+        "values": [
+          "爱是最强大的魔法",
+          "救赎与原谅",
+          "和平与公正",
+          "知识即力量"
+        ],
+        "speech_style": "缓慢而意味深长，充满隐喻和双关，喜欢用甜食作为开场白和结束语",
+        "nickname": "邓布利多校长",
+        "quirks": "喜欢柠檬雪宝糖果，并经常分给学生, 总是透过半月形眼镜凝视对方, 评价别人时总带着神秘的微笑",
+        "patronus_form": "凤凰"
+      },
+      "goals": {
+        "short_term_goal": "保护霍格沃茨学生安全，暗中监控魔法石的存放并设置陷阱",
+        "long_term_goal": "彻底摧毁伏地魔的所有魂器，彻底终结黑暗势力，让魔法世界恢复和平",
+        "motivation": "弥补年轻时追求力量而犯下的错误，践行爱的信条，保护无辜者",
+        "character_arc": "从年轻时渴望权力到晚年牺牲自我，通过计划和牺牲引导哈利走向胜利",
+        "faction_goal": "带领凤凰社和霍格沃茨师生抵抗伏地魔，确保魔法世界不被纯血极端主义统治"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "魂器的制造与销毁方法",
+            "古代如尼文与炼金术文献",
+            "所有已知魔法史和霍格沃茨的隐藏秘密",
+            "预言与命运理论的深层次理解",
+            "高阶变形术和魔咒理论"
+          ],
+          "social_knowledge": [
+            "伏地魔的出身（汤姆·里德尔）和所有魂器位置（部分）",
+            "西弗勒斯·斯内普的忠诚和双重间谍身份",
+            "凤凰社所有成员及可信度",
+            "魔法部官员的立场与动向",
+            "哈利·波特的性格和命运与伏地魔的联系"
+          ]
+        },
+        "background_summary": "阿不思·邓布利多出生于珀西瓦尔和坎德拉·邓布利多的家庭，少年时结识盖勒特·格林德沃，因妹妹阿利安娜的意外死亡两人决裂。此后他摒弃了对权力的野心，潜心学术，成为变形术教授、后来担任校长。他领导了两次巫师战争，精通炼金术和魂器知识。1991年，他察觉伏地魔试图借助魔法石复活，秘密布置了一系列考验来保护魔法石，并培养哈利面对未来的责任。",
+        "key_events": [
+          "1945年击败格林德沃，获得老魔杖",
+          "拒绝魔法部部长职位，选择留在霍格沃茨",
+          "聘用西比尔·特里劳妮担任占卜教授，应验了预言",
+          "发现伏地魔对魔法石的企图，与尼克·勒梅协商转移守护",
+          "在开学宴会上介绍“禁林不可进入，四楼走廊为禁区”等规矩（实际是诱饵）"
+        ],
+        "secrets": [
+          "他知道自己与格林德沃的血盟以及当年的情感纠葛",
+          "他计划让斯内普在必要时杀死自己以破除魂器魔咒",
+          "他早已知道哈利是一个魂器，并安排了哈利必须赴死的道路",
+          "他隐瞒了关于死亡圣器的真相，以防哈利过早接触"
+        ],
+        "critical_memory_fragments": "",
+        "faction_alignment_history": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "detentions_count": "0",
+        "house_points_contributed": "0"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:char:008",
+        "name": "米勒娃·麦格",
+        "role": "faculty",
+        "house": "格兰芬多",
+        "blood_status": "混血",
+        "wand": "冷杉木，龙心弦，十又四分之一英寸"
+      },
+      "social_profile": {
+        "group_id": "faculty",
+        "reputation": "备受尊敬，以严格公正著称",
+        "affiliation": "霍格沃茨校董事会",
+        "title": "变形课教授、格兰芬多院长、代理校长",
+        "reputation_details": "学生敬畏她的严厉，同事欣赏她的原则性。在伏地魔崛起时期成为抵抗的中坚力量。"
+      },
+      "capabilities": {
+        "skills": [
+          "高级变形术",
+          "阿尼马格斯",
+          "教师训导",
+          "战斗魔法",
+          "魔杖控制"
+        ],
+        "level": "大师",
+        "weaknesses": "过于恪守规则偶尔缺乏灵活性；对格兰芬多有偏袒倾向（尽管尽力公正）",
+        "signature_spells": "变形咒, 全身束缚咒, 驱逐咒",
+        "animagus_form": "虎斑猫",
+        "broomstick_proficiency": "熟练"
+      },
+      "personality": {
+        "traits": [
+          "严谨",
+          "公正",
+          "勇敢",
+          "严厉",
+          "忠诚",
+          "冷漠外表下深藏温情"
+        ],
+        "values": [
+          "纪律",
+          "安全",
+          "秩序",
+          "正义",
+          "学生福祉"
+        ],
+        "speech_style": "正式、简洁、命令式，极少掺杂废话。批评时语气冷峻但不失礼。",
+        "nickname": "",
+        "quirks": "",
+        "patronus_form": "虎斑猫"
+      },
+      "goals": {
+        "short_term_goal": "确保新学期变形课教学顺利，预防任何危险事件",
+        "long_term_goal": "培养有责任感的年轻巫师，维护霍格沃茨的安全与声望",
+        "motivation": "对魔法教育事业的热爱，以及对抗黑暗势力的使命感（源于自身经历）",
+        "character_arc": "从纯粹严苛的纪律执行者成长为愿意为更大正义打破常规的领导者",
+        "faction_goal": "与邓布利多共同保护霍格沃茨及学生免受伏地魔威胁"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "变形术的所有分支理论",
+            "霍格沃茨城堡的全部密道与隐藏区域",
+            "高深魔法的局限性原则"
+          ],
+          "social_knowledge": [
+            "学校内各派系的忠诚度",
+            "邓布利多与斯内普之间的秘密交易",
+            "凤凰社的部分行动信息"
+          ]
+        },
+        "background_summary": "出生于1920年代，父亲是麻瓜牧师，母亲是女巫。在霍格沃茨就读期间被分入格兰芬多，展现出极高的变形术天赋。后成为阿尼马格斯。曾在魔法部短暂工作，后接受邓布利多邀请回校任教，最终成为变形课教授兼格兰芬多院长。",
+        "key_events": [
+          "成功对学生纳威·隆巴顿施展全身束缚咒以示惩戒",
+          "在第一次巫师战争期间协助邓布利多管理学校",
+          "1991年发现并保护魔法石的行踪",
+          "在邓布利多死后代理校长，抵抗卡罗兄妹的暴政"
+        ],
+        "secrets": [
+          "未公开自己对波特家长期的暗中关注与保护",
+          "私下曾使用阿尼马格斯形态巡逻校园"
+        ],
+        "critical_memory_fragments": "",
+        "faction_alignment_history": "凤凰社成员（第一次战争时期），后继续与邓布利多合作"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:020"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "detentions_count": "0",
+        "house_points_contributed": "0"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:char:015",
+        "name": "西弗勒斯·斯内普",
+        "role": "faculty",
+        "house": "斯莱特林",
+        "blood_status": "混血",
+        "wand": "黑胡桃木，龙心弦，十三点五英寸"
+      },
+      "social_profile": {
+        "group_id": "faculty",
+        "reputation": "令人畏惧且厌恶，被认为偏袒斯莱特林、刻薄其他学院",
+        "affiliation": "凤凰社（秘密）",
+        "title": "魔药学教授、斯莱特林院长",
+        "reputation_details": "大多数学生视其为暴君，同事（除邓布利多少数人）也不信任他。只有少数人知道他双面间谍的真实身份。"
+      },
+      "capabilities": {
+        "skills": [
+          "魔药学大师",
+          "大脑封闭术",
+          "摄神取念",
+          "无声咒",
+          "飞行术",
+          "黑魔法防御知识"
+        ],
+        "level": "大师",
+        "weaknesses": "情感上无法释怀对莉莉·波特的愧疚与仇恨，间接影响对哈利的公正；难以获得他人信任",
+        "signature_spells": "神锋无影, 锁舌封喉, 倒挂金钟",
+        "animagus_form": "",
+        "broomstick_proficiency": "优秀（学生时代魁地奇般般，但实战飞行能力出色）"
+      },
+      "personality": {
+        "traits": [
+          "阴郁",
+          "尖刻",
+          "记仇",
+          "机警",
+          "善于伪装",
+          "深藏不露的忠诚与悔恨"
+        ],
+        "values": [
+          "知识",
+          "力量",
+          "对莉莉的记忆",
+          "邓布利多的计划"
+        ],
+        "speech_style": "低沉、拖长音、讽刺挖苦，常带刺，极少说废话。命令学生时用不容置疑的口吻。",
+        "nickname": "",
+        "quirks": "",
+        "patronus_form": "牝鹿"
+      },
+      "goals": {
+        "short_term_goal": "严密监视哈利·波特，同时不让黑魔王产生怀疑",
+        "long_term_goal": "完成邓布利多托付的使命——保护哈利并最终摧毁伏地魔",
+        "motivation": "对莉莉永恒的爱与赎罪，以及对邓布利多的忠诚",
+        "character_arc": "从食死徒转变为双面间谍，最后以牺牲完成救赎",
+        "faction_goal": "在不暴露身份的前提下帮助凤凰社对抗伏地魔"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "极高深的魔药配方与改良",
+            "黑魔法理论",
+            "大脑封闭术与摄神取念的对抗技巧",
+            "霍格沃茨地下通道"
+          ],
+          "social_knowledge": [
+            "伏地魔的复活计划与魂器信息",
+            "凤凰社成员的真实身份",
+            "邓布利多的全盘策略"
+          ]
+        },
+        "background_summary": "生于1960年，父亲托比亚·斯内普是麻瓜，母亲艾琳·普林斯是女巫。童年贫困且在父母争吵中度过。在霍格沃茨就读于斯莱特林，痴迷黑魔法但因与莉莉的友谊而挣扎。因自己泄露预言间接导致莉莉被害，从此投靠邓布利多成为双面间谍。",
+        "key_events": [
+          "在蜘蛛尾巷遇见年幼的莉莉与佩妮",
+          "在霍格沃茨与波特等人的冲突",
+          "被伏地魔招募为食死徒",
+          "偷听预言并向伏地魔报告",
+          "向邓布利多忏悔后成为间谍",
+          "杀死邓布利多（受命执行）"
+        ],
+        "secrets": [
+          "真实地向邓布利多效忠而非伏地魔",
+          "多年来一直暗中保护哈利",
+          "对德拉科·马尔福有特殊关心"
+        ],
+        "critical_memory_fragments": "",
+        "faction_alignment_history": "食死徒（之前）→ 凤凰社（秘密，之后）"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:013"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "detentions_count": "0",
+        "house_points_contributed": "-150"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:char:004",
+        "name": "菲利乌斯·弗立维",
+        "role": "faculty",
+        "house": "拉文克劳",
+        "blood_status": "混血（有妖精血统）",
+        "wand": "银椴木，独角兽毛，九英寸"
+      },
+      "social_profile": {
+        "group_id": "faculty",
+        "reputation": "广受爱戴，被当作友善和蔼的导师兼魔咒大师",
+        "affiliation": "霍格沃茨教职工团队",
+        "title": "咒语课教授、拉文克劳院长",
+        "reputation_details": "学生喜欢他的幽默与宽容，同事认可他高超的魔法造诣。在战斗中表现出的强大实力让许多人惊讶。"
+      },
+      "capabilities": {
+        "skills": [
+          "魔咒学大师",
+          "决斗高手",
+          "无声施咒",
+          "精准操控魔法",
+          "理论教学"
+        ],
+        "level": "大师",
+        "weaknesses": "因身材矮小偶尔被轻看；在严重的冲突中有时过于谨慎；某种程度上容易受情绪影响",
+        "signature_spells": "悬浮咒, 防护咒语系列, 快乐咒, 火焰咒",
+        "animagus_form": "",
+        "broomstick_proficiency": "一般"
+      },
+      "personality": {
+        "traits": [
+          "热情",
+          "温和",
+          "幽默",
+          "易激动",
+          "骄傲（对拉文克劳）",
+          "谦虚"
+        ],
+        "values": [
+          "知识",
+          "公平竞争",
+          "学生成长",
+          "学院精神"
+        ],
+        "speech_style": "略带尖细的嗓音，语速较快，充满感叹与鼓励，偶尔蹦出俏皮话",
+        "nickname": "",
+        "quirks": "",
+        "patronus_form": "渡鸦"
+      },
+      "goals": {
+        "short_term_goal": "确保新学期咒语课教学有序进行，鼓励拉文克劳争取学院杯",
+        "long_term_goal": "培养新一代巫师掌握扎实的魔咒基础，同时维护拉文克劳的学术荣誉",
+        "motivation": "对魔咒学的热爱以及作为教师的责任感",
+        "character_arc": "从欢乐的教授成长为在危机中挺身而出的坚强战士（如霍格沃茨大战）",
+        "faction_goal": "在伏地魔统治时期保持中立（被迫），实际上暗中支持凤凰社的行动"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "几乎所有常见魔咒的理论与改进",
+            "古代魔文与部分妖精魔法",
+            "决斗战术"
+          ],
+          "social_knowledge": [
+            "学生对各教授的真实看法",
+            "拉文克劳内部学生的关系与秘密",
+            "凤凰社部分信息（通过邓布利多）"
+          ]
+        },
+        "background_summary": "出生于魔法家庭，有1/4妖精血统（身材矮小）。在霍格沃茨就读于拉文克劳，毕业后专攻魔咒学，成为年轻的全欧决斗冠军之一。后受邀回校执教咒语课并成为拉文克劳院长。",
+        "key_events": [
+          "赢得青年决斗锦标赛冠军",
+          "被邓布利多聘请为教授",
+          "多次在保护学生的事件中施展高深魔法",
+          "在霍格沃茨大战中击败安东宁·多洛霍夫"
+        ],
+        "secrets": [
+          "对自己妖精血统的敏感偶尔困扰他",
+          "曾私下帮助多位家境困难的学生购买课本"
+        ],
+        "critical_memory_fragments": "",
+        "faction_alignment_history": "始终忠于霍格沃茨，未正式加入任何派系但同情凤凰社"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "detentions_count": "0",
+        "house_points_contributed": "50"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:char:009",
+        "name": "差点没头的尼克",
+        "role": "ghost",
+        "house": "",
+        "blood_status": "",
+        "wand": ""
+      },
+      "social_profile": {
+        "group_id": "ghosts",
+        "reputation": "respected ghost, known for his beheading story",
+        "affiliation": "格兰芬多",
+        "title": "",
+        "reputation_details": "在霍格沃茨幽灵中地位较高，但因其死亡不完整而有些自卑，学生们既敬畏又同情他。"
+      },
+      "capabilities": {
+        "skills": [
+          "穿墙",
+          "飘浮",
+          "参与宴会",
+          "恐吓学生",
+          "幽灵变身"
+        ],
+        "level": "中等",
+        "weaknesses": "被半吊子的砍头所困扰, 无法实体接触, 害怕被嘲笑",
+        "signature_spells": "",
+        "animagus_form": "",
+        "broomstick_proficiency": ""
+      },
+      "personality": {
+        "traits": [
+          "友善",
+          "敏感",
+          "虚荣",
+          "爱抱怨",
+          "有礼貌"
+        ],
+        "values": [
+          "尊严",
+          "荣誉",
+          "学院忠诚",
+          "规范礼仪"
+        ],
+        "speech_style": "礼貌但带讽刺的贵族口吻，常以'M'lady'或'sir'称呼，喜欢谈论自己的死亡经历",
+        "nickname": "尼克",
+        "quirks": "总是试图证明自己的死亡方式值得尊重，却因斧子不锋利而尴尬",
+        "patronus_form": ""
+      },
+      "goals": {
+        "short_term_goal": "在格兰芬多学院庆祝胜利时成为焦点",
+        "long_term_goal": "找到真正死亡的方式，摆脱半死不活的幽灵状态",
+        "motivation": "渴望完成自己的死亡仪式并被评为真正的鬼魂，而不是'差点没头'的笑柄",
+        "character_arc": "",
+        "faction_goal": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "霍格沃茨的历史与秘密通道",
+            "幽灵的行为法则",
+            "各类魔法事件传统"
+          ],
+          "social_knowledge": [
+            "认识所有霍格沃茨幽灵及其爱好",
+            "了解各学院学生之间的微妙关系"
+          ]
+        },
+        "background_summary": "生前是巫师贵族，被麻瓜处以死刑，但因行刑者的钝斧只砍断了部分脖子，成为幽灵。在霍格沃茨游荡了五百多年，主要在格兰芬多塔出没。",
+        "key_events": [
+          "参加尼可拉斯·德·敏西-波平顿爵士的死亡纪念日宴会",
+          "与皮皮鬼多次争吵",
+          "帮助哈利避开费尔奇",
+          "参与格兰芬多魁地奇庆祝"
+        ],
+        "secrets": [
+          "他非常嫉妒那些彻底死亡的鬼魂",
+          "实际上知道城堡里许多不为人知的幽灵活动路径"
+        ],
+        "critical_memory_fragments": "",
+        "faction_alignment_history": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:008"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "detentions_count": "",
+        "house_points_contributed": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:char:011",
+        "name": "皮皮鬼",
+        "role": "poltergeist",
+        "house": "",
+        "blood_status": "",
+        "wand": ""
+      },
+      "social_profile": {
+        "group_id": "poltergeist",
+        "reputation": "令人讨厌但不可忽视的捣蛋鬼",
+        "affiliation": "",
+        "title": "",
+        "reputation_details": "全校师生既厌烦又惧怕的存在，只有极少人（如血人巴罗和有时弗雷德双胞胎）能控制他。"
+      },
+      "capabilities": {
+        "skills": [
+          "隐形",
+          "飞行",
+          "制造噪音",
+          "扔东西",
+          "模仿声音",
+          "穿墙"
+        ],
+        "level": "高级捣乱",
+        "weaknesses": "能吃妖怪的食物，但怕血人巴罗, 对某些魔法约束（如平息咒）敏感",
+        "signature_spells": "",
+        "animagus_form": "",
+        "broomstick_proficiency": ""
+      },
+      "personality": {
+        "traits": [
+          "恶毒",
+          "幽默",
+          "任性",
+          "顽皮",
+          "无同情心"
+        ],
+        "values": [
+          "混乱",
+          "自由",
+          "取乐",
+          "反抗权威"
+        ],
+        "speech_style": "尖锐高亢的男声，喜欢唱粗俗的歌曲和嘲笑别人，常用押韵的恶作剧诗句",
+        "nickname": "",
+        "quirks": "喜欢在关键时刻出现并破坏严肃场合",
+        "patronus_form": ""
+      },
+      "goals": {
+        "short_term_goal": "在开学典礼上制造最大混乱",
+        "long_term_goal": "确保霍格沃茨永远充满恶作剧",
+        "motivation": "纯粹享受破坏秩序和让人难堪，黑暗的能量满足感",
+        "character_arc": "",
+        "faction_goal": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "霍格沃茨全部秘密通道",
+            "每个老师和学生的弱点",
+            "恶作剧道具制作"
+          ],
+          "social_knowledge": [
+            "了解每代学生中谁最容易被他激怒",
+            "知道费尔奇的猫的喜好"
+          ]
+        },
+        "background_summary": "霍格沃茨的泼皮鬼，据说是与学校同时诞生的混乱精灵，并非人类亡灵。几百年来一直以捉弄师生为乐。",
+        "key_events": [
+          "与血人巴罗的冲突",
+          "破坏乌姆里奇的课堂",
+          "被差点没头的尼克戏弄",
+          "为弗雷德和乔治的逃跑提供掩护"
+        ],
+        "secrets": [
+          "据说真正的诞生与一次学生恶作剧失败有关",
+          "他其实害怕完全被驱逐出城堡"
+        ],
+        "critical_memory_fragments": "",
+        "faction_alignment_history": ""
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "detentions_count": "",
+        "house_points_contributed": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:char:007",
+        "name": "伏地魔",
+        "role": "villain",
+        "house": "",
+        "blood_status": "纯血统（实际混血）",
+        "wand": "十三英寸半，紫杉木，凤凰羽毛"
+      },
+      "social_profile": {
+        "group_id": "食死徒",
+        "reputation": "最危险的黑暗魔头",
+        "affiliation": "食死徒组织",
+        "title": "黑魔王",
+        "reputation_details": "魔法界人人畏惧，不敢直呼其名，被认为是有史以来最强大的黑巫师之一。"
+      },
+      "capabilities": {
+        "skills": [
+          "黑魔法",
+          "大脑封闭术",
+          "言语控制",
+          "隐身",
+          "飞行（无扫帚）",
+          "蛇佬腔",
+          "魂器制作"
+        ],
+        "level": "传奇级",
+        "weaknesses": "对哈利·波特的爱之保护有盲目性, 狂妄自大, 七个魂器导致灵魂不稳定, 魔力因分裂而受损, 害怕死亡",
+        "signature_spells": "阿瓦达索命, 钻心剜骨, 魂魄出窍, 无声咒",
+        "animagus_form": "",
+        "broomstick_proficiency": "无需扫帚飞行"
+      },
+      "personality": {
+        "traits": [
+          "冷酷",
+          "精明",
+          "偏执",
+          "渴望权力",
+          "无情",
+          "有魅力"
+        ],
+        "values": [
+          "纯血至上",
+          "力量",
+          "永生",
+          "统治",
+          "秩序（扭曲的）"
+        ],
+        "speech_style": "低沉、缓慢、充满威胁的男声，常使用夸张的第三人称自称（如'伏地魔只要一句话...'），语言极具煽动性和压迫感",
+        "nickname": "神秘人/You-Know-Who",
+        "quirks": "对称自己名字的人极度愤怒",
+        "patronus_form": ""
+      },
+      "goals": {
+        "short_term_goal": "恢复完全的法力，获得能永久附身的新身体",
+        "long_term_goal": "征服魔法世界，消灭所有麻瓜出身的巫师和反抗者，实现永生统治",
+        "motivation": "对死亡的恐惧和对绝对权力的渴望，童年不幸带来的仇恨与野心",
+        "character_arc": "",
+        "faction_goal": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "大量古老黑魔法",
+            "魂器理论",
+            "血统理论",
+            "霍格沃茨深层秘密",
+            "魔法部内部结构"
+          ],
+          "social_knowledge": [
+            "知道谁可能成为食死徒",
+            "了解哈利·波特的弱点和朋友",
+            "掌握许多巫师的秘密"
+          ]
+        },
+        "background_summary": "原名汤姆·马沃罗·里德尔，出生于孤儿院，拥有非凡天赋。霍格沃茨斯莱特林毕业生，毕业后创立食死徒组织。两次被哈利·波特以残留的爱的力量击败后，灵魂逃往阿尔巴尼亚森林，目前附身于奇洛教授身体试图夺取魔法石。",
+        "key_events": [
+          "杀死自己的父亲祖父母",
+          "制造多个魂器（日记、挂坠盒、冠冕、杯子、项链、戒指、蛇纳吉尼，以及无意中制造的哈利）",
+          "在哈利身上留下标记",
+          "击败魔法界并一度掌权",
+          "第一次战败后化为灵魂状态"
+        ],
+        "secrets": [
+          "他知道自己已经分裂了灵魂，但不知道哈利也是魂器",
+          "对死亡极其恐惧",
+          "暗中收集有求必应屋中的冠冕作为魂器"
+        ],
+        "critical_memory_fragments": "里德尔家族的遗传暴力, 在孤儿院第一次展现魔法时的复仇快感",
+        "faction_alignment_history": "食死徒领袖，纯血统极端派"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:016"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "detentions_count": "",
+        "house_points_contributed": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:char:002",
+        "name": "贝拉特里克斯·莱斯特兰奇",
+        "role": "villain",
+        "house": "斯莱特林",
+        "blood_status": "纯血",
+        "wand": "胡桃木，龙心弦，十二又四分之三英寸"
+      },
+      "social_profile": {
+        "group_id": "食死徒",
+        "reputation": "极度恐惧和憎恨",
+        "affiliation": "伏地魔",
+        "title": "莱斯特兰奇夫人",
+        "reputation_details": "因酷刑和谋杀而闻名，尤其对隆巴顿夫妇施加钻心咒导致他们永久疯狂"
+      },
+      "capabilities": {
+        "skills": [
+          "高深黑魔法",
+          "钻心咒",
+          "杀戮咒",
+          "变形术",
+          "大脑封闭术"
+        ],
+        "level": "黑巫师最高阶",
+        "weaknesses": "对伏地魔极度忠诚，盲目服从, 傲慢, 情绪不稳定易暴怒",
+        "signature_spells": "钻心剜骨, 阿瓦达索命, 幻影移形",
+        "animagus_form": "",
+        "broomstick_proficiency": "优秀"
+      },
+      "personality": {
+        "traits": [
+          "疯狂",
+          "残忍",
+          "狂热",
+          "骄傲",
+          "虐待狂",
+          "忠诚于伏地魔"
+        ],
+        "values": [
+          "血统纯正",
+          "力量至上",
+          "对伏地魔的绝对服从",
+          "憎恨麻瓜和泥巴种"
+        ],
+        "speech_style": "尖锐、歇斯底里、嘲弄、常用夸张语气和笑声",
+        "nickname": "贝拉",
+        "quirks": "经常尖声大笑，梳理头发，对伏地魔的每个命令表现出狂热",
+        "patronus_form": ""
+      },
+      "goals": {
+        "short_term_goal": "从阿兹卡班逃出并重新效忠伏地魔",
+        "long_term_goal": "帮助伏地魔征服魔法界，纯血统统治",
+        "motivation": "对伏地魔的痴迷崇拜和对麻瓜的仇恨",
+        "character_arc": "从阿兹卡班囚徒到伏地魔得力干将，最终在决战中死亡",
+        "faction_goal": "消灭所有反对伏地魔的人，特别是哈利·波特"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "黑魔法知识",
+            "魂器知识（部分）",
+            "食死徒组织内幕"
+          ],
+          "social_knowledge": [
+            "布莱克家族历史",
+            "食死徒人员名单",
+            "魔法部内部信息"
+          ]
+        },
+        "background_summary": "出身于布莱克家族纯血统，姐妹包括纳西莎和安多米达。年轻时加入食死徒，因对伏地魔的极端忠诚而闻名。参与第一次巫师战争，对隆巴顿夫妇施加钻心咒。伏地魔倒台后被捕入阿兹卡班。",
+        "key_events": [
+          "伏地魔第一次倒台后被关入阿兹卡班",
+          "1995年越狱",
+          "在神秘事务司与凤凰社作战",
+          "杀害小天狼星·布莱克",
+          "参与马尔福庄园囚禁行动",
+          "最后在霍格沃茨决战中被莫丽·韦斯莱杀死"
+        ],
+        "secrets": [
+          "知道魂器的存在（但被伏地魔误导）",
+          "对伏地魔有狂热爱慕",
+          "在古灵阁莱斯特兰奇金库藏有赫奇帕奇金杯魂器"
+        ],
+        "critical_memory_fragments": "在阿兹卡班的痛苦岁月, 对小天狼星的仇恨, 伏地魔复活时的狂喜",
+        "faction_alignment_history": "食死徒核心成员，从未背叛"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:016"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "detentions_count": "0",
+        "house_points_contributed": "0"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:char:012",
+        "name": "小矮星彼得",
+        "role": "villain",
+        "house": "格兰芬多",
+        "blood_status": "纯血",
+        "wand": "栗木，龙心弦，九又四分之一英寸"
+      },
+      "social_profile": {
+        "group_id": "食死徒（秘密）",
+        "reputation": "背叛者、胆小鬼",
+        "affiliation": "伏地魔（秘密）",
+        "title": "",
+        "reputation_details": "被魔法界认为是英雄（因假死），实际是伏地魔的间谍"
+      },
+      "capabilities": {
+        "skills": [
+          "阿尼玛格斯（老鼠）",
+          "伪装",
+          "潜行",
+          "基础黑魔法",
+          "变形术基础"
+        ],
+        "level": "低阶黑巫师，但狡诈",
+        "weaknesses": "胆小, 懦弱, 对伏地魔恐惧, 缺乏自信",
+        "signature_spells": "阿瓦达索命, 变形术",
+        "animagus_form": "老鼠（灰色，缺一根脚趾）",
+        "broomstick_proficiency": "一般"
+      },
+      "personality": {
+        "traits": [
+          "懦弱",
+          "狡诈",
+          "背叛",
+          "讨好",
+          "自私",
+          "恐惧"
+        ],
+        "values": [
+          "生存至上",
+          "服从强者",
+          "自我保护"
+        ],
+        "speech_style": "尖细、谄媚、紧张、结巴（在伏地魔面前），假装友好（平时）",
+        "nickname": "虫尾巴",
+        "quirks": "舔嘴唇、紧张地笑、像老鼠一样的小动作",
+        "patronus_form": ""
+      },
+      "goals": {
+        "short_term_goal": "隐藏身份，作为老鼠留在韦斯莱家，监视哈利",
+        "long_term_goal": "帮助伏地魔复活并获得赦免",
+        "motivation": "对伏地魔的恐惧以及希望获得地位",
+        "character_arc": "从背叛朋友到协助伏地魔复活，最后因一时怜悯被自己的银手掐死",
+        "faction_goal": "食死徒复活计划执行者"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "阿尼玛格斯魔法",
+            "食死徒联络方式",
+            "魂器线索（部分）"
+          ],
+          "social_knowledge": [
+            "韦斯莱家庭内部秘密",
+            "凤凰社成员动向（从对话中窃听）"
+          ]
+        },
+        "background_summary": "曾与詹姆·波特、小天狼星·布莱克、卢平是朋友，后背叛他们，成为伏地魔的间谍。出卖波特家地址，导致哈利的父母被杀。伪造死亡炸毁街道并变形成老鼠，躲在韦斯莱家十二年。",
+        "key_events": [
+          "成为波特家的保密人并出卖他们",
+          "伪造死亡，嫁祸小天狼星",
+          "在韦斯莱家作为斑斑生活十二年",
+          "在尖叫棚屋被揭穿",
+          "帮助伏地魔获得父亲的骨、仆人的肉和仇敌的血",
+          "被伏地魔赐予银手",
+          "在马尔福庄园掐死自己"
+        ],
+        "secrets": [
+          "知道伏地魔的复活计划",
+          "是小天狼星被冤枉的证人",
+          "偷听到许多韦斯莱家密谈"
+        ],
+        "critical_memory_fragments": "詹姆和莉莉的死亡场景, 小天狼星愤怒的指控, 伏地魔的折磨",
+        "faction_alignment_history": "原凤凰社（叛变）, 食死徒间谍"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:008"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "detentions_count": "0",
+        "house_points_contributed": "0"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:char:014",
+        "name": "鲁伯·海格",
+        "role": "creature_keeper",
+        "house": "格兰芬多",
+        "blood_status": "混血",
+        "wand": "十六英寸，橡木，独角兽尾毛（折断，藏于粉色雨伞中）"
+      },
+      "social_profile": {
+        "group_id": "霍格沃茨教职工",
+        "reputation": "善良、忠诚",
+        "affiliation": "邓布利多",
+        "title": "猎场看守（后为神奇生物保护课教授）",
+        "reputation_details": "在哈利眼中是可靠的朋友，在魔法部有不良记录（被开除过），在同事间褒贬不一"
+      },
+      "capabilities": {
+        "skills": [
+          "神奇生物饲养与照料",
+          "巨人语",
+          "飞行摩托车驾驶",
+          "力量极大（混血巨人）",
+          "园艺"
+        ],
+        "level": "神奇生物领域专家，其他魔法能力较弱",
+        "weaknesses": "魔法能力不强（被开除没毕业）, 轻信, 爱冒险, 容易泄露秘密",
+        "signature_spells": "恢复如初, 火焰咒",
+        "animagus_form": "",
+        "broomstick_proficiency": "差（只骑摩托车）"
+      },
+      "personality": {
+        "traits": [
+          "善良",
+          "忠诚",
+          "温柔",
+          "粗心",
+          "感性",
+          "乐于助人",
+          "豪爽"
+        ],
+        "values": [
+          "友谊",
+          "忠诚",
+          "对所有生物的爱（包括危险的）",
+          "邓布利多的信任"
+        ],
+        "speech_style": "浓重西部方言，粗声粗气，容易激动，常称呼别人“你这个小不点儿”",
+        "nickname": "海格",
+        "quirks": "喝茶时放太多糖，养危险生物，爱哭，用茶壶喝，抽烟斗",
+        "patronus_form": ""
+      },
+      "goals": {
+        "short_term_goal": "迎接哈利入学并为他提供引导",
+        "long_term_goal": "证明自己作为教师的能力，保护霍格沃茨",
+        "motivation": "对邓布利多和哈利的深厚感情，对神奇生物的热爱",
+        "character_arc": "从被误解的猎场看守到获得尊重的教授，并在战斗中支持哈利",
+        "faction_goal": "协助凤凰社对抗伏地魔"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "神奇生物习性",
+            "霍格沃茨密道（部分）",
+            "巨人社会知识"
+          ],
+          "social_knowledge": [
+            "凤凰社成员",
+            "食死徒主要人物",
+            "邓布利多的计划（部分）"
+          ]
+        },
+        "background_summary": "海格是混血巨人，父亲是巫师，母亲是巨人。在霍格沃茨读书时因被汤姆·里德尔（伏地魔）陷害而被开除，但邓布利多让他留下来做猎场看守。他一直忠守邓布利多，并多次帮助哈利。在三年级被任命为神奇生物保护课教授。",
+        "key_events": [
+          "被开除学籍并折断魔杖",
+          "首次揭示哈利是巫师并带他去对角巷",
+          "从马尔福庄园逃走",
+          "在密室中救出金妮",
+          "教导巴克比克",
+          "作为巨人使者与巨人谈判"
+        ],
+        "secrets": [
+          "知道自己母亲是巨人，但羞于提及",
+          "暗恋马克西姆夫人",
+          "是邓布利多最信任的人之一，但曾无意中向乌姆里奇泄露情报"
+        ],
+        "critical_memory_fragments": "被开除时的委屈, 看到哈利入学时的感动, 邓布利多的去世",
+        "faction_alignment_history": "凤凰社核心成员，始终未变"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:008"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "detentions_count": "0",
+        "house_points_contributed": "0"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:char:005",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:char:006",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:char:013",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:char:010",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:char:003",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:char:001",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:char:008",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:char:015",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:char:004",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:char:009",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:char:011",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:char:007",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:char:002",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:char:012",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:char:014"
+  ],
+  "upstream_step_ids": [
+    "generate_characters"
+  ],
+  "warnings": [
+    "batch 4 review (score=4.9): 发现 1 个问题并已自动修正",
+    "batch 5 review (score=4.71): 发现 1 个问题并已自动修正"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

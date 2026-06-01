@@ -1,0 +1,1019 @@
+{
+  "artifact_type": "relation_edge",
+  "items": [
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:010",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:003",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:001",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "祖孙",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "strong",
+        "description": "贾母对宝玉极为溺爱，百般呵护，是贾府中最疼宝玉的人",
+        "intimacy_level": "high",
+        "conflict_intensity": "",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "low"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:003",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:001",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:007",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "知己恋人",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "strong",
+        "description": "宝玉深爱黛玉，两人为灵魂伴侣，常因误会争吵但情感至深",
+        "intimacy_level": "very_high",
+        "conflict_intensity": "medium",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:020",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:007",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:001",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "知己恋人",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "strong",
+        "description": "黛玉对宝玉一往情深，因身份与礼法常压抑情感，内心敏感多疑",
+        "intimacy_level": "very_high",
+        "conflict_intensity": "medium",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:007",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:001",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:012",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "表姐弟",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "宝玉敬重宝钗，欣赏其才学，但情感上不如对黛玉深厚",
+        "intimacy_level": "medium",
+        "conflict_intensity": "low",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:032",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:012",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:001",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "表姐弟",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "暗恋",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "宝钗对宝玉有心，但以礼自持，常借机劝学上进",
+        "intimacy_level": "medium",
+        "conflict_intensity": "low",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:028",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:010",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:002",
+        "type": "家庭",
+        "direction": "单向",
+        "kinship_type": "夫妻",
+        "political_marriage_flag": "false",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "平级但女性掌权",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "strong",
+        "description": "王熙凤管束贾琏，不许其拈花惹草，二人常因私情争吵",
+        "intimacy_level": "medium",
+        "conflict_intensity": "high",
+        "ritual_weight": "",
+        "economic_bond": "high",
+        "dependency_degree": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:009",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:002",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:010",
+        "type": "家庭",
+        "direction": "单向",
+        "kinship_type": "夫妻",
+        "political_marriage_flag": "false",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "平级但被管束",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "贾琏对王熙凤又怕又恨，表面顺从，暗地偷娶尤二姐",
+        "intimacy_level": "low",
+        "conflict_intensity": "high",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "medium"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:013",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:003",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:010",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "祖孙媳",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "strong",
+        "description": "贾母喜爱王熙凤，因其能干会来事，常倚重她管家",
+        "intimacy_level": "high",
+        "conflict_intensity": "",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "medium"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:029",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:010",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:003",
+        "type": "从属",
+        "direction": "单向",
+        "kinship_type": "",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "下级对上级",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "strong",
+        "description": "王熙凤极力讨好贾母，以巩固自己在贾府的地位",
+        "intimacy_level": "high",
+        "conflict_intensity": "",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "high"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:017",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:005",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:001",
+        "type": "从属",
+        "direction": "单向",
+        "kinship_type": "父子",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "上级对下级",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "strong",
+        "description": "贾政严苛管教宝玉，期望他走上仕途，常因逃学打骂",
+        "intimacy_level": "low",
+        "conflict_intensity": "high",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "low"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:002",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:001",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:005",
+        "type": "从属",
+        "direction": "单向",
+        "kinship_type": "父子",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "下级对上级",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "宝玉畏惧父亲贾政，每逢被唤便心惊胆战，但内心叛逆",
+        "intimacy_level": "low",
+        "conflict_intensity": "high",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "low"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:024",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:007",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:015",
+        "type": "主仆",
+        "direction": "单向",
+        "kinship_type": "",
+        "political_marriage_flag": "",
+        "master_servant_role": "小姐-丫鬟",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "female_only"
+      },
+      "properties": {
+        "strength": "strong",
+        "description": "黛玉视紫鹃为心腹姐妹，大小事皆依赖其照料",
+        "intimacy_level": "very_high",
+        "conflict_intensity": "",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "high"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:040",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:015",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:007",
+        "type": "主仆",
+        "direction": "单向",
+        "kinship_type": "",
+        "political_marriage_flag": "",
+        "master_servant_role": "丫鬟-小姐",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "female_only"
+      },
+      "properties": {
+        "strength": "strong",
+        "description": "紫鹃忠诚于黛玉，悉心照顾，甚至为黛玉的终身大事谋划",
+        "intimacy_level": "very_high",
+        "conflict_intensity": "",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "medium"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:031",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:011",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:001",
+        "type": "主仆",
+        "direction": "单向",
+        "kinship_type": "",
+        "political_marriage_flag": "",
+        "master_servant_role": "丫鬟-主子",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "strong",
+        "description": "袭人忠心侍奉宝玉，时时规劝，是宝玉身边最得力的丫鬟",
+        "intimacy_level": "high",
+        "conflict_intensity": "",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "medium"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:006",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:001",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:011",
+        "type": "主仆",
+        "direction": "单向",
+        "kinship_type": "",
+        "political_marriage_flag": "",
+        "master_servant_role": "主子-丫鬟",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "宝玉依赖袭人照顾生活起居，但偶尔也嫌她唠叨",
+        "intimacy_level": "high",
+        "conflict_intensity": "",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "high"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:037",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:013",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:012",
+        "type": "家庭",
+        "direction": "单向",
+        "kinship_type": "母女",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "strong",
+        "description": "薛姨妈慈爱宝钗，为女儿的未来费尽心思",
+        "intimacy_level": "high",
+        "conflict_intensity": "",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "low"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:026",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:009",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:001",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "表兄妹",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "史湘云与宝二爷亲近，二人常一起玩闹、作诗，豪爽不拘礼",
+        "intimacy_level": "high",
+        "conflict_intensity": "low",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:016",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:004",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:014",
+        "type": "家庭",
+        "direction": "单向",
+        "kinship_type": "母女",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "weak",
+        "description": "探春不认赵姨娘为母，因庶出身份常感羞耻，关系冷淡",
+        "intimacy_level": "very_low",
+        "conflict_intensity": "high",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:038",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:014",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:004",
+        "type": "对立",
+        "direction": "单向",
+        "kinship_type": "母女",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "赵姨娘嫉妒探春得势，常在人前贬低或无理取闹",
+        "intimacy_level": "very_low",
+        "conflict_intensity": "high",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "low"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:019",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:006",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:010",
+        "type": "合作",
+        "direction": "单向",
+        "kinship_type": "",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "平级",
+        "gender_restriction_level": "female_only"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "李纨作为大嫂子，协助管理大观园女眷事务，与王熙凤共事",
+        "intimacy_level": "medium",
+        "conflict_intensity": "low",
+        "ritual_weight": "",
+        "economic_bond": "low",
+        "dependency_degree": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:030",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:010",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:006",
+        "type": "合作",
+        "direction": "单向",
+        "kinship_type": "",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "平级",
+        "gender_restriction_level": "female_only"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "王熙凤与李纨维持表面和睦，暗中保留一定竞争与提防",
+        "intimacy_level": "medium",
+        "conflict_intensity": "low",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "low"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:025",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:008",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:001",
+        "type": "主仆",
+        "direction": "单向",
+        "kinship_type": "",
+        "political_marriage_flag": "",
+        "master_servant_role": "小厮-主子",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "male_only"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "茗烟是宝玉的心腹小厮，忠心耿耿，常替宝玉办事跑腿",
+        "intimacy_level": "medium",
+        "conflict_intensity": "",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "low"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:015",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:004",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:010",
+        "type": "合作",
+        "direction": "单向",
+        "kinship_type": "",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "平级",
+        "gender_restriction_level": "female_only"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "探春理家时协助王熙凤推行改革，二人配合默契",
+        "intimacy_level": "medium",
+        "conflict_intensity": "low",
+        "ritual_weight": "",
+        "economic_bond": "low",
+        "dependency_degree": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:034",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:012",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:007",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "表姐妹",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "female_only"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "宝钗对黛玉关怀备至，暗中存在金玉良缘的竞争，但表面友善",
+        "intimacy_level": "medium",
+        "conflict_intensity": "low",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "low"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:023",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:007",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:012",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "表姐妹",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "female_only"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "黛玉对宝钗心存芥蒂，因宝玉而常吃醋，但也佩服其才德",
+        "intimacy_level": "medium",
+        "conflict_intensity": "medium",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "low"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:014",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:003",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:012",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "亲戚",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "strong",
+        "description": "贾母十分喜爱宝钗的稳重大方，常在人前夸赞",
+        "intimacy_level": "high",
+        "conflict_intensity": "",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "low"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:012",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:003",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:007",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "外祖母-外孙女",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "strong",
+        "description": "贾母疼惜黛玉孤苦，给予特殊关爱，但在婚事上有所犹豫",
+        "intimacy_level": "high",
+        "conflict_intensity": "",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "medium"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:018",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:005",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:003",
+        "type": "家庭",
+        "direction": "单向",
+        "kinship_type": "母子",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "strong",
+        "description": "贾政对母亲贾母极为孝顺，凡事不敢违逆",
+        "intimacy_level": "high",
+        "conflict_intensity": "",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "low"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:004",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:001",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:008",
+        "type": "主仆",
+        "direction": "单向",
+        "kinship_type": "",
+        "political_marriage_flag": "",
+        "master_servant_role": "主子-小厮",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "male_only"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "宝玉对茗烟颇为信任，常派其外出办私事",
+        "intimacy_level": "medium",
+        "conflict_intensity": "",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "low"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:008",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:002",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:003",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "祖孙",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "贾琏对祖母贾母尊重孝顺，但因其好色常惹贾母不满",
+        "intimacy_level": "medium",
+        "conflict_intensity": "low",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:039",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:014",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:010",
+        "type": "对立",
+        "direction": "单向",
+        "kinship_type": "",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "下级对上级",
+        "gender_restriction_level": "female_only"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "赵姨娘对王熙凤嫉恨入骨，常暗中使绊子诅咒",
+        "intimacy_level": "very_low",
+        "conflict_intensity": "high",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "low"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:027",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:009",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:007",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "表姐妹",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "female_only"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "史湘云与黛玉性情相投，常一起作诗嬉闹，但也偶有口角",
+        "intimacy_level": "high",
+        "conflict_intensity": "low",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:036",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:013",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:003",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "亲戚",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "薛姨妈与贾母是亲家关系，常来请安，彼此尊重",
+        "intimacy_level": "medium",
+        "conflict_intensity": "",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "low"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:001",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:001",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:003",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "祖孙",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "strong",
+        "description": "宝玉对祖母贾母极为依恋和敬爱，虽偶尔淘气但孝心可嘉",
+        "intimacy_level": "high",
+        "conflict_intensity": "",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "medium"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:033",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:012",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:003",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "亲戚",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "宝钗对贾母恭敬有礼，时陪伴聊天，深得贾母欢心",
+        "intimacy_level": "medium",
+        "conflict_intensity": "",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "low"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:021",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:007",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:003",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "外孙女-外祖母",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "strong",
+        "description": "黛玉对贾母怀有深厚的感激与依赖，视其为在贾府最亲近的长辈",
+        "intimacy_level": "very_high",
+        "conflict_intensity": "",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "high"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:011",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:003",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:002",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "祖孙",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "贾母对贾琏虽时有责骂，但内心仍看重这个孙子，尤其在他办事得力时",
+        "intimacy_level": "medium",
+        "conflict_intensity": "low",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "low"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:005",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:001",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:009",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "表兄妹",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "宝玉喜爱湘云的豪爽才情，二人常一同玩乐作诗，关系亲密和睦",
+        "intimacy_level": "high",
+        "conflict_intensity": "low",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:022",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:007",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:009",
+        "type": "情感纽带",
+        "direction": "单向",
+        "kinship_type": "表姐妹",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "female_only"
+      },
+      "properties": {
+        "strength": "moderate",
+        "description": "黛玉与湘云性情相投，虽有偶发口角，但彼此欣赏，友情真挚",
+        "intimacy_level": "high",
+        "conflict_intensity": "low",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": ""
+      }
+    },
+    {
+      "edge": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:035",
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:012",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:char:013",
+        "type": "家庭",
+        "direction": "单向",
+        "kinship_type": "母女",
+        "political_marriage_flag": "",
+        "master_servant_role": "",
+        "love_type": "",
+        "power_chain_rank": "",
+        "gender_restriction_level": "none"
+      },
+      "properties": {
+        "strength": "strong",
+        "description": "宝钗对母亲薛姨妈极为孝顺，体贴入微，常为母亲分忧",
+        "intimacy_level": "very_high",
+        "conflict_intensity": "",
+        "ritual_weight": "",
+        "economic_bond": "",
+        "dependency_degree": "medium"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:010",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:003",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:020",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:007",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:032",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:028",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:009",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:013",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:029",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:017",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:002",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:024",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:040",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:031",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:006",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:037",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:026",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:016",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:038",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:019",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:030",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:025",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:015",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:034",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:023",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:014",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:012",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:018",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:004",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:008",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:039",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:027",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:036",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:001",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:033",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:021",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:011",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:005",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:022",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:rel:035"
+  ],
+  "upstream_step_ids": [
+    "generate_relations"
+  ],
+  "warnings": [
+    "review (score=4.7): 缺少部分核心角色之间的双向关系：宝玉→贾母、宝钗→贾母、黛玉→贾母、贾母→贾琏、宝玉→史湘云、黛玉→史湘云、宝钗→薛姨妈; 关系 rel_014（袭人→宝玉）和 rel_015（宝玉→袭人）的 gender_restriction_level 设置为 'female_only'，但宝玉是男性，应改为 'none'"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

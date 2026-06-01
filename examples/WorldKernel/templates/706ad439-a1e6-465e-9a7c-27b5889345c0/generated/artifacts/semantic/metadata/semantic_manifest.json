@@ -1,0 +1,71 @@
+{
+  "world_id": "706ad439-a1e6-465e-9a7c-27b5889345c0",
+  "source_ids": [
+    "primary"
+  ],
+  "schema_version": "stage2-semantic-v1",
+  "artifact_files": {
+    "location_profile": "locations\\locations.json",
+    "character_profile": "characters\\characters.json",
+    "path_edge": "path_graph\\path_graph.json",
+    "relation_edge": "relation_graph\\relation_graph.json"
+  },
+  "counts": {
+    "location_profile": 18,
+    "character_profile": 15,
+    "path_edge": 26,
+    "relation_edge": 40
+  },
+  "constraints": [
+    {
+      "constraint_id": "feudal_etiquette_supreme",
+      "name": "封建礼法至上",
+      "description": "一切行为需符合宗法等级与道德规范，任何僭越都会招致严惩或社会性死亡",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "family_fate_cycle",
+      "name": "家族兴衰不可逆",
+      "description": "贾府因元春获宠而鼎盛，但内部奢靡腐败、外部政治倾轧导致衰亡趋势不可逆转",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "poetry_soul_expression",
+      "name": "诗词文化载体",
+      "description": "人物以诗词抒怀、判词预言命运，诗词活动是重大的社交与叙事推动力",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "female_seclusion",
+      "name": "女性活动范围禁锢",
+      "description": "未嫁及已婚女眷的活动范围限于大观园与内宅，男性成员不得随意进入",
+      "scope": "location"
+    }
+  ],
+  "timestamp": "2026-06-01T14:36:36.479177+00:00",
+  "provenance": {
+    "stage1_inputs": {
+      "source": "stage1.pipeline",
+      "source_id": "primary",
+      "world_id": "706ad439-a1e6-465e-9a7c-27b5889345c0",
+      "world_background_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\706ad439-a1e6-465e-9a7c-27b5889345c0\\generated\\plan\\world_background.json",
+      "execution_plan_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\706ad439-a1e6-465e-9a7c-27b5889345c0\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\706ad439-a1e6-465e-9a7c-27b5889345c0\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\706ad439-a1e6-465e-9a7c-27b5889345c0\\generated\\world_template.json",
+      "schema_manifest_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\706ad439-a1e6-465e-9a7c-27b5889345c0\\models\\schema_manifest.json",
+      "artifact_manifest_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\706ad439-a1e6-465e-9a7c-27b5889345c0\\generated\\artifact_manifest.json",
+      "session_root": "E:\\OpenStory\\examples\\WorldKernel\\templates\\706ad439-a1e6-465e-9a7c-27b5889345c0"
+    },
+    "world_background": {
+      "source": "stage1.pipeline",
+      "artifact": "world_background",
+      "world_background_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\706ad439-a1e6-465e-9a7c-27b5889345c0\\generated\\plan\\world_background.json",
+      "execution_plan_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\706ad439-a1e6-465e-9a7c-27b5889345c0\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\706ad439-a1e6-465e-9a7c-27b5889345c0\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\706ad439-a1e6-465e-9a7c-27b5889345c0\\generated\\world_template.json",
+      "schema_manifest_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\706ad439-a1e6-465e-9a7c-27b5889345c0\\models\\schema_manifest.json",
+      "artifact_manifest_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\706ad439-a1e6-465e-9a7c-27b5889345c0\\generated\\artifact_manifest.json",
+      "session_root": "E:\\OpenStory\\examples\\WorldKernel\\templates\\706ad439-a1e6-465e-9a7c-27b5889345c0"
+    }
+  }
+}

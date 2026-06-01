@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "relation_ids",
+      "type": "list_str",
+      "required": true,
+      "ref": "relation"
+    },
+    {
+      "name": "kinship_type_detail",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "affinal_connection_importance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "master_servant_loyalty_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "romantic_attachment_intensity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "power_alliance_or_rivalry",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "relationship_to_twelve_belles",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

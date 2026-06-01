@@ -38,7 +38,23 @@ app = FastAPI(title="WorldKernel Stage 1", lifespan=lifespan)
 async def stage1_error_handler(request: Request, exc: Stage1Error) -> JSONResponse:
     return JSONResponse(
         status_code=422,
-        content={"error": str(exc), "step": exc.step, "detail": str(exc.cause)},
+        content={
+            "error": str(exc) or repr(exc),
+            "step": exc.step,
+            "detail": str(exc.cause) or repr(exc.cause),
+        },
+    )
+
+
+@app.exception_handler(Exception)
+async def global_error_handler(request: Request, exc: Exception) -> JSONResponse:
+    return JSONResponse(
+        status_code=500,
+        content={
+            "error": str(exc) or repr(exc),
+            "step": "unknown",
+            "detail": type(exc).__name__,
+        },
     )
 
 
@@ -130,19 +146,17 @@ async def stage2_generate(session_id: str):
 
 @app.post("/api/spatial/generate/{session_id}")
 async def spatial_generate(session_id: str):
+    """Standalone spatial generation from disk-based semantic artifacts."""
     semantic_root = TEMPLATES_DIR / session_id / "generated" / "artifacts"
     if not semantic_root.exists():
         raise HTTPException(status_code=404, detail="semantic artifacts not found; run Stage2 first")
 
-    from worldkernel.architect.spatial.config import load_spatial_generation_config
-    from worldkernel.architect.spatial.input_assembler import (
+    from worldkernel.architect.spatial import (
         SpatialInputAssembler,
         SpatialInputAssemblyError,
+        SpatialPipeline,
     )
-    from worldkernel.architect.spatial.models import SpatialBuildInput
-    from worldkernel.architect.spatial.region_packer import RegionPacker
-    from worldkernel.architect.spatial.route_rasterizer import RouteRasterizer
-    from worldkernel.architect.spatial.topology_layout import TopologyLayoutGenerator
+    from worldkernel.architect.spatial.config import load_spatial_generation_config
 
     config = load_spatial_generation_config(CONFIGS_DIR / "architect.yaml")
 
@@ -152,59 +166,94 @@ async def spatial_generate(session_id: str):
     except SpatialInputAssemblyError as exc:
         raise HTTPException(status_code=422, detail=str(exc))
 
-    layout_gen = TopologyLayoutGenerator()
-    layout_plan = layout_gen.generate(build_input, config)
+    pipeline = SpatialPipeline(config)
+    result = pipeline.run(build_input)
 
-    packer = RegionPacker()
-    packing_result = packer.pack(layout_plan, build_input, config)
-
-    rasterizer = RouteRasterizer()
-    raster_result = rasterizer.rasterize(build_input, layout_plan, packing_result, config)
-
-    import logging
-    _log = logging.getLogger("worldkernel.spatial")
-    _log.info(
-        "Spatial generate: paths=%d synthetic_edges=%d regions=%d routes=%d warnings=%d",
-        len(build_input.paths), len(layout_plan.synthetic_edges),
-        len(packing_result.regions), len(raster_result.routes),
-        len(raster_result.warnings),
-    )
-
-    # If no routes were generated, return error with all warnings
-    if not raster_result.routes:
-        all_warns = packing_result.warnings + raster_result.warnings
-        error_msgs = [w.message for w in all_warns if w.code in ("no_semantic_paths", "route_generation_failed")]
-        raise HTTPException(
-            status_code=422,
-            detail=error_msgs[0] if error_msgs else "No routes generated",
-        )
-
-    all_warnings = packing_result.warnings + raster_result.warnings
+    validation = result.validation.report
 
     return {
         "world_id": session_id,
         "grid": {
-            "width": config.canvas.grid_width,
-            "height": config.canvas.grid_height,
-            "tile_size": config.canvas.tile_size,
+            "width": result.blueprint.grid.width,
+            "height": result.blueprint.grid.height,
+            "tile_size": result.blueprint.grid.tile_size,
         },
-        "regions": [r.model_dump(mode="json") for r in packing_result.regions],
-        "road_tiles": [{"x": t.x, "y": t.y} for t in raster_result.road_tiles],
+        "regions": [r.model_dump(mode="json") for r in result.blueprint.regions],
         "routes": [
             {
                 "path_edge_id": r.path_edge_id,
                 "from_location_id": r.from_location_id,
                 "to_location_id": r.to_location_id,
-                "route_tiles": [{"x": t.x, "y": t.y} for t in r.route_tiles],
-                "route_type": r.route_type,
+                "centerline": [{"x": t.x, "y": t.y} for t in r.centerline],
+                "movement_cost": r.movement_cost,
                 "access_tags": r.access_tags,
             }
-            for r in raster_result.routes
+            for r in result.blueprint.routes
         ],
-        "warnings": [w.model_dump(mode="json") for w in all_warnings],
-        "provenance": {
-            "packing": packing_result.provenance,
-            "routing": raster_result.provenance,
+        "road_tiles": [{"x": t.x, "y": t.y} for t in result.blueprint.road_tiles],
+        "spawn_points": [sp.model_dump(mode="json") for sp in result.blueprint.spawn_points],
+        "validation": {
+            "passed": validation.passed,
+            "issues": [i.model_dump(mode="json") for i in validation.issues],
+        },
+    }
+
+
+@app.post("/api/stage2/run/{session_id}")
+async def stage2_run(session_id: str):
+    """Unified Stage 2: semantic generation + spatial generation in one call."""
+    session_dir = TEMPLATES_DIR / session_id
+    if not session_dir.exists():
+        raise HTTPException(status_code=404, detail="session not found")
+
+    from worldkernel.architect.pipeline import run_stage2
+
+    try:
+        result = await run_stage2(
+            session_root=session_dir,
+            output_root=session_dir / "generated" / "artifacts",
+            config_path=CONFIGS_DIR / "architect.yaml",
+            constraints=_constraints,
+            save_semantic=True,
+            save_spatial=True,
+        )
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+    spatial = result.spatial
+    validation = spatial.validation.report
+
+    return {
+        "world_id": result.world_id,
+        "semantic": {
+            "location_count": len(result.foundation.locations),
+            "path_count": len(result.foundation.path_graph),
+            "character_count": len(result.foundation.characters),
+        },
+        "spatial": {
+            "grid": {
+                "width": spatial.blueprint.grid.width,
+                "height": spatial.blueprint.grid.height,
+                "tile_size": spatial.blueprint.grid.tile_size,
+            },
+            "regions": [r.model_dump(mode="json") for r in spatial.blueprint.regions],
+            "routes": [
+                {
+                    "path_edge_id": r.path_edge_id,
+                    "from_location_id": r.from_location_id,
+                    "to_location_id": r.to_location_id,
+                    "centerline": [{"x": t.x, "y": t.y} for t in r.centerline],
+                    "movement_cost": r.movement_cost,
+                    "access_tags": r.access_tags,
+                }
+                for r in spatial.blueprint.routes
+            ],
+            "road_tiles": [{"x": t.x, "y": t.y} for t in spatial.blueprint.road_tiles],
+            "spawn_points": [sp.model_dump(mode="json") for sp in spatial.blueprint.spawn_points],
+            "validation": {
+                "passed": validation.passed,
+                "issues": [i.model_dump(mode="json") for i in validation.issues],
+            },
         },
     }
 
@@ -218,6 +267,15 @@ if __name__ == "__main__":
         host="0.0.0.0",
         port=8100,
         reload=True,
-        reload_dirs=[str(Path(__file__).parent)],  # only watch src/worldkernel/
-        reload_excludes=["**/templates/**", "**/__pycache__/**"],
+        reload_dirs=[str(Path(__file__).parent)],
+        reload_excludes=[
+            "*/templates/*",
+            "*__pycache__*",
+            "*/architect/spatial/*",
+            "*/architect/pipeline*",
+            "*/architect/init/*",
+            "*/architect/semantic/*",
+            "*/architect/registry/*",
+            "*/architect/tools/*",
+        ],
     )

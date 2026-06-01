@@ -1,0 +1,16 @@
+dim_name: CapabilitiesDim
+skills:
+  type: list_str
+level:
+  type: str
+weaknesses:
+  type: str
+signature_spells:
+  type: str
+  option: true
+animagus_form:
+  type: str
+  option: true
+broomstick_proficiency:
+  type: str
+  option: true
