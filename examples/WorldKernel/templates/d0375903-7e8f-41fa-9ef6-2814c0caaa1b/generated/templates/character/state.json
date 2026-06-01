@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "location_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "position_x",
+      "type": "float",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "position_y",
+      "type": "float",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "health_state",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "current_action",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "possession",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "injury_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "confinement_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

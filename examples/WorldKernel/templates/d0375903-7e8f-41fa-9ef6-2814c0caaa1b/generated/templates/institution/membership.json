@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "members",
+      "type": "list_str",
+      "required": true,
+      "ref": "character"
+    },
+    {
+      "name": "roles",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "entry_criteria",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "member_status_rank",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "member_origin",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "gender_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "enrollment_ceremony_or_approval",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

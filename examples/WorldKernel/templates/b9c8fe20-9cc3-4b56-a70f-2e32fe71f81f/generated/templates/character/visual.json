@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "disguise_form",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dark_mark_visibility",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "distinguishing_scar",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "uniform_modification",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

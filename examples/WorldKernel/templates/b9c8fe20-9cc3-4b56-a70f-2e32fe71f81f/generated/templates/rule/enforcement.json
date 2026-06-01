@@ -1,0 +1,70 @@
+{
+  "fields": [
+    {
+      "name": "enforcer",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "mechanism",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "detectability",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "curfew_hours",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "restricted_zones",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "password_system",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "surveillance_methods",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "enforcer_variability",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "enforcement_frequency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secret_informants",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "detection_spells",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

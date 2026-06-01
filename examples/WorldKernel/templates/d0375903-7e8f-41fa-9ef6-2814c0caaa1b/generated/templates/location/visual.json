@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "fixed_furnishings",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "decorative_features",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "lighting_condition",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "soundscape",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "smell",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

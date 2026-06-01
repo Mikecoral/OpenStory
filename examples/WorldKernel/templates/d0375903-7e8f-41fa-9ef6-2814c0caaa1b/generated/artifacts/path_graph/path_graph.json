@@ -1,0 +1,601 @@
+{
+  "artifact_type": "path_edge",
+  "items": [
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:011",
+        "name": "贾母正房至王夫人院落",
+        "type": "pathway",
+        "usage_level": "high",
+        "symbolic_significance": "母子日常往来通道",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:004",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:008",
+        "bidirectional": true,
+        "security_level": "low",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "贾母"
+      },
+      "conditions": {
+        "access_level": "restricted",
+        "danger_level": "low",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "clean",
+        "guard_presence": "none",
+        "religious_fix": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:009",
+        "name": "贾母正房至荣禧堂",
+        "type": "pathway",
+        "usage_level": "high",
+        "symbolic_significance": "内宅通往正厅的礼仪通道",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:004",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:005",
+        "bidirectional": true,
+        "security_level": "low",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "贾母"
+      },
+      "conditions": {
+        "access_level": "public",
+        "danger_level": "low",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "clean",
+        "guard_presence": "occasional",
+        "religious_fix": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:005",
+        "name": "贾母正房至大观园角门",
+        "type": "pathway",
+        "usage_level": "medium",
+        "symbolic_significance": "内宅通往大观园的便门",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:004",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:002",
+        "bidirectional": true,
+        "security_level": "medium",
+        "time_restriction": "日间开放",
+        "secret_passage": "false",
+        "jurisdiction_owner": "贾母"
+      },
+      "conditions": {
+        "access_level": "restricted",
+        "danger_level": "low",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "clean",
+        "guard_presence": "seldom",
+        "religious_fix": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:015",
+        "name": "王夫人院落至议事厅",
+        "type": "pathway",
+        "usage_level": "high",
+        "symbolic_significance": "王夫人日常理事的必经之路",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:008",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:014",
+        "bidirectional": true,
+        "security_level": "low",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "王夫人"
+      },
+      "conditions": {
+        "access_level": "restricted",
+        "danger_level": "low",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "clean",
+        "guard_presence": "none",
+        "religious_fix": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:014",
+        "name": "王夫人院落至薛府院落",
+        "type": "pathway",
+        "usage_level": "medium",
+        "symbolic_significance": "贾府与薛家内眷往来的通道",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:008",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:013",
+        "bidirectional": true,
+        "security_level": "low",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "王夫人"
+      },
+      "conditions": {
+        "access_level": "restricted",
+        "danger_level": "low",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "clean",
+        "guard_presence": "rare",
+        "religious_fix": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:012",
+        "name": "荣禧堂至议事厅",
+        "type": "pathway",
+        "usage_level": "high",
+        "symbolic_significance": "荣国府核心政务走廊",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:005",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:014",
+        "bidirectional": true,
+        "security_level": "low",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "王夫人"
+      },
+      "conditions": {
+        "access_level": "public",
+        "danger_level": "low",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "clean",
+        "guard_presence": "frequent",
+        "religious_fix": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:006",
+        "name": "荣禧堂至大观园正门",
+        "type": "pathway",
+        "usage_level": "high",
+        "symbolic_significance": "正厅通往省亲别墅的主道",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:005",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:002",
+        "bidirectional": true,
+        "security_level": "medium",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "贾政"
+      },
+      "conditions": {
+        "access_level": "public",
+        "danger_level": "low",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "clean",
+        "guard_presence": "moderate",
+        "religious_fix": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:001",
+        "name": "大观园至怡红院",
+        "type": "pathway",
+        "usage_level": "high",
+        "symbolic_significance": "宝玉出入院落的小径",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:002",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:001",
+        "bidirectional": true,
+        "security_level": "low",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "贾宝玉"
+      },
+      "conditions": {
+        "access_level": "restricted",
+        "danger_level": "low",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "clean",
+        "guard_presence": "seldom",
+        "religious_fix": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:007",
+        "name": "大观园至潇湘馆",
+        "type": "pathway",
+        "usage_level": "medium",
+        "symbolic_significance": "黛玉住处入园通道",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:002",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:011",
+        "bidirectional": true,
+        "security_level": "low",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "黛玉"
+      },
+      "conditions": {
+        "access_level": "restricted",
+        "danger_level": "low",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "clean",
+        "guard_presence": "none",
+        "religious_fix": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:004",
+        "name": "大观园至蘅芜苑",
+        "type": "pathway",
+        "usage_level": "medium",
+        "symbolic_significance": "宝钗住处入园通道",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:002",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:003",
+        "bidirectional": true,
+        "security_level": "low",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "宝钗"
+      },
+      "conditions": {
+        "access_level": "restricted",
+        "danger_level": "low",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "clean",
+        "guard_presence": "none",
+        "religious_fix": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:008",
+        "name": "大观园至紫菱洲",
+        "type": "pathway",
+        "usage_level": "low",
+        "symbolic_significance": "迎春旧居偏僻小径",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:002",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:015",
+        "bidirectional": true,
+        "security_level": "low",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "贾迎春"
+      },
+      "conditions": {
+        "access_level": "public",
+        "danger_level": "low",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "neglected",
+        "guard_presence": "none",
+        "religious_fix": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:003",
+        "name": "怡红院至潇湘馆",
+        "type": "pathway",
+        "usage_level": "high",
+        "symbolic_significance": "宝黛经常走动的幽径",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:001",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:011",
+        "bidirectional": true,
+        "security_level": "low",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "贾宝玉"
+      },
+      "conditions": {
+        "access_level": "restricted",
+        "danger_level": "low",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "clean",
+        "guard_presence": "none",
+        "religious_fix": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:002",
+        "name": "怡红院至蘅芜苑",
+        "type": "pathway",
+        "usage_level": "medium",
+        "symbolic_significance": "宝钗与宝玉的往来路线",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:001",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:003",
+        "bidirectional": true,
+        "security_level": "low",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "贾宝玉"
+      },
+      "conditions": {
+        "access_level": "restricted",
+        "danger_level": "low",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "clean",
+        "guard_presence": "none",
+        "religious_fix": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:020",
+        "name": "薛府院落至薛蟠内室",
+        "type": "pathway",
+        "usage_level": "medium",
+        "symbolic_significance": "薛蟠独处空间入口",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:013",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:012",
+        "bidirectional": true,
+        "security_level": "medium",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "薛蟠"
+      },
+      "conditions": {
+        "access_level": "private",
+        "danger_level": "medium",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "messy",
+        "guard_presence": "none",
+        "religious_fix": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:018",
+        "name": "薛府院落至夏金桂正房",
+        "type": "pathway",
+        "usage_level": "high",
+        "symbolic_significance": "主院落正房通道",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:013",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:009",
+        "bidirectional": true,
+        "security_level": "low",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "夏金桂"
+      },
+      "conditions": {
+        "access_level": "private",
+        "danger_level": "medium",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "clean",
+        "guard_presence": "none",
+        "religious_fix": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:019",
+        "name": "薛府院落至香菱居室",
+        "type": "pathway",
+        "usage_level": "low",
+        "symbolic_significance": "偏院通往妾室陋室",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:013",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:010",
+        "bidirectional": true,
+        "security_level": "low",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "薛蟠"
+      },
+      "conditions": {
+        "access_level": "private",
+        "danger_level": "high",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "dirty",
+        "guard_presence": "none",
+        "religious_fix": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:017",
+        "name": "薛蟠内室至夏金桂正房",
+        "type": "pathway",
+        "usage_level": "high",
+        "symbolic_significance": "夫妻内室连通",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:012",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:009",
+        "bidirectional": true,
+        "security_level": "low",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "薛蟠"
+      },
+      "conditions": {
+        "access_level": "private",
+        "danger_level": "medium",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "clean",
+        "guard_presence": "none",
+        "religious_fix": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:016",
+        "name": "夏金桂正房至香菱居室",
+        "type": "pathway",
+        "usage_level": "low",
+        "symbolic_significance": "正妻折磨妾室的通道",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:009",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:010",
+        "bidirectional": true,
+        "security_level": "low",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "夏金桂"
+      },
+      "conditions": {
+        "access_level": "private",
+        "danger_level": "high",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "messy",
+        "guard_presence": "none",
+        "religious_fix": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:013",
+        "name": "天齐庙至水月庵",
+        "type": "pathway",
+        "usage_level": "low",
+        "symbolic_significance": "城外寺庙之间的香道",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:007",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:006",
+        "bidirectional": true,
+        "security_level": "low",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "无"
+      },
+      "conditions": {
+        "access_level": "public",
+        "danger_level": "low",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "clean",
+        "guard_presence": "none",
+        "religious_fix": "东岳信仰"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:010",
+        "name": "水月庵至贾母正房",
+        "type": "pathway",
+        "usage_level": "medium",
+        "symbolic_significance": "姑子进府讲经常走路线",
+        "associated_items": ""
+      },
+      "endpoints": {
+        "from_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:006",
+        "to_id": "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:loc:004",
+        "bidirectional": true,
+        "security_level": "low",
+        "time_restriction": "",
+        "secret_passage": "false",
+        "jurisdiction_owner": "贾母"
+      },
+      "conditions": {
+        "access_level": "restricted",
+        "danger_level": "low",
+        "required_items": "",
+        "weather_effect": "",
+        "cleaning_status": "clean",
+        "guard_presence": "occasional",
+        "religious_fix": "佛教"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:011",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:009",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:005",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:015",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:014",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:012",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:006",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:001",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:007",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:004",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:008",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:003",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:002",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:020",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:018",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:019",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:017",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:016",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:013",
+    "e:d0375903_7e8f_41fa_9ef6_2814c0caaa1b:path:010"
+  ],
+  "upstream_step_ids": [
+    "generate_paths"
+  ],
+  "warnings": [
+    "review (score=4.6): path14 的 danger_level 描述为 '低（但内室暗藏暴力）'，与实际高风险矛盾，应改为 '高'。; path16 的 endpoints 中包含非 Schema 字段 'from_to_direction'，应删除。; path19 的 required_items 写为 '无（若有打点银两更佳）'，不符合简洁格式，建议改为 '无'。",
+    "graph: Graph not connected: 4/15 reachable",
+    "graph validation passed after retry"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

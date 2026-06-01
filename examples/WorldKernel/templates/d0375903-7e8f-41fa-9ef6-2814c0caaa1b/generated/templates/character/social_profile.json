@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "group_id",
+      "type": "str",
+      "required": true,
+      "ref": "institution"
+    },
+    {
+      "name": "reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "alliances",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "enemies",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "social_class_rank",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "public_perception",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "rumor_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

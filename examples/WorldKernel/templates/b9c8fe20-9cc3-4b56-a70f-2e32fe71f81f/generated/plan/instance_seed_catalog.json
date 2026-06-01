@@ -1,0 +1,349 @@
+{
+  "session_id": "b9c8fe20-9cc3-4b56-a70f-2e32fe71f81f",
+  "instance_seeds": {
+    "location": [
+      {
+        "seed_id": "dark_arts_classroom",
+        "name": "黑魔法防御课教室",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "卡罗兄妹实施惩罚与强迫学习黑魔法的核心教学场所",
+        "archetype_id": "teaching_space"
+      },
+      {
+        "seed_id": "transfiguration_classroom",
+        "name": "变形课教室",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.96,
+        "generation_priority": 2,
+        "role_in_world": "麦格教授暗中坚守传统教学，抵抗食死徒干预的阵地",
+        "archetype_id": "teaching_space"
+      },
+      {
+        "seed_id": "potions_classroom",
+        "name": "魔药课教室",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.97,
+        "generation_priority": 2,
+        "role_in_world": "斯内普执教时期教室，学生在此学习并暗中传递情报",
+        "archetype_id": "teaching_space"
+      },
+      {
+        "seed_id": "herbology_greenhouses",
+        "name": "草药暖房",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 3,
+        "role_in_world": "斯普劳特教授维持课程，培育魔法植物用于抵抗和后勤",
+        "archetype_id": "teaching_space"
+      },
+      {
+        "seed_id": "great_hall",
+        "name": "大礼堂",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "全校集会、用餐与食死徒宣布命令的焦点场所",
+        "archetype_id": "communal_space"
+      },
+      {
+        "seed_id": "library",
+        "name": "图书馆",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.97,
+        "generation_priority": 2,
+        "role_in_world": "学生秘密研究黑魔法防御与魂器知识的知识避难所",
+        "archetype_id": "communal_space"
+      },
+      {
+        "seed_id": "gryffindor_tower",
+        "name": "格兰芬多公共休息室",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "反抗学生秘密集会的核心据点",
+        "archetype_id": "communal_space"
+      },
+      {
+        "seed_id": "hufflepuff_basement",
+        "name": "赫奇帕奇公共休息室",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "中立派学生聚集地，部分成员暗助反抗行动",
+        "archetype_id": "communal_space"
+      },
+      {
+        "seed_id": "gryffindor_boy_dorm",
+        "name": "格兰芬多男生宿舍",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "纳威、西莫等男生的私密空间，藏匿违禁物品与信息",
+        "archetype_id": "dormitory"
+      },
+      {
+        "seed_id": "gryffindor_girl_dorm",
+        "name": "格兰芬多女生宿舍",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 3,
+        "role_in_world": "金妮、卢娜等女生交流情报的安全场所",
+        "archetype_id": "dormitory"
+      },
+      {
+        "seed_id": "forbidden_forest",
+        "name": "禁林",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "秘密集会、避难和与巨人马族联络的禁区",
+        "archetype_id": "outdoor_space"
+      },
+      {
+        "seed_id": "quidditch_pitch",
+        "name": "魁地奇球场",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.96,
+        "generation_priority": 3,
+        "role_in_world": "食死徒操控下的军事训练场地，学生借机观察敌情",
+        "archetype_id": "outdoor_space"
+      },
+      {
+        "seed_id": "boathouse",
+        "name": "船屋",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.8,
+        "generation_priority": 3,
+        "role_in_world": "逃亡学生从水路撤离的秘密出口",
+        "archetype_id": "outdoor_space"
+      },
+      {
+        "seed_id": "hospital_wing",
+        "name": "医疗翼",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 2,
+        "role_in_world": "治疗受伤反抗学生，庞弗雷女士暗中庇护",
+        "archetype_id": "functional_space"
+      },
+      {
+        "seed_id": "headmasters_office",
+        "name": "校长办公室",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.97,
+        "generation_priority": 1,
+        "role_in_world": "斯内普以傀儡校长身份掌控学校信息与权力核心",
+        "archetype_id": "functional_space"
+      },
+      {
+        "seed_id": "kitchen",
+        "name": "厨房",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "家养小精灵提供补给和情报的中转站",
+        "archetype_id": "functional_space"
+      },
+      {
+        "seed_id": "astronomy_tower",
+        "name": "天文塔",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.96,
+        "generation_priority": 2,
+        "role_in_world": "斯内普与邓布利多决战之地，现为监视与秘密信号点",
+        "archetype_id": "functional_space"
+      },
+      {
+        "seed_id": "room_of_requirement",
+        "name": "有求必应屋",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "D.A.地下抵抗的核心据点，秘密练习、避难和藏匿物品",
+        "archetype_id": "secret_space"
+      },
+      {
+        "seed_id": "honeydukes_secret_passage",
+        "name": "蜜蜂公爵秘密通道",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "学生偷运违禁品与外界的唯一秘密通道",
+        "archetype_id": "secret_space"
+      }
+    ],
+    "character": [
+      {
+        "seed_id": "neville_longbottom",
+        "name": "纳威·隆巴顿",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "校内公开反抗食死徒的学生领袖，组织D.A.并操控有求必应屋",
+        "archetype_id": "student"
+      },
+      {
+        "seed_id": "ginny_weasley",
+        "name": "金妮·韦斯莱",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "D.A.核心成员，勇敢机智，在多次行动中担任传讯与战斗角色",
+        "archetype_id": "student"
+      },
+      {
+        "seed_id": "luna_lovegood",
+        "name": "卢娜·洛夫古德",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "独特洞察力与忠实盟友，使用夜骐等资源支持抵抗",
+        "archetype_id": "student"
+      },
+      {
+        "seed_id": "colin_creevey",
+        "name": "科林·克里维",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 3,
+        "role_in_world": "勇敢的小个子搜查者，暗中监视食死徒活动",
+        "archetype_id": "student"
+      },
+      {
+        "seed_id": "seamus_finnigan",
+        "name": "西莫·斐尼甘",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.88,
+        "generation_priority": 3,
+        "role_in_world": "爆炸天赋同学，助力破坏食死徒设施",
+        "archetype_id": "student"
+      },
+      {
+        "seed_id": "minerva_mcgonagall",
+        "name": "米勒娃·麦格",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "暗中保护学生、抵抗食死徒命令的变形术大师",
+        "archetype_id": "faculty"
+      },
+      {
+        "seed_id": "rubeus_hagrid",
+        "name": "鲁伯·海格",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 2,
+        "role_in_world": "禁林守护者，提供生物资源和避难所",
+        "archetype_id": "faculty"
+      },
+      {
+        "seed_id": "sybill_trelawney",
+        "name": "西比尔·特里劳妮",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.85,
+        "generation_priority": 3,
+        "role_in_world": "虽被食死徒轻视但偶有真预言，传递模糊警示",
+        "archetype_id": "faculty"
+      },
+      {
+        "seed_id": "pomona_sprout",
+        "name": "波莫娜·斯普劳特",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "草药学教授，种植反黑魔法植物支持反抗",
+        "archetype_id": "faculty"
+      },
+      {
+        "seed_id": "alector_carrow",
+        "name": "阿莱克托·卡罗",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "黑魔法防御术教师，残酷惩罚反抗学生",
+        "archetype_id": "death_eater_staff"
+      },
+      {
+        "seed_id": "amicus_carrow",
+        "name": "阿米库斯·卡罗",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "麻瓜研究教师兼校规执行者，与妹妹共同镇压",
+        "archetype_id": "death_eater_staff"
+      },
+      {
+        "seed_id": "severus_snape",
+        "name": "西弗勒斯·斯内普",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "食死徒名义校长，实际双重间谍，在沉重压力下暗中保护学生",
+        "archetype_id": "puppet_headmaster"
+      },
+      {
+        "seed_id": "peeves",
+        "name": "皮皮鬼",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.97,
+        "generation_priority": 2,
+        "role_in_world": "恶作剧灵体，常干扰食死徒巡查，偶尔协助学生",
+        "archetype_id": "castle_spirit"
+      },
+      {
+        "seed_id": "bloody_baron",
+        "name": "血人巴罗",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.85,
+        "generation_priority": 3,
+        "role_in_world": "斯莱特林幽灵，高冷但默许反抗行为",
+        "archetype_id": "castle_spirit"
+      },
+      {
+        "seed_id": "hogwarts_kitchen_elf",
+        "name": "霍格沃茨厨房精灵总管",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.7,
+        "generation_priority": 2,
+        "role_in_world": "厨房家养小精灵首领，暗中为反抗学生提供食物与情报",
+        "archetype_id": "house_elf"
+      }
+    ]
+  }
+}

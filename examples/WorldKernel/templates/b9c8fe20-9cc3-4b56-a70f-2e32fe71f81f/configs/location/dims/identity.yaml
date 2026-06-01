@@ -1,0 +1,21 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+description:
+  type: str
+affiliation:
+  type: str
+  option: true
+hidden_function:
+  type: str
+  option: true
+is_secret:
+  type: str
+  option: true
+lore_significance:
+  type: str
+  option: true

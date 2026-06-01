@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "short_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "long_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "motivation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "secret_goal",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "coerced_goal",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "sacrifice_willingness",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "betrayal_threshold",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

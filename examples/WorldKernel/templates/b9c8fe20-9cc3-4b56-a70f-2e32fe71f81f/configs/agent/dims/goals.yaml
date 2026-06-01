@@ -1,0 +1,19 @@
+dim_name: GoalsDim
+short_term_goal:
+  type: str
+long_term_goal:
+  type: str
+motivation:
+  type: str
+secret_goal:
+  type: str
+  option: true
+coerced_goal:
+  type: str
+  option: true
+sacrifice_willingness:
+  type: str
+  option: true
+betrayal_threshold:
+  type: str
+  option: true

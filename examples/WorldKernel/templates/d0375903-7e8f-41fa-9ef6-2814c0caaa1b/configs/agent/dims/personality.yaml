@@ -1,0 +1,19 @@
+dim_name: PersonalityDim
+traits:
+  type: list_str
+values:
+  type: list_str
+speech_style:
+  type: str
+motivations_detail:
+  type: str
+  option: true
+emotional_state:
+  type: str
+  option: true
+mental_health:
+  type: str
+  option: true
+hidden_traits:
+  type: str
+  option: true
