@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "hair_and_headdress_style",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "clothing_material_and_color",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "jewelry_and_accessories",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "age_appearance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "distinctive_facial_features",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "foot_binding_status_if_applicable",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

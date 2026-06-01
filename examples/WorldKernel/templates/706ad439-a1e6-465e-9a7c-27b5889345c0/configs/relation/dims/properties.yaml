@@ -1,0 +1,20 @@
+dim_name: PropertiesDim
+strength:
+  type: str
+description:
+  type: str
+intimacy_level:
+  type: str
+  option: true
+conflict_intensity:
+  type: str
+  option: true
+ritual_weight:
+  type: str
+  option: true
+economic_bond:
+  type: str
+  option: true
+dependency_degree:
+  type: str
+  option: true

@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "category",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "magic_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "spell_difficulty_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "requires_wand",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "incantation_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "ministry_monitored",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

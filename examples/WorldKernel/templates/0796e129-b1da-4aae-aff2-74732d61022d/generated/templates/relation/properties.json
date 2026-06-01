@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "strength",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "emotional_state",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secrecy",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "power_dynamic",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "magical_contract",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "transformative_event",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "longevity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

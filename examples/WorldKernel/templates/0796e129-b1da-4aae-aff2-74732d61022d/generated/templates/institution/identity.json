@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "house_colors",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "motto",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "symbol",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "affiliation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "founding_year",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "founder",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secret_identity_indicators",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

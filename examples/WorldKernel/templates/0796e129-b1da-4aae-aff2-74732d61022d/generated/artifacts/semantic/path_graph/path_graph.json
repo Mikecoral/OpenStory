@@ -1,0 +1,887 @@
+{
+  "artifact_type": "path_edge",
+  "items": [
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:020",
+        "name": "大礼堂至变形课教室主楼梯",
+        "type": "楼梯",
+        "magical_properties": "部分台阶会移动，但最常用路径稳定",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:020",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:015",
+        "name": "大礼堂至魔药课教室石阶",
+        "type": "楼梯",
+        "magical_properties": "通往地牢的阶梯，烛光昏暗",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:013",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:002",
+        "name": "大礼堂至黑魔法防御课教室通道",
+        "type": "走廊",
+        "magical_properties": "走廊两侧挂有历届对抗黑巫师画像",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:002",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:012",
+        "name": "大礼堂至魔法史课教室旋转楼梯",
+        "type": "楼梯",
+        "magical_properties": "部分台阶会缓慢转动",
+        "is_moving": "true",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:010",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:005",
+        "name": "大礼堂至北塔楼占卜课教室长梯",
+        "type": "楼梯",
+        "magical_properties": "越往上越陡，最后一段为螺旋铁梯",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:003",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:010",
+        "name": "大礼堂至温室一号石径",
+        "type": "户外路径",
+        "magical_properties": "石径两旁种有魔法花草",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:006",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:011",
+        "name": "大礼堂至格兰芬多塔楼肖像阶梯",
+        "type": "楼梯",
+        "magical_properties": "胖夫人肖像守护入口，需口令",
+        "is_moving": "false",
+        "historical_significance": "胖夫人曾因未收到口令被攻击",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:008",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "仅限格兰芬多",
+        "danger_level": "安全",
+        "required_items": "口令",
+        "activation_condition": "正确说出当期口令",
+        "failure_effect": "",
+        "protective_spells": "胖夫人守卫",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:019",
+        "name": "大礼堂至斯莱特林地牢暗梯",
+        "type": "楼梯",
+        "magical_properties": "隐藏在石墙后的螺旋楼梯",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:018",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "仅限斯莱特林",
+        "danger_level": "安全",
+        "required_items": "口令",
+        "activation_condition": "说出正确口令并通过感知检测",
+        "failure_effect": "",
+        "protective_spells": "石墙伪装为实心墙",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:017",
+        "name": "大礼堂至拉文克劳塔楼答题通道",
+        "type": "楼梯",
+        "magical_properties": "青铜门环会出谜题，需要正确回答才能进入",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:015",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放（需回答门环谜题）",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "回答对鹰状门环提出的逻辑谜题",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:013",
+        "name": "大礼堂至图书馆拱廊",
+        "type": "走廊",
+        "magical_properties": "走廊壁龛中的铠甲会低声交谈",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:011",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:016",
+        "name": "大礼堂至魁地奇球场草坪",
+        "type": "户外路径",
+        "magical_properties": "特殊养护的草坪，冬天不结冰",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:014",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:007",
+        "name": "大礼堂至禁林边缘甬道",
+        "type": "户外路径",
+        "magical_properties": "经过海格小屋时能闻到烤岩皮饼的气味",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:004",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全（夜间建议结伴）",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:014",
+        "name": "大礼堂至黑湖湖畔小路",
+        "type": "户外路径",
+        "magical_properties": "柳树低垂，偶尔能看到巨乌贼触手",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:012",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:022",
+        "name": "格兰芬多公共休息室至男生宿舍螺旋梯",
+        "type": "楼梯",
+        "magical_properties": "阶梯自动感应性别，女生会被弹开（但为单向）",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:008",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:007",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "仅限格兰芬多男生",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "性别检测咒语",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:023",
+        "name": "格兰芬多公共休息室至女生宿舍旋转梯",
+        "type": "楼梯",
+        "magical_properties": "阶梯自动感应性别，男生被弹开",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:008",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:009",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "仅限格兰芬多女生",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "性别检测咒语",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:028",
+        "name": "斯莱特林公共休息室至宿舍暗门",
+        "type": "走廊",
+        "magical_properties": "墙壁上装饰有隐形滑动门",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:018",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:019",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "仅限斯莱特林",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:004",
+        "name": "黑魔法防御课教室至变形课教室走廊",
+        "type": "走廊",
+        "magical_properties": "墙壁上挂有各种变形失败的画像",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:002",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:020",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:027",
+        "name": "魔药课教室至斯莱特林休息室秘密门",
+        "type": "走廊",
+        "magical_properties": "地牢走廊尽头有一面看似石墙的隐藏入口",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:013",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:018",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "仅限斯莱特林",
+        "danger_level": "安全",
+        "required_items": "口令",
+        "activation_condition": "说出正确口令",
+        "failure_effect": "",
+        "protective_spells": "石墙伪装成实心墙",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:018",
+        "name": "有求必应屋至大礼堂召唤路径",
+        "type": "楼梯",
+        "magical_properties": "只有当使用者集中思想并来回三次时才会出现入口",
+        "is_moving": "false",
+        "historical_significance": "曾在DA集会及大战中用作避难所",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:016",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "需要特殊方法",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "集中精神想象所需房间，在八楼挂毯前来回走三次",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:008",
+        "name": "魁地奇球场至禁林边缘野径",
+        "type": "户外路径",
+        "magical_properties": "沿途有禁林延伸出来的树根",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:014",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:004",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低（靠近禁林边缘）",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:026",
+        "name": "黑湖湖畔至魁地奇球场柳荫道",
+        "type": "户外路径",
+        "magical_properties": "沿途柳树会投掷枝条路径",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:012",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:014",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:025",
+        "name": "图书馆至变形课教室书架走廊",
+        "type": "走廊",
+        "magical_properties": "两侧书架会自动整理书籍",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:011",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:020",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:024",
+        "name": "图书馆至魔法史课教室迂回楼梯",
+        "type": "楼梯",
+        "magical_properties": "楼梯中间会经过一段挂着时间转换器图案的走廊",
+        "is_moving": "true",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:011",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:010",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:009",
+        "name": "尖叫棚屋至禁林边缘打人柳秘道",
+        "type": "秘密通道",
+        "magical_properties": "通过打人柳根下的地道连接霍格沃茨与霍格莫德",
+        "is_moving": "false",
+        "historical_significance": "莱姆斯·卢平学生时期常年使用此道",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:017",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:004",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "仅限知道活点地图的人",
+        "danger_level": "高",
+        "required_items": "活点地图或知晓具体操作",
+        "activation_condition": "按下打人柳根部树瘤使其静止，随即钻入地道",
+        "failure_effect": "",
+        "protective_spells": "打人柳会攻击靠近的人",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:001",
+        "name": "密室入口(女厕所)至魔法史课教室",
+        "type": "走廊",
+        "magical_properties": "哭泣的桃金娘的盥洗室常年湿滑",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:001",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:010",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:003",
+        "name": "黑魔法防御课教室至图书馆夹层",
+        "type": "楼梯",
+        "magical_properties": "经过一间堆满铠甲的空教室",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:002",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:011",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:021",
+        "name": "温室一号至黑湖湖畔花径",
+        "type": "户外路径",
+        "magical_properties": "沿线种有食虫植物和喷水魔花",
+        "is_moving": "false",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:006",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:012",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:path:006",
+        "name": "占卜课教室至拉文克劳塔楼旋转楼梯",
+        "type": "楼梯",
+        "magical_properties": "连接北塔楼与西塔楼的空中走廊，部分台阶为透明",
+        "is_moving": "true",
+        "historical_significance": "",
+        "alternate_names": ""
+      },
+      "endpoints": {
+        "from_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:003",
+        "to_id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:015",
+        "bidirectional": true,
+        "intermediate_points": "",
+        "connection_visibility": "",
+        "portal_type": "",
+        "distance_or_time": ""
+      },
+      "conditions": {
+        "access_level": "开放（进入拉文克劳塔需回答问题）",
+        "danger_level": "安全",
+        "required_items": "无",
+        "activation_condition": "进入拉文克劳公共休息室需回答门环谜题",
+        "failure_effect": "",
+        "protective_spells": "",
+        "tracking": "",
+        "illusion": ""
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:020",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:015",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:002",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:012",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:005",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:010",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:011",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:019",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:017",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:013",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:016",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:007",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:014",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:022",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:023",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:028",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:004",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:027",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:018",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:008",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:026",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:025",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:024",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:009",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:001",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:003",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:021",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:path:006"
+  ],
+  "upstream_step_ids": [
+    "generate_paths"
+  ],
+  "warnings": [
+    "review (score=4.71): path009的access_level'仅限拉文克劳'与原著不符，拉文克劳塔楼宿舍入口对所有学院学生开放，只需回答谜题，建议修改为'开放（需回答门环谜题）'"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

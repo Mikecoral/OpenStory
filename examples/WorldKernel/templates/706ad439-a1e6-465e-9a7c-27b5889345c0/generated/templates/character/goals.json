@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "short_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "long_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "motivation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "jinling_twelve_belles_prophesied_fate",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "marriage_alliance_target",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "clan_restoration_ambition",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "escape_or_reform_of_oppression",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "protection_of_certain_family_members",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

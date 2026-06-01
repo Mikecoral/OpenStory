@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "authority",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "legitimacy",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "historical_precedent",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "magical_binding",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "charter_of_hogwarts",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "signatory_body",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "customary_law_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "ministry_decree_number",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

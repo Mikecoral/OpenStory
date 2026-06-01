@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "required_state",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "required_items",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "required_location",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "required_relationship",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "required_time",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "forbidden_conditions",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "permission_needed",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "seasonal_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

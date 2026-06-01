@@ -1,0 +1,23 @@
+dim_name: PropertiesDim
+strength:
+  type: str
+description:
+  type: str
+emotional_state:
+  type: str
+  option: true
+secrecy:
+  type: str
+  option: true
+power_dynamic:
+  type: str
+  option: true
+magical_contract:
+  type: str
+  option: true
+transformative_event:
+  type: str
+  option: true
+longevity:
+  type: str
+  option: true

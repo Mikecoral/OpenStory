@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "assets",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "territory",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "funding_source_monthly_allowance_public_fund_self_raised",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dedicated_items_poetry_tools_sacrificial_vessels",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "shared_resources_with_family_compound",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "distribution_rules_priority",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

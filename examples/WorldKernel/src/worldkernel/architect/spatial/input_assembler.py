@@ -104,7 +104,8 @@ class SpatialInputAssembler:
         seen: set[str] = set()
         result: list[LocationSpatialFact] = []
         for idx, item in enumerate(raw):
-            if not isinstance(item, dict):
+            item = _to_dict(item)
+            if not item:
                 warnings.append(SpatialInputWarning(
                     code="non_dict_location",
                     message=f"location[{idx}] is not a dict; skipped",
@@ -183,7 +184,8 @@ class SpatialInputAssembler:
         auto_id_counter = 0
 
         for idx, item in enumerate(raw):
-            if not isinstance(item, dict):
+            item = _to_dict(item)
+            if not item:
                 warnings.append(SpatialInputWarning(
                     code="non_dict_path",
                     message=f"path[{idx}] is not a dict; skipped",
@@ -315,7 +317,8 @@ class SpatialInputAssembler:
     ) -> list[CharacterPlacementFact]:
         result: list[CharacterPlacementFact] = []
         for idx, item in enumerate(raw):
-            if not isinstance(item, dict):
+            item = _to_dict(item)
+            if not item:
                 warnings.append(SpatialInputWarning(
                     code="non_dict_character",
                     message=f"character[{idx}] is not a dict; skipped",
@@ -398,6 +401,17 @@ class SpatialInputAssembler:
 # ======================================================================
 # Helpers
 # ======================================================================
+
+
+def _to_dict(item: Any) -> dict[str, Any] | None:
+    """Convert Pydantic model instance or dict to dict. Returns None if not convertible."""
+    if isinstance(item, dict):
+        return item
+    if hasattr(item, "model_dump"):
+        return item.model_dump(mode="json")
+    if hasattr(item, "dict"):
+        return item.dict()
+    return None
 
 
 def _as_dict(value: Any) -> dict[str, Any]:

@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "dominant_color",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "ambient_feeling",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "smell",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "sound",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "magical_lighting",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "outside_view",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

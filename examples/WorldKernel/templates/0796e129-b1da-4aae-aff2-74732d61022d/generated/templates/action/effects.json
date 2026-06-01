@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "on_actor",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "on_target",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "on_environment",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "effect_category",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "duration",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reversible",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "alert_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "magical_trace_detection",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

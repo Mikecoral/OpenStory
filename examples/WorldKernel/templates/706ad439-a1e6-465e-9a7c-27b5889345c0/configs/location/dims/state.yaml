@@ -1,0 +1,19 @@
+dim_name: StateDim
+current_state:
+  type: str
+ownership:
+  type: str
+capacity:
+  type: int
+seasonal_state:
+  type: str
+  option: true
+maintenance_condition:
+  type: str
+  option: true
+function_changed:
+  type: str
+  option: true
+current_resident:
+  type: str
+  option: true

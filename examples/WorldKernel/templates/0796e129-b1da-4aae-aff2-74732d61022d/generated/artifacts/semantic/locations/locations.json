@@ -1,0 +1,763 @@
+{
+  "artifact_type": "location_profile",
+  "items": [
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:020",
+        "name": "变形课教室",
+        "type": "teaching_space",
+        "description": "一间宽敞明亮的教室，位于城堡四楼。教室前方是一张高讲台，后面是一块巨大的黑板。学生的课桌椅排列整齐，每张桌子上都放置着一枚用于练习的火柴。教室四周的壁龛里展示着半完成的变形作品——一只被变成高脚杯的老鼠、一个被变成针垫的刺猬，以及许多玻璃罐中漂浮的、形状扭曲的物体。窗台上的盆栽会随着季节变换颜色。当麦格教授授课时，讲台上的物品会自发演示变形过程，空气中弥漫着轻微的魔法震荡感。这里曾见证过众多学生第一次成功将火柴变成针的瞬间，也见证了哈利·波特三年级时出色地完成变形咒考试。",
+        "house_affiliation": "格兰芬多（院长教学）",
+        "historical_significance": "自霍格沃茨创立以来，变形课一直是核心课程之一，该教室经历过多位变形学教授的更替，麦格教授在此教学已超过三十年。",
+        "magical_features": "教室内的物品可被教师意念控制进行演示；所有课桌椅都刻有变形咒防护，防止学生意外触发大规模变形；黑板能自动记录教授写下的要点。",
+        "aliases": "",
+        "is_forbidden_area": "",
+        "founder_associated": ""
+      },
+      "access": {
+        "permissions": "仅在上课时间或教师许可下开放，非上课时间通常上锁",
+        "access_level": "所有学院学生及教职工",
+        "access_conditions": "需按课表到达，迟到者需敲门并解释理由（麦格教授通常不轻易原谅）",
+        "password_required": "",
+        "time_restriction": "上课时间段及预约的补课或练习时间",
+        "item_required": "",
+        "protective_enchantments": "防变形干扰咒，防止学生擅自改变教室结构",
+        "blood_status_restriction": "",
+        "invisibility_required": ""
+      },
+      "state": {
+        "current_state": "整洁有序，所有教学用品摆放整齐，处于可使用状态",
+        "ownership": "米勒娃·麦格教授（变形课教授兼格兰芬多院长）",
+        "capacity": 30,
+        "cursed_status": "",
+        "sealed_status": "",
+        "transformable": "false",
+        "damage_state": "",
+        "seasonal_variation": "窗台上的盆栽会随季节变换颜色（如春季绿叶、秋季红叶）；墙壁上的魔法画框也会根据季节更换人物服饰。",
+        "magical_instability": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:013",
+        "name": "魔药课教室",
+        "type": "teaching_space",
+        "description": "一间阴冷的地下室教室，位于城堡地牢层。室内光线昏暗，只有几支蜡烛在玻璃罐中跳跃，映照出墙壁上巨大的石质水槽。教室中央摆放着长长的木桌，每张桌子配有坩埚架和称量工具。靠墙的架子上排列着数百个玻璃罐，里面保存着各种魔药原料——泡在福尔马林中的青蛙肝脏、干制的曼德拉草根、发光的毒角兽角粉，以及一瓶瓶气味刺鼻的药剂。空气总是潮湿而寒冷，弥漫着硫磺、醋和干草药混合的刺鼻气味。斯内普教授的黑袍在这里几乎与阴影融为一体，他的声音在石壁上反复回荡，给学生带来无形的压迫感。这里曾发生过许多戏剧性的时刻：哈利第一次成功调制出活地狱汤剂，以及无数次被斯内普尖刻讥讽的场景。",
+        "house_affiliation": "斯莱特林（院长教学）",
+        "historical_significance": "斯内普教授担任魔药学教授长达十五年，该教室成为他与哈利·波特之间复杂关系的核心舞台；前代魔药学教授霍拉斯·斯拉格霍恩也曾在此授课，但目前的风格更严肃阴郁。",
+        "magical_features": "教室的蜡烛火焰对魔药气味敏感，当某种危险气体产生时火焰会变蓝；后墙有一扇暗门通往原料储藏室，只有教授能打开；地砖下藏有古老的符文，能吸收溢出的魔力，防止坩埚爆炸失控。",
+        "aliases": "",
+        "is_forbidden_area": "",
+        "founder_associated": ""
+      },
+      "access": {
+        "permissions": "仅限上课学生及获准的教师进入，禁闭时间也用于惩罚",
+        "access_level": "所有学院学生，但斯内普会因个人好恶而格外严厉",
+        "access_conditions": "按课表进行，迟到者将直接被扣分；斯内普有时会利用课间单独留下某个学生关禁闭",
+        "password_required": "",
+        "time_restriction": "上课期间及斯内普指定的额外时间",
+        "item_required": "学生需自备魔药课工具箱（坩埚、天平、水晶药瓶等）",
+        "protective_enchantments": "",
+        "blood_status_restriction": "无明文规定，但斯内普对纯血统学生略为宽容",
+        "invisibility_required": ""
+      },
+      "state": {
+        "current_state": "正常使用中，但空气中常残留失败魔药的刺鼻气味；斯内普离开时教室依然保持一种压抑的秩序",
+        "ownership": "西弗勒斯·斯内普教授（魔药学教授兼斯莱特林院长）",
+        "capacity": 28,
+        "cursed_status": "",
+        "sealed_status": "",
+        "transformable": "",
+        "damage_state": "个别桌面上有轻微腐蚀痕迹（因长期接触强酸或药剂泄漏），但整体维护良好",
+        "seasonal_variation": "",
+        "magical_instability": "低——教室本身稳定，但调制高难度魔药时可能引发局部魔力波动"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:002",
+        "name": "黑魔法防御课教室",
+        "type": "teaching_space",
+        "description": "一间位于城堡三楼的宽敞教室，因第一位任教者奇洛教授而弥漫着淡淡的大蒜味。教室前方是讲台和黑板，后方立着训练假人，四周书架摆放着各种防御法术的文献。墙壁的魔法符文可根据需要召唤魔法生物，但奇洛教授本人似乎不常使用。整体氛围比霍格沃茨其他教室更显暗淡，空气中偶尔飘过一丝诡异的气息。这里曾是多次黑魔法防御课教学变革的起点，但当前的布置尚属常规。",
+        "house_affiliation": "无固定学院",
+        "historical_significance": "由于伏地魔对该职位的诅咒，每年更换教师，该教室见证了一连串不同风格的教学和冒险，最后成为抵抗黑暗势力的缩影。第七学年卡罗兄妹将其变成酷刑室，成为学生反抗运动的关键象征地点之一。",
+        "magical_features": "教室墙壁内置有魔力调节符文，可根据教学需要召唤不同种类的魔法生物（如博格特、红帽子、格林迪洛等）；讲台抽屉中包含防护咒的共振晶体。",
+        "aliases": "",
+        "is_forbidden_area": "",
+        "founder_associated": ""
+      },
+      "access": {
+        "permissions": "上课时间对学生开放；第七学年所有学生均需定期参加，否则受到惩罚",
+        "access_level": "所有学院学生（课程必修），教师及校长可自由进入",
+        "access_conditions": "按课表正常上课，迟到者需敲门并说明理由（奇洛教授通常不会过分严厉）。",
+        "password_required": "",
+        "time_restriction": "上课时间段",
+        "item_required": "",
+        "protective_enchantments": "标准反黑魔法防护咒，防止未经授权的黑魔法施展。",
+        "blood_status_restriction": "",
+        "invisibility_required": ""
+      },
+      "state": {
+        "current_state": "1991年9月1日：奇洛教授刚上任，教室里弥漫着淡淡的大蒜味，所有教学用品摆放整齐，设备完好，无明显损坏。",
+        "ownership": "奇洛教授（第一年），后每年更换，最终在第七年被卡罗兄妹占据",
+        "capacity": 32,
+        "cursed_status": "",
+        "sealed_status": "",
+        "transformable": "",
+        "damage_state": "无损坏，墙面干净，地面整洁。",
+        "seasonal_variation": "随教师风格不同，每年变化巨大，但基本结构不变",
+        "magical_instability": "低——教室本身稳定，无异常魔力波动。"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:010",
+        "name": "魔法史课教室",
+        "type": "teaching_space",
+        "description": "一间位于城堡二层、布置朴素的教室。墙壁上挂着历任校长和著名魔法史学家的画像，但他们都沉默不语，似乎也被课堂的沉闷气氛感染。学生的课桌上刻满了前代学生的涂鸦和无聊时留下的名字。教室前方有一个旧式的讲台，上面放着积满灰尘的厚厚教案。宾斯教授的幽灵会定时从黑板后飘进来，用单调乏味的声音朗诵《魔法史》课本的章节。教室里经常只有少数几个人在听课，大部分学生要么趴着睡觉，要么偷偷在羊皮纸上写其他作业。暖气片常常发出咝咝的声响，使得整个教室变得温暖而令人昏昏欲睡。",
+        "house_affiliation": "无",
+        "historical_significance": "霍格沃茨唯一一位幽灵教授，自城堡建立以来一直在此任教；这里曾见证过多次关于妖精叛乱、巨人战争等重大历史事件的授课，但学生的关注点往往在后排的窃窃私语上。",
+        "magical_features": "宾斯教授不需要走门——他总是从黑板中央穿出来；黑板上的粉笔字会自动更新历史事件的日期，但与宾斯教授的讲述完全同步。",
+        "aliases": "",
+        "is_forbidden_area": "",
+        "founder_associated": ""
+      },
+      "access": {
+        "permissions": "按课表对学生开放，其他时间通常锁着",
+        "access_level": "所有学院学生（必修课）",
+        "access_conditions": "按时进入，宾斯教授从不点名或检查出勤（因为他只关心他的讲稿）",
+        "password_required": "",
+        "time_restriction": "仅在上课时间段",
+        "item_required": "",
+        "protective_enchantments": "",
+        "blood_status_restriction": "",
+        "invisibility_required": ""
+      },
+      "state": {
+        "current_state": "正常使用中，但常常积满灰尘，因为宾斯教授从不打扫；暖气经常开得很足,导致学生昏昏欲睡。",
+        "ownership": "宾斯教授（幽灵），但实际由校工负责日常维护",
+        "capacity": 30,
+        "cursed_status": "",
+        "sealed_status": "",
+        "transformable": "",
+        "damage_state": "部分课桌有旧刻痕和墨水渍，墙面有些轻微剥落",
+        "seasonal_variation": "冬季暖气较热，夏季则更加闷热，窗户很少打开",
+        "magical_instability": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:003",
+        "name": "占卜课教室（北塔楼顶）",
+        "type": "teaching_space",
+        "description": "位于北塔楼最顶层，圆形房间内堆满柔软的沙发和靠枕，昏暗的灯光来自罩着红色绸缎的油灯。窗边挂着厚重丝绒窗帘，天花板上绘满闪烁的星座与行星符号。空气中弥漫着甘菊茶、雪利酒和香炉烟雾混合的奇特气味。无数茶壶、茶托、水晶球、塔罗牌和占卜图谱散落一地，给人一种神秘而凌乱的舒适感。",
+        "house_affiliation": "",
+        "historical_significance": "",
+        "magical_features": "",
+        "aliases": "",
+        "is_forbidden_area": "",
+        "founder_associated": ""
+      },
+      "access": {
+        "permissions": "三年级及以上选修占卜学的学生",
+        "access_level": "restricted",
+        "access_conditions": "需在课表安排的时段进入，或经特里劳妮教授单独许可。非上课时间通常上锁。",
+        "password_required": "",
+        "time_restriction": "仅限上课日和特里劳妮教授开放的时间段",
+        "item_required": "",
+        "protective_enchantments": "",
+        "blood_status_restriction": "",
+        "invisibility_required": ""
+      },
+      "state": {
+        "current_state": "堆满占卜用具，偶有幽灵和烟尘飘动",
+        "ownership": "西比尔·特里劳妮教授（兼霍格沃茨）",
+        "capacity": 20,
+        "cursed_status": "",
+        "sealed_status": "",
+        "transformable": "",
+        "damage_state": "",
+        "seasonal_variation": "",
+        "magical_instability": "轻微，特里劳妮的预言能量偶尔引起蜡烛突然熄灭或茶渍图案变幻"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:006",
+        "name": "温室一号",
+        "type": "teaching_space",
+        "description": "霍格沃茨城堡后方的石头温室，装有巨大的拱形玻璃屋顶，透过玻璃能看到温暖的阳光和淅淅沥沥的雨水。室内温度高而潮湿，泥土与肥料的气味浓郁，架子上整整齐齐排列着数百个陶制花盆。许多植物具有自主活动能力——曼德拉草在泥土中扭动探头，毒触手藤蔓轻轻摇晃，形态各异的魔法植物分类摆放，标牌以绿色墨水书写。",
+        "house_affiliation": "",
+        "historical_significance": "",
+        "magical_features": "",
+        "aliases": "",
+        "is_forbidden_area": "",
+        "founder_associated": ""
+      },
+      "access": {
+        "permissions": "草药课学生及获得斯普劳特教授许可的人员",
+        "access_level": "restricted",
+        "access_conditions": "通常仅在课表安排的课时开放，或由斯普劳特教授带领进入。非上课时间需要提前申请。",
+        "password_required": "",
+        "time_restriction": "",
+        "item_required": "",
+        "protective_enchantments": "",
+        "blood_status_restriction": "",
+        "invisibility_required": ""
+      },
+      "state": {
+        "current_state": "植物生长旺盛，定期维护中",
+        "ownership": "波莫娜·斯普劳特教授（管理），属霍格沃茨财产",
+        "capacity": 16,
+        "cursed_status": "",
+        "sealed_status": "",
+        "transformable": "",
+        "damage_state": "",
+        "seasonal_variation": "",
+        "magical_instability": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005",
+        "name": "大礼堂",
+        "type": "communal_space",
+        "description": "霍格沃茨城堡的心脏，宏伟的大厅，其天花板被施了强力魔法，完美反射出外界的天空——白天是蓝天白云，夜晚是繁星点点。四张巨大的学院长桌从门口延伸至教师席：格兰芬多的红色与金色、斯莱特林的银色与绿色、拉文克劳的蓝色与青铜、赫奇帕奇的黄色与黑色。正前方的高台上摆放着教师长桌，中央是校长座位。上方漂浮着上千根魔法蜡烛，光影摇曳。墙壁上挂着各学院的旗帜与鎏金装饰。分院仪式时，入口处放置分院帽和四脚凳；全校集会或节日盛宴时，装饰随之变换（如圣诞节时大礼堂布满十二棵魔法圣诞树和闪闪发光的冰雕）。",
+        "house_affiliation": "全校共用",
+        "historical_significance": "自建校以来举办过分院仪式、学期开始与结束宴会、万圣节/Halloween盛宴、圣诞节舞会、三强争霸赛相关集会，也曾见证伏地魔与邓布利多对抗等重大事件",
+        "magical_features": "天花板施有星辰魔法；漂浮蜡烛；圣诞装饰自动生成；食物可通过家养小精灵从厨房传送至桌面",
+        "aliases": "",
+        "is_forbidden_area": "",
+        "founder_associated": ""
+      },
+      "access": {
+        "permissions": "全体霍格沃茨师生（以及受邀请的访客如家长、巫师官员）",
+        "access_level": "open (但在宵禁时间需遵循校规)",
+        "access_conditions": "正常用餐时间统一开放，特殊集会由学校通知。宵禁后未经许可不得逗留。进入时着装需符合校规（穿校服）。",
+        "password_required": "",
+        "time_restriction": "",
+        "item_required": "",
+        "protective_enchantments": "",
+        "blood_status_restriction": "",
+        "invisibility_required": ""
+      },
+      "state": {
+        "current_state": "日常用于三餐与集会，整洁庄严",
+        "ownership": "霍格沃茨魔法学校（管理者为校长与各院长）",
+        "capacity": 800,
+        "cursed_status": "",
+        "sealed_status": "",
+        "transformable": "",
+        "damage_state": "",
+        "seasonal_variation": "随季节和节日变更装饰：秋季挂满南瓜灯，圣诞节银装素裹，春季鲜花铺桌。日落时蜡烛自动点燃。",
+        "magical_instability": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:008",
+        "name": "格兰芬多公共休息室",
+        "type": "communal_space",
+        "description": "位于格兰芬多塔楼七层，经过胖夫人肖像守护的入口后，进入一个温暖舒适的圆形房间。房间以红色和金色为主调——深红色墙壁、金色装饰和深色木地板。中央壁炉常年噼啪燃烧，周围摆满了柔软的扶手椅和旧沙发，大玻璃窗正对操场方向。公告板上贴着通知、丢失物品告示和魁地奇球队宣传。书架上有一些旧《预言家日报》和学院冒险书籍。天花板上画着一只咆哮的格兰芬多狮子徽章，角落放着几面旗帜。通往男女宿舍的螺旋楼梯分别从两侧贴着“男孩们”和“女孩们”的牌子延伸而上。",
+        "house_affiliation": "格兰芬多学院",
+        "historical_significance": "哈利、罗恩、赫敏的日常据点，是他们策划众多冒险（如活点地图使用、成立邓布利多军）的秘密基地；也是邓布利多宣布重要消息的场所之一",
+        "magical_features": "壁炉连接飞路网；胖夫人肖像充当入口守卫，需口令进入；公共休息室内部不可被幻影移形；楼梯对男女宿舍有古老魔咒：女孩可进入男孩宿舍，但男孩无法进入女孩宿舍",
+        "aliases": "",
+        "is_forbidden_area": "",
+        "founder_associated": ""
+      },
+      "access": {
+        "permissions": "只有格兰芬多学院的学生可以进入",
+        "access_level": "restricted (严格按学院划分)",
+        "access_conditions": "必须知道当前口令，并向胖夫人肖像正确回答。口令每周更换数次，由院长或级长通知。非格兰芬多学生通常禁止进入。",
+        "password_required": "true",
+        "time_restriction": "",
+        "item_required": "",
+        "protective_enchantments": "",
+        "blood_status_restriction": "false",
+        "invisibility_required": ""
+      },
+      "state": {
+        "current_state": "正常使用，炉火不熄，气氛亲切",
+        "ownership": "格兰芬多学院（肖像胖夫人作为守护者）",
+        "capacity": 50,
+        "cursed_status": "",
+        "sealed_status": "",
+        "transformable": "",
+        "damage_state": "",
+        "seasonal_variation": "圣诞节期间装饰槲寄生、彩旗和金色小铃铛；夏季窗户大敞，微风吹拂",
+        "magical_instability": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:018",
+        "name": "斯莱特林公共休息室",
+        "type": "communal_space",
+        "description": "位于霍格沃茨城堡的黑湖之下的地牢中，透过深绿色的玻璃窗可以看到湖底生物游动的黑影。房间以黑色和绿色为主调，镶嵌着银色和绿色的宝石，深色大理石壁炉里燃烧着绿火，昏暗中透出幽绿光芒。天花板低垂，挂着银链吊灯，沙发和椅子都是黑色皮革包裹，墙上挂着斯莱特林徽章和历代院长的画像，空气中弥漫着淡淡的水汽和湖水腥味。",
+        "house_affiliation": "斯莱特林",
+        "historical_significance": "自霍格沃茨创立以来，斯莱特林学生在此聚集，传承纯血统理念和学院荣誉，是许多野心勃勃的巫师和后来黑巫师的摇篮。",
+        "magical_features": "墙壁和地板可以吸收并放大从湖水传来的低语声，壁炉的绿火永不熄灭且能根据气氛改变亮度，窗户具有单向透视魔法。",
+        "aliases": "地牢休息室, 绿宝石厅",
+        "is_forbidden_area": "false",
+        "founder_associated": "萨拉查·斯莱特林"
+      },
+      "access": {
+        "permissions": "仅供斯莱特林学院学生使用，其他学院或教师需被邀请或得到院长许可",
+        "access_level": "restricted",
+        "access_conditions": "说出正确口令给入口处的石墙，口令每周更换，由级长通知；非斯莱特林学生进入可能触发防伪魔法",
+        "password_required": "true",
+        "time_restriction": "",
+        "item_required": "",
+        "protective_enchantments": "石墙伪装成普通墙壁，只有说出口令才能显现入口；内部有反窥探咒和静音咒",
+        "blood_status_restriction": "历史上曾有纯血统优先的隐性规则，但现代已不强制执行，仍由斯莱特林院长掌握准入",
+        "invisibility_required": "false"
+      },
+      "state": {
+        "current_state": "正常开放，作为学院学生日常社交、学习和休息的中心",
+        "ownership": "斯莱特林学院 / 霍格沃茨魔法学校",
+        "capacity": 60,
+        "cursed_status": "",
+        "sealed_status": "",
+        "transformable": "false",
+        "damage_state": "完好",
+        "seasonal_variation": "夏季湖水较清澈，冬季水草增多，室内绿光更浓",
+        "magical_instability": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:016",
+        "name": "有求必应屋",
+        "type": "communal_space",
+        "description": "隐秘地存在于霍格沃茨城堡八楼，一面挂有挂毡的墙对面，只有当使用者集中精力思考所需东西并来回走过三次时，才会出现一扇光滑木门。门后是一个巨大的房间，空间大小和内容完全由使用者的需求决定：当被需要作为DA军训练场时，它变成布满书架、软垫和练习决斗台的大厅；当需要藏匿物品时，它呈现为堆积如山的杂物间，里面塞满了几个世纪以来学生藏匿的无数物件，包括堕落的拉文克劳冠冕。",
+        "house_affiliation": "",
+        "historical_significance": "霍格沃茨最古老的魔法房间之一，由四位创始人共同施法创建，目的是为有需要的人提供帮助。曾帮助无数学生隐藏秘密、躲避危险，在对抗伏地魔时期成为DA军训练中心，并藏匿了魂器之一。",
+        "magical_features": "房间可以自我重组布局、缩小或扩大空间；能够感知使用者的真实意图，并能根据多个使用者不同需求同时呈现不同区域；具有强大的反侦测和反召唤咒，禁止任何形式的记录或追踪。",
+        "aliases": "一切所求之屋, 来去屋, 躲藏室",
+        "is_forbidden_area": "false",
+        "founder_associated": "戈德里克·格兰芬多、萨拉查·斯莱特林、罗伊纳·拉文克劳、赫尔加·赫奇帕奇（共同创建）"
+      },
+      "access": {
+        "permissions": "任何对房间有真实需求并能正确使用召唤方式的人均可进入，但必须在心中明确重复自己的需求三次并来回走过入口墙面三次",
+        "access_level": "secret",
+        "access_conditions": "必须站在挂有巨怪挂毡的墙壁对面，集中精神思考自己需要的东西，然后来回走三次；只有第一次使用后才记住具体触发方式，但房间本身不会拒绝任何人",
+        "password_required": "false",
+        "time_restriction": "",
+        "item_required": "",
+        "protective_enchantments": "极为强大的隐蔽咒，使房间在不需要时完全不可见；内部有防追踪、防窃听、防标记魔法，邓布利多曾施法使房间中的事物无法被活点地图侦测",
+        "blood_status_restriction": "",
+        "invisibility_required": "false"
+      },
+      "state": {
+        "current_state": "经常被秘密使用，根据不同的需求变化形态；在1991-1992学年尚未被哈利等人发现，但马尔福曾在此练习消失咒",
+        "ownership": "霍格沃茨城堡（无主），但能根据使用者的需求临时改变所有权感知",
+        "capacity": 200,
+        "cursed_status": "",
+        "sealed_status": "",
+        "transformable": "true",
+        "damage_state": "根据所需形态变化，内部杂物间的物件可能有损坏",
+        "seasonal_variation": "无",
+        "magical_instability": "功能稳定，但极端需求（如同时多人不同需求）可能导致空间短暂重叠或混乱"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:007",
+        "name": "格兰芬多男生宿舍",
+        "type": "dormitory",
+        "description": "位于格兰芬多塔楼顶层，通过公共休息室内的旋转楼梯可达。房间呈圆形，五张四柱床挂着深红色天鹅绒帷幔，每张床配有一个床头柜和铜灯。地板铺着厚厚的暗红地毯，窗户朝向城堡前的草坪，白天光线充足。墙壁上挂着格兰芬多旗帜和历代男巫的画像，壁炉不大但火焰温暖。门边贴有学院规则和魁地奇赛程表，床上散落着课本、零食包装和飞天扫帚的保养工具。",
+        "house_affiliation": "格兰芬多",
+        "historical_significance": "哈利·波特、罗恩·韦斯莱、纳威·隆巴顿、西莫·斐尼甘和迪安·托马斯的主要住处，见证了许多深夜秘密对话、对阴谋的讨论以及个人成长时刻。",
+        "magical_features": "楼梯会感应进入者的性别和学院，阻止其他学院的人进入；床帘具有基础隔音效果，每个床尾的行李箱具有扩展空间咒。",
+        "aliases": "格兰芬多男生房间, 塔楼寝宫",
+        "is_forbidden_area": "false",
+        "founder_associated": "戈德里克·格兰芬多"
+      },
+      "access": {
+        "permissions": "仅限格兰芬多学院的男生，且必须是该学年的住宿生；胖夫人肖像守卫公共休息室入口，男生需经过公共休息室再上楼梯",
+        "access_level": "restricted",
+        "access_conditions": "胖夫人会询问口令才放行进入公共休息室；楼梯会自动检测并允许格兰芬多男生通过，若女生试图上楼梯，楼梯会变成滑梯弹走她们",
+        "password_required": "true",
+        "time_restriction": "",
+        "item_required": "",
+        "protective_enchantments": "楼梯具有性别和学院识别魔法；胖夫人肖像本身有保护咒，可以阻止未经授权的人强行通过；宿舍门在夜间自动上锁",
+        "blood_status_restriction": "",
+        "invisibility_required": "false"
+      },
+      "state": {
+        "current_state": "正常使用中，五张床分别由哈利·波特、罗恩·韦斯莱、纳威·隆巴顿、西莫·斐尼甘和迪安·托马斯居住，房间略显凌乱但舒适",
+        "ownership": "霍格沃茨魔法学校，由格兰芬多学院管理",
+        "capacity": 5,
+        "cursed_status": "",
+        "sealed_status": "",
+        "transformable": "false",
+        "damage_state": "少数墙纸有剥落，地毯有磨损，但整体维护良好",
+        "seasonal_variation": "冬季窗玻璃结霜，壁炉长时间燃烧；夏季窗户常开，窗帘随风飘动",
+        "magical_instability": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:009",
+        "name": "格兰芬多女生宿舍",
+        "type": "dormitory",
+        "description": "与男生宿舍位于同一塔楼但楼层更高，房间布局类似圆形，以红色和金色为主调，但窗帘和帷幔更倾向于猩红色。女生们的四柱床床柱上刻有花朵和星星图案，梳妆台上放着润发油和化妆品。窗户可见黑湖远角，夜晚能看见禁林的树顶。与男生宿舍隔开一段楼梯，楼梯设有魔法屏障。",
+        "house_affiliation": "格兰芬多",
+        "historical_significance": "赫敏·格兰杰、帕瓦蒂·佩蒂尔和拉文德·布朗的主要住处，是她们友谊和秘密谈话的空间。赫敏曾在此研究魔法石的秘密，也是她深夜阅读和冥想的私密场所。",
+        "magical_features": "楼梯会变成滑梯阻止任何男性进入，甚至连幽灵（如差点头的尼克）也无法通过；床铺可自动整理，窗帘有夜光编织。",
+        "aliases": "格兰芬多女生房间, 赫敏的塔楼寝室",
+        "is_forbidden_area": "false",
+        "founder_associated": "戈德里克·格兰芬多"
+      },
+      "access": {
+        "permissions": "仅限格兰芬多学院女生，且为住宿生；入口在男生宿舍楼梯相同位置但更高处",
+        "access_level": "restricted",
+        "access_conditions": "必须通过公共休息室并走上楼梯，楼梯会主动识别性别——男生踏上瞬间变成滑梯，将入侵者弹回底楼；女生则可正常上楼",
+        "password_required": "false",
+        "time_restriction": "",
+        "item_required": "",
+        "protective_enchantments": "楼梯附着了强大的性别隔离咒，与城堡本身的魔法相连，不可被幻身咒或复方汤剂欺骗；门在夜间会自动锁上",
+        "blood_status_restriction": "",
+        "invisibility_required": "false"
+      },
+      "state": {
+        "current_state": "正常使用中，赫敏·格兰杰、帕瓦蒂·佩蒂尔和拉文德·布朗入住，房间整洁有序，书架和床头堆满书本和羊皮纸",
+        "ownership": "霍格沃茨魔法学校，格兰芬多学院",
+        "capacity": 5,
+        "cursed_status": "",
+        "sealed_status": "",
+        "transformable": "false",
+        "damage_state": "良好，地毯稍旧但干净",
+        "seasonal_variation": "冬季比男生宿舍更温暖，夏季通风良好",
+        "magical_instability": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:019",
+        "name": "斯莱特林地窖宿舍",
+        "type": "dormitory",
+        "description": "位于黑湖湖底之下的地窖，入口隐藏在城堡地下走廊的一面粗糙石墙后。公共休息室由黑色和绿色的大理石砌成，天花板中央悬挂着一盏散发幽绿光芒的水晶灯，四周的壁炉燃烧着绿色火焰。高大的窗户正对湖底，光线透过湖水投下摇曳的绿色波纹，时常能看到巨乌贼的触手或人鱼的身影掠过。寝室为男女分设的圆形石室，每间放置五张带银绿色帷幔的四柱床，床脚有刻着斯莱特林银蛇徽章的储物箱。墙面装饰着萨拉查·斯莱特林的蛇形浮雕和褪色的挂毯，整体氛围阴冷而庄严。",
+        "house_affiliation": "斯莱特林",
+        "historical_significance": "自霍格沃茨创立以来一直是斯莱特林学院的住宿区，见证了无数纯血统巫师家族的传承",
+        "magical_features": "窗户直通黑湖底部，可以观察湖中魔法生物；公共休息室入口需口令开启，每周更换",
+        "aliases": "",
+        "is_forbidden_area": "false",
+        "founder_associated": "萨拉查·斯莱特林"
+      },
+      "access": {
+        "permissions": "仅斯莱特林学院学生可使用，其他学院学生及大部分教职工未经邀请或紧急情况不得入内",
+        "access_level": "house_restricted",
+        "access_conditions": "必须知道当前有效的口令，口令通过斯莱特林级长或布告板通知",
+        "password_required": "true",
+        "time_restriction": "校内宵禁后不得逗留于公共休息室（可返回寝室），但无严格时间限制",
+        "item_required": "",
+        "protective_enchantments": "",
+        "blood_status_restriction": "",
+        "invisibility_required": ""
+      },
+      "state": {
+        "current_state": "正常运营，维护良好",
+        "ownership": "斯莱特林学院",
+        "capacity": 80,
+        "cursed_status": "",
+        "sealed_status": "",
+        "transformable": "",
+        "damage_state": "良好，部分湖底窗户因潮气略有侵蚀",
+        "seasonal_variation": "冬季湖面结冰时室内光线更暗，夏季湖底可见度较高",
+        "magical_instability": "低，但靠近黑湖一侧偶尔因巨乌贼撞击产生轻微震动"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:015",
+        "name": "拉文克劳塔楼宿舍",
+        "type": "dormitory",
+        "description": "位于城堡西侧塔楼最顶层，入口是一扇不带门把手的青铜色木门，门上安有鹰状青铜门环。公共休息室呈圆形，弧形墙上开有优雅的拱形窗，窗外可以看到黑湖和群山。床铺分布在塔楼各层的小型寝室中，男女生寝室分开，每间可住四人，配蓝色天鹅绒帷幔的床和青铜色家具。天花板被施了魔法，映出夜空中的星星。书架和书桌散布其中，鼓励学术交流。窗边有软垫座椅，墙上挂着拉文克劳旗帜和历代杰出巫师的肖像。",
+        "house_affiliation": "拉文克劳",
+        "historical_significance": "拉文克劳学院创始人罗伊纳·拉文克劳亲自设计，塔楼入口的鹰状门环谜题传承千年，无数拉文克劳学子在此钻研魔法理论",
+        "magical_features": "门环会提出逻辑谜语或智慧问题，答对才能入内；天花板模拟真实星空",
+        "aliases": "",
+        "is_forbidden_area": "",
+        "founder_associated": "罗伊纳·拉文克劳"
+      },
+      "access": {
+        "permissions": "仅拉文克劳学院学生及获得院长许可的教职工可进入；其他人员无法进入",
+        "access_level": "house_restricted",
+        "access_conditions": "学生必须正确回答青铜门环提出的谜题或问题，答案正确则门自动打开；教职工可凭院长许可或紧急情况下通过门环验证身份进入",
+        "password_required": "false",
+        "time_restriction": "无特殊时间限制，但宵禁后学生需返回宿舍",
+        "item_required": "",
+        "protective_enchantments": "",
+        "blood_status_restriction": "",
+        "invisibility_required": ""
+      },
+      "state": {
+        "current_state": "正常",
+        "ownership": "拉文克劳学院",
+        "capacity": 60,
+        "cursed_status": "",
+        "sealed_status": "",
+        "transformable": "",
+        "damage_state": "良好",
+        "seasonal_variation": "",
+        "magical_instability": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:011",
+        "name": "霍格沃茨图书馆",
+        "type": "library",
+        "description": "占据城堡四楼东翼的巨大厅堂，木质书架从地面一直延伸至高高的穹顶，需要梯子或飞天扫帚才能取到上层书籍。室内光线来自悬吊的蜡烛和魔法球，空气中弥漫着旧纸张和药草的混合气味。图书馆分为主阅览区、参考书区和禁书区——禁书区位于最深处，用铁链围栏和一把魔法锁锁住，只有持有某位教师签名的批准条的学生才能进入。平斯夫人（图书馆管理员）时常像秃鹫一样在书架间巡逻，严禁任何饮食、大声喧哗或污损书籍。藏书涵盖魔法史、魔药学、变形术、魔咒学、天文、占卜等所有学科，包括《霍格沃茨：一段校史》、《千种神奇草药及蕈类》等经典。禁书区则藏有《强力药剂》、《至毒魔法》等黑魔法书籍，以及一些被列为危险读物的作品。",
+        "house_affiliation": "",
+        "historical_significance": "自霍格沃茨建校以来就是知识中心，多次关键事件中成为学生寻查秘密的起点（如寻找魔法石、密室的线索）",
+        "magical_features": "书籍会自动归位；部分书籍会咬人或发出尖叫声；禁书区施有追踪咒语，试图偷书会触发警报",
+        "aliases": "",
+        "is_forbidden_area": "禁书区属于禁地，其他区域对全体学生开放",
+        "founder_associated": ""
+      },
+      "access": {
+        "permissions": "所有在册学生和教师可进入主阅读区；禁书区仅限获得教师书面批准的三年级及以上学生进入（一年级学生禁止入内，除非有特殊许可）",
+        "access_level": "restricted_forbidden_section",
+        "access_conditions": "普通区无需条件；禁书区需提交由任课教授或院长签名的批准条，每次进入均需出示",
+        "password_required": "",
+        "time_restriction": "图书馆在晚上8点关闭，周末至下午5点；考试期间可能延长",
+        "item_required": "",
+        "protective_enchantments": "禁书区铁链锁被施了法术，只有相应批准条才能解除；试图以消失咒或混淆咒混入会触发书籍攻击或通知平斯夫人",
+        "blood_status_restriction": "",
+        "invisibility_required": ""
+      },
+      "state": {
+        "current_state": "运营良好，平斯夫人定期维护和整理",
+        "ownership": "霍格沃茨魔法学校",
+        "capacity": 250,
+        "cursed_status": "",
+        "sealed_status": "",
+        "transformable": "",
+        "damage_state": "良好，少数古籍有岁月痕迹但保存得当",
+        "seasonal_variation": "冬季壁炉点燃时较为温暖舒适；夏季书架上的防虫咒语活跃",
+        "magical_instability": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:014",
+        "name": "魁地奇球场",
+        "type": "outdoor",
+        "description": "位于城堡西侧的一片广阔椭圆形草地，四周环绕着高耸的木质看台，可容纳全校师生。场地中央修剪整齐的草坪上竖立着三根金环球门柱（两端各一组），两端为得分区。空中没有任何遮挡，有时会飘来城堡烟囱的烟雾。球场上空有魔法标记线（金色和红色）表示边界。看台最高处设有解说员包厢和院长观察席，霍琦夫人经常在此主持飞行课和魁地奇训练。场地边缘有更衣室、医疗帐篷储藏室和扫帚棚，扫帚棚由场地管理员负责，每把扫帚都标有归属学院。飞行训练课通常在此进行，而每周一两次的学院魁地奇比赛则吸引大量观众。",
+        "house_affiliation": "",
+        "historical_significance": "举办过多个重要赛季，包括哈利一年级时首次参加魁地奇比赛并打破百年来最年轻找球手纪录，以及三年级时与赫奇帕奇的暴雨之战",
+        "magical_features": "看台被施了空间扩展咒以容纳更多人；球门柱会根据天气自动调整发光强度；场地边缘有反幻影移形咒，防止外人介入比赛；扫帚棚有防盗咒",
+        "aliases": "",
+        "is_forbidden_area": "false",
+        "founder_associated": ""
+      },
+      "access": {
+        "permissions": "全校师生及嘉宾可在比赛期间凭门票进入；日常训练或飞行课时仅限相关学生和教师在场",
+        "access_level": "public_event",
+        "access_conditions": "比赛日需持票（通常由学院院长发放）；训练日需经飞行课教授或魁地奇队长批准；非比赛时段球场可能上锁",
+        "password_required": "",
+        "time_restriction": "夜晚通常关闭，除非有特别批准的月光训练",
+        "item_required": "",
+        "protective_enchantments": "",
+        "blood_status_restriction": "",
+        "invisibility_required": ""
+      },
+      "state": {
+        "current_state": "正常使用，草坪由场务人员定期打理",
+        "ownership": "霍格沃茨魔法学校",
+        "capacity": 1000,
+        "cursed_status": "",
+        "sealed_status": "",
+        "transformable": "",
+        "damage_state": "良好，草坪在比赛后需要修补，但魔法恢复迅速",
+        "seasonal_variation": "冬季可能因积雪暂停使用，但施有保暖咒继续训练；春季草地生长速度被魔法调控",
+        "magical_instability": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:004",
+        "name": "禁林边缘",
+        "type": "outdoor",
+        "description": "城堡以南的一片林地与草坪交界处，高大的古树逐渐稀疏，地面覆盖着厚厚的落叶和苔藓。靠近海格的小屋，能听见禁林深处传来的动物低吼和风吹树梢的沙沙声。白天阳光透过树冠洒下斑驳光影，傍晚则幽暗阴森，常有荧光闪烁的昆虫出没。这里既是冒险的起点，也是学生被禁止独自进入的区域边界。",
+        "house_affiliation": "霍格沃茨",
+        "historical_significance": "多次关键事件的发生地，如哈利与德拉科·马尔福的夜间对峙、海格饲养的挪威脊背龙诺伯被送离、以及马人和巨怪出没的记录。",
+        "magical_features": "边缘地带施有限制咒，学生未经许可进入禁林会被记录。树木在月圆之夜会轻微摇曳并发出低语，某些年份的秋天会生出银色蘑菇。",
+        "aliases": "树林边缘, 海格前院外",
+        "is_forbidden_area": "false",
+        "founder_associated": "戈德里克·格兰芬多"
+      },
+      "access": {
+        "permissions": "仅对特定课程（如海格的保护神奇生物课）或获得级长、教师许可的学生开放。禁林内部严格禁止学生进入，边缘区域白天在监护下可允许。",
+        "access_level": "restricted",
+        "access_conditions": "必须有教师或猎场看守陪同，或持有校长签字的通行证。宵禁后任何学生不得靠近。",
+        "password_required": "",
+        "time_restriction": "白天允许，傍晚后禁止（除非有教师陪同）。",
+        "item_required": "",
+        "protective_enchantments": "边缘有隐形警报咒，会向麦格教授办公室发送入侵信号。树木间缠绕着反幻影移形咒。",
+        "blood_status_restriction": "",
+        "invisibility_required": "false"
+      },
+      "state": {
+        "current_state": "正常，草木茂盛，小径清晰可见。海格小屋的灯光在傍晚时分会照亮一小片区域。",
+        "ownership": "霍格沃茨城堡",
+        "capacity": 50,
+        "cursed_status": "",
+        "sealed_status": "",
+        "transformable": "",
+        "damage_state": "完好",
+        "seasonal_variation": "冬季积雪覆盖，禁林动物活动减少；春季野花盛开，但泥泞易滑；夏季昆虫活跃；秋季落叶堆积，能见度降低。",
+        "magical_instability": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:012",
+        "name": "黑湖湖畔",
+        "type": "outdoor",
+        "description": "城堡西侧的一片宽阔水域，湖水呈深黑色，平静时倒映着城堡的塔楼。岸边有鹅卵石滩和几棵歪斜的柳树，水草茂密，有时能看到巨型鱿鱼的触手伸出水面。这里常被学生用作课余休憩、阅读或社交的场所，同时也是三强争霸赛第二个项目的竞技场——参赛者需从湖底救人质。",
+        "house_affiliation": "霍格沃茨",
+        "historical_significance": "1995年三强争霸赛第二个项目地点，哈利·波特与罗恩·韦斯莱、赫敏·格兰杰等四人被作为人质置于湖底人鱼村落。更早之前，湖边发生过学生意外事件（如溺水和遭遇魔法生物）。",
+        "magical_features": "湖底有人鱼聚居地，建有石头房屋和广场；水中有巨型鱿鱼、格林迪洛等魔法生物。湖面在特定月相下会发光，湖水对某些魔咒有折射增强效果。",
+        "aliases": "黑湖, 湖边",
+        "is_forbidden_area": "false",
+        "founder_associated": "萨拉查·斯莱特林（传说他曾与湖中生物立约）"
+      },
+      "access": {
+        "permissions": "所有学生和教职工在白天可自由进入。宵禁后禁止，但偶尔有高年级学生偷偷夜游。",
+        "access_level": "open",
+        "access_conditions": "无特殊条件，但禁止游泳或干扰湖中生物。在大型活动（如三强争霸赛）期间，特定区域临时封锁。",
+        "password_required": "",
+        "time_restriction": "黎明至宵禁，宵禁后禁止。",
+        "item_required": "",
+        "protective_enchantments": "",
+        "blood_status_restriction": "",
+        "invisibility_required": ""
+      },
+      "state": {
+        "current_state": "湖水清澈（相对），岸边草地修剪整齐。巨型鱿鱼每隔几天会浮出水面晒太阳，成为常见景观。",
+        "ownership": "霍格沃茨城堡",
+        "capacity": 200,
+        "cursed_status": "",
+        "sealed_status": "",
+        "transformable": "",
+        "damage_state": "完好",
+        "seasonal_variation": "冬季湖面会结冰，但冰层较薄，禁止行走；夏季水温上升，水草茂盛，人鱼活动频繁；秋季落叶漂浮。",
+        "magical_instability": "轻微，暴雨导致湖水上涨时，部分岸边会暂时被淹没。"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:001",
+        "name": "密室入口（女厕所）",
+        "type": "forbidden",
+        "description": "位于城堡二楼（或三楼）的哭泣的桃金娘的盥洗室，是一个破旧废弃的女厕所。隔间地面铺设黑白瓷砖，一面大镜子布满裂纹，水龙头锈蚀滴水，空气中弥漫着霉味和淡淡的肥皂味。其中第三个洗手池（从门口数）的水龙头侧面刻着一条微小的蛇形标记——那是斯莱特林继承人的符号。对蛇佬腔说出开启咒语，水龙头会发出绿光并旋转，露出深不见底的管道入口，直通地底斯莱特林的密室。此密室由萨拉查·斯莱特林建造，用于存放他豢养的蛇怪，旨在清除麻瓜出身的学生。入口自1992-1993学年被哈利·波特首次开启并摧毁蛇怪后，成为历史性地点，但依然被霍格沃茨列为最高禁忌区域。",
+        "house_affiliation": "斯莱特林",
+        "historical_significance": "1992-1993学年密室被再次开启，蛇怪导致多名学生石化，霍格沃茨面临关闭危机。最终哈利·波特在密室中斩杀了蛇怪，摧毁了汤姆·里德尔的日记魂器，并解救了金妮·韦斯莱。该事件深刻影响了后续对抗伏地魔的斗争。",
+        "magical_features": "入口由蛇佬腔语音激活，非蛇佬腔无法开启。管道系统经过特殊扩大咒，使人能够滑落数百英尺直达密室。密室本身内部有巨大的斯莱特林雕像和蛇怪蜕皮遗迹，石柱上缠绕着蛇形雕刻。整个区域浸透着古代黑魔法残余。",
+        "aliases": "桃金娘的盥洗室, 蛇怪巢穴入口, 斯莱特林的密室通道",
+        "is_forbidden_area": "true",
+        "founder_associated": "萨拉查·斯莱特林"
+      },
+      "access": {
+        "permissions": "仅限斯莱特林继承人（拥有蛇佬腔）或拥有其许可的人。一般学生、教职工甚至校长（除邓布利多外）都无法正常开启。",
+        "access_level": "forbidden",
+        "access_conditions": "蛇佬腔对洗手池水龙头说出开启咒语，且必须有蛇形标记未被破坏。1993年后水龙头被永久关闭，但邓布利多加固了封印；不过理论上仍可能被再次激活。",
+        "password_required": "true",
+        "time_restriction": "无，但盥洗室本身在夜间关闭，桃金娘有时会驱赶闯入者。",
+        "item_required": "",
+        "protective_enchantments": "蛇怪残骸散发的灵光会对非蛇佬腔产生压迫感，墙壁中有残留的守护咒。邓布利多、斯内普等人施加了额外的警告咒。",
+        "blood_status_restriction": "",
+        "invisibility_required": ""
+      },
+      "state": {
+        "current_state": "封存状态。盥洗室仍对师生开放（但极少有人使用，因桃金娘的吵闹和糟糕的环境），洗手池水龙头被加固且无法转动。密室内部经过清理，蛇怪骨架被移走，涂鸦和破损被部分修复。但斯莱特林的雕像依然矗立，魔法印记依然在墙壁上流动。",
+        "ownership": "霍格沃茨城堡（名义上），但实际被认为是斯莱特林遗产",
+        "capacity": 5,
+        "cursed_status": "历史残留诅咒已大幅减弱，但仍有微弱的蛇形幻影偶尔出现，吸入灰尘可能引发噩梦。",
+        "sealed_status": "入口被封死（邓布利多用高级魔咒封锁），但理论上具有蛇佬腔且知道口令的人仍可开启（需破坏封印）。自1998年后，封印由麦格教授定期检查。",
+        "transformable": "",
+        "damage_state": "盥洗室部分：陈旧但可用（水管漏水，镜面裂痕）。密室内部：完好，但部分墙面有战斗留下的裂痕。",
+        "seasonal_variation": "",
+        "magical_instability": "低。封印稳固，但密室本身与城堡底层连接，偶尔传出低沉震动。"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:017",
+        "name": "尖叫棚屋",
+        "type": "forbidden",
+        "description": "位于霍格莫德村边缘的一栋破旧两层木屋，屋顶歪斜，窗户用木板钉死，四周被枯树和杂草环绕。内部布满灰尘，地板吱呀作响，墙壁上有爪痕和旧血迹。在霍格沃茨时期，这里被传为全英国最闹鬼的建筑物，发生过骇人的尖叫和撞击声。实际上，它是莱姆斯·卢平在月圆之夜变身狼人的秘密藏身处，由邓布利多设计，打人柳守护。棚屋有一条秘密地道从霍格沃茨打人柳树洞通向这里。后来也成为凤凰社和哈利·波特等人的秘密据点，用于商讨对抗伏地魔的计划。",
+        "house_affiliation": "格兰芬多（因与卢平、詹姆·波特等劫盗者关联）",
+        "historical_significance": "见证了卢平的狼人秘密、劫盗者们的月下变形冒险、以及第五学年哈利·波特在此与卢平秘密会面讨论对抗伏地魔的计划。也曾被凤凰社用作临时联络点。",
+        "magical_features": "棚屋受到强力反咒保护，防止任何探测和跟踪咒语。内部有扩展空间，曾用于存放凤凰社物资。打人柳的树洞入口需要特定触碰结节才能停止柳条攻击。屋顶有一个可以观星的阁楼，地板下有暗格存放狼人用品。",
+        "aliases": "尖叫棚屋, 霍格莫德鬼屋",
+        "is_forbidden_area": "true",
+        "founder_associated": ""
+      },
+      "access": {
+        "permissions": "仅限知道秘密通道的人（持有活点地图或由知情者带领）。霍格莫德村民全部躲开此建筑。教职工中除邓布利多、卢平、麦格外，多数不知内情。",
+        "access_level": "forbidden",
+        "access_conditions": "必须从霍格沃茨校园内的打人柳树洞通过地道进入。地道入口需要避开打人柳的攻击（按中结节）。也可通过霍格莫德村正门进入，但正门被钉死，且需要解开多个防护咒。",
+        "password_required": "false",
+        "time_restriction": "最佳通行时间为夜晚，但白天也可能（视柳树活跃度）。月圆之夜柳树攻击性最强。",
+        "item_required": "活点地图（或精确了解地道坐标）、隐身衣（建议）。实际上只需知道结节位置即可。",
+        "protective_enchantments": "棚屋被多层隐蔽咒包围，禁止任何魔法追踪与门钥匙。内部有反幻影移形和防窃听咒。入口处有报警魔法，一旦有人靠近会通知卢平（或更早的劫盗者）。",
+        "blood_status_restriction": "false",
+        "invisibility_required": "false"
+      },
+      "state": {
+        "current_state": "废置但受到维护。1998年大战后，棚屋被重新密封，麦格教授定期派家养小精灵进行简单打扫。地道入口被加固，但依然可用。",
+        "ownership": "霍格莫德村委员会（名义上），但实际由霍格沃茨控制",
+        "capacity": 30,
+        "cursed_status": "无真正诅咒，但长期负能量积累使房屋阴冷，不熟悉的人会感到强烈不安。",
+        "sealed_status": "未被物理封印，但魔法封印强大，只有知情人可打开。",
+        "transformable": "",
+        "damage_state": "外部破旧，但内部结构稳定。屋顶有少量漏雨，地板磨损严重。",
+        "seasonal_variation": "冬季积雪覆盖，更显荒凉；夏季杂草丛生，昆虫繁多；乌鸦常年栖息在屋檐上。",
+        "magical_instability": "低。但地道中的魔法波动偶尔会影响打人柳的行为，导致柳条暂时狂乱。"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:020",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:013",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:002",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:010",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:003",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:006",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:005",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:008",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:018",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:016",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:007",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:009",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:019",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:015",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:011",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:014",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:004",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:012",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:001",
+    "e:0796e129_b1da_4aae_aff2_74732d61022d:loc:017"
+  ],
+  "upstream_step_ids": [
+    "generate_locations"
+  ],
+  "warnings": [
+    "batch 1 review (score=4.57): 发现 2 个问题并已自动修正",
+    "batch 2 review (score=4.9): 发现 1 个问题并已自动修正",
+    "batch 3 review (score=4.7): 发现 1 个问题并已自动修正",
+    "batch 4 review (score=4.14): 发现 4 个问题并已自动修正",
+    "batch 5 review (score=4.29): 发现 3 个问题并已自动修正"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}
