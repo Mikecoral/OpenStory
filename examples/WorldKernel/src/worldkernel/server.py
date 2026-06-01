@@ -41,6 +41,22 @@ async def stage1_error_handler(request: Request, exc: Stage1Error) -> JSONRespon
         content={"error": str(exc), "step": exc.step, "detail": str(exc.cause)},
     )
 
+#添加前端的翻译模块
+class TranslateRequest(BaseModel):
+    text: str
+
+@app.post("/api/utils/translate")
+async def translate_text(req: TranslateRequest):
+    """供前端使用的动态文本翻译接口"""
+    prompt = f"请将以下英文世界观设定翻译为极其精简的简体中文词组或短句。只需返回最终的翻译结果，不要任何解释、引号或多余的标点：\n{req.text}"
+    
+    try:
+        response = await llm_client.chat(prompt)
+        return {"translated": response.strip()}
+    except Exception as e:
+        import logging
+        logging.getLogger("worldkernel.server").error(f"Translation API failed: {e}")
+        return {"translated": req.text}
 
 class ParseRequest(BaseModel):
     input: str
