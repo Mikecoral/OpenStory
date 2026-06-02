@@ -1,0 +1,70 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "role",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "family_generation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "noble_rank_or_official_title",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "jinling_twelve_belles_catalogue",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "fate_couplet",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "lineage_position",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "palace_title_if_applicable",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "marital_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dowry_or_estate_inheritance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

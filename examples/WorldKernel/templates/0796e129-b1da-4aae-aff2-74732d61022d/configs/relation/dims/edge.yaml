@@ -1,0 +1,26 @@
+dim_name: EdgeDim
+id:
+  type: str
+from_id:
+  type: str
+to_id:
+  type: str
+type:
+  type: str
+direction:
+  type: str
+historical_event:
+  type: str
+  option: true
+faction_alignment:
+  type: str
+  option: true
+house_dynamic:
+  type: str
+  option: true
+special_bond:
+  type: str
+  option: true
+narrative_role:
+  type: str
+  option: true

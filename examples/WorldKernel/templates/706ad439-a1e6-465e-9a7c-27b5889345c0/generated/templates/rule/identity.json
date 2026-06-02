@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "scope",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "rule_category",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "involves_characters",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "historical_precedent",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

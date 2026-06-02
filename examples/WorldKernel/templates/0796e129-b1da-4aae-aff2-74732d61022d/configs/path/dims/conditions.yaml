@@ -1,0 +1,22 @@
+dim_name: ConditionsDim
+access_level:
+  type: str
+danger_level:
+  type: str
+required_items:
+  type: str
+activation_condition:
+  type: str
+  option: true
+failure_effect:
+  type: str
+  option: true
+protective_spells:
+  type: str
+  option: true
+tracking:
+  type: str
+  option: true
+illusion:
+  type: str
+  option: true

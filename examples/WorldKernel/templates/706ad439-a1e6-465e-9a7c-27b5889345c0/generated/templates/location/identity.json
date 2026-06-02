@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "belongs_to_estate",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "symbolic_meaning",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "key_plot_events",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "literary_imagery",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

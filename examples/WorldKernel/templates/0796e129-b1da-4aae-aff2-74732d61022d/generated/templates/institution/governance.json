@@ -1,0 +1,70 @@
+{
+  "fields": [
+    {
+      "name": "leader",
+      "type": "str",
+      "required": true,
+      "ref": "character"
+    },
+    {
+      "name": "rules",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "decision_process",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "hierarchy_structure",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "succession_rules",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "meeting_frequency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "internal_discipline_mechanism",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "voting_system",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secret_meeting_place",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "password_or_secret_entry_method",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "decision_enforcement_mechanism",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

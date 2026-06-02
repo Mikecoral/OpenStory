@@ -140,3 +140,92 @@ class RouteRasterizationResult(BaseModel):
     collision_grid: list[list[int]] = Field(default_factory=list)
     warnings: list[SpatialInputWarning] = Field(default_factory=list)
     provenance: dict[str, Any] = Field(default_factory=dict)
+
+
+# ---------------------------------------------------------------------------
+# Phase E1: Canonical artifact & validation models
+# ---------------------------------------------------------------------------
+
+
+class SpatialIndexes(BaseModel):
+    location_id_to_region: dict[str, SpatialRegion] = Field(default_factory=dict)
+    path_edge_id_to_route: dict[str, SpatialRoute] = Field(default_factory=dict)
+    location_id_to_routes: dict[str, list[str]] = Field(default_factory=dict)
+
+
+class CanonicalSpatialArtifact(BaseModel):
+    world_id: str
+    grid_width: int
+    grid_height: int
+    tile_size: int
+    regions: list[SpatialRegion] = Field(default_factory=list)
+    routes: list[SpatialRoute] = Field(default_factory=list)
+    road_tiles: list[GridPoint] = Field(default_factory=list)
+    collision_grid: list[list[int]] = Field(default_factory=list)
+    indexes: SpatialIndexes = Field(default_factory=SpatialIndexes)
+    provenance: dict[str, Any] = Field(default_factory=dict)
+
+
+class ValidationIssue(BaseModel):
+    code: str
+    severity: str  # "error" | "warning"
+    message: str
+    affected_id: str = ""
+
+
+class ValidationReport(BaseModel):
+    passed: bool
+    issues: list[ValidationIssue] = Field(default_factory=list)
+    provenance: dict[str, Any] = Field(default_factory=dict)
+
+
+class E1ValidationResult(BaseModel):
+    artifact: CanonicalSpatialArtifact
+    report: ValidationReport
+
+
+# ---------------------------------------------------------------------------
+# Phase G: Spatial blueprint models
+# ---------------------------------------------------------------------------
+
+
+class BlueprintGrid(BaseModel):
+    width: int
+    height: int
+    tile_size: int
+
+
+class BlueprintRegion(BaseModel):
+    location_id: str
+    name: str
+    bounds: dict[str, int]  # {x, y, w, h}
+    entrance: dict[str, int]  # {x, y}
+    tags: list[str] = Field(default_factory=list)
+
+
+class BlueprintRoute(BaseModel):
+    path_edge_id: str
+    from_location_id: str
+    to_location_id: str
+    centerline: list[GridPoint] = Field(default_factory=list)
+    corridor_width: int = 3
+    movement_cost: float = 1.0
+    access_tags: list[str] = Field(default_factory=list)
+
+
+class BlueprintSpawnPoint(BaseModel):
+    character_id: str
+    character_name: str
+    location_id: str
+    position: list[int]  # [x, y]
+
+
+class SpatialBlueprint(BaseModel):
+    world_id: str
+    grid: BlueprintGrid
+    collision: list[list[int]] = Field(default_factory=list)
+    regions: list[BlueprintRegion] = Field(default_factory=list)
+    routes: list[BlueprintRoute] = Field(default_factory=list)
+    road_tiles: list[GridPoint] = Field(default_factory=list)
+    spawn_points: list[BlueprintSpawnPoint] = Field(default_factory=list)
+    provenance: dict[str, Any] = Field(default_factory=dict)

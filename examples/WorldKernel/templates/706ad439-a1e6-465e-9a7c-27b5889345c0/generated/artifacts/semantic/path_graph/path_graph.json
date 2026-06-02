@@ -1,0 +1,877 @@
+{
+  "artifact_type": "path_edge",
+  "items": [
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:014",
+        "name": "荣庆堂至王夫人院穿堂",
+        "type": "穿堂",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:005",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:014",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "女眷及宝玉可通行",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:005",
+        "name": "贾母院至荣禧堂甬道",
+        "type": "甬道",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:005",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:003",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:009",
+        "name": "贾母院至大观园后门",
+        "type": "角门",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:005",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:004",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "限制",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "卯时至戌时",
+        "pass_required": "",
+        "gender_rule": "仅限女眷及宝玉",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:008",
+        "name": "王夫人院至荣禧堂正路",
+        "type": "正路",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:014",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:003",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:018",
+        "name": "怡红院至沁芳桥花径",
+        "type": "小径",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:007",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:015",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:026",
+        "name": "潇湘馆至沁芳桥竹径",
+        "type": "石阶",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:018",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:015",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:020",
+        "name": "蘅芜苑至沁芳桥香草径",
+        "type": "游廊",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:008",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:015",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:015",
+        "name": "栊翠庵至沁芳桥山坡石阶",
+        "type": "石阶",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:006",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:015",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低风险",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:024",
+        "name": "藕香榭至沁芳桥水廊",
+        "type": "游廊",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:013",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:015",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:003",
+        "name": "缀锦楼至沁芳桥湖岸",
+        "type": "小径",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:002",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:015",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:012",
+        "name": "大观园门至沁芳桥",
+        "type": "主路",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:004",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:015",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:001",
+        "name": "怡红院至宝玉书房",
+        "type": "走廊",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:007",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:001",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:013",
+        "name": "贾府学堂至贾母院",
+        "type": "甬道",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:011",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:005",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "限制",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "卯时至申时",
+        "pass_required": "",
+        "gender_rule": "仅限男丁及宝玉",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:023",
+        "name": "大厨房至库房",
+        "type": "走廊",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:012",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:016",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:010",
+        "name": "大厨房至大观园角门",
+        "type": "角门",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:012",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:004",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "限制",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "由管厨房婆子掌管",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:025",
+        "name": "库房至王夫人院",
+        "type": "甬道",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:016",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:014",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "钥匙",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:006",
+        "name": "贾氏宗祠至荣禧堂",
+        "type": "正路",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:010",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:003",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "祭祀时封闭",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:021",
+        "name": "贾氏宗祠至铁槛寺",
+        "type": "官道",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:010",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:009",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低风险",
+        "required_items": "马车",
+        "time_window": "卯时至酉时",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:022",
+        "name": "铁槛寺至水月庵",
+        "type": "乡道",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:009",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:017",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低风险",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:016",
+        "name": "水月庵至栊翠庵",
+        "type": "山路",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:017",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:006",
+        "bidirectional": false,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "限制",
+        "danger_level": "中风险",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "需妙玉许可",
+        "gender_rule": "仅限女尼",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:002",
+        "name": "缀锦楼至藕香榭",
+        "type": "水廊",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:002",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:013",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:019",
+        "name": "潇湘馆至怡红院",
+        "type": "花径",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:018",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:007",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:017",
+        "name": "蘅芜苑至怡红院",
+        "type": "游廊",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:008",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:007",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:007",
+        "name": "贾府学堂至荣禧堂",
+        "type": "甬道",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:011",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:003",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "仅限男丁",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:004",
+        "name": "大观园至荣禧堂",
+        "type": "花园甬道",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:004",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:003",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "限制",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "卯时至戌时",
+        "pass_required": "",
+        "gender_rule": "仅限女眷及宝玉",
+        "supervisor_control": "",
+        "emergency_override": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:011",
+        "name": "王夫人院至大观园角门",
+        "type": "角门",
+        "belongs_to_household": "",
+        "path_type": "",
+        "is_inside_garden": "",
+        "hierarchy_rank": "",
+        "connected_courtyard": ""
+      },
+      "endpoints": {
+        "from_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:014",
+        "to_id": "e:706ad439_a1e6_465e_9a7c_27b5889345c0:loc:004",
+        "bidirectional": true,
+        "physical_form": "",
+        "traffic_restriction": "",
+        "guarded_by": "",
+        "ritual_use": "",
+        "seasonal_condition": ""
+      },
+      "conditions": {
+        "access_level": "限制",
+        "danger_level": "安全",
+        "required_items": "无",
+        "time_window": "",
+        "pass_required": "",
+        "gender_rule": "仅限女眷及宝玉",
+        "supervisor_control": "由王夫人陪房掌管",
+        "emergency_override": ""
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:014",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:005",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:009",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:008",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:018",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:026",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:020",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:015",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:024",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:003",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:012",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:001",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:013",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:023",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:010",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:025",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:006",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:021",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:022",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:016",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:002",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:019",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:017",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:007",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:004",
+    "e:706ad439_a1e6_465e_9a7c_27b5889345c0:path:011"
+  ],
+  "upstream_step_ids": [
+    "generate_paths"
+  ],
+  "warnings": [
+    "review (score=4.857): 路径path_017的ritual_use字段应位于endpoints而非conditions中。"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

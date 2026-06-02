@@ -1,0 +1,71 @@
+{
+  "world_id": "0796e129-b1da-4aae-aff2-74732d61022d",
+  "source_ids": [
+    "primary"
+  ],
+  "schema_version": "stage2-semantic-v1",
+  "artifact_files": {
+    "location_profile": "locations\\locations.json",
+    "character_profile": "characters\\characters.json",
+    "path_edge": "path_graph\\path_graph.json",
+    "relation_edge": "relation_graph\\relation_graph.json"
+  },
+  "counts": {
+    "location_profile": 20,
+    "character_profile": 15,
+    "path_edge": 28,
+    "relation_edge": 42
+  },
+  "constraints": [
+    {
+      "constraint_id": "magical_secrecy",
+      "name": "魔法世界保密法",
+      "description": "魔法世界必须对麻瓜（非魔法人类）隐藏存在，使用魔法不能暴露",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "magic_fundamentals",
+      "name": "魔法基本法则",
+      "description": "魔法不能凭空创造食物，不能被死者复活，不能违背甘普基本变形法则等，且需要使用魔杖（除部分魔法生物）",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "hogwarts_enchantments",
+      "name": "霍格沃茨固有魔咒",
+      "description": "城堡内无法幻影移形（除非解除限制），楼梯会移动，画像能交流，部分区域对特定学生开放或禁止",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "blood_status_hierarchy",
+      "name": "血统等级观念",
+      "description": "纯血统、混血、麻瓜出身等血统分类在巫师社会造成歧视与冲突，尤其在伏地魔崛起时期更为严重",
+      "scope": "global"
+    }
+  ],
+  "timestamp": "2026-06-01T14:23:11.896970+00:00",
+  "provenance": {
+    "stage1_inputs": {
+      "source": "stage1.pipeline",
+      "source_id": "primary",
+      "world_id": "0796e129-b1da-4aae-aff2-74732d61022d",
+      "world_background_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\0796e129-b1da-4aae-aff2-74732d61022d\\generated\\plan\\world_background.json",
+      "execution_plan_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\0796e129-b1da-4aae-aff2-74732d61022d\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\0796e129-b1da-4aae-aff2-74732d61022d\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\0796e129-b1da-4aae-aff2-74732d61022d\\generated\\world_template.json",
+      "schema_manifest_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\0796e129-b1da-4aae-aff2-74732d61022d\\models\\schema_manifest.json",
+      "artifact_manifest_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\0796e129-b1da-4aae-aff2-74732d61022d\\generated\\artifact_manifest.json",
+      "session_root": "E:\\OpenStory\\examples\\WorldKernel\\templates\\0796e129-b1da-4aae-aff2-74732d61022d"
+    },
+    "world_background": {
+      "source": "stage1.pipeline",
+      "artifact": "world_background",
+      "world_background_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\0796e129-b1da-4aae-aff2-74732d61022d\\generated\\plan\\world_background.json",
+      "execution_plan_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\0796e129-b1da-4aae-aff2-74732d61022d\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\0796e129-b1da-4aae-aff2-74732d61022d\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\0796e129-b1da-4aae-aff2-74732d61022d\\generated\\world_template.json",
+      "schema_manifest_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\0796e129-b1da-4aae-aff2-74732d61022d\\models\\schema_manifest.json",
+      "artifact_manifest_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\0796e129-b1da-4aae-aff2-74732d61022d\\generated\\artifact_manifest.json",
+      "session_root": "E:\\OpenStory\\examples\\WorldKernel\\templates\\0796e129-b1da-4aae-aff2-74732d61022d"
+    }
+  }
+}

@@ -1,0 +1,395 @@
+{
+  "primary": "magic_school",
+  "secondary": null,
+  "confidence": 0.95,
+  "tags": [
+    "魔法",
+    "学院",
+    "衍生",
+    "青少年",
+    "冒险"
+  ],
+  "world_name": "霍格沃茨魔法学院",
+  "world_origin_summary": "衍生自《哈利·波特》系列，以1990年代魔法世界中霍格沃茨魔法学院的日常教学、学生冒险与对抗黑暗势力为核心",
+  "scope": "single_location",
+  "simulation_start": {
+    "time_point": "1991-1992学年开学",
+    "trigger_event": "哈利·波特入学霍格沃茨",
+    "year": "1991",
+    "narrative_context": "哈利·波特首次进入魔法世界，发现自己是传说中的男孩，同时与伙伴们开始了解威胁魔法石的阴谋"
+  },
+  "location_archetypes": [
+    {
+      "type_id": "teaching_space",
+      "type_name": "教学空间",
+      "description": "教授授课的教室与实验室，包含魔法史、魔药课、变形术等各类课程场所",
+      "common_fields": [
+        "subject",
+        "professor_id",
+        "capacity",
+        "equipment_level"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "potions_classroom",
+          "name": "魔药课教室",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 1,
+          "role_in_world": "斯内普教授授课与贬低学生的标志性场所"
+        }
+      ]
+    },
+    {
+      "type_id": "communal_space",
+      "type_name": "公共区域",
+      "description": "全校师生聚集的交流场所，包括大礼堂、公共休息室等",
+      "common_fields": [
+        "capacity",
+        "house_affiliation",
+        "access_level"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "great_hall",
+          "name": "大礼堂",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "用餐、宴会、分院仪式的中心场所"
+        }
+      ]
+    },
+    {
+      "type_id": "dormitory",
+      "type_name": "宿舍区",
+      "description": "各学院学生的住宿区域，包括寝室与公共休息室，是学生私密活动与友谊建立的空间",
+      "common_fields": [
+        "house",
+        "floor",
+        "capacity",
+        "security_level"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "gryffindor_common_room",
+          "name": "格兰芬多公共休息室",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "铁三角及其他格兰芬多学生策划行动的秘密据点"
+        }
+      ]
+    },
+    {
+      "type_id": "library",
+      "type_name": "图书馆",
+      "description": "霍格沃茨最大的知识收藏处，也是禁书区的所在，学生查资料与逃避巡查的常用地点",
+      "common_fields": [
+        "restricted_section",
+        "opening_hours",
+        "librarian_id"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "hogwarts_library",
+          "name": "霍格沃茨图书馆",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "赫敏等学生研究魔法与寻找线索的核心地点"
+        }
+      ]
+    },
+    {
+      "type_id": "outdoor_space",
+      "type_name": "户外场地",
+      "description": "城堡外的自然与运动场地，包括魁地奇球场、花园、湖泊等",
+      "common_fields": [
+        "weather_impact",
+        "activity_type",
+        "area_size"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "quidditch_pitch",
+          "name": "魁地奇球场",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 2,
+          "role_in_world": "学院间魁地奇比赛的举办场地，也是哈利展现天赋的舞台"
+        }
+      ]
+    },
+    {
+      "type_id": "forbidden_area",
+      "type_name": "禁地",
+      "description": "禁止学生进入的危险区域，包括禁林、密室、有求必应屋等",
+      "common_fields": [
+        "danger_level",
+        "prohibited_children",
+        "hidden_content"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "forbidden_forest",
+          "name": "禁林",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 2,
+          "role_in_world": "神奇生物栖息地与危险挑战的发生地"
+        }
+      ]
+    }
+  ],
+  "character_archetypes": [
+    {
+      "type_id": "student",
+      "type_name": "学生",
+      "description": "在霍格沃茨求学的男女巫师少年，按年级和学院划分，是故事的核心群体",
+      "common_fields": [
+        "house",
+        "year",
+        "blood_status",
+        "prefect_status"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "harry_potter",
+          "name": "哈利·波特",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "主角兼救世主，对抗伏地魔的关键人物"
+        }
+      ]
+    },
+    {
+      "type_id": "faculty",
+      "type_name": "教职工",
+      "description": "霍格沃茨的教学与管理团队，包含教授、院长、校长及其他工作人员",
+      "common_fields": [
+        "subject",
+        "house_affiliation",
+        "teaching_tenure",
+        "loyalty"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "albus_dumbledore",
+          "name": "阿不思·邓布利多",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "霍格沃茨校长，引导哈利与对抗伏地魔的最高领袖"
+        }
+      ]
+    },
+    {
+      "type_id": "ghost_poltergeist",
+      "type_name": "幽灵与恶作剧精灵",
+      "description": "游荡在霍格沃茨的非实体存在，具有特殊能力与性格，影响校园氛围",
+      "common_fields": [
+        "house_affiliation",
+        "visibility",
+        "behavior_pattern"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "sir_nicholas",
+          "name": "几乎无头的尼克",
+          "importance": "minor",
+          "source_type": "canonical",
+          "confidence": 0.95,
+          "generation_priority": 3,
+          "role_in_world": "格兰芬多塔楼的常驻幽灵，提供幽默与历史线索"
+        }
+      ]
+    },
+    {
+      "type_id": "antagonist",
+      "type_name": "反派",
+      "description": "对霍格沃茨与魔法界构成威胁的黑暗巫师或生物，包括伏地魔本人及其追随者",
+      "common_fields": [
+        "dark_rank",
+        "followers",
+        "objective",
+        "danger_level"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "tom_riddle_voldemort",
+          "name": "汤姆·里德尔/伏地魔",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 1,
+          "role_in_world": "最终反派，意图征服魔法世界并摧毁哈利"
+        }
+      ]
+    },
+    {
+      "type_id": "creature_caretaker",
+      "type_name": "神奇生物管理员",
+      "description": "负责照顾城堡与场地的魔法生物或非巫师人员，如海格、费尔奇、家养小精灵等",
+      "common_fields": [
+        "role",
+        "species",
+        "location_of_duty"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "rubeus_hagrid",
+          "name": "鲁伯·海格",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "猎场看守兼神奇生物饲养专家，哈利的重要盟友与引路人"
+        }
+      ]
+    }
+  ],
+  "rule_archetypes": [
+    {
+      "type_id": "school_code_of_conduct",
+      "type_name": "校规",
+      "description": "霍格沃茨日常行为准则，包括宵禁、不准进入禁林、不准使用禁忌魔法等",
+      "common_fields": [
+        "violation_penalty",
+        "enforcer_id",
+        "exception_clauses"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "curfew_rule",
+          "name": "宵禁规定",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 1,
+          "role_in_world": "学生夜晚不得离开公共休息室或宿舍，违反会被扣分或关禁闭"
+        }
+      ]
+    },
+    {
+      "type_id": "house_point_system",
+      "type_name": "学院杯计分规则",
+      "description": "通过为学院加分或扣分来鼓励成就与惩罚错误，年末学院杯授予总冠军学院",
+      "common_fields": [
+        "point_range",
+        "awarding_authority",
+        "tie_breaker"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "point_award_mechanism",
+          "name": "学院分奖励机制",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.97,
+          "generation_priority": 1,
+          "role_in_world": "教职工可凭具体理由为学生加减分，直接影响学院竞争"
+        }
+      ]
+    },
+    {
+      "type_id": "magical_regulation",
+      "type_name": "魔法法规",
+      "description": "魔法部制定的通用魔法法律，如未成年巫师不得在校外使用魔法、复方汤剂等魔药限制等",
+      "common_fields": [
+        "enforcing_body",
+        "applicable_scope",
+        "severity"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "underage_magic_restriction",
+          "name": "未成年魔法使用限制",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 2,
+          "role_in_world": "限制11-17岁巫师在校外施展魔法，否则可能被开除"
+        }
+      ]
+    },
+    {
+      "type_id": "quidditch_rules",
+      "type_name": "魁地奇比赛规则",
+      "description": "魁地奇运动的官方竞赛规则，包括计时、犯规、得分方式等",
+      "common_fields": [
+        "team_size",
+        "positions",
+        "foul_types",
+        "golden_snitch_value"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "quidditch_match_rules",
+          "name": "魁地奇标准规则",
+          "importance": "minor",
+          "source_type": "canonical",
+          "confidence": 0.96,
+          "generation_priority": 3,
+          "role_in_world": "规范魁地奇比赛，骑扫帚追逐鬼飞球等，抓住金色飞贼得150分并结束比赛"
+        }
+      ]
+    },
+    {
+      "type_id": "sorting_ceremony",
+      "type_name": "分院仪式规则",
+      "description": "每年新生通过分院帽分入四个学院，分院帽考量学生特质与意愿",
+      "common_fields": [
+        "sorting_criteria",
+        "ceremony_location",
+        "exceptions"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "sorting_hat_ritual",
+          "name": "分院帽仪式",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "每年开学晚宴上进行，基于学生的品质与选择分配学院"
+        }
+      ]
+    }
+  ],
+  "world_constraints": [
+    {
+      "constraint_id": "magical_secrecy",
+      "name": "魔法世界保密法",
+      "description": "魔法世界必须对麻瓜（非魔法人类）隐藏存在，使用魔法不能暴露",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "magic_fundamentals",
+      "name": "魔法基本法则",
+      "description": "魔法不能凭空创造食物，不能被死者复活，不能违背甘普基本变形法则等，且需要使用魔杖（除部分魔法生物）",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "hogwarts_enchantments",
+      "name": "霍格沃茨固有魔咒",
+      "description": "城堡内无法幻影移形（除非解除限制），楼梯会移动，画像能交流，部分区域对特定学生开放或禁止",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "blood_status_hierarchy",
+      "name": "血统等级观念",
+      "description": "纯血统、混血、麻瓜出身等血统分类在巫师社会造成歧视与冲突，尤其在伏地魔崛起时期更为严重",
+      "scope": "global"
+    }
+  ]
+}

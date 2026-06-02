@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "bidirectional",
+      "type": "bool",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "physical_form",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "traffic_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "guarded_by",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "ritual_use",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "seasonal_condition",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

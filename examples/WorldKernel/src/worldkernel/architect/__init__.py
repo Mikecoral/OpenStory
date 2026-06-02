@@ -21,6 +21,7 @@ from worldkernel.architect.semantic import (
     run_semantic_generation,
     save_semantic_artifacts,
 )
+from worldkernel.architect.pipeline import Stage2Result, run_stage2, save_spatial_blueprint
 __all__ = [
     "ExecutionDAG",
     "FoundationBundle",
@@ -28,6 +29,7 @@ __all__ = [
     "ResolvedSeed",
     "SchemaLoadError",
     "SchemaRegistry",
+    "Stage2Result",
     "ToolRegistry",
     "WorldBackgroundArtifact",
     "build_foundation_bundle",
@@ -38,5 +40,7 @@ __all__ = [
     "load_stage1_artifacts_from_manifest",
     "load_stage1_session_schema_source",
     "run_semantic_generation",
+    "run_stage2",
     "save_semantic_artifacts",
+    "save_spatial_blueprint",
 ]

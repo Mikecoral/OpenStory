@@ -1,0 +1,19 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+magical_properties:
+  type: str
+  option: true
+is_moving:
+  type: str
+  option: true
+historical_significance:
+  type: str
+  option: true
+alternate_names:
+  type: str
+  option: true

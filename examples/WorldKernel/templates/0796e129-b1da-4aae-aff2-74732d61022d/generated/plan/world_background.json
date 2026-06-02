@@ -1,0 +1,46 @@
+{
+  "world_name": "霍格沃茨魔法学院",
+  "world_origin_summary": "衍生自《哈利·波特》系列，以1990年代魔法世界中霍格沃茨魔法学院的日常教学、学生冒险与对抗黑暗势力为核心",
+  "primary": "magic_school",
+  "secondary": null,
+  "tags": [
+    "魔法",
+    "学院",
+    "衍生",
+    "青少年",
+    "冒险"
+  ],
+  "scope": "single_location",
+  "simulation_start": {
+    "time_point": "1991-1992学年开学",
+    "trigger_event": "哈利·波特入学霍格沃茨",
+    "year": "1991",
+    "narrative_context": "哈利·波特首次进入魔法世界，发现自己是传说中的男孩，同时与伙伴们开始了解威胁魔法石的阴谋"
+  },
+  "world_constraints": [
+    {
+      "constraint_id": "magical_secrecy",
+      "name": "魔法世界保密法",
+      "description": "魔法世界必须对麻瓜（非魔法人类）隐藏存在，使用魔法不能暴露",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "magic_fundamentals",
+      "name": "魔法基本法则",
+      "description": "魔法不能凭空创造食物，不能被死者复活，不能违背甘普基本变形法则等，且需要使用魔杖（除部分魔法生物）",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "hogwarts_enchantments",
+      "name": "霍格沃茨固有魔咒",
+      "description": "城堡内无法幻影移形（除非解除限制），楼梯会移动，画像能交流，部分区域对特定学生开放或禁止",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "blood_status_hierarchy",
+      "name": "血统等级观念",
+      "description": "纯血统、混血、麻瓜出身等血统分类在巫师社会造成歧视与冲突，尤其在伏地魔崛起时期更为严重",
+      "scope": "global"
+    }
+  ]
+}

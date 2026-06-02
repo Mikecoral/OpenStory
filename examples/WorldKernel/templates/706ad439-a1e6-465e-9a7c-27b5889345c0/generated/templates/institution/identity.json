@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "belongs_to_mansion_荣国府_or_宁国府",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "level_core_or_auxiliary",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "symbolic_significance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "founded_after_yuansheng_visit",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

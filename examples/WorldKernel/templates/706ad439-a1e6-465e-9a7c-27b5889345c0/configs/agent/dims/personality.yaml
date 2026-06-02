@@ -1,0 +1,28 @@
+dim_name: PersonalityDim
+traits:
+  type: list_str
+values:
+  type: list_str
+speech_style:
+  type: str
+poetic_talent_level:
+  type: str
+  option: true
+confucian_moral_alignment:
+  type: str
+  option: true
+attitude_toward_feudal_rites:
+  type: str
+  option: true
+romantic_or_love_view:
+  type: str
+  option: true
+religious_or_superstitious_disposition:
+  type: str
+  option: true
+loyalty_to_jia_family:
+  type: str
+  option: true
+social_ambition:
+  type: str
+  option: true

@@ -1,0 +1,21 @@
+dim_name: EndpointsDim
+from_id:
+  type: str
+  ref: location
+to_id:
+  type: str
+  ref: location
+bidirectional:
+  type: bool
+intermediate_points:
+  type: str
+  option: true
+connection_visibility:
+  type: str
+  option: true
+portal_type:
+  type: str
+  option: true
+distance_or_time:
+  type: str
+  option: true

@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "house_affiliation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "historical_significance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "magical_features",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "aliases",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_forbidden_area",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "founder_associated",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}
