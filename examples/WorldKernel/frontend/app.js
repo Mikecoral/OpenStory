@@ -88,6 +88,16 @@ function showResult(session, stage2) {
   document.getElementById('resultMsg').textContent = msg;
   // 隐藏旧的独立按钮（统一端点已自动完成空间生成）
   document.getElementById('spatialBtn').style.display = 'none';
+
+  // ================= 新增：配置并显示跳转按钮 =================
+  const jumpBtn = document.getElementById('jump-to-viewer-btn');
+  if (jumpBtn) {
+    // 动态把刚才跑出来的 session_id 拼接到链接里
+    jumpBtn.href = `/viewer.html?session_id=${session.session_id}`;
+    // 显示按钮（用 inline-block 保持布局美观）
+    jumpBtn.style.display = 'inline-block'; 
+  }
+  // ============================================================
 }
 
 function renderBlueprint(spatial) {
