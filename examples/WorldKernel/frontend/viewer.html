@@ -246,7 +246,7 @@
             "open": "开放"
         };
 
-        const dynamicKeyCache = {}; // 【新增】：用来存储大模型翻译回来的动态字段名
+        const dynamicKeyCache = {};
 
         const urlParams = new URLSearchParams(window.location.search);
         const sessionId = urlParams.get('session_id');
@@ -277,7 +277,6 @@
             elements.errorMsg.innerText = msg;
         }
 
-        // ================= 核心：调用后端的翻译 API =================
         async function fetchTranslation(textStr) {
             try {
                 const response = await fetch('/api/utils/translate', {
@@ -295,7 +294,6 @@
             return textStr;
         }
 
-        // ================= 数据清洗：深层遍历并翻译幻觉英文及动态字段名 =================
         async function translateDynamicData(obj) {
             if (!obj) return;
             if (Array.isArray(obj)) {
@@ -306,15 +304,12 @@
                 for (let key in obj) {
                     if (key === 'id' || key === 'location_id' || key === 'items' || key === 'artifact_type') continue;
                     
-                    // 【新增逻辑】：如果这个字段名（冒号前的Key）不在字典里，且全是英文，那就把它翻译了！
                     if (!keyMap[key] && !dynamicKeyCache[key] && /[a-zA-Z]/.test(key)) {
-                        // 比如把 "blood_status" 变成 "blood status" 发给大模型，这样翻译得更准
                         const readableKey = key.split('_').join(' ');
                         const translatedKey = await fetchTranslation(readableKey);
                         dynamicKeyCache[key] = translatedKey;
                     }
 
-                    // 【原有逻辑】：翻译冒号后面的值（Value）
                     if (typeof obj[key] === 'string') {
                         const val = obj[key].trim();
                         if (/[a-zA-Z]{4,}/.test(val)) {
@@ -334,8 +329,9 @@
 
         async function loadWorldData() {
             try {
-                const charUrl = `/api/stage1/session/${sessionId}/generated/artifacts/characters/characters.json`;
-                const locUrl = `/api/stage1/session/${sessionId}/generated/artifacts/locations/locations.json`;
+                // 🚨 核心修复：更新了 fetch 路径，加上了 /semantic/
+                const charUrl = `/api/stage1/session/${sessionId}/generated/artifacts/semantic/characters/characters.json`;
+                const locUrl = `/api/stage1/session/${sessionId}/generated/artifacts/semantic/locations/locations.json`;
 
                 const [charRes, locRes] = await Promise.allSettled([
                     fetch(charUrl).then(r => r.ok ? r.json() : null),
@@ -350,7 +346,6 @@
                     return;
                 }
 
-                // ================= 进入数据清洗阶段 =================
                 elements.loader.innerHTML = '正在呼叫 Agent 进行动态语义解析 <span class="translating-pulse">...</span>';
                 
                 await Promise.all([
@@ -358,7 +353,6 @@
                     translateDynamicData(locData)
                 ]);
 
-                // 清洗完毕，关掉加载动画，进入渲染
                 elements.loader.style.display = 'none';
 
                 if (charData.length > 0) renderCards(charData, 'character');
@@ -418,7 +412,6 @@
                 if(key === 'id' && typeof obj[key] === 'string' && obj[key].startsWith('e:')) continue;
                 if(key === 'location_id' && typeof obj[key] === 'string' && obj[key].startsWith('e:')) continue;
                 
-                // 【应用翻译】：优先查本地字典 -> 再查大模型动态翻译的缓存 -> 最后保底用英文首字母大写
                 let displayKey = keyMap[key] || dynamicKeyCache[key];
                 if (!displayKey) {
                     displayKey = key.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
