@@ -17,6 +17,9 @@ https://mp.weixin.qq.com/s/1Z9LAoombuvMGBkpyyMCrg
 **✨ 《红楼梦》的剧情模式模式现已上线！**  
 全新剧情模式将带你走进《红楼梦》，以复兴大观园为目标。你可自由向角色下达指令，AI 会根据你的选择推演剧情走向，影响整个复兴进程。同时新增故事回溯功能，可回到过往节点重选。你的每一次抉择都会衍生全新剧情分支，体验不断变化的故事冒险。
 
+**✨ 我们的 OpenStory Launcher 客户端上线啦！**  
+之前各位穿越者经常反馈不知道如何安装游戏，让我们意识到了当前的门槛太高的问题。于是我们连夜开发了客户端版本，支持一键点击即玩！前往 [release](https://github.com/ZJU-LLMs/OpenStory/releases) 下载！快点参与到红楼梦世界来吧！
+
 ##
 OpenStory 是一个基于大语言模型（LLM）和 [Agent-Kernel](https://github.com/ZJU-LLMs/Agent-Kernel) 开发的多智能体推演与模拟框架。
 
