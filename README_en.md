@@ -11,14 +11,14 @@
 
 ## 🌟 Key News
 
+**✨ The OpenStory Launcher is now live!**  
+We received lots of feedback from travelers who didn't know how to install the game, which made us realize the setup barrier was too high. So we worked overnight to develop a launcher that supports one-click play! Head over to [releases](https://github.com/ZJU-LLMs/OpenStory/releases) to download it! Come join the world of Dream of the Red Chamber now!
+
 **✨Our project was reported by "New AI Era"！**  
 https://mp.weixin.qq.com/s/1Z9LAoombuvMGBkpyyMCrg
 
 **✨ The plot mode of *Dream of the Red Chamber* is now online!**  
 A brand new story mode aims to revive the Grand View Garden. You can freely give commands to characters, and the AI will simulate the plot based on your choices, affecting the entire revival process. At the same time, a new story rewind feature allows you to return to previous points and make different choices.
-
-**✨ The OpenStory Launcher is now live!**  
-We received lots of feedback from travelers who didn't know how to install the game, which made us realize the setup barrier was too high. So we worked overnight to develop a launcher that supports one-click play! Head over to [releases](https://github.com/ZJU-LLMs/OpenStory/releases) to download it! Come join the world of Dream of the Red Chamber now!
 
 ##
   OpenStory is a multi-agent deduction and simulation framework developed based on Large Language Models (LLMs) and [Agent-Kernel](https://github.com/ZJU-LLMs/Agent-Kernel).
