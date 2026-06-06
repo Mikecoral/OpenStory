@@ -1,0 +1,436 @@
+{
+  "primary": "retro_city_night",
+  "secondary": null,
+  "confidence": 0.92,
+  "tags": [
+    "怀旧",
+    "孤独",
+    "夏日",
+    "爵士乐",
+    "酒吧",
+    "青春",
+    "疏离",
+    "美国文化影响",
+    "1970年代",
+    "城市"
+  ],
+  "world_name": "且听风吟的世界",
+  "world_origin_summary": "衍生自村上春树小说《且听风吟》，以1970年代日本关西城市为背景，描绘战后一代的孤独感、青春流逝与个体在喧嚣中的静默",
+  "scope": "city",
+  "simulation_start": {
+    "time_point": "1970年8月的一个闷热夏夜",
+    "trigger_event": "主角在杰氏酒吧饮酒时，与醉倒在吧台的少女相遇并产生对话",
+    "year": "1970",
+    "narrative_context": "美国文化深刻渗透的关西城市，夏夜的湿热与爵士乐交织，主角在酒精与唱片声中回顾与少女的偶然邂逅，以及对逝去青春的无尽追忆"
+  },
+  "location_archetypes": [
+    {
+      "type_id": "bar_and_jazz_club",
+      "type_name": "酒吧与爵士俱乐部",
+      "description": "城市夜晚的核心社交场所，弥漫爵士乐与酒精气息，是主角与朋友常聚、偶遇陌生人的空间，承载对话与回忆",
+      "common_fields": [
+        "owner",
+        "music_genre",
+        "atmosphere",
+        "opening_hours",
+        "typical_drink"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "jazz_bar_jay",
+          "name": "杰氏酒吧",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 1,
+          "role_in_world": "世界叙事枢纽，主角与鼠、少女等人相遇对话的核心场所"
+        }
+      ]
+    },
+    {
+      "type_id": "restaurant_and_diner",
+      "type_name": "餐馆与食堂",
+      "description": "城市日常饮食场所，提供简单餐食与饮品，是次要社交与独处的空间",
+      "common_fields": [
+        "cuisine_type",
+        "opening_hours",
+        "cost_level",
+        "popular_dish"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "college_cafeteria",
+          "name": "大学食堂",
+          "importance": "minor",
+          "source_type": "inferred",
+          "confidence": 0.7,
+          "generation_priority": 3,
+          "role_in_world": "主角与鼠偶尔交谈、消磨时间的地点"
+        }
+      ]
+    },
+    {
+      "type_id": "residential_building",
+      "type_name": "住宅楼",
+      "description": "城市中密集排列的公寓与住宅，主角独居的房间是内向思考与回忆的私密空间",
+      "common_fields": [
+        "floor",
+        "room_size",
+        "view",
+        "furniture_style"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "protagonist_apartment",
+          "name": "主角公寓",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.85,
+          "generation_priority": 2,
+          "role_in_world": "主角独处、写小说、听唱片、回忆往事的私人领地"
+        }
+      ]
+    },
+    {
+      "type_id": "coastal_promenade",
+      "type_name": "海岸步道",
+      "description": "城市边缘的海滨步道，夜晚海风与路灯下适合漫无目的的散步与遐思",
+      "common_fields": [
+        "length",
+        "lighting",
+        "seating",
+        "typical_time"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "harbor_walkway",
+          "name": "港口步道",
+          "importance": "major",
+          "source_type": "inferred",
+          "confidence": 0.75,
+          "generation_priority": 2,
+          "role_in_world": "主角与少女偶尔同行、象征疏离与短暂连接的空间"
+        }
+      ]
+    },
+    {
+      "type_id": "park_and_green_space",
+      "type_name": "公园与绿地",
+      "description": "散布在城市中的小型公园，为逃避室内喧嚣者提供片刻宁静",
+      "common_fields": [
+        "size",
+        "features",
+        "noise_level",
+        "visitor_profile"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "riverside_park",
+          "name": "河边公园",
+          "importance": "minor",
+          "source_type": "inferred",
+          "confidence": 0.7,
+          "generation_priority": 3,
+          "role_in_world": "主角偶尔停留、观察路人的安静角落"
+        }
+      ]
+    },
+    {
+      "type_id": "record_store",
+      "type_name": "唱片店",
+      "description": "贩卖爵士、摇滚与流行唱片的小店，是主角获取音乐与精神食粮的场所",
+      "common_fields": [
+        "genre_focus",
+        "owner",
+        "opening_hours",
+        "listening_post"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "old_jazz_record_shop",
+          "name": "老爵士唱片店",
+          "importance": "minor",
+          "source_type": "inferred",
+          "confidence": 0.65,
+          "generation_priority": 3,
+          "role_in_world": "主角购买唱片、与店主闲聊的地方"
+        }
+      ]
+    }
+  ],
+  "character_archetypes": [
+    {
+      "type_id": "young_adult_protagonist",
+      "type_name": "青年主角",
+      "description": "二十出头的青年，带着战后一代的迷茫与孤独，在酒吧与城市间游走，以回忆与写作对抗时间的流逝",
+      "common_fields": [
+        "age",
+        "occupation",
+        "personality_traits",
+        "favorite_music",
+        "writing_habit"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "narrator_haruki",
+          "name": "我（主角）",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "故事的叙述者与体验核心，其意识流动构成了世界的情感基调"
+        }
+      ]
+    },
+    {
+      "type_id": "close_friend",
+      "type_name": "挚友",
+      "description": "主角的亲密朋友，同样浸润于美国文化，以幽默与酒量化解内心的空洞，代表另一种面对孤独的方式",
+      "common_fields": [
+        "age",
+        "occupation",
+        "drink_preference",
+        "personality_type"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "rat_mouse",
+          "name": "鼠",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 1,
+          "role_in_world": "主角的主要对话者与心理镜像，两者间的对话折射出时代青年的集体情绪"
+        }
+      ]
+    },
+    {
+      "type_id": "female_encounter",
+      "type_name": "偶然相遇的女性",
+      "description": "在深夜酒吧或街头偶遇的女孩，往往带着自己的故事与伤痕，短暂出现后即消失，象征青春的流逝与相遇的不可捉摸",
+      "common_fields": [
+        "age",
+        "first_meeting_place",
+        "mood",
+        "backstory_hint",
+        "fate"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "beach_girl_mystery",
+          "name": "神秘少女",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.95,
+          "generation_priority": 2,
+          "role_in_world": "触发主角回忆与反思的催化性角色，短暂而深刻的相遇象征都市孤独中的微弱连接"
+        }
+      ]
+    },
+    {
+      "type_id": "bar_owner",
+      "type_name": "酒吧老板",
+      "description": "经营爵士酒吧的中年人，沉默寡言但目光敏锐，是夜晚世界的守护者",
+      "common_fields": [
+        "name",
+        "age",
+        "bar_name",
+        "personality",
+        "serving_style"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "jay_owner",
+          "name": "杰",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.96,
+          "generation_priority": 2,
+          "role_in_world": "杰氏酒吧的老板，提供饮品与空间，见证年轻一代的对话与沉默"
+        }
+      ]
+    },
+    {
+      "type_id": "occasional_patron",
+      "type_name": "酒吧常客",
+      "description": "在酒吧中出没的其他顾客，各自带着自己的故事，构成城市夜晚的群像背景",
+      "common_fields": [
+        "age",
+        "appearance",
+        "usual_behavior",
+        "conversation_topic"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "university_student_regular",
+          "name": "大学的常客",
+          "importance": "minor",
+          "source_type": "inferred",
+          "confidence": 0.7,
+          "generation_priority": 3,
+          "role_in_world": "作为城市夜晚的背景人物，增强世界的真实感与群像层次"
+        }
+      ]
+    },
+    {
+      "type_id": "family_member",
+      "type_name": "家庭成员",
+      "description": "主角的家人（或远方亲戚），在回忆中偶尔浮现，代表过去的羁绊与无法回到的故乡感",
+      "common_fields": [
+        "relation",
+        "residence",
+        "memory_association",
+        "emotional_distance"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "mother_memory",
+          "name": "回忆中的母亲",
+          "importance": "minor",
+          "source_type": "inferred",
+          "confidence": 0.6,
+          "generation_priority": 3,
+          "role_in_world": "存在于主角回忆中的模糊形象，加强怀旧与失去的主题"
+        }
+      ]
+    },
+    {
+      "type_id": "passing_stranger",
+      "type_name": "街头路人",
+      "description": "在街角、公园或商店遇到的无名陌生人，他们的存在如同城市呼吸的节奏，转瞬即逝",
+      "common_fields": [
+        "encounter_location",
+        "action",
+        "mood",
+        "symbolic_meaning"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "drunk_old_man",
+          "name": "醉酒的老人",
+          "importance": "minor",
+          "source_type": "inferred",
+          "confidence": 0.5,
+          "generation_priority": 4,
+          "role_in_world": "作为城市夜景中一个无名的片段，强化孤独感与生命的短暂"
+        }
+      ]
+    }
+  ],
+  "rule_archetypes": [
+    {
+      "type_id": "social_etiquette",
+      "type_name": "社交礼仪",
+      "description": "战后日本城市中普遍遵守的礼貌与距离感，尤其在公共场合与初次见面时表现得克制而疏离",
+      "common_fields": [
+        "formal_greeting",
+        "respect_gesture",
+        "avoidance_topic",
+        "drinking_norm"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "bar_etiquette_quiet",
+          "name": "酒吧内保持低调",
+          "importance": "major",
+          "source_type": "inferred",
+          "confidence": 0.75,
+          "generation_priority": 2,
+          "role_in_world": "塑造酒吧内安静交谈、不过度喧哗的独特氛围"
+        }
+      ]
+    },
+    {
+      "type_id": "generational_code",
+      "type_name": "代际行为准则",
+      "description": "战后年轻一代对美国文化（音乐、电影、生活方式）的接受与模仿，与上一代传统价值观之间形成暗流",
+      "common_fields": [
+        "music_preference",
+        "fashion_style",
+        "cultural_reference",
+        "attitude_to_tradition"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "american_culture_admiration",
+          "name": "对美国文化的仰慕",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.85,
+          "generation_priority": 1,
+          "role_in_world": "定义主角一代人的审美、言谈与生活方式的核心文化规则"
+        }
+      ]
+    },
+    {
+      "type_id": "narrative_memory_rule",
+      "type_name": "叙事与记忆法则",
+      "description": "世界内的叙事以主角主观回忆与意识流动为主，时间跳跃、细节模糊、留白众多，真实与回忆间的边界不清晰",
+      "common_fields": [
+        "time_jump_style",
+        "memory_accuracy",
+        "symbolic_event",
+        "omitted_detail"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "memory_fragmentation",
+          "name": "记忆碎片化",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.95,
+          "generation_priority": 1,
+          "role_in_world": "世界叙事的基本构造原则——故事不以线性时间展开，而以片段回忆与联想构成"
+        }
+      ]
+    },
+    {
+      "type_id": "weather_ambience_rule",
+      "type_name": "天气与氛围规则",
+      "description": "夏夜的湿热、海风与蝉鸣是世界氛围的恒定底色，影响着人物情绪与出场时机",
+      "common_fields": [
+        "season",
+        "typical_mood",
+        "weather_symbol",
+        "character_reaction"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "summer_night_heat",
+          "name": "夏夜的闷热",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.9,
+          "generation_priority": 1,
+          "role_in_world": "定义整个世界的时空基调与情感底色，推动人物走向酒吧或户外，催生孤独与相遇"
+        }
+      ]
+    }
+  ],
+  "world_constraints": [
+    {
+      "constraint_id": "realism_no_fantasy",
+      "name": "现实世界无奇幻元素",
+      "description": "世界严格遵循现实逻辑，不存在超自然或科幻要素，所有事件与心理活动都必须基于真实世界背景",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "narrative_subjectivity",
+      "name": "叙事主观性",
+      "description": "世界通过主角的回忆与感受呈现，客观真实始终被主观滤镜笼罩，留白与不确定性是世界的本质",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "cultural_momentum_1970s",
+      "name": "1970年代日本城市文化氛围",
+      "description": "战后经济高速增长期已过，美国文化（爵士、摇滚、可口可乐、电影）深入日常，但传统与现代、东方与西方之间仍存张力",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "ephemeral_encounters",
+      "name": "相遇的短暂性",
+      "description": "世界内的重要人际关系往往是暂时的、偶发的，人物之间难以建立深刻持久的连接，孤独感弥漫于所有互动中",
+      "scope": "global"
+    }
+  ]
+}

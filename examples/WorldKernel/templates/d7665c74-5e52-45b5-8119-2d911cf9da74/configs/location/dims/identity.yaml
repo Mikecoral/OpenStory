@@ -1,0 +1,24 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+description:
+  type: str
+has_supernatural_connection:
+  type: str
+  option: true
+symbolic_meaning:
+  type: str
+  option: true
+associated_character:
+  type: str
+  option: true
+is_threshold_space:
+  type: str
+  option: true
+time_paradox:
+  type: str
+  option: true

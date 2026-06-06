@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "current_state",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "ownership",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "capacity",
+      "type": "int",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "cycle_damage_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "resource_availability",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reset_in_new_cycle",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "contamination_or_curse",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

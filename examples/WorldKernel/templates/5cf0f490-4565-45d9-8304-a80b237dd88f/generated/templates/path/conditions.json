@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "danger_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "required_items",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "soul_power_suppression_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "emotional_trial_required",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "time_limit_seconds",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "abyss_corruption_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "requires_karma_pass",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

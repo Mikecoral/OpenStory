@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "enforcer",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "mechanism",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "detectability",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "enforcer_role",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "observation_method",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "self_report_required",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

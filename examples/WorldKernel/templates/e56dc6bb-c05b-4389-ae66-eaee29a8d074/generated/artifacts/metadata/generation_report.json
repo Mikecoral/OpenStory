@@ -1,0 +1,65 @@
+{
+  "world_id": "e56dc6bb-c05b-4389-ae66-eaee29a8d074",
+  "success": false,
+  "source_ids": [
+    "visual-e2e"
+  ],
+  "execution_order": [
+    "generate_characters",
+    "generate_locations",
+    "generate_paths",
+    "generate_relations"
+  ],
+  "completed_steps": [
+    "generate_characters",
+    "generate_locations"
+  ],
+  "failed_step_id": "generate_relations",
+  "warnings": [
+    "batch 1 review (score=4.57): 所有角色的 knowledge 字段应为 JSON 字典格式（如 {\"description\": \"...\"}），但当前均为纯文本字符串。",
+    "batch 1 review (score=4.3): 洛阳的population(800000)超过了capacity(500000)，数据矛盾，需统一; 荆州和益州的名称直接使用州名，但描述和state均指代具体治所城池（襄阳、成都），造成地点标识混乱，应分别改为治所名称或明确为州域（建议改为治所名称以符合type的'州郡城池'定位）"
+  ],
+  "errors": [
+    "generate_paths: PathGraphTool.run() is not implemented yet",
+    "generate_relations: RelationGraphTool.run() is not implemented yet"
+  ],
+  "artifact_files": {
+    "location_profile": "locations\\locations.json",
+    "character_profile": "characters\\characters.json",
+    "path_edge": "path_graph\\path_graph.json",
+    "relation_edge": "relation_graph\\relation_graph.json"
+  },
+  "counts": {
+    "location_profile": 7,
+    "character_profile": 10,
+    "path_edge": 0,
+    "relation_edge": 0
+  },
+  "timestamp": "2026-05-26T15:41:41.705019+00:00",
+  "debug_files": {},
+  "provenance": {
+    "stage1_inputs": {
+      "source": "stage1.pipeline",
+      "source_id": "visual-e2e",
+      "world_id": "e56dc6bb-c05b-4389-ae66-eaee29a8d074",
+      "world_background_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\worldkernel\\templates\\e56dc6bb-c05b-4389-ae66-eaee29a8d074\\generated\\plan\\world_background.json",
+      "execution_plan_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\worldkernel\\templates\\e56dc6bb-c05b-4389-ae66-eaee29a8d074\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\worldkernel\\templates\\e56dc6bb-c05b-4389-ae66-eaee29a8d074\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\worldkernel\\templates\\e56dc6bb-c05b-4389-ae66-eaee29a8d074\\generated\\world_template.json",
+      "schema_manifest_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\worldkernel\\templates\\e56dc6bb-c05b-4389-ae66-eaee29a8d074\\models\\schema_manifest.json",
+      "artifact_manifest_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\worldkernel\\templates\\e56dc6bb-c05b-4389-ae66-eaee29a8d074\\generated\\artifact_manifest.json",
+      "session_root": "D:\\Research\\2026_5_9\\OpenStory\\examples\\worldkernel\\templates\\e56dc6bb-c05b-4389-ae66-eaee29a8d074"
+    },
+    "world_background": {
+      "source": "stage1.pipeline",
+      "artifact": "world_background",
+      "world_background_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\worldkernel\\templates\\e56dc6bb-c05b-4389-ae66-eaee29a8d074\\generated\\plan\\world_background.json",
+      "execution_plan_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\worldkernel\\templates\\e56dc6bb-c05b-4389-ae66-eaee29a8d074\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\worldkernel\\templates\\e56dc6bb-c05b-4389-ae66-eaee29a8d074\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\worldkernel\\templates\\e56dc6bb-c05b-4389-ae66-eaee29a8d074\\generated\\world_template.json",
+      "schema_manifest_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\worldkernel\\templates\\e56dc6bb-c05b-4389-ae66-eaee29a8d074\\models\\schema_manifest.json",
+      "artifact_manifest_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\worldkernel\\templates\\e56dc6bb-c05b-4389-ae66-eaee29a8d074\\generated\\artifact_manifest.json",
+      "session_root": "D:\\Research\\2026_5_9\\OpenStory\\examples\\worldkernel\\templates\\e56dc6bb-c05b-4389-ae66-eaee29a8d074"
+    }
+  }
+}

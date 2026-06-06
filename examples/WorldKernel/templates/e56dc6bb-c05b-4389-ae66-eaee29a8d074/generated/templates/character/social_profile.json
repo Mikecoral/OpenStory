@@ -1,0 +1,28 @@
+{
+  "fields": [
+    {
+      "name": "group_id",
+      "type": "str",
+      "required": true,
+      "ref": "institution"
+    },
+    {
+      "name": "reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "family_background",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "social_class",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,794 @@
+{
+  "artifact_type": "path_edge",
+  "items": [
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:020",
+        "name": "珊瑚主道",
+        "type": "街道",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "白色珊瑚石铺路"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:011",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:013",
+        "bidirectional": true,
+        "unlock_condition": "",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:018",
+        "name": "海神之光石阶",
+        "type": "石阶",
+        "karma_index": "1",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "淡金色光玉台阶，越向上威压越强"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:011",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:010",
+        "bidirectional": true,
+        "unlock_condition": "完成第一考资格认定",
+        "is_hidden": "",
+        "directional_restriction": "向上攀登时需承受海神之光威压，向下无限制",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "试炼开放",
+        "danger_level": "中等",
+        "required_items": "",
+        "soul_power_suppression_level": "30",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:019",
+        "name": "光影走廊",
+        "type": "室内走廊",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "水晶墙壁流淌波光"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:010",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:013",
+        "bidirectional": true,
+        "unlock_condition": "通过海神之光威压区域",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "试炼开放",
+        "danger_level": "安全",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:023",
+        "name": "神殿穹顶通道",
+        "type": "楼梯",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "盘旋水晶阶梯"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:013",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:014",
+        "bidirectional": true,
+        "unlock_condition": "经波塞西许可或完成第五考",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "受限（考核相关者）",
+        "danger_level": "安全",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:022",
+        "name": "圣像旁门",
+        "type": "侧门",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "深蓝色海魂石门"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:013",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:012",
+        "bidirectional": true,
+        "unlock_condition": "",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:013",
+        "name": "山脊小径",
+        "type": "山路",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "岩石与珊瑚混合路面"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:010",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:008",
+        "bidirectional": true,
+        "unlock_condition": "",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:015",
+        "name": "环岛海岸线",
+        "type": "海滩",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "细沙与碎石交替"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:008",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:018",
+        "bidirectional": true,
+        "unlock_condition": "",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:005",
+        "name": "渔村海岸步道",
+        "type": "步道",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "石板路"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:004",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:005",
+        "bidirectional": true,
+        "unlock_condition": "",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:007",
+        "name": "村落主干道",
+        "type": "土路",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "压制贝壳路面"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:004",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:007",
+        "bidirectional": true,
+        "unlock_condition": "",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:006",
+        "name": "村间小道",
+        "type": "小路",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "泥土路"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:004",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:006",
+        "bidirectional": true,
+        "unlock_condition": "",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:009",
+        "name": "港口大道",
+        "type": "主道",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "青石板路"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:005",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:006",
+        "bidirectional": true,
+        "unlock_condition": "",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:011",
+        "name": "市集主街",
+        "type": "街道",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "木板与石块混合"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:006",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:007",
+        "bidirectional": true,
+        "unlock_condition": "",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:024",
+        "name": "海马城大道",
+        "type": "道路",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "黑曜石路面"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:015",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:016",
+        "bidirectional": true,
+        "unlock_condition": "",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:004",
+        "name": "环海悬崖小径",
+        "type": "悬崖边路",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "窄径，一侧临海"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:003",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:017",
+        "bidirectional": true,
+        "unlock_condition": "",
+        "is_hidden": "",
+        "directional_restriction": "潮汐上涨时部分路段淹没",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "中等",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:025",
+        "name": "森林北入口",
+        "type": "林间道",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "兽径"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:016",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:017",
+        "bidirectional": true,
+        "unlock_condition": "",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "中等",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:016",
+        "name": "山腹密道",
+        "type": "密道",
+        "karma_index": "",
+        "is_hidden_passage": "true",
+        "barrier_type": "",
+        "terrain_feature": "暗蓝色晶石墙壁"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:012",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:009",
+        "bidirectional": true,
+        "unlock_condition": "需发现机关或通过情感波动触发",
+        "is_hidden": "true",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "隐藏",
+        "danger_level": "低",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "true",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:002",
+        "name": "海神山禁地入口",
+        "type": "裂缝",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "海神结界（多层）",
+        "terrain_feature": "被腐蚀的漆黑岩石"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:014",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:002",
+        "bidirectional": true,
+        "unlock_condition": "需破解波塞西结界或获得第九考资格",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "禁地",
+        "danger_level": "极高",
+        "required_items": "海神之心碎片（可选）",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "true",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "80",
+        "requires_karma_pass": "true"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:021",
+        "name": "广场南道",
+        "type": "主干道",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "珊瑚石铺路"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:011",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:015",
+        "bidirectional": true,
+        "unlock_condition": "",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:003",
+        "name": "南岸大道",
+        "type": "道路",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "石板与沙滩交界"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:011",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:003",
+        "bidirectional": true,
+        "unlock_condition": "",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:008",
+        "name": "渔林捷径",
+        "type": "小径",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "灌木丛夹杂兽道"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:017",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:004",
+        "bidirectional": true,
+        "unlock_condition": "",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "中等",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:010",
+        "name": "港口广场通道",
+        "type": "主道",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "平整石板"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:005",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:011",
+        "bidirectional": true,
+        "unlock_condition": "",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:012",
+        "name": "市集广场连廊",
+        "type": "走廊",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "木质廊道"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:007",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:011",
+        "bidirectional": true,
+        "unlock_condition": "",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:014",
+        "name": "悬崖修炼通道",
+        "type": "岩洞",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "天然溶洞连接"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:014",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:008",
+        "bidirectional": true,
+        "unlock_condition": "获得海神修炼大殿权限",
+        "is_hidden": "false",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "受限",
+        "danger_level": "低",
+        "required_items": "",
+        "soul_power_suppression_level": "10",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:017",
+        "name": "幻境入口",
+        "type": "传送门",
+        "karma_index": "",
+        "is_hidden_passage": "false",
+        "barrier_type": "",
+        "terrain_feature": "水镜光门"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:009",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:013",
+        "bidirectional": false,
+        "unlock_condition": "",
+        "is_hidden": "",
+        "directional_restriction": "只能从心灵密室传送至神殿，反向需步行",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "试炼开放",
+        "danger_level": "安全",
+        "required_items": "",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "true",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "",
+        "requires_karma_pass": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:001",
+        "name": "地底裂隙通道",
+        "type": "洞窟",
+        "karma_index": "",
+        "is_hidden_passage": "",
+        "barrier_type": "",
+        "terrain_feature": "黑色晶状岩壁，暗影能量弥漫"
+      },
+      "endpoints": {
+        "from_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:001",
+        "to_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:002",
+        "bidirectional": true,
+        "unlock_condition": "通过海神结界或第九考进行时自动开启",
+        "is_hidden": "",
+        "directional_restriction": "",
+        "temporal_availability": ""
+      },
+      "conditions": {
+        "access_level": "禁地",
+        "danger_level": "极高",
+        "required_items": "海神三叉戟或海神之光护体",
+        "soul_power_suppression_level": "",
+        "emotional_trial_required": "",
+        "time_limit_seconds": "",
+        "abyss_corruption_level": "95",
+        "requires_karma_pass": "true"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:020",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:018",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:019",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:023",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:022",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:013",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:015",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:005",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:007",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:006",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:009",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:011",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:024",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:004",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:025",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:016",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:002",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:021",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:003",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:008",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:010",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:012",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:014",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:017",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:path:001"
+  ],
+  "upstream_step_ids": [
+    "generate_paths"
+  ],
+  "warnings": [
+    "review (score=3.7): 黑化小舞封印地(002)和深渊裂隙(001)仅互相连接，与其他地点无通路，导致图分裂为两个连通分量，不符合世界设定（应可通过海神山区域进入禁地）。; 路径'北城捷径'(015-011)与'广场南道'(011-015)构成重复无序对，需删除或修改端点。; 路径'神力裂隙入口'(002-001)与'地底裂隙通道'(001-002)构成重复无序对，需修正端点以解决重复和连通问题。; 路径'环海悬崖小径'的identity中误包含danger_level字段，应移至conditions中。"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

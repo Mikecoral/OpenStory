@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "relations_to_others",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "alliance_history",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "enemy_targets",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "diplomatic_tools",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "public_image",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

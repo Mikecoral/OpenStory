@@ -1,0 +1,22 @@
+dim_name: GoalsDim
+short_term_goal:
+  type: str
+long_term_goal:
+  type: str
+motivation:
+  type: str
+faction_missions:
+  type: str
+  option: true
+level_up_goal:
+  type: str
+  option: true
+partner_protection_goal:
+  type: str
+  option: true
+power_balance_goal:
+  type: str
+  option: true
+truth_seeking_goal:
+  type: str
+  option: true

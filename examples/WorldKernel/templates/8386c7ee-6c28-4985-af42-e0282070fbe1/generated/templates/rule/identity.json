@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "scope",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "category",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "associated_venue",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "cycle_variability",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "effective_duration",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

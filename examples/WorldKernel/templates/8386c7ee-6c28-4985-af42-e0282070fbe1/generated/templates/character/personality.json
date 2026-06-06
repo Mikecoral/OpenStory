@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "traits",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "values",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "speech_style",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "fear_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "determination",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "madness_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "suspicion_tendency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

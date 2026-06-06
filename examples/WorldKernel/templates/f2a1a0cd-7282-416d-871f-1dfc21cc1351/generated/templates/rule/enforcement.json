@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "enforcer",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "mechanism",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "detectability",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "dream_triggers",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "boundary_crossing_conditions",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "cat_oracle_mediation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+dim_name: StateDim
+current_state:
+  type: str
+ownership:
+  type: str
+capacity:
+  type: int
+reality_stability:
+  type: str
+  option: true
+echo_intensity:
+  type: str
+  option: true
+spiritual_temperature:
+  type: str
+  option: true
+temporal_anomaly:
+  type: str
+  option: true

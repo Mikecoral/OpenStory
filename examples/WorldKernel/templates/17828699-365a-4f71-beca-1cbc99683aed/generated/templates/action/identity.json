@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "category",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "action_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "action_intensity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "cultural_reference",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "seasonal_context",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

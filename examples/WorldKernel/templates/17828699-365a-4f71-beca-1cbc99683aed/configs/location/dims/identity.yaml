@@ -1,0 +1,21 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+description:
+  type: str
+era_decade:
+  type: str
+  option: true
+cultural_vibe:
+  type: str
+  option: true
+soundtrack_genre:
+  type: str
+  option: true
+associated_memory:
+  type: str
+  option: true

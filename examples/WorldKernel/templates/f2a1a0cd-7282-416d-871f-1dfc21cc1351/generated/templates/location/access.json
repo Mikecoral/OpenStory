@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "permissions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_conditions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "entry_ritual",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "weather_requirement",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "time_of_day_requirement",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "psychic_state_requirement",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "invisible_guardian",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

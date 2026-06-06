@@ -1,0 +1,15 @@
+dim_name: SocialProfileDim
+group_id:
+  type: str
+  ref: institution
+reputation:
+  type: str
+cross_species_relation_status:
+  type: str
+  option: true
+fate_woven_connections:
+  type: str
+  option: true
+isolated_reputation:
+  type: str
+  option: true

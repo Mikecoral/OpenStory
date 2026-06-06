@@ -1,0 +1,19 @@
+dim_name: StateDim
+location:
+  location_id:
+    type: str
+    ref: location
+position:
+  x:
+    type: float
+  y:
+    type: float
+examination_stage_progress:
+  type: str
+  option: true
+health_status_percentage:
+  type: str
+  option: true
+corruption_level_for_hidden_roles:
+  type: str
+  option: true

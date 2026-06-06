@@ -1,0 +1,359 @@
+{
+  "session_id": "ccbee83d-1ef2-4128-aac6-95e758b80fda",
+  "instance_seeds": {
+    "location": [
+      {
+        "seed_id": "waseda_university_campus",
+        "name": "东京某大学校园",
+        "importance": "core",
+        "source_type": "inferred",
+        "confidence": 0.9,
+        "generation_priority": 1,
+        "role_in_world": "故事主线发生的大学生活空间",
+        "archetype_id": "university_campus"
+      },
+      {
+        "seed_id": "lecture_hall_2",
+        "name": "第二教学楼",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "渡边上戏剧课的地方",
+        "archetype_id": "university_campus"
+      },
+      {
+        "seed_id": "university_library",
+        "name": "大学图书馆",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.8,
+        "generation_priority": 2,
+        "role_in_world": "渡边和绿子常去的安静角落",
+        "archetype_id": "university_campus"
+      },
+      {
+        "seed_id": "student_cafeteria",
+        "name": "学生食堂",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "日常用餐与偶遇场所",
+        "archetype_id": "university_campus"
+      },
+      {
+        "seed_id": "ame_no_resort",
+        "name": "阿美寮",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "直子疗养的封闭精神康复机构",
+        "archetype_id": "sanatorium"
+      },
+      {
+        "seed_id": "ame_common_room",
+        "name": "阿美寮公共休息室",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "住客晚间交流与音乐演奏场所",
+        "archetype_id": "sanatorium"
+      },
+      {
+        "seed_id": "ame_garden",
+        "name": "阿美寮花园",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.8,
+        "generation_priority": 3,
+        "role_in_world": "直子散步与内心独白的自然空间",
+        "archetype_id": "sanatorium"
+      },
+      {
+        "seed_id": "ame_sick_room",
+        "name": "阿美寮单人病房",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "直子病情加重时的隔离空间",
+        "archetype_id": "sanatorium"
+      },
+      {
+        "seed_id": "dogs_jazz_bar",
+        "name": "Dogs爵士酒吧",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "渡边与永泽、初美饮酒谈心的核心社交场所",
+        "archetype_id": "leisure_social"
+      },
+      {
+        "seed_id": "green_coffee_shop",
+        "name": "绿子家经营的咖啡店",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "绿子与渡边日常相处的小店",
+        "archetype_id": "leisure_social"
+      },
+      {
+        "seed_id": "shinjuku_jazz_club",
+        "name": "新宿爵士俱乐部",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.7,
+        "generation_priority": 4,
+        "role_in_world": "渡边偶尔独自听音乐的场所",
+        "archetype_id": "leisure_social"
+      },
+      {
+        "seed_id": "watanabe_apartment",
+        "name": "渡边租住的公寓",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "渡边的私人空间，与直子、绿子情感交流的地点",
+        "archetype_id": "residential_space"
+      },
+      {
+        "seed_id": "midori_home",
+        "name": "绿子家的书店二楼住宅",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "绿子照顾父亲并展示家庭脆弱面的场所",
+        "archetype_id": "residential_space"
+      },
+      {
+        "seed_id": "naoko_house",
+        "name": "直子家老宅（神户）",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "直子童年记忆与创伤的象征空间",
+        "archetype_id": "residential_space"
+      },
+      {
+        "seed_id": "forest_near_sanatorium",
+        "name": "阿美寮附近的森林",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "直子与渡边漫步的象征性自然景观，映射内心迷宫",
+        "archetype_id": "natural_landscape"
+      },
+      {
+        "seed_id": "well_field",
+        "name": "直子提及的井边",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "直子死亡意象与孤独深渊的具象化",
+        "archetype_id": "natural_landscape"
+      },
+      {
+        "seed_id": "shinjuku_central_park",
+        "name": "新宿中央公园",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.7,
+        "generation_priority": 4,
+        "role_in_world": "渡边独自思考与回忆的都市绿地",
+        "archetype_id": "natural_landscape"
+      },
+      {
+        "seed_id": "shinjuku_station",
+        "name": "新宿站",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "都市交通枢纽，渡边往返校园与疗养院的起点",
+        "archetype_id": "transit_node"
+      },
+      {
+        "seed_id": "tokyo_station",
+        "name": "东京站",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.6,
+        "generation_priority": 4,
+        "role_in_world": "长途旅行的节点（如去往神户）",
+        "archetype_id": "transit_node"
+      },
+      {
+        "seed_id": "bus_stop_to_sanatorium",
+        "name": "前往阿美寮的公交站",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.8,
+        "generation_priority": 2,
+        "role_in_world": "渡边连接大学与疗养院的关键过渡点",
+        "archetype_id": "transit_node"
+      }
+    ],
+    "character": [
+      {
+        "seed_id": "watanabe_toru",
+        "name": "渡边彻",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "故事主角，叙事视角与情感核心",
+        "archetype_id": "university_student"
+      },
+      {
+        "seed_id": "midori_kobayashi",
+        "name": "小林绿子",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "渡边的恋人之一，代表活力与现实的爱",
+        "archetype_id": "university_student"
+      },
+      {
+        "seed_id": "nagazawa",
+        "name": "永泽",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 2,
+        "role_in_world": "渡边的朋友，精英主义与虚无主义的化身",
+        "archetype_id": "university_student"
+      },
+      {
+        "seed_id": "hatsumi",
+        "name": "初美",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 2,
+        "role_in_world": "永泽的女友，理想化爱情与悲剧宿命的象征",
+        "archetype_id": "university_student"
+      },
+      {
+        "seed_id": "stormtrooper",
+        "name": "突击队（宿舍同学）",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 3,
+        "role_in_world": "渡边的大学室友，现实荒诞感的体现",
+        "archetype_id": "university_student"
+      },
+      {
+        "seed_id": "naoko",
+        "name": "直子",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "渡边的第一恋人，深陷抑郁与创伤的核心角色",
+        "archetype_id": "sanatorium_resident"
+      },
+      {
+        "seed_id": "reiko_ishida",
+        "name": "石田玲子",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 2,
+        "role_in_world": "阿美寮的住客，钢琴师，直子的守护者与渡边的知己",
+        "archetype_id": "sanatorium_resident"
+      },
+      {
+        "seed_id": "sato_sensei",
+        "name": "佐藤医生",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.8,
+        "generation_priority": 4,
+        "role_in_world": "阿美寮主治医生，有限的专业干预力量",
+        "archetype_id": "sanatorium_resident"
+      },
+      {
+        "seed_id": "midori_father",
+        "name": "绿子的父亲",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.8,
+        "generation_priority": 4,
+        "role_in_world": "重病中的书店老板，展现绿子的家庭负担",
+        "archetype_id": "urban_professional"
+      },
+      {
+        "seed_id": "reiko_ishida_musician",
+        "name": "石田玲子（演奏家身份）",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "通过爵士与古典乐连接角色情感的关键艺术人格",
+        "archetype_id": "musician_performer"
+      },
+      {
+        "seed_id": "kizuki",
+        "name": "木月",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "直子的初恋与自杀者，贯穿全书的死亡阴影",
+        "archetype_id": "deceased_memory"
+      },
+      {
+        "seed_id": "naoko_sister",
+        "name": "直子的姐姐",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 3,
+        "role_in_world": "直子心理创伤的根源之一，同样自杀的消逝者",
+        "archetype_id": "deceased_memory"
+      },
+      {
+        "seed_id": "hatsumi_dead",
+        "name": "初美（死亡后记忆）",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "自杀后的初美成为渡边反思青春与死亡的幽灵",
+        "archetype_id": "deceased_memory"
+      },
+      {
+        "seed_id": "nagazawa_elite",
+        "name": "永泽（外交官志向）",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "目标明确、冷漠利己的精英青年，与渡边形成对比",
+        "archetype_id": "elite_youth"
+      },
+      {
+        "seed_id": "hatsumi_elite",
+        "name": "初美（富家女）",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.85,
+        "generation_priority": 3,
+        "role_in_world": "优雅但受困于社会期待与爱情幻灭的精英子弟",
+        "archetype_id": "elite_youth"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "mission",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "founding_reason",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "hidden_agenda",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "supernatural_goal",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "existential_theme",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "guardian_duty",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "loop_breaking_mission",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

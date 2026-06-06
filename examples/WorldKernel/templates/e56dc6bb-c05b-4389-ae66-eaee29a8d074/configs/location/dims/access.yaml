@@ -1,0 +1,22 @@
+dim_name: AccessDim
+permissions:
+  type: str
+access_level:
+  type: str
+access_conditions:
+  type: str
+garrison:
+  type: str
+  option: true
+control_status:
+  type: str
+  option: true
+trade_route:
+  type: str
+  option: true
+siege_history:
+  type: str
+  option: true
+blockade:
+  type: str
+  option: true

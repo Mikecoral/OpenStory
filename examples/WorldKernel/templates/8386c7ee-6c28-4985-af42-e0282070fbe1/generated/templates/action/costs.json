@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "time",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "resources",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_cost",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "sanity_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reputation_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "life_point_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

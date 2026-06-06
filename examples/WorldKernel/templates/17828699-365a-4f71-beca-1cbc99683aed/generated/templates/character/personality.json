@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "traits",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "values",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "speech_style",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "inner_monologue_weight",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "silence_tolerance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "melancholy_tendency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "memory_preoccupation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

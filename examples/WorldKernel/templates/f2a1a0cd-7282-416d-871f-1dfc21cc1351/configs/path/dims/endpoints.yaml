@@ -1,0 +1,18 @@
+dim_name: EndpointsDim
+from_id:
+  type: str
+  ref: location
+to_id:
+  type: str
+  ref: location
+bidirectional:
+  type: bool
+realm_transition:
+  type: str
+  option: true
+synchronicity_link:
+  type: str
+  option: true
+dream_connection:
+  type: str
+  option: true

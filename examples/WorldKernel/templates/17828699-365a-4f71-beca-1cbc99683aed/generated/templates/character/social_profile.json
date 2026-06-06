@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "group_id",
+      "type": "str",
+      "required": true,
+      "ref": "institution"
+    },
+    {
+      "name": "reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "encounter_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "friendship_depth",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "family_distance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "memory_bond_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "emotional_temperature",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

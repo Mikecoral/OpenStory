@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "connected_to",
+      "type": "list_str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "parent_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "layer",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "entrance_type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "proximity_to_coast",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "street_noise_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "view_from_entrance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "hidden_path",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

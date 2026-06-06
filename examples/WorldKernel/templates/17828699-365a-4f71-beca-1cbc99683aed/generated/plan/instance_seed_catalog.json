@@ -1,0 +1,319 @@
+{
+  "session_id": "17828699-365a-4f71-beca-1cbc99683aed",
+  "instance_seeds": {
+    "location": [
+      {
+        "seed_id": "jays_bar",
+        "name": "J's Bar",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "主角和鼠经常聚集的核心场所，弥漫爵士乐与威士忌气息",
+        "archetype_id": "酒吧与爵士俱乐部"
+      },
+      {
+        "seed_id": "dixie_jazz_club",
+        "name": "迪克西爵士俱乐部",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.8,
+        "generation_priority": 2,
+        "role_in_world": "展现爵士乐文化与偶遇场景的社交空间",
+        "archetype_id": "酒吧与爵士俱乐部"
+      },
+      {
+        "seed_id": "blue_note_lounge",
+        "name": "蓝调休息室",
+        "importance": "major",
+        "source_type": "original",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "外来水手和美国文化影响的代表性场所",
+        "archetype_id": "酒吧与爵士俱乐部"
+      },
+      {
+        "seed_id": "moonlight_tavern",
+        "name": "月光酒馆",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.6,
+        "generation_priority": 4,
+        "role_in_world": "主角偶尔独坐、写短篇小说的安静角落",
+        "archetype_id": "酒吧与爵士俱乐部"
+      },
+      {
+        "seed_id": "four_seasons_bar",
+        "name": "四季酒吧",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.6,
+        "generation_priority": 4,
+        "role_in_world": "提供廉价啤酒、常客闲聊的怀旧场所",
+        "archetype_id": "酒吧与爵士俱乐部"
+      },
+      {
+        "seed_id": "noodle_stand_yamada",
+        "name": "山田拉面摊",
+        "importance": "core",
+        "source_type": "inferred",
+        "confidence": 0.75,
+        "generation_priority": 2,
+        "role_in_world": "主角和鼠深夜吃拉面、聊人生的温暖地点",
+        "archetype_id": "餐馆与食堂"
+      },
+      {
+        "seed_id": "university_cafeteria",
+        "name": "大学食堂",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.8,
+        "generation_priority": 2,
+        "role_in_world": "展现年轻学生日常疏离感与偶然对话的场景",
+        "archetype_id": "餐馆与食堂"
+      },
+      {
+        "seed_id": "western_diner_okamoto",
+        "name": "冈本西餐厅",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "代表战后美国饮食文化渗透的场所",
+        "archetype_id": "餐馆与食堂"
+      },
+      {
+        "seed_id": "protagonists_apartment",
+        "name": "主角公寓",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 1,
+        "role_in_world": "主角独居、读书听唱片的内省空间",
+        "archetype_id": "住宅楼"
+      },
+      {
+        "seed_id": "rats_mansion",
+        "name": "鼠的豪宅",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "鼠的富裕家庭背景象征，承载青春叛逆与孤独感",
+        "archetype_id": "住宅楼"
+      },
+      {
+        "seed_id": "girls_apartment",
+        "name": "失踪女孩的公寓",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "主角短暂情感连接的发生地，充满夏日余温",
+        "archetype_id": "住宅楼"
+      },
+      {
+        "seed_id": "boarding_house_sakura",
+        "name": "樱花寄宿公寓",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.6,
+        "generation_priority": 4,
+        "role_in_world": "其他边缘角色的居住空间",
+        "archetype_id": "住宅楼"
+      },
+      {
+        "seed_id": "beach_promenade_kobe",
+        "name": "神户海岸步道",
+        "importance": "core",
+        "source_type": "inferred",
+        "confidence": 0.85,
+        "generation_priority": 1,
+        "role_in_world": "主角和鼠散步、沉默看海、思考死亡与时间的象征性地点",
+        "archetype_id": "海岸步道"
+      },
+      {
+        "seed_id": "pier_seven",
+        "name": "7号码头",
+        "importance": "major",
+        "source_type": "original",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "运货船与海鸥相伴的工业怀旧场景",
+        "archetype_id": "海岸步道"
+      },
+      {
+        "seed_id": "kobe_park_central",
+        "name": "神户中央公园",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.8,
+        "generation_priority": 3,
+        "role_in_world": "夏日午后长椅发呆、观察路人的公共空间",
+        "archetype_id": "公园与绿地"
+      },
+      {
+        "seed_id": "hilltop_garden_harbor",
+        "name": "港丘花园",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.6,
+        "generation_priority": 4,
+        "role_in_world": "提供俯瞰城市全景的孤独视角",
+        "archetype_id": "公园与绿地"
+      },
+      {
+        "seed_id": "record_shop_tommy",
+        "name": "汤米的唱片店",
+        "importance": "major",
+        "source_type": "original",
+        "confidence": 0.75,
+        "generation_priority": 2,
+        "role_in_world": "主角淘爵士唱片、与店主简短交流的文化节点",
+        "archetype_id": "唱片店"
+      },
+      {
+        "seed_id": "vinyl_cellar_jazz",
+        "name": "爵士地窖",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.6,
+        "generation_priority": 4,
+        "role_in_world": "专门经营稀有爵士唱片的二手店",
+        "archetype_id": "唱片店"
+      }
+    ],
+    "character": [
+      {
+        "seed_id": "boku_narrator",
+        "name": "僕（叙述者·我）",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "作品核心意识，通过他的记忆与感知呈现世界",
+        "archetype_id": "青年主角"
+      },
+      {
+        "seed_id": "the_rat",
+        "name": "鼠",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "主角唯一挚友，富有家庭的叛逆青年，代表青春的焦虑与无力",
+        "archetype_id": "青年主角"
+      },
+      {
+        "seed_id": "woman_without_fingers",
+        "name": "没有小指的女孩",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "与主角短暂相遇的女性，承载过去创伤与夏日记忆的象征",
+        "archetype_id": "偶然相遇的女性"
+      },
+      {
+        "seed_id": "bar_woman_neutral",
+        "name": "酒吧女郎（中立）",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.6,
+        "generation_priority": 4,
+        "role_in_world": "在J's Bar短暂出现的女性，与主角有过简短交流",
+        "archetype_id": "偶然相遇的女性"
+      },
+      {
+        "seed_id": "classmate_girl",
+        "name": "女同学",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.5,
+        "generation_priority": 4,
+        "role_in_world": "大学校园中与主角擦肩而过的日常女性角色",
+        "archetype_id": "偶然相遇的女性"
+      },
+      {
+        "seed_id": "jay_bar_owner",
+        "name": "J",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "酒吧主人，沉默的观察者与倾听者，连接主角与外界的枢纽",
+        "archetype_id": "酒吧老板"
+      },
+      {
+        "seed_id": "regular_old_man",
+        "name": "常客老伯",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.6,
+        "generation_priority": 3,
+        "role_in_world": "每日独自喝威士忌的老人，体现城市孤独群像",
+        "archetype_id": "酒吧常客"
+      },
+      {
+        "seed_id": "young_couple_regular",
+        "name": "年轻情侣常客",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.5,
+        "generation_priority": 4,
+        "role_in_world": "在J's Bar约会的年轻情侣，衬托主角的孤独",
+        "archetype_id": "酒吧常客"
+      },
+      {
+        "seed_id": "american_sailor",
+        "name": "美国水手",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "代表美国文化对日本的渗透，经常出入爵士俱乐部",
+        "archetype_id": "酒吧常客"
+      },
+      {
+        "seed_id": "rats_father",
+        "name": "鼠的父亲",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "成功的实业家，象征鼠想要逃离的家族压力与社会期待",
+        "archetype_id": "家庭成员"
+      },
+      {
+        "seed_id": "protagonists_mother",
+        "name": "主角的母亲（在远方）",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.6,
+        "generation_priority": 4,
+        "role_in_world": "仅存在于回忆与信件中的形象，强化主角的漂泊感",
+        "archetype_id": "家庭成员"
+      },
+      {
+        "seed_id": "nameless_cyclist",
+        "name": "无名骑自行车的人",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.4,
+        "generation_priority": 5,
+        "role_in_world": "夏日夜晚街头一闪而过的身影，营造都市氛围",
+        "archetype_id": "街头路人"
+      },
+      {
+        "seed_id": "old_woman_park",
+        "name": "公园喂猫的老妇人",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.4,
+        "generation_priority": 5,
+        "role_in_world": "公园中不变的日常风景，体现时间流逝",
+        "archetype_id": "街头路人"
+      }
+    ]
+  }
+}

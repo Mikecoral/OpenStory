@@ -1,0 +1,385 @@
+{
+  "primary": "urban_fantasy_city",
+  "secondary": null,
+  "confidence": 0.95,
+  "tags": [
+    "异兽",
+    "幸运等级",
+    "超凡能力",
+    "势力冲突",
+    "主角团队",
+    "现代都市",
+    "衍生"
+  ],
+  "world_name": "异兽迷城",
+  "world_origin_summary": "衍生自《异兽迷城》中高阳幸运等级6级到7级阶段，以雾山城为舞台，讲述主角团队在等级提升过程中应对异兽与势力冲突，并深化伙伴关系的故事",
+  "scope": "city",
+  "simulation_start": {
+    "time_point": "高阳幸运等级晋升至6级后的第一次正式任务",
+    "trigger_event": "高阳从5级升入6级，成为更高级别猎兽者，卷入异兽管理局与地下异兽势力的新一轮交锋",
+    "year": "现代",
+    "narrative_context": "高阳与王子凯、高欣欣等伙伴在雾山城执行任务，试图揭开异兽与人类共存的秘密，同时应对各大势力的冲突与内部考验"
+  },
+  "location_archetypes": [
+    {
+      "type_id": "downtown_district",
+      "type_name": "城市核心区",
+      "description": "雾山城的政治、商业与文化中心，也是各大势力明争暗斗的舞台",
+      "common_fields": [
+        "name",
+        "population_density",
+        "faction_influence",
+        "security_level"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "central_plaza",
+          "name": "雾山城中心广场",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.85,
+          "generation_priority": 1,
+          "role_in_world": "城市象征性地标，常作为大型事件与冲突的爆发点"
+        }
+      ]
+    },
+    {
+      "type_id": "government_agency",
+      "type_name": "政府机构",
+      "description": "官方异兽管理机构，负责等级认证、任务发布与秩序维护",
+      "common_fields": [
+        "name",
+        "department",
+        "director",
+        "access_level"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "beast_management_bureau",
+          "name": "雾山城异兽管理局",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.9,
+          "generation_priority": 1,
+          "role_in_world": "高阳团队的主要工作场所与情报来源，也是势力博弈的中心"
+        }
+      ]
+    },
+    {
+      "type_id": "combat_zone",
+      "type_name": "战斗区域",
+      "description": "城市中异兽出没或势力交战的危险地带，多位于废弃设施或地下空间",
+      "common_fields": [
+        "name",
+        "threat_level",
+        "environment_type",
+        "beast_types_possible"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "abandoned_subway_lair",
+          "name": "废弃地铁巢穴",
+          "importance": "major",
+          "source_type": "inferred",
+          "confidence": 0.8,
+          "generation_priority": 2,
+          "role_in_world": "高阳团队清理异兽与获取资源的重要战斗地点"
+        }
+      ]
+    },
+    {
+      "type_id": "secret_base",
+      "type_name": "秘密基地",
+      "description": "主角团队私密行动与休整的据点，防备外部监视",
+      "common_fields": [
+        "name",
+        "hidden_level",
+        "equipment",
+        "members"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "team_safe_house",
+          "name": "高阳团队安全屋",
+          "importance": "major",
+          "source_type": "inferred",
+          "confidence": 0.75,
+          "generation_priority": 2,
+          "role_in_world": "团队策划行动与讨论秘密计划的集中场所"
+        }
+      ]
+    },
+    {
+      "type_id": "public_space",
+      "type_name": "公共场所",
+      "description": "普通市民日常生活区域，也是异兽事件可能波及的地方",
+      "common_fields": [
+        "name",
+        "crowd_level",
+        "normal_activity",
+        "potential_risk"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "central_park",
+          "name": "雾山城中央公园",
+          "importance": "minor",
+          "source_type": "inferred",
+          "confidence": 0.7,
+          "generation_priority": 3,
+          "role_in_world": "市民休闲场所，曾发生过异兽伪装成人的事件，是主角团队日常巡逻地点之一"
+        }
+      ]
+    },
+    {
+      "type_id": "special_facility",
+      "type_name": "特殊设施",
+      "description": "用于幸运等级测试、异兽研究或高端训练的专业场所",
+      "common_fields": [
+        "name",
+        "purpose",
+        "access_restriction",
+        "technology_level"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "luck_test_center",
+          "name": "幸运等级测试中心",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.9,
+          "generation_priority": 1,
+          "role_in_world": "评估猎兽者等级的核心设施，高阳每次晋升都要在此验证"
+        }
+      ]
+    }
+  ],
+  "character_archetypes": [
+    {
+      "type_id": "protagonist_team",
+      "type_name": "主角团队",
+      "description": "以高阳为核心的紧密伙伴群体，共同执行任务并维持深厚情谊",
+      "common_fields": [
+        "name",
+        "luck_level",
+        "role_in_team",
+        "affiliation"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "wang_zikai",
+          "name": "王子凯",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 1,
+          "role_in_world": "高阳最亲密的战友与搭档，性格直率勇敢，在团队中担任近战输出与决策辅助"
+        }
+      ]
+    },
+    {
+      "type_id": "management_official",
+      "type_name": "管理层/异能管理者",
+      "description": "异兽管理局内部的中高层人员，负责政策执行与资源调配",
+      "common_fields": [
+        "name",
+        "rank",
+        "political_lean",
+        "field_experience"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "bureau_captain",
+          "name": "管理局分队长",
+          "importance": "major",
+          "source_type": "inferred",
+          "confidence": 0.7,
+          "generation_priority": 2,
+          "role_in_world": "高阳团队的直属上司，协调任务与平衡各方利益"
+        }
+      ]
+    },
+    {
+      "type_id": "rival_faction",
+      "type_name": "敌对势力/竞争者",
+      "description": "与主角团队目标冲突的其他猎兽者组织或异兽势力",
+      "common_fields": [
+        "name",
+        "faction_name",
+        "goal",
+        "hostility_level"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "black_scale_leader",
+          "name": "黑鳞组织头目",
+          "importance": "major",
+          "source_type": "inferred",
+          "confidence": 0.75,
+          "generation_priority": 2,
+          "role_in_world": "与主角团队争夺异兽资源与地盘的关键对手，代表另一种力量体系"
+        }
+      ]
+    },
+    {
+      "type_id": "ordinary_citizen",
+      "type_name": "普通市民",
+      "description": "城市中的寻常居民，对异兽世界一无所知或仅有模糊认知",
+      "common_fields": [
+        "name",
+        "occupation",
+        "knowledge_level",
+        "relationship"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "cafe_owner",
+          "name": "咖啡馆老板",
+          "importance": "minor",
+          "source_type": "original",
+          "confidence": 0.6,
+          "generation_priority": 3,
+          "role_in_world": "主角团队常去的咖啡馆老板，友善且观察敏锐，偶尔提供意外线索"
+        }
+      ]
+    },
+    {
+      "type_id": "beast_entity",
+      "type_name": "异兽",
+      "description": "拥有超凡能力的变异生物，形态与智慧各异，部分可伪装成人类",
+      "common_fields": [
+        "name",
+        "species",
+        "power_scale",
+        "intelligence_level"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "phantom_wolf",
+          "name": "幻影狼王",
+          "importance": "major",
+          "source_type": "inferred",
+          "confidence": 0.8,
+          "generation_priority": 2,
+          "role_in_world": "威胁雾山城的强大异兽之一，高阳团队需要追踪并处理的重大目标"
+        }
+      ]
+    }
+  ],
+  "rule_archetypes": [
+    {
+      "type_id": "luck_level_advancement",
+      "type_name": "幸运等级晋升规则",
+      "description": "猎兽者通过完成任务、击杀异兽或达成特定条件来提升幸运等级，高等级意味着更多权限与资源",
+      "common_fields": [
+        "level_range",
+        "promotion_criteria",
+        "benefits",
+        "danger_increase"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "level_6_to_7_conditions",
+          "name": "6级晋升至7级的核心条件",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.9,
+          "generation_priority": 1,
+          "role_in_world": "高阳当前阶段的核心驱动力，晋升过程涉及危险试炼与团队支持"
+        }
+      ]
+    },
+    {
+      "type_id": "beast_regulation",
+      "type_name": "异兽管控规则",
+      "description": "异兽管理局对异兽的登记、追踪、收容或剿灭规范，普通民众不可接触",
+      "common_fields": [
+        "classification",
+        "handling_protocol",
+        "emergency_response",
+        "secrecy_measure"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "beast_containment_standard",
+          "name": "异兽收容与处理标准流程",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.85,
+          "generation_priority": 1,
+          "role_in_world": "界定主角团队执行任务时的法定程序与行动限制"
+        }
+      ]
+    },
+    {
+      "type_id": "combat_etiquette",
+      "type_name": "战斗伦理与禁忌",
+      "description": "猎兽者在公共区域或涉及普通人的战斗中必须遵守的行为规范",
+      "common_fields": [
+        "collateral_damage_limit",
+        "civilian_protection",
+        "witness_handling",
+        "aftermath_protocol"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "no_civilian_casualty_rule",
+          "name": "禁止平民伤亡原则",
+          "importance": "major",
+          "source_type": "inferred",
+          "confidence": 0.8,
+          "generation_priority": 2,
+          "role_in_world": "约束高阳团队战斗方式，避免引发公众恐慌与上层追责"
+        }
+      ]
+    },
+    {
+      "type_id": "team_discipline",
+      "type_name": "团队内部规则",
+      "description": "主角团队内部为维持凝聚力与效率制定的非正式约定",
+      "common_fields": [
+        "trust_principle",
+        "communication_protocol",
+        "resource_sharing",
+        "code_of_conduct"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "partnership_creed",
+          "name": "伙伴誓约",
+          "importance": "major",
+          "source_type": "inferred",
+          "confidence": 0.75,
+          "generation_priority": 2,
+          "role_in_world": "高阳、王子凯、高欣欣三人之间彼此绝对信任与互相扶持的核心纽带"
+        }
+      ]
+    }
+  ],
+  "world_constraints": [
+    {
+      "constraint_id": "luck_as_destiny",
+      "name": "幸运等级决定地位",
+      "description": "一个人的幸运等级不仅代表实力，更直接决定其在社会结构中的发言权与资源获取能力，等级差距带来天然的不平等",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "human_beast_balance",
+      "name": "人类与异兽的脆弱共存",
+      "description": "大部分异兽具备智能且伪装成人类，但根本性的冲突仍在潜伏，任何激进行为都可能打破脆弱的平衡，引发全面对抗",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "secrecy_mantle",
+      "name": "异兽真相的隐秘性",
+      "description": "普通民众对异兽与超凡能力一无所知，政府和异兽管理局执行严格的保密制度，泄露机密将面临重罚",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "faction_power_grid",
+      "name": "多方势力制衡格局",
+      "description": "异兽管理局、各大猎兽者组织、地下异兽势力相互制约与博弈，任何一方都无法独大，主角团队必须在夹缝中寻求平衡",
+      "scope": "global"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "assets",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "territory",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "control_center_locations",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "weapon_arsenal",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "information_network_nodes",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "game_currency_system",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "hidden_storage_depots",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "recruitment_budget",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "technology_research_facilities",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

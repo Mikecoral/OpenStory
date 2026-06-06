@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "leader",
+      "type": "str",
+      "required": true,
+      "ref": "character"
+    },
+    {
+      "name": "rules",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "decision_process",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "internal_faction_list",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "decision_voting_weight",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "disciplinary_code_section",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "emergency_command_chain",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "order_execution_priority",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

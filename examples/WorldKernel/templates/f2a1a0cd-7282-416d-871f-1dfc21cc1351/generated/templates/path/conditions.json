@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "danger_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "required_items",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "rain_trigger",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "sleep_required",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "cat_mediation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "trauma_threshold",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

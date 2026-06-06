@@ -1,0 +1,19 @@
+dim_name: StateDim
+current_state:
+  type: str
+ownership:
+  type: str
+capacity:
+  type: int
+hourly_atmosphere:
+  type: str
+  option: true
+current_occupancy_feel:
+  type: str
+  option: true
+maintenance_level:
+  type: str
+  option: true
+lingering_note:
+  type: str
+  option: true

@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "controlled_by",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "connects_to_cities",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "route_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "historical_name",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_famous_route",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

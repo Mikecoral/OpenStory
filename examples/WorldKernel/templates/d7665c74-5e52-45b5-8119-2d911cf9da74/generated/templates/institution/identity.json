@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "is_secret",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "connection_to_supernatural",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "symbolic_element",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "founding_era",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "domain_boundary",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

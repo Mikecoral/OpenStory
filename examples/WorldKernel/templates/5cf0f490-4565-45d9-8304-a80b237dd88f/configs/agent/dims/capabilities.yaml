@@ -1,0 +1,16 @@
+dim_name: CapabilitiesDim
+skills:
+  type: list_str
+level:
+  type: str
+weaknesses:
+  type: str
+soul_element_attribute:
+  type: str
+  option: true
+domain_type:
+  type: str
+  option: true
+special_combat_skill:
+  type: str
+  option: true

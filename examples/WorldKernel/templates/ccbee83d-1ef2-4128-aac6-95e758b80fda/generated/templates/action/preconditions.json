@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "required_state",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "required_items",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "required_mental_state",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "required_location_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "required_relation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "required_time_of_day",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "relation_ids",
+      "type": "list_str",
+      "required": true,
+      "ref": "relation"
+    },
+    {
+      "name": "relationship_strength",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "shared_history",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "relationship_trend",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "trust_change_history",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "conflict_potential",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "lighting_temperature",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dominant_color",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "smell_profile",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "detail_era_artifact",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

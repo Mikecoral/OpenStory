@@ -1,0 +1,701 @@
+{
+  "artifact_type": "location_profile",
+  "items": [
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:018",
+        "name": "东京某大学校园",
+        "type": "university_campus",
+        "description": "校园坐落于东京文京区，以本乡校区为蓝本。暮春时节，樱花已尽，银杏与榉树新绿成荫。主道两侧矗立着红砖与灰泥的西洋风格教学楼，年代感在墙面裂纹中浮现。午后阳光穿过枝叶，在石阶上投下斑驳光影。操场方向隐约传来棒球击球声，而图书馆的铜制门把手被无数学生握得发亮。学生运动的风潮已过，但告示板上仍残留着昔日传单的边角。渡边常独自从宿舍穿过这片绿意，前往教室或图书馆，空气里混合着青草、旧书和远处食堂的咖喱味。直子偶尔来访，她总是低着头，目光避开那些曾与木月并肩走过的角落。",
+        "emotional_aura": "怀旧与孤独交织，充满青春期的疏离与温柔",
+        "associated_characters": "渡边彻, 小林绿子, 永泽, 初美, 突击队",
+        "historical_period": "1969年暮春至1970年代初",
+        "narrative_significance": "故事主线发生的大学生活空间，渡边在此经历日常、爱情、友谊与对死亡的沉思",
+        "symbolic_theme": "成长与疏离：看似平静的校园下流动着无法言说的孤独"
+      },
+      "access": {
+        "permissions": "大学师生及访客可进入，夜间需出示学生证",
+        "access_level": "public",
+        "access_conditions": "持有效学生证或经校内人员陪同",
+        "visiting_hours": "6:00-22:00",
+        "entry_ritual": "",
+        "seasonal_availability": "全年开放，但寒暑假期间部分区域关闭",
+        "social_restrictions": "学生运动期间曾有集会限制，现恢复正常",
+        "psychological_barrier": "对直子而言，校园处处唤醒与木月共度的回忆，尤其是主道、第二教学楼和图书馆"
+      },
+      "state": {
+        "current_state": "正常运转，学生运动余波逐渐平息，校园恢复日常秩序",
+        "ownership": "校园属东京某私立大学校方",
+        "capacity": 15000,
+        "atmospheric_condition": "暮春晴朗，午间微热，傍晚凉爽，绿意葱茏",
+        "occupancy_rate": "适中，上午课间人流密集，午后相对安静",
+        "maintenance_level": "良好，建筑虽老旧但维护得当",
+        "temporal_phase": "学期中，1969年5月",
+        "weather_affinity": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:009",
+        "name": "第二教学楼",
+        "type": "classroom_building",
+        "description": "一栋灰扑扑的混凝土建筑，外墙爬着几道雨水痕迹。走廊昏暗，日光灯管发出断续的嗡鸣。三楼尽头的教室是戏剧课专用，里面积着十几把旧折叠椅和一个木制小舞台。窗户朝北，光线始终冷白，能望见对面学生宿舍的楼顶。渡边常坐在靠窗第三排，透过玻璃看云，注意力从黑板上游离。",
+        "emotional_aura": "平淡而沉静，带有轻微的疏离感",
+        "associated_characters": "渡边彻",
+        "historical_period": "1969年",
+        "narrative_significance": "渡边上戏剧课的地方，也是他偶尔逃离现实思绪的角落",
+        "symbolic_theme": "艺术与逃避：戏剧课象征假装与真实之间的界限"
+      },
+      "access": {
+        "permissions": "仅限本校学生及教职员，上课期间对外开放",
+        "access_level": "restricted_to_students",
+        "access_conditions": "需持有该课程选课记录或教师允许",
+        "visiting_hours": "根据课程表开放，平时8:00-18:00锁门",
+        "entry_ritual": "",
+        "seasonal_availability": "全年，但寒暑假关闭",
+        "social_restrictions": "非上课时段外人不得进入",
+        "psychological_barrier": ""
+      },
+      "state": {
+        "current_state": "正常使用，部分教室门窗老化",
+        "ownership": "东京某大学",
+        "capacity": 400,
+        "atmospheric_condition": "室内空气不流通，午后有灰尘在光线中飞舞",
+        "occupancy_rate": "低，仅上课时段半数教室被使用",
+        "maintenance_level": "一般，墙面略有剥落，日光灯时有故障",
+        "temporal_phase": "",
+        "weather_affinity": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:017",
+        "name": "大学图书馆",
+        "type": "library",
+        "description": "一座两层红砖小楼，入口是沉重的橡木门，推开时发出低沉的呻吟。正厅高挑，两侧书架直到天花板，取书需踩摇梯。阅读区摆着深色橡木长桌，桌面被磨得光滑如镜，台灯投下圆锥形的暖黄光晕。角落的古典音乐唱片区偶尔播放巴赫大提琴组曲。渡边和绿子常约在靠窗的二人座，窗外是一棵老银杏，夏天绿叶蔽日，秋天落叶如金毯。绿子会一边翻杂志一边小声说话，渡边则垂头读《魔山》或《了不起的盖茨比》。空气中弥漫着油墨、旧纸和尘土混合的气味。",
+        "emotional_aura": "宁静而亲密，仿佛隔绝了外面的喧嚣世界",
+        "associated_characters": "渡边彻, 小林绿子",
+        "historical_period": "1969-1970年",
+        "narrative_significance": "渡边和绿子常去的安静角落，二人情感交流的私密空间，也是渡边思考与逃避的避风港",
+        "symbolic_theme": "知识庇护所，沉默的共鸣：书中的世界比现实更易理解"
+      },
+      "access": {
+        "permissions": "本校师生凭学生证进入，校外访客需登记",
+        "access_level": "restricted",
+        "access_conditions": "保持安静，禁止饮食，书籍外借需办理手续",
+        "visiting_hours": "周一至周六9:00-20:00，周日闭馆",
+        "entry_ritual": "",
+        "seasonal_availability": "全年开放，长假期间时间缩短",
+        "social_restrictions": "馆内不得大声交谈，不准占座",
+        "psychological_barrier": ""
+      },
+      "state": {
+        "current_state": "正常开放，藏书丰富，管理良好",
+        "ownership": "东京某大学",
+        "capacity": 200,
+        "atmospheric_condition": "静谧，光线柔和，夏季有轻微霉味，冬季暖气呼啸",
+        "occupancy_rate": "中等，上午人少，下午和傍晚学生渐多",
+        "maintenance_level": "良好，图书分类清晰，桌椅稳固",
+        "temporal_phase": "学期中，午后",
+        "weather_affinity": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:015",
+        "name": "学生食堂",
+        "type": "cafeteria",
+        "description": "一栋低矮的平房，外墙面贴白色瓷砖，已被油烟熏得泛黄。内部宽敞，摆着十多排塑料贴面的长桌与金属腿椅子，天花板吊着几台吱呀作响的吊扇。取餐窗口排着长队，供应咖喱饭、拉面、炸猪排定食这类廉价套餐。空气中混杂着味噌汤、炸物和消毒水的味道。午休时喧闹鼎沸，傍晚则稀疏安静。渡边有时独自坐在角落，面对一盘凉掉的意面发呆。",
+        "emotional_aura": "嘈杂但温馨，充满日常的烟火气",
+        "associated_characters": "学生群体（偶有主角出现）",
+        "historical_period": "1969年",
+        "narrative_significance": "日常用餐与偶遇场所，展现大学生活的平凡一面",
+        "symbolic_theme": "日常的琐碎与孤独的并存：人群中更显寂寞"
+      },
+      "access": {
+        "permissions": "本校师生凭学生证购餐，访客需由学生陪同",
+        "access_level": "public (限校内人员)",
+        "access_conditions": "在营业时间内排队购买",
+        "visiting_hours": "早7:00-9:00，午11:00-13:30，晚17:00-19:00",
+        "entry_ritual": "",
+        "seasonal_availability": "学期中全天，寒暑假部分时间关闭",
+        "social_restrictions": "无特殊限制，但座位高峰期需拼桌",
+        "psychological_barrier": ""
+      },
+      "state": {
+        "current_state": "正常运营，高峰期拥挤",
+        "ownership": "大学后勤部门承包经营",
+        "capacity": 300,
+        "atmospheric_condition": "油烟与饭香混合，噪音较大，通风一般",
+        "occupancy_rate": "午间接近满座，非高峰时段稀疏",
+        "maintenance_level": "一般，地板有油渍，桌椅偶尔摇晃",
+        "temporal_phase": "",
+        "weather_affinity": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:006",
+        "name": "Dogs爵士酒吧",
+        "type": "leisure_social",
+        "description": "位于新宿地下一条狭窄后巷的昏暗酒吧，入口只有一扇剥落油漆的木门，推开后迎面是浓重的香烟与威士忌气息。室内靠烛台和壁灯照明，墙面上挂着褪色的爵士乐手照片，吧台后的留声机整夜旋转着黑胶唱片——Bill Evans、Art Blakey、Miles Davis的旋律在烟雾中飘浮。老板是个沉默寡言的前爵士钢琴手，只在调酒间隙擦拭琴键。角落的皮质沙发被磨得发亮，永泽常在此处与女孩调情，而渡边则端着威士忌，在昏暗光线下凝视杯中的冰块融化。这里是逃避现实、放逐情感的庇护所。",
+        "emotional_aura": "忧郁、暧昧、颓废、逃避",
+        "associated_characters": "渡边彻, 永泽, 初美",
+        "historical_period": "1969年暮春至深秋",
+        "narrative_significance": "渡边与永泽深入对话的核心场所，初美在此展现出忧郁与即将到来的悲剧，是连接主人公们内心阴影与现实生活的枢纽。",
+        "symbolic_theme": "酒精与爵士乐作为青春迷惘的麻醉剂，昏暗光线象征无法清晰看见的人生道路。"
+      },
+      "access": {
+        "permissions": "公开营业，所有成年人可进入，但需遵守店内规则（冷静饮酒，不滋事）",
+        "access_level": "public",
+        "access_conditions": "无特别准入条件，但未满20岁者不得饮酒（当时日本法定饮酒年龄为20岁）",
+        "visiting_hours": "傍晚18:00至凌晨2:00",
+        "entry_ritual": "",
+        "seasonal_availability": "",
+        "social_restrictions": "",
+        "psychological_barrier": "对精神敏感者（如直子）可能因过于压抑的氛围而加重不适，但常客已习惯这种昏暗与喧闹。"
+      },
+      "state": {
+        "current_state": "营业中，日常运转正常",
+        "ownership": "一位50岁左右的前爵士乐手私人所有，无连锁",
+        "capacity": 30,
+        "atmospheric_condition": "昏暗、烟雾缭绕、空气潮湿混有威士忌味道，音箱偶尔发出轻微底噪",
+        "occupancy_rate": "平日约五成，周末几乎满座，但永远有一个角落座位属于永泽和渡边的固定据点",
+        "maintenance_level": "维持良好，略显陈旧但整洁，吧台有长期使用留下的光泽",
+        "temporal_phase": "夜间为主，所有关键场景均发生于夜晚",
+        "weather_affinity": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:008",
+        "name": "绿子家经营的咖啡店",
+        "type": "leisure_social",
+        "description": "位于东京下町一条安静住宅街的小型咖啡店，店面不过三米宽，挂着褪色却干净的招牌。店内摆着四张樱桃木小圆桌和几张折叠椅，橱窗里展示着简单的蛋糕样品。空气里永远飘着现磨咖啡的香气，收银台旁放着绿子从二手市场淘来的台灯。绿子父亲病重后她每天放学就来帮忙，穿着围裙忙碌地煮咖啡、送三明治。渡边常坐在靠窗的位置，看着街对面灰扑扑的公寓楼，等绿子忙里偷闲过来聊天。店里放着1960年流行的爵士或流行歌曲，有时是绿子自己录的磁带。这里是平凡日常的缩影，温暖而缓慢。",
+        "emotional_aura": "温暖、平凡、亲切、烟火气",
+        "associated_characters": "小林绿子, 渡边彻, 绿子的父亲",
+        "historical_period": "1969年全年",
+        "narrative_significance": "绿子日常生活的核心舞台，展现她独立、坚韧的个性，也为渡边提供了逃离沉重情感的温暖避难所。渡边与绿子之间的大部分日常对话发生于此。",
+        "symbolic_theme": "咖啡与三明治的简单生活，象征绿子代表的现实、温暖、不浪漫但坚实的爱。"
+      },
+      "access": {
+        "permissions": "公开营业，所有顾客欢迎",
+        "access_level": "public",
+        "access_conditions": "营业时间内自由进出，但作为家庭经营小店，有时会因绿子照顾父亲而临时关店",
+        "visiting_hours": "上午10:00至晚上20:00（可能因家庭情况变动）",
+        "entry_ritual": "",
+        "seasonal_availability": "",
+        "social_restrictions": "无特别限制，但绿子偶尔会因心情或家庭事务不接待客人（对熟人仍开放）",
+        "psychological_barrier": ""
+      },
+      "state": {
+        "current_state": "营业中，但老板重病，经营由绿子勉强维持",
+        "ownership": "小林家私有（已抵押给银行）",
+        "capacity": 15,
+        "atmospheric_condition": "明亮、干净、有新鲜咖啡和烤面包的香气，夏季通风扇嗡嗡作响，冬季被炉温暖",
+        "occupancy_rate": "平日约三成，周末约五成，附近居民和常客为主",
+        "maintenance_level": "良好但仍显老旧，桌椅略有磨损但一尘不染",
+        "temporal_phase": "午后是主要场景时间，阳光透过窗帘照在地板上",
+        "weather_affinity": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:013",
+        "name": "新宿爵士俱乐部",
+        "type": "leisure_social",
+        "description": "位于新宿歌舞伎町附近一条支路的专业爵士乐演出场地，入口挂着霓虹灯招牌。内部有小型舞台和老式扩音设备，台下散落着圆桌和吧椅。顾客多为西装革履的上班族或穿着入时的风衣客，只是静静喝酒听音乐。渡边偶尔独自前来，点一杯波本，在角落座位闭上眼睛听萨克斯风独奏，不与任何人交谈。",
+        "emotional_aura": "孤寂、沉浸、专业",
+        "associated_characters": "渡边彻",
+        "historical_period": "1969年",
+        "narrative_significance": "渡边独处与冥想的空间，体现他对音乐的沉浸式体验，以及内心无法与他人分享的孤独。",
+        "symbolic_theme": "爵士乐作为孤独的伴奏，音乐便是唯一的对话者。"
+      },
+      "access": {
+        "permissions": "公开营业，需购票或最低消费",
+        "access_level": "public",
+        "access_conditions": "入场需购买当夜入场券，或支付一杯饮料的价钱",
+        "visiting_hours": "晚上19:00至凌晨1:00（演出通常21:00开始）",
+        "entry_ritual": "",
+        "seasonal_availability": "",
+        "social_restrictions": "",
+        "psychological_barrier": ""
+      },
+      "state": {
+        "current_state": "营业中，每晚有现场演出",
+        "ownership": "私人企业经营者",
+        "capacity": 50,
+        "atmospheric_condition": "舞台聚光灯下烟雾升腾，座位区昏暗且安静，只有低语和杯盏碰撞声",
+        "occupancy_rate": "工作日中低，周末较高，演出期间满座",
+        "maintenance_level": "保持良好，设备专业",
+        "temporal_phase": "",
+        "weather_affinity": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:019",
+        "name": "渡边租住的公寓",
+        "type": "residential_space",
+        "description": "位于东京文京区一条坡道旁的老旧木造公寓二层，楼梯咯吱作响，走廊昏暗狭长。房间约六叠（约10平方米），铺着褪色的蔺草榻榻米，窗户面向相邻建筑的灰墙，白天只有折射进来的间接光。室内陈设极简：一张矮脚书桌、一盏台灯、一个壁橱、一张单薄的床铺和一套被炉。墙边堆放着黑胶唱片和文学书——菲茨杰拉德、陀思妥耶夫斯基、托马斯·曼。壁橱里有一床直子曾用过的棉被。渡边常在夜里独自听爵士乐，喝着威士忌写信。直子曾在这里度过几个夜晚，蜷缩在被炉旁哭泣；绿子也常来，带着自己做的便当，边说边笑填满这间小房间的寂静。",
+        "emotional_aura": "孤独、静谧、私密、偶尔亲密",
+        "associated_characters": "渡边彻, 直子, 绿子, 永泽",
+        "historical_period": "1969年春季至冬季",
+        "narrative_significance": "渡边内心世界的外化空间，也是他与直子、绿子进行深刻情感交流的场所——直子的崩溃、绿子的坦白、渡边独自的挣扎都发生于此。这里承载了故事最私密的情感转折。",
+        "symbolic_theme": "封闭的房间象征渡边封闭的内心，窗户和门外是纷乱的世界；榻榻米上的被炉是短暂的温暖与归属。"
+      },
+      "access": {
+        "permissions": "私人住所，仅限居住者及其邀请的访客",
+        "access_level": "private",
+        "access_conditions": "必须经渡边本人允许方可进入；直子和绿子获得默认准入——直子有钥匙但很少使用，绿子常直接敲门；永泽偶尔不请自来但会被渡边不满。",
+        "visiting_hours": "",
+        "entry_ritual": "",
+        "seasonal_availability": "",
+        "social_restrictions": "",
+        "psychological_barrier": "对直子而言，这间公寓既是安全港也是触发回忆的场所（木月自杀后类似的孤独感）；对绿子而言，这里是充满好奇与活力的冒险地。"
+      },
+      "state": {
+        "current_state": "渡边独自居住，家具整洁但简朴",
+        "ownership": "租赁（房东为一对年迈夫妇，住在楼下）",
+        "capacity": 2,
+        "atmospheric_condition": "随季节变化：夏季闷热潮湿，窗外的蝉鸣震耳；冬季寒冷，被炉是唯一温暖来源；春秋适宜，午后的斜阳透进模糊的光",
+        "occupancy_rate": "通常仅一人，周末有时有访客",
+        "maintenance_level": "一般，木造建筑隔音很差，地板偶尔有裂缝",
+        "temporal_phase": "关键场景多发生在黄昏或深夜，台灯昏黄的光线下",
+        "weather_affinity": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:010",
+        "name": "绿子家的书店二楼住宅",
+        "type": "residential_space",
+        "description": "位于本乡一带的旧书店楼上，爬上一段吱呀作响的木质楼梯便是绿子家的起居空间。约三叠半的榻榻米房间弥漫着旧书、酱油和药物的混合气味。靠窗的矮桌上常年摆着父亲吃剩的药瓶和凉掉的茶，墙上贴着褪色的电影海报。绿子在这里照料病重的父亲，同时也在这里向渡边展现她看似爽朗外表下的疲惫与责任。傍晚时余晖透过蒙尘的玻璃窗投下细碎光斑，与楼下偶尔传来的顾客翻书声交织成一种压抑而亲密的家庭氛围。",
+        "emotional_aura": "疲惫中带着固执的温暖，家庭重担与青春渴望并存的矛盾场所",
+        "associated_characters": "小林绿子, 绿子的父亲",
+        "historical_period": "1969年秋至1970年",
+        "narrative_significance": "绿子与渡边深入交谈、展现家庭与个人困境的关键空间，也是渡边被绿子活力吸引的重要背景",
+        "symbolic_theme": "传统家庭重负、照顾伦理与青春自由的拉扯"
+      },
+      "access": {
+        "permissions": "仅限居住者及被邀请的访客（绿子主动邀请渡边等少数人）",
+        "access_level": "私人住宅，非公开",
+        "access_conditions": "需绿子或家庭成员在场确认；渡边通过绿子的信任获得偶尔出入资格",
+        "visiting_hours": "通常为白天书店营业结束后或周末晚间",
+        "entry_ritual": "",
+        "seasonal_availability": "",
+        "social_restrictions": "",
+        "psychological_barrier": "绿子内心对展示家庭困窘的羞耻感，渡边初次来访时对生死话题的微妙回避"
+      },
+      "state": {
+        "current_state": "日常居住状态，父亲病榻占据生活中心",
+        "ownership": "绿子家（父亲名义下租借的书店附属住宅）",
+        "capacity": 3,
+        "atmospheric_condition": "室内空气略带沉闷，混杂旧书纸与汗味；光线偏暗，仅靠窗户和壁灯照明",
+        "occupancy_rate": "常驻2人（绿子与父亲），偶尔绿子妹妹在家",
+        "maintenance_level": "保持基本整洁但略显杂乱，绿子尽力维持",
+        "temporal_phase": "",
+        "weather_affinity": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:011",
+        "name": "直子家老宅（神户）",
+        "type": "residential_space",
+        "description": "一栋建于昭和初年的和洋折衷风格宅邸，位于神户市郊安静的住宅区。宽敞的玄关、铺着深色木地板的走廊、有壁龛的客厅，以及直子与木月曾一起长大的儿童房。庭院里种着一棵老山茶花树，树下有秋千的残迹。直子的姐姐上吊自杀后，整个宅子笼罩在沉默与不可言说的悲伤中，直子的父母后来搬离，但老宅始终是直子记忆里噩梦与温暖纠缠的源头。",
+        "emotional_aura": "沉重、压抑的怀旧与创伤缠绕，无法逃脱的童年阴影",
+        "associated_characters": "直子, 木月（回忆中）, 直子的姐姐（已故）, 直子的父母",
+        "historical_period": "1940年代末至1960年代",
+        "narrative_significance": "直子心理创伤的地理根源，木月与直子姐姐之死的记忆固化空间",
+        "symbolic_theme": "无法挣脱的过去、死亡与家族性抑郁的循环"
+      },
+      "access": {
+        "permissions": "仅限直子家族成员及极少数亲友（如木月曾在世时经常来访）",
+        "access_level": "私人不动产，长期空置或由远亲照管",
+        "access_conditions": "直子离开神户后几乎不再有人进入；需要钥匙或得到现管理人的许可",
+        "visiting_hours": "",
+        "entry_ritual": "",
+        "seasonal_availability": "全年封闭，偶尔在夏日盂兰盆节期间有族人短暂打扫",
+        "social_restrictions": "",
+        "psychological_barrier": ""
+      },
+      "state": {
+        "current_state": "空置多年，部分房间上锁，草木可能疯长",
+        "ownership": "直子父母名下的家产，后可能出售或闲置",
+        "capacity": 6,
+        "atmospheric_condition": "室内积灰，空气干燥老旧，有霉味和尘埃味；庭院因无人打理而杂草丛生",
+        "occupancy_rate": "0",
+        "maintenance_level": "年久失修，屋顶瓦片松动，外墙油漆剥落",
+        "temporal_phase": "",
+        "weather_affinity": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:007",
+        "name": "阿美寮附近的森林",
+        "type": "natural_landscape",
+        "description": "一片深密而寂静的原始林，位于京都郊外阿美寮疗养院的山后。高大而浓密的杉树和柏树遮蔽了天空，林间小路铺满厚厚的苔藓和落叶，空气里弥漫着湿润的泥土与朽木的气息。阳光下光束穿过层层树冠，洒下斑驳摇曳的光影，如同一个同时具有神圣与幽闭感的教堂。直子常与渡边在此并肩漫步，两人谈话的余音被林间静谧吞噬；她的脚步声似乎随时会被这片森林吸收，如同她内心的迷惘逐渐消散于无声之中。风穿过树梢时发出类似叹息的沙沙声，令人联想到不可言说的死亡征兆。这片森林既是疗养院自然疗法的一部分，也是直子精神迷宫的外化。",
+        "emotional_aura": "深邃、宁静而不安，美丽与阴郁并存，象征内心的黑暗森林",
+        "associated_characters": "直子, 渡边彻, 石田玲子",
+        "historical_period": "1969年夏至1970年秋",
+        "narrative_significance": "直子与渡边情感最亲密、也最接近死亡真相的核心场景；渡边长信中反复描写的象征空间",
+        "symbolic_theme": "心灵的幽暗之处、生与死的模糊边界、自然的疗愈与吞噬双重性"
+      },
+      "access": {
+        "permissions": "阿美寮住客及受邀访客可以自由出入，但通常有工作人员陪同指引",
+        "access_level": "半开放自然区域，属于疗养院附属用地",
+        "access_conditions": "白天可沿固定路径行走，黄昏后不建议进入；需要遵守疗养院规矩，不可单独深入",
+        "visiting_hours": "日出至日落，夏季约5:00-19:00，冬季更短",
+        "entry_ritual": "从阿美寮后门穿过一片小菜园踩过一段石阶进入林缘",
+        "seasonal_availability": "四季均可进入，但秋冬季落叶后视野稍开阔，雨季地面湿滑",
+        "social_restrictions": "",
+        "psychological_barrier": "直子感觉森林会吞噬她的存在感，渡边走神时感到一种与世隔绝的孤立眩晕"
+      },
+      "state": {
+        "current_state": "原始森林状态，人类痕迹极少，少量步道和休息石凳",
+        "ownership": "阿美寮所属的土地（推测为疗养院所有或长期租借）",
+        "capacity": 999,
+        "atmospheric_condition": "湿度高，光线幽暗，夏季凉爽，冬季阴冷；常见薄雾笼罩或雨后雾气缭绕",
+        "occupancy_rate": "平日几乎无人，偶尔有住客或工作人员散步；核心场景时只有直子和渡边",
+        "maintenance_level": "",
+        "temporal_phase": "1969年盛夏至1970年秋，树叶从深绿转为金黄再到光秃，对应叙事情绪变化",
+        "weather_affinity": "阴天、小雨与大雾最为契合其氛围，晴天时也有一种不真实的明亮感"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:020",
+        "name": "直子提及的井边",
+        "type": "natural_landscape",
+        "description": "并非真实地理位置，而是直子向渡边反复描述的一个意象化地点——她记忆深处一口被荒草覆盖的枯井，位于神户老宅附近的山林中。井口直径约两米，长满青苔与藤蔓，俯身望去黑暗深邃，似乎没有底部，只能感到一股寒意和潮湿的泥土味。直子说它“黑洞洞地独自张着口”，仿佛在等待什么人坠落。这口井并不存在于现实中的某个确切坐标，而是直子内心绝望与死亡冲动的具象投影。每当直子情绪低落时，她就会想象自己站在井边，被深不见底的孤独所吸噬。",
+        "emotional_aura": "恐惧、虚无、诱惑性的寂灭感，对死亡的原始吸引",
+        "associated_characters": "直子",
+        "historical_period": "1969年直子口述中（源自童年记忆）",
+        "narrative_significance": "直子死亡隐喻的核心符号，预示她最终走向自尽的叙事伏笔；渡边因此深受震动",
+        "symbolic_theme": "深不可测的孤独、死亡的本体、精神疾病的陷阱意象"
+      },
+      "access": {
+        "permissions": "仅存在于直子的叙述和想象中，现实并无确定的物理入口",
+        "access_level": "心理层面上的不可达——直子能靠近但无法真正“拥有”它，旁人更无法进入",
+        "access_conditions": "需要直子情绪陷入低谷时才会在意识中浮现；渡边只能通过倾听间接接近",
+        "visiting_hours": "",
+        "entry_ritual": "",
+        "seasonal_availability": "",
+        "social_restrictions": "",
+        "psychological_barrier": "直子接近井边时会感到强烈的坠落恐惧与诱惑，这是她无法向他人言说的秘密深渊"
+      },
+      "state": {
+        "current_state": "意象状态，持续存在且永恒不变——井口永远深邃、荒芜、等待",
+        "ownership": "属于直子的心理景观，非物理财产",
+        "capacity": 1,
+        "atmospheric_condition": "始终黑暗、湿冷、寂静，只有风声掠过杂草的声响",
+        "occupancy_rate": "",
+        "maintenance_level": "",
+        "temporal_phase": "永远定格在直子记忆中的那个无时间性的时刻",
+        "weather_affinity": "最常与灰色阴沉的天空和潮湿的空气相连，不依赖天气变化"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:012",
+        "name": "新宿中央公园",
+        "type": "natural_landscape",
+        "description": "位于新宿摩天楼群之间的一片绿洲，由修剪整齐的草坪、蜿蜒的小径、几株苍老的樱花树和一座人工池塘构成。池塘边设有木质长椅，常有鸽子漫步。渡边偶尔会在这里度过午后时光，坐在长椅上聆听树叶沙沙声，试图从对直子的思念中短暂抽离。1969年的暮春，公园里还残留着全共斗学生集会后留下的标语痕迹。",
+        "emotional_aura": "忧郁的孤独与短暂的平静",
+        "associated_characters": "渡边彻",
+        "historical_period": "",
+        "narrative_significance": "",
+        "symbolic_theme": "都市缝隙中的自然与喘息"
+      },
+      "access": {
+        "permissions": "自由开放，无需购票",
+        "access_level": "public",
+        "access_conditions": "无任何限制，24小时开放（但深夜灯光昏暗）",
+        "visiting_hours": "全天",
+        "entry_ritual": "",
+        "seasonal_availability": "全年，但冬季寒冷，池塘结冰",
+        "social_restrictions": "",
+        "psychological_barrier": ""
+      },
+      "state": {
+        "current_state": "正常维护，草坪定期修剪，长椅漆面略有剥落",
+        "ownership": "东京都政府",
+        "capacity": 500,
+        "atmospheric_condition": "安静平和，偶有远处城市噪音渗透",
+        "occupancy_rate": "",
+        "maintenance_level": "良好",
+        "temporal_phase": "日间游客稀少，傍晚时有情侣或散步者",
+        "weather_affinity": "晴天最受欢迎，雨天几乎无人"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:014",
+        "name": "新宿站",
+        "type": "transit_node",
+        "description": "东京最繁忙的交通枢纽之一，1969年时已是地上地下多层交织的庞然大物。站内弥漫着煤烟、汗味和廉价烟草的气息，人流如织，杂沓的脚步声与列车轰鸣声不绝于耳。售票窗口前排着长队，站台标牌褪色发黄，上方的时钟指针缓慢移动。渡边在这里多次感到被城市吞噬的窒息感，却也依赖这座车站作为往返于大学与阿美寮之间的必经路径——他从这里换乘中央线至郊外，再转公交。站内有一家狭小的香烟店和一家关东煮摊，渡边有时会在此停留片刻。",
+        "emotional_aura": "喧嚣中的孤独与都市疏离感",
+        "associated_characters": "渡边彻, 直子（偶遇）",
+        "historical_period": "1960年代末，国铁运营时期",
+        "narrative_significance": "连接正常校园生活与直子所在疗养院的枢纽，每次换乘都意味着心境转换",
+        "symbolic_theme": "流动的都市与无法停留的相遇"
+      },
+      "access": {
+        "permissions": "进入站台需购买车票，候车大厅无需购票",
+        "access_level": "public",
+        "access_conditions": "需持有有效车票（可在售票窗口购买）",
+        "visiting_hours": "首班车5:00至末班车23:30",
+        "entry_ritual": "",
+        "seasonal_availability": "",
+        "social_restrictions": "无明显社交限制，但深夜时会有巡逻警员",
+        "psychological_barrier": "对渡边而言，这里是两个世界的门槛：回去时是暂时逃离现实，前往疗养院时是直面的沉重"
+      },
+      "state": {
+        "current_state": "运营中，设备老旧但维持基本功能",
+        "ownership": "日本国有铁道",
+        "capacity": 200000,
+        "atmospheric_condition": "拥挤、嘈杂、烟雾与煤味混杂",
+        "occupancy_rate": "高峰时段超100%（极度拥挤），平峰时段约60%",
+        "maintenance_level": "中等，地板常有痰渍，站台边缘磨损",
+        "temporal_phase": "清晨人少，通勤高峰极度拥挤，夜晚渐次冷清",
+        "weather_affinity": "雨天站内漏水，冬夜寒风从入口灌入"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:016",
+        "name": "东京站",
+        "type": "transit_node",
+        "description": "红砖与白色花岗岩建成的欧式风格车站，穹顶高耸，中央大厅宽敞明亮。站台上停靠着通往横滨、名古屋、大阪等地的列车，以及1964年开通的新干线。渡边曾从这里乘夜车前往神户参加绿子父亲的葬礼，也在某个冬日清晨独自乘车去探望在神户住院的直子。站内有一家西式咖啡厅，贩卖三明治与咖啡，但渡边从未进去过。",
+        "emotional_aura": "离别与远行的淡淡伤感",
+        "associated_characters": "渡边彻",
+        "historical_period": "",
+        "narrative_significance": "",
+        "symbolic_theme": "长途旅行的起点与人生路途的隐喻"
+      },
+      "access": {
+        "permissions": "进入需购票（候车大厅自由通行）",
+        "access_level": "public",
+        "access_conditions": "仅需购买相应列车车票",
+        "visiting_hours": "",
+        "entry_ritual": "",
+        "seasonal_availability": "全年，节假日尤其繁忙",
+        "social_restrictions": "",
+        "psychological_barrier": ""
+      },
+      "state": {
+        "current_state": "运营中，翻新痕迹不明显，仍保留昭和气息",
+        "ownership": "日本国有铁道",
+        "capacity": 50000,
+        "atmospheric_condition": "明亮有序，广播声清晰，偶有蒸汽机车汽笛",
+        "occupancy_rate": "",
+        "maintenance_level": "良好，大理石地面常有清洁工擦拭",
+        "temporal_phase": "日间繁忙，夜间列车减少后安静",
+        "weather_affinity": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:005",
+        "name": "前往阿美寮的公交站",
+        "type": "transit_node",
+        "description": "位于新宿郊外一条冷清的道旁，仅有一根生锈的金属站牌，上面用白漆写着终点站名“阿美寮前”。站牌下有一条磨损的木条长椅，椅背上靠着一把被遗忘的雨伞。周围是低矮的民宅围墙和一家挂着褪色遮阳布的小卖部。渡边每次在此等车时，都会感受到一种微妙的压迫感——这里是他离开喧嚣日常、踏入直子封闭世界的最后一个普通地点。公交车班次稀疏，每天只有四班，若错过就要等到次日。他常常提前到达，坐在长椅上抽烟，看着对面人家院子里晾晒的衣物随风飘动，试图让自己做好心理准备。",
+        "emotional_aura": "压抑的期待与沉重的过渡感",
+        "associated_characters": "渡边彻, 直子（间接相关）, 石田玲子（偶尔同乘）",
+        "historical_period": "",
+        "narrative_significance": "每次前往疗养院的必经起点，是故事中两个世界（大学与疗养院）之间的临界点",
+        "symbolic_theme": "通往内心深处与阴影的门槛"
+      },
+      "access": {
+        "permissions": "任何人均可在站台等车，但需要公交票",
+        "access_level": "public",
+        "access_conditions": "购买公交票（上车投币或提前购买回数券），前往阿美寮需了解班次时刻",
+        "visiting_hours": "公交运营时间：早6:20至晚18:40（平日）；末班车可能提前",
+        "entry_ritual": "",
+        "seasonal_availability": "",
+        "social_restrictions": "",
+        "psychological_barrier": "对渡边而言，此站台象征着自愿踏入直子的痛苦世界；每一次等候都是对勇气的考验"
+      },
+      "state": {
+        "current_state": "正常运营，但设施简陋",
+        "ownership": "私营公交公司（如小田急巴士）",
+        "capacity": 20,
+        "atmospheric_condition": "安静、清冷，常伴有微风和远处田野的气味，偶尔有麻雀在站牌上停留",
+        "occupancy_rate": "平时等候者极少（1-2人），周末有时有探病家属",
+        "maintenance_level": "低——站牌油漆斑驳，长椅螺丝松动，雨棚缺损",
+        "temporal_phase": "清晨最为孤寂，午后光线斜照，傍晚天空渐暗",
+        "weather_affinity": "晴天时灰尘扬起，雨天时站内漏雨，阴天最符合情绪氛围"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:003",
+        "name": "阿美寮",
+        "type": "sanatorium",
+        "description": "一座隐蔽在京都北郊山林深处的精神疗养机构，由一栋始建于大正时期的木造主楼与几间独立平房组成。灰瓦屋顶常年覆着青苔，主楼前的石阶被雨水冲刷得泛白。空气中混杂着榻榻米、旧书和森林里松脂的气味，偶尔传来乌鸦的啼叫。这里的节奏缓慢得近乎停滞——住客们按时起床、用餐、服药、在花园里散步或从事简单的劳动，仿佛被从东京的喧嚣中连根拔起，移植到一片与世隔绝的寂静里。直子在此度过了近两年时光，她的病情时好时坏，而这座建筑本身就像一座巨大的容器，盛放着住客们沉默的悲伤与徒劳的康复。",
+        "emotional_aura": "压抑而静谧，混合着模糊的安慰与深重的无助感",
+        "associated_characters": "直子, 石田玲子, 佐藤医生",
+        "historical_period": "1969–1970年",
+        "narrative_significance": "直子在此接受疗养，是渡边直面死亡与创伤的象征性地点，也是直子最终悲剧的容器",
+        "symbolic_theme": "封闭的内心世界、无法逃脱的过去、被自然包裹的死亡"
+      },
+      "access": {
+        "permissions": "仅限注册住客、工作人员及经主治医师批准的访客；渡边以直子恋人身份获准定期探访",
+        "access_level": "restricted",
+        "access_conditions": "必须提前申请并说明探访缘由，访客需在下午六点前离开；住客不得随意外出",
+        "visiting_hours": "每周日 10:00–17:00",
+        "entry_ritual": "访客需在主楼入口的登记簿签名，并由工作人员引至公共休息室等待住客",
+        "seasonal_availability": "全年开放，冬季大雪时可能封闭山路",
+        "social_restrictions": "禁止谈论外部世界的政治与运动新闻，以保持住客情绪稳定",
+        "psychological_barrier": "从山脚走上石阶的过程仿佛逐渐坠入一个与现实隔绝的梦境，许多访客感到难以呼吸的压抑"
+      },
+      "state": {
+        "current_state": "运营中，住客约二十余人，以青少年和年轻女性为主",
+        "ownership": "私人基金会，由佐藤医生担任院长",
+        "capacity": 35,
+        "atmospheric_condition": "常年湿润，主楼内光线昏黄，走廊尽头总有穿堂风",
+        "occupancy_rate": "约60%",
+        "maintenance_level": "定期修缮但显旧，木地板走起来吱呀作响",
+        "temporal_phase": "日常的循环：早晨六点起床铃，九点劳动，午后自由活动，晚间七点集体用餐，九点熄灯",
+        "weather_affinity": "雨天最为契合——雨声使整座建筑显得更加与世隔绝"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:001",
+        "name": "阿美寮公共休息室",
+        "type": "sanatorium",
+        "description": "主楼东翼的一间宽敞和室，铺着陈旧的蔺草榻榻米，中央放着一个铸铁火炉，四周散落着几把藤椅和一张矮桌。墙上挂着一架老旧的立式钢琴，琴盖上有明显的划痕，那是石田玲子每天练习时留下的痕迹。傍晚时分，住客们会聚在这里听玲子弹奏爵士乐——从《Norwegian Wood》到《The Girl from Ipanema》，琴声在低矮的木质天花板上回荡，像一只虚无的手抚摸着每个人的心。这里也是渡边与直子有限的交谈发生的地方，直子常常沉默地缩在角落的藤椅里，目光越过窗外的常绿树梢。",
+        "emotional_aura": "温柔而忧郁，音乐让人短暂忘记现实，随后却更清楚地感到孤寂",
+        "associated_characters": "石田玲子, 直子, 渡边彻",
+        "historical_period": "1969–1970年",
+        "narrative_significance": "玲子弹奏《挪威的森林》，直子与渡边在此进行最后一次长谈；音乐象征暂时的情感共鸣与精神避难所",
+        "symbolic_theme": "短暂的和解与片刻的救赎、被音乐联结的孤独灵魂"
+      },
+      "access": {
+        "permissions": "所有住客及访客在开放时间均可进入；晚上九点后关闭",
+        "access_level": "open to residents and approved visitors",
+        "access_conditions": "无需特别许可，但需保持安静；住客之间可自由交流",
+        "visiting_hours": "每日 7:00–21:00",
+        "entry_ritual": "推开滑动的木格门时，门框会发出轻微的响声，有时会打断正进行的谈话",
+        "seasonal_availability": "四季开放，冬季火炉是最受欢迎的位置",
+        "social_restrictions": "避免讨论自杀、死亡或政治话题；音乐可以任意演奏或播放",
+        "psychological_barrier": "对直子而言，这里是唯一能稍稍放松却仍无法真正逃离的地方"
+      },
+      "state": {
+        "current_state": "整洁但老旧，火炉旁的地垫有烟火烫出的焦痕",
+        "ownership": "阿美寮机构所有",
+        "capacity": 20,
+        "atmospheric_condition": "傍晚时最温暖，灯光是暖黄色的，墙壁上投着琴谱的阴影",
+        "occupancy_rate": "晚间通常有七八位住客，周末可能更多",
+        "maintenance_level": "每周清扫一次，钢琴每季度调音",
+        "temporal_phase": "傍晚至熄灯前为社交活动高峰，早晨至午后几乎无人",
+        "weather_affinity": "雨天室内声音更清晰，琴声仿佛被雨帘包裹；冬日火炉的柴火噼啪作响最为安谧"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:002",
+        "name": "阿美寮花园",
+        "type": "sanatorium",
+        "description": "主楼后方一块约两百平方米的庭院，用不规则的石板铺出小径，两侧种着修剪成球的杜鹃、几株山茶和一棵高大的银杏。一座小小的石灯笼立在前院中央，常年无人打理，底座爬满苔藓。这里是直子最常独自散步的地方——她会在午后沿着小径一圈一圈地走，或者坐在西侧长椅上看着树梢的影子移动。风吹过时，树叶沙沙作响，偶尔有松鼠跑过。园子尽头有一道生锈的铁丝网，网外是更密的原始山林。",
+        "emotional_aura": "宁静而寂寥，自然的美反而加深了内心的荒芜",
+        "associated_characters": "直子",
+        "historical_period": "1969–1970年",
+        "narrative_significance": "直子在此向渡边诉说木月的死和她的罪疚感，是重要对话的发生地",
+        "symbolic_theme": "自然与囚笼、自由与边界、无法逾越的心理障碍"
+      },
+      "access": {
+        "permissions": "所有住客及工作人员任意时段可进入",
+        "access_level": "open",
+        "access_conditions": "无特殊限制，但回廊通往花园的门入夜后会上锁以防住客误入山林",
+        "visiting_hours": "每日 6:00–20:00（冬日至18:00）",
+        "entry_ritual": "",
+        "seasonal_availability": "全年开放，春季杜鹃花开，秋季银杏金黄",
+        "social_restrictions": "多为单独散步，偶有两三人结伴，大声说笑不受欢迎",
+        "psychological_barrier": "铁丝网内外皆是森林，但住客往往只敢在小径范围活动，仿佛有一条无形的边界"
+      },
+      "state": {
+        "current_state": "草木自然生长，石板路有些松动，长椅的油漆已经剥落",
+        "ownership": "阿美寮机构所有",
+        "capacity": 15,
+        "atmospheric_condition": "午后光线透过树叶投下斑驳光影，空气中有湿润的泥土气息",
+        "occupancy_rate": "平日仅一两人，周末可能三四人",
+        "maintenance_level": "每两周除草一次，其他维护很少",
+        "temporal_phase": "清晨和傍晚最安静，中午偶有住客出来呼吸新鲜空气",
+        "weather_affinity": "小雨时园中无人，景色朦胧而伤感；雪后一片纯白，寂静到耳鸣"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:004",
+        "name": "阿美寮单人病房",
+        "type": "sanatorium",
+        "description": "主楼二楼走廊尽头的房间，约六叠大小，窗户朝北对着后山。房间陈设极简：一张单人床铺着白色布单，一张书桌，一把木椅，墙角有一个小衣柜。床头柜上放着一盏台灯、几本渡边寄来的书和直子母亲的来信。房间里有淡淡消毒水味道，混合着窗帘长久未洗的灰尘感。直子病情加重后就被安排到这里，与公共区域隔离。她时常整日蜷在床上，盯着天花板上一道细长的裂缝，偶尔起身站在窗边向外望，但从不打开窗户。空气仿佛是凝固的，所有声音都被厚重的墙壁吸收。",
+        "emotional_aura": "闭塞、绝望，时间失去刻度，只有沉默与等待",
+        "associated_characters": "直子, 石田玲子（偶尔探视）",
+        "historical_period": "1970年初至直子去世前",
+        "narrative_significance": "直子最终选择在此处离开人世，是故事中死亡不可逆性的最直接体现；渡边最后一次见她就是在这扇窗户透出的微光里",
+        "symbolic_theme": "灵魂的囚笼、彻底孤独、被遗忘的死亡"
+      },
+      "access": {
+        "permissions": "仅医护人员和直子本人可自由进入；玲子和渡边需经佐藤医生特别允许才能短时探视",
+        "access_level": "highly restricted",
+        "access_conditions": "探视需提前一天申请，每次不超过二十分钟，且必须有护士在场",
+        "visiting_hours": "原则上无固定时间，但多为下午14:00–16:00",
+        "entry_ritual": "护士用钥匙打开门锁，轻轻推开门，直子通常会缓慢地转过头来，目光空洞",
+        "seasonal_availability": "全年密闭，冬天暖气不足，夏天闷热",
+        "social_restrictions": "禁止携带任何可能伤害自己的物品，连钢笔都不允许留在房间",
+        "psychological_barrier": "走进这扇门需要极大的勇气，连玲子都承认自己怕看到直子那失去生气的眼睛"
+      },
+      "state": {
+        "current_state": "直子去世后房间已空置，医护人员计划等下一个住客入住前重新粉刷",
+        "ownership": "阿美寮机构所有",
+        "capacity": 1,
+        "atmospheric_condition": "阴冷，常常透不进阳光，窗帘半拉，台灯始终亮着",
+        "occupancy_rate": "直子独居大概三个月后空出",
+        "maintenance_level": "每日清扫，但窗户很少擦，玻璃上蒙着一层灰",
+        "temporal_phase": "时间在此失去意义，直子经常分不清白天黑夜",
+        "weather_affinity": "任何天气下房间内部都保持不变——昏暗、封闭、与季节隔绝"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:018",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:009",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:017",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:015",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:006",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:008",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:013",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:019",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:010",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:011",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:007",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:020",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:012",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:014",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:016",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:005",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:003",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:001",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:002",
+    "e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:004"
+  ],
+  "upstream_step_ids": [
+    "generate_locations"
+  ],
+  "warnings": [
+    "batch 1 review (score=4.29): 发现 1 个问题并已自动修正",
+    "batch 2/5 failed: Failed to parse JSON: [\n  {\n    \"identity\": {\n      \"id\": \"e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:003\",\n      \"name\": \"阿美寮\",\n      \"type\": \"sanatorium\",\n      \"description\": \"坐落于京都北郊深山中的一处私立精神疗养院，由一栋主楼与几栋附属平房组成，周围被原始次生...",
+    "consolidated retry: 4 seeds missing, retrying as one batch"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

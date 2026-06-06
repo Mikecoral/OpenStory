@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "emotional_imprint",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "time_period_association",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "narrative_significance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

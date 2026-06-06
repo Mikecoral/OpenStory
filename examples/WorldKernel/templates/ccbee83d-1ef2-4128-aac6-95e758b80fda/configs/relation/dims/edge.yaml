@@ -1,0 +1,32 @@
+dim_name: EdgeDim
+id:
+  type: str
+from_id:
+  type: str
+to_id:
+  type: str
+type:
+  type: str
+direction:
+  type: str
+shared_memory:
+  type: str
+  option: true
+interaction_frequency:
+  type: str
+  option: true
+first_meeting_context:
+  type: str
+  option: true
+current_status:
+  type: str
+  option: true
+tragic_element:
+  type: str
+  option: true
+emotional_tone:
+  type: str
+  option: true
+sanatorium_context:
+  type: str
+  option: true

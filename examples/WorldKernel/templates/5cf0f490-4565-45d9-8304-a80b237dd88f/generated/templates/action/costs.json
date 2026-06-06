@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "time",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "resources",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_cost",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "spirit_power_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "spirit_energy_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "limited_use_per_stage",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reputation_change",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "relationship_change_with_boss",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "black_white_stability",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

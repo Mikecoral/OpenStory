@@ -1,0 +1,44 @@
+{
+  "location_ids": [
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:loc:005",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:loc:006",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:loc:002",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:loc:001",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:loc:004",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:loc:007",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:loc:003"
+  ],
+  "character_ids": [
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:001",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:004",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:006",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:003",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:007",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:008",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:005",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:010",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:009",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:002"
+  ],
+  "path_edge_ids": [],
+  "relation_edge_ids": [],
+  "artifact_domain_by_id": {
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:loc:005": "location_profile",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:loc:006": "location_profile",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:loc:002": "location_profile",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:loc:001": "location_profile",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:loc:004": "location_profile",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:loc:007": "location_profile",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:loc:003": "location_profile",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:001": "character_profile",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:004": "character_profile",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:006": "character_profile",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:003": "character_profile",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:007": "character_profile",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:008": "character_profile",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:005": "character_profile",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:010": "character_profile",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:009": "character_profile",
+    "e:e56dc6bb_c05b_4389_ae66_eaee29a8d074:char:002": "character_profile"
+  }
+}

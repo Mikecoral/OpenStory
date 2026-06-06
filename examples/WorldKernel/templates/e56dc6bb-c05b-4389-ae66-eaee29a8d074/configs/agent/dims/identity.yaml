@@ -1,0 +1,19 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+role:
+  type: str
+faction_affiliation:
+  type: str
+  option: true
+official_title:
+  type: str
+  option: true
+style_name:
+  type: str
+  option: true
+nickname:
+  type: str
+  option: true

@@ -1,0 +1,76 @@
+{
+  "fields": [
+    {
+      "name": "required_state",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "required_items",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "alliance_required",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "hostility_required",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "rank_requirement",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "loyalty_threshold",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "territory_control",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "fortification_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "season_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "historical_event_trigger",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "troop_size_requirement",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "supply_line_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

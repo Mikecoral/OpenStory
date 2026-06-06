@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "authority",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "legitimacy",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "origin_story",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_fate_binding",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "connection_to_cosmic_order",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "derived_from_character_psyche",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

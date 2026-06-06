@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "group_id",
+      "type": "str",
+      "required": true,
+      "ref": "institution"
+    },
+    {
+      "name": "reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "reputation_in_sea_god_island",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "relation_with_seven_pillars",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "internal_faction_standing",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

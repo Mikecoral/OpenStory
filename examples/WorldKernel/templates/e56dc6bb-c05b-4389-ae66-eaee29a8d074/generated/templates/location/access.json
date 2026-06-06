@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "permissions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_conditions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "garrison",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "control_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "trade_route",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "siege_history",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "blockade",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

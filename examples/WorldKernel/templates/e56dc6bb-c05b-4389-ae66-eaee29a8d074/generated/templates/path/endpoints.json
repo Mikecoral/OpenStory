@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "bidirectional",
+      "type": "bool",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "intermediate_stops",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "distance_category",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "strategic_importance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

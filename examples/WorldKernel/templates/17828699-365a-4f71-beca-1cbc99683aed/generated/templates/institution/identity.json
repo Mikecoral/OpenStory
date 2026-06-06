@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "founding_decade",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "cultural_affiliation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "size_category",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "atmosphere_keywords",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "music_genre_preference",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "membership_visibility_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

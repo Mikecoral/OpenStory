@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "bidirectional",
+      "type": "bool",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "from_area_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "to_area_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "from_security_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "to_security_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "hidden_endpoint",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "transport_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

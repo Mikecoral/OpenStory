@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "atmosphere_description",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "time_period_feel",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "cultural_reference",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

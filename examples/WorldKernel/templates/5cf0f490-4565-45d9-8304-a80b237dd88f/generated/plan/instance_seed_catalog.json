@@ -1,0 +1,329 @@
+{
+  "session_id": "5cf0f490-4565-45d9-8304-a80b237dd88f",
+  "instance_seeds": {
+    "location": [
+      {
+        "seed_id": "sea_god_light_trial",
+        "name": "海神之光试炼场",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "第一考的场所，考验魂力和意志力",
+        "archetype_id": "trial_ground"
+      },
+      {
+        "seed_id": "circular_sea_trial",
+        "name": "环形海试炼场",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 1,
+        "role_in_world": "第二考的场所，考验速度与海洋适应力",
+        "archetype_id": "trial_ground"
+      },
+      {
+        "seed_id": "seven_pillars_arena",
+        "name": "七圣柱挑战场",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "第三考至第七考的连续挑战场所",
+        "archetype_id": "trial_ground"
+      },
+      {
+        "seed_id": "spirit_beast_forest",
+        "name": "魂兽森林试炼区",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "第八考的猎杀魂兽场地",
+        "archetype_id": "trial_ground"
+      },
+      {
+        "seed_id": "mind_trial_chamber",
+        "name": "心灵试炼密室",
+        "importance": "major",
+        "source_type": "original",
+        "confidence": 0.8,
+        "generation_priority": 2,
+        "role_in_world": "隐藏的第九考模拟情感考验场所",
+        "archetype_id": "trial_ground"
+      },
+      {
+        "seed_id": "meditation_cave",
+        "name": "冥想洞窟",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "唐三修炼魂力与感悟海神之力的地方",
+        "archetype_id": "training_space"
+      },
+      {
+        "seed_id": "spirit_spring",
+        "name": "魂力温泉",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.8,
+        "generation_priority": 3,
+        "role_in_world": "恢复魂力和治疗伤势的场所",
+        "archetype_id": "training_space"
+      },
+      {
+        "seed_id": "sea_god_training_hall",
+        "name": "海神修炼大殿",
+        "importance": "core",
+        "source_type": "original",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "专门为考核者准备的修炼密室",
+        "archetype_id": "training_space"
+      },
+      {
+        "seed_id": "seahorse_city_quarters",
+        "name": "海马城住所",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "唐三和史莱克七怪居住的区域",
+        "archetype_id": "residential_area"
+      },
+      {
+        "seed_id": "fishing_village",
+        "name": "海神渔村",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.9,
+        "generation_priority": 3,
+        "role_in_world": "海神岛原住民主要生活区",
+        "archetype_id": "residential_area"
+      },
+      {
+        "seed_id": "island_inn",
+        "name": "海神岛客栈",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.85,
+        "generation_priority": 3,
+        "role_in_world": "外来者临时住宿处",
+        "archetype_id": "residential_area"
+      },
+      {
+        "seed_id": "sea_god_temple",
+        "name": "海神神殿",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "海神神位传承的核心地点，最后的考核在此完成",
+        "archetype_id": "core_temple"
+      },
+      {
+        "seed_id": "sea_god_statue_shrine",
+        "name": "海神雕像殿",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "供奉海神雕像，考核者在此接受祝福",
+        "archetype_id": "core_temple"
+      },
+      {
+        "seed_id": "sea_god_plaza",
+        "name": "海神广场",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "集会和宣布考核规则的主要公共空间",
+        "archetype_id": "public_area"
+      },
+      {
+        "seed_id": "island_dock",
+        "name": "海神岛码头",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "进出海神岛的唯一通道",
+        "archetype_id": "public_area"
+      },
+      {
+        "seed_id": "island_market",
+        "name": "海神岛市集",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.8,
+        "generation_priority": 3,
+        "role_in_world": "原住民交易物资和情报的场所",
+        "archetype_id": "public_area"
+      },
+      {
+        "seed_id": "blackening_xiaowu_seal",
+        "name": "黑化小舞封印地",
+        "importance": "core",
+        "source_type": "original",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "隐藏的第九考最终地点，封印着被深渊力量黑化的小舞",
+        "archetype_id": "forbidden_zone"
+      },
+      {
+        "seed_id": "abyss_crack",
+        "name": "深渊裂隙",
+        "importance": "core",
+        "source_type": "original",
+        "confidence": 0.9,
+        "generation_priority": 1,
+        "role_in_world": "通往深渊的裂缝，黑化力量的来源",
+        "archetype_id": "forbidden_zone"
+      }
+    ],
+    "character": [
+      {
+        "seed_id": "bo_sai_xi",
+        "name": "波赛西",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "海神岛大祭司，海神九考的主持者和监督者",
+        "archetype_id": "examiner"
+      },
+      {
+        "seed_id": "hai_ma_dou_luo",
+        "name": "海马斗罗",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "七圣柱守护者之一，守卫海马城",
+        "archetype_id": "guardian"
+      },
+      {
+        "seed_id": "hai_nv_dou_luo",
+        "name": "海女斗罗",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "七圣柱守护者之一，负责考核中的部分试炼",
+        "archetype_id": "guardian"
+      },
+      {
+        "seed_id": "hai_long_dou_luo",
+        "name": "海龙斗罗",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "七圣柱守护者中最强者，压制考核者实力",
+        "archetype_id": "guardian"
+      },
+      {
+        "seed_id": "island_elder",
+        "name": "海神岛长老",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.8,
+        "generation_priority": 3,
+        "role_in_world": "原住民代表，提供岛上历史与规则信息",
+        "archetype_id": "native"
+      },
+      {
+        "seed_id": "black_xiaowu",
+        "name": "黑化小舞",
+        "importance": "core",
+        "source_type": "original",
+        "confidence": 0.9,
+        "generation_priority": 1,
+        "role_in_world": "被深渊力量黑化的小舞，第九考必须击败的敌人，情感冲突核心",
+        "archetype_id": "hidden_antagonist"
+      },
+      {
+        "seed_id": "sea_god",
+        "name": "海神",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "海神神位的拥有者，考核的终极赐予者，在第九考后现身",
+        "archetype_id": "deity"
+      },
+      {
+        "seed_id": "tang_san",
+        "name": "唐三",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "海神九考的接受者，主角，最终必须击败黑化小舞完成考核",
+        "archetype_id": "ally"
+      },
+      {
+        "seed_id": "xiaowu_normal",
+        "name": "小舞",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "唐三的爱人，被深渊力量抓走并黑化，正常态为辅助同伴",
+        "archetype_id": "ally"
+      },
+      {
+        "seed_id": "dai_mu_bo",
+        "name": "戴沐白",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "史莱克七怪之一，辅助唐三通过部分考核",
+        "archetype_id": "ally"
+      },
+      {
+        "seed_id": "ao_si_ka",
+        "name": "奥斯卡",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "史莱克七怪之一，提供食物系魂力支持",
+        "archetype_id": "ally"
+      },
+      {
+        "seed_id": "ning_rong_rong",
+        "name": "宁荣荣",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "史莱克七怪之一，提供辅助系增益",
+        "archetype_id": "ally"
+      },
+      {
+        "seed_id": "zhu_zhu_qing",
+        "name": "朱竹清",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "史莱克七怪之一，担任侦查和输出角色",
+        "archetype_id": "ally"
+      },
+      {
+        "seed_id": "ma_hong_jun",
+        "name": "马红俊",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 2,
+        "role_in_world": "史莱克七怪之一，提供火系攻击力",
+        "archetype_id": "ally"
+      }
+    ]
+  }
+}

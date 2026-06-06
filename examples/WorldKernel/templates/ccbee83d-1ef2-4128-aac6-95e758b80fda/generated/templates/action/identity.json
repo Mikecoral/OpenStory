@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "category",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "intention_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "emotional_tone",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "involves_memory_of_deceased",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

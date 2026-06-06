@@ -1,0 +1,19 @@
+dim_name: PersonalityDim
+traits:
+  type: list_str
+values:
+  type: list_str
+speech_style:
+  type: str
+inner_monologue_weight:
+  type: str
+  option: true
+silence_tolerance:
+  type: str
+  option: true
+melancholy_tendency:
+  type: str
+  option: true
+memory_preoccupation:
+  type: str
+  option: true

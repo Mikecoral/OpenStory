@@ -1,0 +1,257 @@
+{
+  "artifact_type": "relation_edge",
+  "items": [
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:016",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:008",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:007",
+        "type": "轮回共犯",
+        "direction": "双向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:013",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:008",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:001",
+        "type": "轮回共犯",
+        "direction": "双向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:010",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:007",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:001",
+        "type": "轮回共犯",
+        "direction": "双向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:015",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:008",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:005",
+        "type": "信任纽带",
+        "direction": "双向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:017",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:008",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:010",
+        "type": "宿敌",
+        "direction": "双向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:011",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:007",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:006",
+        "type": "生死对抗",
+        "direction": "双向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:002",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:001",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:010",
+        "type": "窥探",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:018",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:010",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:006",
+        "type": "指挥链",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:020",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:010",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:012",
+        "type": "指挥链",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:019",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:010",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:009",
+        "type": "指挥链",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:009",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:006",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:012",
+        "type": "终焉使徒",
+        "direction": "双向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:008",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:006",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:009",
+        "type": "终焉使徒",
+        "direction": "双向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:024",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:012",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:009",
+        "type": "终焉使徒",
+        "direction": "双向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:004",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:002",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:011",
+        "type": "审判权威",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:003",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:002",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:003",
+        "type": "审判权威",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:021",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:011",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:003",
+        "type": "指挥",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:007",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:005",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:004",
+        "type": "本土同伴",
+        "direction": "双向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:006",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:004",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:008",
+        "type": "医疗看护",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:023",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:012",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:001",
+        "type": "恐吓",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:005",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:003",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:007",
+        "type": "处刑者",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:022",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:011",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:008",
+        "type": "公正裁决",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:014",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:008",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:002",
+        "type": "挑战权威",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:012",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:007",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:012",
+        "type": "武力反抗",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:001",
+        "from_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:001",
+        "to_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:009",
+        "type": "情报收集",
+        "direction": "单向"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:016",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:013",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:010",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:015",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:017",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:011",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:002",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:018",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:020",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:019",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:009",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:008",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:024",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:004",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:003",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:021",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:007",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:006",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:023",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:005",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:022",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:014",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:012",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:rel:001"
+  ],
+  "upstream_step_ids": [
+    "generate_relations"
+  ],
+  "warnings": [],
+  "provenance": {
+    "result_count": 1
+  }
+}

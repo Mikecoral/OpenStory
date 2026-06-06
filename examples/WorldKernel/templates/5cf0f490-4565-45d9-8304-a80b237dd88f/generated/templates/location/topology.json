@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "connected_to",
+      "type": "list_str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "parent_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "layer",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "entrance_type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "所在岛屿区域（外层/内层/核心）",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "连接考核门（第几考场地）",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "是否有隐藏传送阵",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "结界边界定位",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "与海神神殿的垂直/水平关系",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

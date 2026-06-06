@@ -1,0 +1,629 @@
+{
+  "artifact_type": "path_edge",
+  "items": [
+    {
+      "identity": {
+        "id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:017",
+        "name": "中心广场至市政大楼主干道",
+        "type": "街道",
+        "area_danger_rating": "低",
+        "function_tag": "交通干道",
+        "scene_atmosphere": "繁忙",
+        "governing_faction": "市政厅"
+      },
+      "endpoints": {
+        "from_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:015",
+        "to_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:010",
+        "bidirectional": true,
+        "from_area_type": "城市核心区",
+        "to_area_type": "城市核心区",
+        "from_security_level": "开放",
+        "to_security_level": "中等",
+        "hidden_endpoint": "",
+        "transport_type": "步行/车辆"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "access_requirement": "",
+        "monster_encounter_probability": "",
+        "surveillance_level": "低",
+        "combat_allowed": "false",
+        "ability_restriction": "",
+        "time_restriction": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:013",
+        "name": "中心广场至商业街步行街",
+        "type": "步行街",
+        "area_danger_rating": "低",
+        "function_tag": "商业通道",
+        "scene_atmosphere": "热闹",
+        "governing_faction": "商业协会"
+      },
+      "endpoints": {
+        "from_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:015",
+        "to_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:006",
+        "bidirectional": true,
+        "from_area_type": "城市核心区",
+        "to_area_type": "城市核心区",
+        "from_security_level": "",
+        "to_security_level": "",
+        "hidden_endpoint": "",
+        "transport_type": "步行"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "access_requirement": "",
+        "monster_encounter_probability": "",
+        "surveillance_level": "低",
+        "combat_allowed": "false",
+        "ability_restriction": "",
+        "time_restriction": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:011",
+        "name": "中心广场至中央公园林荫道",
+        "type": "林荫道",
+        "area_danger_rating": "低",
+        "function_tag": "休闲通道",
+        "scene_atmosphere": "宁静",
+        "governing_faction": "市政园林局"
+      },
+      "endpoints": {
+        "from_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:015",
+        "to_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:005",
+        "bidirectional": true,
+        "from_area_type": "城市核心区",
+        "to_area_type": "公共场所",
+        "from_security_level": "",
+        "to_security_level": "",
+        "hidden_endpoint": "",
+        "transport_type": "步行"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "access_requirement": "",
+        "monster_encounter_probability": "",
+        "surveillance_level": "低",
+        "combat_allowed": "false",
+        "ability_restriction": "",
+        "time_restriction": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:006",
+        "name": "市政大楼至特管局官方通道",
+        "type": "主干道",
+        "area_danger_rating": "中等",
+        "function_tag": "政府通道",
+        "scene_atmosphere": "庄严",
+        "governing_faction": "特管局"
+      },
+      "endpoints": {
+        "from_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:010",
+        "to_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:002",
+        "bidirectional": true,
+        "from_area_type": "城市核心区",
+        "to_area_type": "政府机构",
+        "from_security_level": "中等",
+        "to_security_level": "高",
+        "hidden_endpoint": "",
+        "transport_type": "车辆/步行"
+      },
+      "conditions": {
+        "access_level": "需要通行证",
+        "danger_level": "安全",
+        "required_items": "政府证件",
+        "access_requirement": "特管局或市政厅工作证",
+        "monster_encounter_probability": "",
+        "surveillance_level": "高",
+        "combat_allowed": "false",
+        "ability_restriction": "",
+        "time_restriction": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:007",
+        "name": "特管局内部走廊至特殊事务科",
+        "type": "走廊",
+        "area_danger_rating": "低",
+        "function_tag": "内部通道",
+        "scene_atmosphere": "办公环境",
+        "governing_faction": "特管局"
+      },
+      "endpoints": {
+        "from_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:002",
+        "to_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:012",
+        "bidirectional": true,
+        "from_area_type": "政府机构",
+        "to_area_type": "政府机构",
+        "from_security_level": "高",
+        "to_security_level": "高",
+        "hidden_endpoint": "",
+        "transport_type": "步行"
+      },
+      "conditions": {
+        "access_level": "需要权限",
+        "danger_level": "安全",
+        "required_items": "特管局工牌",
+        "access_requirement": "特殊事务科成员或上级授权",
+        "monster_encounter_probability": "",
+        "surveillance_level": "高",
+        "combat_allowed": "false",
+        "ability_restriction": "",
+        "time_restriction": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:005",
+        "name": "特管局至幸运等级测试中心连廊",
+        "type": "连廊",
+        "area_danger_rating": "低",
+        "function_tag": "专用通道",
+        "scene_atmosphere": "冷峻",
+        "governing_faction": "特管局"
+      },
+      "endpoints": {
+        "from_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:002",
+        "to_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:009",
+        "bidirectional": true,
+        "from_area_type": "政府机构",
+        "to_area_type": "特殊设施",
+        "from_security_level": "高",
+        "to_security_level": "高",
+        "hidden_endpoint": "",
+        "transport_type": "步行"
+      },
+      "conditions": {
+        "access_level": "需要预约",
+        "danger_level": "安全",
+        "required_items": "测试预约单或工作证",
+        "access_requirement": "幸运等级≥5或特管局职员",
+        "monster_encounter_probability": "",
+        "surveillance_level": "高",
+        "combat_allowed": "false",
+        "ability_restriction": "",
+        "time_restriction": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:004",
+        "name": "特管局至异能训练中心专线",
+        "type": "公路",
+        "area_danger_rating": "中等",
+        "function_tag": "训练通勤",
+        "scene_atmosphere": "严肃",
+        "governing_faction": "特管局"
+      },
+      "endpoints": {
+        "from_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:002",
+        "to_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:007",
+        "bidirectional": true,
+        "from_area_type": "政府机构",
+        "to_area_type": "特殊设施",
+        "from_security_level": "高",
+        "to_security_level": "高",
+        "hidden_endpoint": "",
+        "transport_type": "车辆"
+      },
+      "conditions": {
+        "access_level": "需要许可",
+        "danger_level": "安全",
+        "required_items": "训练通行证",
+        "access_requirement": "特管局成员或受训猎兽者",
+        "monster_encounter_probability": "",
+        "surveillance_level": "中等",
+        "combat_allowed": "false",
+        "ability_restriction": "",
+        "time_restriction": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:002",
+        "name": "废弃工业区至异兽巢穴边缘小径",
+        "type": "荒野小径",
+        "area_danger_rating": "极高",
+        "function_tag": "战斗路径",
+        "scene_atmosphere": "阴森",
+        "governing_faction": "无（异兽势力）"
+      },
+      "endpoints": {
+        "from_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:001",
+        "to_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:016",
+        "bidirectional": false,
+        "from_area_type": "战斗区域",
+        "to_area_type": "战斗区域",
+        "from_security_level": "无",
+        "to_security_level": "无",
+        "hidden_endpoint": "",
+        "transport_type": "步行"
+      },
+      "conditions": {
+        "access_level": "危险区域",
+        "danger_level": "致命",
+        "required_items": "武器、防具、解毒剂",
+        "access_requirement": "",
+        "monster_encounter_probability": "极高",
+        "surveillance_level": "无",
+        "combat_allowed": "true",
+        "ability_restriction": "",
+        "time_restriction": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:001",
+        "name": "废弃工业区地下排水道入口",
+        "type": "下水道",
+        "area_danger_rating": "高",
+        "function_tag": "秘密通道",
+        "scene_atmosphere": "污浊",
+        "governing_faction": "无（异兽也可能出现）"
+      },
+      "endpoints": {
+        "from_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:001",
+        "to_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:013",
+        "bidirectional": true,
+        "from_area_type": "战斗区域",
+        "to_area_type": "战斗区域",
+        "from_security_level": "",
+        "to_security_level": "",
+        "hidden_endpoint": "true",
+        "transport_type": "步行（下水道）"
+      },
+      "conditions": {
+        "access_level": "需要探索",
+        "danger_level": "高",
+        "required_items": "光源、防毒面具",
+        "access_requirement": "",
+        "monster_encounter_probability": "高",
+        "surveillance_level": "无",
+        "combat_allowed": "true",
+        "ability_restriction": "",
+        "time_restriction": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:012",
+        "name": "地下竞技场至商业街隐蔽入口",
+        "type": "秘密楼梯",
+        "area_danger_rating": "高",
+        "function_tag": "非法入口",
+        "scene_atmosphere": "昏暗",
+        "governing_faction": "地下势力"
+      },
+      "endpoints": {
+        "from_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:013",
+        "to_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:006",
+        "bidirectional": true,
+        "from_area_type": "战斗区域",
+        "to_area_type": "城市核心区",
+        "from_security_level": "",
+        "to_security_level": "",
+        "hidden_endpoint": "true",
+        "transport_type": "步行"
+      },
+      "conditions": {
+        "access_level": "需要知情",
+        "danger_level": "中等",
+        "required_items": "无",
+        "access_requirement": "拥有地下竞技场通行证或内部引导",
+        "monster_encounter_probability": "",
+        "surveillance_level": "低（商业街段）",
+        "combat_allowed": "true",
+        "ability_restriction": "",
+        "time_restriction": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:014",
+        "name": "高阳安全屋至天虹商场后巷",
+        "type": "小巷",
+        "area_danger_rating": "中等",
+        "function_tag": "秘密补给线",
+        "scene_atmosphere": "隐蔽",
+        "governing_faction": "无（主角团队监控）"
+      },
+      "endpoints": {
+        "from_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:008",
+        "to_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:011",
+        "bidirectional": true,
+        "from_area_type": "秘密基地",
+        "to_area_type": "公共场所",
+        "from_security_level": "",
+        "to_security_level": "",
+        "hidden_endpoint": "true",
+        "transport_type": "步行"
+      },
+      "conditions": {
+        "access_level": "需要密码",
+        "danger_level": "低",
+        "required_items": "安全屋门禁卡",
+        "access_requirement": "团队内部成员",
+        "monster_encounter_probability": "",
+        "surveillance_level": "低",
+        "combat_allowed": "true",
+        "ability_restriction": "",
+        "time_restriction": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:009",
+        "name": "高阳安全屋至熟悉咖啡馆秘密路线",
+        "type": "地铁隧道",
+        "area_danger_rating": "高",
+        "function_tag": "逃生路线",
+        "scene_atmosphere": "幽暗",
+        "governing_faction": "无"
+      },
+      "endpoints": {
+        "from_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:008",
+        "to_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:004",
+        "bidirectional": false,
+        "from_area_type": "秘密基地",
+        "to_area_type": "公共场所",
+        "from_security_level": "",
+        "to_security_level": "",
+        "hidden_endpoint": "true",
+        "transport_type": "步行（废弃隧道）"
+      },
+      "conditions": {
+        "access_level": "需要钥匙",
+        "danger_level": "中等",
+        "required_items": "手电、地图",
+        "access_requirement": "",
+        "monster_encounter_probability": "低",
+        "surveillance_level": "无",
+        "combat_allowed": "true",
+        "ability_restriction": "",
+        "time_restriction": "夜间使用更安全"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:015",
+        "name": "高阳安全屋至地下庇护所紧急通道",
+        "type": "暗道",
+        "area_danger_rating": "中等",
+        "function_tag": "撤退通道",
+        "scene_atmosphere": "压抑",
+        "governing_faction": "主角团队"
+      },
+      "endpoints": {
+        "from_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:008",
+        "to_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:014",
+        "bidirectional": true,
+        "from_area_type": "秘密基地",
+        "to_area_type": "秘密基地",
+        "from_security_level": "",
+        "to_security_level": "",
+        "hidden_endpoint": "true",
+        "transport_type": "步行"
+      },
+      "conditions": {
+        "access_level": "需要生物识别",
+        "danger_level": "安全",
+        "required_items": "高阳的指纹和幸运波动",
+        "access_requirement": "",
+        "monster_encounter_probability": "",
+        "surveillance_level": "无",
+        "combat_allowed": "true",
+        "ability_restriction": "",
+        "time_restriction": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:008",
+        "name": "熟悉咖啡馆至商业街直连门",
+        "type": "商铺后门",
+        "area_danger_rating": "低",
+        "function_tag": "日常通道",
+        "scene_atmosphere": "温馨",
+        "governing_faction": "无"
+      },
+      "endpoints": {
+        "from_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:004",
+        "to_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:006",
+        "bidirectional": true,
+        "from_area_type": "公共场所",
+        "to_area_type": "城市核心区",
+        "from_security_level": "",
+        "to_security_level": "",
+        "hidden_endpoint": "",
+        "transport_type": "步行"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "access_requirement": "",
+        "monster_encounter_probability": "",
+        "surveillance_level": "低",
+        "combat_allowed": "false",
+        "ability_restriction": "",
+        "time_restriction": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:010",
+        "name": "中央公园至天虹商场街道",
+        "type": "街道",
+        "area_danger_rating": "低",
+        "function_tag": "商业连接",
+        "scene_atmosphere": "平常",
+        "governing_faction": "市政交通局"
+      },
+      "endpoints": {
+        "from_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:005",
+        "to_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:011",
+        "bidirectional": true,
+        "from_area_type": "公共场所",
+        "to_area_type": "公共场所",
+        "from_security_level": "",
+        "to_security_level": "",
+        "hidden_endpoint": "",
+        "transport_type": "步行/车辆"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "access_requirement": "",
+        "monster_encounter_probability": "",
+        "surveillance_level": "低",
+        "combat_allowed": "false",
+        "ability_restriction": "",
+        "time_restriction": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:003",
+        "name": "异兽研究所至特管局秘密运送路",
+        "type": "专用公路",
+        "area_danger_rating": "中等",
+        "function_tag": "样本运输",
+        "scene_atmosphere": "戒备",
+        "governing_faction": "特管局"
+      },
+      "endpoints": {
+        "from_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:003",
+        "to_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:002",
+        "bidirectional": true,
+        "from_area_type": "特殊设施",
+        "to_area_type": "政府机构",
+        "from_security_level": "极高",
+        "to_security_level": "高",
+        "hidden_endpoint": "false",
+        "transport_type": "装甲车辆"
+      },
+      "conditions": {
+        "access_level": "需要高级权限",
+        "danger_level": "中等",
+        "required_items": "研究所工作证、特管局密令",
+        "access_requirement": "幸运等级≥6或特管局高层授权",
+        "monster_encounter_probability": "",
+        "surveillance_level": "极高",
+        "combat_allowed": "true",
+        "ability_restriction": "",
+        "time_restriction": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:016",
+        "name": "市政大楼至特殊事务科地下暗道",
+        "type": "地道",
+        "area_danger_rating": "中等",
+        "function_tag": "秘密政务通道",
+        "scene_atmosphere": "神秘",
+        "governing_faction": "市政厅/特管局联合"
+      },
+      "endpoints": {
+        "from_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:010",
+        "to_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:012",
+        "bidirectional": true,
+        "from_area_type": "城市核心区",
+        "to_area_type": "政府机构",
+        "from_security_level": "",
+        "to_security_level": "",
+        "hidden_endpoint": "true",
+        "transport_type": "步行"
+      },
+      "conditions": {
+        "access_level": "极机密",
+        "danger_level": "低",
+        "required_items": "特殊密钥卡",
+        "access_requirement": "市长或特管局副局长级别",
+        "monster_encounter_probability": "",
+        "surveillance_level": "无（内部监控）",
+        "combat_allowed": "false",
+        "ability_restriction": "",
+        "time_restriction": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:018",
+        "name": "地下庇护所至中心广场地铁站台",
+        "type": "废弃地铁隧道",
+        "area_danger_rating": "高",
+        "function_tag": "逃生出口",
+        "scene_atmosphere": "阴暗",
+        "governing_faction": "无"
+      },
+      "endpoints": {
+        "from_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:014",
+        "to_id": "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:loc:015",
+        "bidirectional": false,
+        "from_area_type": "秘密基地",
+        "to_area_type": "城市核心区",
+        "from_security_level": "",
+        "to_security_level": "",
+        "hidden_endpoint": "true",
+        "transport_type": "步行（隧道）"
+      },
+      "conditions": {
+        "access_level": "需要密码",
+        "danger_level": "高",
+        "required_items": "手持照明、地图",
+        "access_requirement": "",
+        "monster_encounter_probability": "中等",
+        "surveillance_level": "无",
+        "combat_allowed": "true",
+        "ability_restriction": "",
+        "time_restriction": ""
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:017",
+    "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:013",
+    "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:011",
+    "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:006",
+    "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:007",
+    "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:005",
+    "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:004",
+    "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:002",
+    "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:001",
+    "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:012",
+    "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:014",
+    "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:009",
+    "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:015",
+    "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:008",
+    "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:010",
+    "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:003",
+    "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:016",
+    "e:7f78c2e9_ba8c_4102_a99f_8dbbcf379068:path:018"
+  ],
+  "upstream_step_ids": [
+    "generate_paths"
+  ],
+  "warnings": [],
+  "provenance": {
+    "result_count": 1
+  }
+}

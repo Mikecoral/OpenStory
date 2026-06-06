@@ -1,0 +1,19 @@
+dim_name: StateDim
+current_state:
+  type: str
+ownership:
+  type: str
+capacity:
+  type: int
+infestation_level:
+  type: str
+  option: true
+security_state:
+  type: str
+  option: true
+resource_stockpile:
+  type: str
+  option: true
+anomalies:
+  type: str
+  option: true

@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "covert_codename",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "security_clearance_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "founding_era_indicator",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "emblem_unique_mark",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "historical_continuity_flag",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

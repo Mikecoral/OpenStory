@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "on_actor",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "on_target",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "on_environment",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "luck_value_change",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "relationship_impact",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "conflict_probability",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "beast_attraction_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "mission_progress_delta",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

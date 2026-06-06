@@ -1,0 +1,259 @@
+{
+  "session_id": "d7665c74-5e52-45b5-8119-2d911cf9da74",
+  "instance_seeds": {
+    "location": [
+      {
+        "seed_id": "komura_library",
+        "name": "甲村图书馆",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "核心超现实场所，连接现实与记忆的图书馆",
+        "archetype_id": "library"
+      },
+      {
+        "seed_id": "public_library_takamatsu",
+        "name": "高松市公共图书馆",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.85,
+        "generation_priority": 3,
+        "role_in_world": "少年短暂停留的普通图书馆，衬托孤独",
+        "archetype_id": "library"
+      },
+      {
+        "seed_id": "kafka_apartment",
+        "name": "卡夫卡租住的公寓",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "主人公自我封闭与反思的私人空间",
+        "archetype_id": "residence"
+      },
+      {
+        "seed_id": "nakata_apartment",
+        "name": "中田的公寓",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "老年智者中田的居所，日常生活与超现实交织",
+        "archetype_id": "residence"
+      },
+      {
+        "seed_id": "hoshino_room",
+        "name": "星野的出租房",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.8,
+        "generation_priority": 3,
+        "role_in_world": "助手星野的暂居地，反映普通人的世界",
+        "archetype_id": "residence"
+      },
+      {
+        "seed_id": "entrance_stone_forest",
+        "name": "入口石森林",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "命运交汇的超自然森林，连接现实与异界",
+        "archetype_id": "natural_place"
+      },
+      {
+        "seed_id": "seaside_shikoku",
+        "name": "四国海边",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "象征自由与孤独的边际空间",
+        "archetype_id": "natural_place"
+      },
+      {
+        "seed_id": "mountain_trail_shikoku",
+        "name": "四国山间小径",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.75,
+        "generation_priority": 3,
+        "role_in_world": "少年徒步旅行的路径，经历自然与内心对话",
+        "archetype_id": "natural_place"
+      },
+      {
+        "seed_id": "shikoku_loop_route",
+        "name": "四国环岛路线",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "主人公移动的主干道，串联现实地点",
+        "archetype_id": "travel_route"
+      },
+      {
+        "seed_id": "bus_line_takamatsu",
+        "name": "高松市公交线路",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.8,
+        "generation_priority": 3,
+        "role_in_world": "普通交通工具，日常与超现实之间的过渡通道",
+        "archetype_id": "travel_route"
+      },
+      {
+        "seed_id": "convenience_store_takamatsu",
+        "name": "便利商店（高松站前）",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.85,
+        "generation_priority": 3,
+        "role_in_world": "日常生活场景，孤独者的补给站",
+        "archetype_id": "commercial_place"
+      },
+      {
+        "seed_id": "cafe_in_forest",
+        "name": "森林咖啡馆（超现实）",
+        "importance": "major",
+        "source_type": "original",
+        "confidence": 0.7,
+        "generation_priority": 2,
+        "role_in_world": "存在于森林中的神秘场所，隐喻与符号具象化的交汇点",
+        "archetype_id": "commercial_place"
+      },
+      {
+        "seed_id": "dream_world_portal",
+        "name": "异界入口（入口石内部）",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "命运与记忆的异次元空间，灵魂与幻影栖居之地",
+        "archetype_id": "supernatural_realm"
+      },
+      {
+        "seed_id": "library_other_side",
+        "name": "甲村图书馆的另一面",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "佐伯少女时期存在的超现实图书馆层，时间交错的空间",
+        "archetype_id": "supernatural_realm"
+      }
+    ],
+    "character": [
+      {
+        "seed_id": "tamura_kafka",
+        "name": "田村卡夫卡",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "离家的少年主角，命运诅咒的承载者与自我救赎者",
+        "archetype_id": "runaway_boy"
+      },
+      {
+        "seed_id": "nakata_satoru",
+        "name": "中田聪",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "失忆的老年智者，能与猫对话，推动入口石的关键人物",
+        "archetype_id": "elderly_wiseman"
+      },
+      {
+        "seed_id": "saeki_ghost",
+        "name": "佐伯（幽灵形态）",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "图书馆长佐伯的少女幽灵，象征逝去的爱与记忆",
+        "archetype_id": "elderly_wiseman"
+      },
+      {
+        "seed_id": "oshima",
+        "name": "大岛",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "甲村图书馆管理员，卡夫卡的引路人与守护者",
+        "archetype_id": "librarian"
+      },
+      {
+        "seed_id": "hoshino",
+        "name": "星野",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "卡车司机，中田的助手与伙伴，从世俗走向超现实的见证者",
+        "archetype_id": "assistant_companion"
+      },
+      {
+        "seed_id": "truck_driver_encounter",
+        "name": "卡车司机（偶遇者）",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.75,
+        "generation_priority": 3,
+        "role_in_world": "卡夫卡在旅行中遇到的普通人，体现日常世界的冷漠与温暖",
+        "archetype_id": "ordinary_person"
+      },
+      {
+        "seed_id": "librarian_assistant",
+        "name": "图书馆助手（非大岛）",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.6,
+        "generation_priority": 3,
+        "role_in_world": "甲村图书馆的普通职员，衬托大岛的特殊性",
+        "archetype_id": "ordinary_person"
+      },
+      {
+        "seed_id": "cat_umi",
+        "name": "海（会说话的猫）",
+        "importance": "major",
+        "source_type": "original",
+        "confidence": 0.8,
+        "generation_priority": 2,
+        "role_in_world": "中田沟通的对象，超自然力量的媒介，象征直觉与自由",
+        "archetype_id": "talking_cat"
+      },
+      {
+        "seed_id": "cat_kuro",
+        "name": "黑猫（森林之猫）",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "女巫般的森林黑猫，引导卡夫卡进入梦境",
+        "archetype_id": "talking_cat"
+      },
+      {
+        "seed_id": "saeki_adolescent",
+        "name": "少女佐伯（幻影）",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.97,
+        "generation_priority": 1,
+        "role_in_world": "卡夫卡母亲形象的幽灵，图书馆中徘徊的记忆碎片",
+        "archetype_id": "ghost_phantom"
+      },
+      {
+        "seed_id": "kafka_mother_phantom",
+        "name": "卡夫卡母亲的幻影",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "被抛弃的创伤化身，在超现实场景中显现",
+        "archetype_id": "ghost_phantom"
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "distance",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "travel_time",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visibility",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "terrain_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "seasonal_impact",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "ambush_suitability",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "supply_difficulty",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "water_source_availability",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

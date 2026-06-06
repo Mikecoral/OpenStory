@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "permissions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_conditions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_access",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "min_luck_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "requires_clearance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "time_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

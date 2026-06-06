@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "name": "leader",
+      "type": "str",
+      "required": true,
+      "ref": "character"
+    },
+    {
+      "name": "rules",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "decision_process",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "command_chain_zodiac_order",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "rule_enforcement_agency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dispute_resolution_protocol",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "emergency_protocols",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "decision_veto_authority",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "succession_mechanism",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "internal_audit_body",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

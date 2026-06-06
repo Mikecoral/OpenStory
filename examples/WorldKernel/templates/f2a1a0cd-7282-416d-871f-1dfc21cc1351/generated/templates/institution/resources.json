@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "assets",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "territory",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "forbidden_text_collection",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "phantom_manuscript",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "rain_activated_portal",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

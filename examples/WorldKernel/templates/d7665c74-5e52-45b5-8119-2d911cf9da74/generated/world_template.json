@@ -1,0 +1,424 @@
+{
+  "primary": "surreal_japan",
+  "secondary": "modern_mythic",
+  "confidence": 0.95,
+  "tags": [
+    "超现实",
+    "现代日本",
+    "衍生",
+    "村上春树",
+    "图书馆",
+    "猫",
+    "森林",
+    "入口石",
+    "孤独",
+    "命运"
+  ],
+  "world_name": "海边的卡夫卡世界",
+  "world_origin_summary": "衍生自村上春树小说《海边的卡夫卡》，融合现代日本日常生活与超现实元素，探讨孤独、命运与自我救赎的主题",
+  "scope": "world",
+  "simulation_start": {
+    "time_point": "田村卡夫卡15岁生日前夕",
+    "trigger_event": "父亲的诅咒逼近，少年决意离家出走",
+    "year": "1990年代（设定约1995年）",
+    "narrative_context": "背负着‘弑父娶母’诅咒的少年踏上了前往四国的旅途，与此同时，东京一位叫中田的老人也因一次意外事件开始了一段超现实的旅程"
+  },
+  "location_archetypes": [
+    {
+      "type_id": "library",
+      "type_name": "图书馆",
+      "description": "作为知识与记忆的圣所，甲村图书馆是这个世界的核心地点，是少年与佐伯相遇、探索自身命运的场所",
+      "common_fields": [
+        "name",
+        "address",
+        "collection_type",
+        "opening_hours",
+        "secret_room"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "komura_library",
+          "name": "甲村图书馆",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 1,
+          "role_in_world": "少年避难与成长的庇护所，也是佐伯守护的时空漩涡点"
+        }
+      ]
+    },
+    {
+      "type_id": "dwelling",
+      "type_name": "住宅与公寓",
+      "description": "角色们日常起居的空间，承载着孤独与秘密的私人领域",
+      "common_fields": [
+        "owner",
+        "location",
+        "atmosphere",
+        "key_items"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "saeki_apartment",
+          "name": "佐伯的单身公寓",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.95,
+          "generation_priority": 2,
+          "role_in_world": "佐伯隐退后的居所，埋藏着她的过去与入口石的秘密"
+        }
+      ]
+    },
+    {
+      "type_id": "natural_space",
+      "type_name": "自然场所",
+      "description": "森林、山野等自然空间，是超现实事件频发、连接异界的关隘",
+      "common_fields": [
+        "terrain",
+        "sacred_features",
+        "hidden_entrance"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "entrance_stone_forest",
+          "name": "入口石森林",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.97,
+          "generation_priority": 1,
+          "role_in_world": "中田打开入口石、通往异界的地点，是命运交汇的节点"
+        }
+      ]
+    },
+    {
+      "type_id": "travel_route",
+      "type_name": "旅行路径",
+      "description": "连接不同地点的交通路线，角色在移动中完成心路历程",
+      "common_fields": [
+        "mode",
+        "duration",
+        "significant_stops"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "tokyo_shikoku_highway",
+          "name": "东京至四国高速公路",
+          "importance": "minor",
+          "source_type": "inferred",
+          "confidence": 0.85,
+          "generation_priority": 3,
+          "role_in_world": "少年逃亡的物理路径，同时也是心灵过渡的象征空间"
+        }
+      ]
+    },
+    {
+      "type_id": "commercial_space",
+      "type_name": "商业场所",
+      "description": "咖啡馆、餐馆等日常社交场所，普通人与超自然者相遇的缓冲地带",
+      "common_fields": [
+        "name",
+        "owner",
+        "regular_customers",
+        "special_dish"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "kafka_cafe",
+          "name": "海边的卡夫卡咖啡馆",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.96,
+          "generation_priority": 2,
+          "role_in_world": "佐伯年轻时经营并得名的场所，是小说标题的实体化象征"
+        }
+      ]
+    },
+    {
+      "type_id": "super_natural_domain",
+      "type_name": "超自然领域",
+      "description": "入口石另一侧的异世界，或是梦境与现实的夹缝，是角色完成心灵旅程的终点",
+      "common_fields": [
+        "atmosphere",
+        "entities",
+        "access_condition"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "other_side_wood",
+          "name": "异境森林（入口石另一侧）",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 1,
+          "role_in_world": "中田打开入口石后进入的世界，也是少年最终面对自我的场所"
+        }
+      ]
+    }
+  ],
+  "character_archetypes": [
+    {
+      "type_id": "run_away_teen",
+      "type_name": "离家少年",
+      "description": "背负诅咒与命运、渴望逃离的原型人物，以田村卡夫卡为代表",
+      "common_fields": [
+        "age",
+        "destination",
+        "burden",
+        "guidance_figure"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "tamura_kafka",
+          "name": "田村卡夫卡",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "故事核心主人公，命运的承受者与挑战者"
+        }
+      ]
+    },
+    {
+      "type_id": "aged_wise_man",
+      "type_name": "老年智者",
+      "description": "拥有特殊能力或深层智慧的年长者，引导故事走向超现实方向",
+      "common_fields": [
+        "age",
+        "special_ability",
+        "past_trauma",
+        "connection_to_cat"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "nakata",
+          "name": "中田",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "连接现实与超自然的桥梁，也是执行命运安排的执行者"
+        }
+      ]
+    },
+    {
+      "type_id": "librarian",
+      "type_name": "图书馆管理员",
+      "description": "守护知识与记忆的人物，通常也是关键秘密的持有者",
+      "common_fields": [
+        "age",
+        "role_in_library",
+        "hidden_knowledge"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "saeki",
+          "name": "佐伯",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 1,
+          "role_in_world": "甲村图书馆的管理者，少年命运的镜像与救赎对象"
+        }
+      ]
+    },
+    {
+      "type_id": "assistant",
+      "type_name": "助手与伙伴",
+      "description": "站在主角或智者一侧，提供实际帮助或重要陪伴的角色",
+      "common_fields": [
+        "affiliation",
+        "personality",
+        "role_in_journey"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "oshima",
+          "name": "大岛",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.97,
+          "generation_priority": 2,
+          "role_in_world": "甲村图书馆的年轻助手，为少年提供庇护与知识支持"
+        }
+      ]
+    },
+    {
+      "type_id": "ordinary_person",
+      "type_name": "普通人",
+      "description": "没有特殊能力、却被动卷入超现实事件的常人，代表现实世界视角",
+      "common_fields": [
+        "occupation",
+        "encounter",
+        "transformation"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "hoshino",
+          "name": "星野",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.96,
+          "generation_priority": 2,
+          "role_in_world": "卡车司机，中田的旅伴，在旅程中逐渐觉醒超现实感知"
+        }
+      ]
+    },
+    {
+      "type_id": "talking_cat",
+      "type_name": "会说话的猫",
+      "description": "能与人交流并掌握隐秘信息的超自然生物，是命运的密使",
+      "common_fields": [
+        "name",
+        "color",
+        "knowledge",
+        "intermediary_role"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "john_ryleigh",
+          "name": "约翰·赖瑞",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 1,
+          "role_in_world": "中田的猫灵媒介，传达关于入口石和猫社区的关键信息"
+        }
+      ]
+    },
+    {
+      "type_id": "spectral_entity",
+      "type_name": "幽灵与幻影",
+      "description": "已逝或非现实的存在，以幻象形式影响活人命运",
+      "common_fields": [
+        "appearance",
+        "message",
+        "connection_to_main"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "young_saeki_apparition",
+          "name": "15岁佐伯的幻影",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.94,
+          "generation_priority": 2,
+          "role_in_world": "过去佐伯的心灵投射，引导少年进入超自然领域"
+        }
+      ]
+    }
+  ],
+  "rule_archetypes": [
+    {
+      "type_id": "supernatural_law",
+      "type_name": "超自然法则",
+      "description": "支配这个世界超现实层面的根本规则，如入口石的开启条件、猫与人沟通的机制",
+      "common_fields": [
+        "trigger",
+        "effect",
+        "limit",
+        "counter_measure"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "entrance_stone_opening",
+          "name": "入口石开启的条件",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 1,
+          "role_in_world": "中田必须找到并打开入口石，才能让异界与现世沟通，是核心事件触发机制"
+        }
+      ]
+    },
+    {
+      "type_id": "fate_binding",
+      "type_name": "命运束缚",
+      "description": "角色受到的前定命运或诅咒的约束，无法通过常规手段摆脱",
+      "common_fields": [
+        "curse_type",
+        "target",
+        "prophecy_text",
+        "escape_possibility"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "kafka_curse",
+          "name": "弑父娶母诅咒",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "少年背负的命运枷锁，驱动整个故事的挣扎与选择"
+        }
+      ]
+    },
+    {
+      "type_id": "social_norm",
+      "type_name": "社会规范",
+      "description": "现代日本社会的法律、习俗与日常行为准则，是大多数普通人遵循的规则基础",
+      "common_fields": [
+        "area",
+        "enforcement",
+        "exception_conditions"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "minor_curfew",
+          "name": "未成年人宵禁限制",
+          "importance": "minor",
+          "source_type": "inferred",
+          "confidence": 0.8,
+          "generation_priority": 3,
+          "role_in_world": "少年在图书馆闭馆后不能留宿，体现了现实规则对逃逸者的约束"
+        }
+      ]
+    },
+    {
+      "type_id": "metaphor_reality",
+      "type_name": "隐喻现实化",
+      "description": "在超验时刻，隐喻、梦、故事可以直接影响物理世界，成为真实事件",
+      "common_fields": [
+        "metaphor_type",
+        "manifestation",
+        "witness_required"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "rain_of_fish",
+          "name": "鱼从天降",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.95,
+          "generation_priority": 2,
+          "role_in_world": "中田的思维波动导致奇怪的超自然现象，象征隐喻力量的表面化"
+        }
+      ]
+    }
+  ],
+  "world_constraints": [
+    {
+      "constraint_id": "dual_realities",
+      "name": "现实与超现实共存",
+      "description": "表面上是正常运行的现代日本社会，但超自然层面真实存在，大多数普通人无法感知，只有少数特殊个体能触及",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "fate_inevitability",
+      "name": "命运不可逃脱",
+      "description": "诅咒与预言拥有绝对力量，角色可以通过选择改变形式，但不能根除命运的影响，最终都会以某种方式应验",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "symbolic_power",
+      "name": "隐喻与符号的具象化",
+      "description": "在特定情境下（如孤独、临界状态），象征、梦境和故事会转化为物理事件或实体，改变现实结构",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "solitude_as_gateway",
+      "name": "孤独是超自然通道",
+      "description": "孤独不是简单的负面情绪，而是连接超现实维度的心灵状态，角色在深度孤独时更容易接触异界",
+      "scope": "global"
+    }
+  ]
+}

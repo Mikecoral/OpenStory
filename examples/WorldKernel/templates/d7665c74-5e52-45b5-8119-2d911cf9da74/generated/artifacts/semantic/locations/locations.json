@@ -1,0 +1,496 @@
+{
+  "artifact_type": "location_profile",
+  "items": [
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:008",
+        "name": "甲村图书馆",
+        "type": "library",
+        "description": "坐落于高松市郊的一座古老私人图书馆，由佐伯家族世代经营。深灰色石砌外墙爬满常青藤，内部昏暗而深邃，空气里飘荡着旧纸与蜡的气息。书架上排列着经过精心筛选的哲学、文学与历史典籍，核心区域藏有一间禁止外人进入的密室——那里悬挂着佐伯少女时代的画作，也是连接不同时间层记忆的裂缝。",
+        "has_supernatural_connection": "true",
+        "symbolic_meaning": "记忆与遗忘的边境、命运交汇的圣殿",
+        "associated_character": "佐伯（幽灵形态）, 大岛",
+        "is_threshold_space": "true",
+        "time_paradox": "佐伯的少女幽灵常在闭馆后的黄昏时分出现，与阅读中的少年卡夫卡展开超越时间顺序的对话"
+      },
+      "access": {
+        "permissions": "须经管理员大岛许可，普通访客限白天开放，特殊藏室仅对特定角色开放",
+        "access_level": "restricted",
+        "access_conditions": "一般民众需登记进入；深层密室需大岛或佐伯的默许，并需在孤独或临界情绪下才能感知到其入口",
+        "requires_solitude": "false",
+        "secret_entrance_condition": "隐藏于书架后的旋转楼梯，只有内心存有强烈疑问或悲伤的人才能发现",
+        "supernatural_gateway": "通往佐伯内心世界与卡夫卡梦境连接的节点",
+        "restricted_to_certain_roles": "田村卡夫卡, 佐伯, 大岛",
+        "emotional_prerequisite": "对命运或记忆有深刻执念"
+      },
+      "state": {
+        "current_state": "正常运营中，每日开馆，但在特定时刻（黄昏、满月）会呈现恍惚的超现实状态",
+        "ownership": "佐伯家族（控制权实际由佐伯的幽灵与大岛共享）",
+        "capacity": 50,
+        "temporal_anomaly": "图书馆内的时钟有时会突然停摆或倒转；密室的画作会在无人时自行改变构图",
+        "material_instability": "书架偶尔会轻微移形，书籍自行归位",
+        "ambient_feeling": "静谧、陈旧的纸张香、带有遥远记忆的忧伤",
+        "supernatural_activity_level": "中等到高（与佐伯的情绪波动及卡夫卡的到访频率有关）",
+        "metaphysical_cycle": "新月之夜密室显现，佐伯的幽灵活动最频繁；满月之夜图书馆入口出现短暂的重合现象"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:012",
+        "name": "高松市公共图书馆",
+        "type": "library",
+        "description": "位于高松市中心的一栋普通混凝土建筑，有明亮的阅览室和儿童区。少年卡夫卡曾在此短暂停留，翻阅辞典与游记，感受日常世界的匀质与冷漠。窗外的车流声和室内翻书声构成他离家初期的背景音。",
+        "has_supernatural_connection": "false",
+        "symbolic_meaning": "普通日常的孤独容器，衬托甲村图书馆的特殊",
+        "associated_character": "田村卡夫卡（短暂到场）",
+        "is_threshold_space": "false",
+        "time_paradox": ""
+      },
+      "access": {
+        "permissions": "完全开放，无需证件",
+        "access_level": "public",
+        "access_conditions": "任何人均可在开放时间自由出入",
+        "requires_solitude": "false",
+        "secret_entrance_condition": "",
+        "supernatural_gateway": "false",
+        "restricted_to_certain_roles": "",
+        "emotional_prerequisite": ""
+      },
+      "state": {
+        "current_state": "正常运营，日均接待约200人",
+        "ownership": "高松市市政府",
+        "capacity": 200,
+        "temporal_anomaly": "",
+        "material_instability": "",
+        "ambient_feeling": "明亮、平凡、略微嘈杂的公共空间",
+        "supernatural_activity_level": "无",
+        "metaphysical_cycle": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:007",
+        "name": "卡夫卡租住的公寓",
+        "type": "residence",
+        "description": "高松市边缘一栋老旧木造公寓二楼的六叠单间，窗外晾着白色毛巾与电车线，室内陈设简朴：一张床垫、一张书桌、一盏台灯、一台小冰箱。少年在此度过无数个静坐或阅读的夜晚，墙壁上贴着他手抄的《海边的卡夫卡》歌词。这里是自我放逐的茧房，也是梦境溢出到现实的裂隙点。",
+        "has_supernatural_connection": "true",
+        "symbolic_meaning": "孤独的摇篮、意识与潜意识的分界",
+        "associated_character": "田村卡夫卡",
+        "is_threshold_space": "true",
+        "time_paradox": "在深度孤独的夜晚，房间里的钟表时间与卡夫卡梦中的时间发生偏移，醒来后经常发现钟快或慢了半小时"
+      },
+      "access": {
+        "permissions": "仅承租人本人持有钥匙，房东有备用钥匙但极少上门",
+        "access_level": "private",
+        "access_conditions": "卡夫卡本人进入无需条件；其他人需获得明确许可（几乎从未发生）",
+        "requires_solitude": "true",
+        "secret_entrance_condition": "",
+        "supernatural_gateway": "当卡夫卡陷入极深的孤独与困倦时，房间的门窗可能连通至森林或佐伯的房间",
+        "restricted_to_certain_roles": "田村卡夫卡",
+        "emotional_prerequisite": "孤独、或正在强烈思考命运与母亲"
+      },
+      "state": {
+        "current_state": "卡夫卡作为承租人居住中，每月按时缴纳房租",
+        "ownership": "房东（租赁关系）",
+        "capacity": 1,
+        "temporal_anomaly": "夜间偶尔出现短暂的时空错位，如听到过去住户的脚步声或看到幻影",
+        "material_instability": "书桌上的纸张会在无人时自行翻动，水杯中的水面莫名波动",
+        "ambient_feeling": "压抑、安静、带有寡淡的孤独与隐隐的不安",
+        "supernatural_activity_level": "中等（卡夫卡的噩梦或冥想时升至高等）",
+        "metaphysical_cycle": "与月相无关，与卡夫卡自身的情绪低谷周期同步"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:011",
+        "name": "中田的公寓",
+        "type": "residence",
+        "description": "位于东京世田谷区一栋朴素的老式公团住宅，室内干净至极，几乎没有多余物件。厨房灶台上总是放着一壶凉茶，客厅矮桌上摊着一本汉字练习册。猫经常从半开的窗台进出，中田坐在地板上与它们说话。这座公寓是外表完全正常的日常空间，却因居住者拥有打开“入口石”的能力而成为超现实风暴的宁静中心。",
+        "has_supernatural_connection": "true",
+        "symbolic_meaning": "日常与超现实的接口，智者对世界保持开放的基点",
+        "associated_character": "中田聪, 星野",
+        "is_threshold_space": "true",
+        "time_paradox": ""
+      },
+      "access": {
+        "permissions": "中田本人居住，后期星野获得许可入住",
+        "access_level": "private",
+        "access_conditions": "成为中田信任的同伴后可进入（如星野），或通过猫的介绍",
+        "requires_solitude": "false",
+        "secret_entrance_condition": "",
+        "supernatural_gateway": "中田进行冥想或睡觉时，公寓的空气会形成通往异界的薄门（如与入口石共鸣）",
+        "restricted_to_certain_roles": "中田聪, 星野, 海（会说话的猫）等特定猫",
+        "emotional_prerequisite": "纯粹的好奇或善意的帮助意图"
+      },
+      "state": {
+        "current_state": "中田独自居住，维持极简生活",
+        "ownership": "中田的所有权（年轻时购置）",
+        "capacity": 2,
+        "temporal_anomaly": "无显著的物理时间异常，但当猫传递来自超现实的消息时，室内光线会短暂变得不自然",
+        "material_instability": "偶尔出现物体自行移位但很快恢复（如茶杯从桌面移动到洗池），中田视若无睹",
+        "ambient_feeling": "朴素、宁静、略带老旧感的空气，有着与世无争的平和",
+        "supernatural_activity_level": "日常极低，当中田与猫交流或处理超现实任务时升至高等",
+        "metaphysical_cycle": "与入口石的位置和状态有隐性联系；当入口石被移动时，公寓偶发轻微共振"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:006",
+        "name": "星野的出租房",
+        "type": "residence",
+        "description": "位于四国某城镇边缘的普通公寓，房间狭窄，窗户朝北，阳光稀少。墙纸泛黄，地板咯吱作响，是星野与中田相遇后短暂栖身之处。房间里堆放着星野收集的杂物和书籍，一台旧电视常有雪花，角落里的便携式煤油炉散发微弱热气。",
+        "has_supernatural_connection": "false",
+        "symbolic_meaning": "",
+        "associated_character": "星野",
+        "is_threshold_space": "",
+        "time_paradox": ""
+      },
+      "access": {
+        "permissions": "星野本人及经其邀请之人",
+        "access_level": "居民区，需钥匙或住户允许",
+        "access_conditions": "需星野在场或房门未锁；无特殊超现实条件",
+        "requires_solitude": "",
+        "secret_entrance_condition": "",
+        "supernatural_gateway": "",
+        "restricted_to_certain_roles": "false",
+        "emotional_prerequisite": ""
+      },
+      "state": {
+        "current_state": "被租用中，星野暂离前往高知",
+        "ownership": "由星野短期租用，房东为当地人",
+        "capacity": 2,
+        "temporal_anomaly": "",
+        "material_instability": "",
+        "ambient_feeling": "凌乱而温馨，弥漫着便利店的酱汁味、烟味和孤独",
+        "supernatural_activity_level": "0",
+        "metaphysical_cycle": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:005",
+        "name": "入口石森林",
+        "type": "natural_place",
+        "description": "位于高知县深山中的一片古老森林，空地上矗立着一块巨大的白色花岗岩，表面布满青苔和神秘的刻痕。森林异常静谧，空气沉重得仿佛凝固，树木扭曲生长，根须深深扎入岩隙。这里是连接现实世界与异界的阈限空间——当命运选中的触碰入口石，或中田打开石头时，天空会骤然变暗，地面颤动，现实与超现实的边界融化。林间常有不属于这个世界的声响，如远方钟鸣或孩童低语。",
+        "has_supernatural_connection": "true",
+        "symbolic_meaning": "命运的入口，现实与超现实的门槛，诅咒交汇的舞台",
+        "associated_character": "中田聪, 田村卡夫卡, 星野",
+        "is_threshold_space": "true",
+        "time_paradox": "接近入口石时时间流动扭曲，过去与现在的声音重叠，偶尔能看到不同年代的旅行者身影"
+      },
+      "access": {
+        "permissions": "对普通人隐蔽，只有被命运选中或处于极端孤独的人才能找到",
+        "access_level": "极难到达，需徒步穿过密林，且需缘分指引",
+        "access_conditions": "必须以孤独之心接近；入口石仅在特定时刻（如中田念咒或卡夫卡梦境）可被开启",
+        "requires_solitude": "true",
+        "secret_entrance_condition": "触摸入口石并默念『打开』，或由能改变世界结构的人（如中田）操纵",
+        "supernatural_gateway": "true",
+        "restricted_to_certain_roles": "true",
+        "emotional_prerequisite": "深度孤独或命运使然"
+      },
+      "state": {
+        "current_state": "入口石处于休眠状态，森林表面平静但内部能量暗涌",
+        "ownership": "无主，属于自然与超自然共有",
+        "capacity": 20,
+        "temporal_anomaly": "靠近石头一带，现实时间流速不稳定，半小时可能感觉只有五分钟",
+        "material_instability": "边缘树木会无声摇曳，地面龟裂露出黑色的虚无，空气中常有细微的铃音",
+        "ambient_feeling": "压抑、神圣、充满未言的力量，呼吸时胸口微紧",
+        "supernatural_activity_level": "7",
+        "metaphysical_cycle": "入口石的活性与月相、孤独的浓度成正比；满月时超自然现象最频繁"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:013",
+        "name": "四国海边",
+        "type": "natural_place",
+        "description": "四国南部面向太平洋的连绵海岸，白色沙滩与黑褐色礁石交错，浪声辽远而恒定。卡夫卡曾在此驻足，凝视海平线，感受海风带来的自由与尖锐的孤独。这里也是佐伯少女幽灵出没的地方——黄昏时分，湿润的沙滩上偶尔会留下她纤细的足迹，空气中混合着咸味和一种古老的悲哀。夕阳将天空染成紫红色，仿佛世界在燃烧。",
+        "has_supernatural_connection": "true",
+        "symbolic_meaning": "自由与孤独的交界点，逝去记忆与幽灵的触媒",
+        "associated_character": "田村卡夫卡, 佐伯（幽灵形态）",
+        "is_threshold_space": "false",
+        "time_paradox": "极少数情况下，海面上会出现战争时期的渔船幻影，渔夫的呼喊声与现在的海鸥叫声混杂"
+      },
+      "access": {
+        "permissions": "完全开放，任何人均可到达",
+        "access_level": "容易到达，有公路通向海岸停车场",
+        "access_conditions": "无特殊限制；但孤身一人在傍晚或月夜时更容易感知幽灵或异象",
+        "requires_solitude": "",
+        "secret_entrance_condition": "",
+        "supernatural_gateway": "",
+        "restricted_to_certain_roles": "",
+        "emotional_prerequisite": "孤独感会增强超自然体验的几率"
+      },
+      "state": {
+        "current_state": "日常状态，夏季有少数游客，秋冬清冷",
+        "ownership": "公共区域（部分属国立公园）",
+        "capacity": 300,
+        "temporal_anomaly": "",
+        "material_instability": "",
+        "ambient_feeling": "开阔、宁静、带着淡淡的忧伤和无限感",
+        "supernatural_activity_level": "3",
+        "metaphysical_cycle": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:010",
+        "name": "四国山间小径",
+        "type": "natural_place",
+        "description": "蜿蜒在四国山脉中的狭窄徒步路线，两侧是密密的杉树和竹丛，路面覆满落叶和碎石。少年卡夫卡曾背着他的书包独自沿此路行走，偶尔遇见沉默的登山者或采药老人。路径不时被清浅的溪流截断，需要踩踏垫脚石过河。阳光透过树冠洒下斑驳光影，鸟鸣和树叶沙沙声陪伴着旅人。",
+        "has_supernatural_connection": "false",
+        "symbolic_meaning": "",
+        "associated_character": "田村卡夫卡",
+        "is_threshold_space": "",
+        "time_paradox": ""
+      },
+      "access": {
+        "permissions": "公共步道，对所有人开放",
+        "access_level": "中等，需一定体力，但路线清晰",
+        "access_conditions": "无特殊条件",
+        "requires_solitude": "",
+        "secret_entrance_condition": "",
+        "supernatural_gateway": "",
+        "restricted_to_certain_roles": "",
+        "emotional_prerequisite": ""
+      },
+      "state": {
+        "current_state": "自然维护状态，部分路段因雨后湿滑",
+        "ownership": "公有土地（林业署管辖）",
+        "capacity": 5,
+        "temporal_anomaly": "",
+        "material_instability": "",
+        "ambient_feeling": "宁静、湿润，充满绿意和泥土气息",
+        "supernatural_activity_level": "0",
+        "metaphysical_cycle": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:014",
+        "name": "四国环岛路线",
+        "type": "travel_route",
+        "description": "环绕四国全岛的主干道，连接高松、德岛、高知、松山等城市，由沿海公路与山间国道交织而成。路面常被太平洋的海风与濑户内海的湿气浸润，沿途可见废弃的公交站牌、无人看守的铁道路口，以及被密林吞噬的岔路。对于孤独的旅人而言，某些路段会在暮色中延伸出超现实的支线——比如通向不存在于地图上的隧道，或突然出现一只蹲在路中央说话的黑猫。",
+        "has_supernatural_connection": "true",
+        "symbolic_meaning": "命运的逃亡路径，现实与异界的褶皱地带",
+        "associated_character": "田村卡夫卡",
+        "is_threshold_space": "true",
+        "time_paradox": "个别岔路内手表走时忽快忽慢"
+      },
+      "access": {
+        "permissions": "对所有人开放，步行或乘车均可进入",
+        "access_level": "public",
+        "access_conditions": "无特殊要求，但独自旅行且情绪深度孤独时更易触发超现实分支",
+        "requires_solitude": "false",
+        "secret_entrance_condition": "在黄昏时分于某个僻静海湾的路段反复绕行三圈，可能看见被雾气笼罩的石阶入口",
+        "supernatural_gateway": "true",
+        "restricted_to_certain_roles": "无",
+        "emotional_prerequisite": "孤独感可作为激活阈限通道的催化剂"
+      },
+      "state": {
+        "current_state": "日常交通基本正常运转，但超现实现象周期性渗透",
+        "ownership": "日本国土交通省 & 四国各县级政府",
+        "capacity": 10000,
+        "temporal_anomaly": "靠近入口石调整区域的某些路段，时间流速与外界不一致（约慢 5%）",
+        "material_instability": "超现实支线的路面会突然从柏油变为卵石或森林苔原",
+        "ambient_feeling": "海风混合汽油味，孤独的汽笛声在隧道内回荡",
+        "supernatural_activity_level": "中等，随旅行者的精神状态波动",
+        "metaphysical_cycle": "敏感期对应‘入口石’开启的时段（月圆之夜或重大命运节点）"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:001",
+        "name": "高松市公交线路",
+        "type": "travel_route",
+        "description": "高松市内运行的常规公交网络，由市营巴士和私营线路组成，途经车站、商业街、住宅区与大学。车内座位排列整齐，报站声单调而准确。对于普通市民只是通勤工具，但对于刚刚抵达异乡的卡夫卡，这条路线构成了现实世界最后的日常屏障——车窗外的景色越靠近市郊，越容易在他眼中产生轻微的扭曲感。",
+        "has_supernatural_connection": "false",
+        "symbolic_meaning": "日常与超现实之间的过渡通道，表面的秩序",
+        "associated_character": "无固定关联，可被任何孤独的乘客使用",
+        "is_threshold_space": "",
+        "time_paradox": ""
+      },
+      "access": {
+        "permissions": "所有乘客凭车票或公交卡乘坐",
+        "access_level": "public",
+        "access_conditions": "购买车票或刷IC卡，无需身份证明",
+        "requires_solitude": "false",
+        "secret_entrance_condition": "无",
+        "supernatural_gateway": "",
+        "restricted_to_certain_roles": "",
+        "emotional_prerequisite": ""
+      },
+      "state": {
+        "current_state": "按时刻表正常运营，偶有晚点",
+        "ownership": "高松市交通局、琴电巴士公司",
+        "capacity": 50,
+        "temporal_anomaly": "",
+        "material_instability": "",
+        "ambient_feeling": "平凡的日常感，引擎与刹车声夹杂乘客的低语",
+        "supernatural_activity_level": "极低，仅在极度昏沉或疲惫的乘客眼中可能看到窗外一闪而过的幽灵站台",
+        "metaphysical_cycle": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:003",
+        "name": "便利商店（高松站前）",
+        "type": "commercial_place",
+        "description": "位于高松站出口西侧的24小时连锁便利店，货架上整齐排列着饭团、三明治、罐装啤酒和杂志。自动门不断开合，收银台的叮咚声与冰柜的嗡鸣交织。深夜时分，店内荧光灯惨白刺眼，映照出形单影只的顾客——逃家的少年、醉酒的白领、无家可归的老人。这里既是孤独者的补给站，也偶尔成为超现实信息的偶然交汇点（比如中田在这里买过猫粮，或卡夫卡在收银台瞥见一张不属于这个时空的传单）。",
+        "has_supernatural_connection": "true",
+        "symbolic_meaning": "现代都市孤独的实体化空间，短暂的安全屋",
+        "associated_character": "无人固定，田村卡夫卡曾在此短暂停留",
+        "is_threshold_space": "",
+        "time_paradox": ""
+      },
+      "access": {
+        "permissions": "任何人在营业时间内均可进入",
+        "access_level": "public",
+        "access_conditions": "正常营业时段（24小时），无需任何身份",
+        "requires_solitude": "false",
+        "secret_entrance_condition": "",
+        "supernatural_gateway": "",
+        "restricted_to_certain_roles": "",
+        "emotional_prerequisite": ""
+      },
+      "state": {
+        "current_state": "正常营业，库存充足",
+        "ownership": "连锁便利商店公司（如FamilyMart或7-Eleven）",
+        "capacity": 30,
+        "temporal_anomaly": "",
+        "material_instability": "",
+        "ambient_feeling": "冷淡的便利感，自动门外的夜风带来不安的凉意",
+        "supernatural_activity_level": "极低，但凌晨 3 点左右，镜子或玻璃上偶尔映出不属于店内商品的特异倒影",
+        "metaphysical_cycle": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:002",
+        "name": "森林咖啡馆（超现实）",
+        "type": "commercial_place",
+        "description": "深藏于四国某片原始森林腹地的独栋木造咖啡馆，外观像被藤蔓缠绕的废弃猎人小屋，但推开嘎吱作响的木门后，内部是一个时间停滞的温暖空间。吧台后的老式咖啡机冒着蒸汽，墙上的黑胶唱片机循环播放着 1960 年代的爵士乐。书架上有村上春树笔下的那些书——但书页是空白。空气里混合着咖啡、旧纸和森林土壤的潮湿气味。这里曾是佐伯少女时代与恋人秘密约会的地点，如今她的幽灵偶尔坐在窗边翻阅一本永远翻不完的《海边的卡夫卡》原稿。窗口看到的景色不是外面的森林，而是另一个年份的夕阳。",
+        "has_supernatural_connection": "true",
+        "symbolic_meaning": "记忆与时光的交错点，梦境中具象化的庇护所",
+        "associated_character": "佐伯（少女幽灵）",
+        "is_threshold_space": "true",
+        "time_paradox": "咖啡馆内部时间流失速度约为外界的 1/3，并且会在特定日期循环回原点"
+      },
+      "access": {
+        "permissions": "非公开，只有被命运指引者才能发现并进入",
+        "access_level": "restricted",
+        "access_conditions": "迷路于深林且心怀抱有强烈思念或孤独感，或由一只黑猫/会说话的猫引领至特定的环形小径入口",
+        "requires_solitude": "true",
+        "secret_entrance_condition": "在日落时分跟随从树下钻出的黑猫绕行森林中的七棵古柳，每棵树触碰一次，最后一条隐没在苔藓中的小路会显现",
+        "supernatural_gateway": "true",
+        "restricted_to_certain_roles": "田村卡夫卡、佐伯、大岛（偶可），其他普通人无法感知入口",
+        "emotional_prerequisite": "深刻的孤独、对逝去之爱的执念，或面临命运无法选择的临界心态"
+      },
+      "state": {
+        "current_state": "半稳定存在，会随着佐伯的精神波动或来访者的命运变化而扭曲或暂时消失",
+        "ownership": "佐伯（精神维持，非法律产权）",
+        "capacity": 10,
+        "temporal_anomaly": "时间非线性流动——来访者可能喝完一杯咖啡后发现外面已经过去一整天，或者自己回到了几天前",
+        "material_instability": "家具位置会缓慢漂移，墙上画作每过一小时就切换一次画面（但内容永远固定在某几个记忆场景）",
+        "ambient_feeling": "怀旧、静谧、略带伤感的超现实氛围，像在梦里呼吸",
+        "supernatural_activity_level": "高，佐伯幽灵不定时现身，留声机有时会自动播放不属于20世纪的录音",
+        "metaphysical_cycle": "月相与森林中的入口石产生共振时，咖啡馆内部会出现‘雨打窗但窗外晴空’的异常天气循环"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:004",
+        "name": "异界入口（入口石内部）",
+        "type": "supernatural_realm",
+        "description": "位于四国某处森林深处的巨大花岗岩内部，表面看似普通巨石，实则是一个折叠的异次元空间入口。内部是无边无际的灰白色虚空，地面上散布着无数面镜子和旧式座钟，钟面指针全部停止，镜中倒映着不同时间线的场景——少女佐伯在雨中奔跑、老年中田坐在长椅上、卡夫卡少年蜷缩着阅读。空气中有淡淡的茉莉花香和旧纸页的气味，偶尔有透明的鱼群游过。空间的中心漂浮着一块半透明的‘入口石’，触碰它的人会瞬间被传送到记忆的迷宫。这里是命运诅咒具象化的核心节点，所有角色的命运轨迹在此交汇并产生回响。",
+        "has_supernatural_connection": "true",
+        "symbolic_meaning": "命运不可逃脱的具象化，记忆的河流交汇点，孤独成为实体通道的终极例证",
+        "associated_character": "田村卡夫卡、中田聪、佐伯（幽灵形态）、星野",
+        "is_threshold_space": "true",
+        "time_paradox": "空间内部时间流速不均，不同区域对应不同历史时间点，进入者可能同时感受到过去、现在和未来的共振"
+      },
+      "access": {
+        "permissions": "只有被命运卷入的特殊个体（如卡夫卡、中田）或通过入口石开启者（星野）才能进入；普通人完全无法感知巨石的特殊性",
+        "access_level": "绝密/超自然",
+        "access_conditions": "需要同时满足‘深度孤独’状态和‘入口石被移动’两个条件；入口石只有在特定月相和猫的引导下才能被开启",
+        "requires_solitude": "true",
+        "secret_entrance_condition": "必须由至少一位能与超自然力量沟通的存在（如会说话的猫）在巨石前绕行三圈，并念出中田曾经丢失的记忆碎片中的咒语",
+        "supernatural_gateway": "true",
+        "restricted_to_certain_roles": "runaway_boy, elderly_wiseman, assistant_companion",
+        "emotional_prerequisite": "进入者必须处于极端的孤独或绝望中，内心对命运的抗争强度超过阈值"
+      },
+      "state": {
+        "current_state": "稳定但脆弱，入口石被星野推开后空间结构产生微裂，不同时间层的记忆开始相互渗透，出现‘记忆风暴’现象",
+        "ownership": "无主之地，本质上是超现实本身的一部分，但佐伯的少女幽灵对其有微弱的主权感应",
+        "capacity": 5,
+        "temporal_anomaly": "内部存在多个时间薄层，站在不同层可以看到同一场景的不同时间版本，比如佐伯少女时期的影像与老年佐伯的幻影会同时出现",
+        "material_instability": "镜子和座钟会随机消失又出现，脚下的虚空偶尔会裂开露出深不见底的黑洞，但不会造成物理伤害，而是会吸入孤独的记忆片段",
+        "ambient_feeling": "温暖而悲伤，类似夏日午后空无一人的图书馆，但夹杂着轻微的耳鸣和电流声，让人感到时间被拉长",
+        "supernatural_activity_level": "高（持续活跃，入口石每24小时会释放一次记忆脉冲，在森林中产生幻象）",
+        "metaphysical_cycle": "与外界月相同步，满月时空间最稳定，可清晰看到各时间层面的影像；新月时最不稳定，容易发生‘时间塌缩’，将外来者永久困在某一记忆层"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:009",
+        "name": "甲村图书馆的另一面",
+        "type": "supernatural_realm",
+        "description": "在正常甲村图书馆的书架深处、特定隔间内，当孤独达到某种密度时，会出现一道半透明的门，门后是佐伯少女时期存在的图书馆。这里是时间交错的超现实副本：书架上全是空白封面的书，但当访客伸手触碰时，书页会浮现出佐伯15岁时的日记、绘画和未寄出的信。木质地板上映着永不落下的夕阳，窗外是静止的雨幕。空气中漂浮着许多发光的音符——那是佐伯曾经弹奏的钢琴曲《海边的卡夫卡》的碎片。此处的所有物品与正常图书馆的同类物品呈镜像对应，比如正常图书馆的《世界尽头与冷酷仙境》在这里会变成《冷酷仙境与世界尽头》，内容也完全相反。",
+        "has_supernatural_connection": "true",
+        "symbolic_meaning": "过去与现在的共存界面，佐伯灵魂的避难所，记忆碎片构筑的时空胶囊",
+        "associated_character": "佐伯（幽灵形态）、少女佐伯（幻影）",
+        "is_threshold_space": "true",
+        "time_paradox": "此空间固定在1995年佐伯15岁的夏天，但进入者会以当前年龄存在，形成年龄与时间的不对称"
+      },
+      "access": {
+        "permissions": "仅限被佐伯意识承认的访客，通常需要先与正常图书馆的佐伯（老年）有过深刻对话，且内心处于孤独状态",
+        "access_level": "机密/仅限特定角色",
+        "access_conditions": "必须在正常图书馆的‘14号阅览室’独自待到闭馆后，闭眼默念‘海边的卡夫卡’三次，再睁开眼时门会出现",
+        "requires_solitude": "true",
+        "secret_entrance_condition": "门的位置不固定，每天变换，但大岛知道规律：从入口数第47本书的后面",
+        "supernatural_gateway": "false",
+        "restricted_to_certain_roles": "runaway_boy, elderly_wiseman, librarian",
+        "emotional_prerequisite": "需要内心充满对失去之物的哀伤，或对未解之谜的强烈渴望"
+      },
+      "state": {
+        "current_state": "相对稳定，但佐伯幽灵的回忆波动时会出现书架倾斜、地板软化的现象；随时间推移，正常图书馆的物理侵蚀也开始影响此空间（比如一块墙皮脱落，此空间的对应位置会变成虚无）",
+        "ownership": "归佐伯（少女幻影）所有，她似乎能控制空间的边界和内容的呈现",
+        "capacity": 3,
+        "temporal_anomaly": "时间以循环模式运行：每72分钟为一个周期，周期结束时所有物品位置随机重置，但重置后的布局永远与佐伯15岁那年的某一天下午5点43分完全一致",
+        "material_instability": "空白书的内容随访客记忆变化，比如卡夫卡进入时看到的是与自己离家经历相关的文字，但离开后内容消失；钢琴曲碎片会随机聚合成完整旋律，产生短暂的时间回响",
+        "ambient_feeling": "静谧而忧郁，有干涸的墨水气味，光线柔和但带着老照片的黄色调，空气湿度较高，隐约能听见远处海浪拍打的声音",
+        "supernatural_activity_level": "中等（日常稳定，只有在正常图书馆发生重大事件或佐伯情绪波动时会剧烈动荡）",
+        "metaphysical_cycle": "与正常图书馆的闭馆时间同步：正常图书馆闭馆后，此空间的‘夕阳’亮度逐渐降低，至凌晨3点完全黑暗；此时空间与正常图书馆的界限最模糊，容易发生物品交换"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:008",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:012",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:007",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:011",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:006",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:005",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:013",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:010",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:014",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:001",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:003",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:002",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:004",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:009"
+  ],
+  "upstream_step_ids": [
+    "generate_locations"
+  ],
+  "warnings": [
+    "batch 1 review (score=4.6): 发现 1 个问题并已自动修正",
+    "batch 3 review (score=3.9): 发现 2 个问题并已自动修正"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

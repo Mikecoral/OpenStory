@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "scope",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_context",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "temporal_effectiveness",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "unwritten_or_written",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

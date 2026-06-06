@@ -1,0 +1,48 @@
+{
+  "world_name": "海神岛·神考试炼",
+  "world_origin_summary": "衍生自《斗罗大陆》海神岛剧情阶段，围绕唐三接受海神九考并面对第九考中击败黑化小舞的隐藏高潮转折。",
+  "primary": "divine_test_island",
+  "secondary": null,
+  "tags": [
+    "斗罗大陆",
+    "海神九考",
+    "神祇传承",
+    "试炼",
+    "情感冲突",
+    "黑化小舞",
+    "玄幻"
+  ],
+  "scope": "region",
+  "simulation_start": {
+    "time_point": "海神九考第一考开始",
+    "trigger_event": "唐三、小舞及史莱克七怪抵达海神岛，接受波塞西的考核宣告",
+    "year": "斗罗大陆时间线，约史莱克七怪毕业后一年",
+    "narrative_context": "唐三为了获取海神神祇传承，与同伴共同踏上征途，却不知最终考验将面对被黑暗力量侵蚀的小舞。"
+  },
+  "world_constraints": [
+    {
+      "constraint_id": "trial_ignorance",
+      "name": "第九考隐秘",
+      "description": "唐三在第九考开始前无法知晓最终对手是被黑化的小舞，该信息被海神与波塞西刻意隐藏。",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "inherited_cultivation_system",
+      "name": "斗罗大陆修炼体系",
+      "description": "所有角色遵循斗罗大陆的魂力等级、魂环魂骨、武魂特性等规则，魂师能力与大陆标准一致。",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "island_isolation",
+      "name": "海神岛独立性",
+      "description": "海神岛位于海外，与大陆隔绝，外界势力无法干涉，考核期间外部魂师不得随意进出。",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "emotional_bond_core",
+      "name": "情感羁绊决定结局",
+      "description": "唐三与小舞的情感羁绊是通关第九考的关键，纯粹的暴力无法击败黑化小舞，必须通过情感唤醒或净化。",
+      "scope": "global"
+    }
+  ]
+}

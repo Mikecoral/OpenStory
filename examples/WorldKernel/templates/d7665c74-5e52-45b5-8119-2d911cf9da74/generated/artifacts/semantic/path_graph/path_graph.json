@@ -1,0 +1,557 @@
+{
+  "artifact_type": "path_edge",
+  "items": [
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:001",
+        "name": "站前公交连接",
+        "type": "步行道",
+        "path_symbol": "混凝土台阶",
+        "path_realm_type": "现实",
+        "is_cursed": "false",
+        "metaphor_theme": ""
+      },
+      "endpoints": {
+        "from_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:003",
+        "to_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:001",
+        "bidirectional": true,
+        "is_portal": "false",
+        "portal_type": "",
+        "requires_special_item": "false",
+        "has_guardian": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "requires_emotional_state": "",
+        "time_restriction": "",
+        "weather_condition": "",
+        "spatial_anomaly": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:004",
+        "name": "公交至公共图书馆",
+        "type": "公交线路",
+        "path_symbol": "投币箱",
+        "path_realm_type": "现实",
+        "is_cursed": "false",
+        "metaphor_theme": ""
+      },
+      "endpoints": {
+        "from_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:001",
+        "to_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:012",
+        "bidirectional": true,
+        "is_portal": "false",
+        "portal_type": "",
+        "requires_special_item": "false",
+        "has_guardian": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "车费",
+        "requires_emotional_state": "",
+        "time_restriction": "",
+        "weather_condition": "",
+        "spatial_anomaly": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:002",
+        "name": "公交至公寓",
+        "type": "公交线路",
+        "path_symbol": "空荡的站牌",
+        "path_realm_type": "现实",
+        "is_cursed": "false",
+        "metaphor_theme": ""
+      },
+      "endpoints": {
+        "from_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:001",
+        "to_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:007",
+        "bidirectional": true,
+        "is_portal": "false",
+        "portal_type": "",
+        "requires_special_item": "false",
+        "has_guardian": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "车费",
+        "requires_emotional_state": "",
+        "time_restriction": "",
+        "weather_condition": "",
+        "spatial_anomaly": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:003",
+        "name": "公交至甲村图书馆",
+        "type": "公交线路",
+        "path_symbol": "郊区路标",
+        "path_realm_type": "现实",
+        "is_cursed": "false",
+        "metaphor_theme": ""
+      },
+      "endpoints": {
+        "from_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:001",
+        "to_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:008",
+        "bidirectional": true,
+        "is_portal": "false",
+        "portal_type": "",
+        "requires_special_item": "false",
+        "has_guardian": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "车费",
+        "requires_emotional_state": "",
+        "time_restriction": "",
+        "weather_condition": "",
+        "spatial_anomaly": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:008",
+        "name": "公寓至便利店",
+        "type": "步行道",
+        "path_symbol": "路灯下的人影",
+        "path_realm_type": "现实",
+        "is_cursed": "false",
+        "metaphor_theme": ""
+      },
+      "endpoints": {
+        "from_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:007",
+        "to_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:003",
+        "bidirectional": true,
+        "is_portal": "false",
+        "portal_type": "",
+        "requires_special_item": "false",
+        "has_guardian": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "requires_emotional_state": "",
+        "time_restriction": "",
+        "weather_condition": "",
+        "spatial_anomaly": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:014",
+        "name": "公寓至公共图书馆",
+        "type": "步行道",
+        "path_symbol": "林荫道",
+        "path_realm_type": "现实",
+        "is_cursed": "false",
+        "metaphor_theme": ""
+      },
+      "endpoints": {
+        "from_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:007",
+        "to_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:012",
+        "bidirectional": true,
+        "is_portal": "false",
+        "portal_type": "",
+        "requires_special_item": "false",
+        "has_guardian": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "requires_emotional_state": "",
+        "time_restriction": "",
+        "weather_condition": "",
+        "spatial_anomaly": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:017",
+        "name": "山间小径至环岛路",
+        "type": "徒步路径",
+        "path_symbol": "杉树下的泥路",
+        "path_realm_type": "现实",
+        "is_cursed": "false",
+        "metaphor_theme": ""
+      },
+      "endpoints": {
+        "from_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:010",
+        "to_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:014",
+        "bidirectional": true,
+        "is_portal": "false",
+        "portal_type": "",
+        "requires_special_item": "false",
+        "has_guardian": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "无",
+        "requires_emotional_state": "",
+        "time_restriction": "",
+        "weather_condition": "",
+        "spatial_anomaly": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:011",
+        "name": "森林至环岛路",
+        "type": "土路",
+        "path_symbol": "枯叶堆积",
+        "path_realm_type": "现实",
+        "is_cursed": "false",
+        "metaphor_theme": ""
+      },
+      "endpoints": {
+        "from_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:005",
+        "to_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:014",
+        "bidirectional": true,
+        "is_portal": "false",
+        "portal_type": "",
+        "requires_special_item": "false",
+        "has_guardian": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "无",
+        "requires_emotional_state": "",
+        "time_restriction": "",
+        "weather_condition": "",
+        "spatial_anomaly": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:018",
+        "name": "海边至环岛路",
+        "type": "沿海步道",
+        "path_symbol": "白色沙滩",
+        "path_realm_type": "现实",
+        "is_cursed": "false",
+        "metaphor_theme": ""
+      },
+      "endpoints": {
+        "from_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:013",
+        "to_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:014",
+        "bidirectional": true,
+        "is_portal": "false",
+        "portal_type": "",
+        "requires_special_item": "false",
+        "has_guardian": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "requires_emotional_state": "",
+        "time_restriction": "",
+        "weather_condition": "",
+        "spatial_anomaly": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:005",
+        "name": "环岛路与公交对接点",
+        "type": "公路交汇",
+        "path_symbol": "红绿灯",
+        "path_realm_type": "现实",
+        "is_cursed": "false",
+        "metaphor_theme": ""
+      },
+      "endpoints": {
+        "from_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:014",
+        "to_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:001",
+        "bidirectional": true,
+        "is_portal": "false",
+        "portal_type": "",
+        "requires_special_item": "false",
+        "has_guardian": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "requires_emotional_state": "",
+        "time_restriction": "",
+        "weather_condition": "",
+        "spatial_anomaly": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:007",
+        "name": "山间小径至森林咖啡馆",
+        "type": "超现实小径",
+        "path_symbol": "雾中闪烁的灯光",
+        "path_realm_type": "超现实",
+        "is_cursed": "false",
+        "metaphor_theme": "孤独引导"
+      },
+      "endpoints": {
+        "from_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:010",
+        "to_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:002",
+        "bidirectional": true,
+        "is_portal": "false",
+        "portal_type": "",
+        "requires_special_item": "false",
+        "has_guardian": "false"
+      },
+      "conditions": {
+        "access_level": "需满足条件",
+        "danger_level": "中",
+        "required_items": "无",
+        "requires_emotional_state": "孤独",
+        "time_restriction": "黄昏后",
+        "weather_condition": "薄雾",
+        "spatial_anomaly": "路径在雾中自动延伸"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:006",
+        "name": "森林至咖啡馆",
+        "type": "林间小径",
+        "path_symbol": "藤蔓缠绕的指示牌",
+        "path_realm_type": "超现实",
+        "is_cursed": "false",
+        "metaphor_theme": "异界入口"
+      },
+      "endpoints": {
+        "from_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:005",
+        "to_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:002",
+        "bidirectional": true,
+        "is_portal": "false",
+        "portal_type": "",
+        "requires_special_item": "false",
+        "has_guardian": "false"
+      },
+      "conditions": {
+        "access_level": "需满足条件",
+        "danger_level": "低",
+        "required_items": "无",
+        "requires_emotional_state": "孤独",
+        "time_restriction": "不限",
+        "weather_condition": "不限",
+        "spatial_anomaly": "仅对内心孤单者显现"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:009",
+        "name": "入口石森林至异界内部",
+        "type": "超现实入口",
+        "path_symbol": "花岗岩裂隙",
+        "path_realm_type": "超现实",
+        "is_cursed": "true",
+        "metaphor_theme": "命运之门"
+      },
+      "endpoints": {
+        "from_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:005",
+        "to_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:004",
+        "bidirectional": true,
+        "is_portal": "true",
+        "portal_type": "空间折叠门",
+        "requires_special_item": "true",
+        "has_guardian": "true"
+      },
+      "conditions": {
+        "access_level": "需满足条件",
+        "danger_level": "高",
+        "required_items": "入口石钥匙或特殊能力（如中田的单纯）",
+        "requires_emotional_state": "准备接受命运",
+        "time_restriction": "深夜至黎明前",
+        "weather_condition": "无月之夜",
+        "spatial_anomaly": "时间流速不同"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:015",
+        "name": "甲村图书馆的双面通道",
+        "type": "超现实走廊",
+        "path_symbol": "半透明的门",
+        "path_realm_type": "超现实",
+        "is_cursed": "false",
+        "metaphor_theme": "时间交错"
+      },
+      "endpoints": {
+        "from_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:008",
+        "to_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:009",
+        "bidirectional": true,
+        "is_portal": "true",
+        "portal_type": "时间裂隙",
+        "requires_special_item": "false",
+        "has_guardian": "false"
+      },
+      "conditions": {
+        "access_level": "需满足条件",
+        "danger_level": "低",
+        "required_items": "无",
+        "requires_emotional_state": "深度孤独",
+        "time_restriction": "深夜（午夜前后）",
+        "weather_condition": "不限",
+        "spatial_anomaly": "门的另一侧是1970年代的空间"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:012",
+        "name": "中田与星野的命运连线",
+        "type": "超现实旅行线",
+        "path_symbol": "猫的足迹",
+        "path_realm_type": "超现实",
+        "is_cursed": "true",
+        "metaphor_theme": "命运牵引"
+      },
+      "endpoints": {
+        "from_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:011",
+        "to_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:006",
+        "bidirectional": false,
+        "is_portal": "false",
+        "portal_type": "",
+        "requires_special_item": "false",
+        "has_guardian": "false"
+      },
+      "conditions": {
+        "access_level": "需满足条件",
+        "danger_level": "中",
+        "required_items": "无",
+        "requires_emotional_state": "中田的单纯与星野的迷茫同时存在",
+        "time_restriction": "不限",
+        "weather_condition": "不限",
+        "spatial_anomaly": "搭乘看不见的巴士，空间跳跃"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:013",
+        "name": "星野住所至环岛路",
+        "type": "普通公路",
+        "path_symbol": "旧电视天线",
+        "path_realm_type": "现实",
+        "is_cursed": "false",
+        "metaphor_theme": ""
+      },
+      "endpoints": {
+        "from_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:006",
+        "to_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:014",
+        "bidirectional": true,
+        "is_portal": "false",
+        "portal_type": "",
+        "requires_special_item": "false",
+        "has_guardian": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "无",
+        "requires_emotional_state": "",
+        "time_restriction": "",
+        "weather_condition": "",
+        "spatial_anomaly": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:016",
+        "name": "甲村图书馆至山间小径",
+        "type": "后山小径",
+        "path_symbol": "石阶青苔",
+        "path_realm_type": "现实",
+        "is_cursed": "false",
+        "metaphor_theme": ""
+      },
+      "endpoints": {
+        "from_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:008",
+        "to_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:010",
+        "bidirectional": true,
+        "is_portal": "false",
+        "portal_type": "",
+        "requires_special_item": "false",
+        "has_guardian": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "无",
+        "requires_emotional_state": "",
+        "time_restriction": "",
+        "weather_condition": "",
+        "spatial_anomaly": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:010",
+        "name": "异界内部至图书馆的另一面",
+        "type": "超现实裂隙",
+        "path_symbol": "镜像碎片",
+        "path_realm_type": "超现实",
+        "is_cursed": "true",
+        "metaphor_theme": "时间与空间的交汇"
+      },
+      "endpoints": {
+        "from_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:004",
+        "to_id": "e:d7665c74_5e52_45b5_8119_2d911cf9da74:loc:009",
+        "bidirectional": true,
+        "is_portal": "true",
+        "portal_type": "多重现实重叠门",
+        "requires_special_item": "false",
+        "has_guardian": "true"
+      },
+      "conditions": {
+        "access_level": "需满足条件",
+        "danger_level": "高",
+        "required_items": "无",
+        "requires_emotional_state": "完全接纳孤独",
+        "time_restriction": "超现实时间",
+        "weather_condition": "不限",
+        "spatial_anomaly": "两个超现实地点之间无距离概念"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:001",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:004",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:002",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:003",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:008",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:014",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:017",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:011",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:018",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:005",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:007",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:006",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:009",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:015",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:012",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:013",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:016",
+    "e:d7665c74_5e52_45b5_8119_2d911cf9da74:path:010"
+  ],
+  "upstream_step_ids": [
+    "generate_paths"
+  ],
+  "warnings": [],
+  "provenance": {
+    "result_count": 1
+  }
+}

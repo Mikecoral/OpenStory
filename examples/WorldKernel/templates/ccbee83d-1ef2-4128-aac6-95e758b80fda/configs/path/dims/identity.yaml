@@ -1,0 +1,16 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+emotional_imprint:
+  type: str
+  option: true
+time_period_association:
+  type: str
+  option: true
+narrative_significance:
+  type: str
+  option: true

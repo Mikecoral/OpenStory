@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "group_id",
+      "type": "str",
+      "required": true,
+      "ref": "institution"
+    },
+    {
+      "name": "reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "symbolic_role_in_cosmos",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "phantom_connection_degree",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "animal_community_rel",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "historical_figure_echo",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "taboo_group_membership",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

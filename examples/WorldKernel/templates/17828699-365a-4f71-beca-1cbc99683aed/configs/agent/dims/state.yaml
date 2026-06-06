@@ -1,0 +1,31 @@
+dim_name: StateDim
+location:
+  location_id:
+    type: str
+    ref: location
+position:
+  x:
+    type: float
+  y:
+    type: float
+current_season:
+  type: str
+  option: true
+time_of_day:
+  type: str
+  option: true
+weather_condition:
+  type: str
+  option: true
+ambient_sound_type:
+  type: str
+  option: true
+ambient_odor_type:
+  type: str
+  option: true
+drink_consumed:
+  type: str
+  option: true
+cigarette_brand:
+  type: str
+  option: true

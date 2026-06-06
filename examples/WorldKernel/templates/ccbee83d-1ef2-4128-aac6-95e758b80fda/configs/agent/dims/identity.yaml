@@ -1,0 +1,22 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+role:
+  type: str
+psychological_state_label:
+  type: str
+  option: true
+deceased_relationship:
+  type: str
+  option: true
+era_background:
+  type: str
+  option: true
+residence_status:
+  type: str
+  option: true
+student_movement_involvement:
+  type: str
+  option: true

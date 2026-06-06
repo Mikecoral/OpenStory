@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "short_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "long_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "motivation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "escape_prophecy",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "seek_truth_of_curse",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "encounter_phantom_figure",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reconcile_past_wounds",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "achieve_self_redemption",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

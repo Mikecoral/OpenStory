@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "relation_ids",
+      "type": "list_str",
+      "required": true,
+      "ref": "relation"
+    },
+    {
+      "name": "first_meeting_scene",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "season_of_meeting",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "weather_of_meeting",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "shared_silence_duration",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "relation_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

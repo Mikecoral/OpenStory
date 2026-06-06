@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "group_id",
+      "type": "str",
+      "required": true,
+      "ref": "institution"
+    },
+    {
+      "name": "reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "group_affiliation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reputation_label",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "emotional_dependency_object",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "circle_of_trust",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "stigma_related_to_trauma",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

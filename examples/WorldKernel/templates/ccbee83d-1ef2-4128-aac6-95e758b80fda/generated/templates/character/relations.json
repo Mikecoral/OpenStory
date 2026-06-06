@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "relation_ids",
+      "type": "list_str",
+      "required": true,
+      "ref": "relation"
+    },
+    {
+      "name": "emotional_dependency_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "incomplete_relationship",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "ghostly_connection_to_deceased",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "therapeutic_relationship_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "unrequited_love_hint",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

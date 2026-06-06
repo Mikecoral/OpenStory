@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "current_state",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "ownership",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "capacity",
+      "type": "int",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "atmospheric_condition",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "occupancy_rate",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "maintenance_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "temporal_phase",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "weather_affinity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "relations_to_others",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "perception_by_normal_world",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "supernatural_alliances",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "fate_interweaving_network",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "influence_on_reality",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reputation_in_parallel_dimension",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}
