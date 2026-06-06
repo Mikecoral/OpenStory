@@ -1,0 +1,11 @@
+name: WorldKernelActions
+components:
+  communication:
+    plugins:
+      WKCommunicationPlugin: {}
+  move:
+    plugins:
+      WKMovePlugin: {}
+  otheractions:
+    plugins:
+      WKOtherActionPlugin: {}

@@ -274,6 +274,32 @@ async def stage2_run(session_id: str):
     }
 
 
+class Stage3AdapterRequest(BaseModel):
+    max_ticks: int = 100
+
+
+@app.post("/api/stage3/agentkernel/{session_id}")
+async def stage3_agentkernel(session_id: str, req: Stage3AdapterRequest | None = None):
+    """Sync completed Stage2 semantic + spatial artifacts into the WorldKernel Agent-Kernel runtime."""
+    session_dir = TEMPLATES_DIR / session_id
+    if not session_dir.exists():
+        raise HTTPException(status_code=404, detail="session not found")
+
+    from worldkernel.stage3 import build_agentkernel_project
+
+    request = req or Stage3AdapterRequest()
+    try:
+        result = build_agentkernel_project(
+            session_root=session_dir,
+            max_ticks=request.max_ticks,
+        )
+    except FileNotFoundError as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+    return result.model_dump(mode="json")
+
+
 app.mount("/", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")
 
 

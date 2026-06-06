@@ -1,0 +1,18 @@
+{
+  "artifact_type": "relation_edge",
+  "items": [
+    {
+      "edge": {
+        "id": "rel-1",
+        "from_id": "char-a",
+        "to_id": "char-b",
+        "type": "trust",
+        "direction": "one-way"
+      },
+      "properties": {
+        "strength": "medium",
+        "description": "Ada trusts Ben."
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "stage3-agentkernel-adapter-v1",
+  "world_id": "",
+  "source_session_root": "",
+  "counts": {
+    "characters": 0,
+    "locations": 0,
+    "paths": 0,
+    "relations": 0,
+    "spawn_points": 0
+  },
+  "warnings": [],
+  "data_paths": {
+    "agent_profiles": "data/agents/profiles.jsonl",
+    "agent_states": "data/agents/states.jsonl",
+    "agents_relation": "data/relations/relations.jsonl",
+    "map_agents": "data/map/agents.jsonl",
+    "map_locations": "data/map/locations.json",
+    "map_paths": "data/map/paths.json"
+  }
+}

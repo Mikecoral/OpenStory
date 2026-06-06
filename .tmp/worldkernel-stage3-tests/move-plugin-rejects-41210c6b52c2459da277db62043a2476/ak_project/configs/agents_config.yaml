@@ -1,0 +1,29 @@
+templates:
+- name: WorldKernelAgent
+  component_order:
+  - perceive
+  - plan
+  - invoke
+  - state
+  - reflect
+  components:
+    profile:
+      plugin:
+        WKProfilePlugin:
+          profile_data: agent_profiles
+    state:
+      plugin:
+        WKStatePlugin:
+          state_data: agent_states
+    perceive:
+      plugin:
+        WKPerceivePlugin: {}
+    plan:
+      plugin:
+        WKPlanPlugin: {}
+    invoke:
+      plugin:
+        WKInvokePlugin: {}
+    reflect:
+      plugin:
+        WKReflectPlugin: {}

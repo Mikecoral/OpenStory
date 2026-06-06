@@ -1,6 +1,6 @@
 - name: OpenAIProvider
-  model: deepseek/deepseek-v4-flash
-  api_key: sk-of-xLjtbqinHQkZdOmuOLKNTpiSttlCojQtbaTjLWcbMDhzhWBKTYowCQLUSxjphhIv         # 通过 .env 文件中的 WORLDKERNEL_API_KEY 设置
-  base_url: https://api.ofox.ai/v1
+  model: deepseek-v4-flash
+  api_key: sk-7ef25ea227a6427bb509f52e178045e0         # 通过 .env 文件中的 WORLDKERNEL_API_KEY 设置
+  base_url: https://api.deepseek.com
   capabilities:
     - chat
