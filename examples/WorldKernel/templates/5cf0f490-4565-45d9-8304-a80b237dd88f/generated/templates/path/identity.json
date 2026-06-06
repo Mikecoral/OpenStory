@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "karma_index",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_hidden_passage",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "barrier_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "terrain_feature",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

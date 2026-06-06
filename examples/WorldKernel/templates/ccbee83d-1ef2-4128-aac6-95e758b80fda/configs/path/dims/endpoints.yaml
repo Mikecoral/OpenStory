@@ -1,0 +1,21 @@
+dim_name: EndpointsDim
+from_id:
+  type: str
+  ref: location
+to_id:
+  type: str
+  ref: location
+bidirectional:
+  type: bool
+visual_atmosphere:
+  type: str
+  option: true
+usage_frequency:
+  type: str
+  option: true
+memory_bond_location:
+  type: str
+  option: true
+length_category:
+  type: str
+  option: true

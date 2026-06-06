@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "threshold_elements",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "ambient_soundscape",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "dominant_color_palette",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "lighting_quality",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "time_of_day_fixed",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "hidden_details",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

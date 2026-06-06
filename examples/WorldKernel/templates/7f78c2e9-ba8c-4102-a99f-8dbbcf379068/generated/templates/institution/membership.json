@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "members",
+      "type": "list_str",
+      "required": true,
+      "ref": "character"
+    },
+    {
+      "name": "roles",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "entry_criteria",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "luck_grade_threshold",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "member_loyalty_metric",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "special_ability_requirement",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "confidentiality_agreement_version",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "internal_ranking_system",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

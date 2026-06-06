@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "penalties",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "rewards_for_compliance",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "penalty_severity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "rewards_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "appeal_process",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

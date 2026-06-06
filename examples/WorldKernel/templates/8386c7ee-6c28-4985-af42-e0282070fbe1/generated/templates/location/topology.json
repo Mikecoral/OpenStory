@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "connected_to",
+      "type": "list_str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "parent_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "layer",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "entrance_type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "map_grid_coordinates",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "relative_position_to_control_center",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "access_condition_detail",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "cycle_map_change",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

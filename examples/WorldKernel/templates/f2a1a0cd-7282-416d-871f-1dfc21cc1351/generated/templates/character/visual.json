@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "shadow_extending",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "age_fluctuation_appearance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "phantom_afterimage",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "atmospheric_color_palette",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "mote_of_light_reflection",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

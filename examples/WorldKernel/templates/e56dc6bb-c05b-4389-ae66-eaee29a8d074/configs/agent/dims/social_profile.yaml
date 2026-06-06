@@ -1,0 +1,12 @@
+dim_name: SocialProfileDim
+group_id:
+  type: str
+  ref: institution
+reputation:
+  type: str
+family_background:
+  type: str
+  option: true
+social_class:
+  type: str
+  option: true

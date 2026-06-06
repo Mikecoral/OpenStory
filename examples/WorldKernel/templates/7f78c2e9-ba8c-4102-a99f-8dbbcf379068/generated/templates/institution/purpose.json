@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "mission",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "founding_reason",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "mission_classification",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "hidden_agenda",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "founding_trigger_event",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "organizational_goal_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "adaptation_to_luck_levels",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

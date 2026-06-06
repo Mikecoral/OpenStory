@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "mission",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "founding_reason",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "overseer_entity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "game_cycle_objective",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "truth_concealment_policy",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "recruitment_goal",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "punishment_philosophy",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "judgment_criteria",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "information_control_scope",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

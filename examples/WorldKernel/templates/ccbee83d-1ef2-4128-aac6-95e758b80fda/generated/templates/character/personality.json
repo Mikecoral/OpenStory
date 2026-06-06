@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "name": "traits",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "values",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "speech_style",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "inner_monologue_tendency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "attitude_toward_death",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "attitude_toward_suicide",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "music_taste",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "loneliness_intensity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "social_avoidance_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "nostalgia_frequency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

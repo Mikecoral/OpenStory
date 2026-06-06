@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "alternate_realm_connection",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "symbolic_architecture",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "threshold_marker",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

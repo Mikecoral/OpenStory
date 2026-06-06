@@ -1,0 +1,70 @@
+{
+  "fields": [
+    {
+      "name": "background_summary",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "key_events",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "world_knowledge",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_knowledge",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "secrets",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "memory_of_deceased_person",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "memory_of_specific_well",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "memory_of_amibe_sanatorium",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "music_associated_memory",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "traumatic_recollection",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "childhood_attachment_memory",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

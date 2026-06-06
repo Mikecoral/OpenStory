@@ -1,0 +1,19 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+path_symbol:
+  type: str
+  option: true
+path_realm_type:
+  type: str
+  option: true
+is_cursed:
+  type: str
+  option: true
+metaphor_theme:
+  type: str
+  option: true

@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "assets",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "territory",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "funding_source",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "facilities_list",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "natural_surroundings_atmosphere",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "cultural_assets",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "maintenance_condition",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

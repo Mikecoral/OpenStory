@@ -1,0 +1,16 @@
+dim_name: GoalsDim
+short_term_goal:
+  type: str
+long_term_goal:
+  type: str
+motivation:
+  type: str
+survival_priority:
+  type: str
+  option: true
+rebellion_goal:
+  type: str
+  option: true
+information_gathering_goal:
+  type: str
+  option: true

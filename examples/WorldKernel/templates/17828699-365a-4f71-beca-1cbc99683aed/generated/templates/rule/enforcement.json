@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "enforcer",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "mechanism",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "detectability",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_pressure",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "emotional_weight",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "memory_reliance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

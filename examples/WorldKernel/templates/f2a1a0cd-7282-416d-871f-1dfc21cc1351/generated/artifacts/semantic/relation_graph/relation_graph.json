@@ -1,0 +1,179 @@
+{
+  "artifact_type": "relation_edge",
+  "items": [
+    {
+      "edge": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:005",
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:005",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:006",
+        "type": "血亲诅咒",
+        "direction": "双向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:009",
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:006",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:004",
+        "type": "异名同体",
+        "direction": "双向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:003",
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:004",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:010",
+        "type": "猎手与猎物",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:015",
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:010",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:004",
+        "type": "宿命终结者",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:014",
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:010",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:003",
+        "type": "引路人与随从",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:002",
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:003",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:010",
+        "type": "守护与被守护",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:016",
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:010",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:011",
+        "type": "棋友",
+        "direction": "双向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:007",
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:005",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:008",
+        "type": "求知者与引导者",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:012",
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:008",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:005",
+        "type": "庇护与信任",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:006",
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:005",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:007",
+        "type": "禁忌的爱恋",
+        "direction": "双向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:010",
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:007",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:002",
+        "type": "一体两面",
+        "direction": "双向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:004",
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:005",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:002",
+        "type": "幽会者",
+        "direction": "双向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:008",
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:005",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:009",
+        "type": "梦中的羁绊",
+        "direction": "双向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:013",
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:008",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:007",
+        "type": "馆长与司书",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:011",
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:007",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:008",
+        "type": "信赖的助手",
+        "direction": "单向"
+      }
+    },
+    {
+      "edge": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:001",
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:003",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:001",
+        "type": "常客与店主",
+        "direction": "双向"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:005",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:009",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:003",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:015",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:014",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:002",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:016",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:007",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:012",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:006",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:010",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:004",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:008",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:013",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:011",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:rel:001"
+  ],
+  "upstream_step_ids": [
+    "generate_relations"
+  ],
+  "warnings": [
+    "review (score=4.5): 角色 '十五岁的佐伯' (ID: e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:002) 仅出现在1条关系中（与佐伯女士的关系），虽然作为幻影符合设定，但为保持核心角色密度，建议增加与卡夫卡或图书馆场景的更多互动关系。; 角色 '樱' (ID: e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:009) 仅出现在1条关系中（与卡夫卡的关系），作为major角色，连接度较低，但考虑到其设定为梦中幻影，当前关系可接受。; 角色 '山田咖啡店主' (ID: e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:char:001) 是minor角色，但连续出现在两条关系中（与星野君、卡夫卡），与其中一条的关系（与卡夫卡的'偶遇者'）略显薄弱且与其他核心脉络关联性不足，建议保留主要的一条即可，以确保网络清晰。; 关系 '幽会者' (index 12) 与 '禁忌的爱恋' (index 10) 语义有部分重叠，但指向不同对象（前者对十五岁佐伯幻影，后者对佐伯女士实体），考虑到角色的双重身份，当前处理尚可接受，但需注意在叙事中明确区分。"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

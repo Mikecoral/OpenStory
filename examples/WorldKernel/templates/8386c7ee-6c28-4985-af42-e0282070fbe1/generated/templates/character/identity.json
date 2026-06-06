@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "role",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "memory_retention_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "appearance_token",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "original_name_hash",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

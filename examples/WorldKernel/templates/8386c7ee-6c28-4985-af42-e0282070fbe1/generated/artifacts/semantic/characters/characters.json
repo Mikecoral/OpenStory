@@ -1,0 +1,1192 @@
+{
+  "artifact_type": "character_profile",
+  "items": [
+    {
+      "identity": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:008",
+        "name": "齐夏",
+        "role": "参赛者",
+        "memory_retention_status": "",
+        "appearance_token": "",
+        "original_name_hash": ""
+      },
+      "social_profile": {
+        "group_id": "反抗者联盟",
+        "reputation": "极高，被视为反抗象征与精神领袖",
+        "trust_network": "乔家劲, 陈俊南, 部分新生参赛者",
+        "alliance_status": "积极组建反终焉组织，核心层领袖",
+        "memory_sharing_group_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:group:001"
+      },
+      "capabilities": {
+        "skills": [
+          "逻辑推理",
+          "心理博弈",
+          "语言诱导",
+          "规则分析",
+          "团队协调"
+        ],
+        "level": "专家级",
+        "weaknesses": "体能一般, 易被情感牵动, 偶尔过于信任同伴",
+        "game_skills": "擅长需要逻辑推理与欺诈的游戏, 能快速识破规则漏洞",
+        "knowledge_systems": "死亡游戏规则库, 轮回机制理论, 终焉组织行为模式",
+        "rule_understanding_level": "极其深刻，能发现隐藏条款",
+        "resistance_tendency": "高，主动策划反抗行动"
+      },
+      "personality": {
+        "traits": [
+          "冷静",
+          "睿智",
+          "执着",
+          "富有同情心",
+          "隐忍"
+        ],
+        "values": [
+          "生命至上",
+          "自由不可剥夺",
+          "真相比安全重要",
+          "团结互助"
+        ],
+        "speech_style": "平稳而有磁性，常用反问与设问，发言极具说服力",
+        "fear_level": "低，但会因同伴伤亡而情绪波动",
+        "determination": "极高，不达目的不罢休",
+        "madness_level": "中等，在极端压力下会出现偏执倾向",
+        "suspicion_tendency": "中等，对陌生者保持警惕但愿意给予机会"
+      },
+      "goals": {
+        "short_term_goal": "在下一轮游戏中保护更多参赛者存活",
+        "long_term_goal": "找到逃离终焉之城的真正方法，并摧毁轮回系统",
+        "motivation": "目睹太多无辜者死亡，坚信人性与自由值得拯救",
+        "survival_priority": "较高，但认为集体存活比个人生存更重要",
+        "rebellion_goal": "推翻终焉组织，揭露轮回真相",
+        "information_gathering_goal": "收集关于终焉组织高层与城市核心的秘密"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "轮回保留记忆但外貌随机",
+            "终焉之城由至少五个主要游戏场馆组成",
+            "生肖街是使徒巡逻密度最高的区域",
+            "医疗中心的资源由一种‘积分’系统控制"
+          ],
+          "social_knowledge": [
+            "乔家劲绝对忠诚但偶尔冲动",
+            "陈俊南的情报网覆盖约三分之一参赛者",
+            "存在一个亲终焉的间谍网络渗透在公寓区"
+          ]
+        },
+        "background_summary": "进入终焉之城前是一名心理咨询师，擅长倾听与分析。第一次进入时经历了初始游戏，凭借观察力带领小组存活。随后多次轮回中逐渐发现记忆保留规律，开始串联线索。",
+        "key_events": [
+          "首次游戏设计陷阱淘汰了半数参与者，成功自救",
+          "发现乔家劲的武力价值并与之结盟",
+          "在第三轮轮回中识破使徒的伪装，导致使徒被反杀",
+          "收集到关于‘生肖街’地下的异常信号记录"
+        ],
+        "secrets": [
+          "他本人曾无意触发过轮回的一次重置，但刻意隐瞒了此信息",
+          "知道城市边缘存在一处未标记的通道，但未向任何人透露",
+          "内心深处怀疑自己可能曾是终焉组织的实验对象"
+        ],
+        "reincarnation_memories": "第一轮外貌：青年男性, 第二轮外貌：中年女性, 第三轮外貌：老年男性",
+        "secret_knowledge_level": "高，掌握多处未公开信息"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:loc:006"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_cycle_number": "4",
+        "memory_cycle_count": "4",
+        "health_status": "良好",
+        "resource_count": "23"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:007",
+        "name": "乔家劲",
+        "role": "参赛者",
+        "memory_retention_status": "",
+        "appearance_token": "",
+        "original_name_hash": ""
+      },
+      "social_profile": {
+        "group_id": "齐夏同盟",
+        "reputation": "极高，武力公认最强，性格直率受人信赖",
+        "trust_network": "齐夏, 部分通过考验的盟友",
+        "alliance_status": "齐夏最坚定的执行者，负责武力保护",
+        "memory_sharing_group_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:group:001"
+      },
+      "capabilities": {
+        "skills": [
+          "徒手格斗",
+          "武器运用",
+          "短跑与爆发力",
+          "危机直觉",
+          "器械拆解"
+        ],
+        "level": "专家级（武力），中等（智力）",
+        "weaknesses": "容易冲动, 不擅长复杂逻辑, 对未知毒素缺乏抵抗力",
+        "game_skills": "擅长擂台类直接对抗游戏, 能在混战中保护多人",
+        "knowledge_systems": "格斗技巧, 终焉之城危险区域分布, 基本医疗急救",
+        "rule_understanding_level": "基础，需要齐夏解释复杂规则",
+        "resistance_tendency": "高，但更依赖行动而非策划"
+      },
+      "personality": {
+        "traits": [
+          "勇敢",
+          "直率",
+          "忠诚",
+          "略显暴躁",
+          "重情重义"
+        ],
+        "values": [
+          "朋友第一",
+          "力量即正义（但用于保护）",
+          "不能背弃誓言"
+        ],
+        "speech_style": "简短有力，常用俚语，语气直接不带修饰",
+        "fear_level": "极低，面对死亡威胁反而兴奋",
+        "determination": "极高，尤其当保护对象是齐夏时",
+        "madness_level": "中等偏下，但战斗时容易进入狂暴状态",
+        "suspicion_tendency": "低，愿意相信队友，但对陌生人保持警惕"
+      },
+      "goals": {
+        "short_term_goal": "在下一场游戏中保护齐夏和陈俊南安全",
+        "long_term_goal": "用拳头打破这个破城市，带所有兄弟出去",
+        "motivation": "齐夏救过他的命，他发誓要报答，且厌恶被囚禁",
+        "survival_priority": "极高，但愿意为同伴牺牲",
+        "rebellion_goal": "摧毁使徒的据点，让他们也尝尝被揍的滋味",
+        "information_gathering_goal": "找到终焉组织老大的位置，直接打上门"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "城市内存在若干安全屋可用于临时躲避",
+            "擂台游戏通常一对一，可以提前申请",
+            "使徒的制服在特定角度会反光",
+            "医疗中心有暗门通往地下"
+          ],
+          "social_knowledge": [
+            "齐夏有隐藏的秘密但不想问",
+            "陈俊南的情报能力很可靠",
+            "公寓区有一个女孩对终焉组织极度恐惧"
+          ]
+        },
+        "background_summary": "进入前是一名退役特种兵，因欠债而在地下拳场谋生。被传送至终焉之城后第一场游戏即凭借武力碾压对手，后被齐夏说服合作，逐渐成为反抗组织武力核心。",
+        "key_events": [
+          "首次游戏独自击倒三个试图围攻他的参赛者",
+          "在狮之馆的团队游戏中保护整支队伍存活",
+          "为救齐夏徒手拆解一个机械陷阱",
+          "在疯狂城混战中击杀一名伪装的使徒"
+        ],
+        "secrets": [
+          "他实际上记得自己的原始姓名（乔勇），但从来不说",
+          "在某一轮回中曾杀死过一名想投降的同伴，至今自责",
+          "偷偷在公寓区藏了一批自制武器，连齐夏也不知道"
+        ],
+        "reincarnation_memories": "第一轮：强壮中年男性, 第二轮：矮胖女性, 第三轮：高瘦青年男性",
+        "secret_knowledge_level": "低，很少主动探索秘密"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:loc:002"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_cycle_number": "4",
+        "memory_cycle_count": "4",
+        "health_status": "良好，右臂有旧伤但无碍",
+        "resource_count": "8"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:001",
+        "name": "陈俊南",
+        "role": "参赛者",
+        "memory_retention_status": "",
+        "appearance_token": "",
+        "original_name_hash": ""
+      },
+      "social_profile": {
+        "group_id": "情报网络核心",
+        "reputation": "高，被认为是终焉之城消息最灵通的人之一",
+        "trust_network": "齐夏, 乔家劲, 少数情报线人",
+        "alliance_status": "情报负责人，为反抗组织提供信息支持",
+        "memory_sharing_group_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:group:001"
+      },
+      "capabilities": {
+        "skills": [
+          "情报搜集与整合",
+          "伪造证件/身份",
+          "侦查与反侦查",
+          "密码解锁",
+          "快速记忆"
+        ],
+        "level": "专家级（情报），中等（武力）",
+        "weaknesses": "体能普通, 不擅长正面冲突, 疑心过重有时误判",
+        "game_skills": "擅长依赖信息不对称的游戏, 能通过微表情判断对手底牌",
+        "knowledge_systems": "终焉之城地图与监控盲区, 参赛者身份数据库, 使徒行动规律",
+        "rule_understanding_level": "高，尤其了解规则漏洞与灰色地带",
+        "resistance_tendency": "中等，更愿意用隐蔽方式反抗"
+      },
+      "personality": {
+        "traits": [
+          "机敏",
+          "多疑",
+          "谨慎",
+          "有些孤僻",
+          "利己但不自私"
+        ],
+        "values": [
+          "信息就是生存",
+          "不主动背叛盟友",
+          "能屈能伸"
+        ],
+        "speech_style": "语速较快，喜欢用暗语和代号，说话常留三分",
+        "fear_level": "中等偏上，对未知威胁保持高度警觉",
+        "determination": "中高，会持续追寻一个目标但也会评估风险",
+        "madness_level": "低，始终保持理性冷静",
+        "suspicion_tendency": "高，对任何人都不完全信任"
+      },
+      "goals": {
+        "short_term_goal": "绘制出终焉之城所有监控节点的精确分布图",
+        "long_term_goal": "找到一条绝对安全的撤离路线，为自己和齐夏准备退路",
+        "motivation": "他第一个轮回中被信任的朋友出卖，自此认为只有信息才能保护自己",
+        "survival_priority": "极高，将自身存活视为一切行动前提",
+        "rebellion_goal": "搜集终焉组织高层犯罪证据，让他们自我崩溃",
+        "information_gathering_goal": "渗透进入生肖街使徒的通讯网络"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "生肖街每三小时换防一次",
+            "羊之馆的兑换系统存在一个未修复的bug",
+            "医疗中心的药剂师是一名前大学教授",
+            "城市地下有复杂的管廊系统"
+          ],
+          "social_knowledge": [
+            "齐夏与乔家劲的关系牢不可破",
+            "公寓区有一个自称‘先知’的人疑似掌握轮回真相",
+            "某位使徒私下对终焉组织心存不满，可能成为突破口"
+          ]
+        },
+        "background_summary": "进入前是一名私家侦探，擅长跟踪与网络调查。首轮轮回被最亲密的搭档背叛几乎死亡，从此不再轻易信任他人。后来被齐夏的人格魅力吸引，加入反抗组织，主要负责情报工作。",
+        "key_events": [
+          "首轮轮回搭档在游戏中故意提供错误信息，导致他重伤",
+          "单枪匹马潜入狮之馆的档案室，偷出两份游戏规则文件",
+          "帮助齐夏识破一次使徒设下的陷阱",
+          "在医疗中心发现隐藏的通讯装置并成功破解密码"
+        ],
+        "secrets": [
+          "他暗中保留了一个记录着所有参赛者原始名字的笔记本，包括自己",
+          "他曾无意中听到使徒交谈，得知‘终焉’背后可能存在更高层存在",
+          "他在公寓区某处埋藏了一份伪造的逃生地图，作为误导使徒的诱饵"
+        ],
+        "reincarnation_memories": "第一轮：精瘦青年男性, 第二轮：中年女性, 第三轮：少年外表",
+        "secret_knowledge_level": "中高，但部分信息尚未验证"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:loc:014"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_cycle_number": "4",
+        "memory_cycle_count": "4",
+        "health_status": "轻伤（左臂划伤，已包扎）",
+        "resource_count": "12"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:010",
+        "name": "鼠先生",
+        "role": "组织者（终焉使徒）",
+        "memory_retention_status": "完整保留轮回记忆",
+        "appearance_token": "中年男性，身形瘦削，戴无框眼镜，手指修长，总穿着深灰色西装",
+        "original_name_hash": "1a2b3c4d5e6f"
+      },
+      "social_profile": {
+        "group_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:group:012",
+        "reputation": "十二生肖之首，规则制定者，智慧与冷酷并存",
+        "trust_network": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:006",
+        "alliance_status": "使徒核心圈，与牛先生有默契配合，对其他使徒保持距离",
+        "memory_sharing_group_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:group:012"
+      },
+      "capabilities": {
+        "skills": [
+          "游戏规则设计与漏洞分析",
+          "逻辑推理",
+          "心理操控",
+          "数据统筹",
+          "伪装与变声"
+        ],
+        "level": "core",
+        "weaknesses": "体力孱弱, 自大倾向, 对未知变量容忍度低",
+        "game_skills": "任何需要规则解释与仲裁的游戏中拥有隐藏优势, 可以临时微调游戏设定",
+        "knowledge_systems": "终焉之城底层规则, 所有游戏场馆机制, 参赛者心理模式",
+        "rule_understanding_level": "最高",
+        "resistance_tendency": "完全服从终焉意志，无反抗"
+      },
+      "personality": {
+        "traits": [
+          "精密算计",
+          "冷漠自持",
+          "语言冷峻",
+          "追求秩序",
+          "享受掌控"
+        ],
+        "values": [
+          "秩序至上",
+          "效率优先",
+          "信息就是权力"
+        ],
+        "speech_style": "缓慢、清晰，每一个字都经过权衡，喜欢用长句和逻辑嵌套，极少带情绪",
+        "fear_level": "5",
+        "determination": "95",
+        "madness_level": "20",
+        "suspicion_tendency": "85"
+      },
+      "goals": {
+        "short_term_goal": "确保下一轮游戏规则无漏洞可钻",
+        "long_term_goal": "成为终焉意志唯一的规则代理人，淘汰所有‘意外’参赛者",
+        "motivation": "对混乱与不确定性的深恶痛绝，认为只有绝对规则才能维持永恒",
+        "survival_priority": "70",
+        "rebellion_goal": "0",
+        "information_gathering_goal": "100"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "终焉之城的结界本质是空间折叠",
+            "轮回周期约为300天",
+            "十二使徒之上还有更高层存在"
+          ],
+          "social_knowledge": [
+            "牛先生容易控制",
+            "虎先生冲动不好合作",
+            "羊先生暗藏野心"
+          ]
+        },
+        "background_summary": "在进入终焉之城前是一名顶尖运筹学顾问，在死亡游戏中迅速被终焉组织选中，经过数轮轮回被提拔为使徒，彻底放弃人性，将思维完全融入规则体系",
+        "key_events": [
+          "经手设计‘龙之屋’的淘汰规则使80人阵亡",
+          "通过心理战让三个反对派首领互相残杀",
+          "亲手修正了虎先生违规执行导致的规则冲突"
+        ],
+        "secrets": [
+          "私下保留了几条只有自己知道的规则后门",
+          "曾在一次轮回中偷偷放走一个潜力参赛者以观察长期演化"
+        ],
+        "reincarnation_memories": "每次轮回后外貌随机变成不同年龄男性，但始终保留瘦削特征, 经历过17次完整轮回",
+        "secret_knowledge_level": "core"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:loc:006"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_cycle_number": "18",
+        "memory_cycle_count": "17",
+        "health_status": "良好",
+        "resource_count": "9999"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:006",
+        "name": "牛先生",
+        "role": "组织者（终焉使徒）",
+        "memory_retention_status": "完整保留轮回记忆",
+        "appearance_token": "高大魁梧的男性，肌肉虬结，板寸头，脸上有刀疤，常穿黑色战术背心",
+        "original_name_hash": "2b3c4d5e6f7a"
+      },
+      "social_profile": {
+        "group_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:group:012",
+        "reputation": "十二生肖中的执行者，暴力机器，令参赛者闻风丧胆",
+        "trust_network": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:010",
+        "alliance_status": "鼠先生的得力打手，对其他使徒不亲近但尊重",
+        "memory_sharing_group_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:group:012"
+      },
+      "capabilities": {
+        "skills": [
+          "近身格斗",
+          "武器使用",
+          "威慑与刑讯",
+          "高强度体力劳动",
+          "简单爆破"
+        ],
+        "level": "major",
+        "weaknesses": "智商有限, 易被激将, 对规则细节不耐烦",
+        "game_skills": "在擂台或混战场馆中直接压制参赛者",
+        "knowledge_systems": "终焉之城暴力执行手册, 人体弱点与致命位置",
+        "rule_understanding_level": "中等",
+        "resistance_tendency": "完全服从终焉意志，以暴力为荣"
+      },
+      "personality": {
+        "traits": [
+          "暴戾",
+          "沉默寡言",
+          "忠于命令",
+          "以力量为尊",
+          "享受施虐"
+        ],
+        "values": [
+          "力量即正义",
+          "服从即美德",
+          "效率就是直接消灭"
+        ],
+        "speech_style": "简短、粗鲁，常用暴力词汇，很少说整句",
+        "fear_level": "10",
+        "determination": "90",
+        "madness_level": "50",
+        "suspicion_tendency": "30"
+      },
+      "goals": {
+        "short_term_goal": "完成鼠先生分配的清扫任务",
+        "long_term_goal": "成为所有使徒中最强的存在，得到终焉意志的直接认可",
+        "motivation": "崇拜绝对力量，享受在游戏中亲手终结参赛者的快感",
+        "survival_priority": "60",
+        "rebellion_goal": "0",
+        "information_gathering_goal": "20"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "部分疯狂城特殊规则",
+            "终焉之城地下有秘密通道"
+          ],
+          "social_knowledge": [
+            "鼠先生从不说废话",
+            "虎先生是个莽夫"
+          ]
+        },
+        "background_summary": "曾是地下拳手，在死亡游戏中靠拳头赢得使徒席位，对鼠先生的智慧有盲目的信任，将体力视为唯一真理",
+        "key_events": [
+          "一拳打碎擂台挑战者的头骨",
+          "在疯狂城混战中独自镇压30人队伍",
+          "因执行过激被鼠先生警告过一次"
+        ],
+        "secrets": [
+          "私下服用过增强体质但损伤神经的药物",
+          "对虎先生一直不服气，想找机会较量"
+        ],
+        "reincarnation_memories": "每次轮回外貌随机变成更强壮的男性, 经历过9次完整轮回",
+        "secret_knowledge_level": "low"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:loc:005"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_cycle_number": "10",
+        "memory_cycle_count": "9",
+        "health_status": "关节有暗伤，但整体强壮",
+        "resource_count": "800"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:012",
+        "name": "虎先生",
+        "role": "组织者（终焉使徒）",
+        "memory_retention_status": "完整保留轮回记忆",
+        "appearance_token": "三十岁出头男性，虎背熊腰，金色短发，眼神凶恶，穿紧身黑色皮衣，常挂着一串牙齿项链",
+        "original_name_hash": "3c4d5e6f7a8b"
+      },
+      "social_profile": {
+        "group_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:group:012",
+        "reputation": "十二生肖中的惩罚者，以最残忍的手段震慑参赛者，名声极差",
+        "trust_network": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:006, e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:010",
+        "alliance_status": "与牛先生表面和善，暗中竞争；对鼠先生既敬且畏",
+        "memory_sharing_group_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:group:012"
+      },
+      "capabilities": {
+        "skills": [
+          "格斗",
+          "群体威慑",
+          "刑具制作",
+          "纵火与爆破",
+          "追踪"
+        ],
+        "level": "major",
+        "weaknesses": "嫉妒心强, 冲动行事, 容易被挑拨",
+        "game_skills": "在狮之馆等团队游戏中擅长制造恐怖气氛",
+        "knowledge_systems": "终焉之城惩罚条例, 人体恐惧心理学",
+        "rule_understanding_level": "中等偏低",
+        "resistance_tendency": "完全服从终焉意志，但经常在灰色地带越界"
+      },
+      "personality": {
+        "traits": [
+          "残暴",
+          "自负",
+          "多疑",
+          "喜怒无常",
+          "享受他人的恐惧"
+        ],
+        "values": [
+          "恐惧是最好的秩序",
+          "强者生弱者死"
+        ],
+        "speech_style": "大声、带有威胁性，喜欢挖苦和咆哮，用词粗糙",
+        "fear_level": "15",
+        "determination": "85",
+        "madness_level": "65",
+        "suspicion_tendency": "70"
+      },
+      "goals": {
+        "short_term_goal": "在新一轮游戏中制造一场大屠杀以树立权威",
+        "long_term_goal": "取代鼠先生成为十二生肖之首，获得更多的自由裁量权",
+        "motivation": "对平庸的不屑，渴望通过暴力获得所有参赛者和使徒的绝对畏惧",
+        "survival_priority": "50",
+        "rebellion_goal": "20",
+        "information_gathering_goal": "40"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "部分生肖街地下通道网络",
+            "医疗中心有一些违禁药品"
+          ],
+          "social_knowledge": [
+            "牛先生是个呆瓜",
+            "鼠先生有不可告人的秘密"
+          ]
+        },
+        "background_summary": "曾是某安保公司的雇佣兵，在死亡游戏早期以猎杀其他玩家为乐，被终焉组织看中招安为使徒，从未觉得自己是‘被囚禁’的，反而爱上了这座竞技场",
+        "key_events": [
+          "在狮之馆游戏中使用私刑导致三名参赛者非正常死亡，被鼠先生口头警告",
+          "曾独自扫荡一个反抗者据点，杀死17人",
+          "在一次轮回中故意放走一个猎物然后又追杀取乐"
+        ],
+        "secrets": [
+          "私下饲养了一只从医疗中心偷来的变异动物作为宠物",
+          "曾经暗中帮助过一个参赛者逃脱，只是为了增加游戏难度"
+        ],
+        "reincarnation_memories": "每次轮回外貌随机变成残暴型男性，身高稍变, 经历过11次完整轮回",
+        "secret_knowledge_level": "medium"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:loc:014"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_cycle_number": "12",
+        "memory_cycle_count": "11",
+        "health_status": "健康，但有轻微的前额叶损伤导致的易怒",
+        "resource_count": "700"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:009",
+        "name": "兔先生",
+        "role": "组织者（终焉使徒）",
+        "memory_retention_status": "完全保留轮回记忆，但外貌随机变化",
+        "appearance_token": "每次轮回随机，但常以温和中年人形象出现",
+        "original_name_hash": "unknown"
+      },
+      "social_profile": {
+        "group_id": "使徒集团",
+        "reputation": "神秘莫测，被参赛者畏惧与憎恨",
+        "trust_network": "终焉使徒内部高层",
+        "alliance_status": "与终焉组织紧密合作，执行死亡游戏规则",
+        "memory_sharing_group_id": ""
+      },
+      "capabilities": {
+        "skills": [
+          "信息收集与操控",
+          "伪装与易容",
+          "规则解读与篡改"
+        ],
+        "level": "精英",
+        "weaknesses": "对轮回真相的执着探究可能被利用，对某些特定参赛者存在私人情感",
+        "game_skills": "擅长诱导参赛者暴露弱点, 能通过暗示改变游戏走向",
+        "knowledge_systems": "终焉之城隐藏规则全集, 参赛者身份与背景档案",
+        "rule_understanding_level": "极高",
+        "resistance_tendency": "完全服从终焉组织"
+      },
+      "personality": {
+        "traits": [
+          "冷静",
+          "狡猾",
+          "深藏不露",
+          "偶尔流露出人性化的犹豫"
+        ],
+        "values": [
+          "秩序高于一切",
+          "规则必须被遵守",
+          "信息即权力"
+        ],
+        "speech_style": "措辞礼貌但暗含威胁，常用双关语和隐喻",
+        "fear_level": "1",
+        "determination": "8",
+        "madness_level": "2",
+        "suspicion_tendency": "7"
+      },
+      "goals": {
+        "short_term_goal": "观察并记录新参赛者在生肖街的表现",
+        "long_term_goal": "维持终焉之城的游戏秩序，防止参赛者找到逃离方法的漏洞",
+        "motivation": "表面上服从终焉组织以维持地位，暗中寻找轮回机制真相，相信通过控制信息能最终逃离",
+        "survival_priority": "",
+        "rebellion_goal": "",
+        "information_gathering_goal": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "终焉之城的空间屏障原理",
+            "死亡游戏的所有变种规则",
+            "使徒内部的等级与奖惩制度"
+          ],
+          "social_knowledge": [
+            "参赛者中的潜在反抗组织名单",
+            "老王（杂货店老板）长期协助参赛者的秘密"
+          ]
+        },
+        "background_summary": "兔先生曾是终焉组织高层，经历多次轮回后晋升为使徒，负责信息流通与隐藏规则的维持。他表面上忠于组织，但私下里一直在寻找轮回机制的真相。",
+        "key_events": [
+          "在一次游戏中救下关键参赛者，违反规定后被惩罚降低权限",
+          "发现某些参赛者拥有前世记忆的碎片，但被要求保密"
+        ],
+        "secrets": [
+          "他知道终焉之城的真正目的并非淘汰，而是收集人类在极端压力下的决策数据",
+          "他手上有一份离开终焉之城的蓝图，但内容不全"
+        ],
+        "reincarnation_memories": "完整保留，但刻意伪装成普通使徒的记忆水平",
+        "secret_knowledge_level": "高级"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:loc:014"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_cycle_number": "12",
+        "memory_cycle_count": "12",
+        "health_status": "健康",
+        "resource_count": "15"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:005",
+        "name": "老王",
+        "role": "本土居民（NPC）",
+        "memory_retention_status": "核心情报记忆（如使徒身份、隐藏通道等）不受轮回重置影响，但日常经历和人际关系记忆在每次轮回后清零",
+        "appearance_token": "固定为五六十岁、面容沧桑的男性，背微驼",
+        "original_name_hash": "Wang_Old_001"
+      },
+      "social_profile": {
+        "group_id": "NPC群体",
+        "reputation": "受参赛者尊敬，被认为是可靠的资源提供者",
+        "trust_network": "部分长期参赛者, 少数使徒中的温和派",
+        "alliance_status": "暗中支持参赛者，表面保持中立",
+        "memory_sharing_group_id": ""
+      },
+      "capabilities": {
+        "skills": [
+          "物资调配",
+          "情报收集与评估",
+          "伪造与隐藏"
+        ],
+        "level": "资深",
+        "weaknesses": "体力下降，无法直接参与激烈对抗；对使徒监控有所忌惮",
+        "game_skills": "不直接参与游戏，但能通过提供工具间接影响",
+        "knowledge_systems": "终焉之城的地下网络运作, 参赛者生存心理",
+        "rule_understanding_level": "中等",
+        "resistance_tendency": "温和抵抗，主张非暴力生存"
+      },
+      "personality": {
+        "traits": [
+          "谨慎",
+          "温和",
+          "坚韧",
+          "富有同情心"
+        ],
+        "values": [
+          "生命至上",
+          "隐性反抗",
+          "互助存活"
+        ],
+        "speech_style": "语气和缓，常以长者口吻提供建议，偶尔暗含对使徒的讽刺",
+        "fear_level": "5",
+        "determination": "7",
+        "madness_level": "1",
+        "suspicion_tendency": "4"
+      },
+      "goals": {
+        "short_term_goal": "向新一批参赛者秘密分发隐藏的生存指南小册子",
+        "long_term_goal": "帮助足够多的参赛者存活到下一轮回，维持反抗火种",
+        "motivation": "出于对无辜者死亡的愧疚，以及对自己被困循环的愤怒",
+        "survival_priority": "",
+        "rebellion_goal": "",
+        "information_gathering_goal": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "各游戏场馆的隐藏通道",
+            "轮回周期与使徒换岗规律"
+          ],
+          "social_knowledge": [
+            "参赛者主要势力的性格与需求",
+            "使徒兔先生的真实弱点"
+          ]
+        },
+        "background_summary": "老王是第一批被困终焉之城的参赛者之一，在第三次轮回中选择了成为NPC以换取存活保障。他利用杂货店作为据点，暗中帮助后来的参赛者，同时收集关于城市结构的秘密。",
+        "key_events": [
+          "在第七轮回成功帮三组参赛者避开陷阱游戏",
+          "曾向齐夏团队提供关键线索导致使徒报复，被迫更换店面"
+        ],
+        "secrets": [
+          "他知道所有使徒的真正身份列表",
+          "他藏有一部能短暂屏蔽监控信号的老旧设备"
+        ],
+        "reincarnation_memories": "部分保留，但刻意忘记细节以避免被抽取记忆",
+        "secret_knowledge_level": "中级"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:loc:001"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_cycle_number": "45",
+        "memory_cycle_count": "7",
+        "health_status": "轻度慢性病，行动稍缓",
+        "resource_count": "8"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:004",
+        "name": "李护士",
+        "role": "本土居民（NPC）",
+        "memory_retention_status": "完全重置，每轮轮回记忆被清除至初始状态",
+        "appearance_token": "固定三十岁左右女性，短发，戴着口罩",
+        "original_name_hash": "Li_Nurse_001"
+      },
+      "social_profile": {
+        "group_id": "NPC群体",
+        "reputation": "温和专业，但被认为缺乏主见",
+        "trust_network": "使徒监控人员, 少数常来治疗的参赛者",
+        "alliance_status": "受使徒控制，无法自由行动",
+        "memory_sharing_group_id": ""
+      },
+      "capabilities": {
+        "skills": [
+          "基础急救",
+          "心理安慰",
+          "药物配置"
+        ],
+        "level": "普通",
+        "weaknesses": "对终焉之城真相一无所知，容易被利用",
+        "game_skills": "",
+        "knowledge_systems": "常见伤病处理, 医疗中心规章制度",
+        "rule_understanding_level": "低",
+        "resistance_tendency": "完全服从"
+      },
+      "personality": {
+        "traits": [
+          "善良",
+          "怯懦",
+          "循规蹈矩",
+          "偶尔表现出超出NPC设定的关怀"
+        ],
+        "values": [
+          "生命至上",
+          "避免冲突"
+        ],
+        "speech_style": "语气平静但机械，偶尔因潜意识同情而出现短暂的语调波动，如同被程序打断的复读机",
+        "fear_level": "5",
+        "determination": "3",
+        "madness_level": "0",
+        "suspicion_tendency": "2"
+      },
+      "goals": {
+        "short_term_goal": "在使徒允许范围内尽可能救助受伤参赛者",
+        "long_term_goal": "没有自主意识，循环中重复履行职责",
+        "motivation": "程序性设置，但残留微弱的同理心",
+        "survival_priority": "",
+        "rebellion_goal": "",
+        "information_gathering_goal": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "医疗中心内部监控盲区",
+            "使徒换班时间表"
+          ],
+          "social_knowledge": []
+        },
+        "background_summary": "李护士是终焉之城早期被改造为NPC的参赛者之一，经过记忆洗脑后成为医疗中心的固定工作人员。她每轮回都会重置记忆，但仍保留一些本能的善良反应。",
+        "key_events": [
+          "曾偷偷多给重伤参赛者一剂止痛药而受罚",
+          "有参赛者试图诱导她回忆过去但未成功"
+        ],
+        "secrets": [
+          "她私下保留了一张自己名字的原始标签",
+          "她偶尔能在梦中捕捉到模糊的前世片段"
+        ],
+        "reincarnation_memories": "无",
+        "secret_knowledge_level": "极低"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:loc:012"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_cycle_number": "18",
+        "memory_cycle_count": "1",
+        "health_status": "健康",
+        "resource_count": "3"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:011",
+        "name": "羊裁判",
+        "role": "游戏裁判与执行者",
+        "memory_retention_status": "full",
+        "appearance_token": "头戴羊骨面具，身着暗红色长袍，面具下隐约可见苍白面容（自成为裁判起外貌固定，不随轮回改变）",
+        "original_name_hash": "U2FsdGVkX1+Ym9vY2hlcg=="
+      },
+      "social_profile": {
+        "group_id": "终焉裁判团",
+        "reputation": "公正而冷酷，在参与者中既被畏惧也被少数人尊重",
+        "trust_network": "终焉组织高层, 羊之馆常驻使徒",
+        "alliance_status": "独行中立",
+        "memory_sharing_group_id": ""
+      },
+      "capabilities": {
+        "skills": [
+          "规则解析与漏洞洞察",
+          "快速数学计算",
+          "心理施压",
+          "兑换公式推导"
+        ],
+        "level": "专业裁判级",
+        "weaknesses": "过于依赖规则字面，可能被钻空子, 缺乏情感共情",
+        "game_skills": "羊之馆兑换机制仲裁, 筹码数量精确管控, 惩罚触发即时判断",
+        "knowledge_systems": "终焉之城游戏规则全书, 轮回周期规律, 筹码经济体系",
+        "rule_understanding_level": "expert",
+        "resistance_tendency": "5"
+      },
+      "personality": {
+        "traits": [
+          "严谨",
+          "沉默寡言",
+          "绝对中立",
+          "冷血职业",
+          "机械式重复"
+        ],
+        "values": [
+          "规则至上",
+          "程序正义",
+          "效率优先",
+          "不干涉自然淘汰"
+        ],
+        "speech_style": "语速平稳，语调无起伏，使用精确的法律或数学术语，常以“根据规则第X条”开头",
+        "fear_level": "8",
+        "determination": "10",
+        "madness_level": "2",
+        "suspicion_tendency": "6"
+      },
+      "goals": {
+        "short_term_goal": "确保羊之馆本日兑换流程零差错执行",
+        "long_term_goal": "维护终焉之城游戏规则的绝对权威，防止任何参与者通过漏洞逃逸",
+        "motivation": "相信严格的规则是唯一公平的秩序，任何情感都会导致系统崩溃",
+        "survival_priority": "9",
+        "rebellion_goal": "",
+        "information_gathering_goal": "监控参与者中是否有试图联合破坏规则者"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "终焉之城共有十二生肖裁判体系，羊之馆属于地支之一",
+            "兑换筹码与生命时间存在非线性关系，高额兑换存在隐性惩罚",
+            "城市外围屏障在特定天文周期会有短暂波动"
+          ],
+          "social_knowledge": [
+            "猴执行者与狗判官之间存在职权冲突",
+            "部分参与者试图建立地下情报网络，其中‘记忆共享会’最为活跃"
+          ]
+        },
+        "background_summary": "羊裁判不知自己何时成为终焉之城的裁判，只记得被赋予职责后便一直驻守羊之馆。他经历了超过三十次轮回，但从未亲自参与游戏，仅作为规则执行者存在。他内心深信，打破规则是城市崩溃的根源，因此对任何违规行为都绝不姑息。",
+        "key_events": [
+          "曾目睹参与者利用兑换公式漏洞瞬间获得足够筹码并试图逃离，被当场处决",
+          "在一次轮回中亲手将一位试图贿赂小裁判的参与者淘汰",
+          "发现羊之馆的兑换机制存在一个隐藏的‘慈悲条款’，但从未向任何人透露"
+        ],
+        "secrets": [
+          "羊之馆的兑换机制中存在一个隐藏的‘慈悲条款’，允许在极端情况下免费兑换一次生命",
+          "他实际上保留着所有轮回的完整记忆，但从未向终焉组织报告",
+          "面具之下是一张被严重烧伤的面孔，那是他在成为裁判前最后一次参与游戏的代价"
+        ],
+        "reincarnation_memories": "{'cycle_count': 34, 'first_cycle_number': 1, 'memorable_cycles': ['第7轮回：目睹一名女性参与者连续七次用同一规则漏洞通关', '第23轮回：狗判官在狮之馆公然推翻了自己的裁决']}",
+        "secret_knowledge_level": "core"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:loc:013"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_cycle_number": "42",
+        "memory_cycle_count": "34",
+        "health_status": "健康",
+        "resource_count": "0"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:003",
+        "name": "猴执行者",
+        "role": "游戏裁判与执行者",
+        "memory_retention_status": "full",
+        "appearance_token": "身形瘦削，脸上涂满油彩模仿猴面，穿着紧身黑色制服，腰间挂着一把短刃",
+        "original_name_hash": "U2FsdGVkX18qbzZlcg=="
+      },
+      "social_profile": {
+        "group_id": "终焉执行组",
+        "reputation": "残忍高效，参与者闻之色变，被视为死神使者",
+        "trust_network": "终焉组织上层指令链, 狗判官",
+        "alliance_status": "下属执行者",
+        "memory_sharing_group_id": ""
+      },
+      "capabilities": {
+        "skills": [
+          "极速移动与格斗",
+          "无声暗杀",
+          "短兵器精通",
+          "心理威慑"
+        ],
+        "level": "快速处决专家",
+        "weaknesses": "一旦被限制行动则战力大减, 不擅长复杂规则推理",
+        "game_skills": "处决时间点精确把握, 多目标同时清除",
+        "knowledge_systems": "人体致命部位图谱, 场地逃生通道图",
+        "rule_understanding_level": "intermediate",
+        "resistance_tendency": "3"
+      },
+      "personality": {
+        "traits": [
+          "沉默寡言",
+          "嗜血但服从",
+          "高效率机器",
+          "极少情绪波动"
+        ],
+        "values": [
+          "命令即是真理",
+          "效率至上",
+          "不拖泥带水",
+          "尊重死亡"
+        ],
+        "speech_style": "几乎不说话，仅用单字或尖锐哨声交流，必要时使用极简命令句",
+        "fear_level": "2",
+        "determination": "10",
+        "madness_level": "6",
+        "suspicion_tendency": "4"
+      },
+      "goals": {
+        "short_term_goal": "完成今日指定的三场游戏淘汰处决任务",
+        "long_term_goal": "成为终焉之城最受信赖的处决者，获得更高权限",
+        "motivation": "在杀戮中确认自身存在的价值，服从秩序是唯一的意义",
+        "survival_priority": "10",
+        "rebellion_goal": "",
+        "information_gathering_goal": "观察参与者是否有预谋暴动迹象，及时汇报"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "终焉之城的处决标准流程及所有隐蔽退路",
+            "各游戏场馆的结构弱点",
+            "轮回中参与者外貌随机改变但气味不变，他借此识别目标"
+          ],
+          "social_knowledge": [
+            "羊裁判私下研究隐藏条款，可能对终焉组织不忠",
+            "狗判官与龙之屋的裁判存在权力斗争"
+          ]
+        },
+        "background_summary": "猴执行者原本是终焉之城的一名普通参与者，在一次混战游戏‘疯狂城’中因残杀所有对手而被选中成为执行者。他被剥夺了参与者身份，固定了外貌，并被注射药物强化了反应速度。他对自己生前的记忆模糊，只记得执行命令的快感。",
+        "key_events": [
+          "首次执行处决时，被他所杀的人竟是他前世的挚友，但他毫无犹豫",
+          "在上一次轮回中，曾参与对一名试图逃离城市者的追捕，最终将其在边境击杀",
+          "被狗判官单独嘉奖过三次，因此对其格外忠诚"
+        ],
+        "secrets": [
+          "他保留着成为执行者前的部分记忆碎片，包括一个女儿的面孔",
+          "他曾私下放过一名女性参与者，因为她的哭泣让他产生了一瞬间的刺痛感",
+          "他的强化药物每十天需要补充，否则速度会衰减，这是他最大的弱点"
+        ],
+        "reincarnation_memories": "{'cycle_count': 18, 'first_cycle_number': 15, 'memorable_cycles': ['第3次执行者生涯：被一名参与者用智谋摆脱追击，首次感到羞耻', '第12次执行者生涯：在迷宫花园中误入陷阱，险些丧命']}",
+        "secret_knowledge_level": "minor"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:loc:002"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_cycle_number": "42",
+        "memory_cycle_count": "18",
+        "health_status": "健康（依赖药物）",
+        "resource_count": "0"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:002",
+        "name": "狗判官",
+        "role": "游戏裁判与执行者",
+        "memory_retention_status": "full",
+        "appearance_token": "身穿黑色法官袍，头戴狗头面具，面具右侧有银色裂痕，右手执一柄骷髅权杖",
+        "original_name_hash": "U2FsdGVkX19wYW5kb3I="
+      },
+      "social_profile": {
+        "group_id": "终焉最高裁判所",
+        "reputation": "权威至高，甚至能推翻其他裁判的决定，但行事喜怒无常",
+        "trust_network": "终焉组织策划层, 猴执行者（下属）",
+        "alliance_status": "独立仲裁者",
+        "memory_sharing_group_id": ""
+      },
+      "capabilities": {
+        "skills": [
+          "最终规则解释权",
+          "生死判决裁决",
+          "心理洞察与审讯",
+          "即兴规则制造"
+        ],
+        "level": "最高仲裁级",
+        "weaknesses": "过度自信于自己的判断力, 容易被激将法影响",
+        "game_skills": "任何游戏均可担任裁判与仲裁, 特殊游戏自定义规则权限",
+        "knowledge_systems": "终焉之城所有规则变体, 参与者心理档案, 轮回因果律",
+        "rule_understanding_level": "master",
+        "resistance_tendency": "7"
+      },
+      "personality": {
+        "traits": [
+          "威严",
+          "狡黠",
+          "爱玩弄规则",
+          "喜怒无常",
+          "渴望挑战"
+        ],
+        "values": [
+          "秩序高于生命",
+          "规则即艺术",
+          "智慧高于蛮力",
+          "公平但不仁慈"
+        ],
+        "speech_style": "低沉而富有磁性，喜欢引用古语和法律格言，偶尔发出短促的狗吠般笑声，语调带有戏谑",
+        "fear_level": "5",
+        "determination": "9",
+        "madness_level": "7",
+        "suspicion_tendency": "8"
+      },
+      "goals": {
+        "short_term_goal": "准备下一场狮之馆特殊游戏，设计一个足以考验所有参与者的复杂规则",
+        "long_term_goal": "利用仲裁权暗中测试参与者极限，寻找可能打破轮回的秘密",
+        "motivation": "对终焉之城的真相充满好奇，相信只有通过极端规则才能筛选出真正的破局者",
+        "survival_priority": "8",
+        "rebellion_goal": "若找到轮回的源头，他打算利用它获取绝对权力",
+        "information_gathering_goal": "收集各裁判的决策偏好，建立影响力网络"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "终焉之城实际上是一个由古代魔法与科技结合的封闭空间",
+            "轮回周期与城外现实时间存在严重比例差异（城内一年城外一瞬）",
+            "十二生肖裁判中至少有三个与他一样怀有异心"
+          ],
+          "social_knowledge": [
+            "猴执行者对其言听计从，是可靠棋子",
+            "羊裁判似乎掌握了某个隐藏条款，可能成为障碍",
+            "参与者中有一名代号‘破晓’的人已经连续六轮存活，值得关注"
+          ]
+        },
+        "background_summary": "狗判官是终焉之城中资格最老的裁判之一，据说已经经历了近百次轮回。他原本是人类中的犯罪心理学家，成为裁判后被赋予了修改规则的权限。他热爱在游戏中植入‘惊喜’，认为死亡游戏应该像一场戏剧。他对现有秩序有潜在的不满，希望通过自己的方式颠覆整个系统。",
+        "key_events": [
+          "曾在一场游戏中当场宣布规则无效，导致所有参与者获得免费生命，震惊整个裁判体系",
+          "与羊裁判在她当值的场馆内公开争执，最终用权限改写了羊之馆的一条核心条款",
+          "秘密放生过一名参与者，将其转化为自己的线人，以跟踪轮回中的信息流"
+        ],
+        "secrets": [
+          "他知晓终焉之城的真实目的——筛选出足够强大心智的灵魂供‘更高存在’汲取",
+          "他在自己的狗头面具内侧刻有‘轮回可破’四个字，只有自己知道",
+          "他私下保存了一本超出轮回周期的笔记，记录着各轮回中重要参与者的特征"
+        ],
+        "reincarnation_memories": "{'cycle_count': 78, 'first_cycle_number': 1, 'memorable_cycles': ['第28轮回：目睹齐夏（主角）第一次进入时的表现，认定其为种子选手', '第56轮回：亲自设计‘囚徒困境变种’游戏，参与者全灭，引发内部调查']}",
+        "secret_knowledge_level": "core"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:8386c7ee_6c28_4985_af42_e0282070fbe1:loc:006"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "current_cycle_number": "42",
+        "memory_cycle_count": "78",
+        "health_status": "健康（轻微精神偏执）",
+        "resource_count": "0"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:008",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:007",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:001",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:010",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:006",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:012",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:009",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:005",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:004",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:011",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:003",
+    "e:8386c7ee_6c28_4985_af42_e0282070fbe1:char:002"
+  ],
+  "upstream_step_ids": [
+    "generate_characters"
+  ],
+  "warnings": [
+    "batch 3 review (score=4.14): 发现 4 个问题并已自动修正",
+    "batch 4 review (score=4.857): 发现 1 个问题并已自动修正"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

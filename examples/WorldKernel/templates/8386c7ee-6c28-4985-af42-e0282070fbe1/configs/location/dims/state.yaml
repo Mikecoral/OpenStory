@@ -1,0 +1,19 @@
+dim_name: StateDim
+current_state:
+  type: str
+ownership:
+  type: str
+capacity:
+  type: int
+cycle_damage_status:
+  type: str
+  option: true
+resource_availability:
+  type: str
+  option: true
+reset_in_new_cycle:
+  type: str
+  option: true
+contamination_or_curse:
+  type: str
+  option: true

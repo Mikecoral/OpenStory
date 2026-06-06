@@ -1,0 +1,379 @@
+{
+  "primary": "surrealist_world",
+  "secondary": "coming_of_age_quest",
+  "confidence": 0.95,
+  "tags": [
+    "村上春树",
+    "超现实主义",
+    "个人成长",
+    "猫之城镇",
+    "图书馆",
+    "预言",
+    "二战回声",
+    "音乐",
+    "哲学隐喻"
+  ],
+  "world_name": "海边的卡夫卡世界",
+  "world_origin_summary": "衍生自村上春树小说《海边的卡夫卡》，一个将现代日本社会与超现实元素交织的世界，探讨少年命运、父权诅咒、历史创伤与自我救赎",
+  "scope": "world",
+  "simulation_start": {
+    "time_point": "少年田村卡夫卡离家出走前夜",
+    "trigger_event": "田村卡夫卡决定在十五岁生日前夕离家出走，以逃避父亲关于杀父娶母的预言",
+    "year": "2000年",
+    "narrative_context": "少年卡夫卡在东京郊区的家中准备出走，同时平行线中的中田聪在东京开始与猫对话的奇异生活"
+  },
+  "location_archetypes": [
+    {
+      "type_id": "library_space",
+      "type_name": "图书馆空间",
+      "description": "承载知识与记忆的场所，也是主角与超现实事件交织的核心舞台，包括私人藏书室和公共图书馆",
+      "common_fields": [
+        "collection_type",
+        "opening_hours",
+        "catalog_system",
+        "special_collection"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "komura_memorial_library",
+          "name": "甲村纪念图书馆",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "高知县四国地区的私人图书馆，卡夫卡逗留并工作之处，与大岛相遇的地方，也是超现实事件发生的关键地点"
+        }
+      ]
+    },
+    {
+      "type_id": "domestic_street",
+      "type_name": "城市街巷",
+      "description": "现代日本城市中的居民区与商业街，是日常与异常相交的边缘地带，中田聪与猫交流的场所",
+      "common_fields": [
+        "district_name",
+        "noise_level",
+        "traffic_density",
+        "cat_population"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "setagaya_streets",
+          "name": "世田谷街区",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.95,
+          "generation_priority": 2,
+          "role_in_world": "中田聪居住和与猫交流的东京街区，构成故事中超现实与日常交汇的起点"
+        }
+      ]
+    },
+    {
+      "type_id": "forest_refuge",
+      "type_name": "森林隐居地",
+      "description": "远离人类文明的密林深处，是连接现实与意识边界的阈限空间，灵魂探寻和生死边界相遇的场所",
+      "common_fields": [
+        "tree_type",
+        "trail_difficulty",
+        "supernatural_presence",
+        "ancient_ruins"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "four_forest",
+          "name": "四国深林",
+          "importance": "core",
+          "source_type": "inferred",
+          "confidence": 0.85,
+          "generation_priority": 2,
+          "role_in_world": "卡夫卡逃避社会并进入精神深层探索的场所，是穿越边界的象征性空间"
+        }
+      ]
+    },
+    {
+      "type_id": "cat_town",
+      "type_name": "猫之城镇",
+      "description": "超现实维度中的猫类聚居地，猫与人可以平等交流的独立空间，存在于意识与现实的夹缝中",
+      "common_fields": [
+        "ruler_cat",
+        "language_mode",
+        "etiquette_rules",
+        "portal_location"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "cat_commune",
+          "name": "猫的聚落",
+          "importance": "major",
+          "source_type": "inferred",
+          "confidence": 0.75,
+          "generation_priority": 3,
+          "role_in_world": "中田聪与猫交流的深层空间，超自然力量汇聚之处，也是记忆碎片重组的地方"
+        }
+      ]
+    },
+    {
+      "type_id": "highway_rest_stop",
+      "type_name": "公路休憩点",
+      "description": "连接城市与偏远地区的交通节点，是人物流动和偶遇的发生地，常承载意外交谈和意识流片段的场景",
+      "common_fields": [
+        "location_type",
+        "amenities",
+        "distance_to_town",
+        "frequency_of_use"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "shikoku_bus_stop",
+          "name": "四国巴士站",
+          "importance": "minor",
+          "source_type": "inferred",
+          "confidence": 0.7,
+          "generation_priority": 3,
+          "role_in_world": "卡夫卡旅行中停靠的日常节点，是孤独沉思与偶遇陌生人触发回忆的场所"
+        }
+      ]
+    }
+  ],
+  "character_archetypes": [
+    {
+      "type_id": "runaway_adolescent",
+      "type_name": "出走少年",
+      "description": "主动或被动离开家庭，踏上寻找自我命运与真相之旅的青春期少年，对世界充满警惕却渴望理解",
+      "common_fields": [
+        "age",
+        "reason_for_leaving",
+        "destination",
+        "symbolic_skill"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "kafka_tamura",
+          "name": "田村卡夫卡",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "小说的核心主角，被父亲诅咒预言驱使而出走的十五岁少年，在图书馆与深林间寻求自我救赎"
+        }
+      ]
+    },
+    {
+      "type_id": "mentor_elder",
+      "type_name": "引导长者",
+      "description": "拥有神秘知识或特殊感官的老年人物，以非常规方式帮助或干扰主角，通常与超现实力量有联系",
+      "common_fields": [
+        "wisdom_field",
+        "connection_to_supernatural",
+        "communication_style",
+        "background_trauma"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "nakata",
+          "name": "中田聪",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "失去记忆和读写能力的老人，能与猫对话，是超现实事件的执行者和卡夫卡命运的间接推动者"
+        }
+      ]
+    },
+    {
+      "type_id": "library_sage",
+      "type_name": "图书馆智者",
+      "description": "图书馆的管理者或住持者，拥有渊博知识和温和力量，是主角在漂泊过程中的精神支架和庇护者",
+      "common_fields": [
+        "specialization",
+        "sexual_orientation",
+        "health_condition",
+        "secret_knowledge"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "oshima",
+          "name": "大岛",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 1,
+          "role_in_world": "甲村纪念图书馆的管理员，血友病患者兼跨性别者，为卡夫卡提供庇护与哲学对话，象征接纳与理解"
+        }
+      ]
+    },
+    {
+      "type_id": "ethereal_goddess",
+      "type_name": "幻影女神",
+      "description": "与主角产生强烈情感联系的神秘女性，通常出现在阈限空间，象征着欲望、失落和永恒的女性形象",
+      "common_fields": [
+        "appearance_frequency",
+        "age_at_meeting",
+        "memory_access"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "sakura",
+          "name": "佐伯",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 1,
+          "role_in_world": "甲村图书馆的神秘女馆长，与卡夫卡形成跨越年龄的情欲联系，是预言中母亲角色的化身"
+        }
+      ]
+    },
+    {
+      "type_id": "cursed_patriarch",
+      "type_name": "受咒之父",
+      "description": "拥有强大精神力量且与主角形成对抗或诅咒关系的父亲形象，常与超自然力量和二战历史相勾连",
+      "common_fields": [
+        "curse_content",
+        "artistic_production",
+        "war_damage",
+        "hidden_connection"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "tamura_father",
+          "name": "田村浩一郎",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.97,
+          "generation_priority": 2,
+          "role_in_world": "卡夫卡的父亲，雕刻家，对儿子施加杀父娶母的预言诅咒，自身与二战中的精神创伤相连"
+        }
+      ]
+    },
+    {
+      "type_id": "ordinary_witness",
+      "type_name": "平凡目击者",
+      "description": "被卷入超现实事件的普通市民，以怀疑或接受的态度面对异常现象，为世界观提供日常参照系",
+      "common_fields": [
+        "occupation",
+        "involvement_degree",
+        "reaction_to_anomaly"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "hoshino",
+          "name": "星野",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.95,
+          "generation_priority": 2,
+          "role_in_world": "年轻卡车司机，意外成为中田聪的同伴，从世故青年到参与超现实旅程的转变者"
+        }
+      ]
+    }
+  ],
+  "rule_archetypes": [
+    {
+      "type_id": "prophetic_law",
+      "type_name": "预言法则",
+      "description": "由超自然力量或祖先意志施加的预言性诅咒，具有不可抗拒的自我实现趋势，支配主角命运的基本框架",
+      "common_fields": [
+        "prophetic_text",
+        "source",
+        "trigger_age",
+        "possible_escape"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "oedipus_curse",
+          "name": "杀父娶母预言",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "卡夫卡父亲所加之诅咒，驱使整个故事的展开，构成卡夫卡内心冲突与自我认同危机的原点"
+        }
+      ]
+    },
+    {
+      "type_id": "boundary_crossing",
+      "type_name": "边界穿越法则",
+      "description": "在某些特定条件下（如深度睡眠、极端情绪、特殊地点），人与超现实世界之间的界限会模糊，使得灵魂或意识可以穿越到另一个维度",
+      "common_fields": [
+        "trigger_condition",
+        "destination_realm",
+        "return_mechanism",
+        "memory_persistence"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "sleep_transfer",
+          "name": "睡眠中的灵魂转移",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.95,
+          "generation_priority": 1,
+          "role_in_world": "卡夫卡在夜晚睡眠中灵魂脱离肉体，进入深林中的另一世界，与佐伯相见的关键机制"
+        }
+      ]
+    },
+    {
+      "type_id": "cat_empowerment",
+      "type_name": "猫之通灵",
+      "description": "部分人类（如中田聪）有与猫无障碍对话的特殊能力，猫拥有超越人类的智慧、社会结构和道德判断",
+      "common_fields": [
+        "speaker_condition",
+        "language_fluency",
+        "cat_class_system",
+        "negotiation_terms"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "nakata_cat_talk",
+          "name": "中田的猫语能力",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 2,
+          "role_in_world": "中田聪维持世界平衡的工具之一，也是他参与超现实事件的主要路径"
+        }
+      ]
+    },
+    {
+      "type_id": "historical_echo",
+      "type_name": "历史回声法则",
+      "description": "二战时期的精神创伤以超自然形式嵌入当代现实，历史事件通过符号、幽灵和重复的恶行在当下的维度中持续显现",
+      "common_fields": [
+        "event_origin",
+        "manifestation_form",
+        "affected_area",
+        "duration"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "war_ghosts",
+          "name": "二战精神幽灵",
+          "importance": "major",
+          "source_type": "inferred",
+          "confidence": 0.85,
+          "generation_priority": 3,
+          "role_in_world": "通过如佐伯年轻时恋人被杀的梦魇、父亲的创伤雕刻等符号，表现战争对当代灵魂的持续侵蚀"
+        }
+      ]
+    }
+  ],
+  "world_constraints": [
+    {
+      "constraint_id": "everyday_realism",
+      "name": "日常现实主义基底",
+      "description": "世界的物质层面完全遵循现代日本社会物理和逻辑规律，超现实元素仅出现在特定人物、地点或精神状态中，非随机显现",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "predestined_fate",
+      "name": "预言自我实现性",
+      "description": "强力的预言或诅咒具有不可抗的实现趋势，主角的所有反抗行为反而促成其实现，构成悲剧性命运的循环",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "threshold_spaces",
+      "name": "阈限空间效应",
+      "description": "特定地点（深林、空屋、深夜图书馆、巴士站）可成为现实与灵界的交叉点，在这些场所发生的意识状态改变可引发超现实事件",
+      "scope": "location"
+    }
+  ]
+}

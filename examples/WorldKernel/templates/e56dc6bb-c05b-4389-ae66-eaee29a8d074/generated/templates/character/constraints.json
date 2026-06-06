@@ -1,0 +1,28 @@
+{
+  "fields": [
+    {
+      "name": "forbidden_actions",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "taboos",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "loyalty_filiality_constraint",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "integrity_constraint",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

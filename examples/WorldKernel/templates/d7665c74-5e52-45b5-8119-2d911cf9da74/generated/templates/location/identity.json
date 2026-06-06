@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "has_supernatural_connection",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "symbolic_meaning",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "associated_character",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_threshold_space",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "time_paradox",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

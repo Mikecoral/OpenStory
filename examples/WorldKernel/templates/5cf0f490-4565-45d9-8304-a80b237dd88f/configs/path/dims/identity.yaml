@@ -1,0 +1,19 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+karma_index:
+  type: str
+  option: true
+is_hidden_passage:
+  type: str
+  option: true
+barrier_type:
+  type: str
+  option: true
+terrain_feature:
+  type: str
+  option: true

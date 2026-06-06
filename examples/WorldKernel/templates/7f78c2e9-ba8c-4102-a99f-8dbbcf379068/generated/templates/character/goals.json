@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "short_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "long_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "motivation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "faction_missions",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "level_up_goal",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "partner_protection_goal",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "power_balance_goal",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "truth_seeking_goal",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

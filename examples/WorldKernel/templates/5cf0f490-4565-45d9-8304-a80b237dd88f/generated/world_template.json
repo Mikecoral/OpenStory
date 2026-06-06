@@ -1,0 +1,398 @@
+{
+  "primary": "divine_test_island",
+  "secondary": null,
+  "confidence": 0.95,
+  "tags": [
+    "斗罗大陆",
+    "海神九考",
+    "神祇传承",
+    "试炼",
+    "情感冲突",
+    "黑化小舞",
+    "玄幻"
+  ],
+  "world_name": "海神岛·神考试炼",
+  "world_origin_summary": "衍生自《斗罗大陆》海神岛剧情阶段，围绕唐三接受海神九考并面对第九考中击败黑化小舞的隐藏高潮转折。",
+  "scope": "region",
+  "simulation_start": {
+    "time_point": "海神九考第一考开始",
+    "trigger_event": "唐三、小舞及史莱克七怪抵达海神岛，接受波塞西的考核宣告",
+    "year": "斗罗大陆时间线，约史莱克七怪毕业后一年",
+    "narrative_context": "唐三为了获取海神神祇传承，与同伴共同踏上征途，却不知最终考验将面对被黑暗力量侵蚀的小舞。"
+  },
+  "location_archetypes": [
+    {
+      "type_id": "trial_ground",
+      "type_name": "考核场地",
+      "description": "海神九考各关的专属考核空间，通常包含特殊环境与机关，是考核者与规则对抗的核心场所。",
+      "common_fields": [
+        "difficulty_level",
+        "required_condition",
+        "environment_effect",
+        "reward"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "first_trial_light_stairs",
+          "name": "海神之光台阶",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "第一考穿越海神之光，考核者需承受压力登顶，考验意志与精神。"
+        }
+      ]
+    },
+    {
+      "type_id": "training_area",
+      "type_name": "修炼场所",
+      "description": "考核者在岛内进行日常修炼、魂力提升与战术准备的专用区域。",
+      "common_fields": [
+        "spirit_power_density",
+        "capacity",
+        "restriction"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "light_boundary_zone",
+          "name": "海神之光边缘修炼区",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.95,
+          "generation_priority": 2,
+          "role_in_world": "唐三等人利用海神之光压力修炼魂力与身体强度。"
+        }
+      ]
+    },
+    {
+      "type_id": "residential_area",
+      "type_name": "居住区",
+      "description": "海神岛原住民及考核者的生活聚落，提供住宿、补给与日常活动空间。",
+      "common_fields": [
+        "housing_type",
+        "population",
+        "supply_level"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "sea_soul_village",
+          "name": "海魂师村落",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.93,
+          "generation_priority": 3,
+          "role_in_world": "考核者歇脚交流的场所，也是了解海神岛风俗的窗口。"
+        }
+      ]
+    },
+    {
+      "type_id": "core_sanctuary",
+      "type_name": "核心神殿",
+      "description": "海神意志的至高象征，供奉海神雕像与传承核心，是最终考核的所在地。",
+      "common_fields": [
+        "divine_presence",
+        "access_level",
+        "sacred_ritual"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "sea_god_temple",
+          "name": "海神神殿",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "海神九考的终点，第九考将在此揭示黑化小舞的终极挑战。"
+        }
+      ]
+    },
+    {
+      "type_id": "communal_zone",
+      "type_name": "公共区域",
+      "description": "海神岛上供所有人聚集、交流与休闲的开阔空间，也是大型活动的场地。",
+      "common_fields": [
+        "event_frequency",
+        "capacity",
+        "natural_features"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "sea_god_plaza",
+          "name": "海神广场",
+          "importance": "major",
+          "source_type": "inferred",
+          "confidence": 0.85,
+          "generation_priority": 3,
+          "role_in_world": "考核前后集合、宣布规则及庆祝的公共场地。"
+        }
+      ]
+    },
+    {
+      "type_id": "forbidden_area",
+      "type_name": "禁区",
+      "description": "岛屿周围或内部危险度极高的区域，通常与强大魂兽或未探索的神力有关，是少数考核的一部分。",
+      "common_fields": [
+        "danger_level",
+        "creature_threat",
+        "required_permission"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "deep_sea_demon_whale_territory",
+          "name": "深海魔鲸海域",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.97,
+          "generation_priority": 2,
+          "role_in_world": "考核中可能遭遇的顶级魂兽区域，也是黑化的潜在力量来源。"
+        }
+      ]
+    }
+  ],
+  "character_archetypes": [
+    {
+      "type_id": "trial_participant",
+      "type_name": "考核者",
+      "description": "接受海神九考的人选，通常是天赋异禀的魂师，需通过层层考验获得神位传承。",
+      "common_fields": [
+        "spirit_power_level",
+        "spirit_ring_config",
+        "trial_progress",
+        "loyalty_to_team"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "tang_san",
+          "name": "唐三",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 1.0,
+          "generation_priority": 1,
+          "role_in_world": "海神九考的核心考核者，也是唯一被选中承受最终考验的人。"
+        }
+      ]
+    },
+    {
+      "type_id": "guardian",
+      "type_name": "守护者",
+      "description": "忠诚于海神的强大魂师，负责维持岛上秩序、执行考核规则并保护传承。",
+      "common_fields": [
+        "title",
+        "duty_area",
+        "vassal_spirit",
+        "combat_power"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "bo_sai_xi",
+          "name": "波塞西",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 1.0,
+          "generation_priority": 1,
+          "role_in_world": "海神岛大祭司，实际掌控考核进程，是考核者与海神之间的桥梁。"
+        }
+      ]
+    },
+    {
+      "type_id": "native_inhabitant",
+      "type_name": "原住民",
+      "description": "世代居住在海神岛的海魂师，拥有独特礼节与文化，对考核者保持距离或协助。",
+      "common_fields": [
+        "cultivation_method",
+        "tribe_affiliation",
+        "attitude_towards_outsiders"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "hai_ma_dou_luo",
+          "name": "海马斗罗",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 2,
+          "role_in_world": "海神岛供奉之一，负责监督第一考，展现原住民的威严与实力。"
+        }
+      ]
+    },
+    {
+      "type_id": "hidden_antagonist",
+      "type_name": "隐藏反派",
+      "description": "被黑暗力量侵蚀或伪装的核心角色，在第九考时揭露真实身份，成为最终试炼的对手。",
+      "common_fields": [
+        "true_identity",
+        "corruption_source",
+        "combat_ability",
+        "emotional_bond"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "dark_xiao_wu",
+          "name": "黑化小舞",
+          "importance": "core",
+          "source_type": "original",
+          "confidence": 0.9,
+          "generation_priority": 1,
+          "role_in_world": "第九考的隐藏boss，由唐三最珍视的小舞被黑暗侵蚀而成，考验情感与抉择。"
+        }
+      ]
+    },
+    {
+      "type_id": "deity",
+      "type_name": "神明",
+      "description": "海神本体或其他神祇，通常不直接现身，但通过意志与力量影响考核进程。",
+      "common_fields": [
+        "domain",
+        "power_level",
+        "intervention_degree",
+        "will"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "sea_god",
+          "name": "海神",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.95,
+          "generation_priority": 1,
+          "role_in_world": "九考的设立者与最终传承授予者，其意志暗中引导唐三通过考验。"
+        }
+      ]
+    },
+    {
+      "type_id": "ally_support",
+      "type_name": "辅助同伴",
+      "description": "与考核者同行的伙伴，虽不直接参与核心考核，但在修炼、情报与战斗中提供关键帮助。",
+      "common_fields": [
+        "support_type",
+        "relationship_strength",
+        "special_skill"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "ning_rong_rong",
+          "name": "宁荣荣",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 2,
+          "role_in_world": "七宝琉璃宗传人，提供辅助系魂技支持，增强团队生存与通过考核概率。"
+        }
+      ]
+    }
+  ],
+  "rule_archetypes": [
+    {
+      "type_id": "trial_mechanic",
+      "type_name": "考核规则",
+      "description": "每一考的具体通关条件、时间限制、禁止事项及奖励机制，是海神九考的核心系统。",
+      "common_fields": [
+        "objective",
+        "failure_penalty",
+        "time_limit",
+        "allowed_resources"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "light_stairs_pressure_rule",
+          "name": "海神之光压力承受规则",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "第一考要求考核者仅凭自身力量攀爬海神之光台阶，不得借助外物，否则淘汰。"
+        }
+      ]
+    },
+    {
+      "type_id": "island_etiquette",
+      "type_name": "海神岛行为准则",
+      "description": "岛内需遵守的日常规范，包括对供奉的尊重、不得私自攻击原住民、遵守海神意志等。",
+      "common_fields": [
+        "prohibited_action",
+        "punishment",
+        "cultural_sensitive"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "respect_guardians",
+          "name": "尊重守护者规定",
+          "importance": "major",
+          "source_type": "inferred",
+          "confidence": 0.85,
+          "generation_priority": 2,
+          "role_in_world": "考核者必须对海神岛供奉及大祭司保持尊敬，否则可能被驱逐或失去考核资格。"
+        }
+      ]
+    },
+    {
+      "type_id": "power_usage_constraint",
+      "type_name": "力量使用限制",
+      "description": "在特定考核或区域内对魂力、魂技、领域的使用施加限制，以维持公平或安全。",
+      "common_fields": [
+        "restricted_ability",
+        "exception_condition",
+        "enforcement_scope"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "no_external_soul_bone",
+          "name": "禁止外附魂骨辅助规则",
+          "importance": "minor",
+          "source_type": "inferred",
+          "confidence": 0.7,
+          "generation_priority": 3,
+          "role_in_world": "部分考核禁止使用外附魂骨以考察考核者自身实力。"
+        }
+      ]
+    },
+    {
+      "type_id": "emotional_trial_rule",
+      "type_name": "情感考验规则",
+      "description": "隐藏在第九考中的特殊规则，考核者需面对情感羁绊并做出关键选择，是神位传承的最高测试。",
+      "common_fields": [
+        "trigger_condition",
+        "emotional_theme",
+        "choice_consequence",
+        "revelation"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "dark_xiao_wu_reveal",
+          "name": "黑化小舞真实身份揭露",
+          "importance": "core",
+          "source_type": "original",
+          "confidence": 0.9,
+          "generation_priority": 1,
+          "role_in_world": "第九考中，小舞被黑暗力量扭曲，唐三必须识别并击败她，同时克服心理与情感障碍。"
+        }
+      ]
+    }
+  ],
+  "world_constraints": [
+    {
+      "constraint_id": "trial_ignorance",
+      "name": "第九考隐秘",
+      "description": "唐三在第九考开始前无法知晓最终对手是被黑化的小舞，该信息被海神与波塞西刻意隐藏。",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "inherited_cultivation_system",
+      "name": "斗罗大陆修炼体系",
+      "description": "所有角色遵循斗罗大陆的魂力等级、魂环魂骨、武魂特性等规则，魂师能力与大陆标准一致。",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "island_isolation",
+      "name": "海神岛独立性",
+      "description": "海神岛位于海外，与大陆隔绝，外界势力无法干涉，考核期间外部魂师不得随意进出。",
+      "scope": "location"
+    },
+    {
+      "constraint_id": "emotional_bond_core",
+      "name": "情感羁绊决定结局",
+      "description": "唐三与小舞的情感羁绊是通关第九考的关键，纯粹的暴力无法击败黑化小舞，必须通过情感唤醒或净化。",
+      "scope": "global"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "on_actor",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "on_target",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "on_environment",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "alters_reality_boundary",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "triggers_surreal_event",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "affects_destiny_track",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "generates_fragmented_memory",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

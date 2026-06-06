@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "danger_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "required_items",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "pass_requires_permit",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "seasonal_closure",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "special_event_risk",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "toll_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "cavalry_passable",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

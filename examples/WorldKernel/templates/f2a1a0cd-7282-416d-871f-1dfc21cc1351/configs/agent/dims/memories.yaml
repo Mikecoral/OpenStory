@@ -1,0 +1,27 @@
+dim_name: MemoriesDim
+knowledge:
+  world_knowledge:
+    type: list_str
+  social_knowledge:
+    type: list_str
+background_summary:
+  type: str
+key_events:
+  type: list_str
+secrets:
+  type: list_str
+repressed_childhood_trauma:
+  type: str
+  option: true
+ancestral_curse_knowledge:
+  type: str
+  option: true
+war_trauma_imprint:
+  type: str
+  option: true
+phantom_encounter_records:
+  type: str
+  option: true
+cat_memory_exchange:
+  type: str
+  option: true

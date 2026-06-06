@@ -1,0 +1,19 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+area_danger_rating:
+  type: str
+  option: true
+function_tag:
+  type: str
+  option: true
+scene_atmosphere:
+  type: str
+  option: true
+governing_faction:
+  type: str
+  option: true

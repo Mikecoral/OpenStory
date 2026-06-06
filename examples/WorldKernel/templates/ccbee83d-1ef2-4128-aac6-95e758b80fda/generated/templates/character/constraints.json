@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "forbidden_actions",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "taboos",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_taboos_about_sex",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "social_taboos_about_suicide",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "sanatorium_visiting_rules",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "sanatorium_curfew",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "psychological_trigger_situations",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "academic_attendance_requirements",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

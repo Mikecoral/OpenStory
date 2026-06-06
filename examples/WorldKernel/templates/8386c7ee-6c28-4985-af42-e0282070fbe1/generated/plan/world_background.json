@@ -1,0 +1,48 @@
+{
+  "world_name": "终焉之城",
+  "world_origin_summary": "衍生自小说《十日终焉》，一个被神秘力量封闭的现代城市，参与者被迫参与死亡游戏，经历残酷淘汰与轮回，每个轮回保留记忆但外貌随机变化",
+  "primary": "death_game_city",
+  "secondary": null,
+  "tags": [
+    "死亡游戏",
+    "轮回",
+    "生存博弈",
+    "城市封闭",
+    "衍生",
+    "悬疑",
+    "心理博弈"
+  ],
+  "scope": "city",
+  "simulation_start": {
+    "time_point": "第一次进入终焉之城",
+    "trigger_event": "主角齐夏与其他参与者被神秘力量传送至终焉之城，被告知必须参加死亡游戏",
+    "year": "2024",
+    "narrative_context": "现代都市中一群普通人突然被关入一座与外界隔绝的城市，必须通过生存游戏争取自由，失败即死亡，城市隐藏着更深层的轮回秘密"
+  },
+  "world_constraints": [
+    {
+      "constraint_id": "inevitable_exit",
+      "name": "无法离开终焉之城",
+      "description": "城市被不可见的屏障或空间扭曲封闭，任何试图逃离的行为都会失败或导致立即淘汰，只有通过特定条件才可能真正离开",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "compulsory_participation",
+      "name": "强制参与游戏",
+      "description": "所有参赛者无法拒绝参加定时举行的游戏，违者直接淘汰；游戏类型由终焉组织随机分配，参赛者无权选择",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "memory_continuity",
+      "name": "轮回记忆保留但外貌随机变化",
+      "description": "每次轮回时参赛者保留完整的意识与记忆，但外貌（包括性别、年龄、体型）会随机改变，导致信任与身份识别成为生存博弈的一部分",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "information_opacity",
+      "name": "信息不对称与限制",
+      "description": "禁止参赛者之间直接透露关于轮回机制、城市边界或终焉本质的核心信息，违者将受到惩罚；城市内监控无处不在，私密交流受限",
+      "scope": "global"
+    }
+  ]
+}

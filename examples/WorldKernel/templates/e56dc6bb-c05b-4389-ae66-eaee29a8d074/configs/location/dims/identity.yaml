@@ -1,0 +1,24 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+description:
+  type: str
+faction:
+  type: str
+  option: true
+strategic_importance:
+  type: str
+  option: true
+historical_event:
+  type: str
+  option: true
+cultural_significance:
+  type: str
+  option: true
+founding_date:
+  type: str
+  option: true

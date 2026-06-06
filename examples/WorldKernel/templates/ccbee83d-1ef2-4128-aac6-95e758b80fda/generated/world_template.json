@@ -1,0 +1,413 @@
+{
+  "primary": "urban_psychological_drama",
+  "secondary": "campus_and_sanatorium",
+  "confidence": 0.95,
+  "tags": [
+    "青春",
+    "爱情",
+    "孤独",
+    "死亡",
+    "心理创伤",
+    "1960年代",
+    "东京",
+    "大学校园",
+    "爵士乐",
+    "疗养院",
+    "衍生小说"
+  ],
+  "world_name": "挪威的森林",
+  "world_origin_summary": "衍生自村上春树小说《挪威的森林》，以1960年代末至1970年代初的东京为背景，讲述大学生渡边彻与直子、绿子之间的情感纠葛，以及面对死亡与孤独的心理挣扎。",
+  "scope": "city",
+  "simulation_start": {
+    "time_point": "1969年暮春，直子二十岁生日前后",
+    "trigger_event": "直子与渡边在东京街头偶然重逢，两人开始频繁往来，揭开对木月自杀的回忆",
+    "year": "1969",
+    "narrative_context": "渡边在平静的大学日常中逐渐被直子的心理阴影与绿子的活力撕扯，青春与死亡的暗流涌动"
+  },
+  "location_archetypes": [
+    {
+      "type_id": "campus_space",
+      "type_name": "大学校园空间",
+      "description": "东京大学的主要教学与生活区域，承载学生的日常课程、社交与独处时光，是主角们身份归属的核心场所",
+      "common_fields": [
+        "building_name",
+        "capacity",
+        "academic_function",
+        "typical_activity"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "todai_main_campus",
+          "name": "东京大学本乡校区",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.97,
+          "generation_priority": 1,
+          "role_in_world": "渡边、永泽等主要学生的日常活动中心，上课、漫步、沉思的地点"
+        }
+      ]
+    },
+    {
+      "type_id": "sanatorium",
+      "type_name": "疗养院",
+      "description": "位于京都深山中的阿美寮疗养院，专门收治有心理创伤的患者，制度宽松但封闭，强调自给自足与自然疗愈",
+      "common_fields": [
+        "patient_capacity",
+        "staff_count",
+        "routine_schedule",
+        "isolation_level"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "amiao_sanatorium",
+          "name": "阿美寮",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 1,
+          "role_in_world": "直子长期居住康复之所，也是渡边与直子、玲子交互的核心空间，象征逃离与停滞"
+        }
+      ]
+    },
+    {
+      "type_id": "leisure_venue",
+      "type_name": "休闲社交场所",
+      "description": "东京市内的酒吧、咖啡店、唱片店等，是年轻人聚会、听爵士乐、喝酒聊天的社交空间，映射1960年代末的流行文化",
+      "common_fields": [
+        "music_genre",
+        "opening_hours",
+        "clientele_type",
+        "price_level"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "jazz_bar_dug",
+          "name": "Dug爵士酒吧",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.92,
+          "generation_priority": 2,
+          "role_in_world": "渡边与永泽常去的酒吧，也是与绿子初次约会的场所，象征青春享乐与疏离"
+        }
+      ]
+    },
+    {
+      "type_id": "residence",
+      "type_name": "居住空间",
+      "description": "人物日常起居的场所，包括大学宿舍、公寓、书店住宅等，反映个人生活状态与情感关系",
+      "common_fields": [
+        "room_type",
+        "housemates",
+        "location_area",
+        "intimacy_level"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "watanabe_dormitory",
+          "name": "渡边的大学宿舍",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.95,
+          "generation_priority": 2,
+          "role_in_world": "渡边与永泽共居处，深夜交谈、酒醉后的安静空间，也是个人独处的角落"
+        }
+      ]
+    },
+    {
+      "type_id": "natural_landscape",
+      "type_name": "自然景观",
+      "description": "东京周边及阿美寮附近的山林、小径，承载角色沉思、行走与内心冥想的场景，森林意象贯穿全作",
+      "common_fields": [
+        "terrain_type",
+        "season",
+        "symbolism",
+        "access_path"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "amiao_forest_trail",
+          "name": "阿美寮森林小径",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.96,
+          "generation_priority": 2,
+          "role_in_world": "直子与渡边散步、谈论死亡与回忆的地方，直子最终消失的象征之地"
+        }
+      ]
+    },
+    {
+      "type_id": "urban_transit",
+      "type_name": "城市交通节点",
+      "description": "东京的街道、地铁站、公共汽车站等，连接不同区域，也作为偶遇与分离的场所",
+      "common_fields": [
+        "station_name",
+        "line",
+        "crowd_level",
+        "view"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "shinjuku_station",
+          "name": "新宿站",
+          "importance": "minor",
+          "source_type": "canonical",
+          "confidence": 0.85,
+          "generation_priority": 3,
+          "role_in_world": "角色频繁经过的枢纽，象征都市的流动性与孤独"
+        }
+      ]
+    }
+  ],
+  "character_archetypes": [
+    {
+      "type_id": "college_student",
+      "type_name": "大学生",
+      "description": "在1960年代末东京大学就读的年轻人，经历学业、爱情与自我探索，面对青春期的迷惘与死亡带来的冲击",
+      "common_fields": [
+        "university",
+        "year",
+        "major",
+        "social_circle",
+        "emotional_state"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "watanabe_toru",
+          "name": "渡边彻",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 1.0,
+          "generation_priority": 1,
+          "role_in_world": "第一人称视角的主角，在直子与绿子之间摇摆，承受朋友与恋人的死亡阴影"
+        }
+      ]
+    },
+    {
+      "type_id": "sanatorium_resident",
+      "type_name": "疗养院住客",
+      "description": "因心理创伤或精神疾病入住阿美寮的患者，在自然与集体生活中寻求康复，但往往沉浸于过去无法自拔",
+      "common_fields": [
+        "admission_date",
+        "diagnosis",
+        "recovery_progress",
+        "visitor_restriction"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "naoko",
+          "name": "直子",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 1.0,
+          "generation_priority": 1,
+          "role_in_world": "渡边的青梅竹马与恋人，因姐姐和男友自杀而深陷抑郁，是贯穿全作的情感核心"
+        }
+      ]
+    },
+    {
+      "type_id": "urban_worker",
+      "type_name": "城市从业者",
+      "description": "东京城区中经营书店、餐饮等生意的平民百姓，代表社会底层或中产的普通生活，见证年轻人的成长",
+      "common_fields": [
+        "occupation",
+        "shop_type",
+        "family_status",
+        "attitude_to_youth"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "midori_father",
+          "name": "绿子的父亲",
+          "importance": "minor",
+          "source_type": "canonical",
+          "confidence": 0.9,
+          "generation_priority": 3,
+          "role_in_world": "经营小书店，患病后需要绿子照顾，成为绿子独立性格的背景"
+        }
+      ]
+    },
+    {
+      "type_id": "music_maker",
+      "type_name": "音乐人/演奏者",
+      "description": "通过音乐表达内心或作为职业的人物，爵士与古典元素在叙事中具有象征意义",
+      "common_fields": [
+        "instrument",
+        "repertoire",
+        "performing_venue",
+        "emotional_expression"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "reiko",
+          "name": "玲子",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 2,
+          "role_in_world": "阿美寮的病友，曾为钢琴家，通过音乐与渡边交流，帮助他了解直子的内心世界"
+        }
+      ]
+    },
+    {
+      "type_id": "deceased_memory",
+      "type_name": "逝者（记忆中的角色）",
+      "description": "在故事开始前已去世的角色，通过生者回忆与对话浮现，直接影响主角的心理与选择",
+      "common_fields": [
+        "relationship_to_main",
+        "cause_of_death",
+        "last_appearance_memory",
+        "impact_level"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "kizuki",
+          "name": "木月",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 2,
+          "role_in_world": "直子的前男友，渡边的高中挚友，17岁自杀，其死亡阴影笼罩整个故事"
+        }
+      ]
+    },
+    {
+      "type_id": "social_elite",
+      "type_name": "精英青年",
+      "description": "出身优越、目标明确、游走于各种社交场合的年轻男性，与主角形成对比",
+      "common_fields": [
+        "background",
+        "ambition",
+        "relationships",
+        "cynicism_level"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "nagazawa",
+          "name": "永泽",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 2,
+          "role_in_world": "渡边的大学同学与室友，风流倜傥的外交官世家子，代表另一种青春生活方式"
+        }
+      ]
+    }
+  ],
+  "rule_archetypes": [
+    {
+      "type_id": "academic_regulation",
+      "type_name": "大学学业规章",
+      "description": "东京大学的课程、考试与毕业制度，约束学生的日常作息与学习压力，也提供逃避现实的借口",
+      "common_fields": [
+        "attendance_policy",
+        "exam_format",
+        "credit_requirement",
+        "leave_procedure"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "todai_attendance",
+          "name": "东大考勤与学分制",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.88,
+          "generation_priority": 2,
+          "role_in_world": "渡边等人维持表面正常生活的基础，旷课成为常态但仍有底线"
+        }
+      ]
+    },
+    {
+      "type_id": "sanatorium_etiquette",
+      "type_name": "疗养院生活守则",
+      "description": "阿美寮内部的作息、劳动与社交规范，旨在通过规律与自然帮助患者康复，但患者之间的交流仍有自由空间",
+      "common_fields": [
+        "wake_up_time",
+        "meal_schedule",
+        "work_duty",
+        "visiting_hours",
+        "noise_level"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "amiao_daily_routine",
+          "name": "阿美寮日常作息表",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.96,
+          "generation_priority": 1,
+          "role_in_world": "定义直子与玲子的生活节奏，也是渡边探访时必须遵守的框架"
+        }
+      ]
+    },
+    {
+      "type_id": "social_norm",
+      "type_name": "都市社交潜规则",
+      "description": "1960年代末东京年轻人之间围绕酒吧、恋爱、读书形成的非成文行为准则，包括搭讪、喝酒、谈天的方式",
+      "common_fields": [
+        "venue_etiquette",
+        "dating_custom",
+        "drinking_protocol",
+        "music_taste"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "bar_mingling_custom",
+          "name": "酒吧搭讪与交流惯例",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.85,
+          "generation_priority": 2,
+          "role_in_world": "永泽在酒吧搭讪女孩、渡边与绿子初遇的社交规则背景"
+        }
+      ]
+    },
+    {
+      "type_id": "traumatic_response_pattern",
+      "type_name": "心理创伤应对模式",
+      "description": "角色面对亲人或恋人死亡时产生的内省、逃避、自我惩罚等行为模式，虽非成文规则，却是驱动叙事的心理定律",
+      "common_fields": [
+        "trigger_event",
+        "coping_mechanism",
+        "social_withdrawal_level",
+        "memory_recurrence"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "suicide_grief_pattern",
+          "name": "自杀哀伤心理循环",
+          "importance": "core",
+          "source_type": "inferred",
+          "confidence": 0.9,
+          "generation_priority": 1,
+          "role_in_world": "直子与渡边等人因木月死后产生的反复回忆、自责与孤独感，最终导向直子的自杀高潮"
+        }
+      ]
+    }
+  ],
+  "world_constraints": [
+    {
+      "constraint_id": "realistic_physics_and_society",
+      "name": "现实物理与社会法则",
+      "description": "世界完全遵循1960年代末日本的物理与社会规律，无任何超自然或科幻元素，所有事件和角色行为都符合现实逻辑。",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "death_irreversibility",
+      "name": "死亡的不可逆性",
+      "description": "死亡是永久且彻底的终结，角色无法复活，逝者仅通过回忆和信件影响生者。这一事实对每个角色的心理轨迹产生决定性影响。",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "historical_cultural_context",
+      "name": "1960年代末日本社会文化背景",
+      "description": "全共斗学生运动余波、爵士乐与摇滚流行、传统家庭观念与现代个人主义的冲突、对心理疾病认知的匮乏，共同塑造角色的行为与选择。",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "limited_mental_health_care",
+      "name": "有限的精神健康干预",
+      "description": "当时的日本对抑郁症、创伤后应激障碍等心理疾病的诊断与治疗手段有限，疗养院主要依赖隔离、劳动与自然，缺乏有效药物与心理疗法，导致角色康复困难。",
+      "scope": "global"
+    }
+  ]
+}

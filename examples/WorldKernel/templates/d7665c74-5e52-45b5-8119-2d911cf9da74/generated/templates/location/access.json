@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "permissions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_conditions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "requires_solitude",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "secret_entrance_condition",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "supernatural_gateway",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "restricted_to_certain_roles",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "emotional_prerequisite",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

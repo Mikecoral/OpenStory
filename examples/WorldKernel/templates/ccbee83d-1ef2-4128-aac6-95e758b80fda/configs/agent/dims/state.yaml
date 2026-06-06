@@ -1,0 +1,28 @@
+dim_name: StateDim
+location:
+  location_id:
+    type: str
+    ref: location
+position:
+  x:
+    type: float
+  y:
+    type: float
+emotional_state:
+  type: str
+  option: true
+season:
+  type: str
+  option: true
+year:
+  type: str
+  option: true
+flashback_triggered:
+  type: str
+  option: true
+current_drunkenness_level:
+  type: str
+  option: true
+location_mood_projection:
+  type: str
+  option: true

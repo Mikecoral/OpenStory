@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "strength",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "alliance_form",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "kinship_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "diplomatic_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

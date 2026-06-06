@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "permissions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_conditions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "需要海神之光印记",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "受波塞西监控许可",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "特定时辰或考核阶段开放",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "禁止携带额外魂导器或武器",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "进入需通过守护者测试",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "members",
+      "type": "list_str",
+      "required": true,
+      "ref": "character"
+    },
+    {
+      "name": "roles",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "entry_criteria",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "成员类型：考核者、守护者、原住民、隐藏反派",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "特殊身份：预备海神（通过九考者）",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "准入标准：通过海神考核或由大祭司认可",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "成员层级：大祭司-七圣柱-普通守护者-原住民",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

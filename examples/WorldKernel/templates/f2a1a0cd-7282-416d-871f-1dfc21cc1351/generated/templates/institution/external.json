@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "relations_to_others",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "reality_fracture_reputation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "cat_messenger_network",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "trauma_resonance_effect",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

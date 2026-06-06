@@ -1,0 +1,48 @@
+{
+  "world_name": "异兽迷城",
+  "world_origin_summary": "衍生自《异兽迷城》中高阳幸运等级6级到7级阶段，以雾山城为舞台，讲述主角团队在等级提升过程中应对异兽与势力冲突，并深化伙伴关系的故事",
+  "primary": "urban_fantasy_city",
+  "secondary": null,
+  "tags": [
+    "异兽",
+    "幸运等级",
+    "超凡能力",
+    "势力冲突",
+    "主角团队",
+    "现代都市",
+    "衍生"
+  ],
+  "scope": "city",
+  "simulation_start": {
+    "time_point": "高阳幸运等级晋升至6级后的第一次正式任务",
+    "trigger_event": "高阳从5级升入6级，成为更高级别猎兽者，卷入异兽管理局与地下异兽势力的新一轮交锋",
+    "year": "现代",
+    "narrative_context": "高阳与王子凯、高欣欣等伙伴在雾山城执行任务，试图揭开异兽与人类共存的秘密，同时应对各大势力的冲突与内部考验"
+  },
+  "world_constraints": [
+    {
+      "constraint_id": "luck_as_destiny",
+      "name": "幸运等级决定地位",
+      "description": "一个人的幸运等级不仅代表实力，更直接决定其在社会结构中的发言权与资源获取能力，等级差距带来天然的不平等",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "human_beast_balance",
+      "name": "人类与异兽的脆弱共存",
+      "description": "大部分异兽具备智能且伪装成人类，但根本性的冲突仍在潜伏，任何激进行为都可能打破脆弱的平衡，引发全面对抗",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "secrecy_mantle",
+      "name": "异兽真相的隐秘性",
+      "description": "普通民众对异兽与超凡能力一无所知，政府和异兽管理局执行严格的保密制度，泄露机密将面临重罚",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "faction_power_grid",
+      "name": "多方势力制衡格局",
+      "description": "异兽管理局、各大猎兽者组织、地下异兽势力相互制约与博弈，任何一方都无法独大，主角团队必须在夹缝中寻求平衡",
+      "scope": "global"
+    }
+  ]
+}

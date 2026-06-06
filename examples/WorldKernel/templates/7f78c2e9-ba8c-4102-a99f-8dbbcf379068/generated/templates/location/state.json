@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "current_state",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "ownership",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "capacity",
+      "type": "int",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "infestation_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "security_state",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "resource_stockpile",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "anomalies",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

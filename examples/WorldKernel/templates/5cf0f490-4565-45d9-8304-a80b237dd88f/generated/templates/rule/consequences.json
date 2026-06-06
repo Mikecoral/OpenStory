@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "penalties",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "rewards_for_compliance",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "penalty_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reward_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "remedy_option",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "collective_liability",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

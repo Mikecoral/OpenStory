@@ -1,0 +1,28 @@
+dim_name: ConditionsDim
+access_level:
+  type: str
+danger_level:
+  type: str
+required_items:
+  type: str
+required_character_type:
+  type: str
+  option: true
+required_time_window:
+  type: str
+  option: true
+required_game_clear:
+  type: str
+  option: true
+required_stamina:
+  type: str
+  option: true
+required_sanity:
+  type: str
+  option: true
+max_passengers_per_time:
+  type: str
+  option: true
+triggers_alarm:
+  type: str
+  option: true

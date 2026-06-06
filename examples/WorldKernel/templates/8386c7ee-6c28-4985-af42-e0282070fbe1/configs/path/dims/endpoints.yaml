@@ -1,0 +1,24 @@
+dim_name: EndpointsDim
+from_id:
+  type: str
+  ref: location
+to_id:
+  type: str
+  ref: location
+bidirectional:
+  type: bool
+connection_type:
+  type: str
+  option: true
+key_required:
+  type: str
+  option: true
+biometric_required:
+  type: str
+  option: true
+has_trap:
+  type: str
+  option: true
+is_reversible:
+  type: str
+  option: true

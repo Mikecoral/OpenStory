@@ -1,0 +1,16 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+role:
+  type: str
+examination_phase:
+  type: str
+  option: true
+is_hidden_role:
+  type: str
+  option: true
+faction_identity:
+  type: str
+  option: true

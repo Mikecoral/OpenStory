@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "short_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "long_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "motivation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "current_exam_sub_goal",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "hidden_agenda",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "emotional_breakthrough_target",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

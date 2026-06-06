@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "short_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "long_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "motivation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "fate_fulfillment_goal",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "escape_from_curse",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "spiritual_enlightenment",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

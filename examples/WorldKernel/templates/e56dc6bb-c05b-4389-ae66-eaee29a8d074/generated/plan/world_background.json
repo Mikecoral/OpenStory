@@ -1,0 +1,47 @@
+{
+  "world_name": "三国演义世界",
+  "world_origin_summary": "衍生自《三国演义》小说，以东汉末年至三国鼎立为背景，描绘各路英雄争霸天下的历史画卷",
+  "primary": "feudal_warring_states",
+  "secondary": "historical_drama",
+  "tags": [
+    "三国",
+    "历史",
+    "战争",
+    "谋略",
+    "英雄",
+    "衍生"
+  ],
+  "scope": "world",
+  "simulation_start": {
+    "time_point": "东汉中平元年（公元184年）春",
+    "trigger_event": "张角发动黄巾起义，天下大乱",
+    "year": "184",
+    "narrative_context": "东汉王朝统治动摇，各地刺史、州牧纷纷招募兵马，天下英雄初露锋芒"
+  },
+  "world_constraints": [
+    {
+      "constraint_id": "declining_han_dynasty",
+      "name": "汉室衰微",
+      "description": "东汉中央权威瓦解，朝廷名存实亡，各州郡实际上独立割据",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "lust_for_power",
+      "name": "群雄争霸",
+      "description": "各路诸侯以争夺天下为终极目标，军事与政治斗争是推动历史的基本动力",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "moral_complexity",
+      "name": "忠义与权谋",
+      "description": "人物的行为深受儒家忠义观念与乱世生存逻辑的双重影响，伦理与功利并存",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "mandate_of_heaven",
+      "name": "天命观念",
+      "description": "天象、谶纬、谶言常常被用作政权合法性的依据，影响人心与政治抉择",
+      "scope": "global"
+    }
+  ]
+}

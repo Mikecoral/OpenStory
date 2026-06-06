@@ -1,0 +1,19 @@
+dim_name: AccessDim
+permissions:
+  type: str
+access_level:
+  type: str
+access_conditions:
+  type: str
+seasonal_hours:
+  type: str
+  option: true
+rain_days_closed:
+  type: str
+  option: true
+regular_crowd_type:
+  type: str
+  option: true
+invitation_required:
+  type: str
+  option: true

@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "direction",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "relation_type_specific",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "historical_event",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "trust_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

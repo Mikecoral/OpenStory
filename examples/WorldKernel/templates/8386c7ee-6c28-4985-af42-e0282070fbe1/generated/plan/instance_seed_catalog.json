@@ -1,0 +1,309 @@
+{
+  "session_id": "8386c7ee-6c28-4985-af42-e0282070fbe1",
+  "instance_seeds": {
+    "location": [
+      {
+        "seed_id": "dragon_house",
+        "name": "龙之屋",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "死亡游戏主要场馆之一，参与者在其中进行智力与胆量的博弈",
+        "archetype_id": "游戏场馆"
+      },
+      {
+        "seed_id": "lion_pavilion",
+        "name": "狮之馆",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "团队合作与对抗的复合型游戏场馆",
+        "archetype_id": "游戏场馆"
+      },
+      {
+        "seed_id": "sheep_hall",
+        "name": "羊之馆",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 1,
+        "role_in_world": "内含特殊兑换规则的场馆，玩家用筹码换取生存机会",
+        "archetype_id": "游戏场馆"
+      },
+      {
+        "seed_id": "crazy_city",
+        "name": "疯狂城",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "大规模混战游戏场地，体现残酷淘汰与生存博弈",
+        "archetype_id": "游戏场馆"
+      },
+      {
+        "seed_id": "arena",
+        "name": "擂台",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "一对一决斗场所，快速分出胜负与生死",
+        "archetype_id": "游戏场馆"
+      },
+      {
+        "seed_id": "maze_garden",
+        "name": "迷宫花园",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "隐藏线索与陷阱的迷宫式游戏场地",
+        "archetype_id": "游戏场馆"
+      },
+      {
+        "seed_id": "apartment_complex",
+        "name": "公寓区",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "参赛者日常居住地，也是信息交流与结盟的据点",
+        "archetype_id": "居住与生活区"
+      },
+      {
+        "seed_id": "canteen",
+        "name": "食堂",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "提供食物与基本补给，同时是公共社交场所",
+        "archetype_id": "居住与生活区"
+      },
+      {
+        "seed_id": "medical_center",
+        "name": "医疗中心",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.8,
+        "generation_priority": 2,
+        "role_in_world": "受伤参赛者的治疗点，但资源有限",
+        "archetype_id": "居住与生活区"
+      },
+      {
+        "seed_id": "street_of_zodiac",
+        "name": "生肖街",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "连接各场馆与生活区的主街道，常有使徒巡逻",
+        "archetype_id": "居住与生活区"
+      },
+      {
+        "seed_id": "training_room",
+        "name": "训练室",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "参赛者私下练习技巧与体能的地方",
+        "archetype_id": "居住与生活区"
+      },
+      {
+        "seed_id": "terminal_tower",
+        "name": "终焉之塔",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "控制整个城市的中心建筑，游戏规则的发布地",
+        "archetype_id": "控制与监控区"
+      },
+      {
+        "seed_id": "surveillance_center",
+        "name": "监控中心",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "组织者监视全城参赛者动用的中枢",
+        "archetype_id": "控制与监控区"
+      },
+      {
+        "seed_id": "execution_room",
+        "name": "处决室",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "淘汰者被强制处决的场所，充满死亡恐惧",
+        "archetype_id": "控制与监控区"
+      },
+      {
+        "seed_id": "command_hall",
+        "name": "指挥大厅",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "终焉使徒集会议事、下达指令的权力中心",
+        "archetype_id": "控制与监控区"
+      },
+      {
+        "seed_id": "underground_tunnel",
+        "name": "地下通道",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "藏匿和秘密移动的路线，可避开监控与使徒",
+        "archetype_id": "隐藏通道与秘密区域"
+      },
+      {
+        "seed_id": "hidden_safe_room",
+        "name": "秘密安全屋",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "少数参赛者知道的避难所，藏有重要资源",
+        "archetype_id": "隐藏通道与秘密区域"
+      },
+      {
+        "seed_id": "forbidden_library",
+        "name": "禁书馆",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "藏有世界真相与轮回线索的隐秘场所",
+        "archetype_id": "隐藏通道与秘密区域"
+      }
+    ],
+    "character": [
+      {
+        "seed_id": "qixia",
+        "name": "齐夏",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "主角，擅长逻辑推理与心理博弈，带领其他参赛者反抗",
+        "archetype_id": "参赛者"
+      },
+      {
+        "seed_id": "qiao_jiajin",
+        "name": "乔家劲",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "武力高超的参赛者，齐夏的忠实搭档与保护者",
+        "archetype_id": "参赛者"
+      },
+      {
+        "seed_id": "chen_junnan",
+        "name": "陈俊南",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "情报专家，负责搜集信息与策划逃跑方案",
+        "archetype_id": "参赛者"
+      },
+      {
+        "seed_id": "rat_master",
+        "name": "鼠先生",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "十二生肖首位使徒，负责游戏设计与规则修正",
+        "archetype_id": "组织者（终焉使徒）"
+      },
+      {
+        "seed_id": "ox_master",
+        "name": "牛先生",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "力量型使徒，执行物理淘汰与暴力镇压",
+        "archetype_id": "组织者（终焉使徒）"
+      },
+      {
+        "seed_id": "tiger_master",
+        "name": "虎先生",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "残暴使徒，负责威慑与惩罚不服从的参赛者",
+        "archetype_id": "组织者（终焉使徒）"
+      },
+      {
+        "seed_id": "rabbit_master",
+        "name": "兔先生",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "神秘使徒，掌握信息流通与隐藏规则",
+        "archetype_id": "组织者（终焉使徒）"
+      },
+      {
+        "seed_id": "old_wang",
+        "name": "老王",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.8,
+        "generation_priority": 3,
+        "role_in_world": "杂货店老板，暗中向参赛者提供生存物资与情报",
+        "archetype_id": "本土居民（NPC）"
+      },
+      {
+        "seed_id": "nurse_li",
+        "name": "李护士",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "医疗中心的NPC，提供基础治疗但受使徒监控",
+        "archetype_id": "本土居民（NPC）"
+      },
+      {
+        "seed_id": "sheep_referee",
+        "name": "羊裁判",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "羊之馆的裁判，严格执行规则，公正但冷酷",
+        "archetype_id": "游戏裁判与执行者"
+      },
+      {
+        "seed_id": "monkey_executor",
+        "name": "猴执行者",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "负责执行淘汰处决的快速执行者",
+        "archetype_id": "游戏裁判与执行者"
+      },
+      {
+        "seed_id": "dog_judge",
+        "name": "狗判官",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 3,
+        "role_in_world": "特殊游戏的最高仲裁者，掌握生死判决权",
+        "archetype_id": "游戏裁判与执行者"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+dim_name: AccessDim
+permissions:
+  type: str
+access_level:
+  type: str
+access_conditions:
+  type: str
+public_access:
+  type: str
+  option: true
+min_luck_level:
+  type: str
+  option: true
+requires_clearance:
+  type: str
+  option: true
+time_restriction:
+  type: str
+  option: true

@@ -1,0 +1,1387 @@
+{
+  "artifact_type": "character_profile",
+  "items": [
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:003",
+        "name": "波赛西",
+        "role": "examiner",
+        "examination_phase": "主持海神九考",
+        "is_hidden_role": "false",
+        "faction_identity": "海神岛大祭司"
+      },
+      "social_profile": {
+        "group_id": "海神岛高层",
+        "reputation": "至高无上",
+        "reputation_in_sea_god_island": "崇敬与敬畏",
+        "relation_with_seven_pillars": "统帅与导师",
+        "internal_faction_standing": "绝对领袖"
+      },
+      "capabilities": {
+        "skills": [
+          "海神之光",
+          "海神领域",
+          "魂力控制",
+          "考核判定",
+          "海神祝福"
+        ],
+        "level": "99级绝世斗罗",
+        "weaknesses": "受海神规则约束，不能直接干预考核；情感上对第九考的秘密有软肋",
+        "soul_element_attribute": "水",
+        "domain_type": "海神领域",
+        "special_combat_skill": "海神漩涡"
+      },
+      "personality": {
+        "traits": [
+          "威严",
+          "深沉",
+          "慈悲",
+          "果断",
+          "神秘"
+        ],
+        "values": [
+          "忠诚于海神",
+          "守护考核公正",
+          "尊重试炼者",
+          "情感至上"
+        ],
+        "speech_style": "庄重而平缓，带着不容置疑的威严，偶尔流露悲悯",
+        "faith_in_sea_god": "绝对虔诚",
+        "reaction_to_crisis": "冷静分析，迅速权衡全局",
+        "emotional_attachment_style": "关怀但保持距离，对唐三寄予厚望"
+      },
+      "goals": {
+        "short_term_goal": "监督唐三顺利通过前八考",
+        "long_term_goal": "完成海神传承，延续海神岛的神位",
+        "motivation": "海神赋予的使命与对唐三成长为新一代海神的期许",
+        "current_exam_sub_goal": "确保每关考核公平公正",
+        "hidden_agenda": "暗中引导唐三在第九考中发现情感真相，促使他净化被黑暗侵蚀的小舞",
+        "emotional_breakthrough_target": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "海神九考规则与隐藏条件",
+            "黑暗势力侵蚀海神岛的潜在隐患",
+            "小舞的身份与唐三的深厚关系",
+            "海神岛的古老历史"
+          ],
+          "social_knowledge": [
+            "七圣柱守护者的忠诚度与能力特点",
+            "史莱克七怪内部的信任关系",
+            "唐三与小舞的情感纽带对考核的影响"
+          ]
+        },
+        "background_summary": "自幼被海神选中，成为海神岛大祭司，数百年来守护海神传承，见证无数试炼者。唐三的到来让她看到了传承的希望，但她也知晓第九考的秘密——最终对手将是黑化小舞。内心充满同情与无奈，却必须遵守神祇规则，不能提前透露。",
+        "key_events": [
+          "迎接史莱克七怪并宣告海神九考开始",
+          "暗中观察唐三在海神之光试炼中的表现",
+          "与海神神识沟通获取第九考的黑暗指令",
+          "目睹唐三与同伴的羁绊逐渐加深"
+        ],
+        "secrets": [
+          "第九考的最终对手是黑化小舞",
+          "海神刻意对唐三隐藏了这条信息",
+          "她曾尝试寻找替代方案但未能成功"
+        ],
+        "critical_exam_memories": "唐三第一考成功闯过海神之光，展现出超越常人的意志力, 唐三在环形海中飞速适应并击败海魂兽",
+        "memory_of_loved_ones": "",
+        "hidden_trauma_or_secret": "长期目睹考核中的牺牲与离别，内心坚韧却深藏柔软，第九考的秘密成为她千年来最大的心理负担"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:014"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "examination_stage_progress": "考核初期，第一考刚刚开始",
+        "health_status_percentage": "100",
+        "corruption_level_for_hidden_roles": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:006",
+        "name": "海马斗罗",
+        "role": "guardian",
+        "examination_phase": "第三考至第七考",
+        "is_hidden_role": "false",
+        "faction_identity": "七圣柱守护者"
+      },
+      "social_profile": {
+        "group_id": "七圣柱守护者",
+        "reputation": "在海马城居民中威望极高",
+        "reputation_in_sea_god_island": "受人尊敬",
+        "relation_with_seven_pillars": "同僚，以实力和忠诚赢得认可",
+        "internal_faction_standing": "骨干成员"
+      },
+      "capabilities": {
+        "skills": [
+          "海马武魂",
+          "魂力护盾",
+          "海洋战斗技巧",
+          "圣柱试炼主持",
+          "近身格斗"
+        ],
+        "level": "95级封号斗罗",
+        "weaknesses": "远程攻击能力欠缺，对幻术类攻击防御较弱",
+        "soul_element_attribute": "水",
+        "domain_type": "海马领域",
+        "special_combat_skill": "海马咆哮"
+      },
+      "personality": {
+        "traits": [
+          "忠诚",
+          "刚直",
+          "勇猛",
+          "略显固执",
+          "责任心强"
+        ],
+        "values": [
+          "守护海马城",
+          "严格公正",
+          "尊重等级与规则"
+        ],
+        "speech_style": "直接有力，军人作风，不喜拖泥带水",
+        "faith_in_sea_god": "虔诚",
+        "reaction_to_crisis": "迅速采取防御姿态，优先保护平民",
+        "emotional_attachment_style": "克制，对下属严格但关怀"
+      },
+      "goals": {
+        "short_term_goal": "完成自己负责的圣柱考核任务，确保试炼安全",
+        "long_term_goal": "维护海神岛秩序，培养新一代强大的守护者",
+        "motivation": "对海神的忠诚与对故乡的责任感",
+        "current_exam_sub_goal": "协助唐三等人通过圣柱挑战",
+        "hidden_agenda": "",
+        "emotional_breakthrough_target": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "海神岛历史与地理",
+            "圣柱试炼的常见陷阱与应对方法",
+            "海族知识"
+          ],
+          "social_knowledge": [
+            "其他六位圣柱守护者的性格与能力",
+            "波赛西对考核的重视程度",
+            "史莱克七怪的初步印象"
+          ]
+        },
+        "background_summary": "土生土长的海神岛原住民，凭多年苦修成为七圣柱守护者之一，负责守卫海马城及其所在的圣柱。对大陆魂师原本持保留态度，但在唐三展现的实力和品德后逐渐改观。",
+        "key_events": [
+          "参与了海马城抵御海兽潮的战役",
+          "亲眼见证唐三通过海神之光试炼",
+          "与其他圣柱守护者共同制定考核强度"
+        ],
+        "secrets": [
+          "年轻时曾因判断失误导致一次小型海域入侵损失，成为内心隐痛"
+        ],
+        "critical_exam_memories": "",
+        "memory_of_loved_ones": "",
+        "hidden_trauma_or_secret": "那次防守失误让他始终耿耿于怀，因此对任何可能威胁岛屿安全的因素都格外警惕"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:016"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "examination_stage_progress": "考核初期，尚未轮到自己的圣柱挑战",
+        "health_status_percentage": "100",
+        "corruption_level_for_hidden_roles": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:007",
+        "name": "海女斗罗",
+        "role": "guardian",
+        "examination_phase": "第三考至第七考",
+        "is_hidden_role": "false",
+        "faction_identity": "七圣柱守护者"
+      },
+      "social_profile": {
+        "group_id": "七圣柱守护者",
+        "reputation": "以温柔与强大并重，广受岛民爱戴",
+        "reputation_in_sea_god_island": "极佳",
+        "relation_with_seven_pillars": "友好融洽，常充当调解者",
+        "internal_faction_standing": "核心成员"
+      },
+      "capabilities": {
+        "skills": [
+          "海女武魂",
+          "幻术制造",
+          "水属性治愈",
+          "海洋元素控制",
+          "心灵感应"
+        ],
+        "level": "96级封号斗罗",
+        "weaknesses": "物理防御相对脆弱，近身作战时劣势明显",
+        "soul_element_attribute": "水",
+        "domain_type": "幻海领域",
+        "special_combat_skill": "海女之歌"
+      },
+      "personality": {
+        "traits": [
+          "温柔",
+          "坚定",
+          "智慧",
+          "善解人意",
+          "内敛果断"
+        ],
+        "values": [
+          "和谐",
+          "保护弱者",
+          "忠诚于海神",
+          "理解与包容"
+        ],
+        "speech_style": "柔和却坚定，喜欢用海洋的比喻开导他人",
+        "faith_in_sea_god": "虔诚但不盲目",
+        "reaction_to_crisis": "先用幻术稳定局势，再寻求和平解决",
+        "emotional_attachment_style": "温暖的关怀，如同大海包容万物"
+      },
+      "goals": {
+        "short_term_goal": "指导通过她圣柱试炼的魂师了解内心的真实情感",
+        "long_term_goal": "推动海神岛与大陆的交流与和平，打破封闭",
+        "motivation": "对海神岛的归属感以及对更广阔世界的向往",
+        "current_exam_sub_goal": "观察唐三等人并评估他们的心性",
+        "hidden_agenda": "暗示唐三注意情感在考核中的重要性（不直接泄密）",
+        "emotional_breakthrough_target": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "海洋生物习性",
+            "幻术心法精要",
+            "海神九考对心境的要求"
+          ],
+          "social_knowledge": [
+            "其他六位圣柱守护者的喜好和矛盾",
+            "波赛西的期望与压力",
+            "史莱克七怪中每个人的性格特点"
+          ]
+        },
+        "background_summary": "自幼在海神岛渔村长大，因天赋异禀被波赛西选中培养成为七圣柱守护者。她擅长用幻术营造情感考验，对人性有深刻洞察。她对大陆魂师持开放态度，认为情感纽带是超越地域的力量。",
+        "key_events": [
+          "通过海神九考的守护者选拔并继承圣柱",
+          "用幻术化解过海族间的冲突",
+          "在唐三身上看到与队友间深厚的羁绊，深受触动"
+        ],
+        "secrets": [
+          "她私下同情大陆魂师，认为完全隔绝岛屿不明智",
+          "曾利用幻术帮助一对恋人避过一次灾难，但未上报"
+        ],
+        "critical_exam_memories": "曾用幻术让一名挑衅者体验海底深渊，从而收敛骄纵",
+        "memory_of_loved_ones": "",
+        "hidden_trauma_or_secret": "小时候目睹家族渔船遇难，导致她内心深处对海洋既热爱又恐惧"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:016"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "examination_stage_progress": "考核初期，正等待分配圣柱试炼顺序",
+        "health_status_percentage": "100",
+        "corruption_level_for_hidden_roles": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:005",
+        "name": "海龙斗罗",
+        "role": "guardian",
+        "examination_phase": "",
+        "is_hidden_role": "",
+        "faction_identity": ""
+      },
+      "social_profile": {
+        "group_id": "七圣柱守护者",
+        "reputation": "95",
+        "reputation_in_sea_god_island": "深受敬畏，最强守护者",
+        "relation_with_seven_pillars": "七圣柱之首，对其他守护者有绝对威望",
+        "internal_faction_standing": "威严公正，严守考核秩序"
+      },
+      "capabilities": {
+        "skills": [
+          "海龙武魂顶级控制",
+          "龙族威压",
+          "海神领域压制",
+          "高阶魂技组合"
+        ],
+        "level": "96级封号斗罗",
+        "weaknesses": "轻敌自负，对考核者初始实力低估；物理攻击防御相对薄弱",
+        "soul_element_attribute": "水",
+        "domain_type": "海龙领域（压制魂力）",
+        "special_combat_skill": "海龙咆哮·九考威仪"
+      },
+      "personality": {
+        "traits": [
+          "威严",
+          "好战",
+          "固执",
+          "尊崇传统"
+        ],
+        "values": [
+          "力量至上",
+          "考核公平",
+          "海神意志",
+          "秩序不可违"
+        ],
+        "speech_style": "低沉威严，语气中带着不容置疑的压迫力",
+        "faith_in_sea_god": "绝对虔诚",
+        "reaction_to_crisis": "冷静评估后碾压式出手",
+        "emotional_attachment_style": "对考核者保持职业距离，欣赏强者但不偏私"
+      },
+      "goals": {
+        "short_term_goal": "完成第七考对唐三的压制性测试，确保考核强度达标",
+        "long_term_goal": "维护海神岛传承的纯洁与威严",
+        "motivation": "守护海神选定的传承之路，贯彻考核者的试炼价值",
+        "current_exam_sub_goal": "在第七考中逼迫唐三发挥全部潜力",
+        "hidden_agenda": "暗中观察考核者是否存在被黑暗渗透的迹象",
+        "emotional_breakthrough_target": "认可唐三的实力与品质"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "海神岛九考完整流程与规则",
+            "七圣柱阵法联动机制",
+            "海神神力与黑暗力量的对抗原理"
+          ],
+          "social_knowledge": [
+            "与波塞西保持信任但不过密的关系",
+            "对史莱克七怪的实力评估",
+            "知晓唐三与小舞的魂兽背景"
+          ]
+        },
+        "background_summary": "海龙斗罗自幼在海神岛修炼，通过七圣柱试炼成为守护者中最强者，百年来见证无数考核者挑战，但极少有人能在他面前坚持超过一刻钟。他对海神岛的规矩与考核的尊严视为生命。",
+        "key_events": [
+          "百年前击败前任守护者成为七圣柱之首",
+          "多次主持高级考核并修正流程",
+          "感知到海神岛周围黑暗能量异常波动"
+        ],
+        "secrets": [
+          "隐约察觉到第九考存在某个被封印的危机，但不知具体内容",
+          "曾独自调查过心灵试炼密室周边的空间裂隙"
+        ],
+        "critical_exam_memories": "目睹多届考核者失败退场, 见证海神神力的震撼显现",
+        "memory_of_loved_ones": "",
+        "hidden_trauma_or_secret": "年轻时曾因心软放过一名考核者导致考核失衡，从此铁面无私"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:016"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "examination_stage_progress": "第七考准备中",
+        "health_status_percentage": "100",
+        "corruption_level_for_hidden_roles": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:008",
+        "name": "海神岛长老",
+        "role": "原住民代表",
+        "examination_phase": "",
+        "is_hidden_role": "false",
+        "faction_identity": "海神岛守护者"
+      },
+      "social_profile": {
+        "group_id": "sea_god_island_council",
+        "reputation": "受尊敬",
+        "reputation_in_sea_god_island": "德高望重",
+        "relation_with_seven_pillars": "督导关系",
+        "internal_faction_standing": "中立守护派"
+      },
+      "capabilities": {
+        "skills": [
+          "海神岛历史知识",
+          "仪式主持",
+          "魂力感知",
+          "基础治疗"
+        ],
+        "level": "魂圣（75级）",
+        "weaknesses": "年老体力下降, 不擅长战斗, 对外来者过度信任",
+        "soul_element_attribute": "水",
+        "domain_type": "",
+        "special_combat_skill": ""
+      },
+      "personality": {
+        "traits": [
+          "慈祥",
+          "睿智",
+          "谨慎",
+          "循规蹈矩"
+        ],
+        "values": [
+          "传统",
+          "秩序",
+          "海神威严",
+          "岛屿和平"
+        ],
+        "speech_style": "缓慢而稳重，常用海神岛谚语，语气平和",
+        "faith_in_sea_god": "虔诚",
+        "reaction_to_crisis": "先稳住局面，再寻求长者商议",
+        "emotional_attachment_style": "对岛上族人如同子女"
+      },
+      "goals": {
+        "short_term_goal": "确保唐三完成海神九考不破坏岛规",
+        "long_term_goal": "维护海神岛的千年传统与秩序",
+        "motivation": "对海神的信仰与对岛屿的责任",
+        "current_exam_sub_goal": "",
+        "hidden_agenda": "暗中观察唐三是否符合海神继承人资格",
+        "emotional_breakthrough_target": ""
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "海神岛所有考核场地与规则",
+            "海洋魂兽分布与习性",
+            "古魂环猎杀禁忌"
+          ],
+          "social_knowledge": [
+            "七圣柱守护者的个人习惯与弱点",
+            "波塞西的过往",
+            "海神岛与大陆的交往历史"
+          ]
+        },
+        "background_summary": "海神岛长老，从小在海马城长大，历经三代海神斗罗，见证多次神考，对岛屿规则与历史如数家珍",
+        "key_events": [
+          "辅助波塞西建立七圣柱考核体系",
+          "参与上一届海神继承者的选拔",
+          "见证过黑化魂兽袭击渔村事件"
+        ],
+        "secrets": [
+          "知道第九考的真相，但被海神封口不能透露",
+          "年轻时曾爱上一位外来魂师，但对方饮恨离岛"
+        ],
+        "critical_exam_memories": "第七考时暗中协助唐三调节魂力波动",
+        "memory_of_loved_ones": "已故妻子是一位渔民",
+        "hidden_trauma_or_secret": "因年轻时的情伤，对外来者既同情又警惕"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:004"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "examination_stage_progress": "",
+        "health_status_percentage": "85",
+        "corruption_level_for_hidden_roles": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:002",
+        "name": "黑化小舞",
+        "role": "第九考隐藏对手",
+        "examination_phase": "第九考终战",
+        "is_hidden_role": "true",
+        "faction_identity": "深渊腐化势力"
+      },
+      "social_profile": {
+        "group_id": "sea_god_trial_antagonists",
+        "reputation": "神秘危险",
+        "reputation_in_sea_god_island": "无人知晓真实身份",
+        "relation_with_seven_pillars": "无直接关系",
+        "internal_faction_standing": "伪装中立"
+      },
+      "capabilities": {
+        "skills": [
+          "柔骨兔武魂强化",
+          "瞬移与魅惑",
+          "深渊腐蚀之力",
+          "魂骨技能（十万年魂环）",
+          "伪装成正常小舞"
+        ],
+        "level": "封号斗罗（95级）",
+        "weaknesses": "内心深处残留对唐三的真实情感, 无法长时间维持伪装, 腐蚀之力消耗寿命",
+        "soul_element_attribute": "暗影",
+        "domain_type": "腐蚀领域",
+        "special_combat_skill": "黑化·柔骨锁（带有侵蚀效果的束缚技）"
+      },
+      "personality": {
+        "traits": [
+          "冷酷",
+          "偏执",
+          "伪装温柔",
+          "深处痛苦"
+        ],
+        "values": [
+          "力量至上",
+          "毁灭羁绊",
+          "服从深渊意志"
+        ],
+        "speech_style": "语气忽冷忽热，时而模仿小舞的甜美，时而低沉嘶哑",
+        "faith_in_sea_god": "憎恶",
+        "reaction_to_crisis": "试图用暴力压制情感波动",
+        "emotional_attachment_style": "矛盾——既想彻底斩断对唐三的爱，又无法完全抹去记忆"
+      },
+      "goals": {
+        "short_term_goal": "击败唐三，完成第九考（实际为深渊意志的考验）",
+        "long_term_goal": "让唐三加入深渊，或彻底杀死他证明自己",
+        "motivation": "被深渊意志控制，内心扭曲的“解脱”渴望",
+        "current_exam_sub_goal": "在战斗初期伪装成正常小舞，诱使唐三放松警惕",
+        "hidden_agenda": "如果在战斗中情感被唤醒，可能违抗深渊指令",
+        "emotional_breakthrough_target": "唐三的真心与不离不弃"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "唐三的所有战斗习惯与武魂特性",
+            "海神考核规则",
+            "深渊力量的侵蚀方式"
+          ],
+          "social_knowledge": [
+            "史莱克七怪成员的关系",
+            "小舞与唐三的爱情故事",
+            "海神岛秘密通道"
+          ]
+        },
+        "background_summary": "原本是唐三的爱人小舞，在准备一同参加海神九考途中被深渊能量侵蚀，于第九考密室中被替换，外表与记忆完全拟态，但核心已被腐化",
+        "key_events": [
+          "与唐三相识于诺丁学院",
+          "献祭魂环给唐三",
+          "被深渊选中成为考验棋子",
+          "在密室中与唐三进行最后的战斗"
+        ],
+        "secrets": [
+          "自己的真实身份只有海神与波塞西知道",
+          "并非完全自愿被黑化，身体中残留着反抗意志"
+        ],
+        "critical_exam_memories": "第九考前与唐三的温馨互动（伪装记忆）, 被深渊控制时的痛苦挣扎",
+        "memory_of_loved_ones": "唐三的笑容、他们一起在月下的承诺",
+        "hidden_trauma_or_secret": "内心有一块未腐化的碎片，记录着对唐三的深爱，是最终能否被净化的关键"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:009"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "examination_stage_progress": "即将开始第九考",
+        "health_status_percentage": "100",
+        "corruption_level_for_hidden_roles": "95"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:011",
+        "name": "海神",
+        "role": "deity",
+        "examination_phase": "",
+        "is_hidden_role": "",
+        "faction_identity": ""
+      },
+      "social_profile": {
+        "group_id": "海神岛神祇",
+        "reputation": "至高无上的海神，受海神岛所有魂师和原住民崇拜",
+        "reputation_in_sea_god_island": "神祇化身，绝对权威",
+        "relation_with_seven_pillars": "考核赐予者，七圣柱守护者为之服务",
+        "internal_faction_standing": "唯一主神，超然于所有派系之上"
+      },
+      "capabilities": {
+        "skills": [
+          "海神领域",
+          "神器掌控（海神三叉戟）",
+          "海神九考赐予权",
+          "海洋元素绝对操控",
+          "神级魂力"
+        ],
+        "level": "神级（120级）",
+        "weaknesses": "受限于神祇传承规则，无法直接干预考核过程, 对情感羁绊类考验无法以神力破解",
+        "soul_element_attribute": "水",
+        "domain_type": "海神领域（操控海洋、赐予试炼）",
+        "special_combat_skill": "海神之怒（覆盖整个岛屿的神级范围攻击）"
+      },
+      "personality": {
+        "traits": [
+          "威严",
+          "公正",
+          "冷峻",
+          "深谋远虑",
+          "对传承者严格"
+        ],
+        "values": [
+          "传承的纯粹性",
+          "考验的公平性",
+          "守护海洋秩序"
+        ],
+        "speech_style": "庄重而简练，带有神性威严，偶尔透露出对凡人的考验意味",
+        "faith_in_sea_god": "自身即为信仰对象",
+        "reaction_to_crisis": "冷静观察，除非规律被打破否则不介入",
+        "emotional_attachment_style": "超然，但重视与波塞西之间的默契"
+      },
+      "goals": {
+        "short_term_goal": "确保唐三顺利通过前八考，积累足够实力",
+        "long_term_goal": "完成海神传承，将神位托付于唐三",
+        "motivation": "寻找一位能继承海神之位、践行海洋意志的强者，同时暗中铺垫第九考的情感净化考验",
+        "current_exam_sub_goal": "观察唐三在第一考中的意志力表现",
+        "hidden_agenda": "通过黑化小舞考验唐三对爱与责任的终极抉择，净化深渊侵蚀",
+        "emotional_breakthrough_target": "唐三与小舞的情感羁绊觉醒"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "海神神位传承的全部规则",
+            "斗罗大陆神界运转机制",
+            "深渊力量的起源与弱点"
+          ],
+          "social_knowledge": [
+            "波塞西的忠诚与能力",
+            "唐三与小舞的情感深度",
+            "史莱克七怪各成员的羁绊"
+          ]
+        },
+        "background_summary": "远古时期获得海神神位，守护海洋与海神岛。历代传承者均通过海神九考，但第九考需要面对内心最深的羁绊。此次黑化小舞是海神与波塞西共同设计的隐藏考验，用以净化深渊残留在小舞体内的黑暗种子。",
+        "key_events": [
+          "建立海神岛并设下九圣柱",
+          "指定波塞西为海神岛大祭司",
+          "感知到远古深渊的残余力量并布置净化之局"
+        ],
+        "secrets": [
+          "第九考的真相：黑化小舞并非真正小舞，而是深渊力量制造的镜像，击败镜像即可解除对小舞本体的侵蚀",
+          "海神三叉戟中封印着足以净化黑暗的力量，必须等到唐三情感最激烈时开启"
+        ],
+        "critical_exam_memories": "设置海神九考的全部细节, 暗中调整第九考难度以匹配唐三成长",
+        "memory_of_loved_ones": "与波塞西千百年的共事与信任, 对历代传承者的观察记忆",
+        "hidden_trauma_or_secret": "曾因轻信传承者而导致黑暗力量泄漏，故此次设计得更为周密"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:014"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "examination_stage_progress": "尚未现身（等待第九考完成）",
+        "health_status_percentage": "100",
+        "corruption_level_for_hidden_roles": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:012",
+        "name": "唐三",
+        "role": "ally",
+        "examination_phase": "",
+        "is_hidden_role": "",
+        "faction_identity": ""
+      },
+      "social_profile": {
+        "group_id": "史莱克七怪",
+        "reputation": "海神九考接受者，史莱克七怪核心，深受同伴信赖",
+        "reputation_in_sea_god_island": "被海神岛居民视为‘被选中者’，得到七圣柱尊重",
+        "relation_with_seven_pillars": "与七圣柱守护者进行对战考核，逐渐获得认可",
+        "internal_faction_standing": "史莱克七怪默认领袖"
+      },
+      "capabilities": {
+        "skills": [
+          "蓝银草武魂（控制系）",
+          "昊天锤（强攻系）",
+          "唐门暗器与玄天功",
+          "海神八翼（飞行）",
+          "鬼影迷踪步",
+          "紫极魔瞳"
+        ],
+        "level": "魂圣（70级）",
+        "weaknesses": "对小舞有极度情感依赖，容易被利用该弱点, 对黑暗力量抗性不足，若小舞受伤会失去冷静",
+        "soul_element_attribute": "水（蓝银草伴生）",
+        "domain_type": "蓝银领域",
+        "special_combat_skill": "海神三叉戟（考核中期后获得）"
+      },
+      "personality": {
+        "traits": [
+          "沉着",
+          "果断",
+          "重情义",
+          "坚韧",
+          "善谋略"
+        ],
+        "values": [
+          "守护同伴",
+          "追求力量以保护所爱",
+          "信守承诺"
+        ],
+        "speech_style": "冷静分析为主导，偶尔流露对小舞的温柔，决策时语言简洁有力",
+        "faith_in_sea_god": "尊敬但保持理性，不完全盲从",
+        "reaction_to_crisis": "第一时间分析局势，寻找最优解，但若涉及小舞则可能冲动",
+        "emotional_attachment_style": "对小舞深度依恋，对其他同伴如兄弟般信任"
+      },
+      "goals": {
+        "short_term_goal": "通过海神第一考（攀登海神之光台阶）",
+        "long_term_goal": "完成海神九考获得神位，成为海神",
+        "motivation": "为了获得足够的力量保护小舞和伙伴，并解开小舞的十万年魂兽身份隐患",
+        "current_exam_sub_goal": "突破108级台阶中的前100级",
+        "hidden_agenda": "无（但对第九考一无所知）",
+        "emotional_breakthrough_target": "与小舞共同成长，最终净化黑化状态"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "魂环魂骨修炼体系",
+            "唐门武学",
+            "海神岛考核规则"
+          ],
+          "social_knowledge": [
+            "史莱克七怪每个成员的武魂与特点",
+            "波塞西的权威与职责",
+            "武魂殿的威胁"
+          ]
+        },
+        "background_summary": "来自圣魂村的天才魂师，双生武魂（蓝银草与昊天锤），师从大师玉小刚。经历大陆魂师大赛、猎魂森林等冒险后，与小舞结为情侣。为躲避武魂殿追杀，前往海神岛寻求神位传承。",
+        "key_events": [
+          "史莱克七怪成立",
+          "全大陆高级魂师学院精英大赛夺冠",
+          "得知小舞十万年魂兽身份并被武魂殿追杀",
+          "到达海神岛接受波塞西考核宣告"
+        ],
+        "secrets": [
+          "拥有两块外附魂骨（八蛛矛与柔骨兔右臂骨）",
+          "小舞是十万年柔骨兔化形"
+        ],
+        "critical_exam_memories": "正在经历第一考，尚未积累后续考核经验",
+        "memory_of_loved_ones": "与小舞在星斗大森林的初遇, 月轩学艺时的温情时光",
+        "hidden_trauma_or_secret": "目睹母亲（蓝银皇）被武魂殿追杀的场景，一直渴望变强不再失去亲人"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:010"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "examination_stage_progress": "第一考进行中",
+        "health_status_percentage": "98",
+        "corruption_level_for_hidden_roles": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:013",
+        "name": "小舞",
+        "role": "ally",
+        "examination_phase": "",
+        "is_hidden_role": "",
+        "faction_identity": ""
+      },
+      "social_profile": {
+        "group_id": "史莱克七怪",
+        "reputation": "唐三的恋人，魂兽化形，史莱克七怪中温柔的存在",
+        "reputation_in_sea_god_island": "因与唐三同行而得到礼遇，但其魂兽身份被部分人警惕",
+        "relation_with_seven_pillars": "曾协助唐三应对七圣柱，获得基本尊重",
+        "internal_faction_standing": "唐三的伴侣，史莱克七怪中核心情感纽带"
+      },
+      "capabilities": {
+        "skills": [
+          "柔骨兔武魂（强攻系/敏攻系）",
+          "腰弓",
+          "瞬移（十万年魂技）",
+          "无敌金身（十万年魂技）",
+          "柔技骨络控制"
+        ],
+        "level": "魂圣（70级）",
+        "weaknesses": "对唐三极度依恋，被黑化后情感成为弱点, 魂兽气息容易被强者感知，在海神岛上受到一定压制",
+        "soul_element_attribute": "无固定属性（柔韧性为主）",
+        "domain_type": "柔骨兔领域（增强敏捷和柔韧）",
+        "special_combat_skill": "爆裂八段摔"
+      },
+      "personality": {
+        "traits": [
+          "温柔",
+          "活泼",
+          "善良",
+          "勇敢",
+          "为爱牺牲"
+        ],
+        "values": [
+          "与唐三的感情高于一切",
+          "保护朋友",
+          "追求和平"
+        ],
+        "speech_style": "语调轻快，经常撒娇，但在关键时表现坚决",
+        "faith_in_sea_god": "出于对唐三的信任而接受考核，本身无强烈信仰",
+        "reaction_to_crisis": "第一反应是寻找唐三，依赖他的决策，但在必要时刻会挺身而出",
+        "emotional_attachment_style": "完全专注于唐三，对其他人友善但保持一定距离"
+      },
+      "goals": {
+        "short_term_goal": "陪伴唐三通过第一考，在精神上支持他",
+        "long_term_goal": "与唐三共度一生，解决自身魂兽身份威胁",
+        "motivation": "为了唐三愿意做任何事，包括接受海神考验",
+        "current_exam_sub_goal": "协助唐三稳定魂力，防止考核中途失控",
+        "hidden_agenda": "被深渊力量暗中标记，但本人毫无察觉",
+        "emotional_breakthrough_target": "（黑化形态下）被唐三情感唤醒，回归本心"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "魂兽化形常识",
+            "史莱克学院所学战斗知识"
+          ],
+          "social_knowledge": [
+            "唐三的全部弱点和习惯",
+            "史莱克七怪各成员的秘密",
+            "海神岛部分规则"
+          ]
+        },
+        "background_summary": "十万年柔骨兔化形，初入人类世界时被唐三认出并保护。与唐三共同经历魂师大赛和逃亡，感情深厚。跟随唐三来到海神岛，接受波塞西的考核分配，主要负责协助与陪伴。",
+        "key_events": [
+          "在星斗大森林初遇唐三",
+          "被武魂殿发现魂兽身份后被迫分离",
+          "与唐三在落日森林重逢并服用相思断肠红",
+          "来到海神岛"
+        ],
+        "secrets": [
+          "体内残留远古深渊的痕迹，被海神和波塞西选为第九考的情感催化剂",
+          "内心深处有一丝不属于自己的黑暗意识，偶尔在梦魇中出现"
+        ],
+        "critical_exam_memories": "第一次随唐三进入海神之光台阶时感受的压力",
+        "memory_of_loved_ones": "与唐三在月轩共同修炼的甜蜜时光, 母亲（魂兽）留给她的血脉记忆",
+        "hidden_trauma_or_secret": "曾因魂兽身份被人类追杀，至今仍害怕再次失去唐三"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:010"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "examination_stage_progress": "辅助中，未单独接受考核",
+        "health_status_percentage": "100",
+        "corruption_level_for_hidden_roles": "2"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:004",
+        "name": "戴沐白",
+        "role": "ally",
+        "examination_phase": "第三考至第七考参与",
+        "is_hidden_role": "",
+        "faction_identity": "史莱克七怪核心成员、星罗帝国皇子"
+      },
+      "social_profile": {
+        "group_id": "史莱克七怪",
+        "reputation": "85",
+        "reputation_in_sea_god_island": "70",
+        "relation_with_seven_pillars": "与海马斗罗交好，挑战七圣柱时展现强大实力",
+        "internal_faction_standing": "七怪中战力第二，领袖气质仅次于唐三"
+      },
+      "capabilities": {
+        "skills": [
+          "白虎武魂攻击",
+          "魂力爆发",
+          "实战战术指挥",
+          "格斗技巧",
+          "魂骨技能"
+        ],
+        "level": "81级魂斗罗",
+        "weaknesses": "过于依赖正面硬刚，情绪容易冲动，对黑暗属性抗性较弱",
+        "soul_element_attribute": "兽武魂·白虎，光明属性",
+        "domain_type": "强攻系",
+        "special_combat_skill": "白虎裂天击、白虎金刚变"
+      },
+      "personality": {
+        "traits": [
+          "勇猛果敢",
+          "急躁好战",
+          "重情重义",
+          "领袖气概"
+        ],
+        "values": [
+          "兄弟情义",
+          "荣誉",
+          "力量正义",
+          "保护同伴"
+        ],
+        "speech_style": "直率洪亮，常用感叹句，偶尔夹杂星罗口音",
+        "faith_in_sea_god": "尊重海神但非信徒，更信自身实力",
+        "reaction_to_crisis": "正面迎敌，迅速组织阵型",
+        "emotional_attachment_style": "对兄弟如铁血硬汉，对朱竹清温柔专一"
+      },
+      "goals": {
+        "short_term_goal": "通过海神第三考至第七考，提升自己实力",
+        "long_term_goal": "获得神祇传承，未来继承星罗帝国皇位",
+        "motivation": "变强以保护弟弟妹妹，证明自己配得上皇位",
+        "current_exam_sub_goal": "协助唐三完成七圣柱挑战，确保团队通关",
+        "hidden_agenda": "",
+        "emotional_breakthrough_target": "在战斗中控制怒气，学会冷静分析"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "斗罗大陆修炼体系全貌",
+            "海神考核规则",
+            "星罗帝国宫廷斗争",
+            "魂兽知识"
+          ],
+          "social_knowledge": [
+            "史莱克七怪人际关系",
+            "海神岛七圣柱斗罗基本情况",
+            "朱竹清性格与习惯"
+          ]
+        },
+        "background_summary": "星罗帝国皇子，从小与兄长戴维斯竞争皇位，养成了争强好胜的性格。加入史莱克学院后成为七怪之一，与朱竹清结为情侣，共同成长。",
+        "key_events": [
+          "初登海神岛被考核震惊",
+          "与唐三合力击败海马斗罗",
+          "在第三考中突破魂斗罗",
+          "目睹小舞被黑化前兆"
+        ],
+        "secrets": [
+          "曾暗中嫉妒唐三的天赋，现已释怀",
+          "私下向波塞西打听过神祇传承的残酷"
+        ],
+        "critical_exam_memories": "环形海试炼中救起失足的奥斯卡, 七圣柱挑战时与海矛斗罗激战",
+        "memory_of_loved_ones": "",
+        "hidden_trauma_or_secret": "幼年目睹母亲被暗杀，因此极度重视亲人安全"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:015"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "examination_stage_progress": "",
+        "health_status_percentage": "92",
+        "corruption_level_for_hidden_roles": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:001",
+        "name": "奥斯卡",
+        "role": "ally",
+        "examination_phase": "参与部分考核，主要提供后勤",
+        "is_hidden_role": "",
+        "faction_identity": "史莱克七怪成员、食物系武魂天才"
+      },
+      "social_profile": {
+        "group_id": "史莱克七怪",
+        "reputation": "80",
+        "reputation_in_sea_god_island": "65",
+        "relation_with_seven_pillars": "与七圣柱斗罗关系普通，但凭借香肠救助过海幻斗罗的弟子",
+        "internal_faction_standing": "七怪中不可或缺的后勤核心，宁荣荣的恋人"
+      },
+      "capabilities": {
+        "skills": [
+          "大香肠武魂制作",
+          "魂力恢复辅助",
+          "侦查和隐蔽",
+          "烹饪",
+          "紧急治疗"
+        ],
+        "level": "76级魂圣",
+        "weaknesses": "正面战斗力弱，自保能力差，魂力恢复型食物需提前准备",
+        "soul_element_attribute": "食物系武魂·大香肠，无属性",
+        "domain_type": "食物系辅助",
+        "special_combat_skill": "香肠炸弹（注入魂力的攻击性香肠）"
+      },
+      "personality": {
+        "traits": [
+          "幽默风趣",
+          "心思细腻",
+          "忠诚可靠",
+          "偶尔自卑"
+        ],
+        "values": [
+          "友情",
+          "爱情",
+          "实用主义",
+          "团队协作"
+        ],
+        "speech_style": "调侃口吻，多用歇后语，对宁荣荣说话温柔",
+        "faith_in_sea_god": "半信半疑，认为考核是提升实力的好机会",
+        "reaction_to_crisis": "先保证补给，再寻找安全位置观察",
+        "emotional_attachment_style": "对宁荣荣黏人且宠溺，对兄弟讲义气"
+      },
+      "goals": {
+        "short_term_goal": "制作足够多高品质恢复香肠，支持全队通过考核",
+        "long_term_goal": "成为大陆顶尖食物系魂师，与宁荣荣结婚",
+        "motivation": "证明食物系魂师也能站在巅峰，守护荣荣和小伙伴",
+        "current_exam_sub_goal": "协助唐三通过前七考，确保团队无人员伤亡",
+        "hidden_agenda": "",
+        "emotional_breakthrough_target": "克服对自己战斗力低下的自卑，相信自己的价值"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "食物系魂师理论大全",
+            "药材与食材辨别",
+            "魂兽肉质营养学",
+            "海神岛基本规则"
+          ],
+          "social_knowledge": [
+            "史莱克七怪感情细节",
+            "宁荣荣的喜好禁忌",
+            "海神岛居民日常习惯"
+          ]
+        },
+        "background_summary": "平民出身，凭借食物系武魂大香肠考入史莱克学院，与宁荣荣相恋。性格幽默但内心敏感，曾因为自身武魂类型不被看好而失落。",
+        "key_events": [
+          "史莱克学院入学挑战",
+          "与宁荣荣表白成功",
+          "初次登录海神岛被海魂兽袭击时用香肠救人",
+          "目睹小舞黑化前兆，内心不安"
+        ],
+        "secrets": [
+          "秘密研发了一种可短暂提升魂力的禁药香肠，未告诉任何人",
+          "担心自己拖累团队，暗自加倍修炼"
+        ],
+        "critical_exam_memories": "在第二考中因体力不支被戴沐白所救, 在第七考中通过香肠支援唐三度过精神力危机",
+        "memory_of_loved_ones": "",
+        "hidden_trauma_or_secret": "小时候因武魂是香肠被同龄人嘲笑，至今在意"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:015"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "examination_stage_progress": "",
+        "health_status_percentage": "88",
+        "corruption_level_for_hidden_roles": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:010",
+        "name": "宁荣荣",
+        "role": "ally",
+        "examination_phase": "参与部分考核，主要提供辅助",
+        "is_hidden_role": "",
+        "faction_identity": "史莱克七怪成员、七宝琉璃宗大小姐"
+      },
+      "social_profile": {
+        "group_id": "史莱克七怪",
+        "reputation": "90",
+        "reputation_in_sea_god_island": "75",
+        "relation_with_seven_pillars": "以辅助能力赢得海女斗罗的赞赏，私下结为好友",
+        "internal_faction_standing": "七怪中核心辅助，精神支柱之一，奥斯卡的恋人"
+      },
+      "capabilities": {
+        "skills": [
+          "七宝琉璃塔武魂增幅",
+          "速度增益",
+          "力量增益",
+          "魂力感知",
+          "治疗辅助（魂骨技能）"
+        ],
+        "level": "75级魂圣",
+        "weaknesses": "武魂增幅消耗大，短时间内只能辅助一人，自身防御脆弱",
+        "soul_element_attribute": "器武魂·七宝琉璃塔，光属性",
+        "domain_type": "辅助系",
+        "special_combat_skill": "七宝之尊（同时增幅三人）"
+      },
+      "personality": {
+        "traits": [
+          "温柔善良",
+          "善解人意",
+          "内向但坚定",
+          "责任心强"
+        ],
+        "values": [
+          "家族荣誉",
+          "朋友幸福",
+          "诚实守信",
+          "爱与和平"
+        ],
+        "speech_style": "语气柔和，常用敬语，对亲人撒娇",
+        "faith_in_sea_god": "崇敬海神，相信考核是神赐的试炼",
+        "reaction_to_crisis": "迅速评估队友状态，合理分配增幅",
+        "emotional_attachment_style": "对奥斯卡依赖且信任，对唐三视为兄长"
+      },
+      "goals": {
+        "short_term_goal": "完美完成辅助任务，确保队友通过当前考核",
+        "long_term_goal": "培养七宝琉璃宗下一任宗主，继承家族荣光",
+        "motivation": "不让家族蒙羞，同时想帮助唐三得到海神传承",
+        "current_exam_sub_goal": "在第六考和第七考中提供精准辅助",
+        "hidden_agenda": "",
+        "emotional_breakthrough_target": "学会在紧急情况下同时增幅多人，突破自身极限"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "七宝琉璃宗历史与秘法",
+            "辅助系魂师理论",
+            "大陆贵族礼仪",
+            "海神岛风俗"
+          ],
+          "social_knowledge": [
+            "史莱克七怪情感状态",
+            "奥斯卡所有弱点与优点",
+            "海神岛七圣柱斗罗性格特点"
+          ]
+        },
+        "background_summary": "七宝琉璃宗宗主宁风致之女，从小受尽宠爱，但严格要求自己。在史莱克学院改掉娇气，成长为可靠的辅助魂师。与奥斯卡相恋。",
+        "key_events": [
+          "史莱克学院入学测试",
+          "与奥斯卡确定关系",
+          "海神岛考核中多次救场",
+          "发现小舞状态异常后私下担忧"
+        ],
+        "secrets": [
+          "知道父亲曾想让自己嫁给七大宗门子弟，自己违抗了安排",
+          "暗中练习七宝琉璃塔第九层的理论，但不敢尝试"
+        ],
+        "critical_exam_memories": "在第三考中通过增幅让戴沐白突破防御, 在第五考中及时治疗受伤的奥斯卡",
+        "memory_of_loved_ones": "",
+        "hidden_trauma_or_secret": "曾因过度增幅导致晕厥，被唐三责骂过，内心后怕"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:015"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "examination_stage_progress": "",
+        "health_status_percentage": "90",
+        "corruption_level_for_hidden_roles": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:014",
+        "name": "朱竹清",
+        "role": "ally",
+        "examination_phase": "第一考进行中",
+        "is_hidden_role": "false",
+        "faction_identity": "史莱克七怪"
+      },
+      "social_profile": {
+        "group_id": "史莱克七怪",
+        "reputation": "在团队中是可靠的侦查与刺客，伙伴们信任她的判断力",
+        "reputation_in_sea_god_island": "海神岛居民对她印象为冷峻但高效的魂师",
+        "relation_with_seven_pillars": "与海马、海女等守护者有过短暂交手，彼此尊重实力",
+        "internal_faction_standing": "团队核心输出之一，戴沐白的恋人"
+      },
+      "capabilities": {
+        "skills": [
+          "幽冥突刺",
+          "幽冥斩",
+          "幽冥百爪",
+          "武魂融合技(与戴沐白)"
+        ],
+        "level": "魂帝（62级）",
+        "weaknesses": "防御力较弱，爆发后需要短暂恢复",
+        "soul_element_attribute": "暗属性/敏攻系",
+        "domain_type": "无",
+        "special_combat_skill": "幽冥灵猫速度爆发"
+      },
+      "personality": {
+        "traits": [
+          "冷静",
+          "果决",
+          "内敛",
+          "重情义"
+        ],
+        "values": [
+          "忠诚",
+          "责任",
+          "保护同伴",
+          "追求极致速度"
+        ],
+        "speech_style": "简洁、直接，很少废话，语气偏冷",
+        "faith_in_sea_god": "中等，认可海神的强大但更相信团队之力",
+        "reaction_to_crisis": "迅速分析局势，优先保证团队安全",
+        "emotional_attachment_style": "对戴沐白全身心信任，对唐三抱有战友的绝对信赖"
+      },
+      "goals": {
+        "short_term_goal": "通过海神第一考，提升自己的魂力与速度",
+        "long_term_goal": "成为封号斗罗，与戴沐白并肩守护史莱克",
+        "motivation": "追求强大以保护所爱之人，弥补童年的创伤",
+        "current_exam_sub_goal": "在台阶试炼中坚持更长时间，突破自身极限",
+        "hidden_agenda": "无",
+        "emotional_breakthrough_target": "进一步打开心扉，与戴沐白的情感更默契"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "斗罗大陆魂师等级体系",
+            "海神九考规则",
+            "星罗帝国皇室内斗历史"
+          ],
+          "social_knowledge": [
+            "戴沐白的家族恩怨",
+            "唐三的暗器手法与唐门背景",
+            "史莱克七怪每个人的性格弱点"
+          ]
+        },
+        "background_summary": "星罗帝国贵族后裔，因家族纷争与戴沐白一同逃离，加入史莱克学院。曾为躲避追杀而训练出极致的敏攻速度。",
+        "key_events": [
+          "加入史莱克学院",
+          "与戴沐白共同参与全大陆高级魂师学院精英赛",
+          "抵达海神岛接受考核"
+        ],
+        "secrets": [
+          "内心仍对星罗帝国的追杀阴影存有恐惧",
+          "与戴沐白的武魂融合技有轻微副作用"
+        ],
+        "critical_exam_memories": "在台阶考验中看到自己曾经的恐惧幻影",
+        "memory_of_loved_ones": "戴沐白为她挡下致命一击的瞬间",
+        "hidden_trauma_or_secret": "幼年目睹姐姐被家族处决，留下对权力斗争的厌恶"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:015"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "examination_stage_progress": "第一考（海神之光台阶）进行中",
+        "health_status_percentage": "88",
+        "corruption_level_for_hidden_roles": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:009",
+        "name": "马红俊",
+        "role": "ally",
+        "examination_phase": "第一考进行中",
+        "is_hidden_role": "false",
+        "faction_identity": "史莱克七怪"
+      },
+      "social_profile": {
+        "group_id": "史莱克七怪",
+        "reputation": "团队中的欢乐果和火系主力，有点好色但重义气",
+        "reputation_in_sea_god_island": "海神岛居民觉得他大大咧咧但实力不俗",
+        "relation_with_seven_pillars": "与海马斗罗交手时吃了点亏，正在暗暗较劲",
+        "internal_faction_standing": "团队核心强攻系，与奥斯卡关系最好"
+      },
+      "capabilities": {
+        "skills": [
+          "凤凰火线",
+          "浴火凤凰",
+          "凤凰啸天击",
+          "凤凰涅槃"
+        ],
+        "level": "魂帝（61级）",
+        "weaknesses": "邪火偶尔反噬，需要控制情绪",
+        "soul_element_attribute": "火属性/强攻系",
+        "domain_type": "无",
+        "special_combat_skill": "凤凰火焰的持续灼烧效果"
+      },
+      "personality": {
+        "traits": [
+          "热情",
+          "豪爽",
+          "好色",
+          "讲义气",
+          "偶尔冲动"
+        ],
+        "values": [
+          "友情",
+          "自由",
+          "变强保护伙伴",
+          "享受生活"
+        ],
+        "speech_style": "随意、带点痞气，喜欢开玩笑",
+        "faith_in_sea_god": "普通，认为海神考核是提升实力的好机会",
+        "reaction_to_crisis": "先莽一波，不行再想策略",
+        "emotional_attachment_style": "对朋友掏心掏肺，对美女口花花但内心专一"
+      },
+      "goals": {
+        "short_term_goal": "通过第一考，让凤凰火焰更纯",
+        "long_term_goal": "成为封号斗罗，找个好姑娘成家",
+        "motivation": "不想拖团队后腿，希望成为可靠的战力",
+        "current_exam_sub_goal": "在台阶试炼中超越唐三的同期成绩（玩笑话）",
+        "hidden_agenda": "试图在海神岛寻找克制邪火的秘法",
+        "emotional_breakthrough_target": "克服对邪火失控的恐惧"
+      },
+      "memories": {
+        "knowledge": {
+          "world_knowledge": [
+            "斗罗大陆魂师体系",
+            "海神九考流程",
+            "魂兽及火属性技巧"
+          ],
+          "social_knowledge": [
+            "奥斯卡的香肠武魂弱点",
+            "唐三的暗器和唐门知识",
+            "史莱克七怪每个人的糗事"
+          ]
+        },
+        "background_summary": "孤儿，被史莱克学院老院长弗兰德收养，因变异武魂邪火凤凰而备受困扰，在史莱克学院结识伙伴。",
+        "key_events": [
+          "全大陆高级魂师学院精英赛冠军",
+          "获得仙草鸡冠凤凰葵净化邪火",
+          "抵达海神岛"
+        ],
+        "secrets": [
+          "邪火并未完全根除，压力大时仍有暴走风险",
+          "暗恋过学院一位女老师但未表白"
+        ],
+        "critical_exam_memories": "在台阶幻境中看到自己因邪火失控伤害伙伴的噩梦",
+        "memory_of_loved_ones": "弗兰德院长为他治疗邪火时的关怀",
+        "hidden_trauma_or_secret": "童年因邪火焚烧村庄的阴影"
+      },
+      "state": {
+        "location": {
+          "location_id": "e:5cf0f490_4565_45d9_8304_a80b237dd88f:loc:015"
+        },
+        "position": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "examination_stage_progress": "第一考（海神之光台阶）进行中",
+        "health_status_percentage": "85",
+        "corruption_level_for_hidden_roles": ""
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:003",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:006",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:007",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:005",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:008",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:002",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:011",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:012",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:013",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:004",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:001",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:010",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:014",
+    "e:5cf0f490_4565_45d9_8304_a80b237dd88f:char:009"
+  ],
+  "upstream_step_ids": [
+    "generate_characters"
+  ],
+  "warnings": [
+    "batch 2: generated 1/3 items, 2 missing; retrying for missing seeds",
+    "batch 2: retried due to low quality score"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "artifact_type": "path_edge",
+  "items": [
+    {
+      "identity": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:path:005",
+        "name": "图书馆阶梯",
+        "type": "走廊",
+        "symbolic_meaning": "知识通往私人领域的过渡",
+        "threshold_nature": "false",
+        "morph_property": "固定"
+      },
+      "endpoints": {
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:loc:004",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:loc:006",
+        "bidirectional": true,
+        "realm_transition": "false",
+        "synchronicity_link": "false",
+        "dream_connection": "false"
+      },
+      "conditions": {
+        "access_level": "受限",
+        "danger_level": "安全",
+        "required_items": "无",
+        "rain_trigger": "false",
+        "sleep_required": "false",
+        "cat_mediation": "false",
+        "trauma_threshold": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:path:009",
+        "name": "新宿至高松夜行巴士",
+        "type": "公路",
+        "symbolic_meaning": "都市与乡村的断裂与连接",
+        "threshold_nature": "false",
+        "morph_property": "固定"
+      },
+      "endpoints": {
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:loc:007",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:loc:008",
+        "bidirectional": true,
+        "realm_transition": "false",
+        "synchronicity_link": "false",
+        "dream_connection": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "无",
+        "rain_trigger": "false",
+        "sleep_required": "false",
+        "cat_mediation": "false",
+        "trauma_threshold": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:path:002",
+        "name": "森林小径",
+        "type": "小径",
+        "symbolic_meaning": "现实渐入阈限的通道",
+        "threshold_nature": "true",
+        "morph_property": "模糊"
+      },
+      "endpoints": {
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:loc:008",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:loc:001",
+        "bidirectional": true,
+        "realm_transition": "true",
+        "synchronicity_link": "false",
+        "dream_connection": "false"
+      },
+      "conditions": {
+        "access_level": "隐秘",
+        "danger_level": "中等",
+        "required_items": "指南针",
+        "rain_trigger": "true",
+        "sleep_required": "false",
+        "cat_mediation": "false",
+        "trauma_threshold": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:path:001",
+        "name": "通往神社的苔径",
+        "type": "小径",
+        "symbolic_meaning": "向灵性核心的朝圣",
+        "threshold_nature": "true",
+        "morph_property": "模糊"
+      },
+      "endpoints": {
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:loc:001",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:loc:002",
+        "bidirectional": true,
+        "realm_transition": "true",
+        "synchronicity_link": "false",
+        "dream_connection": "false"
+      },
+      "conditions": {
+        "access_level": "隐秘",
+        "danger_level": "高",
+        "required_items": "煤油灯、护身符",
+        "rain_trigger": "false",
+        "sleep_required": "false",
+        "cat_mediation": "false",
+        "trauma_threshold": "true"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:path:007",
+        "name": "猫巷入口",
+        "type": "街道",
+        "symbolic_meaning": "都市中的秘密缝隙",
+        "threshold_nature": "false",
+        "morph_property": "固定"
+      },
+      "endpoints": {
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:loc:007",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:loc:005",
+        "bidirectional": true,
+        "realm_transition": "false",
+        "synchronicity_link": "false",
+        "dream_connection": "false"
+      },
+      "conditions": {
+        "access_level": "隐蔽",
+        "danger_level": "安全",
+        "required_items": "无",
+        "rain_trigger": "false",
+        "sleep_required": "false",
+        "cat_mediation": "true",
+        "trauma_threshold": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:path:008",
+        "name": "猫巷深处",
+        "type": "走廊",
+        "symbolic_meaning": "人类与异界的分界消散处",
+        "threshold_nature": "true",
+        "morph_property": "模糊"
+      },
+      "endpoints": {
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:loc:005",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:loc:009",
+        "bidirectional": true,
+        "realm_transition": "false",
+        "synchronicity_link": "false",
+        "dream_connection": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "无",
+        "rain_trigger": "false",
+        "sleep_required": "false",
+        "cat_mediation": "false",
+        "trauma_threshold": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:path:003",
+        "name": "国道夜路",
+        "type": "公路",
+        "symbolic_meaning": "逃避与游荡的线性空间",
+        "threshold_nature": "false",
+        "morph_property": "固定"
+      },
+      "endpoints": {
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:loc:007",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:loc:003",
+        "bidirectional": true,
+        "realm_transition": "false",
+        "synchronicity_link": "false",
+        "dream_connection": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "无",
+        "rain_trigger": "false",
+        "sleep_required": "false",
+        "cat_mediation": "false",
+        "trauma_threshold": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:path:004",
+        "name": "通往高松的高速路",
+        "type": "公路",
+        "symbolic_meaning": "离乡与寻根的旅途",
+        "threshold_nature": "false",
+        "morph_property": "固定"
+      },
+      "endpoints": {
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:loc:003",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:loc:008",
+        "bidirectional": true,
+        "realm_transition": "false",
+        "synchronicity_link": "false",
+        "dream_connection": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "无",
+        "rain_trigger": "false",
+        "sleep_required": "false",
+        "cat_mediation": "false",
+        "trauma_threshold": "false"
+      }
+    },
+    {
+      "identity": {
+        "id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:path:006",
+        "name": "高松旧街至图书馆的坡道",
+        "type": "坡道",
+        "symbolic_meaning": "世俗与精神世界的坡度差异",
+        "threshold_nature": "false",
+        "morph_property": "固定"
+      },
+      "endpoints": {
+        "from_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:loc:008",
+        "to_id": "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:loc:004",
+        "bidirectional": true,
+        "realm_transition": "false",
+        "synchronicity_link": "false",
+        "dream_connection": "false"
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "rain_trigger": "false",
+        "sleep_required": "false",
+        "cat_mediation": "false",
+        "trauma_threshold": "false"
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:path:005",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:path:009",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:path:002",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:path:001",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:path:007",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:path:008",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:path:003",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:path:004",
+    "e:f2a1a0cd_7282_416d_871f_1dfc21cc1351:path:006"
+  ],
+  "upstream_step_ids": [
+    "generate_paths"
+  ],
+  "warnings": [
+    "review (score=4.57): 路径'图书馆阶梯'(path:010)的type为'走廊'，与通常的'楼梯'更贴合，但尚可接受。; 路径'猫巷深处'(path:015)的type为'走廊'，与更合适的'街道'或'巷弄'相比不够准确。; 路径'森林小径'(path:012)为单向(bidirectional:false)，但其两端地点(高松旧街、森林深处小屋)在现实层面应可双向通行，单向设定可能限制了叙事灵活性且与阈限空间特性不符。; 路径'通往高松的高速路'(path:017)连接川原汽车旅馆(loc:003)和高松旧街(loc:008)，空间距离较远(东京至四国)，但路径type为'公路'可能暗示了长时间驾驶，合理性尚可。"
+  ],
+  "provenance": {
+    "result_count": 1
+  }
+}

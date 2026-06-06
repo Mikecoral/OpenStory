@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "penalties",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "rewards_for_compliance",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "penalty_types",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reward_types",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "collective_punishment",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "penalty_severity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reward_scale",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

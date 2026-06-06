@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "relations_to_others",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "enemy_organizations",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "alliance_relationships",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "infiltration_operations",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "propaganda_narrative",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "information_broker_relations",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "neutral_party_contacts",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "external_enforcer_designation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

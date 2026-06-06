@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "assets",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "territory",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "vinyl_collection_size",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "smoking_area_capacity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "lighting_system_antiquity",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "sound_equipment_quality",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "seasonal_decorations",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "seating_capacity_for_regulars",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

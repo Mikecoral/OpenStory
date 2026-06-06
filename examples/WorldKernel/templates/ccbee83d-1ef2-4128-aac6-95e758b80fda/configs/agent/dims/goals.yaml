@@ -1,0 +1,22 @@
+dim_name: GoalsDim
+short_term_goal:
+  type: str
+long_term_goal:
+  type: str
+motivation:
+  type: str
+alleviate_mental_pain:
+  type: str
+  option: true
+find_meaning_in_life:
+  type: str
+  option: true
+process_loss:
+  type: str
+  option: true
+maintain_connection_with_deceased:
+  type: str
+  option: true
+escape_into_isolation:
+  type: str
+  option: true

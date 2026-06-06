@@ -1,0 +1,21 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+description:
+  type: str
+考核顺序标记:
+  type: str
+  option: true
+秘密第九考场所标记:
+  type: str
+  option: true
+与海神传承层级对应:
+  type: str
+  option: true
+场所功能细分（修炼/居住/祭祀）:
+  type: str
+  option: true

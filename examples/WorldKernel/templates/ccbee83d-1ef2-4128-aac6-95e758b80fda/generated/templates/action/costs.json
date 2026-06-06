@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "time",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "resources",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_cost",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "psychological_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "social_reputation_impact",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "health_risk",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "moral_weight",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

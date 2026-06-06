@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "permissions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "access_conditions",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "seasonal_hours",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "rain_days_closed",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "regular_crowd_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "invitation_required",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

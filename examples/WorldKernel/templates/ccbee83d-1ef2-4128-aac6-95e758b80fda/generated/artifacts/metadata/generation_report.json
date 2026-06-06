@@ -1,0 +1,75 @@
+{
+  "world_id": "ccbee83d-1ef2-4128-aac6-95e758b80fda",
+  "success": false,
+  "source_ids": [
+    "visual-e2e"
+  ],
+  "execution_order": [
+    "generate_characters",
+    "generate_locations",
+    "generate_paths",
+    "generate_relations"
+  ],
+  "completed_steps": [
+    "generate_characters",
+    "generate_locations",
+    "generate_paths"
+  ],
+  "failed_step_id": "generate_relations",
+  "warnings": [
+    "batch 3 review (score=4.57): 发现 1 个问题并已自动修正",
+    "batch 4: item '石田玲子' matched by positional fallback",
+    "batch 4: generated 1/3 items, 2 missing; retrying for missing seeds",
+    "batch 4: retried due to low quality score",
+    "batch 5 review (score=4.71): 发现 1 个问题并已自动修正",
+    "batch 1 review (score=4.29): 发现 1 个问题并已自动修正",
+    "batch 2/5 failed: Failed to parse JSON: [\n  {\n    \"identity\": {\n      \"id\": \"e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:003\",\n      \"name\": \"阿美寮\",\n      \"type\": \"sanatorium\",\n      \"description\": \"坐落于京都北郊深山中的一处私立精神疗养院，由一栋主楼与几栋附属平房组成，周围被原始次生...",
+    "consolidated retry: 4 seeds missing, retrying as one batch",
+    "review (score=4.0): path_010 (索引9): 类型仅标注为'电车'，但校园内无电车站，实际需要步行至车站，类型应为'电车+步行'。; path_027 (索引26): 端点loc:020是直子提及的井边，描述为'并非真实地理位置'，属于意象化地点，不应存在物理路径，该路径无效，建议删除。",
+    "graph: 1 locations have no paths: {'e:ccbee83d_1ef2_4128_aac6_95e758b80fda:loc:020'}",
+    "graph: Graph not connected: 19/20 reachable",
+    "graph validation passed after retry"
+  ],
+  "errors": [
+    "generate_relations: RelationGenerationTool: graph retry still has issues: [\"relation[0]: from_id '' not in character set\", \"relation[0]: to_id '' not in character set\", \"relation[1]: from_id '' not in character set\", \"relation[1]: to_id '' not in character set\", \"relation[2]: from_id '' not in character set\", \"relation[2]: to_id '' not in character set\", \"relation[3]: from_id '' not in character set\", \"relation[3]: to_id '' not in character set\", \"relation[4]: from_id '' not in character set\", \"relation[4]: to_id '' not in character set\", \"relation[5]: from_id '' not in character set\", \"relation[5]: to_id '' not in character set\", \"relation[6]: from_id '' not in character set\", \"relation[6]: to_id '' not in character set\", \"relation[7]: from_id '' not in character set\", \"relation[7]: to_id '' not in character set\", \"relation[8]: from_id '' not in character set\", \"relation[8]: to_id '' not in character set\", \"relation[9]: from_id '' not in character set\", \"relation[9]: to_id '' not in character set\", \"relation[10]: from_id '' not in character set\", \"relation[10]: to_id '' not in character set\", \"relation[11]: from_id '' not in character set\", \"relation[11]: to_id '' not in character set\", \"relation[12]: from_id '' not in character set\", \"relation[12]: to_id '' not in character set\", \"relation[13]: from_id '' not in character set\", \"relation[13]: to_id '' not in character set\", \"relation[14]: from_id '' not in character set\", \"relation[14]: to_id '' not in character set\", \"relation[15]: from_id '' not in character set\", \"relation[15]: to_id '' not in character set\", \"relation[16]: from_id '' not in character set\", \"relation[16]: to_id '' not in character set\", \"relation[17]: from_id '' not in character set\", \"relation[17]: to_id '' not in character set\", \"relation[18]: from_id '' not in character set\", \"relation[18]: to_id '' not in character set\", \"relation[19]: from_id '' not in character set\", \"relation[19]: to_id '' not in character set\", '15 characters have no relations: e:ccbee83d_1ef2_4128_aac6_95e758b80fda:char:001, e:ccbee83d_1ef2_4128_aac6_95e758b80fda:char:002, e:ccbee83d_1ef2_4128_aac6_95e758b80fda:char:003...', 'warn: Low relation type diversity: 0 types (expected >= 3): set()', \"warn: Core character 'e:ccbee83d_1ef2_4128_aac6_95e758b80fda:char:015' appears in only 0 relation(s) (expected >= 2)\", \"warn: Core character 'e:ccbee83d_1ef2_4128_aac6_95e758b80fda:char:006' appears in only 0 relation(s) (expected >= 2)\", \"warn: Core character 'e:ccbee83d_1ef2_4128_aac6_95e758b80fda:char:009' appears in only 0 relation(s) (expected >= 2)\", \"warn: Core character 'e:ccbee83d_1ef2_4128_aac6_95e758b80fda:char:004' appears in only 0 relation(s) (expected >= 2)\"]. Warnings: review step failed (Failed to parse JSON: {\n  \"review\": {\n    \"scores\": {\n      \"character_coverage\": 3,\n      \"endpoint_validity\": 5,\n      \"no_self_loops\": 5,\n      \"type_quality\": 3,\n      \"world_specificity\": 4,\n      \"core_density\": 5,\n ...), using unreviewed output; graph: 1 characters have no relations: e:ccbee83d_1ef2_4128_aac6_95e758b80fda:char:002; graph retry still has: relation[0]: from_id '' not in character set; graph retry still has: relation[0]: to_id '' not in character set; graph retry still has: relation[1]: from_id '' not in character set; graph retry still has: relation[1]: to_id '' not in character set; graph retry still has: relation[2]: from_id '' not in character set; graph retry still has: relation[2]: to_id '' not in character set; graph retry still has: relation[3]: from_id '' not in character set; graph retry still has: relation[3]: to_id '' not in character set; graph retry still has: relation[4]: from_id '' not in character set; graph retry still has: relation[4]: to_id '' not in character set; graph retry still has: relation[5]: from_id '' not in character set; graph retry still has: relation[5]: to_id '' not in character set; graph retry still has: relation[6]: from_id '' not in character set; graph retry still has: relation[6]: to_id '' not in character set; graph retry still has: relation[7]: from_id '' not in character set; graph retry still has: relation[7]: to_id '' not in character set; graph retry still has: relation[8]: from_id '' not in character set; graph retry still has: relation[8]: to_id '' not in character set; graph retry still has: relation[9]: from_id '' not in character set; graph retry still has: relation[9]: to_id '' not in character set; graph retry still has: relation[10]: from_id '' not in character set; graph retry still has: relation[10]: to_id '' not in character set; graph retry still has: relation[11]: from_id '' not in character set; graph retry still has: relation[11]: to_id '' not in character set; graph retry still has: relation[12]: from_id '' not in character set; graph retry still has: relation[12]: to_id '' not in character set; graph retry still has: relation[13]: from_id '' not in character set; graph retry still has: relation[13]: to_id '' not in character set; graph retry still has: relation[14]: from_id '' not in character set; graph retry still has: relation[14]: to_id '' not in character set; graph retry still has: relation[15]: from_id '' not in character set; graph retry still has: relation[15]: to_id '' not in character set; graph retry still has: relation[16]: from_id '' not in character set; graph retry still has: relation[16]: to_id '' not in character set; graph retry still has: relation[17]: from_id '' not in character set; graph retry still has: relation[17]: to_id '' not in character set; graph retry still has: relation[18]: from_id '' not in character set; graph retry still has: relation[18]: to_id '' not in character set; graph retry still has: relation[19]: from_id '' not in character set; graph retry still has: relation[19]: to_id '' not in character set; graph retry still has: 15 characters have no relations: e:ccbee83d_1ef2_4128_aac6_95e758b80fda:char:001, e:ccbee83d_1ef2_4128_aac6_95e758b80fda:char:002, e:ccbee83d_1ef2_4128_aac6_95e758b80fda:char:003...; graph retry still has: warn: Low relation type diversity: 0 types (expected >= 3): set(); graph retry still has: warn: Core character 'e:ccbee83d_1ef2_4128_aac6_95e758b80fda:char:015' appears in only 0 relation(s) (expected >= 2); graph retry still has: warn: Core character 'e:ccbee83d_1ef2_4128_aac6_95e758b80fda:char:006' appears in only 0 relation(s) (expected >= 2); graph retry still has: warn: Core character 'e:ccbee83d_1ef2_4128_aac6_95e758b80fda:char:009' appears in only 0 relation(s) (expected >= 2); graph retry still has: warn: Core character 'e:ccbee83d_1ef2_4128_aac6_95e758b80fda:char:004' appears in only 0 relation(s) (expected >= 2); graph retry failed"
+  ],
+  "artifact_files": {
+    "location_profile": "locations\\locations.json",
+    "character_profile": "characters\\characters.json",
+    "path_edge": "path_graph\\path_graph.json",
+    "relation_edge": "relation_graph\\relation_graph.json"
+  },
+  "counts": {
+    "location_profile": 20,
+    "character_profile": 16,
+    "path_edge": 24,
+    "relation_edge": 0
+  },
+  "timestamp": "2026-06-01T11:09:57.870984+00:00",
+  "debug_files": {},
+  "provenance": {
+    "stage1_inputs": {
+      "source": "stage1.pipeline",
+      "source_id": "visual-e2e",
+      "world_id": "ccbee83d-1ef2-4128-aac6-95e758b80fda",
+      "world_background_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\ccbee83d-1ef2-4128-aac6-95e758b80fda\\generated\\plan\\world_background.json",
+      "execution_plan_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\ccbee83d-1ef2-4128-aac6-95e758b80fda\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\ccbee83d-1ef2-4128-aac6-95e758b80fda\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\ccbee83d-1ef2-4128-aac6-95e758b80fda\\generated\\world_template.json",
+      "schema_manifest_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\ccbee83d-1ef2-4128-aac6-95e758b80fda\\models\\schema_manifest.json",
+      "artifact_manifest_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\ccbee83d-1ef2-4128-aac6-95e758b80fda\\generated\\artifact_manifest.json",
+      "session_root": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\ccbee83d-1ef2-4128-aac6-95e758b80fda"
+    },
+    "world_background": {
+      "source": "stage1.pipeline",
+      "artifact": "world_background",
+      "world_background_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\ccbee83d-1ef2-4128-aac6-95e758b80fda\\generated\\plan\\world_background.json",
+      "execution_plan_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\ccbee83d-1ef2-4128-aac6-95e758b80fda\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\ccbee83d-1ef2-4128-aac6-95e758b80fda\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\ccbee83d-1ef2-4128-aac6-95e758b80fda\\generated\\world_template.json",
+      "schema_manifest_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\ccbee83d-1ef2-4128-aac6-95e758b80fda\\models\\schema_manifest.json",
+      "artifact_manifest_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\ccbee83d-1ef2-4128-aac6-95e758b80fda\\generated\\artifact_manifest.json",
+      "session_root": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\ccbee83d-1ef2-4128-aac6-95e758b80fda"
+    }
+  }
+}

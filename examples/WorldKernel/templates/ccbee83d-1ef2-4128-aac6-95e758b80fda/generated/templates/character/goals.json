@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "short_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "long_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "motivation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "alleviate_mental_pain",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "find_meaning_in_life",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "process_loss",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "maintain_connection_with_deceased",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "escape_into_isolation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "role",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "psychological_state_label",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "deceased_relationship",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "era_background",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "residence_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "student_movement_involvement",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

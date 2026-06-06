@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "scope",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "metaphor_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "symbolic_representation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "existential_weight",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "is_abstract_concept_concretized",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "enforcer",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "mechanism",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "detectability",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "supervisor",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "detection_method",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "execution_mode",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "loophole",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

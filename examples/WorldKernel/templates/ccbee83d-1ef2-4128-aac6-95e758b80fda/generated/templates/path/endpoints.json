@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "from_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "to_id",
+      "type": "str",
+      "required": true,
+      "ref": "location"
+    },
+    {
+      "name": "bidirectional",
+      "type": "bool",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_atmosphere",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "usage_frequency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "memory_bond_location",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "length_category",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

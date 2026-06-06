@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "enforcer",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "mechanism",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "detectability",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "trigger_conditions",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "enforcement_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "interference_with_reality",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "threshold_of_loneliness",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

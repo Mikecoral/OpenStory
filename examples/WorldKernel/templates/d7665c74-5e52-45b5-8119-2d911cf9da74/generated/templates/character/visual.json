@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "visual_description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "visual_prompt",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "crow_shadow_aura",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "ageless_appearance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "surreal_glow_around",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

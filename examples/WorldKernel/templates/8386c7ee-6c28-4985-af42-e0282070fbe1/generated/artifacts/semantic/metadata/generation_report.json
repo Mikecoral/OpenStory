@@ -1,0 +1,69 @@
+{
+  "world_id": "8386c7ee-6c28-4985-af42-e0282070fbe1",
+  "success": true,
+  "source_ids": [
+    "primary"
+  ],
+  "execution_order": [
+    "generate_characters",
+    "generate_locations",
+    "generate_paths",
+    "generate_relations"
+  ],
+  "completed_steps": [
+    "generate_characters",
+    "generate_locations",
+    "generate_paths",
+    "generate_relations"
+  ],
+  "failed_step_id": null,
+  "warnings": [
+    "batch 3 review (score=4.14): 发现 4 个问题并已自动修正",
+    "batch 4 review (score=4.857): 发现 1 个问题并已自动修正",
+    "batch 1 review (score=4.0): 发现 3 个问题并已自动修正",
+    "batch 2 review (score=4.6): 发现 2 个问题并已自动修正",
+    "batch 3 review (score=4.29): 发现 4 个问题并已自动修正",
+    "batch 5 review (score=4.71): 发现 1 个问题并已自动修正",
+    "review (score=4.14): 处决室(loc:007)没有入边，从其他地点无法到达，导致连通性缺陷; path_014方向错误：应从指挥大厅(loc:004)到处决室(loc:007)，而非反向; path_010方向错误：疯狂城入口应是生肖街(loc:014)到疯狂城(loc:005)，而非反向"
+  ],
+  "errors": [],
+  "artifact_files": {
+    "location_profile": "locations\\locations.json",
+    "character_profile": "characters\\characters.json",
+    "path_edge": "path_graph\\path_graph.json",
+    "relation_edge": "relation_graph\\relation_graph.json"
+  },
+  "counts": {
+    "location_profile": 18,
+    "character_profile": 12,
+    "path_edge": 26,
+    "relation_edge": 24
+  },
+  "timestamp": "2026-06-02T05:44:46.860539+00:00",
+  "debug_files": {},
+  "provenance": {
+    "stage1_inputs": {
+      "source": "stage1.pipeline",
+      "source_id": "primary",
+      "world_id": "8386c7ee-6c28-4985-af42-e0282070fbe1",
+      "world_background_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\8386c7ee-6c28-4985-af42-e0282070fbe1\\generated\\plan\\world_background.json",
+      "execution_plan_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\8386c7ee-6c28-4985-af42-e0282070fbe1\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\8386c7ee-6c28-4985-af42-e0282070fbe1\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\8386c7ee-6c28-4985-af42-e0282070fbe1\\generated\\world_template.json",
+      "schema_manifest_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\8386c7ee-6c28-4985-af42-e0282070fbe1\\models\\schema_manifest.json",
+      "artifact_manifest_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\8386c7ee-6c28-4985-af42-e0282070fbe1\\generated\\artifact_manifest.json",
+      "session_root": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\8386c7ee-6c28-4985-af42-e0282070fbe1"
+    },
+    "world_background": {
+      "source": "stage1.pipeline",
+      "artifact": "world_background",
+      "world_background_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\8386c7ee-6c28-4985-af42-e0282070fbe1\\generated\\plan\\world_background.json",
+      "execution_plan_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\8386c7ee-6c28-4985-af42-e0282070fbe1\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\8386c7ee-6c28-4985-af42-e0282070fbe1\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\8386c7ee-6c28-4985-af42-e0282070fbe1\\generated\\world_template.json",
+      "schema_manifest_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\8386c7ee-6c28-4985-af42-e0282070fbe1\\models\\schema_manifest.json",
+      "artifact_manifest_path": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\8386c7ee-6c28-4985-af42-e0282070fbe1\\generated\\artifact_manifest.json",
+      "session_root": "D:\\Research\\2026_5_9\\OpenStory\\examples\\WorldKernel\\templates\\8386c7ee-6c28-4985-af42-e0282070fbe1"
+    }
+  }
+}

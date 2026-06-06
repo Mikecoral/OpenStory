@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "skills",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "level",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "weaknesses",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "cat_communication",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "stone_reading",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "reality_blurring_vision",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

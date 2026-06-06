@@ -1,0 +1,58 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "description",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "emotional_aura",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "associated_characters",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "historical_period",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "narrative_significance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "symbolic_theme",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

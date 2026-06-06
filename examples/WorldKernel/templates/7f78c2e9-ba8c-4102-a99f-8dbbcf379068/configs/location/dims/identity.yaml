@@ -1,0 +1,21 @@
+dim_name: IdentityDim
+id:
+  type: str
+name:
+  type: str
+type:
+  type: str
+description:
+  type: str
+danger_level:
+  type: str
+  option: true
+function_tags:
+  type: str
+  option: true
+jurisdiction:
+  type: str
+  option: true
+significance:
+  type: str
+  option: true

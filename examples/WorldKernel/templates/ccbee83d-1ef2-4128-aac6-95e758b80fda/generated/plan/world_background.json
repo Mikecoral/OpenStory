@@ -1,0 +1,52 @@
+{
+  "world_name": "挪威的森林",
+  "world_origin_summary": "衍生自村上春树小说《挪威的森林》，以1960年代末至1970年代初的东京为背景，讲述大学生渡边彻与直子、绿子之间的情感纠葛，以及面对死亡与孤独的心理挣扎。",
+  "primary": "urban_psychological_drama",
+  "secondary": "campus_and_sanatorium",
+  "tags": [
+    "青春",
+    "爱情",
+    "孤独",
+    "死亡",
+    "心理创伤",
+    "1960年代",
+    "东京",
+    "大学校园",
+    "爵士乐",
+    "疗养院",
+    "衍生小说"
+  ],
+  "scope": "city",
+  "simulation_start": {
+    "time_point": "1969年暮春，直子二十岁生日前后",
+    "trigger_event": "直子与渡边在东京街头偶然重逢，两人开始频繁往来，揭开对木月自杀的回忆",
+    "year": "1969",
+    "narrative_context": "渡边在平静的大学日常中逐渐被直子的心理阴影与绿子的活力撕扯，青春与死亡的暗流涌动"
+  },
+  "world_constraints": [
+    {
+      "constraint_id": "realistic_physics_and_society",
+      "name": "现实物理与社会法则",
+      "description": "世界完全遵循1960年代末日本的物理与社会规律，无任何超自然或科幻元素，所有事件和角色行为都符合现实逻辑。",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "death_irreversibility",
+      "name": "死亡的不可逆性",
+      "description": "死亡是永久且彻底的终结，角色无法复活，逝者仅通过回忆和信件影响生者。这一事实对每个角色的心理轨迹产生决定性影响。",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "historical_cultural_context",
+      "name": "1960年代末日本社会文化背景",
+      "description": "全共斗学生运动余波、爵士乐与摇滚流行、传统家庭观念与现代个人主义的冲突、对心理疾病认知的匮乏，共同塑造角色的行为与选择。",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "limited_mental_health_care",
+      "name": "有限的精神健康干预",
+      "description": "当时的日本对抑郁症、创伤后应激障碍等心理疾病的诊断与治疗手段有限，疗养院主要依赖隔离、劳动与自然，缺乏有效药物与心理疗法，导致角色康复困难。",
+      "scope": "global"
+    }
+  ]
+}

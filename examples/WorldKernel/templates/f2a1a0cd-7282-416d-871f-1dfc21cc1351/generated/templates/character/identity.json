@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "role",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "symbolic_name",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "curse_bearer",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "supernatural_origin",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "shadow_self",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "mother_sister_incarnation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

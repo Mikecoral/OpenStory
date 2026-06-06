@@ -1,0 +1,40 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "category",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "symbolic_name",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "narrative_role",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "metaphor_layer",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

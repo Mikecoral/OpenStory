@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "group_id",
+      "type": "str",
+      "required": true,
+      "ref": "institution"
+    },
+    {
+      "name": "reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "cross_species_relation_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "fate_woven_connections",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "isolated_reputation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

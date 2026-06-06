@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "relations_to_others",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "neighborhood_reputation",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "customer_type_mix",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "media_portrayal_tendency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "police_attention_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "competitor_strength",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "tourist_attraction_status",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}
