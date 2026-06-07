@@ -1,4 +1,4 @@
-"""Space environment plugin: locations, paths, agent positions, routing."""
+"""Space environment plugin: locations, paths, agent positions, and access checks."""
 
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ from agentkernel_distributed.mas.environment.base.plugin_base import SpacePlugin
 
 
 class BasicSpacePlugin(SpacePlugin):
-    """Spatial model backed by Stage3-generated locations/paths/agent positions."""
+    """Spatial model backed by Stage3-generated locations, paths, and spawns."""
 
     def __init__(
         self,
@@ -65,10 +65,15 @@ class BasicSpacePlugin(SpacePlugin):
             "location_id": location.get("id"),
             "name": location.get("name"),
             "type": location.get("type"),
+            "description": location.get("description", ""),
             "activities": self._infer_activities(location),
             "restrictions": {"access": access, "state": state},
             "capacity": location.get("capacity", state.get("capacity", 0)),
             "current_state": state.get("current_state", ""),
+            "symbolic_meaning": location.get("symbolic_meaning", ""),
+            "key_plot_events": location.get("key_plot_events", ""),
+            "literary_imagery": location.get("literary_imagery", ""),
+            "raw": location.get("raw", {}),
         }
 
     async def can_agent_enter(
@@ -79,10 +84,24 @@ class BasicSpacePlugin(SpacePlugin):
         location = await self.get_location_profile(location_id_or_name)
         if not location:
             return {"allowed": False, "reason": "location not found"}
+
         access = location.get("access", {})
         state = location.get("state", {})
         joined = " ".join(str(value) for value in [*access.values(), *state.values()]).lower()
-        blocked_tokens = ["closed", "forbidden", "blocked", "sealed", "locked", "不可进入", "封闭", "禁止"]
+        blocked_tokens = [
+            "closed",
+            "forbidden",
+            "blocked",
+            "sealed",
+            "locked",
+            "not enter",
+            "no entry",
+            "不可进入",
+            "封闭",
+            "禁止",
+            "关闭",
+            "封锁",
+        ]
         if any(token in joined for token in blocked_tokens):
             return {
                 "allowed": False,
@@ -90,6 +109,7 @@ class BasicSpacePlugin(SpacePlugin):
                 "location_id": location.get("id"),
                 "location_name": location.get("name"),
             }
+
         return {
             "allowed": True,
             "location_id": location.get("id"),
@@ -154,6 +174,10 @@ class BasicSpacePlugin(SpacePlugin):
             "capacity": location.get("capacity", 0),
             "tags": location.get("tags", []),
             "activities": self._infer_activities(location),
+            "symbolic_meaning": location.get("symbolic_meaning", ""),
+            "key_plot_events": location.get("key_plot_events", ""),
+            "literary_imagery": location.get("literary_imagery", ""),
+            "raw": location.get("raw", {}),
         }
 
     def _infer_activities(self, location: dict[str, Any]) -> list[str]:
@@ -163,15 +187,17 @@ class BasicSpacePlugin(SpacePlugin):
                 location.get("name", ""),
                 location.get("type", ""),
                 location.get("description", ""),
+                location.get("symbolic_meaning", ""),
+                location.get("key_plot_events", ""),
             ]
         ).lower()
         activities = ["observe", "rest", "move_through"]
-        if any(token in text for token in ["hall", "court", "garden", "public", "meeting", "gather"]):
+        if any(token in text for token in ["hall", "court", "garden", "public", "meeting", "gather", "厅", "堂", "园"]):
             activities.append("socialize")
-        if any(token in text for token in ["study", "library", "room", "archive", "book"]):
+        if any(token in text for token in ["study", "library", "room", "archive", "book", "书", "学", "房"]):
             activities.append("study")
-        if any(token in text for token in ["shrine", "temple", "chapel", "ritual"]):
+        if any(token in text for token in ["shrine", "temple", "chapel", "ritual", "庙", "祠", "祭"]):
             activities.append("ritual")
-        if any(token in text for token in ["market", "shop", "trade"]):
+        if any(token in text for token in ["market", "shop", "trade", "市", "店"]):
             activities.append("trade")
         return activities

@@ -1,1 +1,1522 @@
-[]
+[
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:012",
+    "name": "灵霄宝殿",
+    "type": "朝会大殿",
+    "description": "灵霄宝殿坐落于九重天正中，由三十六根蟠龙金柱撑起穹顶，穹顶镶嵌万颗夜明珠，日夜通明如昼。殿内正中设九龙沉香辇，玉帝垂冕端坐，身后悬‘昊天金阙至尊’金匾。殿前丹墀上列三台五老、四值功曹、五斗星君等仙班，两侧立托塔天王、哪吒等武将。地面以琉璃金砖铺就，每块砖面浮现祥云纹路，踏之隐有仙乐。蟠桃会前夕，此处犹见众仙朝贺的余韵，但孙悟空被拒之门外后，殿内气氛已暗涌不祥。",
+    "access": {
+      "permissions": "仅限玉帝、三清、四御及受召的仙官武将进入；天兵天将非值勤不得近前",
+      "access_level": "绝密级别",
+      "access_conditions": "必须持玉帝御赐的‘朝谒玉符’或通过南天门验明正身，由灵官引路方可入殿；闯殿者立降天雷",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "肃穆待朝：晨钟已敲，仙官见毕，殿内香烟袅袅，但玉帝因蟠桃会之事眉宇隐忧，殿外天兵暗中戒备",
+      "ownership": "玉皇大帝",
+      "capacity": 2000,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 2000,
+    "tags": [
+      "朝会大殿",
+      "绝密级别",
+      "玉皇大帝"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 87,
+      "y": 82,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 94,
+      "y": 92
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:012",
+        "name": "灵霄宝殿",
+        "type": "朝会大殿",
+        "description": "灵霄宝殿坐落于九重天正中，由三十六根蟠龙金柱撑起穹顶，穹顶镶嵌万颗夜明珠，日夜通明如昼。殿内正中设九龙沉香辇，玉帝垂冕端坐，身后悬‘昊天金阙至尊’金匾。殿前丹墀上列三台五老、四值功曹、五斗星君等仙班，两侧立托塔天王、哪吒等武将。地面以琉璃金砖铺就，每块砖面浮现祥云纹路，踏之隐有仙乐。蟠桃会前夕，此处犹见众仙朝贺的余韵，但孙悟空被拒之门外后，殿内气氛已暗涌不祥。",
+        "spatial_hierarchy": "九重天·凌霄界",
+        "celestial_bureau": "天庭政务总管府",
+        "restriction_level": "最高禁令：非受召仙君不得擅入",
+        "associated_event": "玉帝朝会、孙悟空反出天庭后直闯灵霄",
+        "mythical_significance": "天庭权力核心，三界秩序象征，孙悟空大闹天宫的直接目标"
+      },
+      "access": {
+        "permissions": "仅限玉帝、三清、四御及受召的仙官武将进入；天兵天将非值勤不得近前",
+        "access_level": "绝密级别",
+        "access_conditions": "必须持玉帝御赐的‘朝谒玉符’或通过南天门验明正身，由灵官引路方可入殿；闯殿者立降天雷",
+        "required_token": "朝谒玉符（黄金质地，正面刻‘昊天’，背面刻朝会时辰）",
+        "guard_type": "王灵官率三百六十位雷部护法驻守殿门，殿内四角有隐形金甲力士",
+        "unlock_condition": "玉帝亲喻或太上老君、王母娘娘联名手谕可开临时朝会",
+        "teleport_array": "殿前丹墀嵌有八卦传送阵，可直通南天门、通明殿、斩妖台",
+        "banishment_proof": ""
+      },
+      "state": {
+        "current_state": "肃穆待朝：晨钟已敲，仙官见毕，殿内香烟袅袅，但玉帝因蟠桃会之事眉宇隐忧，殿外天兵暗中戒备",
+        "ownership": "玉皇大帝",
+        "capacity": 2000,
+        "integrity_level": "100",
+        "spiritual_energy": "极度充沛，紫气氤氲如实质",
+        "combat_state": "和平（暗流涌动）",
+        "fortification_status": "九层天罡结界全开，殿顶悬照妖镜，地面刻有五行禁制",
+        "contamination_level": ""
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:019",
+    "name": "通明殿",
+    "type": "朝会大殿",
+    "description": "通明殿位于灵霄宝殿之后，规模略小但更显精致。殿以青玉为壁，墙面上刻画三十三天星图，随天时流转。殿顶悬一盏琉璃宝灯，名‘通明灯’，光洒如月华，柔和而不刺目。玉帝常于此便殿召见心腹大臣，商议机密。昔日太白金星引孙悟空至此，玉帝亲封其为‘齐天大圣’，并敕建府邸。现时殿内陈列蟠桃宴席样酒器，正为安排席位座次。",
+    "access": {
+      "permissions": "玉帝、三清、四御及太白金星等重臣自由进出；其余仙官须有‘通明令’或朝会结束后可随侍",
+      "access_level": "机密级别",
+      "access_conditions": "从灵霄宝殿后门经九曲回廊进入，每道门有金甲神将查验‘通明令’；若遇紧急军情，可凭玉帝手诏直入",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "筹备宴席：殿内数名仙婢正在摆放琉璃盏、仙桃盘，墙上挂起蟠桃会祝寿彩绸，但秩序井然，无喧哗",
+      "ownership": "玉皇大帝",
+      "capacity": 500,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 500,
+    "tags": [
+      "朝会大殿",
+      "机密级别",
+      "玉皇大帝"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 98,
+      "y": 51,
+      "w": 8,
+      "h": 6
+    },
+    "entrance": {
+      "x": 102,
+      "y": 56
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:019",
+        "name": "通明殿",
+        "type": "朝会大殿",
+        "description": "通明殿位于灵霄宝殿之后，规模略小但更显精致。殿以青玉为壁，墙面上刻画三十三天星图，随天时流转。殿顶悬一盏琉璃宝灯，名‘通明灯’，光洒如月华，柔和而不刺目。玉帝常于此便殿召见心腹大臣，商议机密。昔日太白金星引孙悟空至此，玉帝亲封其为‘齐天大圣’，并敕建府邸。现时殿内陈列蟠桃宴席样酒器，正为安排席位座次。",
+        "spatial_hierarchy": "九重天·凌霄界后殿",
+        "celestial_bureau": "天庭政务总管府（别院）",
+        "restriction_level": "高级禁制：需三品以上仙官许可",
+        "associated_event": "玉帝临时廷议、孙悟空受封齐天大圣典礼",
+        "mythical_significance": "见证天庭对孙悟空拉拢与轻视的矛盾决策之地"
+      },
+      "access": {
+        "permissions": "玉帝、三清、四御及太白金星等重臣自由进出；其余仙官须有‘通明令’或朝会结束后可随侍",
+        "access_level": "机密级别",
+        "access_conditions": "从灵霄宝殿后门经九曲回廊进入，每道门有金甲神将查验‘通明令’；若遇紧急军情，可凭玉帝手诏直入",
+        "required_token": "通明令（白玉令牌，刻‘通明’二字，仙官凭此可入殿议事）",
+        "guard_type": "青龙、白虎、朱雀、玄武四灵神将轮流值守殿门",
+        "unlock_condition": "无特殊限制，但普通仙官不得擅自进入",
+        "teleport_array": "",
+        "banishment_proof": ""
+      },
+      "state": {
+        "current_state": "筹备宴席：殿内数名仙婢正在摆放琉璃盏、仙桃盘，墙上挂起蟠桃会祝寿彩绸，但秩序井然，无喧哗",
+        "ownership": "玉皇大帝",
+        "capacity": 500,
+        "integrity_level": "95",
+        "spiritual_energy": "充足，宝灯散发柔光净化心神",
+        "combat_state": "和平",
+        "fortification_status": "外围有隐形八卦阵，殿门设有‘仙音警戒铃’，未经许可闯入者铃声大作",
+        "contamination_level": ""
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:016",
+    "name": "披香殿",
+    "type": "宴会厅",
+    "description": "披香殿坐落于瑶池左近，以百花园环绕，殿身由粉玉砌成，雕满牡丹、莲花、梅花等时令花卉。殿内正中设长案十余列，供宴会时摆放肴馔。殿角置有铜鹤香炉，燃着龙涎香与百花香。如今殿内堆满尚未布置的蟠桃宴物品——红绸、金盘、玉盏，仙侍们穿梭忙碌，空气中弥漫蟠桃清甜与仙酒醇香。",
+    "access": {
+      "permissions": "司宴仙官、王母娘娘亲信、获得蟠桃会请柬的仙人均可进入；临时闲杂仙官不得逗留",
+      "access_level": "普通级别（宴会期间提升为宴宾级别）",
+      "access_conditions": "需出示‘蟠桃会入宴帖’或在司宴仙官引领下入殿；无帖者擅闯将被罚至天河运沙百年",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "忙碌筹备：司宴仙官正在清点蟠桃数量，仙侍们排列杯盘，殿内中央已搭起祝寿高台，尚未上灯",
+      "ownership": "王母娘娘",
+      "capacity": 300,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 300,
+    "tags": [
+      "宴会厅",
+      "普通级别（宴会期间提升为宴宾级别）",
+      "王母娘娘"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 120,
+      "y": 8,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 134,
+      "y": 13
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:016",
+        "name": "披香殿",
+        "type": "宴会厅",
+        "description": "披香殿坐落于瑶池左近，以百花园环绕，殿身由粉玉砌成，雕满牡丹、莲花、梅花等时令花卉。殿内正中设长案十余列，供宴会时摆放肴馔。殿角置有铜鹤香炉，燃着龙涎香与百花香。如今殿内堆满尚未布置的蟠桃宴物品——红绸、金盘、玉盏，仙侍们穿梭忙碌，空气中弥漫蟠桃清甜与仙酒醇香。",
+        "spatial_hierarchy": "瑶池界·宴会别苑",
+        "celestial_bureau": "王母娘娘下辖司宴府",
+        "restriction_level": "中等禁制：仅限受邀宴会仙官及司宴仙侍进入",
+        "associated_event": "蟠桃会筹备、后羿射日故事中亦曾作为赐宴场所（传说）",
+        "mythical_significance": "天庭宴庆之地，连接瑶池与蟠桃园，是盛会前奏的缩影"
+      },
+      "access": {
+        "permissions": "司宴仙官、王母娘娘亲信、获得蟠桃会请柬的仙人均可进入；临时闲杂仙官不得逗留",
+        "access_level": "普通级别（宴会期间提升为宴宾级别）",
+        "access_conditions": "需出示‘蟠桃会入宴帖’或在司宴仙官引领下入殿；无帖者擅闯将被罚至天河运沙百年",
+        "required_token": "蟠桃会入宴帖（粉金色，上书‘王母瑶池宴’字样，有仙气印记）",
+        "guard_type": "两名看门仙童，殿外有巡逻天兵",
+        "unlock_condition": "蟠桃会当日午时三刻关门，迟到者不得入",
+        "teleport_array": "",
+        "banishment_proof": ""
+      },
+      "state": {
+        "current_state": "忙碌筹备：司宴仙官正在清点蟠桃数量，仙侍们排列杯盘，殿内中央已搭起祝寿高台，尚未上灯",
+        "ownership": "王母娘娘",
+        "capacity": 300,
+        "integrity_level": "85",
+        "spiritual_energy": "中等偏上，因大量蟠桃聚集而灵气充沛",
+        "combat_state": "和平",
+        "fortification_status": "殿基设有防虫防尘结界，但无战斗防御措施",
+        "contamination_level": ""
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:013",
+    "name": "凌虚殿",
+    "type": "候朝厅",
+    "description": "凌虚殿位于灵霄宝殿西南角，飞檐翘角，四壁通透，以云气为墙、霞光为帘。殿内设有数十个蒲团与矮几，供等待朝见的仙官休憩、议谈。殿中有一眼玉泉，泉水清澈，渴饮可补仙力。殿角悬一铜钟，每当灵霄宝殿朝钟响起，此钟亦鸣三声，催众仙入班。如今殿内有十几位散仙正低声议论蟠桃会名额之事。",
+    "access": {
+      "permissions": "所有仙官均可在朝会前或散朝后进入；无职散仙亦可在登记后入内",
+      "access_level": "公开级别",
+      "access_conditions": "从天庭南天门进入内廷后，经左转第三座虹桥即达；无需额外凭证，但需身着朝服或仙官印绶",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "闲谈话旧：仙官三五成群，议论纷纷，有的为蟠桃会请柬而叹气，有的在传阅太白金星新写的招安诏书副本",
+      "ownership": "天庭公用",
+      "capacity": 80,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 80,
+    "tags": [
+      "候朝厅",
+      "公开级别",
+      "天庭公用"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 120,
+      "y": 77,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 127,
+      "y": 87
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:013",
+        "name": "凌虚殿",
+        "type": "候朝厅",
+        "description": "凌虚殿位于灵霄宝殿西南角，飞檐翘角，四壁通透，以云气为墙、霞光为帘。殿内设有数十个蒲团与矮几，供等待朝见的仙官休憩、议谈。殿中有一眼玉泉，泉水清澈，渴饮可补仙力。殿角悬一铜钟，每当灵霄宝殿朝钟响起，此钟亦鸣三声，催众仙入班。如今殿内有十几位散仙正低声议论蟠桃会名额之事。",
+        "spatial_hierarchy": "九重天·凌霄界配殿",
+        "celestial_bureau": "天庭礼仪司下属候朝厅",
+        "restriction_level": "低等禁制：进入天庭的仙官皆可自由出入",
+        "associated_event": "每日候朝、仙官交流闲谈之地",
+        "mythical_significance": "天庭官僚体系缩影，体现等级森严中短暂的松弛空间"
+      },
+      "access": {
+        "permissions": "所有仙官均可在朝会前或散朝后进入；无职散仙亦可在登记后入内",
+        "access_level": "公开级别",
+        "access_conditions": "从天庭南天门进入内廷后，经左转第三座虹桥即达；无需额外凭证，但需身着朝服或仙官印绶",
+        "required_token": "无",
+        "guard_type": "无固定守卫，偶尔有天兵路过顺便查验",
+        "unlock_condition": "全天开放，但因位置紧邻凌霄殿，高声喧哗者将被灵官警告",
+        "teleport_array": "",
+        "banishment_proof": ""
+      },
+      "state": {
+        "current_state": "闲谈话旧：仙官三五成群，议论纷纷，有的为蟠桃会请柬而叹气，有的在传阅太白金星新写的招安诏书副本",
+        "ownership": "天庭公用",
+        "capacity": 80,
+        "integrity_level": "75",
+        "spiritual_energy": "常态，玉泉水可补充微薄仙气",
+        "combat_state": "和平",
+        "fortification_status": "无特殊防御",
+        "contamination_level": ""
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:015",
+    "name": "蟠桃园",
+    "type": "园林果园",
+    "description": "位于瑶池之侧、天宫东南角的广袤果园，占地千亩，以三千年、六千年、九千年得道的蟠桃树著称。园内分前园、中园、后园三区，前园桃树三千年一熟，花果稀疏；中园六千年一熟，仙气缭绕；后园九千年一熟，紫雾升腾，桃实红艳如血。每棵树下皆有灵泉滋润，土地神守护。此园乃王母娘娘的私产，所产蟠桃专供蟠桃会宴请众仙，吃一颗可与天地同寿。",
+    "access": {
+      "permissions": "仅限王母娘娘、蟠桃会受邀神仙及园内土地神进入；孙悟空因齐天大圣身份名义上有权巡视",
+      "access_level": "限制进入",
+      "access_conditions": "需有王母娘娘令牌或蟠桃会请柬；日常由土地神看守，对持有齐天大圣令牌的孙悟空开放",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "蟠桃成熟在即，果实饱满，园内仙气浓郁；孙悟空已潜入前园，正在偷食蟠桃",
+      "ownership": "王母娘娘",
+      "capacity": 10000,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 10000,
+    "tags": [
+      "园林果园",
+      "限制进入",
+      "王母娘娘"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 72,
+      "y": 8,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 86,
+      "y": 13
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:015",
+        "name": "蟠桃园",
+        "type": "园林果园",
+        "description": "位于瑶池之侧、天宫东南角的广袤果园，占地千亩，以三千年、六千年、九千年得道的蟠桃树著称。园内分前园、中园、后园三区，前园桃树三千年一熟，花果稀疏；中园六千年一熟，仙气缭绕；后园九千年一熟，紫雾升腾，桃实红艳如血。每棵树下皆有灵泉滋润，土地神守护。此园乃王母娘娘的私产，所产蟠桃专供蟠桃会宴请众仙，吃一颗可与天地同寿。",
+        "spatial_hierarchy": "天宫瑶池片区",
+        "celestial_bureau": "王母娘娘直属",
+        "restriction_level": "高（仅王母娘娘、蟠桃会受邀神仙及负责看守的齐天大圣可入）",
+        "associated_event": "孙悟空偷蟠桃（蟠桃会前夕）",
+        "mythical_significance": "蟠桃是天庭长生不老的象征，偷桃事件直接引发后续大闹天宫"
+      },
+      "access": {
+        "permissions": "仅限王母娘娘、蟠桃会受邀神仙及园内土地神进入；孙悟空因齐天大圣身份名义上有权巡视",
+        "access_level": "限制进入",
+        "access_conditions": "需有王母娘娘令牌或蟠桃会请柬；日常由土地神看守，对持有齐天大圣令牌的孙悟空开放",
+        "required_token": "",
+        "guard_type": "土地神（多位，分守各园门）",
+        "unlock_condition": "无特殊，土地神验证身份后放行",
+        "teleport_array": "",
+        "banishment_proof": ""
+      },
+      "state": {
+        "current_state": "蟠桃成熟在即，果实饱满，园内仙气浓郁；孙悟空已潜入前园，正在偷食蟠桃",
+        "ownership": "王母娘娘",
+        "capacity": 10000,
+        "integrity_level": "100",
+        "spiritual_energy": "极其充沛（九千年蟠桃蕴含的仙力）",
+        "combat_state": "平静（无打斗）",
+        "fortification_status": "无加强防御，仅有常规仙术结界",
+        "contamination_level": "无"
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:008",
+    "name": "御花园",
+    "type": "园林花园",
+    "description": "天宫后庭的精致园林，乃玉帝与众仙散步休憩之处。园中花木皆是三界奇珍异宝，四季如春，仙雾缭绕。有彩虹桥、琉璃亭、玉兔池等景致。众多女仙常在园中嬉戏赏花，是静修与闲谈的场所。",
+    "access": {
+      "permissions": "玉帝、王母、高级神仙及受邀女仙可自由出入；低位仙官需提前通报",
+      "access_level": "限制进入（非高级别不可随意）",
+      "access_conditions": "需有通行的身份玉牌或由仙女引路",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "平和，花草繁茂，仙女们的笑声隐约可闻",
+      "ownership": "玉皇大帝",
+      "capacity": 200,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 200,
+    "tags": [
+      "园林花园",
+      "限制进入（非高级别不可随意）",
+      "玉皇大帝"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 71,
+      "y": 43,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 78,
+      "y": 53
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:008",
+        "name": "御花园",
+        "type": "园林花园",
+        "description": "天宫后庭的精致园林，乃玉帝与众仙散步休憩之处。园中花木皆是三界奇珍异宝，四季如春，仙雾缭绕。有彩虹桥、琉璃亭、玉兔池等景致。众多女仙常在园中嬉戏赏花，是静修与闲谈的场所。",
+        "spatial_hierarchy": "天宫核心区",
+        "celestial_bureau": "玉帝起居直属，由内务府管理",
+        "restriction_level": "中（低级神仙及天兵不得入内）",
+        "associated_event": "无特定事件，但仙女们常在此议论蟠桃会事宜",
+        "mythical_significance": "展示天庭的富丽与闲适氛围"
+      },
+      "access": {
+        "permissions": "玉帝、王母、高级神仙及受邀女仙可自由出入；低位仙官需提前通报",
+        "access_level": "限制进入（非高级别不可随意）",
+        "access_conditions": "需有通行的身份玉牌或由仙女引路",
+        "required_token": "",
+        "guard_type": "两名天兵守卫正门",
+        "unlock_condition": "无需解锁",
+        "teleport_array": "",
+        "banishment_proof": ""
+      },
+      "state": {
+        "current_state": "平和，花草繁茂，仙女们的笑声隐约可闻",
+        "ownership": "玉皇大帝",
+        "capacity": 200,
+        "integrity_level": "100",
+        "spiritual_energy": "中等（天界灵气正常）",
+        "combat_state": "无害",
+        "fortification_status": "无",
+        "contamination_level": "无"
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:009",
+    "name": "瑶池花园",
+    "type": "宴会花园",
+    "description": "紧邻瑶池湖畔的宽阔庭园，是蟠桃会正式设宴之所。园中铺以白玉地砖，两侧摆放金龙玉栏，中央设数百张琉璃长桌，上铺云锦。远处瑶池波光粼粼，莲花盛开。园中栽种无数仙果奇树，尤以蟠桃树围绕四周，供宴前采食。",
+    "access": {
+      "permissions": "蟠桃会受邀列仙，以及王母娘娘侍者；孙悟空因未受邀而不得入",
+      "access_level": "严格限制（仅蟠桃会期间开放）",
+      "access_conditions": "持蟠桃会请柬入场，由纠察灵官核验身份",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "蟠桃会筹备中，宴席已摆好，仙酒仙果陈列有序；孙悟空尚未到来",
+      "ownership": "王母娘娘",
+      "capacity": 1000,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 1000,
+    "tags": [
+      "宴会花园",
+      "严格限制（仅蟠桃会期间开放）",
+      "王母娘娘"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 95,
+      "y": 65,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 109,
+      "y": 70
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:009",
+        "name": "瑶池花园",
+        "type": "宴会花园",
+        "description": "紧邻瑶池湖畔的宽阔庭园，是蟠桃会正式设宴之所。园中铺以白玉地砖，两侧摆放金龙玉栏，中央设数百张琉璃长桌，上铺云锦。远处瑶池波光粼粼，莲花盛开。园中栽种无数仙果奇树，尤以蟠桃树围绕四周，供宴前采食。",
+        "spatial_hierarchy": "瑶池宫殿群",
+        "celestial_bureau": "王母娘娘府邸",
+        "restriction_level": "高（蟠桃会当日仅限受邀众仙入场）",
+        "associated_event": "蟠桃会举行，孙悟空未受邀请而愤怒大闹",
+        "mythical_significance": "蟠桃会的核心举办地，象征天庭的盛宴与权力排位"
+      },
+      "access": {
+        "permissions": "蟠桃会受邀列仙，以及王母娘娘侍者；孙悟空因未受邀而不得入",
+        "access_level": "严格限制（仅蟠桃会期间开放）",
+        "access_conditions": "持蟠桃会请柬入场，由纠察灵官核验身份",
+        "required_token": "",
+        "guard_type": "纠察灵官（多位）",
+        "unlock_condition": "无",
+        "teleport_array": "",
+        "banishment_proof": ""
+      },
+      "state": {
+        "current_state": "蟠桃会筹备中，宴席已摆好，仙酒仙果陈列有序；孙悟空尚未到来",
+        "ownership": "王母娘娘",
+        "capacity": 1000,
+        "integrity_level": "100",
+        "spiritual_energy": "高（瑶池灵气汇聚）",
+        "combat_state": "未触发",
+        "fortification_status": "宴会区域设有防御仙阵，但未启动",
+        "contamination_level": "无"
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:010",
+    "name": "兜率后院",
+    "type": "药草园",
+    "description": "位于三十三天外兜率宫后方的小型园圃，种植各类炼丹原料仙草与灵果树。如九叶灵芝、万年人参果、紫金丹砂草等。园内设有八卦炉烟囱接引的火脉，维持灵植生长。地面以五色土铺就，仙气缭绕。",
+    "access": {
+      "permissions": "仅太上老君本人及其嫡传弟子（如金童子、银童子）可进入",
+      "access_level": "严格限制",
+      "access_conditions": "必须持有太上老君手谕或由弟子带领",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "灵植生长正常，药香扑鼻；近日无人打扰",
+      "ownership": "太上老君",
+      "capacity": 50,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 50,
+    "tags": [
+      "药草园",
+      "严格限制",
+      "太上老君"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 73,
+      "y": 25,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 80,
+      "y": 35
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:010",
+        "name": "兜率后院",
+        "type": "药草园",
+        "description": "位于三十三天外兜率宫后方的小型园圃，种植各类炼丹原料仙草与灵果树。如九叶灵芝、万年人参果、紫金丹砂草等。园内设有八卦炉烟囱接引的火脉，维持灵植生长。地面以五色土铺就，仙气缭绕。",
+        "spatial_hierarchy": "兜率宫附属",
+        "celestial_bureau": "太上老君炼丹司",
+        "restriction_level": "极高（属老君私产，非弟子不可入）",
+        "associated_event": "无重大事件，但孙悟空在兜率宫偷丹时可能经过此处",
+        "mythical_significance": "提供炼丹原料，体现老君掌控天地灵药的地位"
+      },
+      "access": {
+        "permissions": "仅太上老君本人及其嫡传弟子（如金童子、银童子）可进入",
+        "access_level": "严格限制",
+        "access_conditions": "必须持有太上老君手谕或由弟子带领",
+        "required_token": "",
+        "guard_type": "无固定守卫，但有禁制仙阵",
+        "unlock_condition": "需知破阵口诀或由老君关闭禁制",
+        "teleport_array": "",
+        "banishment_proof": ""
+      },
+      "state": {
+        "current_state": "灵植生长正常，药香扑鼻；近日无人打扰",
+        "ownership": "太上老君",
+        "capacity": 50,
+        "integrity_level": "100",
+        "spiritual_energy": "高（融合火脉与仙气）",
+        "combat_state": "平静",
+        "fortification_status": "设有八卦迷踪阵，擅入者迷路或被火炼",
+        "contamination_level": "无"
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:004",
+    "name": "兜率宫",
+    "type": "炼丹工坊",
+    "description": "太上老君炼丹修道之所，位于三十三天离恨天之上。整座宫殿由紫金神铁铸就，殿顶覆盖着琉璃碧瓦，檐角悬挂着九色宝铃，宫前瑞霭千条，紫雾盘旋。殿内中央矗立着高逾三丈的八卦炉，炉身镌刻乾坤坎离八卦纹路，炉火昼夜不息，熊熊青焰映照四壁。环绕八卦炉的是数以千计的丹架，层层叠叠，上陈紫金葫芦、白玉净瓶、翡翠匣等诸般法器，内盛老君数千年炼制之仙丹。殿后另有炼丹房、丹房、药圃等附属建筑，仙气氤氲，灵草芬芳。",
+    "access": {
+      "permissions": "仅太上老君、其座下弟子及炼丹童子可入，其余神仙非奉玉帝谕旨不得擅闯",
+      "access_level": "禁地",
+      "access_conditions": "需持有太上老君亲赐的紫金符箓或玉帝特许令牌，否则会被护法仙官拦截",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "孙悟空已潜入并吃光了五葫芦九转金丹，八卦炉尚未被踢倒，但丹室狼藉，丹药散落一地，仙气紊乱",
+      "ownership": "太上老君",
+      "capacity": 200,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 200,
+    "tags": [
+      "炼丹工坊",
+      "禁地",
+      "太上老君"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 95,
+      "y": 33,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 102,
+      "y": 43
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:004",
+        "name": "兜率宫",
+        "type": "炼丹工坊",
+        "description": "太上老君炼丹修道之所，位于三十三天离恨天之上。整座宫殿由紫金神铁铸就，殿顶覆盖着琉璃碧瓦，檐角悬挂着九色宝铃，宫前瑞霭千条，紫雾盘旋。殿内中央矗立着高逾三丈的八卦炉，炉身镌刻乾坤坎离八卦纹路，炉火昼夜不息，熊熊青焰映照四壁。环绕八卦炉的是数以千计的丹架，层层叠叠，上陈紫金葫芦、白玉净瓶、翡翠匣等诸般法器，内盛老君数千年炼制之仙丹。殿后另有炼丹房、丹房、药圃等附属建筑，仙气氤氲，灵草芬芳。",
+        "spatial_hierarchy": "三十三天离恨天",
+        "celestial_bureau": "太清仙境",
+        "restriction_level": "极高",
+        "associated_event": "孙悟空偷丹、八卦炉炸毁",
+        "mythical_significance": "天庭第一炼丹圣地，老君丹道根基所在，孙悟空在此吞食五壶金丹并获金刚不坏之身，后踢倒八卦炉引发天火"
+      },
+      "access": {
+        "permissions": "仅太上老君、其座下弟子及炼丹童子可入，其余神仙非奉玉帝谕旨不得擅闯",
+        "access_level": "禁地",
+        "access_conditions": "需持有太上老君亲赐的紫金符箓或玉帝特许令牌，否则会被护法仙官拦截",
+        "required_token": "紫金符箓或玉帝令牌",
+        "guard_type": "四值功曹轮班值守，另有紫云仙鹤鸣警",
+        "unlock_condition": "由太上老君亲自施法开启禁制",
+        "teleport_array": "",
+        "banishment_proof": ""
+      },
+      "state": {
+        "current_state": "孙悟空已潜入并吃光了五葫芦九转金丹，八卦炉尚未被踢倒，但丹室狼藉，丹药散落一地，仙气紊乱",
+        "ownership": "太上老君",
+        "capacity": 200,
+        "integrity_level": "完好（外观）但内部炼丹秩序被彻底破坏",
+        "spiritual_energy": "极浓厚，但因金丹大量流失而略有失衡",
+        "combat_state": "无人值守，暂时平静",
+        "fortification_status": "外部禁制完好，内部防御被孙悟空破解",
+        "contamination_level": "纯净（无邪气）"
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:003",
+    "name": "金丹房",
+    "type": "炼丹工坊",
+    "description": "位于兜率宫东侧的丹房，专门炼制九转金丹的核心炉房。房屋三进三出，通体以五金之精砌成，门窗紧闭，唯有炉火的光从罅隙中透出。室内正中置一只紫金八卦炉，比外殿八卦炉小一号，但炉火更纯，专炼最高品级的九转金丹。四壁悬挂着老君亲绘的炼丹符箓，地面铺有可以聚拢灵气的暖玉。平日只有老君一人可进入此房，连丹童也不得入内。",
+    "access": {
+      "permissions": "仅太上老君本人可开启丹房大门",
+      "access_level": "绝密",
+      "access_conditions": "需用老君的血脉或独门口诀解锁门上九宫八卦阵；普通天兵也无法靠近",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "紫金八卦炉仍在运转，但炉中仅余未成形的半成品丹药。盛放九转金丹的玉瓶全部被孙悟空打开并倒空，丹房内残留淡淡的桃香和猴骚味，地面有几颗滚落的丹丸残渣",
+      "ownership": "太上老君",
+      "capacity": 10,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 10,
+    "tags": [
+      "炼丹工坊",
+      "绝密",
+      "太上老君"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 120,
+      "y": 60,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 134,
+      "y": 65
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:003",
+        "name": "金丹房",
+        "type": "炼丹工坊",
+        "description": "位于兜率宫东侧的丹房，专门炼制九转金丹的核心炉房。房屋三进三出，通体以五金之精砌成，门窗紧闭，唯有炉火的光从罅隙中透出。室内正中置一只紫金八卦炉，比外殿八卦炉小一号，但炉火更纯，专炼最高品级的九转金丹。四壁悬挂着老君亲绘的炼丹符箓，地面铺有可以聚拢灵气的暖玉。平日只有老君一人可进入此房，连丹童也不得入内。",
+        "spatial_hierarchy": "兜率宫东侧",
+        "celestial_bureau": "太清仙境",
+        "restriction_level": "极高",
+        "associated_event": "九转金丹被孙悟空吞食",
+        "mythical_significance": "九转金丹的唯一炼制场所，服一粒可立地大罗金仙，孙悟空在此吃光了所有成品金丹"
+      },
+      "access": {
+        "permissions": "仅太上老君本人可开启丹房大门",
+        "access_level": "绝密",
+        "access_conditions": "需用老君的血脉或独门口诀解锁门上九宫八卦阵；普通天兵也无法靠近",
+        "required_token": "老君自身精血或独门咒语",
+        "guard_type": "无天兵看守，但有禁制阵法与太上老君的分身投影坐镇",
+        "unlock_condition": "",
+        "teleport_array": "",
+        "banishment_proof": ""
+      },
+      "state": {
+        "current_state": "紫金八卦炉仍在运转，但炉中仅余未成形的半成品丹药。盛放九转金丹的玉瓶全部被孙悟空打开并倒空，丹房内残留淡淡的桃香和猴骚味，地面有几颗滚落的丹丸残渣",
+        "ownership": "太上老君",
+        "capacity": 10,
+        "integrity_level": "完好，但丹药被窃",
+        "spiritual_energy": "极浓郁，金丹灵气仍在空气中弥漫",
+        "combat_state": "安静，无打斗痕迹",
+        "fortification_status": "禁制完好，未被破坏（孙悟空以变化术进入）",
+        "contamination_level": "纯净"
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:017",
+    "name": "南天门",
+    "type": "门户关卡",
+    "description": "天庭正南之门，也是天界最宏伟的入口。整座门楼高耸入云，由千年紫玉雕砌而成，门楣上嵌有‘南天门’三个鎏金大字，笔力遒劲，金光万丈。门两侧各盘踞着一只白玉麒麟，双目炯炯，镇守四方。门内为彤阶碧瓦的迎仙台，门外则是一望无际的云海，只有通过此门才能进入天界核心区域。平日四大天王轮流值守，天兵甲士密布，任何未经通报的仙人或妖魔皆不得靠近。门前设有照妖镜与天罗地网，可识破一切变化与隐身之术。",
+    "access": {
+      "permissions": "仅天庭正神、奉旨召见的仙人、通过报备的散仙可通行；妖魔、凡人或无籍之仙一律禁止",
+      "access_level": "严格控制",
+      "access_conditions": "需展示身份玉牒或天庭文书，四大天王亲自验明正身；若有异常，照妖镜即刻显形",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "蟠桃会前夕，南天门加强戒备，四大天王全勤在场，天兵甲胄鲜明，照妖镜青光大盛，盘查比往日更严。孙悟空尚未到来，但空气中已弥漫着紧张气氛",
+      "ownership": "天庭",
+      "capacity": 500,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 500,
+    "tags": [
+      "门户关卡",
+      "严格控制",
+      "天庭"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 12,
+      "y": 38,
+      "w": 8,
+      "h": 6
+    },
+    "entrance": {
+      "x": 16,
+      "y": 43
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:017",
+        "name": "南天门",
+        "type": "门户关卡",
+        "description": "天庭正南之门，也是天界最宏伟的入口。整座门楼高耸入云，由千年紫玉雕砌而成，门楣上嵌有‘南天门’三个鎏金大字，笔力遒劲，金光万丈。门两侧各盘踞着一只白玉麒麟，双目炯炯，镇守四方。门内为彤阶碧瓦的迎仙台，门外则是一望无际的云海，只有通过此门才能进入天界核心区域。平日四大天王轮流值守，天兵甲士密布，任何未经通报的仙人或妖魔皆不得靠近。门前设有照妖镜与天罗地网，可识破一切变化与隐身之术。",
+        "spatial_hierarchy": "天界正南入口",
+        "celestial_bureau": "天庭门户司",
+        "restriction_level": "极高",
+        "associated_event": "孙悟空首次闯天庭、与天兵激战于南天门前",
+        "mythical_significance": "天庭第一关隘，象征天界威严与权力边界；历来只有法力高强者或奉旨入朝的仙人方可通行"
+      },
+      "access": {
+        "permissions": "仅天庭正神、奉旨召见的仙人、通过报备的散仙可通行；妖魔、凡人或无籍之仙一律禁止",
+        "access_level": "严格控制",
+        "access_conditions": "需展示身份玉牒或天庭文书，四大天王亲自验明正身；若有异常，照妖镜即刻显形",
+        "required_token": "",
+        "guard_type": "四大天王（增长天王、多闻天王、持国天王、广目天王）轮流值守，配天兵天将一百零八名",
+        "unlock_condition": "",
+        "teleport_array": "迎仙台设有传送阵，可直通灵霄宝殿前庭",
+        "banishment_proof": ""
+      },
+      "state": {
+        "current_state": "蟠桃会前夕，南天门加强戒备，四大天王全勤在场，天兵甲胄鲜明，照妖镜青光大盛，盘查比往日更严。孙悟空尚未到来，但空气中已弥漫着紧张气氛",
+        "ownership": "天庭",
+        "capacity": 500,
+        "integrity_level": "完好，金光灿烂",
+        "spiritual_energy": "浓厚（天庭灵气汇聚于此）",
+        "combat_state": "警戒中，天兵弓弩上弦，随时待命",
+        "fortification_status": "防御全开，天罗地网罩门已启动",
+        "contamination_level": ""
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:014",
+    "name": "北天门",
+    "type": "门户关卡",
+    "description": "天庭后门，位于北天极玄冥之域，建筑风格比南天门更为朴素但厚重。门体由万年玄冰与黑曜石混合砌成，高约十丈，寒气逼人。门额上用冰晶篆刻‘北天门’三字，泛着冷冽的蓝光。门前常年积雪，云雾中隐约可见真武大帝的皂旗幡影。此处非天庭主要通道，却是镇守北疆妖魔入侵的要塞，由真武大帝亲自坐镇，麾下龟蛇二将及数百玄甲天兵驻守。",
+    "access": {
+      "permissions": "仅真武大帝部将、奉玉帝特旨往北天巡逻的仙官可出入；其他神仙若从北天门通过需有真武大帝手令",
+      "access_level": "严格限制",
+      "access_conditions": "需出示真武大帝颁发的玄铁符节或玉帝金牌；普通散仙无法接近",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "蟠桃会期间北天门处于常备状态，真武大帝端坐门内殿中，龟蛇二将分立两侧，玄甲天兵持戈肃立。门户紧闭，未接到任何调动指令",
+      "ownership": "真武大帝（代天庭镇守）",
+      "capacity": 150,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 150,
+    "tags": [
+      "门户关卡",
+      "严格限制",
+      "真武大帝（代天庭镇守）"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 35,
+      "y": 8,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 49,
+      "y": 13
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:014",
+        "name": "北天门",
+        "type": "门户关卡",
+        "description": "天庭后门，位于北天极玄冥之域，建筑风格比南天门更为朴素但厚重。门体由万年玄冰与黑曜石混合砌成，高约十丈，寒气逼人。门额上用冰晶篆刻‘北天门’三字，泛着冷冽的蓝光。门前常年积雪，云雾中隐约可见真武大帝的皂旗幡影。此处非天庭主要通道，却是镇守北疆妖魔入侵的要塞，由真武大帝亲自坐镇，麾下龟蛇二将及数百玄甲天兵驻守。",
+        "spatial_hierarchy": "天界北面入口",
+        "celestial_bureau": "北天子垣",
+        "restriction_level": "高",
+        "associated_event": "孙悟空大闹天宫期间保持紧闭",
+        "mythical_significance": "真武大帝镇守之地，防御北俱芦洲邪魔，天庭最后一道防线"
+      },
+      "access": {
+        "permissions": "仅真武大帝部将、奉玉帝特旨往北天巡逻的仙官可出入；其他神仙若从北天门通过需有真武大帝手令",
+        "access_level": "严格限制",
+        "access_conditions": "需出示真武大帝颁发的玄铁符节或玉帝金牌；普通散仙无法接近",
+        "required_token": "",
+        "guard_type": "真武大帝、龟蛇二将、玄甲天兵五十名",
+        "unlock_condition": "",
+        "teleport_array": "",
+        "banishment_proof": ""
+      },
+      "state": {
+        "current_state": "蟠桃会期间北天门处于常备状态，真武大帝端坐门内殿中，龟蛇二将分立两侧，玄甲天兵持戈肃立。门户紧闭，未接到任何调动指令",
+        "ownership": "真武大帝（代天庭镇守）",
+        "capacity": 150,
+        "integrity_level": "完好，玄冰坚固",
+        "spiritual_energy": "中等偏寒，带有北方肃杀之气",
+        "combat_state": "静默守备",
+        "fortification_status": "防御稳固，有真武大帝的神力加持",
+        "contamination_level": ""
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:005",
+    "name": "东天门",
+    "type": "门户关卡",
+    "description": "天庭四天门之一，位于天界东侧，由东海龙王及海中水族、龙宫属神主要出入。门柱为青玉所铸，雕有翻浪蛟龙，门楣悬一颗避水明珠，昼夜流转蓝光。守门天将持戟而立，查验往来仙籍腰牌。因水族地位较低，此门远不如南天门威严，但也非寻常散仙可随意通过。",
+    "access": {
+      "permissions": "水族神仙及持有东海龙王印信的使者可通行；天庭低级天兵及散仙需临时报备",
+      "access_level": "受限（需身份验证）",
+      "access_conditions": "出示仙籍腰牌或龙宫令牌；无特殊情况不得携带凡间活物",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "日常值守，门禁如常",
+      "ownership": "天庭管辖，由东天门值守天将负责",
+      "capacity": 30,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 30,
+    "tags": [
+      "门户关卡",
+      "受限（需身份验证）",
+      "天庭管辖，由东天门值守天将负责"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 51,
+      "y": 25,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 65,
+      "y": 30
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:005",
+        "name": "东天门",
+        "type": "门户关卡",
+        "description": "天庭四天门之一，位于天界东侧，由东海龙王及海中水族、龙宫属神主要出入。门柱为青玉所铸，雕有翻浪蛟龙，门楣悬一颗避水明珠，昼夜流转蓝光。守门天将持戟而立，查验往来仙籍腰牌。因水族地位较低，此门远不如南天门威严，但也非寻常散仙可随意通过。",
+        "spatial_hierarchy": "天庭外围门户",
+        "celestial_bureau": "天门值守司",
+        "restriction_level": "中等",
+        "associated_event": "无重大事件",
+        "mythical_significance": "四海龙族与天庭往来的正式通道"
+      },
+      "access": {
+        "permissions": "水族神仙及持有东海龙王印信的使者可通行；天庭低级天兵及散仙需临时报备",
+        "access_level": "受限（需身份验证）",
+        "access_conditions": "出示仙籍腰牌或龙宫令牌；无特殊情况不得携带凡间活物",
+        "required_token": "",
+        "guard_type": "",
+        "unlock_condition": "",
+        "teleport_array": "",
+        "banishment_proof": ""
+      },
+      "state": {
+        "current_state": "日常值守，门禁如常",
+        "ownership": "天庭管辖，由东天门值守天将负责",
+        "capacity": 30,
+        "integrity_level": "完好（青玉无裂，明珠明亮）",
+        "spiritual_energy": "中等（水汽弥漫，灵气较东南天门为弱）",
+        "combat_state": "",
+        "fortification_status": "",
+        "contamination_level": ""
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:007",
+    "name": "花果山",
+    "type": "领地区域",
+    "description": "傲来国海中的十洲之祖脉，三岛之来龙，乃天地清浊初分时便有的仙山。山上奇花异草、灵禽走兽遍布，更有瑶草灵芝、千年蟠桃（非王母园中之物）。山势雄奇，瀑布飞悬，最深处即水帘洞。此山乃孙悟空出生、称王之地，群猴聚义，旌旗招展，自号“花果山福地，水帘洞洞天”。眼下正值蟠桃会前夕，山上群猴正摘果酿酒，欢庆大王受封齐天大圣之喜，却不知天庭冷落即将激起大祸。",
+    "access": {
+      "permissions": "猴族自由出入；孙悟空许可的其他妖怪可进；凡人及天庭不速之客需突破外围猴兵巡逻",
+      "access_level": "开放（仅对花果山猴族及盟友完全开放）",
+      "access_conditions": "无特殊令牌限制，但自孙悟空赴天庭后，山上四大健将加强警戒，外来者需报身份",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "欢腾中潜伏不安，群猴庆祝大王荣升，但孙悟空未归且未获蟠桃会邀请的消息已使部分老猴忧心",
+      "ownership": "孙悟空（齐天大圣）",
+      "capacity": 10000,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 10000,
+    "tags": [
+      "领地区域",
+      "开放（仅对花果山猴族及盟友完全开放）",
+      "孙悟空（齐天大圣）"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 26,
+      "y": 67,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 33,
+      "y": 77
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:007",
+        "name": "花果山",
+        "type": "领地区域",
+        "description": "傲来国海中的十洲之祖脉，三岛之来龙，乃天地清浊初分时便有的仙山。山上奇花异草、灵禽走兽遍布，更有瑶草灵芝、千年蟠桃（非王母园中之物）。山势雄奇，瀑布飞悬，最深处即水帘洞。此山乃孙悟空出生、称王之地，群猴聚义，旌旗招展，自号“花果山福地，水帘洞洞天”。眼下正值蟠桃会前夕，山上群猴正摘果酿酒，欢庆大王受封齐天大圣之喜，却不知天庭冷落即将激起大祸。",
+        "spatial_hierarchy": "凡间洞天福地，属傲来国海界",
+        "celestial_bureau": "不属天庭管辖，为孙悟空领地",
+        "restriction_level": "低等（凡人可至外层，但无法深入仙气缭绕处）",
+        "associated_event": "孙悟空出世、称王、受封弼马温、齐天大圣，即将成为大闹天宫的起点",
+        "mythical_significance": "孙悟空根基所在，妖界对抗天庭的象征性根据地"
+      },
+      "access": {
+        "permissions": "猴族自由出入；孙悟空许可的其他妖怪可进；凡人及天庭不速之客需突破外围猴兵巡逻",
+        "access_level": "开放（仅对花果山猴族及盟友完全开放）",
+        "access_conditions": "无特殊令牌限制，但自孙悟空赴天庭后，山上四大健将加强警戒，外来者需报身份",
+        "required_token": "",
+        "guard_type": "",
+        "unlock_condition": "",
+        "teleport_array": "",
+        "banishment_proof": ""
+      },
+      "state": {
+        "current_state": "欢腾中潜伏不安，群猴庆祝大王荣升，但孙悟空未归且未获蟠桃会邀请的消息已使部分老猴忧心",
+        "ownership": "孙悟空（齐天大圣）",
+        "capacity": 10000,
+        "integrity_level": "完好（山体稳固，灵脉未损）",
+        "spiritual_energy": "极充沛（仙气氤氲，草木繁茂，为十洲之祖脉所在）",
+        "combat_state": "和平，但有四大健将率领猴兵操练，戒备渐增",
+        "fortification_status": "",
+        "contamination_level": "纯净（无妖邪污染）"
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:020",
+    "name": "水帘洞",
+    "type": "领地区域",
+    "description": "花果山腹心之洞府，入口为一道百丈飞瀑，水帘如银练倒挂，声震山谷。瀑布之后乃一座天然石室，宽敞可容千人，中央石椅为孙悟空王座，上刻麒麟、凤凰等祥瑞。四壁嵌夜明珠，照得洞内如白昼；石盆、石碗、石凳等用具俱全。洞中有一铁板桥，桥下流水通东海龙宫。此洞本为原主人（一说为上古仙人所居）遗留，自孙悟空发现后便成为群猴议事、聚会的核心场所。现时洞内挂满“齐天大圣”旗幡，石桌上堆满仙桃、美酒，猴兵猴将进进出出，热闹非凡。",
+    "access": {
+      "permissions": "仅限花果山猴族及孙悟空直属亲信；外人须由孙悟空亲自带入，或持有他的金毫毛信物",
+      "access_level": "封闭（核心领地）",
+      "access_conditions": "需通过飞瀑水帘（普通猴无法做到，但猴兵可攀绳入内）；有铁板桥暗路可通外海，但极少有人知晓",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "庆祝准备中，群猴正布置宴席，洞内灯火通明，笑声不断",
+      "ownership": "孙悟空（齐天大圣）",
+      "capacity": 800,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 800,
+    "tags": [
+      "领地区域",
+      "封闭（核心领地）",
+      "孙悟空（齐天大圣）"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 53,
+      "y": 62,
+      "w": 22,
+      "h": 16
+    },
+    "entrance": {
+      "x": 64,
+      "y": 77
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:020",
+        "name": "水帘洞",
+        "type": "领地区域",
+        "description": "花果山腹心之洞府，入口为一道百丈飞瀑，水帘如银练倒挂，声震山谷。瀑布之后乃一座天然石室，宽敞可容千人，中央石椅为孙悟空王座，上刻麒麟、凤凰等祥瑞。四壁嵌夜明珠，照得洞内如白昼；石盆、石碗、石凳等用具俱全。洞中有一铁板桥，桥下流水通东海龙宫。此洞本为原主人（一说为上古仙人所居）遗留，自孙悟空发现后便成为群猴议事、聚会的核心场所。现时洞内挂满“齐天大圣”旗幡，石桌上堆满仙桃、美酒，猴兵猴将进进出出，热闹非凡。",
+        "spatial_hierarchy": "花果山核心洞府",
+        "celestial_bureau": "无",
+        "restriction_level": "极高（外客须经孙悟空或四大健将许可）",
+        "associated_event": "孙悟空发现洞天、称美猴王、水帘洞议事、即将成为反天誓师之地",
+        "mythical_significance": "孙悟空王权的神圣空间，猴族的精神中心"
+      },
+      "access": {
+        "permissions": "仅限花果山猴族及孙悟空直属亲信；外人须由孙悟空亲自带入，或持有他的金毫毛信物",
+        "access_level": "封闭（核心领地）",
+        "access_conditions": "需通过飞瀑水帘（普通猴无法做到，但猴兵可攀绳入内）；有铁板桥暗路可通外海，但极少有人知晓",
+        "required_token": "",
+        "guard_type": "四大健将轮流值守洞门，负责盘查与通报",
+        "unlock_condition": "",
+        "teleport_array": "",
+        "banishment_proof": ""
+      },
+      "state": {
+        "current_state": "庆祝准备中，群猴正布置宴席，洞内灯火通明，笑声不断",
+        "ownership": "孙悟空（齐天大圣）",
+        "capacity": 800,
+        "integrity_level": "完好（石壁坚固，瀑布不息）",
+        "spiritual_energy": "浓郁（瀑布灵气与地脉交汇，优于花果山其余各处）",
+        "combat_state": "",
+        "fortification_status": "",
+        "contamination_level": "纯净"
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:006",
+    "name": "齐天大圣府",
+    "type": "领地区域",
+    "description": "玉皇大帝为安抚孙悟空而特敕建造于天庭东侧的一处府邸，府门匾额以金粉书“齐天大圣府”五字，两侧立有麒麟石像。府内亭台楼阁、花园池塘俱全，仿王侯规制，但相较其他仙官府邸略显仓促，少了些典雅仙韵，多了几分浮华。府内有左右二司，左司为静安司，右司为宁神司，各设仙吏数名服侍。然而孙悟空平日不喜坐府，常在蟠桃园等处闲逛，府中多数时日空置。此时孙悟空因未受蟠桃会邀请而愤懑，府内气氛阴郁，仙吏们战战兢兢，不敢多言。",
+    "access": {
+      "permissions": "孙悟空及其随从（无随从）；天官需持玉帝手谕或孙悟空同意方可进入",
+      "access_level": "受限（私人府邸）",
+      "access_conditions": "孙悟空在府时拒绝一切访客；无人时可凭齐天大圣印信进入，但平时由仙吏看守锁闭",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "冷清而压抑，孙悟空独自生闷气，仙吏不敢靠近，桌案上摆着未动过的仙果酒浆",
+      "ownership": "天庭所属，使用权归孙悟空",
+      "capacity": 50,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 50,
+    "tags": [
+      "领地区域",
+      "受限（私人府邸）",
+      "天庭所属，使用权归孙悟空"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 26,
+      "y": 46,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 33,
+      "y": 56
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:006",
+        "name": "齐天大圣府",
+        "type": "领地区域",
+        "description": "玉皇大帝为安抚孙悟空而特敕建造于天庭东侧的一处府邸，府门匾额以金粉书“齐天大圣府”五字，两侧立有麒麟石像。府内亭台楼阁、花园池塘俱全，仿王侯规制，但相较其他仙官府邸略显仓促，少了些典雅仙韵，多了几分浮华。府内有左右二司，左司为静安司，右司为宁神司，各设仙吏数名服侍。然而孙悟空平日不喜坐府，常在蟠桃园等处闲逛，府中多数时日空置。此时孙悟空因未受蟠桃会邀请而愤懑，府内气氛阴郁，仙吏们战战兢兢，不敢多言。",
+        "spatial_hierarchy": "天庭城郭区域",
+        "celestial_bureau": "天庭工部营造（府邸归属天庭，但使用权归孙悟空）",
+        "restriction_level": "低（名义上孙悟空可自由进出，但其他天官须通报）",
+        "associated_event": "孙悟空受封齐天大圣后的居所，亦是其不满情绪的发酵之地",
+        "mythical_significance": "天庭等级制度的尴尬产物——有名无实的虚衔府邸"
+      },
+      "access": {
+        "permissions": "孙悟空及其随从（无随从）；天官需持玉帝手谕或孙悟空同意方可进入",
+        "access_level": "受限（私人府邸）",
+        "access_conditions": "孙悟空在府时拒绝一切访客；无人时可凭齐天大圣印信进入，但平时由仙吏看守锁闭",
+        "required_token": "",
+        "guard_type": "两名当值仙吏（法力低微，仅为文吏）",
+        "unlock_condition": "",
+        "teleport_array": "",
+        "banishment_proof": ""
+      },
+      "state": {
+        "current_state": "冷清而压抑，孙悟空独自生闷气，仙吏不敢靠近，桌案上摆着未动过的仙果酒浆",
+        "ownership": "天庭所属，使用权归孙悟空",
+        "capacity": 50,
+        "integrity_level": "完好（新建，无损坏）",
+        "spiritual_energy": "中等（天庭灵气充裕，但府内缺乏主人气息）",
+        "combat_state": "",
+        "fortification_status": "无（仅日常防护，无战斗工事）",
+        "contamination_level": ""
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:002",
+    "name": "御马监",
+    "type": "领地区域",
+    "description": "御马监位于天庭南天门内云衢之侧，是一片云雾缭绕的天马牧场。成千上万匹天马在此放牧，足踏祥云，鬃毛如银。监内设有天马厩、草料殿、洗马池等，由监丞、监副等仙官管理。孙悟空初封弼马温时在此任职，每日巡查马群。环境优雅但地位低微。",
+    "access": {
+      "permissions": "天庭低级仙官及天马监人员可进入",
+      "access_level": "限制",
+      "access_conditions": "需持有御马监腰牌或天庭低级仙官凭证",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "正常运行，天马安详",
+      "ownership": "天庭御马监",
+      "capacity": 500,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 500,
+    "tags": [
+      "领地区域",
+      "限制",
+      "天庭御马监"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 26,
+      "y": 25,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 33,
+      "y": 35
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:002",
+        "name": "御马监",
+        "type": "领地区域",
+        "description": "御马监位于天庭南天门内云衢之侧，是一片云雾缭绕的天马牧场。成千上万匹天马在此放牧，足踏祥云，鬃毛如银。监内设有天马厩、草料殿、洗马池等，由监丞、监副等仙官管理。孙悟空初封弼马温时在此任职，每日巡查马群。环境优雅但地位低微。",
+        "spatial_hierarchy": "南天门内附属监司",
+        "celestial_bureau": "御马监",
+        "restriction_level": "中等（天庭正式编制神仙可进入）",
+        "associated_event": "孙悟空任弼马温期间日常管辖地",
+        "mythical_significance": "天庭养马之所，孙悟空在此积累对天庭官僚体系的怨气"
+      },
+      "access": {
+        "permissions": "天庭低级仙官及天马监人员可进入",
+        "access_level": "限制",
+        "access_conditions": "需持有御马监腰牌或天庭低级仙官凭证",
+        "required_token": "御马监腰牌",
+        "guard_type": "无专门守卫，但有天马巡查",
+        "unlock_condition": "",
+        "teleport_array": "",
+        "banishment_proof": ""
+      },
+      "state": {
+        "current_state": "正常运行，天马安详",
+        "ownership": "天庭御马监",
+        "capacity": 500,
+        "integrity_level": "完好",
+        "spiritual_energy": "中等（天马散发祥瑞之气）",
+        "combat_state": "非战斗状态",
+        "fortification_status": "无",
+        "contamination_level": ""
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:011",
+    "name": "灵霄宝殿广场",
+    "type": "战场区域",
+    "description": "灵霄宝殿广场位于天庭最高权力中心灵霄宝殿正前方，由九十九级白玉台阶与万顷云石铺就。广场中央立有盘龙玉柱，四周祥云缭绕，仙鹤盘旋。平日是众仙朝拜玉帝的广场，蟠桃盛会期间更是张灯结彩。然而当孙悟空杀入天庭后，这里成为天兵天将与孙悟空激战的第一处战场。地面被金箍棒砸出裂纹，仙气被杀气冲散，玉柱断裂，血迹斑斑。战场残留着孙悟空不灭的战意与天兵的破碎铠甲，成为天庭最惨烈战斗的见证。",
+    "access": {
+      "permissions": "仅天庭正神及玉帝特许方可进入",
+      "access_level": "绝对限制",
+      "access_conditions": "需持有玉帝手令或朝会邀请",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "战后破碎，部分区域仍在修缮",
+      "ownership": "天庭（玉皇大帝）",
+      "capacity": 3000,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 3000,
+    "tags": [
+      "战场区域",
+      "绝对限制",
+      "天庭（玉皇大帝）"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 94,
+      "y": 12,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 101,
+      "y": 22
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:011",
+        "name": "灵霄宝殿广场",
+        "type": "战场区域",
+        "description": "灵霄宝殿广场位于天庭最高权力中心灵霄宝殿正前方，由九十九级白玉台阶与万顷云石铺就。广场中央立有盘龙玉柱，四周祥云缭绕，仙鹤盘旋。平日是众仙朝拜玉帝的广场，蟠桃盛会期间更是张灯结彩。然而当孙悟空杀入天庭后，这里成为天兵天将与孙悟空激战的第一处战场。地面被金箍棒砸出裂纹，仙气被杀气冲散，玉柱断裂，血迹斑斑。战场残留着孙悟空不灭的战意与天兵的破碎铠甲，成为天庭最惨烈战斗的见证。",
+        "spatial_hierarchy": "凌霄宝殿核心区域",
+        "celestial_bureau": "天庭中枢",
+        "restriction_level": "极高（除非朝会或大典，闲杂不得入）",
+        "associated_event": "孙悟空大闹天宫时攻入灵霄宝殿前广场的激战",
+        "mythical_significance": "天庭权威的门面被孙悟空直接践踏，标志天庭统治受到正面挑战"
+      },
+      "access": {
+        "permissions": "仅天庭正神及玉帝特许方可进入",
+        "access_level": "绝对限制",
+        "access_conditions": "需持有玉帝手令或朝会邀请",
+        "required_token": "",
+        "guard_type": "四大天王与天兵驻守",
+        "unlock_condition": "仅玉帝诏令可开启广场禁制",
+        "teleport_array": "",
+        "banishment_proof": "需消除孙悟空的气焰方可重新开放"
+      },
+      "state": {
+        "current_state": "战后破碎，部分区域仍在修缮",
+        "ownership": "天庭（玉皇大帝）",
+        "capacity": 3000,
+        "integrity_level": "严重受损（广场地面碎裂，玉柱倒塌）",
+        "spiritual_energy": "混乱，混合着战意与仙气残余",
+        "combat_state": "战后休整",
+        "fortification_status": "临时加固，周围布有新的天兵岗哨",
+        "contamination_level": ""
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:018",
+    "name": "南天门战场",
+    "type": "战场区域",
+    "description": "南天门是天庭的正门入口，由四大天王（增长天王持剑、多闻天王持伞、持国天王抱琵琶、广目天王缠蛇）把守，门前有九龙盘绕的金柱，门楣悬挂“南天门”三字鎏金牌匾。当孙悟空从花果山杀回天庭时，此处成为第一个正面战场。天兵天将在此排兵布阵，与孙悟空展开激烈厮杀。门柱上留有金箍棒砸痕，地面散落折戟断枪，天兵魂魄徘徊难散。战时天昏地暗，仙器碰撞声震九霄。",
+    "access": {
+      "permissions": "只有正式受封的仙官和天兵可通过",
+      "access_level": "限制",
+      "access_conditions": "需出示天界令牌或玉帝敕令",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "战场残迹，尚未完全修复",
+      "ownership": "天庭（玉皇大帝）",
+      "capacity": 2000,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 2000,
+    "tags": [
+      "战场区域",
+      "限制",
+      "天庭（玉皇大帝）"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 48,
+      "y": 42,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 55,
+      "y": 52
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:018",
+        "name": "南天门战场",
+        "type": "战场区域",
+        "description": "南天门是天庭的正门入口，由四大天王（增长天王持剑、多闻天王持伞、持国天王抱琵琶、广目天王缠蛇）把守，门前有九龙盘绕的金柱，门楣悬挂“南天门”三字鎏金牌匾。当孙悟空从花果山杀回天庭时，此处成为第一个正面战场。天兵天将在此排兵布阵，与孙悟空展开激烈厮杀。门柱上留有金箍棒砸痕，地面散落折戟断枪，天兵魂魄徘徊难散。战时天昏地暗，仙器碰撞声震九霄。",
+        "spatial_hierarchy": "天庭南界入口",
+        "celestial_bureau": "四大天王镇守处",
+        "restriction_level": "极高（凡间与天界分界点）",
+        "associated_event": "天兵天将首次在此与孙悟空正面交锋",
+        "mythical_significance": "天界门户，其失守标志着天庭防御被打破"
+      },
+      "access": {
+        "permissions": "只有正式受封的仙官和天兵可通过",
+        "access_level": "限制",
+        "access_conditions": "需出示天界令牌或玉帝敕令",
+        "required_token": "天界通行令牌",
+        "guard_type": "四大天王及天兵",
+        "unlock_condition": "需玉帝法旨开启闭门阵",
+        "teleport_array": "有直接传送到灵霄宝殿的传送阵（战时关闭）",
+        "banishment_proof": ""
+      },
+      "state": {
+        "current_state": "战场残迹，尚未完全修复",
+        "ownership": "天庭（玉皇大帝）",
+        "capacity": 2000,
+        "integrity_level": "中度损坏（门柱有裂痕，匾额歪斜）",
+        "spiritual_energy": "狂暴，参杂着孙悟空的神力与天兵的怨念",
+        "combat_state": "警戒状态",
+        "fortification_status": "已增设多层禁制和天兵巡逻",
+        "contamination_level": ""
+      }
+    }
+  },
+  {
+    "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:001",
+    "name": "八卦炉废墟",
+    "type": "战场区域",
+    "description": "八卦炉位于太上老君的兜率宫中，是炼丹用的天地至宝。当年孙悟空被擒后，太上老君将其投入八卦炉中以文武火锻烧四十九天，欲炼化猴妖。不料孙悟空躲入巽宫位，未被烧死，反而在开炉时踢翻丹炉，破炉而出。丹炉倾倒，烈焰喷涌，兜率宫被烧毁大半，形成一片火燎废墟。至今炉渣仍灼热，残余的炉火燃烧不熄，形成禁地。地面焦黑，烟雾缭绕，弥漫着奇异的药气与焦糊味。孙悟空破炉时留下的脚印和拳印深深印在废墟中。",
+    "access": {
+      "permissions": "仅太上老君及其弟子可接近",
+      "access_level": "绝对限制",
+      "access_conditions": "需太上老君亲自允许或持有太极令牌",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "废墟，火焰仍在燃烧",
+      "ownership": "太上老君",
+      "capacity": 50,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 50,
+    "tags": [
+      "战场区域",
+      "绝对限制",
+      "太上老君"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 120,
+      "y": 25,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 127,
+      "y": 35
+    },
+    "raw": {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:001",
+        "name": "八卦炉废墟",
+        "type": "战场区域",
+        "description": "八卦炉位于太上老君的兜率宫中，是炼丹用的天地至宝。当年孙悟空被擒后，太上老君将其投入八卦炉中以文武火锻烧四十九天，欲炼化猴妖。不料孙悟空躲入巽宫位，未被烧死，反而在开炉时踢翻丹炉，破炉而出。丹炉倾倒，烈焰喷涌，兜率宫被烧毁大半，形成一片火燎废墟。至今炉渣仍灼热，残余的炉火燃烧不熄，形成禁地。地面焦黑，烟雾缭绕，弥漫着奇异的药气与焦糊味。孙悟空破炉时留下的脚印和拳印深深印在废墟中。",
+        "spatial_hierarchy": "兜率宫核心炼丹室",
+        "celestial_bureau": "太上老君",
+        "restriction_level": "封闭禁地",
+        "associated_event": "孙悟空被炼四十九天后破炉而出，引发兜率宫大火",
+        "mythical_significance": "孙悟空由此获得火眼金睛和金刚不坏之身，八卦炉成为他蜕变的关键场所"
+      },
+      "access": {
+        "permissions": "仅太上老君及其弟子可接近",
+        "access_level": "绝对限制",
+        "access_conditions": "需太上老君亲自允许或持有太极令牌",
+        "required_token": "",
+        "guard_type": "无，但火焰和高温本身就是屏障",
+        "unlock_condition": "",
+        "teleport_array": "",
+        "banishment_proof": "只有太上老君才能解除火焰封印"
+      },
+      "state": {
+        "current_state": "废墟，火焰仍在燃烧",
+        "ownership": "太上老君",
+        "capacity": 50,
+        "integrity_level": "彻底毁坏",
+        "spiritual_energy": "狂暴的火焰能量与金丹混乱",
+        "combat_state": "非战斗状态，但危险",
+        "fortification_status": "",
+        "contamination_level": "高温火毒弥漫，需仙甲护体才能接近"
+      }
+    }
+  }
+]

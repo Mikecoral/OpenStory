@@ -13,6 +13,7 @@ from pydantic import BaseModel
 from worldkernel.constraints import load_generation_constraints
 from worldkernel.llm import client as llm_client
 from worldkernel.stage1.pipeline import Stage1Error, run_stage1
+from worldkernel.stage3.runtime import Stage3RuntimeManager
 
 BASE_DIR = Path(__file__).parent.parent.parent
 CONFIGS_DIR = BASE_DIR / "configs"
@@ -20,6 +21,7 @@ TEMPLATES_DIR = BASE_DIR / "templates"
 FRONTEND_DIR = BASE_DIR / "frontend"
 
 _constraints = None
+_stage3_runtime = Stage3RuntimeManager(BASE_DIR)
 
 
 @asynccontextmanager
@@ -28,7 +30,10 @@ async def lifespan(app: FastAPI):
     load_dotenv(BASE_DIR / ".env")
     llm_client.init(CONFIGS_DIR / "models.yaml")
     _constraints = load_generation_constraints(CONFIGS_DIR / "architect.yaml")
-    yield
+    try:
+        yield
+    finally:
+        await _stage3_runtime.stop(shutdown_ray=True)
 
 
 app = FastAPI(title="WorldKernel Stage 1", lifespan=lifespan)
@@ -298,6 +303,47 @@ async def stage3_agentkernel(session_id: str, req: Stage3AdapterRequest | None =
     except Exception as exc:
         raise HTTPException(status_code=500, detail=str(exc))
     return result.model_dump(mode="json")
+
+
+class Stage3RuntimeStartRequest(BaseModel):
+    max_ticks: int = 100
+
+
+@app.post("/api/stage3/runtime/start/{session_id}")
+async def stage3_runtime_start(session_id: str, req: Stage3RuntimeStartRequest | None = None):
+    """Start the single active Stage3 Agent-Kernel runtime for a completed session."""
+    session_dir = TEMPLATES_DIR / session_id
+    request = req or Stage3RuntimeStartRequest()
+    try:
+        return await _stage3_runtime.start(session_dir, max_ticks=request.max_ticks)
+    except FileNotFoundError as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+@app.post("/api/stage3/runtime/tick")
+async def stage3_runtime_tick():
+    """Advance the active Stage3 runtime by one tick."""
+    try:
+        return await _stage3_runtime.tick()
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+@app.get("/api/stage3/runtime/state")
+async def stage3_runtime_state():
+    """Return the latest collected Stage3 runtime state."""
+    return _stage3_runtime.state()
+
+
+@app.post("/api/stage3/runtime/stop")
+async def stage3_runtime_stop():
+    """Stop the active Stage3 runtime. Safe to call repeatedly."""
+    try:
+        return await _stage3_runtime.stop(shutdown_ray=True)
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
 
 
 app.mount("/", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="frontend")

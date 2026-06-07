@@ -1,0 +1,21 @@
+dim_name: EndpointsDim
+from_id:
+  type: str
+  ref: location
+to_id:
+  type: str
+  ref: location
+bidirectional:
+  type: bool
+gate_type:
+  type: str
+  option: true
+teleportable:
+  type: str
+  option: true
+unidirectional_allowed:
+  type: str
+  option: true
+war_status:
+  type: str
+  option: true

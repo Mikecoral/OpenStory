@@ -185,9 +185,7 @@ class PathGenerationTool(BaseStage2Tool):
         })
 
         raw_gen = await chat_json(gen_prompt, system=_GENERATION_SYSTEM)
-        gen_data = _safe_json_loads(raw_gen)
-        if not isinstance(gen_data, list):
-            gen_data = [gen_data]
+        gen_data = self._coerce_path_collection(_safe_json_loads(raw_gen))
 
         # --- Phase 2: Quality review ---
         review_score: float | None = None
@@ -213,8 +211,13 @@ class PathGenerationTool(BaseStage2Tool):
                     )
 
                 corrected = review_result.get("corrected_paths")
-                if isinstance(corrected, list) and corrected:
-                    gen_data = corrected
+                corrected_paths = (
+                    self._coerce_path_collection(corrected)
+                    if corrected is not None
+                    else []
+                )
+                if corrected_paths:
+                    gen_data = corrected_paths
                 else:
                     all_warnings.append("review returned no corrected_paths, using generation output")
 
@@ -236,6 +239,8 @@ class PathGenerationTool(BaseStage2Tool):
             all_warnings.append(f"review step failed ({review_exc}), using unreviewed output")
 
         # --- Phase 3: Validate ---
+        gen_data, normalize_warnings = self._normalize_endpoint_fields(gen_data)
+        all_warnings.extend(normalize_warnings)
         validated, val_warnings = parse_and_validate(gen_data, ModelClass, [])
         all_warnings.extend(val_warnings)
 
@@ -261,6 +266,8 @@ class PathGenerationTool(BaseStage2Tool):
                 schema_desc, path_count_hint,
             )
             if retry_data:
+                retry_data, retry_normalize_warnings = self._normalize_endpoint_fields(retry_data)
+                all_warnings.extend(retry_normalize_warnings)
                 re_validated, re_val_warnings = parse_and_validate(retry_data, ModelClass, [])
                 re_validated, re_fix_warnings = self._fix_endpoint_ids(
                     re_validated, location_ids, location_id_map,
@@ -327,6 +334,137 @@ class PathGenerationTool(BaseStage2Tool):
     # ------------------------------------------------------------------
     # Location summary
     # ------------------------------------------------------------------
+
+    @staticmethod
+    def _coerce_path_collection(raw_data: Any) -> list[Any]:
+        """Accept common LLM wrappers such as {"paths": [...]}."""
+        if isinstance(raw_data, dict):
+            for key in (
+                "paths",
+                "path_edges",
+                "path_graph",
+                "routes",
+                "edges",
+                "items",
+                "data",
+            ):
+                value = raw_data.get(key)
+                if isinstance(value, list):
+                    return value
+        if isinstance(raw_data, list):
+            return raw_data
+        return [raw_data]
+
+    @staticmethod
+    def _normalize_endpoint_fields(raw_paths: list[Any]) -> tuple[list[Any], list[str]]:
+        """Move common endpoint aliases into endpoints.from_id/to_id before Pydantic validation."""
+        normalized: list[Any] = []
+        warnings: list[str] = []
+
+        for idx, raw in enumerate(raw_paths):
+            if not isinstance(raw, dict):
+                normalized.append(raw)
+                continue
+
+            item = dict(raw)
+            endpoints_raw = item.get("endpoints")
+            endpoints = dict(endpoints_raw) if isinstance(endpoints_raw, dict) else {}
+            edge = item.get("edge") if isinstance(item.get("edge"), dict) else {}
+
+            from_id = PathGenerationTool._first_endpoint_value(
+                endpoints.get("from_id"),
+                endpoints.get("from_location_id"),
+                endpoints.get("source_id"),
+                endpoints.get("source_location_id"),
+                endpoints.get("from"),
+                endpoints.get("source"),
+                item.get("from_id"),
+                item.get("from_location_id"),
+                item.get("source_id"),
+                item.get("source_location_id"),
+                item.get("from"),
+                item.get("source"),
+                edge.get("from_id"),
+                edge.get("from_location_id"),
+                edge.get("source_id"),
+                edge.get("source_location_id"),
+                edge.get("from"),
+                edge.get("source"),
+            )
+            to_id = PathGenerationTool._first_endpoint_value(
+                endpoints.get("to_id"),
+                endpoints.get("to_location_id"),
+                endpoints.get("target_id"),
+                endpoints.get("target_location_id"),
+                endpoints.get("to"),
+                endpoints.get("target"),
+                item.get("to_id"),
+                item.get("to_location_id"),
+                item.get("target_id"),
+                item.get("target_location_id"),
+                item.get("to"),
+                item.get("target"),
+                edge.get("to_id"),
+                edge.get("to_location_id"),
+                edge.get("target_id"),
+                edge.get("target_location_id"),
+                edge.get("to"),
+                edge.get("target"),
+            )
+
+            changed = False
+            if from_id and endpoints.get("from_id") != from_id:
+                endpoints["from_id"] = from_id
+                changed = True
+            if to_id and endpoints.get("to_id") != to_id:
+                endpoints["to_id"] = to_id
+                changed = True
+
+            if endpoints:
+                item["endpoints"] = endpoints
+            if changed:
+                warnings.append(f"normalized endpoint aliases in path[{idx}]")
+            normalized.append(item)
+
+        return normalized, warnings
+
+    @staticmethod
+    def _first_endpoint_value(*candidates: Any) -> str:
+        for candidate in candidates:
+            value = PathGenerationTool._endpoint_value(candidate)
+            if value:
+                return value
+        return ""
+
+    @staticmethod
+    def _endpoint_value(candidate: Any) -> str:
+        if candidate is None:
+            return ""
+        if isinstance(candidate, str):
+            return candidate.strip()
+        if isinstance(candidate, dict):
+            for key in (
+                "id",
+                "location_id",
+                "entity_id",
+                "ref_id",
+                "from_id",
+                "to_id",
+                "from_location_id",
+                "to_location_id",
+                "source_id",
+                "target_id",
+                "source_location_id",
+                "target_location_id",
+                "name",
+            ):
+                value = PathGenerationTool._endpoint_value(candidate.get(key))
+                if value:
+                    return value
+            return ""
+        if isinstance(candidate, (int, float)):
+            return str(candidate)
+        return ""
 
     @staticmethod
     def _build_location_summary(locations: list[Any]) -> str:
@@ -413,6 +551,10 @@ class PathGenerationTool(BaseStage2Tool):
                 continue
             src = getattr(ep, "from_id", "")
             dst = getattr(ep, "to_id", "")
+            if not src or not dst:
+                warnings.append(f"dedup: kept path with missing endpoint at index {i}")
+                deduped.append(path)
+                continue
             edge = (min(src, dst), max(src, dst))
             if edge in seen:
                 warnings.append(f"dedup: removed duplicate edge {src}<->{dst} at index {i}")
@@ -548,9 +690,7 @@ class PathGenerationTool(BaseStage2Tool):
 
         try:
             raw_retry = await chat_json(retry_prompt, system=_RETRY_SYSTEM)
-            retry_data = _safe_json_loads(raw_retry)
-            if not isinstance(retry_data, list):
-                retry_data = [retry_data]
+            retry_data = self._coerce_path_collection(_safe_json_loads(raw_retry))
             warnings.append("retried due to quality/graph issues")
             return retry_data, warnings
         except Exception as exc:

@@ -49,6 +49,7 @@ def _preserve_runtime_data():
         project_root / "data" / "map" / "agents.jsonl",
         project_root / "data" / "map" / "locations.json",
         project_root / "data" / "map" / "paths.json",
+        project_root / "data" / "world" / "background.json",
         project_root / "data" / "stage3_manifest.json",
     ]
     snapshots = {path: path.read_bytes() if path.exists() else None for path in data_files}
@@ -67,6 +68,14 @@ def _make_stage2_session(root: Path) -> Path:
     semantic = session / "generated" / "artifacts" / "semantic"
     spatial = session / "generated" / "artifacts" / "spatial"
 
+    _write_json(
+        session / "generated" / "plan" / "world_background.json",
+        {
+            "world_name": "Test World",
+            "theme": "truth and access",
+            "world_constraints": ["Stay grounded in generated locations."],
+        },
+    )
     _write_json(
         semantic / "metadata" / "semantic_manifest.json",
         {
@@ -229,6 +238,15 @@ def test_stage3_adapter_preserves_location_profile() -> None:
         assert result.dry_validation_passed
         assert Path(result.project_root).name == "WorldKernel"
         assert Path(result.manifest_path).name == "stage3_manifest.json"
+        assert result.data_paths["world_background"] == "data/world/background.json"
+
+        simulation_config = (Path(result.project_root) / "configs" / "simulation_config.yaml").read_text(encoding="utf-8")
+        assert 'models: "models.yaml"' in simulation_config
+
+        world_background = json.loads(
+            (Path(result.project_root) / "data" / "world" / "background.json").read_text(encoding="utf-8")
+        )
+        assert world_background["world_name"] == "Test World"
 
         locations = json.loads((Path(result.project_root) / "data" / "map" / "locations.json").read_text(encoding="utf-8"))
         open_hall = next(loc for loc in locations if loc["id"] == "loc-open")
@@ -240,6 +258,24 @@ def test_stage3_adapter_preserves_location_profile() -> None:
         assert open_hall["symbolic_meaning"] == "public order"
         assert open_hall["key_plot_events"] == "gatherings"
         assert open_hall["raw"]["identity"]["description"] == "A public hall."
+
+        profiles = [
+            json.loads(line)
+            for line in (Path(result.project_root) / "data" / "agents" / "profiles.jsonl").read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ]
+        states = [
+            json.loads(line)
+            for line in (Path(result.project_root) / "data" / "agents" / "states.jsonl").read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ]
+        ada_profile = next(row for row in profiles if row["id"] == "Ada")
+        ada_state = next(row for row in states if row["id"] == "Ada")
+        assert "memories" not in ada_profile
+        assert "location_id" not in ada_profile
+        assert ada_state["location_id"] == "loc-open"
+        assert ada_state["memory"]["key_events"] == ["arrived"]
+        assert ada_profile["raw"]["memories"]["key_events"] == ["arrived"]
 
 
 def test_generated_space_plugin_filters_accessible_locations() -> None:

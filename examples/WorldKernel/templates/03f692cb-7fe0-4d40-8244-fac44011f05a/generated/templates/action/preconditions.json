@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "required_state",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "required_items",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "celestial_permission",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "allegiance_check",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "astral_conjunction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "location_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "item_authorization",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

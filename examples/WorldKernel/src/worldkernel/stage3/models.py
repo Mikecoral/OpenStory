@@ -7,6 +7,7 @@ from pydantic import BaseModel, Field
 
 class InitialWorldPatch(BaseModel):
     world_id: str
+    world_background: dict[str, Any] = Field(default_factory=dict)
     characters: list[dict[str, Any]] = Field(default_factory=list)
     locations: list[dict[str, Any]] = Field(default_factory=list)
     paths: list[dict[str, Any]] = Field(default_factory=list)

@@ -47,6 +47,7 @@ def build_agentkernel_project(
             "map_agents": "data/map/agents.jsonl",
             "map_locations": "data/map/locations.json",
             "map_paths": "data/map/paths.json",
+            "world_background": "data/world/background.json",
         },
     }
     manifest_path = project_root / "data" / "stage3_manifest.json"
@@ -75,6 +76,7 @@ def _load_initial_world_patch(session_root: Path) -> InitialWorldPatch:
     semantic_root, manifest_path = _find_semantic_root(session_root)
     manifest = _read_json(manifest_path)
     artifact_files = manifest.get("artifact_files", {})
+    world_background = _load_world_background(session_root, manifest)
 
     locations = _read_artifact_items(semantic_root, artifact_files, "location_profile")
     characters = _read_artifact_items(semantic_root, artifact_files, "character_profile")
@@ -94,6 +96,7 @@ def _load_initial_world_patch(session_root: Path) -> InitialWorldPatch:
 
     return InitialWorldPatch(
         world_id=manifest.get("world_id") or spatial.get("world_id") or session_root.name,
+        world_background=world_background,
         characters=characters,
         locations=locations,
         paths=paths,
@@ -126,6 +129,32 @@ def _find_spatial_blueprint(session_root: Path) -> Path:
     raise FileNotFoundError("Stage2 spatial_blueprint.json not found; run spatial generation first")
 
 
+def _load_world_background(session_root: Path, manifest: dict[str, Any]) -> dict[str, Any]:
+    candidates: list[Path] = []
+    provenance = manifest.get("provenance", {}) if isinstance(manifest, dict) else {}
+    stage1_inputs = provenance.get("stage1_inputs", {}) if isinstance(provenance, dict) else {}
+    manifest_world_background = provenance.get("world_background", {}) if isinstance(provenance, dict) else {}
+
+    for value in [
+        stage1_inputs.get("world_background_path"),
+        manifest_world_background.get("world_background_path"),
+    ]:
+        if value:
+            path = Path(str(value))
+            candidates.append(path if path.is_absolute() else session_root / path)
+
+    candidates.extend(
+        [
+            session_root / "generated" / "plan" / "world_background.json",
+            session_root / "generated" / "world_background.json",
+        ]
+    )
+    for path in candidates:
+        if path.exists():
+            return _read_json(path)
+    return {}
+
+
 def _read_artifact_items(semantic_root: Path, artifact_files: dict[str, str], key: str) -> list[dict[str, Any]]:
     rel_path = artifact_files.get(key)
     if not rel_path:
@@ -152,6 +181,7 @@ def _transform_patch(patch: InitialWorldPatch) -> dict[str, Any]:
         "states": states,
         "agent_positions": agent_positions,
         "relations": relation_rows,
+        "world_background": patch.world_background,
         "warnings": warnings,
     }
 
@@ -275,6 +305,9 @@ def _transform_characters(
         goals = raw.get("goals", {})
         memories = raw.get("memories", {})
         state = raw.get("state", {})
+        personality = raw.get("personality", {}) or {}
+        social_profile = raw.get("social_profile", {}) or {}
+        capabilities = raw.get("capabilities", {}) or {}
         wk_id = str(identity.get("id") or "")
         base_agent_id = str(identity.get("name") or wk_id or f"agent_{len(profiles) + 1}")
         agent_id = _unique_agent_id(base_agent_id, used_agent_ids)
@@ -294,13 +327,18 @@ def _transform_characters(
             "name": identity.get("name", agent_id),
             "role": identity.get("role", ""),
             "wk_entity_id": wk_id,
-            "personality": raw.get("personality", {}),
-            "goals": goals,
-            "memories": memories,
-            "social_profile": raw.get("social_profile", {}),
-            "capabilities": raw.get("capabilities", {}),
-            "location_id": location_id,
-            "current_location": current_location,
+            "identity": identity,
+            "tags": _coerce_string_list(identity.get("tags", [])),
+            "personality": personality,
+            "speech_style": personality.get("speech_style", ""),
+            "values": personality.get("values", []),
+            "capabilities": capabilities,
+            "social_profile": social_profile,
+            "long_term_goal": goals.get("long_term_goal", ""),
+            "goals": {
+                "long_term_goal": goals.get("long_term_goal", ""),
+                "motivation": goals.get("motivation", ""),
+            },
             "raw": raw,
         }
         profiles.append(profile)
@@ -311,6 +349,9 @@ def _transform_characters(
                 "is_active": True,
                 "inactive_reason": "",
                 "long_task": goals.get("long_term_goal") or None,
+                "active_goal": goals.get("short_term_goal") or goals.get("active_goal") or None,
+                "mood": state.get("mood") or state.get("emotional_state") or "",
+                "status": state.get("status") or state.get("current_status") or "",
                 "hourly_plans": {},
                 "current_plan": None,
                 "current_plan_note": None,
@@ -327,6 +368,13 @@ def _transform_characters(
                 "location_id": location_id,
                 "current_location": current_location,
                 "position": position,
+                "memory": {
+                    "background_summary": memories.get("background_summary", ""),
+                    "key_events": _coerce_string_list(memories.get("key_events", [])),
+                    "past_events": _coerce_string_list(memories.get("past_events", [])),
+                    "recent_events": _coerce_string_list(memories.get("recent_events", [])),
+                    "raw": memories,
+                },
                 "raw_state": state,
             }
         )
@@ -415,6 +463,7 @@ def _ensure_runtime_data_dirs(project_root: Path) -> None:
         "data/agents",
         "data/relations",
         "data/map",
+        "data/world",
     ]:
         (project_root / rel).mkdir(parents=True, exist_ok=True)
 
@@ -426,6 +475,7 @@ def _write_data(project_root: Path, transformed: dict[str, Any]) -> None:
     _write_jsonl(project_root / "data" / "map" / "agents.jsonl", transformed["agent_positions"])
     _write_json(project_root / "data" / "map" / "locations.json", transformed["locations"])
     _write_json(project_root / "data" / "map" / "paths.json", transformed["paths"])
+    _write_json(project_root / "data" / "world" / "background.json", transformed["world_background"])
 
 
 def _dry_validate_project(project_root: Path) -> tuple[bool, str | None]:
@@ -676,5 +726,3 @@ def _write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
                 json.loads(line)
 
 
-def _write_yaml(path: Path, data: Any) -> None:
-    path.write_text(yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8")

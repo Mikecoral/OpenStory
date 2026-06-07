@@ -1,8 +1,4 @@
-"""Shared pydantic schemas for WorldKernel simulation plugins.
-
-Generic (domain-agnostic) replacements for the story_of_the_stone schemas:
-the field docs no longer reference 红楼梦 characters/locations.
-"""
+"""Shared pydantic schemas for WorldKernel simulation plugins."""
 
 from typing import Optional
 
@@ -31,13 +27,13 @@ class BasicAction(BaseModel):
 
 
 class HourlyPlan(BaseModel):
-    """One slot in an agent's per-day plan (12 slots per day)."""
+    """One slot in an agent's per-day plan, with 12 slots per day."""
 
     action: str = Field(..., description="Action description")
-    time: int = Field(..., ge=0, le=12, description="Hour slot, range 0-12")
+    time: int = Field(..., ge=0, le=11, description="Hour slot, range 0-11")
     target: str = Field(..., description="Target agent name, or 自己/无 for solo activity")
     location: str = Field(..., description="Location name where the action happens")
-    importance: int = Field(..., ge=1, le=10, description="Importance score, 1-10; higher means more impactful")
+    importance: int = Field(..., ge=1, le=10, description="Importance score, 1-10")
 
     def to_list(self) -> list:
         """Serialize to [action, time, target, location, importance]."""

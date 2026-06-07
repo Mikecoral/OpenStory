@@ -1,8 +1,4 @@
-"""Profile plugin: holds an agent's static character profile.
-
-Generic port of story_of_the_stone's BasicProfilePlugin. Profile data comes
-from the Stage3 adapter (id/name/role/personality/goals/memories/...).
-"""
+"""Profile plugin: holds an agent's static character profile."""
 
 from __future__ import annotations
 
@@ -32,6 +28,8 @@ class BasicProfilePlugin(ProfilePlugin):
         self.redis = redis
         # profile_data may arrive as a config-key string before real injection.
         self.profile_data: Dict[str, Any] = profile_data if isinstance(profile_data, dict) else {}
+        for mutable_key in ("location_id", "current_location", "position", "memories", "memory"):
+            self.profile_data.pop(mutable_key, None)
         self.agent_id = self.profile_data.get("id", "Unknown")
         self.long_memories: List[str] = []
         self.controller = None

@@ -1,0 +1,71 @@
+{
+  "world_id": "03f692cb-7fe0-4d40-8244-fac44011f05a",
+  "source_ids": [
+    "primary"
+  ],
+  "schema_version": "stage2-semantic-v1",
+  "artifact_files": {
+    "location_profile": "locations\\locations.json",
+    "character_profile": "characters\\characters.json",
+    "path_edge": "path_graph\\path_graph.json",
+    "relation_edge": "relation_graph\\relation_graph.json"
+  },
+  "counts": {
+    "location_profile": 20,
+    "character_profile": 15,
+    "path_edge": 26,
+    "relation_edge": 37
+  },
+  "constraints": [
+    {
+      "constraint_id": "celestial_hierarchy",
+      "name": "天庭等级森严",
+      "description": "天庭是一个严格的金字塔权力结构，身份决定地位与话语权，低级神仙无法挑战高级神仙，违者受天规严惩",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "supernatural_power_difference",
+      "name": "神力层级差异",
+      "description": "不同神仙的法力与神通有本质差距，孙悟空因吃仙桃、仙丹拥有金刚不坏之身与七十二变，远超普通天兵天将，但最终无法战胜如来级别的存在",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "immortal_invulnerability",
+      "name": "神佛不死性",
+      "description": "天庭正神与孙悟空自身皆享长生，无法被常规手段杀死，镇压或封印是唯一解决方式",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "heavenly_seclusion",
+      "name": "天界与凡间隔绝",
+      "description": "天庭与人间有严格界限，天兵天将不得轻易下凡，孙悟空从花果山闯入天界是打破这一屏障的异常行为",
+      "scope": "location"
+    }
+  ],
+  "timestamp": "2026-06-06T14:54:45.344129+00:00",
+  "provenance": {
+    "stage1_inputs": {
+      "source": "stage1.pipeline",
+      "source_id": "primary",
+      "world_id": "03f692cb-7fe0-4d40-8244-fac44011f05a",
+      "world_background_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\03f692cb-7fe0-4d40-8244-fac44011f05a\\generated\\plan\\world_background.json",
+      "execution_plan_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\03f692cb-7fe0-4d40-8244-fac44011f05a\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\03f692cb-7fe0-4d40-8244-fac44011f05a\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\03f692cb-7fe0-4d40-8244-fac44011f05a\\generated\\world_template.json",
+      "schema_manifest_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\03f692cb-7fe0-4d40-8244-fac44011f05a\\models\\schema_manifest.json",
+      "artifact_manifest_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\03f692cb-7fe0-4d40-8244-fac44011f05a\\generated\\artifact_manifest.json",
+      "session_root": "E:\\OpenStory\\examples\\WorldKernel\\templates\\03f692cb-7fe0-4d40-8244-fac44011f05a"
+    },
+    "world_background": {
+      "source": "stage1.pipeline",
+      "artifact": "world_background",
+      "world_background_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\03f692cb-7fe0-4d40-8244-fac44011f05a\\generated\\plan\\world_background.json",
+      "execution_plan_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\03f692cb-7fe0-4d40-8244-fac44011f05a\\generated\\plan\\execution_plan.json",
+      "seed_catalog_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\03f692cb-7fe0-4d40-8244-fac44011f05a\\generated\\plan\\instance_seed_catalog.json",
+      "world_template_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\03f692cb-7fe0-4d40-8244-fac44011f05a\\generated\\world_template.json",
+      "schema_manifest_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\03f692cb-7fe0-4d40-8244-fac44011f05a\\models\\schema_manifest.json",
+      "artifact_manifest_path": "E:\\OpenStory\\examples\\WorldKernel\\templates\\03f692cb-7fe0-4d40-8244-fac44011f05a\\generated\\artifact_manifest.json",
+      "session_root": "E:\\OpenStory\\examples\\WorldKernel\\templates\\03f692cb-7fe0-4d40-8244-fac44011f05a"
+    }
+  }
+}

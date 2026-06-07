@@ -53,6 +53,13 @@ class BasicStatePlugin(StatePlugin):
         self.state_data.setdefault("current_plan_note", None)
         self.state_data.setdefault("current_action", None)
         self.state_data.setdefault("occupied_by", None)
+        self.state_data.setdefault("location_id", "")
+        self.state_data.setdefault("current_location", "")
+        self.state_data.setdefault("position", [0, 0])
+        self.state_data.setdefault("mood", "")
+        self.state_data.setdefault("status", "")
+        self.state_data.setdefault("active_goal", None)
+        self.state_data.setdefault("memory", {})
 
     async def init(self) -> None:
         if getattr(self, "_component", None):
@@ -91,7 +98,9 @@ class BasicStatePlugin(StatePlugin):
         all_plans = self.state_data.get("hourly_plans", {})
         if day is None:
             return all_plans
-        return all_plans.get(day) if isinstance(all_plans, dict) else None
+        if not isinstance(all_plans, dict):
+            return None
+        return all_plans.get(day) or all_plans.get(str(day))
 
     # ── Short-term memory (per tick) ────────────────────────────────
     async def add_short_term_memory(self, memory: str, tick: int | None = None) -> None:
@@ -99,6 +108,9 @@ class BasicStatePlugin(StatePlugin):
             return
         effective_tick = self.current_tick if tick is None else tick
         self.state_data.setdefault("short_term_memory", {})[effective_tick] = memory
+        self.state_data.setdefault("memory", {}).setdefault("recent_events", []).append(
+            {"tick": effective_tick, "content": memory}
+        )
 
     async def get_short_term_memory(self) -> list:
         memories = self.state_data.get("short_term_memory", {})
@@ -119,9 +131,15 @@ class BasicStatePlugin(StatePlugin):
         self.state_data.setdefault("long_term_memory", []).append(
             {"tick": self.current_tick, "content": memory}
         )
+        self.state_data.setdefault("memory", {}).setdefault("reflection_summaries", []).append(
+            {"tick": self.current_tick, "content": memory}
+        )
 
     async def get_long_term_memory(self) -> list:
         return self.state_data.get("long_term_memory", [])
+
+    async def get_memory_profile(self) -> dict:
+        return self.state_data.get("memory", {})
 
     # ── Dialogues ───────────────────────────────────────────────────
     async def add_dialogue(self, tick: int, history: list) -> None:
@@ -161,7 +179,7 @@ class BasicStatePlugin(StatePlugin):
 
     # ── Snapshot restore (branching support) ────────────────────────
     async def restore_state(self, snapshot: dict) -> None:
-        skip_keys = {"profile", "current_location"}
+        skip_keys = {"profile"}
         for key, value in snapshot.items():
             if key in skip_keys:
                 continue

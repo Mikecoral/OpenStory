@@ -1,0 +1,359 @@
+{
+  "session_id": "03f692cb-7fe0-4d40-8244-fac44011f05a",
+  "instance_seeds": {
+    "location": [
+      {
+        "seed_id": "lingxiao_palace",
+        "name": "灵霄宝殿",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "天庭核心政治中心，玉帝朝会与孙悟空冲突的主要舞台",
+        "archetype_id": "朝会大殿"
+      },
+      {
+        "seed_id": "tongming_hall",
+        "name": "通明殿",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "玉帝临时议事之所，孙悟空受封齐天大圣的后殿",
+        "archetype_id": "朝会大殿"
+      },
+      {
+        "seed_id": "pixiang_hall",
+        "name": "披香殿",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "天庭宴会场所，蟠桃会筹备地之一",
+        "archetype_id": "朝会大殿"
+      },
+      {
+        "seed_id": "lingxu_palace",
+        "name": "凌虚殿",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.6,
+        "generation_priority": 3,
+        "role_in_world": "仙官待诏休息之所，补充天庭官僚空间",
+        "archetype_id": "朝会大殿"
+      },
+      {
+        "seed_id": "peach_garden",
+        "name": "蟠桃园",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "孙悟空偷蟠桃引发冲突的关键地点",
+        "archetype_id": "园林果园"
+      },
+      {
+        "seed_id": "imperial_garden",
+        "name": "御花园",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.75,
+        "generation_priority": 2,
+        "role_in_world": "天地散步休闲、天庭女仙聚集之地",
+        "archetype_id": "园林果园"
+      },
+      {
+        "seed_id": "jade_pool_garden",
+        "name": "瑶池花园",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "蟠桃会设宴处，孙悟空偷酒偷丹的后花园",
+        "archetype_id": "园林果园"
+      },
+      {
+        "seed_id": "laojun_backyard",
+        "name": "兜率后院",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.65,
+        "generation_priority": 3,
+        "role_in_world": "太上老君炼丹原料种植和仙草园",
+        "archetype_id": "园林果园"
+      },
+      {
+        "seed_id": "doushuai_palace",
+        "name": "兜率宫",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "太上老君炼丹宝地，孙悟空偷丹与八卦炉炸毁之地",
+        "archetype_id": "炼丹工坊"
+      },
+      {
+        "seed_id": "dan_room",
+        "name": "金丹房",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.8,
+        "generation_priority": 2,
+        "role_in_world": "老君炼制九转金丹的核心炉房",
+        "archetype_id": "炼丹工坊"
+      },
+      {
+        "seed_id": "south_gate",
+        "name": "南天门",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "天庭正门，孙悟空与天兵激战的首要关隘",
+        "archetype_id": "门户关卡"
+      },
+      {
+        "seed_id": "north_gate",
+        "name": "北天门",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.8,
+        "generation_priority": 2,
+        "role_in_world": "天庭后门，真武大帝镇守之处",
+        "archetype_id": "门户关卡"
+      },
+      {
+        "seed_id": "east_gate",
+        "name": "东天门",
+        "importance": "minor",
+        "source_type": "inferred",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "东海龙王等水族神仙出入之门",
+        "archetype_id": "门户关卡"
+      },
+      {
+        "seed_id": "huaguo_mountain",
+        "name": "花果山",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "孙悟空根基之地，群猴居住的洞天福地",
+        "archetype_id": "领地区域"
+      },
+      {
+        "seed_id": "water_curtain_cave",
+        "name": "水帘洞",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "花果山核心洞府，孙悟空的王座与议事厅",
+        "archetype_id": "领地区域"
+      },
+      {
+        "seed_id": "great_sage_mansion",
+        "name": "齐天大圣府",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.9,
+        "generation_priority": 2,
+        "role_in_world": "玉帝为安抚孙悟空而设的天庭府邸",
+        "archetype_id": "领地区域"
+      },
+      {
+        "seed_id": "celestial_pasture",
+        "name": "御马监",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.85,
+        "generation_priority": 2,
+        "role_in_world": "孙悟空初封弼马温时所管的天马放牧地",
+        "archetype_id": "领地区域"
+      },
+      {
+        "seed_id": "lingxiao_battle_ground",
+        "name": "灵霄宝殿广场",
+        "importance": "core",
+        "source_type": "inferred",
+        "confidence": 0.8,
+        "generation_priority": 1,
+        "role_in_world": "孙悟空攻入天庭后与天兵激战的首个战场",
+        "archetype_id": "战场区域"
+      },
+      {
+        "seed_id": "south_gate_battlefield",
+        "name": "南天门战场",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.75,
+        "generation_priority": 2,
+        "role_in_world": "天兵天将与孙悟空在门前对峙的主要战场",
+        "archetype_id": "战场区域"
+      },
+      {
+        "seed_id": "bagua_furnace_ruins",
+        "name": "八卦炉废墟",
+        "importance": "major",
+        "source_type": "inferred",
+        "confidence": 0.7,
+        "generation_priority": 2,
+        "role_in_world": "孙悟空破炉而出后形成的火燎禁地",
+        "archetype_id": "战场区域"
+      }
+    ],
+    "character": [
+      {
+        "seed_id": "jade_emperor",
+        "name": "玉皇大帝",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "天庭至高统治者，孙悟空反抗的对象",
+        "archetype_id": "天庭统治者"
+      },
+      {
+        "seed_id": "queen_mother",
+        "name": "王母娘娘",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 1,
+        "role_in_world": "蟠桃会主办者，与孙悟空冲突的导火索",
+        "archetype_id": "天庭统治者"
+      },
+      {
+        "seed_id": "lord_laojun",
+        "name": "太上老君",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.98,
+        "generation_priority": 1,
+        "role_in_world": "天庭首席丹药师，被窃丹并设计炼化孙悟空",
+        "archetype_id": "天庭统治者"
+      },
+      {
+        "seed_id": "li_jing",
+        "name": "托塔李天王",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "征讨孙悟空的统帅，天兵天将最高指挥官",
+        "archetype_id": "天兵天将"
+      },
+      {
+        "seed_id": "nezha",
+        "name": "哪吒",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "天兵先锋，与孙悟空单挑的勇将",
+        "archetype_id": "天兵天将"
+      },
+      {
+        "seed_id": "giant_spirit",
+        "name": "巨灵神",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.8,
+        "generation_priority": 3,
+        "role_in_world": "首战花果山被孙悟空击败的先锋官",
+        "archetype_id": "天兵天将"
+      },
+      {
+        "seed_id": "taibai_jinxing",
+        "name": "太白金星",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "玉帝议政大臣，两次招安孙悟空的使者",
+        "archetype_id": "神仙"
+      },
+      {
+        "seed_id": "barefoot_immortal",
+        "name": "赤脚大仙",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.75,
+        "generation_priority": 3,
+        "role_in_world": "应邀参加蟠桃会时被孙悟空哄骗的散仙",
+        "archetype_id": "神仙"
+      },
+      {
+        "seed_id": "wenqu_xing",
+        "name": "文曲星",
+        "importance": "minor",
+        "source_type": "canonical",
+        "confidence": 0.7,
+        "generation_priority": 3,
+        "role_in_world": "撰写诏书封孙悟空为弼马温的星官",
+        "archetype_id": "神仙"
+      },
+      {
+        "seed_id": "sun_wukong",
+        "name": "孙悟空",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "核心主角，反抗天庭权威的神猴",
+        "archetype_id": "反抗者"
+      },
+      {
+        "seed_id": "golden_boy",
+        "name": "金童",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.65,
+        "generation_priority": 3,
+        "role_in_world": "太上老君的炼丹童子，见证孙悟空偷丹",
+        "archetype_id": "侍从仆役"
+      },
+      {
+        "seed_id": "jade_girl",
+        "name": "玉女",
+        "importance": "minor",
+        "source_type": "original",
+        "confidence": 0.65,
+        "generation_priority": 3,
+        "role_in_world": "王母娘娘的侍从仙女，管理蟠桃园日常",
+        "archetype_id": "侍从仆役"
+      },
+      {
+        "seed_id": "buddha_tathagata",
+        "name": "如来佛祖",
+        "importance": "core",
+        "source_type": "canonical",
+        "confidence": 0.99,
+        "generation_priority": 1,
+        "role_in_world": "降伏孙悟空的终极力量，五行山镇压者",
+        "archetype_id": "外部神佛"
+      },
+      {
+        "seed_id": "guanyin_bodhisattva",
+        "name": "观音菩萨",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "受玉帝之请向天庭推荐二郎神等外援",
+        "archetype_id": "外部神佛"
+      },
+      {
+        "seed_id": "erlang_shen",
+        "name": "二郎神",
+        "importance": "major",
+        "source_type": "canonical",
+        "confidence": 0.95,
+        "generation_priority": 2,
+        "role_in_world": "灌江口独立势力，协助天庭围捕孙悟空",
+        "archetype_id": "外部神佛"
+      }
+    ]
+  }
+}

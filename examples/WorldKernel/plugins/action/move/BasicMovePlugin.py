@@ -26,7 +26,7 @@ def _result(method: str, ok: bool, message: str, data: dict[str, Any] | None = N
 
 
 class BasicMovePlugin(OtherActionsPlugin):
-    """Validates accessibility, routes, and updates the agent's location."""
+    """Validates target accessibility and updates the agent's location."""
 
     def __init__(self, redis: Any = None) -> None:
         super().__init__()
@@ -58,8 +58,6 @@ class BasicMovePlugin(OtherActionsPlugin):
         route = await self.controller.run_environment(
             "space", "find_route", current_location_id, target_location_id
         )
-        if route is None and current_location_id != target_location_id:
-            return _result("move_to", False, "target location is not reachable")
 
         position = await self.controller.run_environment(
             "space", "update_agent_location", agent_id, target_location_id
@@ -75,5 +73,6 @@ class BasicMovePlugin(OtherActionsPlugin):
                 "location_id": target_location_id,
                 "location": can_enter.get("location_name"),
                 "position": position,
+                "route": route,
             },
         )

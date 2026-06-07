@@ -1,0 +1,36 @@
+{
+  "steps": [
+    {
+      "step_id": "generate_locations",
+      "generator_type": "location_generator",
+      "target_entity_type": "location",
+      "batch_size": 8,
+      "priority": 1,
+      "description": "生成所有地点实体，包括朝会大殿、园林果园、炼丹工坊、门户关卡、领地区域、战场区域六大类"
+    },
+    {
+      "step_id": "generate_paths",
+      "generator_type": "path_generator",
+      "target_entity_type": "path",
+      "batch_size": 5,
+      "priority": 2,
+      "description": "生成地点之间的路径和通道，连接天庭各殿、果园、丹房、门户与战场"
+    },
+    {
+      "step_id": "generate_characters",
+      "generator_type": "character_generator",
+      "target_entity_type": "character",
+      "batch_size": 6,
+      "priority": 3,
+      "description": "生成所有角色实体，涵盖天庭统治者、天兵天将、神仙、反抗者、侍从仆役、外部神佛六类"
+    },
+    {
+      "step_id": "generate_relations",
+      "generator_type": "relation_generator",
+      "target_entity_type": "relation",
+      "batch_size": 8,
+      "priority": 4,
+      "description": "生成角色之间的关系，包括统治/服从、联盟/敌对、战斗、师徒、君臣等关系网"
+    }
+  ]
+}

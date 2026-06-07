@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "category",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "action_type",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "domain",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "rank_requirement",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "inherent_power",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "forbidden_tag",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

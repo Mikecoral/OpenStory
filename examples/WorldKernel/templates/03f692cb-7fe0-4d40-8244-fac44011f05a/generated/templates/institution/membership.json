@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "members",
+      "type": "list_str",
+      "required": true,
+      "ref": "character"
+    },
+    {
+      "name": "roles",
+      "type": "list_str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "entry_criteria",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "recruitment_method",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "assessment_standard",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "purity_requirement",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "merit_history_need",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "celestial_grade_minimum",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

@@ -1,11 +1,4 @@
-"""Invoke plugin: executes the current hour's plan.
-
-Generic port of story_of_the_stone's BasicInvokePlugin:
-- Redis-backed occupancy so high-importance actions can claim participants.
-- Multi-agent dialogue generation for high-importance interactions, with
-  generic (non-红楼梦) behavioural constraints driven by the world context.
-- Movement is delegated to the ``move`` action plugin.
-"""
+"""Invoke plugin: executes the current hour's plan."""
 
 from __future__ import annotations
 
@@ -28,12 +21,12 @@ from agentkernel_distributed.toolkit.logger import get_logger
 
 logger = get_logger(__name__)
 
-_SOLO_TARGETS = {"自己", "无", "None", "", None}
+_SOLO_TARGETS = {"自己", "无", "None", "", None, "鑷繁", "鏃?"}
 _DIALOGUE_IMPORTANCE_THRESHOLD = 7
 
 
 class BasicInvokePlugin(InvokePlugin):
-    """Executes hourly plans, resolving occupancy and generating dialogue."""
+    """Executes hourly plans, resolves movement, and records memory."""
 
     def __init__(self, redis: Any = None) -> None:
         super().__init__()
@@ -59,38 +52,28 @@ class BasicInvokePlugin(InvokePlugin):
             current_day = (current_tick // 12) + 1
             current_hour = current_tick % 12
             hourly_plans = await state_plugin.get_hourly_plans(day=current_day)
-
-            current_plan = None
-            if hourly_plans:
-                for plan in hourly_plans:
-                    if len(plan) >= 5 and plan[1] == current_hour:
-                        current_plan = plan
-                        break
+            current_plan = self._select_current_plan(hourly_plans, current_hour)
 
             if not current_plan:
+                description = f"{self.agent_id} 当前没有具体计划，暂作休整。"
                 await state_plugin.set_state("current_plan", None)
                 await state_plugin.set_state("occupied_by", None)
-                await state_plugin.set_state("current_action", None)
-                await state_plugin.add_short_term_memory(
-                    f"{self.agent_id} 当前没有具体计划，稍作休息。", tick=current_tick
-                )
+                await state_plugin.set_state("current_action", description)
+                await state_plugin.add_short_term_memory(description, tick=current_tick)
                 return
 
             await state_plugin.set_state("current_plan", current_plan)
             action, _time, target, location, importance = current_plan[:5]
 
-            # Yield to higher-priority actors first.
             if importance < _DIALOGUE_IMPORTANCE_THRESHOLD:
                 await asyncio.sleep(2)
 
-            # Respect existing higher-priority occupation.
             occupation_info = await self._get_occupation(current_tick, self.agent_id)
             if occupation_info:
                 occupier = occupation_info.get("occupier")
                 occ_importance = occupation_info.get("importance", 0)
                 if occupier != self.agent_id and occ_importance > importance:
-                    occupier_action = occupation_info.get("action", "某事")
-                    busy = f"正在配合 {occupier} 进行：{occupier_action}。"
+                    busy = f"正在配合 {occupier} 进行：{occupation_info.get('action', '某事')}。"
                     await state_plugin.set_state("occupied_by", occupation_info)
                     await state_plugin.add_short_term_memory(busy, tick=current_tick)
                     await state_plugin.set_state("current_action", busy)
@@ -100,9 +83,16 @@ class BasicInvokePlugin(InvokePlugin):
             if not await self._occupy(current_tick, importance, action, location):
                 return
 
-            # Move to the planned location first (delegated to move action).
-            await self._try_move(location, current_tick)
+            moved, move_note = await self._try_move(location, current_tick)
+            if not moved:
+                note = move_note or f"无法进入计划地点：{location}"
+                await state_plugin.set_state("current_plan_note", note)
+                await state_plugin.set_state("current_action", note)
+                await state_plugin.add_short_term_memory(note, tick=current_tick)
+                await self._request_replan(current_tick, note)
+                return
 
+            await state_plugin.set_state("current_plan_note", None)
             self_profile = profile_plugin.get_agent_profile()
             target_profile = None
             plan_note = None
@@ -112,25 +102,32 @@ class BasicInvokePlugin(InvokePlugin):
                 target_profile = await profile_plugin.get_agent_profile_by_id(target)
                 if target_profile and await self._try_occupy_target(current_tick, target, importance, action):
                     target_participated = True
-                    await state_plugin.set_state("current_plan_note", None)
                 else:
-                    plan_note = f"注意：{target} 目前正被占用或无法配合。"
+                    plan_note = f"注意：{target} 当前被占用或无法配合。"
                     await state_plugin.set_state("current_plan_note", plan_note)
-            else:
-                await state_plugin.set_state("current_plan_note", None)
+
+            location_profile = await self._get_location_profile(location)
+            relation = await self._get_relation(target)
 
             if importance >= _DIALOGUE_IMPORTANCE_THRESHOLD:
                 desc_data = await self._generate_execution_description(
-                    current_tick, action, target, location, importance,
-                    self_profile, target_profile, plan_note,
+                    current_tick,
+                    action,
+                    target,
+                    location,
+                    importance,
+                    self_profile,
+                    target_profile,
+                    plan_note,
+                    location_profile,
+                    relation,
                 )
                 description = desc_data.get("summary", "")
                 dialogue_history = desc_data.get("history", [])
                 if dialogue_history:
                     await state_plugin.add_dialogue(current_tick, dialogue_history)
             else:
-                self_name = self_profile.get("name") or self_profile.get("id") or self.agent_id
-                description = f"{self_name} 正在 {location} 执行：{action}。"
+                description = self._simple_description(self_profile, action, location, location_profile, plan_note)
                 dialogue_history = []
 
             await state_plugin.add_short_term_memory(description, tick=current_tick)
@@ -143,17 +140,92 @@ class BasicInvokePlugin(InvokePlugin):
         except Exception as exc:  # noqa: BLE001
             logger.error("[%s][%s] Error executing InvokePlugin: %s", self.agent_id, current_tick, exc)
 
-    async def _try_move(self, location: str, current_tick: int) -> None:
+    @staticmethod
+    def _select_current_plan(hourly_plans: Any, current_hour: int) -> list[Any] | None:
+        if isinstance(hourly_plans, dict):
+            if hourly_plans and all(isinstance(v, list) for v in hourly_plans.values()):
+                flattened = []
+                for value in hourly_plans.values():
+                    flattened.extend(value if value and isinstance(value[0], list) else [value])
+                hourly_plans = flattened
+        if not isinstance(hourly_plans, list):
+            return None
+        for plan in hourly_plans:
+            if isinstance(plan, list) and len(plan) >= 5 and plan[1] == current_hour:
+                return plan
+        return None
+
+    async def _try_move(self, location: str, current_tick: int) -> tuple[bool, str | None]:
         if not self.controller or not location:
-            return
+            return (True, None)
         try:
-            await self.controller.run_action(
+            result = await self.controller.run_action(
                 "move", "move_to", agent_id=self.agent_id, location=location
             )
+            if hasattr(result, "is_successful") and not result.is_successful():
+                return (False, getattr(result, "message", "move failed"))
+            if isinstance(result, dict) and result.get("status") == "error":
+                return (False, str(result.get("message") or "move failed"))
+            return (True, None)
         except Exception as exc:  # noqa: BLE001
             logger.debug("[%s][%s] move_to failed: %s", self.agent_id, current_tick, exc)
+            return (False, str(exc))
 
-    # ── Occupancy (Redis) ───────────────────────────────────────────
+    async def _request_replan(self, current_tick: int, reason: str) -> None:
+        try:
+            state = self._component.agent.get_component("state").get_plugin()
+            profile = self._component.agent.get_component("profile").get_plugin().get_agent_profile()
+            long_task = await state.get_long_task()
+            plan_component = self._component.agent.get_component("plan")
+            if not plan_component:
+                return
+            await plan_component.get_plugin().replan_remaining_plans(
+                agent_id=self.agent_id,
+                current_tick=current_tick,
+                profile=profile,
+                long_task=long_task,
+                start_hour=(current_tick % 12) + 1,
+            )
+            await state.add_replan_event(
+                tick=current_tick,
+                reason=reason,
+                day=(current_tick // 12) + 1,
+                from_hour=(current_tick % 12) + 1,
+            )
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("[%s][%s] replan request failed: %s", self.agent_id, current_tick, exc)
+
+    async def _get_location_profile(self, location: str) -> dict[str, Any] | None:
+        if not self.controller or not location:
+            return None
+        try:
+            return await self.controller.run_environment("space", "get_location_profile", location)
+        except Exception:
+            return None
+
+    async def _get_relation(self, target: str) -> dict[str, Any] | None:
+        if not self.controller or target in _SOLO_TARGETS:
+            return None
+        try:
+            return await self.controller.run_environment("relation", "get_relation_between", self.agent_id, target)
+        except Exception:
+            return None
+
+    def _simple_description(
+        self,
+        profile: dict[str, Any],
+        action: str,
+        location: str,
+        location_profile: dict[str, Any] | None,
+        plan_note: str | None,
+    ) -> str:
+        name = profile.get("name") or profile.get("id") or self.agent_id
+        loc_name = (location_profile or {}).get("name") or location
+        mood = (location_profile or {}).get("symbolic_meaning") or (location_profile or {}).get("description", "")
+        suffix = f"这里带有{mood}的意味。" if mood else ""
+        note = f" {plan_note}" if plan_note else ""
+        return f"{name}正在{loc_name}执行：{action}。{suffix}{note}".strip()
+
     async def _get_occupation(self, tick: int, target_id: str) -> dict | None:
         if not self.redis:
             return None
@@ -177,9 +249,13 @@ class BasicInvokePlugin(InvokePlugin):
                     existing = json.loads(existing)
                 if existing.get("occupier") != self.agent_id and existing.get("importance", 0) > importance:
                     return False
-            await self.redis.set(key, json.dumps(
-                {"occupier": self.agent_id, "importance": importance, "action": action, "location": location}
-            ))
+            await self.redis.set(
+                key,
+                json.dumps(
+                    {"occupier": self.agent_id, "importance": importance, "action": action, "location": location},
+                    ensure_ascii=False,
+                ),
+            )
             return True
         except Exception as exc:  # noqa: BLE001
             logger.warning("[%s][%s] occupy failed: %s", self.agent_id, tick, exc)
@@ -192,25 +268,26 @@ class BasicInvokePlugin(InvokePlugin):
             key = f"occupation:{tick}:{target_id}"
             occ = await self._get_occupation(tick, target_id)
             if not occ:
-                await self.redis.set(key, json.dumps(
-                    {"occupier": self.agent_id, "importance": my_importance, "action": action}
-                ))
+                await self.redis.set(
+                    key,
+                    json.dumps({"occupier": self.agent_id, "importance": my_importance, "action": action}, ensure_ascii=False),
+                )
                 return True
             occupier = occ.get("occupier")
             occ_importance = occ.get("importance", 0)
             if occupier == self.agent_id:
                 return True
             if my_importance > occ_importance:
-                await self.redis.set(key, json.dumps(
-                    {"occupier": self.agent_id, "importance": my_importance, "action": action}
-                ))
+                await self.redis.set(
+                    key,
+                    json.dumps({"occupier": self.agent_id, "importance": my_importance, "action": action}, ensure_ascii=False),
+                )
                 return True
             return False
         except Exception as exc:  # noqa: BLE001
             logger.warning("[%s][%s] try_occupy_target failed: %s", self.agent_id, tick, exc)
             return False
 
-    # ── Dialogue ────────────────────────────────────────────────────
     async def _get_agent_memory(self, agent_id: str) -> str:
         if not self.controller:
             return "无记忆"
@@ -223,7 +300,7 @@ class BasicInvokePlugin(InvokePlugin):
             if short_memory:
                 text += "[近期记忆]\n" + "\n".join(f"- {m.get('content', m)}" for m in short_memory[-5:])
             return text.strip() or "无记忆"
-        except Exception:  # noqa: BLE001
+        except Exception:
             return "无记忆"
 
     async def _generate_execution_description(
@@ -236,9 +313,11 @@ class BasicInvokePlugin(InvokePlugin):
         self_profile: Dict[str, Any],
         target_profile: Dict[str, Any] | None,
         plan_note: str | None,
+        location_profile: Dict[str, Any] | None,
+        relation: Dict[str, Any] | None,
     ) -> Dict[str, Any]:
         self_name = self_profile.get("name") or self_profile.get("id") or self.agent_id
-        default = {"summary": f"{self_name} 正在 {location} 执行：{action}。", "history": []}
+        default = {"summary": self._simple_description(self_profile, action, location, location_profile, plan_note), "history": []}
         if not self.model:
             return default
 
@@ -246,84 +325,82 @@ class BasicInvokePlugin(InvokePlugin):
         absent = []
         if target not in _SOLO_TARGETS:
             (absent if plan_note else participants).append(target)
-
         if len(participants) == 1:
             if absent:
-                return {"summary": f"{self_name} 准备在 {location} 执行：{action}，但 {('、'.join(absent))} 未到场。", "history": []}
+                return {"summary": f"{self_name}准备在{location}执行：{action}，但{'、'.join(absent)}未到场。", "history": []}
             return default
 
         try:
             from plugins.agent.plan.BasicPlanPlugin import BasicPlanPlugin
+
             world_context = BasicPlanPlugin._world_context
-        except Exception:  # noqa: BLE001
+        except Exception:
             world_context = "一个开放的模拟世界"
 
+        loc_context = json.dumps(location_profile or {}, ensure_ascii=False)[:1200]
+        relation_context = json.dumps(relation or {}, ensure_ascii=False)
         dialogue_history: list[str] = []
         speaker_idx = 0
-        for round_num in range(8):
+        for _round_num in range(8):
             speaker_id = participants[speaker_idx]
             sp_profile = self_profile if speaker_id == self.agent_id else (target_profile or {})
             sp_name = sp_profile.get("name") or sp_profile.get("id") or speaker_id
-            sp_personality = (sp_profile.get("personality", {}) or {})
-            sp_traits = sp_personality.get("traits", [])
-            sp_style = sp_personality.get("speech_style", "未知")
+            sp_personality = sp_profile.get("personality", {}) or {}
             sp_memory = await self._get_agent_memory(speaker_id)
 
-            prompt = f"""你正在扮演 {sp_name}。
+            prompt = f"""请扮演 {sp_name}，在当前场景中说一句话或做一个动作。
 
 【世界背景】
 {world_context}
 
-当前场景：{action}
-地点：{location}
-重要性：{importance}/10"""
-            if plan_note:
-                prompt += f"\n特殊情况：{plan_note}"
-            prompt += f"""
+【行动】
+{action}
 
-{sp_name} 的设定：
-- 性格特质：{('、'.join(str(t) for t in sp_traits)) if sp_traits else '未知'}
-- 语言风格：{sp_style}
+【地点语义】
+{loc_context}
 
-{sp_name} 的记忆：
+【关系】
+{relation_context}
+
+【角色设定】
+性格：{sp_personality.get('traits', [])}
+说话风格：{sp_personality.get('speech_style', '未知')}
+
+【记忆】
 {sp_memory}
 
-已有对话：
-{chr(10).join(dialogue_history) if dialogue_history else '（对话刚开始）'}
+【已有对话】
+{chr(10).join(dialogue_history) if dialogue_history else '对话刚开始'}
 
-请以 {sp_name} 的身份说一句话（含动作描述）。格式：[动作]对话内容
-若认为对话应结束，在末尾加 [END]。
-
-【约束】
-1. 言行必须符合该角色的性格、定位与上述世界背景设定。
-2. 情绪与措辞应与角色身份一致，保持自洽，避免出现与世界观冲突的现代化表达。
-3. 仅当场景明确涉及冲突或危险时，才可客观描述受伤/死亡等后果，日常互动不得出现极端结果。
-
-{sp_name} 说：（必须使用中文）"""
-
-            response = (await self.model.chat(prompt)).strip()
+要求：使用中文；符合角色身份和地点氛围；格式为“[动作]台词”；若自然结束，在末尾加 [END]。
+"""
+            response = str(await self.model.chat(prompt) or "").strip()
             dialogue_history.append(f"{sp_name}：{response}")
             if "[END]" in response or "END" in response:
                 break
             speaker_idx = (speaker_idx + 1) % len(participants)
 
-        summary_prompt = f"""以下是 {('、'.join(participants))} 在 {location} 的对话：
+        summary_prompt = f"""请用 50-100 字中文总结这次互动。只返回总结正文。
 
+地点：{location}
+行动：{action}
+地点语义：{loc_context}
+对话：
 {chr(10).join(dialogue_history)}
-
-请用一段话（50-100字）以第三人称总结这次互动。只返回总结内容。
-
-【重要】若对话中发生致命事件，必须在总结中明确写出：
-- 死亡：必须写出"XX死亡/身亡"
-- 重伤：必须写出"XX重伤"
-- 离场：必须写出"XX离开/消失"
-这些信息是系统判断角色状态的关键。必须使用中文。"""
-        summary = (await self.model.chat(summary_prompt)).strip()
-        return {"summary": summary, "history": dialogue_history}
+"""
+        summary = str(await self.model.chat(summary_prompt) or "").strip()
+        return {"summary": summary or default["summary"], "history": dialogue_history}
 
     async def _propagate_to_target(
-        self, target: str, current_tick: int, action: str, time: int,
-        location: str, importance: int, description: str, dialogue_history: list,
+        self,
+        target: str,
+        current_tick: int,
+        action: str,
+        time: int,
+        location: str,
+        importance: int,
+        description: str,
+        dialogue_history: list,
     ) -> None:
         if not self.controller:
             return

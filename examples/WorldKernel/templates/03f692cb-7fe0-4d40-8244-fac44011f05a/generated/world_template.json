@@ -1,0 +1,398 @@
+{
+  "primary": "celestial_kingdom",
+  "secondary": null,
+  "confidence": 0.95,
+  "tags": [
+    "神话",
+    "天庭",
+    "反抗",
+    "衍生",
+    "中国古典"
+  ],
+  "world_name": "天庭",
+  "world_origin_summary": "衍生自《西游记》大闹天宫事件，描绘孙悟空反抗天庭权力体系的神话冲突",
+  "scope": "world",
+  "simulation_start": {
+    "time_point": "蟠桃会前夕",
+    "trigger_event": "孙悟空被任命为齐天大圣但未受邀参加蟠桃盛会",
+    "year": "神话纪年",
+    "narrative_context": "孙悟空因天庭轻视而愤怒，将在蟠桃会上大闹，引发天庭与花果山的全面对抗"
+  },
+  "location_archetypes": [
+    {
+      "type_id": "throne_hall",
+      "type_name": "朝会大殿",
+      "description": "天庭权力中枢，玉皇大帝主持议事、发布诏令的核心场所，也是各路神仙朝拜之地",
+      "common_fields": [
+        "ruler_seat",
+        "capacity",
+        "security_level",
+        "decoration"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "lingxiao_hall",
+          "name": "凌霄宝殿",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 1.0,
+          "generation_priority": 1,
+          "role_in_world": "天庭最高权力象征，玉皇大帝朝会之所，是冲突决策的中心"
+        }
+      ]
+    },
+    {
+      "type_id": "garden_orchard",
+      "type_name": "园林果园",
+      "description": "天庭的神仙花园，种植仙果神药，是重要资源与休闲场所，往往成为冲突导火索",
+      "common_fields": [
+        "rare_plants",
+        "guard_level",
+        "harvest_cycle"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "peach_garden",
+          "name": "蟠桃园",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 1.0,
+          "generation_priority": 1,
+          "role_in_world": "孙悟空偷吃蟠桃的起点，引发王母娘娘之怒与大闹天庭的直接导火索"
+        }
+      ]
+    },
+    {
+      "type_id": "workshop",
+      "type_name": "炼丹工坊",
+      "description": "神仙炼制丹药、法宝的专用空间，贮藏珍贵资源，常为冲突目标",
+      "common_fields": [
+        "resources",
+        "master",
+        "security",
+        "output"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "taishang_laojun_furnace",
+          "name": "兜率宫炼丹房",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 2,
+          "role_in_world": "太上老君炼制仙丹之地，孙悟空盗丹后功力大增，成为天庭威胁"
+        }
+      ]
+    },
+    {
+      "type_id": "gate",
+      "type_name": "门户关卡",
+      "description": "天庭的出入口或重要关隘，由重兵把守，是攻防要地",
+      "common_fields": [
+        "defense",
+        "guard_units",
+        "entry_condition"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "south_heaven_gate",
+          "name": "南天门",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 1.0,
+          "generation_priority": 1,
+          "role_in_world": "天庭正门，天兵把守，孙悟空闯关的主要突破口"
+        }
+      ]
+    },
+    {
+      "type_id": "realm",
+      "type_name": "领地区域",
+      "description": "佛祖、散仙或妖怪占据的独立领地，与天庭并列或对立的空间",
+      "common_fields": [
+        "ruler",
+        "territory_size",
+        "alignment",
+        "special_traits"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "water_curtain_cave",
+          "name": "水帘洞",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 2,
+          "role_in_world": "孙悟空在花果山的洞府，猴子猴孙的根据地，反抗天庭的大本营"
+        }
+      ]
+    },
+    {
+      "type_id": "battlefield",
+      "type_name": "战场区域",
+      "description": "天庭与花果山军队交锋的空间，展现神通法术的场所",
+      "common_fields": [
+        "terrain",
+        "scale",
+        "casualty_level"
+      ],
+      "candidate_location_seeds": [
+        {
+          "seed_id": "heavenly_battlefield_void",
+          "name": "天界虚空战场",
+          "importance": "major",
+          "source_type": "inferred",
+          "confidence": 0.85,
+          "generation_priority": 3,
+          "role_in_world": "天兵天将与孙悟空大军激战的宙域，发生多次决定性战役"
+        }
+      ]
+    }
+  ],
+  "character_archetypes": [
+    {
+      "type_id": "ruler",
+      "type_name": "天庭统治者",
+      "description": "天庭最高权力者，掌控神仙秩序，面对孙悟空的反叛需要做出决策",
+      "common_fields": [
+        "domain",
+        "power_level",
+        "personality",
+        "allegiance"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "jade_emperor",
+          "name": "玉皇大帝",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 1.0,
+          "generation_priority": 1,
+          "role_in_world": "天庭主宰，大闹天宫的核心对立面，最终求助于佛祖平息危机"
+        }
+      ]
+    },
+    {
+      "type_id": "general",
+      "type_name": "天兵天将",
+      "description": "天庭军事力量，负责镇守天界与讨伐叛乱，包括多位有名将领",
+      "common_fields": [
+        "rank",
+        "weapon",
+        "combat_skill",
+        "unit_size"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "li_jing",
+          "name": "托塔李天王",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 2,
+          "role_in_world": "天庭元帅，多次率天兵征讨花果山，但屡战屡败"
+        }
+      ]
+    },
+    {
+      "type_id": "deity",
+      "type_name": "神仙",
+      "description": "天庭体系中的各司神仙，掌握特殊能力或资源，在冲突中扮演辅助、调停或旁观角色",
+      "common_fields": [
+        "specialty",
+        "faction",
+        "magic_power"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "taishang_laojun",
+          "name": "太上老君",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 1.0,
+          "generation_priority": 2,
+          "role_in_world": "道德天尊，炼丹大师，其仙丹被孙悟空盗食，后以金刚琢制服悟空"
+        }
+      ]
+    },
+    {
+      "type_id": "rebel",
+      "type_name": "反抗者",
+      "description": "挑战天庭秩序的核心人物，拥有超凡神通，带领猴族或其他势力对抗天庭",
+      "common_fields": [
+        "abilities",
+        "army_size",
+        "motivation",
+        "notable_equipment"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "sun_wukong",
+          "name": "孙悟空",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 1.0,
+          "generation_priority": 1,
+          "role_in_world": "绝对主角，从齐天大圣到反叛者，凭金箍棒与七十二变搅乱天庭"
+        }
+      ]
+    },
+    {
+      "type_id": "servant",
+      "type_name": "侍从仆役",
+      "description": "天庭中供职的低阶神仆或仙女，负责日常服务，常成为事件的见证者或受害者",
+      "common_fields": [
+        "duty",
+        "deity_served",
+        "access_level"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "seven_fairies",
+          "name": "七仙女",
+          "importance": "minor",
+          "source_type": "canonical",
+          "confidence": 0.95,
+          "generation_priority": 3,
+          "role_in_world": "王母娘娘身边采摘蟠桃的仙女，被孙悟空定住，目睹他偷桃捣乱"
+        }
+      ]
+    },
+    {
+      "type_id": "external_deity",
+      "type_name": "外部神佛",
+      "description": "来自天庭体系之外的更高存在（如来、观音等），拥有超越天庭的权能，常作为最终裁决者",
+      "common_fields": [
+        "realm",
+        "power",
+        "cultivation_level",
+        "intervention_condition"
+      ],
+      "candidate_character_seeds": [
+        {
+          "seed_id": "tathagata_buddha",
+          "name": "如来佛祖",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 1.0,
+          "generation_priority": 1,
+          "role_in_world": "降临天庭镇压孙悟空的关键人物，以五指山为牢，终结大闹天宫事件"
+        }
+      ]
+    }
+  ],
+  "rule_archetypes": [
+    {
+      "type_id": "heavenly_law",
+      "type_name": "天规",
+      "description": "天庭的基本法则，规定神仙行为、等级秩序及惩罚条款，违反将受天罚",
+      "common_fields": [
+        "violation",
+        "penalty",
+        "enforcer",
+        "severity"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "no_disruption_in_heaven",
+          "name": "不得扰乱天庭秩序",
+          "importance": "core",
+          "source_type": "canonical",
+          "confidence": 0.98,
+          "generation_priority": 1,
+          "role_in_world": "孙悟空大闹天宫直接触犯此条天规，导致天庭出兵镇压"
+        }
+      ]
+    },
+    {
+      "type_id": "appointment_rule",
+      "type_name": "任命规则",
+      "description": "天庭关于神仙官职授予与晋级的规范，涉及等级、仪式与权力分配",
+      "common_fields": [
+        "position",
+        "requirement",
+        "appointer",
+        "duration"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "qi_tian_da_sheng_title",
+          "name": "齐天大圣封号",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.99,
+          "generation_priority": 2,
+          "role_in_world": "天庭为安抚悟空而设的虚衔，无实权，反而激化矛盾"
+        }
+      ]
+    },
+    {
+      "type_id": "combat_rule",
+      "type_name": "战斗规则",
+      "description": "天庭与花果山交战时的默认交战法则，包括阵法、降伏优先于杀戮等",
+      "common_fields": [
+        "strategy",
+        "allowed_forces",
+        "rules_of_engagement"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "avoid_civilian_harm",
+          "name": "避免伤及无辜生灵",
+          "importance": "minor",
+          "source_type": "inferred",
+          "confidence": 0.75,
+          "generation_priority": 3,
+          "role_in_world": "天兵征讨时尽量控制战斗范围，防止波及凡间"
+        }
+      ]
+    },
+    {
+      "type_id": "forbidden_rule",
+      "type_name": "禁忌规则",
+      "description": "神仙不得触碰的绝对禁忌，如仙丹私盗、蟠桃私摘、私自下凡等",
+      "common_fields": [
+        "taboo",
+        "punishment",
+        "severity"
+      ],
+      "candidate_rule_seeds": [
+        {
+          "seed_id": "no_steal_peaches",
+          "name": "禁止私摘蟠桃",
+          "importance": "major",
+          "source_type": "canonical",
+          "confidence": 0.97,
+          "generation_priority": 2,
+          "role_in_world": "孙悟空无视此禁忌，偷吃蟠桃直接触发王母的愤怒与天庭的敌意"
+        }
+      ]
+    }
+  ],
+  "world_constraints": [
+    {
+      "constraint_id": "celestial_hierarchy",
+      "name": "天庭等级森严",
+      "description": "天庭是一个严格的金字塔权力结构，身份决定地位与话语权，低级神仙无法挑战高级神仙，违者受天规严惩",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "supernatural_power_difference",
+      "name": "神力层级差异",
+      "description": "不同神仙的法力与神通有本质差距，孙悟空因吃仙桃、仙丹拥有金刚不坏之身与七十二变，远超普通天兵天将，但最终无法战胜如来级别的存在",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "immortal_invulnerability",
+      "name": "神佛不死性",
+      "description": "天庭正神与孙悟空自身皆享长生，无法被常规手段杀死，镇压或封印是唯一解决方式",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "heavenly_seclusion",
+      "name": "天界与凡间隔绝",
+      "description": "天庭与人间有严格界限，天兵天将不得轻易下凡，孙悟空从花果山闯入天界是打破这一屏障的异常行为",
+      "scope": "location"
+    }
+  ]
+}

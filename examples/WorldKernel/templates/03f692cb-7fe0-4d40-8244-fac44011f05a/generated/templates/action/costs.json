@@ -1,0 +1,52 @@
+{
+  "fields": [
+    {
+      "name": "time",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "resources",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "social_cost",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "karma_cost",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "celestial_currency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "favor_loss",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "essence_depletion",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "divine_retribution",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}
