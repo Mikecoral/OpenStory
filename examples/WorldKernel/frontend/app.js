@@ -256,3 +256,11 @@ function renderBlueprint(spatial) {
 document.getElementById('worldInput').addEventListener('keydown', (event) => {
   if (event.key === 'Enter' && (event.ctrlKey || event.metaKey)) submitInput();
 });
+
+window.addEventListener('pageshow', () => {
+  setStatus(false);
+  const submitBtn = document.getElementById('submitBtn');
+  if (submitBtn) submitBtn.disabled = false;
+  const simulationBtn = document.getElementById('enterSimulationBtn');
+  if (simulationBtn) simulationBtn.disabled = false;
+});

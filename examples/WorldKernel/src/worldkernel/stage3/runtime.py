@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 import importlib.util
 import os
 import sys
@@ -47,60 +48,75 @@ class Stage3RuntimeManager:
         self.current_tick: int = 0
         self.last_agents_data: dict[str, Any] = {}
         self.started: bool = False
+        self._lock = asyncio.Lock()
+        self._stop_requested: bool = False
 
     async def start(self, session_root: str | Path, max_ticks: int = 100) -> dict[str, Any]:
         session_path = Path(session_root).resolve()
         self._validate_stage2_artifacts(session_path)
         _ensure_real_ray_available()
-        await self.stop(shutdown_ray=False)
 
-        adapter_result = build_agentkernel_project(session_path, max_ticks=max_ticks)
-        if not adapter_result.dry_validation_passed:
-            warnings = "; ".join(adapter_result.warnings or [])
-            raise RuntimeError(f"Stage3 adapter dry validation failed. {warnings}")
+        async with self._lock:
+            self._stop_requested = True
+            await self._stop_unlocked(shutdown_ray=False)
+            self._stop_requested = False
 
-        _ensure_paths()
-        os.environ["MAS_PROJECT_ABS_PATH"] = str(self.project_root)
-        os.environ["MAS_PROJECT_REL_PATH"] = "examples.WorldKernel"
+            adapter_result = build_agentkernel_project(session_path, max_ticks=max_ticks)
+            if not adapter_result.dry_validation_passed:
+                warnings = "; ".join(adapter_result.warnings or [])
+                raise RuntimeError(f"Stage3 adapter dry validation failed. {warnings}")
 
-        import ray
-        from agentkernel_distributed.mas.builder import Builder
-        from registry import RESOURCES_MAPS
+            _ensure_paths()
+            os.environ["MAS_PROJECT_ABS_PATH"] = str(self.project_root)
+            os.environ["MAS_PROJECT_REL_PATH"] = "examples.WorldKernel"
 
-        if not ray.is_initialized():
-            ray.init(
-                runtime_env={
-                    "working_dir": str(self.project_root),
-                    "env_vars": {"PYTHONPATH": os.pathsep.join(sys.path)},
-                    "excludes": ["*.pyc", "__pycache__", ".pytest_cache"],
-                }
-            )
+            import ray
+            from agentkernel_distributed.mas.builder import Builder
+            from registry import RESOURCES_MAPS
 
-        self.builder = Builder(project_path=str(self.project_root), resource_maps=RESOURCES_MAPS)
-        self.pod_manager, self.system = await self.builder.init()
-        self.session_id = session_path.name
-        self.session_root = session_path
-        self.adapter_result = adapter_result.model_dump(mode="json")
-        self.current_tick = await self.system.run("timer", "get_tick")
-        self.last_agents_data = await self.pod_manager.collect_agents_data.remote()
-        self.started = True
-        return self.state()
+            if not ray.is_initialized():
+                ray.init(
+                    runtime_env={
+                        "working_dir": str(self.project_root),
+                        "env_vars": {"PYTHONPATH": os.pathsep.join(sys.path)},
+                        "excludes": ["*.pyc", "__pycache__", ".pytest_cache"],
+                    }
+                )
+
+            self.builder = Builder(project_path=str(self.project_root), resource_maps=RESOURCES_MAPS)
+            self.pod_manager, self.system = await self.builder.init()
+            self.session_id = session_path.name
+            self.session_root = session_path
+            self.adapter_result = adapter_result.model_dump(mode="json")
+            self.current_tick = await self.system.run("timer", "get_tick")
+            self.last_agents_data = await self.pod_manager.collect_agents_data.remote()
+            self.started = True
+            return self.state()
 
     async def tick(self) -> dict[str, Any]:
-        if not self.started or not self.pod_manager or not self.system:
-            raise RuntimeError("Stage3 runtime is not started")
+        async with self._lock:
+            if self._stop_requested:
+                return self.state(extra={"stopping": True})
+            if not self.started or not self.pod_manager or not self.system:
+                raise RuntimeError("Stage3 runtime is not started")
 
-        started_at = time.time()
-        await self.pod_manager.step_agent.remote()
-        await self.system.run("messager", "dispatch_messages")
-        current_tick = await self.system.run("timer", "get_tick")
-        duration = time.time() - started_at
-        await self.pod_manager.update_agents_status.remote()
-        await self.system.run("timer", "add_tick", duration_seconds=duration)
+            started_at = time.time()
+            await self.pod_manager.step_agent.remote()
+            if self._stop_requested:
+                return self.state(extra={"stopping": True})
+            await self.system.run("messager", "dispatch_messages")
+            if self._stop_requested:
+                return self.state(extra={"stopping": True})
+            current_tick = await self.system.run("timer", "get_tick")
+            duration = time.time() - started_at
+            await self.pod_manager.update_agents_status.remote()
+            if self._stop_requested:
+                return self.state(extra={"stopping": True})
+            await self.system.run("timer", "add_tick", duration_seconds=duration)
 
-        self.current_tick = current_tick
-        self.last_agents_data = await self.pod_manager.collect_agents_data.remote()
-        return self.state(extra={"duration_seconds": duration})
+            self.current_tick = current_tick
+            self.last_agents_data = await self.pod_manager.collect_agents_data.remote()
+            return self.state(extra={"duration_seconds": duration})
 
     def state(self, extra: dict[str, Any] | None = None) -> dict[str, Any]:
         payload = {
@@ -115,6 +131,11 @@ class Stage3RuntimeManager:
         return payload
 
     async def stop(self, shutdown_ray: bool = True) -> dict[str, Any]:
+        self._stop_requested = True
+        async with self._lock:
+            return await self._stop_unlocked(shutdown_ray=shutdown_ray)
+
+    async def _stop_unlocked(self, shutdown_ray: bool = True) -> dict[str, Any]:
         try:
             if self.pod_manager:
                 await self.pod_manager.close.remote()
@@ -139,6 +160,7 @@ class Stage3RuntimeManager:
         self.started = False
         self.current_tick = 0
         self.last_agents_data = {}
+        self._stop_requested = False
         return self.state()
 
     @staticmethod

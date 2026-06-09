@@ -1,46 +1,49 @@
 {
-  "world_name": "天庭",
-  "world_origin_summary": "衍生自《西游记》大闹天宫事件，描绘孙悟空反抗天庭权力体系的神话冲突",
-  "primary": "celestial_kingdom",
-  "secondary": null,
+  "world_name": "水浒传世界",
+  "world_origin_summary": "衍生自《水浒传》原著，还原北宋末年梁山好汉反抗朝廷腐败的江湖世界",
+  "primary": "rebel_stronghold",
+  "secondary": "feudal_court",
   "tags": [
-    "神话",
-    "天庭",
-    "反抗",
-    "衍生",
-    "中国古典"
+    "古代中国",
+    "宋代",
+    "江湖义气",
+    "农民起义",
+    "武打战斗",
+    "108将",
+    "朝廷腐败",
+    "衍生世界"
   ],
-  "scope": "world",
+  "scope": "region",
   "simulation_start": {
-    "time_point": "蟠桃会前夕",
-    "trigger_event": "孙悟空被任命为齐天大圣但未受邀参加蟠桃盛会",
-    "year": "神话纪年",
-    "narrative_context": "孙悟空因天庭轻视而愤怒，将在蟠桃会上大闹，引发天庭与花果山的全面对抗"
+    "time_point": "晁盖等七人智取生辰纲后上梁山，火并王伦",
+    "trigger_event": "晁盖成为梁山之主，梁山进入聚义初期",
+    "year": "北宋宣和年间（约1119年）",
+    "narrative_context": "晁盖领导下的梁山招纳四方好汉，初具规模，与朝廷的冲突逐渐升级"
   },
   "world_constraints": [
     {
-      "constraint_id": "celestial_hierarchy",
-      "name": "天庭等级森严",
-      "description": "天庭是一个严格的金字塔权力结构，身份决定地位与话语权，低级神仙无法挑战高级神仙，违者受天规严惩",
+      "constraint_id": "loyalty_before_all",
+      "name": "忠义信条优先",
+      "description": "梁山好汉以兄弟义气为最高准则，背叛兄弟者将遭集体排斥甚至处死，这一原则贯穿所有行动",
       "scope": "global"
     },
     {
-      "constraint_id": "supernatural_power_difference",
-      "name": "神力层级差异",
-      "description": "不同神仙的法力与神通有本质差距，孙悟空因吃仙桃、仙丹拥有金刚不坏之身与七十二变，远超普通天兵天将，但最终无法战胜如来级别的存在",
+      "constraint_id": "court_oppression",
+      "name": "朝廷黑暗压迫",
+      "description": "北宋朝廷从上到下腐败盛行，奸臣当道，普通百姓和正直官员备受压迫，这一局面是好汉们落草的根本原因",
       "scope": "global"
     },
     {
-      "constraint_id": "immortal_invulnerability",
-      "name": "神佛不死性",
-      "description": "天庭正神与孙悟空自身皆享长生，无法被常规手段杀死，镇压或封印是唯一解决方式",
-      "scope": "global"
+      "constraint_id": "outlaw_identity",
+      "name": "草寇身份限制",
+      "description": "梁山上下均为朝廷通缉的罪犯，无法在正常社会立足，只能通过武力对抗或招安改变命运",
+      "scope": "faction"
     },
     {
-      "constraint_id": "heavenly_seclusion",
-      "name": "天界与凡间隔绝",
-      "description": "天庭与人间有严格界限，天兵天将不得轻易下凡，孙悟空从花果山闯入天界是打破这一屏障的异常行为",
-      "scope": "location"
+      "constraint_id": "destiny_of_stars",
+      "name": "天罡地煞宿命",
+      "description": "108将为天罡地煞星下凡，聚义和最终结局均有天意安排，悲剧结局不可避免",
+      "scope": "global"
     }
   ]
 }

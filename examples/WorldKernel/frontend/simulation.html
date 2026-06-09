@@ -203,6 +203,9 @@
     let spatial = null;
     let runtime = null;
     let autoTimer = null;
+    let autoPlaying = false;
+    let tickInFlight = false;
+    let runToken = 0;
 
     document.getElementById('sessionLabel').textContent = `session: ${sessionId || '-'}`;
     document.getElementById('tickBtn').addEventListener('click', tickOnce);
@@ -229,34 +232,63 @@
       }
     }
 
-    async function tickOnce() {
+    async function tickOnce(options = {}) {
+      if (tickInFlight) return runtime;
+      const token = options.token ?? runToken;
+      tickInFlight = true;
       setBusy(true);
       try {
-        runtime = await fetchJson('/api/stage3/runtime/tick', { method: 'POST' });
-        render();
+        const nextRuntime = await fetchJson('/api/stage3/runtime/tick', { method: 'POST' });
+        if (token === runToken && !options.ignoreResult) {
+          runtime = nextRuntime;
+          render();
+        }
+        return nextRuntime;
       } catch (error) {
-        showError(error.message);
+        if (token === runToken) showError(error.message);
       } finally {
+        tickInFlight = false;
         setBusy(false);
       }
     }
 
     function toggleAuto() {
-      const btn = document.getElementById('autoBtn');
-      if (autoTimer) {
-        clearInterval(autoTimer);
-        autoTimer = null;
-        btn.textContent = '自动播放';
+      if (autoPlaying) {
+        stopAutoPlayback();
         return;
       }
+      startAutoPlayback();
+    }
+
+    function startAutoPlayback() {
+      const btn = document.getElementById('autoBtn');
+      autoPlaying = true;
+      runToken += 1;
       btn.textContent = '暂停';
-      autoTimer = setInterval(() => {
-        tickOnce().catch((error) => showError(error.message));
+      scheduleAutoTick(runToken);
+    }
+
+    function stopAutoPlayback() {
+      autoPlaying = false;
+      runToken += 1;
+      if (autoTimer) {
+        clearTimeout(autoTimer);
+        autoTimer = null;
+      }
+      document.getElementById('autoBtn').textContent = '自动播放';
+    }
+
+    function scheduleAutoTick(token) {
+      if (!autoPlaying || token !== runToken) return;
+      autoTimer = setTimeout(async () => {
+        autoTimer = null;
+        await tickOnce({ token });
+        scheduleAutoTick(token);
       }, 2500);
     }
 
     async function stopRuntime() {
-      if (autoTimer) toggleAuto();
+      stopAutoPlayback();
       setBusy(true);
       try {
         runtime = await fetchJson('/api/stage3/runtime/stop', { method: 'POST' });
@@ -420,7 +452,6 @@
 
     function setBusy(isBusy) {
       document.getElementById('tickBtn').disabled = isBusy;
-      document.getElementById('stopBtn').disabled = isBusy;
     }
 
     function showError(message) {
