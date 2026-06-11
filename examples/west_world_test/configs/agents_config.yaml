@@ -1,0 +1,14 @@
+templates:
+  - name: ScriptedAgent
+    component_order: ["plan", "state"]
+    components:
+      plan:
+        plugin:
+          ScriptedPlanPlugin:
+            adapters: {}
+      state:
+        plugin:
+          BasicStatePlugin:
+            adapters:
+              adapter: RedisKVAdapter
+            state_data: agent_states

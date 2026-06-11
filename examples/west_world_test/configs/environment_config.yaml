@@ -1,0 +1,8 @@
+name: WestWorldEnvironment
+components:
+  scene:
+    plugin:
+      SceneRecorderPlugin:
+        adapters: {}
+        method: both
+        config_path: configs/models_config.yaml
