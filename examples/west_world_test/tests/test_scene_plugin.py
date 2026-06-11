@@ -1,0 +1,16 @@
+import asyncio
+
+from examples.west_world_test.core.llm_client import FakeLLM
+from examples.west_world_test.scene.SceneRecorderPlugin import SceneRecorderPlugin
+
+
+def test_plugin_component_type_is_scene():
+    assert SceneRecorderPlugin.COMPONENT_TYPE == "scene"
+
+
+def test_plugin_apply_and_probe_with_fakes():
+    plugin = SceneRecorderPlugin(method="text", llm_factory=lambda: FakeLLM(["updated", "2"], default="2"))
+    asyncio.run(plugin.apply_event({"id": "e1", "tick": 1, "actor": "酒保", "action": "pour_whiskey", "target": "glass"}))
+    result = asyncio.run(plugin.probe({"id": "q1", "kind": "state", "text": "几个?", "field": "glasses_intact", "answer_type": "int"}))
+    assert result["truth"] == 2
+    assert result["answers"]["text"]["correct"] is True
