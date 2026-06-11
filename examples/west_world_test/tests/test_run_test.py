@@ -7,15 +7,15 @@ from examples.west_world_test.scene.SceneRecorderPlugin import SceneRecorderPlug
 
 
 def test_kernel_loop_flattens_scene_results():
-    plugin = SceneRecorderPlugin(method="text", llm_factory=lambda: FakeLLM(["record", "2"], default="2"))
+    plugin = SceneRecorderPlugin(method="text", llm_factory=lambda: FakeLLM(["record", "1"], default="1"))
 
     async def call(_component, method, payload):
         return await getattr(plugin, method)(payload)
 
-    events = [Event.from_dict({"id": "e1", "tick": 1, "actor": "酒保", "action": "pour_whiskey", "target": "glass"})]
-    probes = [Probe.from_dict({"id": "q1", "kind": "state", "text": "几个?", "field": "glasses_intact", "answer_type": "int"})]
+    events = [Event.from_dict({"id": "e1", "tick": 1, "actor": "酒保", "action": "pour_whiskey", "target": "glass", "affected_probe_ids": ["q9"]})]
+    probes = [Probe.from_dict({"id": "q9", "kind": "state", "text": "几个?", "field": "glasses_filled", "answer_type": "int"})]
     records = asyncio.run(run_kernel_loop(events, probes, call))
     assert records == [{
-        "tick": 1, "method": "text", "probe_id": "q1", "truth": 2,
-        "had_relevant_event": True, "answer": "2", "norm": "2", "correct": True,
+        "tick": 1, "method": "text", "probe_id": "q9", "truth": 1,
+        "had_relevant_event": True, "answer": "1", "norm": "1", "correct": True,
     }]

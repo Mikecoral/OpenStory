@@ -20,7 +20,8 @@ def test_initial_state():
 def test_pour_whiskey_decrements_glasses():
     oracle = OracleState()
     oracle.apply(_ev(action="pour_whiskey"))
-    assert oracle.state["glasses_intact"] == 2
+    assert oracle.state["glasses_intact"] == 3
+    assert oracle.state["glasses_filled"] == 1
 
 
 def test_smash_glass_decrements_and_adds_shards():

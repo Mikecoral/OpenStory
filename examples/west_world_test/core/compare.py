@@ -10,16 +10,8 @@ from .metrics import accuracy_over_ticks, contradiction_count, drift_slope, is_c
 from .oracle import OracleState
 from .schema import Event, Probe, load_events, load_probes
 
-_FIELD_TARGET = {
-    "glasses_intact": {"glass"}, "glass_shards": {"glass"}, "wanted_poster": {"wanted_poster"},
-    "photo": {"photo"}, "piano": {"piano"}, "revolver": {"revolver"}, "door": {"door"},
-}
-
-
 def _is_relevant(probe: Probe, event: Event) -> bool:
-    if probe.kind == "visibility":
-        return event.id == probe.fact_event_id
-    return event.target in _FIELD_TARGET.get((probe.field or "").split(".")[0], set())
+    return probe.id in event.affected_probe_ids
 
 
 def run_comparison(events: List[Event], probes: List[Probe], rep_factories: Dict[str, Callable[[], Any]]) -> Dict[str, Any]:
@@ -39,6 +31,7 @@ def run_comparison(events: List[Event], probes: List[Probe], rep_factories: Dict
                     "norm": normalize(raw, probe.answer_type), "truth": truth,
                     "correct": is_correct(raw, truth, probe.answer_type),
                     "had_relevant_event": _is_relevant(probe, event),
+                    "score_group": probe.score_group,
                 })
     summary = {}
     for name in representations:
@@ -49,6 +42,11 @@ def run_comparison(events: List[Event], probes: List[Probe], rep_factories: Dict
             "accuracy_by_tick": by_tick,
             "drift_slope": drift_slope(by_tick),
             "contradictions": contradiction_count(method_records),
+            "accuracy_by_group": {
+                group: sum(r["correct"] for r in method_records if r["score_group"] == group)
+                / len([r for r in method_records if r["score_group"] == group])
+                for group in sorted({r["score_group"] for r in method_records})
+            },
         }
     return {"records": records, "summary": summary}
 

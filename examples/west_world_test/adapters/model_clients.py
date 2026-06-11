@@ -4,7 +4,7 @@ from __future__ import annotations
 import base64
 import io
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Callable, Dict, List, Optional
 
 import requests
 import yaml
@@ -17,25 +17,39 @@ def _load_models(path: str) -> Dict[str, Dict[str, Any]]:
 
 
 class OpenAICompatibleLLM:
-    def __init__(self, config: Dict[str, Any]) -> None:
+    def __init__(self, config: Dict[str, Any], trace: Optional[Callable[[Dict[str, Any]], None]] = None) -> None:
         self.config = config
+        self.trace = trace
         self.client = OpenAI(api_key=config["api_key"], base_url=config["base_url"])
 
     def chat(self, prompt: str) -> str:
         response = self.client.chat.completions.create(model=self.config["model"], messages=[{"role": "user", "content": prompt}])
-        return response.choices[0].message.content or ""
+        answer = response.choices[0].message.content or ""
+        if self.trace:
+            self.trace({"call_type": "text_chat", "model": self.config["model"], "prompt": prompt, "response": answer})
+        return answer
 
 
 class OpenAICompatibleVLM(OpenAICompatibleLLM):
     def ask(self, image_handle: str, question: str) -> str:
         content = [{"type": "text", "text": question}, {"type": "image_url", "image_url": {"url": image_handle}}]
         response = self.client.chat.completions.create(model=self.config["model"], messages=[{"role": "user", "content": content}])
-        return response.choices[0].message.content or ""
+        answer = response.choices[0].message.content or ""
+        if self.trace:
+            self.trace({
+                "call_type": "vision_chat",
+                "model": self.config["model"],
+                "question": question,
+                "image_handle": image_handle if not image_handle.startswith("data:image/") else "data:image/[archived separately]",
+                "response": answer,
+            })
+        return answer
 
 
 class OpenAICompatibleImageGen:
-    def __init__(self, config: Dict[str, Any]) -> None:
+    def __init__(self, config: Dict[str, Any], trace: Optional[Callable[[Dict[str, Any]], None]] = None) -> None:
         self.config = config
+        self.trace = trace
         self.client = OpenAI(api_key=config["api_key"], base_url=config["base_url"])
 
     @staticmethod
@@ -63,7 +77,10 @@ class OpenAICompatibleImageGen:
 
     def create_initial(self, prompt: str) -> str:
         response = self.client.images.generate(model=self.config["model"], prompt=prompt, size=self.config.get("size", "1024x1024"))
-        return self._handle(response)
+        handle = self._handle(response)
+        if self.trace:
+            self.trace({"call_type": "image_generate", "model": self.config["model"], "prompt": prompt, "response_image": "archived separately"})
+        return handle
 
     def apply_event(self, previous_image: str, prompt: str) -> str:
         image = self._image_file(previous_image)
@@ -74,16 +91,25 @@ class OpenAICompatibleImageGen:
             size=self.config.get("size", "1024x1024"),
             input_fidelity=self.config.get("input_fidelity", "high"),
         )
-        return self._handle(response)
+        handle = self._handle(response)
+        if self.trace:
+            self.trace({
+                "call_type": "image_edit",
+                "model": self.config["model"],
+                "prompt": prompt,
+                "previous_image": previous_image if not previous_image.startswith("data:image/") else "data:image/[archived separately]",
+                "response_image": "archived separately",
+            })
+        return handle
 
 
-def build_llm(config_path: str) -> OpenAICompatibleLLM:
-    return OpenAICompatibleLLM(_load_models(config_path)["text"])
+def build_llm(config_path: str, trace: Optional[Callable[[Dict[str, Any]], None]] = None) -> OpenAICompatibleLLM:
+    return OpenAICompatibleLLM(_load_models(config_path)["text"], trace=trace)
 
 
-def build_vlm(config_path: str) -> OpenAICompatibleVLM:
-    return OpenAICompatibleVLM(_load_models(config_path)["vision"])
+def build_vlm(config_path: str, trace: Optional[Callable[[Dict[str, Any]], None]] = None) -> OpenAICompatibleVLM:
+    return OpenAICompatibleVLM(_load_models(config_path)["vision"], trace=trace)
 
 
-def build_image_gen(config_path: str) -> OpenAICompatibleImageGen:
-    return OpenAICompatibleImageGen(_load_models(config_path)["image"])
+def build_image_gen(config_path: str, trace: Optional[Callable[[Dict[str, Any]], None]] = None) -> OpenAICompatibleImageGen:
+    return OpenAICompatibleImageGen(_load_models(config_path)["image"], trace=trace)

@@ -3,6 +3,17 @@
 This experiment compares two independent dynamic-environment recorders against
 the same fixed event sequence and Oracle truth.
 
+## Evaluation Protocol
+
+- Every event explicitly declares `affected_probe_ids`; event relevance is not
+  guessed from the event target.
+- `pour_whiskey` increases `glasses_filled` and does not consume or destroy an
+  intact glass.
+- Probes are split into `visual_physical` and `hidden_knowledge`.
+- `visual_physical` is the primary Text-vs-Image comparison score.
+- `hidden_knowledge` is reported separately because private ownership and
+  witness knowledge are not representable by a pure image state.
+
 ## Recorder Methods
 
 ### Text Recorder
@@ -76,3 +87,14 @@ Plot results:
 PYTHONPATH=packages/agentkernel-distributed:. \
 python -m examples.west_world_test.eval.plot
 ```
+
+Run a fully archived comparison:
+
+```bash
+PYTHONPATH=packages/agentkernel-distributed:. \
+python -m examples.west_world_test.eval.run_archived_comparison
+```
+
+Each archived run contains every model request and response in
+`model_traces/all_calls.jsonl`, every image state, raw scored results,
+event-by-event statistics, a global report, provenance, and checksums.

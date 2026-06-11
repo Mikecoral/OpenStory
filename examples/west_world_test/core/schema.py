@@ -14,6 +14,7 @@ class Event:
     target: str
     visibility: str = "public"
     id: Optional[str] = None
+    affected_probe_ids: tuple[str, ...] = ()
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "Event":
@@ -24,6 +25,7 @@ class Event:
             target=data["target"],
             visibility=data.get("visibility", "public"),
             id=data.get("id"),
+            affected_probe_ids=tuple(data.get("affected_probe_ids", ())),
         )
 
 
@@ -37,6 +39,7 @@ class Probe:
     equals: Optional[Any] = None
     subject: Optional[str] = None
     fact_event_id: Optional[str] = None
+    score_group: str = "visual_physical"
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "Probe":
@@ -49,6 +52,7 @@ class Probe:
             equals=data.get("equals"),
             subject=data.get("subject"),
             fact_event_id=data.get("fact_event_id"),
+            score_group=data.get("score_group", "visual_physical"),
         )
 
 

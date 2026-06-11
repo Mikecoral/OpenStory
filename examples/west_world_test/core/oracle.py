@@ -8,6 +8,7 @@ from .schema import Event, Probe
 
 INITIAL_STATE: Dict[str, Any] = {
     "glasses_intact": 3,
+    "glasses_filled": 0,
     "glass_shards": False,
     "wanted_poster": "on_wall",
     "photo": {"pos": "floor", "held_by": None, "hidden": False},
@@ -25,9 +26,10 @@ class OracleState:
     def apply(self, event: Event) -> None:
         self.event_log.append(event)
         if event.action == "pour_whiskey":
-            self.state["glasses_intact"] = max(0, self.state["glasses_intact"] - 1)
+            self.state["glasses_filled"] = min(self.state["glasses_intact"], self.state["glasses_filled"] + 1)
         elif event.action == "smash_glass":
             self.state["glasses_intact"] = max(0, self.state["glasses_intact"] - 1)
+            self.state["glasses_filled"] = min(self.state["glasses_filled"], self.state["glasses_intact"])
             self.state["glass_shards"] = True
         elif event.action == "pick_up_photo":
             self.state["photo"].update(pos="held", held_by=event.actor, hidden=event.visibility == "hidden")

@@ -9,8 +9,8 @@ def test_plugin_component_type_is_scene():
 
 
 def test_plugin_apply_and_probe_with_fakes():
-    plugin = SceneRecorderPlugin(method="text", llm_factory=lambda: FakeLLM(["updated", "2"], default="2"))
-    asyncio.run(plugin.apply_event({"id": "e1", "tick": 1, "actor": "酒保", "action": "pour_whiskey", "target": "glass"}))
-    result = asyncio.run(plugin.probe({"id": "q1", "kind": "state", "text": "几个?", "field": "glasses_intact", "answer_type": "int"}))
-    assert result["truth"] == 2
+    plugin = SceneRecorderPlugin(method="text", llm_factory=lambda: FakeLLM(["updated", "1"], default="1"))
+    asyncio.run(plugin.apply_event({"id": "e1", "tick": 1, "actor": "酒保", "action": "pour_whiskey", "target": "glass", "affected_probe_ids": ["q9"]}))
+    result = asyncio.run(plugin.probe({"id": "q9", "kind": "state", "text": "几个?", "field": "glasses_filled", "answer_type": "int"}))
+    assert result["truth"] == 1
     assert result["answers"]["text"]["correct"] is True

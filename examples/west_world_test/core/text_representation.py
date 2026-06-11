@@ -6,6 +6,7 @@ from .schema import Event, Probe
 
 DEFAULT_INITIAL_TEXT = """【Sweetwater 酒馆】
 - 吧台：上面摆着 3 个完整的酒杯，没有碎片。
+- 酒杯状态：0 个酒杯装有威士忌。
 - 墙上：贴着一张通缉令。
 - 地上：有一张旧照片，没人捡。
 - 角落：一架自动钢琴正在演奏。

@@ -22,6 +22,13 @@ def test_event_keeps_hidden_visibility():
     assert event.id == "e2"
 
 
+def test_event_and_probe_keep_explicit_evaluation_metadata():
+    event = Event.from_dict({"tick": 1, "actor": "酒保", "action": "pour_whiskey", "target": "glass", "affected_probe_ids": ["q9"]})
+    probe = Probe.from_dict({"id": "q9", "kind": "state", "text": "x", "field": "glasses_filled", "score_group": "visual_physical"})
+    assert event.affected_probe_ids == ("q9",)
+    assert probe.score_group == "visual_physical"
+
+
 def test_probe_from_dict_state_kind():
     probe = Probe.from_dict({"id": "q1", "kind": "state", "text": "几个完整酒杯?", "field": "glasses_intact", "answer_type": "int"})
     assert probe.kind == "state"
@@ -51,8 +58,13 @@ def test_real_data_files_load_and_are_consistent():
     for event in sorted(events, key=lambda item: item.tick):
         oracle.apply(event)
     event_ids = {event.id for event in events if event.id}
+    probe_ids = {probe.id for probe in probes}
     for probe in probes:
+        assert probe.score_group in {"visual_physical", "hidden_knowledge"}
         if probe.kind == "state":
             oracle.answer(probe)
         else:
             assert probe.fact_event_id in event_ids
+    for event in events:
+        assert event.affected_probe_ids
+        assert set(event.affected_probe_ids) <= probe_ids
