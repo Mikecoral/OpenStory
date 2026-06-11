@@ -1,5 +1,7 @@
 import json
+import os
 
+from examples.west_world_test.core.oracle import OracleState
 from examples.west_world_test.core.schema import Event, Probe, load_events, load_probes
 
 
@@ -37,3 +39,20 @@ def test_load_events_and_probes_from_jsonl(tmp_path):
     probes = load_probes(str(probes_path))
     assert len(events) == 1 and events[0].action == "pour_whiskey"
     assert len(probes) == 1 and probes[0].id == "q1"
+
+
+def test_real_data_files_load_and_are_consistent():
+    data_dir = os.path.join(os.path.dirname(__file__), "..", "data")
+    events = load_events(os.path.join(data_dir, "script.jsonl"))
+    probes = load_probes(os.path.join(data_dir, "probes.jsonl"))
+    assert len(events) >= 8
+    assert len(probes) >= 8
+    oracle = OracleState()
+    for event in sorted(events, key=lambda item: item.tick):
+        oracle.apply(event)
+    event_ids = {event.id for event in events if event.id}
+    for probe in probes:
+        if probe.kind == "state":
+            oracle.answer(probe)
+        else:
+            assert probe.fact_event_id in event_ids

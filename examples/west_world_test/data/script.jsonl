@@ -1,0 +1,8 @@
+{"id": "e1", "tick": 1, "actor": "酒保", "action": "pour_whiskey", "target": "glass", "visibility": "public"}
+{"id": "e2", "tick": 2, "actor": "黑衣人", "action": "pick_up_photo", "target": "photo", "visibility": "hidden"}
+{"id": "e3", "tick": 3, "actor": "酒保", "action": "smash_glass", "target": "glass", "visibility": "public"}
+{"id": "e4", "tick": 4, "actor": "黑衣人", "action": "take_poster", "target": "wanted_poster", "visibility": "public"}
+{"id": "e5", "tick": 5, "actor": "酒保", "action": "stop_piano", "target": "piano", "visibility": "public"}
+{"id": "e6", "tick": 6, "actor": "Dolores", "action": "pour_whiskey", "target": "glass", "visibility": "public"}
+{"id": "e7", "tick": 7, "actor": "Dolores", "action": "take_revolver", "target": "revolver", "visibility": "public"}
+{"id": "e8", "tick": 8, "actor": "Dolores", "action": "fire_revolver", "target": "revolver", "visibility": "public"}
