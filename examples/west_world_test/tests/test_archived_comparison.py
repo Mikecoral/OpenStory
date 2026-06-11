@@ -49,8 +49,8 @@ def test_global_report_separates_visual_and_hidden_scores(tmp_path):
     }
     _write_reports(tmp_path, [event], probes, {"records": records, "summary": summary})
     report = (tmp_path / "report.md").read_text(encoding="utf-8")
-    assert "Visual snapshot" in report
-    assert "Hidden knowledge" in report
+    assert "视觉快照" in report
+    assert "隐藏知识" in report
     assert (tmp_path / "event_by_event_summary.csv").exists()
     assert (tmp_path / "role_metrics.json").exists()
     assert (tmp_path / "group_role_matrix.json").exists()

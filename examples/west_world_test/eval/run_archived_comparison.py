@@ -156,9 +156,9 @@ def _write_reports(run_dir: Path, events: list[Any], probes: list[Any], result: 
             ])
 
     lines = [
-        "# Global Recorder Comparison Report", "",
-        "## Core Metrics", "",
-        "| Method | Initial | Event write | Persistence | Final state | Visual snapshot | Temporal nonvisual | Hidden knowledge |",
+        "# Recorder 全局对比报告", "",
+        "## 核心指标", "",
+        "| 方法 | 初始准确率 | 事件写入准确率 | 状态保持准确率 | 最终状态准确率 | 视觉快照 | 非视觉时序状态 | 隐藏知识 |",
         "|---|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for method in ("text", "image"):
@@ -172,8 +172,8 @@ def _write_reports(run_dir: Path, events: list[Any], probes: list[Any], result: 
             f"{_percent(group_metrics[method].get('hidden_knowledge'))} | "
         )
     lines += [
-        "", "## Primary Visual Comparison", "",
-        "| Method | Initial visual fidelity | Visual event write | Visual persistence |",
+        "", "## 主要视觉能力对比", "",
+        "| 方法 | 初始视觉保真度 | 视觉事件写入准确率 | 视觉状态保持准确率 |",
         "|---|---:|---:|---:|",
     ]
     for method in ("text", "image"):
@@ -182,7 +182,7 @@ def _write_reports(run_dir: Path, events: list[Any], probes: list[Any], result: 
             f"| {method} | {_percent(visual.get('initial'))} | "
             f"{_percent(visual.get('affected'))} | {_percent(visual.get('persistence'))} |"
         )
-    lines += ["", "## Event-by-Event", "", "| Tick | Action | Affected probes | Text relevant | Image relevant |", "|---:|---|---|---:|---:|"]
+    lines += ["", "## 逐事件结果", "", "| Tick | 动作 | 受影响问题 | 文本相关问题准确率 | 图片相关问题准确率 |", "|---:|---|---|---:|---:|"]
     for row in event_rows:
         event = row["event"]
         lines.append(
@@ -191,21 +191,21 @@ def _write_reports(run_dir: Path, events: list[Any], probes: list[Any], result: 
             f"{_percent(row['methods']['text']['relevant_accuracy'])} | {_percent(row['methods']['image']['relevant_accuracy'])} |"
         )
     lines += [
-        "", "## Scoring Policy", "",
-        "- `visual_snapshot` is the primary score for comparing Text and Image Recorders.",
-        "- `temporal_nonvisual` and `hidden_knowledge` are reported separately.",
-        "- `initial` measures initial text-to-image fidelity before any event.",
-        "- `affected` measures whether the current event was written correctly.",
-        "- `persistence` measures whether a previously changed fact survived later unrelated events.",
-        "- Event relevance comes from each event's explicit `affected_probe_ids`; it is not inferred from target names.",
-        "", "## Archived Outputs", "",
-        "- `model_traces/all_calls.jsonl`: every text, vision, image-generate, and image-edit request/response trace",
-        "- `image_states/`: every generated image state",
-        "- `results.jsonl`: every scored probe answer",
-        "- `event_by_event.json` and `event_by_event_summary.csv`: exact event-level statistics",
-        "- `group_metrics.json`: visual and hidden-knowledge scores",
-        "- `role_metrics.json`: initial, event-write, persistence, and baseline scores",
-        "- `group_role_matrix.json`: score-group by evaluation-role metrics",
+        "", "## 评分规则", "",
+        "- `visual_snapshot` 是文本 Recorder 与图片 Recorder 的主要对比指标。",
+        "- `temporal_nonvisual` 和 `hidden_knowledge` 单独报告，不计入纯视觉能力结论。",
+        "- `initial` 衡量任何事件发生前的初始状态保真度。",
+        "- `affected` 衡量当前事件是否被正确写入。",
+        "- `persistence` 衡量已经改变的事实能否在后续无关事件中保持。",
+        "- 事件相关性由每个事件显式声明的 `affected_probe_ids` 决定，不通过目标名称推断。",
+        "", "## 归档文件", "",
+        "- `model_traces/all_calls.jsonl`：所有文本、识图、生图和图片编辑请求与响应",
+        "- `image_states/`：每一轮生成的图片状态",
+        "- `results.jsonl`：所有问题的原始评分结果",
+        "- `event_by_event.json` 和 `event_by_event_summary.csv`：逐事件统计",
+        "- `group_metrics.json`：按语义组统计的指标",
+        "- `role_metrics.json`：初始、事件写入、状态保持和未改变基线指标",
+        "- `group_role_matrix.json`：语义组与评估阶段的交叉指标",
     ]
     (run_dir / "report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
