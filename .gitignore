@@ -8,3 +8,4 @@ __pycache__/
 
 # Local West World model endpoints and credentials
 examples/west_world_test/configs/models_config.yaml
+examples/west_world_test/output/
