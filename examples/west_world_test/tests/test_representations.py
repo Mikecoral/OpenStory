@@ -1,4 +1,5 @@
 from examples.west_world_test.core.llm_client import FakeImageGen, FakeLLM, FakeVLM
+from examples.west_world_test.core.image_representation import ImageRepresentation
 from examples.west_world_test.core.schema import Event, Probe
 from examples.west_world_test.core.text_representation import TextRepresentation
 
@@ -43,3 +44,17 @@ def test_text_update_and_answer():
     probe = Probe.from_dict({"id": "q1", "kind": "state", "text": "几个完整酒杯?", "field": "glasses_intact", "answer_type": "int"})
     assert representation.answer(probe) == "2"
     assert "几个完整酒杯" in llm.calls[1]
+
+
+def test_image_update_renders_answers_and_caches():
+    llm = FakeLLM(["吧台上有2个完整酒杯。"])
+    generator = FakeImageGen()
+    vlm = FakeVLM(["2", "是"])
+    representation = ImageRepresentation(llm, generator, vlm, initial_text="吧台上有3个完整酒杯。")
+    representation.update(_ev())
+    assert representation.scene_text == "吧台上有2个完整酒杯。"
+    probe = Probe.from_dict({"id": "q1", "kind": "state", "text": "几个完整酒杯?", "field": "glasses_intact", "answer_type": "int"})
+    assert representation.answer(probe) == "2"
+    assert representation.answer(probe) == "是"
+    assert len(generator.prompts) == 1
+    assert vlm.calls[0][0].startswith("fake-image://")
