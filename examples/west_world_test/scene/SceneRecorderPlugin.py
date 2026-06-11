@@ -45,7 +45,7 @@ class SceneRecorderPlugin(GenericPlugin):
         if self.method in ("text", "both") and "text" not in self.reps:
             self.reps["text"] = TextRepresentation(self._llm_factory())
         if self.method in ("image", "both") and "image" not in self.reps:
-            self.reps["image"] = ImageRepresentation(self._llm_factory(), self._image_gen_factory(), self._vlm_factory())
+            self.reps["image"] = ImageRepresentation(self._image_gen_factory(), self._vlm_factory())
 
     async def apply_event(self, event_dict: Dict[str, Any]) -> None:
         if not self.reps:

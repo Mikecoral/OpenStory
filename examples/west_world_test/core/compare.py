@@ -62,7 +62,7 @@ def _build_real_reps(method: str, config_path: str) -> Dict[str, Callable[[], An
     if method in ("text", "both"):
         factories["text"] = lambda: TextRepresentation(build_llm(config_path))
     if method in ("image", "both"):
-        factories["image"] = lambda: ImageRepresentation(build_llm(config_path), build_image_gen(config_path), build_vlm(config_path))
+        factories["image"] = lambda: ImageRepresentation(build_image_gen(config_path), build_vlm(config_path))
     return factories
 
 

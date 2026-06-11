@@ -9,7 +9,9 @@ class LLMClient(Protocol):
 
 
 class ImageGen(Protocol):
-    def generate(self, prompt: str) -> str: ...
+    def create_initial(self, prompt: str) -> str: ...
+
+    def apply_event(self, previous_image: str, prompt: str) -> str: ...
 
 
 class VLM(Protocol):
@@ -29,11 +31,16 @@ class FakeLLM:
 
 class FakeImageGen:
     def __init__(self) -> None:
-        self.prompts: List[str] = []
+        self.initial_prompts: List[str] = []
+        self.event_calls: List[Tuple[str, str]] = []
 
-    def generate(self, prompt: str) -> str:
-        self.prompts.append(prompt)
-        return f"fake-image://{len(self.prompts)}"
+    def create_initial(self, prompt: str) -> str:
+        self.initial_prompts.append(prompt)
+        return "fake-image://initial"
+
+    def apply_event(self, previous_image: str, prompt: str) -> str:
+        self.event_calls.append((previous_image, prompt))
+        return f"fake-image://event-{len(self.event_calls)}"
 
 
 class FakeVLM:

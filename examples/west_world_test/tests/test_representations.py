@@ -23,9 +23,11 @@ def test_fake_llm_default_when_exhausted():
 
 def test_fake_image_gen_records_prompt_and_returns_handle():
     generator = FakeImageGen()
-    handle = generator.generate("一个酒馆")
-    assert "酒馆" in generator.prompts[0]
-    assert handle
+    initial = generator.create_initial("一个酒馆")
+    updated = generator.apply_event(initial, "酒保打碎酒杯")
+    assert "酒馆" in generator.initial_prompts[0]
+    assert generator.event_calls == [(initial, "酒保打碎酒杯")]
+    assert updated == "fake-image://event-1"
 
 
 def test_fake_vlm_answers_from_scripted():
@@ -46,15 +48,28 @@ def test_text_update_and_answer():
     assert "几个完整酒杯" in llm.calls[1]
 
 
-def test_image_update_renders_answers_and_caches():
-    llm = FakeLLM(["吧台上有2个完整酒杯。"])
+def test_image_update_evolves_previous_image_without_text_state():
     generator = FakeImageGen()
     vlm = FakeVLM(["2", "是"])
-    representation = ImageRepresentation(llm, generator, vlm, initial_text="吧台上有3个完整酒杯。")
+    representation = ImageRepresentation(generator, vlm, initial_text="吧台上有3个完整酒杯。")
     representation.update(_ev())
-    assert representation.scene_text == "吧台上有2个完整酒杯。"
+    assert not hasattr(representation, "scene_text")
+    assert len(generator.initial_prompts) == 1
+    assert generator.event_calls[0][0] == "fake-image://initial"
+    assert "pour_whiskey" in generator.event_calls[0][1]
+    assert representation.current_image == "fake-image://event-1"
     probe = Probe.from_dict({"id": "q1", "kind": "state", "text": "几个完整酒杯?", "field": "glasses_intact", "answer_type": "int"})
     assert representation.answer(probe) == "2"
     assert representation.answer(probe) == "是"
-    assert len(generator.prompts) == 1
-    assert vlm.calls[0][0].startswith("fake-image://")
+    assert len(generator.event_calls) == 1
+    assert vlm.calls[0][0] == "fake-image://event-1"
+
+
+def test_image_updates_form_a_history_chain():
+    generator = FakeImageGen()
+    representation = ImageRepresentation(generator, FakeVLM([]))
+    representation.update(_ev(tick=1))
+    representation.update(_ev(tick=2, action="smash_glass"))
+    assert generator.event_calls[0][0] == "fake-image://initial"
+    assert generator.event_calls[1][0] == "fake-image://event-1"
+    assert representation.current_image == "fake-image://event-2"
