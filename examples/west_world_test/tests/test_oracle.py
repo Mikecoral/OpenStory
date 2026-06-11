@@ -1,5 +1,5 @@
 from examples.west_world_test.core.oracle import OracleState
-from examples.west_world_test.core.schema import Event
+from examples.west_world_test.core.schema import Event, Probe
 
 
 def _ev(**kwargs):
@@ -59,3 +59,20 @@ def test_event_log_records_all_events():
     oracle = OracleState()
     oracle.apply(_ev(id="e1"))
     assert oracle.event_log[0].id == "e1"
+
+
+def test_answer_state_fields_and_equals():
+    oracle = OracleState()
+    oracle.apply(_ev(actor="黑衣人", action="pick_up_photo", target="photo", visibility="hidden"))
+    assert oracle.answer(Probe.from_dict({"id": "q1", "kind": "state", "text": "x", "field": "photo.held_by"})) == "黑衣人"
+    probe = Probe.from_dict({"id": "q2", "kind": "state", "text": "x", "field": "wanted_poster", "equals": "on_wall", "answer_type": "bool"})
+    assert oracle.answer(probe) is True
+
+
+def test_answer_visibility():
+    oracle = OracleState()
+    oracle.apply(_ev(actor="黑衣人", action="pick_up_photo", target="photo", visibility="hidden", id="e2"))
+    other = Probe.from_dict({"id": "q3", "kind": "visibility", "text": "x", "subject": "Dolores", "fact_event_id": "e2", "answer_type": "bool"})
+    actor = Probe.from_dict({"id": "q4", "kind": "visibility", "text": "x", "subject": "黑衣人", "fact_event_id": "e2", "answer_type": "bool"})
+    assert oracle.answer(other) is False
+    assert oracle.answer(actor) is True

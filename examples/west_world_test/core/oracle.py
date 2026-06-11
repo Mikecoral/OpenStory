@@ -4,7 +4,7 @@ from __future__ import annotations
 import copy
 from typing import Any, Dict, List
 
-from .schema import Event
+from .schema import Event, Probe
 
 INITIAL_STATE: Dict[str, Any] = {
     "glasses_intact": 3,
@@ -43,3 +43,22 @@ class OracleState:
             self.state["revolver"]["fired"] = True
         elif event.action == "open_door":
             self.state["door"] = "open"
+
+    def _resolve_field(self, dotted: str) -> Any:
+        current: Any = self.state
+        for part in dotted.split("."):
+            current = current[part]
+        return current
+
+    def answer(self, probe: Probe) -> Any:
+        if probe.kind == "state":
+            if not probe.field:
+                raise ValueError(f"State probe {probe.id} has no field")
+            value = self._resolve_field(probe.field)
+            return value == probe.equals if probe.equals is not None else value
+        if probe.kind == "visibility":
+            for event in self.event_log:
+                if event.id == probe.fact_event_id:
+                    return event.actor == probe.subject or event.visibility == "public"
+            return False
+        raise ValueError(f"Unknown probe kind: {probe.kind}")
