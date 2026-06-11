@@ -4,6 +4,7 @@
   model: qwen3.5-flash
   api_key: REPLACE_ME
   base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+  temperature: 0
   capabilities: [chat]
 
 - role: vision
@@ -11,6 +12,7 @@
   model: qwen3.5-flash
   api_key: REPLACE_ME
   base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+  temperature: 0
   capabilities: [chat]
 
 - role: image

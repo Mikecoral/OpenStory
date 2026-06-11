@@ -18,6 +18,7 @@ _UPDATE_PROMPT = """维护酒馆场景记录。根据动作更新记录，只输
 {prev}
 【动作】
 tick={tick} actor={actor} action={action} target={target} visibility={visibility}
+事件描述：{description}
 """
 
 _ANSWER_PROMPT = """根据场景记录回答问题，只输出最简短答案。
@@ -34,7 +35,15 @@ class TextRepresentation:
 
     def update(self, event: Event) -> None:
         self.text = self._llm.chat(
-            _UPDATE_PROMPT.format(prev=self.text, tick=event.tick, actor=event.actor, action=event.action, target=event.target, visibility=event.visibility)
+            _UPDATE_PROMPT.format(
+                prev=self.text,
+                tick=event.tick,
+                actor=event.actor,
+                action=event.action,
+                target=event.target,
+                visibility=event.visibility,
+                description=event.description,
+            )
         ).strip()
 
     def answer(self, probe: Probe) -> str:

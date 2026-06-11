@@ -8,9 +8,15 @@ from .schema import Event, Probe
 from .text_representation import DEFAULT_INITIAL_TEXT
 
 _INITIAL_IMAGE_PROMPT = (
-    "Create a fixed-camera, wide overview of the Sweetwater saloon. "
-    "This image is the complete initial world state. Preserve object identity, "
-    "count, position, and camera composition in later edits.\n{scene}"
+    "Create a fixed-camera, wide but legible overview of the Sweetwater saloon. "
+    "This image is the complete initial world state for a visual-state experiment. "
+    "Show the bartender behind the bar, the Man in Black near the floor photo, and "
+    "Dolores near the table. Keep their clothing and positions visually distinct. "
+    "Make every tracked object clearly visible and unoccluded: exactly three intact "
+    "empty whiskey glasses, the old photo, wanted poster, player piano, revolver, and "
+    "closed door. Preserve object identity, count, character appearance, position, "
+    "lighting, and fixed camera composition in later edits. Do not add decorative "
+    "duplicates of tracked objects.\n{scene}"
 )
 
 _EVENT_EDIT_PROMPT = """Edit the previous world-state image to apply exactly one event.
@@ -19,6 +25,7 @@ Do not use or infer any hidden textual state beyond what is visible in the previ
 and the event below.
 
 event_id={id} tick={tick} actor={actor} action={action} target={target} visibility={visibility}
+Event description: {description}
 """
 
 
@@ -38,6 +45,7 @@ class ImageRepresentation:
             action=event.action,
             target=event.target,
             visibility=event.visibility,
+            description=event.description,
         )
         self.current_image = self._image_gen.apply_event(previous_image, prompt)
 

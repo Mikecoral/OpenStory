@@ -23,14 +23,16 @@ def normalize(answer: str, answer_type: str) -> str:
     return text.replace(" ", "")
 
 
-def is_correct(answer: str, truth: Any, answer_type: str) -> bool:
+def is_correct(answer: str, truth: Any, answer_type: str, accepted_answers: tuple[str, ...] = ()) -> bool:
     if answer_type == "bool":
         truth_norm = "true" if truth else "false"
     elif truth is None:
         return normalize(answer, answer_type) in {"无", "none", "没人", "没有人"}
     else:
         truth_norm = str(truth).strip().lower()
-    return normalize(answer, answer_type) == truth_norm
+    answer_norm = normalize(answer, answer_type)
+    accepted = {normalize(candidate, answer_type) for candidate in accepted_answers}
+    return answer_norm == truth_norm or answer_norm in accepted
 
 
 def accuracy_over_ticks(records: List[Dict[str, Any]]) -> Dict[int, float]:
@@ -56,7 +58,7 @@ def contradiction_count(records: List[Dict[str, Any]]) -> int:
     for record in records:
         grouped.setdefault(record["probe_id"], []).append(record)
     return sum(
-        current["norm"] != previous["norm"] and not current.get("had_relevant_event", False)
+        current["norm"] != previous["norm"] and current.get("evaluation_role") in {None, "persistence", "unaffected_baseline"}
         for sequence in grouped.values()
         for previous, current in zip(sorted(sequence, key=lambda item: item["tick"]), sorted(sequence, key=lambda item: item["tick"])[1:])
     )

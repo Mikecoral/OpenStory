@@ -23,7 +23,11 @@ class OpenAICompatibleLLM:
         self.client = OpenAI(api_key=config["api_key"], base_url=config["base_url"])
 
     def chat(self, prompt: str) -> str:
-        response = self.client.chat.completions.create(model=self.config["model"], messages=[{"role": "user", "content": prompt}])
+        response = self.client.chat.completions.create(
+            model=self.config["model"],
+            messages=[{"role": "user", "content": prompt}],
+            temperature=self.config.get("temperature", 0),
+        )
         answer = response.choices[0].message.content or ""
         if self.trace:
             self.trace({"call_type": "text_chat", "model": self.config["model"], "prompt": prompt, "response": answer})
@@ -33,7 +37,11 @@ class OpenAICompatibleLLM:
 class OpenAICompatibleVLM(OpenAICompatibleLLM):
     def ask(self, image_handle: str, question: str) -> str:
         content = [{"type": "text", "text": question}, {"type": "image_url", "image_url": {"url": image_handle}}]
-        response = self.client.chat.completions.create(model=self.config["model"], messages=[{"role": "user", "content": content}])
+        response = self.client.chat.completions.create(
+            model=self.config["model"],
+            messages=[{"role": "user", "content": content}],
+            temperature=self.config.get("temperature", 0),
+        )
         answer = response.choices[0].message.content or ""
         if self.trace:
             self.trace({

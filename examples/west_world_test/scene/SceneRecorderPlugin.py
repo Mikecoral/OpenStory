@@ -34,6 +34,7 @@ class SceneRecorderPlugin(GenericPlugin):
         self.oracle = OracleState()
         self.reps: Dict[str, Any] = {}
         self._last_event: Optional[Event] = None
+        self._affected_seen: set[str] = set()
 
     async def init(self) -> None:
         if self._llm_factory is None:
@@ -52,6 +53,7 @@ class SceneRecorderPlugin(GenericPlugin):
             await self.init()
         event = Event.from_dict(event_dict)
         self._last_event = event
+        self._affected_seen.update(event.affected_probe_ids)
         self.oracle.apply(event)
         for representation in self.reps.values():
             representation.update(event)
@@ -64,11 +66,25 @@ class SceneRecorderPlugin(GenericPlugin):
         answers = {}
         for name, representation in self.reps.items():
             raw = representation.answer(probe)
-            answers[name] = {"answer": raw, "norm": normalize(raw, probe.answer_type), "correct": is_correct(raw, truth, probe.answer_type)}
+            answers[name] = {
+                "answer": raw,
+                "norm": normalize(raw, probe.answer_type),
+                "correct": is_correct(raw, truth, probe.answer_type, probe.accepted_answers),
+            }
+        if self._last_event is None:
+            evaluation_role = "initial"
+        elif _is_relevant(probe, self._last_event):
+            evaluation_role = "affected"
+        elif probe.id in self._affected_seen:
+            evaluation_role = "persistence"
+        else:
+            evaluation_role = "unaffected_baseline"
         return {
             "probe_id": probe.id,
             "truth": truth,
-            "had_relevant_event": bool(self._last_event and _is_relevant(probe, self._last_event)),
+            "evaluation_role": evaluation_role,
+            "had_relevant_event": evaluation_role == "affected",
+            "score_group": probe.score_group,
             "answers": answers,
         }
 

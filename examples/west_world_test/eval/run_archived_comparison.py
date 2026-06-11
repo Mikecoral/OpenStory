@@ -12,7 +12,7 @@ import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 import requests
 import yaml
@@ -20,7 +20,7 @@ import yaml
 from examples.west_world_test.adapters.model_clients import build_image_gen, build_llm, build_vlm
 from examples.west_world_test.core.compare import run_comparison
 from examples.west_world_test.core.image_representation import ImageRepresentation
-from examples.west_world_test.core.schema import load_events, load_probes
+from examples.west_world_test.core.schema import load_events, load_probes, validate_protocol
 from examples.west_world_test.core.text_representation import TextRepresentation
 
 
@@ -74,12 +74,43 @@ def _redacted_config(config_path: Path) -> list[Dict[str, Any]]:
     return rows
 
 
-def _accuracy(records: list[Dict[str, Any]]) -> float:
-    return sum(record["correct"] for record in records) / len(records) if records else 0.0
+def _validate_model_config(config_path: Path) -> list[Dict[str, Any]]:
+    rows = yaml.safe_load(config_path.read_text(encoding="utf-8"))
+    if not isinstance(rows, list):
+        raise ValueError("Model config must be a list")
+    by_role = {row.get("role"): row for row in rows}
+    for role in ("text", "vision", "image"):
+        if role not in by_role:
+            raise ValueError(f"Model config is missing role: {role}")
+        for field in ("model", "api_key", "base_url"):
+            value = str(by_role[role].get(field, "")).strip()
+            if not value or "REPLACE_ME" in value:
+                raise ValueError(f"Model config role {role} has no usable {field}")
+    return rows
+
+
+def _call_budget(events: list[Any], probes: list[Any]) -> Dict[str, int]:
+    answer_calls = (len(events) + 1) * len(probes)
+    return {
+        "text_chat": answer_calls + len(events),
+        "vision_chat": answer_calls,
+        "image_generate": 1,
+        "image_edit": len(events),
+        "total_model_calls": answer_calls * 2 + len(events) * 2 + 1,
+    }
+
+
+def _accuracy(records: list[Dict[str, Any]]) -> Optional[float]:
+    return sum(record["correct"] for record in records) / len(records) if records else None
+
+
+def _percent(value: Optional[float]) -> str:
+    return f"{value:.2%}" if value is not None else "N/A"
 
 
 def _write_reports(run_dir: Path, events: list[Any], probes: list[Any], result: Dict[str, Any]) -> None:
     records = result["records"]
+    summary = result["summary"]
     probe_map = {probe.id: probe for probe in probes}
     event_rows = []
     for event in events:
@@ -98,12 +129,20 @@ def _write_reports(run_dir: Path, events: list[Any], probes: list[Any], result: 
 
     groups = sorted({probe.score_group for probe in probes})
     group_metrics: Dict[str, Any] = {}
+    role_metrics: Dict[str, Any] = {}
     for method in ("text", "image"):
         group_metrics[method] = {
             group: _accuracy([r for r in records if r["method"] == method and r["score_group"] == group])
             for group in groups
         }
+        role_metrics[method] = {
+            role: _accuracy([r for r in records if r["method"] == method and r["evaluation_role"] == role])
+            for role in ("initial", "affected", "persistence", "unaffected_baseline")
+        }
     (run_dir / "group_metrics.json").write_text(json.dumps(group_metrics, ensure_ascii=False, indent=2), encoding="utf-8")
+    (run_dir / "role_metrics.json").write_text(json.dumps(role_metrics, ensure_ascii=False, indent=2), encoding="utf-8")
+    matrix_metrics = {method: summary[method]["accuracy_by_group_role"] for method in ("text", "image")}
+    (run_dir / "group_role_matrix.json").write_text(json.dumps(matrix_metrics, ensure_ascii=False, indent=2), encoding="utf-8")
 
     with (run_dir / "event_by_event_summary.csv").open("w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
@@ -116,19 +155,32 @@ def _write_reports(run_dir: Path, events: list[Any], probes: list[Any], result: 
                 row["methods"]["text"]["relevant_accuracy"], row["methods"]["image"]["relevant_accuracy"],
             ])
 
-    summary = result["summary"]
     lines = [
         "# Global Recorder Comparison Report", "",
-        "## Overall", "",
-        "| Method | Overall accuracy | Visual physical | Hidden knowledge | Drift slope | Contradictions |",
-        "|---|---:|---:|---:|---:|---:|",
+        "## Core Metrics", "",
+        "| Method | Initial | Event write | Persistence | Final state | Visual snapshot | Temporal nonvisual | Hidden knowledge |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for method in ("text", "image"):
         lines.append(
-            f"| {method} | {summary[method]['accuracy']:.2%} | "
-            f"{group_metrics[method].get('visual_physical', 0):.2%} | "
-            f"{group_metrics[method].get('hidden_knowledge', 0):.2%} | "
-            f"{summary[method]['drift_slope']:.4f} | {summary[method]['contradictions']} |"
+            f"| {method} | {_percent(summary[method]['initial_accuracy'])} | "
+            f"{_percent(summary[method]['affected_accuracy'])} | "
+            f"{_percent(summary[method]['persistence_accuracy'])} | "
+            f"{_percent(summary[method]['final_state_accuracy'])} | "
+            f"{_percent(group_metrics[method].get('visual_snapshot'))} | "
+            f"{_percent(group_metrics[method].get('temporal_nonvisual'))} | "
+            f"{_percent(group_metrics[method].get('hidden_knowledge'))} | "
+        )
+    lines += [
+        "", "## Primary Visual Comparison", "",
+        "| Method | Initial visual fidelity | Visual event write | Visual persistence |",
+        "|---|---:|---:|---:|",
+    ]
+    for method in ("text", "image"):
+        visual = summary[method]["accuracy_by_group_role"].get("visual_snapshot", {})
+        lines.append(
+            f"| {method} | {_percent(visual.get('initial'))} | "
+            f"{_percent(visual.get('affected'))} | {_percent(visual.get('persistence'))} |"
         )
     lines += ["", "## Event-by-Event", "", "| Tick | Action | Affected probes | Text relevant | Image relevant |", "|---:|---|---|---:|---:|"]
     for row in event_rows:
@@ -136,12 +188,15 @@ def _write_reports(run_dir: Path, events: list[Any], probes: list[Any], result: 
         lines.append(
             f"| {row['tick']} | {event['actor']} / `{event['action']}` | "
             f"{', '.join(event['affected_probe_ids'])} | "
-            f"{row['methods']['text']['relevant_accuracy']:.2%} | {row['methods']['image']['relevant_accuracy']:.2%} |"
+            f"{_percent(row['methods']['text']['relevant_accuracy'])} | {_percent(row['methods']['image']['relevant_accuracy'])} |"
         )
     lines += [
         "", "## Scoring Policy", "",
-        "- `visual_physical` is the primary score for comparing Text and Image Recorders.",
-        "- `hidden_knowledge` is reported separately and is not included in the pure visual capability conclusion.",
+        "- `visual_snapshot` is the primary score for comparing Text and Image Recorders.",
+        "- `temporal_nonvisual` and `hidden_knowledge` are reported separately.",
+        "- `initial` measures initial text-to-image fidelity before any event.",
+        "- `affected` measures whether the current event was written correctly.",
+        "- `persistence` measures whether a previously changed fact survived later unrelated events.",
         "- Event relevance comes from each event's explicit `affected_probe_ids`; it is not inferred from target names.",
         "", "## Archived Outputs", "",
         "- `model_traces/all_calls.jsonl`: every text, vision, image-generate, and image-edit request/response trace",
@@ -149,6 +204,8 @@ def _write_reports(run_dir: Path, events: list[Any], probes: list[Any], result: 
         "- `results.jsonl`: every scored probe answer",
         "- `event_by_event.json` and `event_by_event_summary.csv`: exact event-level statistics",
         "- `group_metrics.json`: visual and hidden-knowledge scores",
+        "- `role_metrics.json`: initial, event-write, persistence, and baseline scores",
+        "- `group_role_matrix.json`: score-group by evaluation-role metrics",
     ]
     (run_dir / "report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -169,24 +226,47 @@ def main() -> None:
     project = Path(__file__).resolve().parents[1]
     parser.add_argument("--config", type=Path, default=project / "configs" / "models_config.yaml")
     parser.add_argument("--run-dir", type=Path)
+    parser.add_argument("--max-ticks", type=int, help="Run only the first N events for a pilot.")
+    parser.add_argument("--validate-only", action="store_true", help="Validate protocol/config and print call budget without API calls.")
     args = parser.parse_args()
+
+    events = load_events(str(project / "data" / "script.jsonl"))
+    if args.max_ticks is not None:
+        if args.max_ticks < 1:
+            parser.error("--max-ticks must be at least 1")
+        events = sorted(events, key=lambda item: item.tick)[:args.max_ticks]
+    probes = load_probes(str(project / "data" / "probes.jsonl"))
+    validate_protocol(events, probes)
+    config_rows = _validate_model_config(args.config)
+    if args.validate_only:
+        print(json.dumps({
+            "status": "valid",
+            "protocol_version": "2.0",
+            "event_count": len(events),
+            "probe_count": len(probes),
+            "score_groups": sorted({probe.score_group for probe in probes}),
+            "models": {row["role"]: row["model"] for row in config_rows},
+            "call_budget": _call_budget(events, probes),
+        }, ensure_ascii=False, indent=2))
+        return
 
     run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
     run_dir = args.run_dir or project / "output" / "runs" / run_id
+    if run_dir.exists() and any(run_dir.iterdir()):
+        parser.error(f"run directory is not empty: {run_dir}")
     inputs_dir = run_dir / "inputs"
     images_dir = run_dir / "image_states"
     trace = TraceArchive(run_dir / "model_traces" / "all_calls.jsonl")
     inputs_dir.mkdir(parents=True, exist_ok=True)
 
-    for name in ("script.jsonl", "probes.jsonl"):
-        shutil.copy2(project / "data" / name, inputs_dir / name)
+    with (inputs_dir / "script.jsonl").open("w", encoding="utf-8") as file:
+        for event in events:
+            file.write(json.dumps(event.__dict__, ensure_ascii=False) + "\n")
+    shutil.copy2(project / "data" / "probes.jsonl", inputs_dir / "probes.jsonl")
     (inputs_dir / "models_config.redacted.yaml").write_text(
         yaml.safe_dump(_redacted_config(args.config), allow_unicode=True, sort_keys=False),
         encoding="utf-8",
     )
-
-    events = load_events(str(project / "data" / "script.jsonl"))
-    probes = load_probes(str(project / "data" / "probes.jsonl"))
     image_gen = ArchivingImageGen(build_image_gen(str(args.config), trace=trace), images_dir)
     factories = {
         "text": lambda: TextRepresentation(build_llm(str(args.config), trace=trace)),
@@ -195,21 +275,27 @@ def main() -> None:
 
     manifest = {
         "run_id": run_id,
+        "protocol_version": "2.0",
         "started_at": datetime.now().isoformat(),
         "event_count": len(events),
         "probe_count": len(probes),
         "methods": ["text", "image"],
-        "expected_records": len(events) * len(probes) * 2,
+        "expected_records": (len(events) + 1) * len(probes) * 2,
+        "call_budget": _call_budget(events, probes),
+        "max_ticks": args.max_ticks,
         "status": "running",
     }
     manifest_path = run_dir / "manifest.json"
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
 
     try:
-        result = run_comparison(events, probes, factories)
-        with (run_dir / "results.jsonl").open("w", encoding="utf-8") as file:
-            for record in result["records"]:
+        results_path = run_dir / "results.jsonl"
+        def archive_record(record: Dict[str, Any]) -> None:
+            with results_path.open("a", encoding="utf-8") as file:
                 file.write(json.dumps(record, ensure_ascii=False, default=str) + "\n")
+                file.flush()
+
+        result = run_comparison(events, probes, factories, on_record=archive_record)
         (run_dir / "summary.json").write_text(
             json.dumps(result["summary"], ensure_ascii=False, indent=2),
             encoding="utf-8",

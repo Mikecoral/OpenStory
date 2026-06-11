@@ -8,6 +8,7 @@ def test_normalize_and_correct():
     assert is_correct("吧台还剩2个", 2, "int")
     assert is_correct("否", False, "bool")
     assert is_correct("无", None, "str")
+    assert is_correct("The Man in Black", "黑衣人", "str", ("the man in black",))
 
 
 def test_accuracy_and_drift():

@@ -39,10 +39,11 @@ def test_fake_vlm_answers_from_scripted():
 def test_text_update_and_answer():
     llm = FakeLLM(["吧台上有2个完整酒杯。", "2"])
     representation = TextRepresentation(llm, initial_text="吧台上有3个完整酒杯。")
-    representation.update(_ev())
+    representation.update(_ev(description="把威士忌倒入一个空杯"))
     assert representation.text == "吧台上有2个完整酒杯。"
     assert "3个完整酒杯" in llm.calls[0]
     assert "pour_whiskey" in llm.calls[0]
+    assert "把威士忌倒入一个空杯" in llm.calls[0]
     probe = Probe.from_dict({"id": "q1", "kind": "state", "text": "几个完整酒杯?", "field": "glasses_intact", "answer_type": "int"})
     assert representation.answer(probe) == "2"
     assert "几个完整酒杯" in llm.calls[1]
@@ -52,11 +53,12 @@ def test_image_update_evolves_previous_image_without_text_state():
     generator = FakeImageGen()
     vlm = FakeVLM(["2", "是"])
     representation = ImageRepresentation(generator, vlm, initial_text="吧台上有3个完整酒杯。")
-    representation.update(_ev())
+    representation.update(_ev(description="把威士忌倒入一个空杯"))
     assert not hasattr(representation, "scene_text")
     assert len(generator.initial_prompts) == 1
     assert generator.event_calls[0][0] == "fake-image://initial"
     assert "pour_whiskey" in generator.event_calls[0][1]
+    assert "把威士忌倒入一个空杯" in generator.event_calls[0][1]
     assert representation.current_image == "fake-image://event-1"
     probe = Probe.from_dict({"id": "q1", "kind": "state", "text": "几个完整酒杯?", "field": "glasses_intact", "answer_type": "int"})
     assert representation.answer(probe) == "2"

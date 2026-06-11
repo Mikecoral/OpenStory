@@ -2,7 +2,9 @@ import json
 import os
 
 from examples.west_world_test.core.oracle import OracleState
-from examples.west_world_test.core.schema import Event, Probe, load_events, load_probes
+import pytest
+
+from examples.west_world_test.core.schema import Event, Probe, load_events, load_probes, validate_protocol
 
 
 def test_event_from_dict_defaults_visibility_public():
@@ -23,10 +25,11 @@ def test_event_keeps_hidden_visibility():
 
 
 def test_event_and_probe_keep_explicit_evaluation_metadata():
-    event = Event.from_dict({"tick": 1, "actor": "酒保", "action": "pour_whiskey", "target": "glass", "affected_probe_ids": ["q9"]})
-    probe = Probe.from_dict({"id": "q9", "kind": "state", "text": "x", "field": "glasses_filled", "score_group": "visual_physical"})
+    event = Event.from_dict({"tick": 1, "actor": "酒保", "action": "pour_whiskey", "target": "glass", "description": "倒入一个空杯", "affected_probe_ids": ["q9"]})
+    probe = Probe.from_dict({"id": "q9", "kind": "state", "text": "x", "field": "glasses_filled", "score_group": "visual_snapshot"})
     assert event.affected_probe_ids == ("q9",)
-    assert probe.score_group == "visual_physical"
+    assert event.description == "倒入一个空杯"
+    assert probe.score_group == "visual_snapshot"
 
 
 def test_probe_from_dict_state_kind():
@@ -35,6 +38,11 @@ def test_probe_from_dict_state_kind():
     assert probe.field == "glasses_intact"
     assert probe.answer_type == "int"
     assert probe.equals is None
+
+
+def test_probe_keeps_accepted_answer_aliases():
+    probe = Probe.from_dict({"id": "q1", "kind": "state", "text": "x", "field": "photo.held_by", "accepted_answers": ["The Man in Black"]})
+    assert probe.accepted_answers == ("The Man in Black",)
 
 
 def test_load_events_and_probes_from_jsonl(tmp_path):
@@ -60,11 +68,20 @@ def test_real_data_files_load_and_are_consistent():
     event_ids = {event.id for event in events if event.id}
     probe_ids = {probe.id for probe in probes}
     for probe in probes:
-        assert probe.score_group in {"visual_physical", "hidden_knowledge"}
+        assert probe.score_group in {"visual_snapshot", "temporal_nonvisual", "hidden_knowledge"}
         if probe.kind == "state":
             oracle.answer(probe)
         else:
             assert probe.fact_event_id in event_ids
     for event in events:
+        assert event.description
         assert event.affected_probe_ids
         assert set(event.affected_probe_ids) <= probe_ids
+    validate_protocol(events, probes)
+
+
+def test_validate_protocol_rejects_missing_event_description():
+    events = [Event.from_dict({"id": "e1", "tick": 1, "actor": "x", "action": "x", "target": "x", "affected_probe_ids": ["q1"]})]
+    probes = [Probe.from_dict({"id": "q1", "kind": "state", "text": "x", "field": "door"})]
+    with pytest.raises(ValueError, match="description"):
+        validate_protocol(events, probes)
