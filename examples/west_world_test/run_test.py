@@ -14,6 +14,8 @@ from examples.west_world_test.core.schema import Event, Probe, load_events, load
 from examples.west_world_test.registry import RESOURCES_MAPS
 
 PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(PROJECT_PATH, "..", ".."))
+PACKAGE_PATH = os.path.join(PROJECT_ROOT, "packages", "agentkernel-distributed")
 EnvironmentCall = Callable[[str, str, Dict[str, Any]], Awaitable[Dict[str, Any]]]
 
 
@@ -42,7 +44,8 @@ async def main() -> None:
     events = load_events(os.path.join(PROJECT_PATH, "data", "script.jsonl"))
     probes = load_probes(os.path.join(PROJECT_PATH, "data", "probes.jsonl"))
 
-    runtime_env = {"working_dir": PROJECT_PATH, "env_vars": {"PYTHONPATH": os.environ.get("PYTHONPATH", "")}}
+    python_path = os.pathsep.join([PROJECT_ROOT, PACKAGE_PATH, os.environ.get("PYTHONPATH", "")])
+    runtime_env = {"working_dir": PROJECT_PATH, "env_vars": {"PYTHONPATH": python_path}}
     ray.init(runtime_env=runtime_env)
     builder = Builder(PROJECT_PATH, RESOURCES_MAPS)
     pod_manager, _ = await builder.init()
