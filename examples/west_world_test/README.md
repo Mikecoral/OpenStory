@@ -139,3 +139,53 @@ before the first API call, and refuses to append into a non-empty run directory.
 - `group_metrics.json`: aggregate score by semantic group.
 - `role_metrics.json`: aggregate score by evaluation role.
 - `group_role_matrix.json`: cross-matrix used for the primary visual comparison.
+
+## 正式仿真（M0–M3）
+
+### 前置条件
+
+- Redis（`redis-server`，默认 `localhost:6379`）
+- Python 3.11，依赖与 OpenStory 主项目相同
+- `examples/west_world_test/configs_sim/models_config.yaml`（LLM API key 配置）
+
+### 运行
+
+```bash
+# 仓库根目录
+export PYTHONPATH=$PWD:$PWD/packages/agentkernel-distributed
+
+# 运行正式仿真（默认 40 tick，约 1-2 小时）
+python -m examples.west_world_test.run_simulation
+
+# 快速调试（只跑 5 tick）
+WW_MAX_TICKS=5 python -m examples.west_world_test.run_simulation
+```
+
+### MVE 对照实验（独立）
+
+```bash
+# Phase A：纯 Python 核心（无需 Ray/Redis）
+PYTHONPATH=packages/agentkernel-distributed:. \
+  python -m examples.west_world_test.core.compare --method both
+
+# Phase B：完整内核（需 Redis）
+PYTHONPATH=packages/agentkernel-distributed:. \
+  python -m examples.west_world_test.run_test
+```
+
+### 项目结构
+
+| 目录/文件 | 用途 |
+|---|---|
+| `data/map/locations.yaml` | 地图真值：31 个地点，12 个激活 |
+| `worldmap/` | 地图加载、校验、邻接查询 |
+| `recorder/` | LocationRecorder：每地点状态分块 + LLM 裁决 |
+| `plugins/environment/scene/` | LocationRecorderPlugin：内核接入壳 |
+| `plugins/agent/` | perceive/plan/invoke 插件 |
+| `configs_sim/` | 正式仿真配置（6 人阵容，12 激活地点）|
+| `registry_sim.py` | 正式仿真注册表 |
+| `run_simulation.py` | 正式仿真入口 |
+| `configs/` | MVE 对照实验配置 |
+| `registry.py` | MVE 对照实验注册表 |
+| `run_test.py` | MVE Phase B 入口 |
+| `core/` | MVE Phase A 纯 Python 核心，TDD，不依赖 Ray/Redis |
