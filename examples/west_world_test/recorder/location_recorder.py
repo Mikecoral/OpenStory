@@ -79,3 +79,21 @@ class LocationRecorder:
             except (json.JSONDecodeError, IndexError):
                 continue
         return None
+
+    # ---- tick 末结算（每地点每 tick 至多一次 LLM） ----
+    def tick_update(self, tick: int) -> None:
+        if not self._pending_actions:
+            return
+        actions_log = self._pending_actions
+        self._pending_actions = []
+        prompt = prompts.render_update(self.location.name, tick, self.chunks, actions_log)
+        update = self._chat_json(prompt, retries=1)
+        if update is None:
+            logger.error("[%s] tick %s 更新失败，保留旧状态块", self.location.id, tick)
+            return
+        for key in ("dynamic_objects", "present_agents"):
+            if isinstance(update.get(key), str) and update[key].strip():
+                self.chunks[key] = update[key]
+        events = update.get("recent_events")
+        if isinstance(events, list):
+            self.chunks["recent_events"] = [str(e) for e in events][-RECENT_EVENTS_WINDOW:]

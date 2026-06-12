@@ -84,3 +84,47 @@ def test_submit_action_invalid_json_retries_then_degrades():
     assert result["private_feedback"] == ""      # 降级：无反馈
     assert result["broadcast_level"] == "none"   # 降级：不广播
     assert len(rec.llm.calls) == 2               # 重试了一次
+
+
+UPDATE_OK = json.dumps({
+    "dynamic_objects": "地上有酒杯碎片。",
+    "present_agents": "maeve、teddy",
+    "recent_events": ["有人打碎了一只酒杯。"],
+}, ensure_ascii=False)
+
+
+def test_tick_update_merges_pending_and_clears_queue():
+    rec = make_recorder([JUDGE_BREAK_GLASS, UPDATE_OK])
+    rec.submit_action("maeve", "把酒杯摔在地上")
+    rec.tick_update(tick=3)
+    assert "碎片" in rec.chunks["dynamic_objects"]
+    assert rec.chunks["recent_events"] == ["有人打碎了一只酒杯。"]
+    assert rec._pending_actions == []
+    assert len(rec.llm.calls) == 2          # 裁决 1 次 + 更新 1 次
+
+
+def test_tick_update_no_pending_skips_llm():
+    rec = make_recorder()
+    rec.tick_update(tick=1)
+    assert rec.llm.calls == []
+
+
+def test_tick_update_failure_keeps_old_state():
+    rec = make_recorder([JUDGE_BREAK_GLASS, "坏输出", "又坏"])
+    rec.submit_action("maeve", "把酒杯摔在地上")
+    before = dict(rec.chunks)
+    rec.tick_update(tick=3)
+    assert rec.chunks["dynamic_objects"] == before["dynamic_objects"]   # 保留旧状态
+    assert rec._pending_actions == []                                   # 队列仍清空
+
+
+def test_recent_events_rolling_window():
+    rec = make_recorder()
+    rec.chunks["recent_events"] = [f"事件{i}" for i in range(10)]
+    update = json.dumps({"dynamic_objects": "x", "present_agents": "y",
+                         "recent_events": [f"事件{i}" for i in range(10)] + ["新事件"]}, ensure_ascii=False)
+    rec.llm = type(rec.llm)([JUDGE_BREAK_GLASS, update])
+    rec.submit_action("maeve", "把酒杯摔在地上")
+    rec.tick_update(tick=4)
+    assert len(rec.chunks["recent_events"]) == 10
+    assert rec.chunks["recent_events"][-1] == "新事件"
