@@ -1,4 +1,6 @@
 """正式仿真的资源注册表（与 MVE 的 registry.py 并存）。"""
+import os
+
 from agentkernel_distributed.mas.action.components import CommunicationComponent, OtherActionsComponent
 from agentkernel_distributed.mas.agent.components import (
     InvokeComponent,
@@ -6,7 +8,7 @@ from agentkernel_distributed.mas.agent.components import (
     PlanComponent,
     ProfileComponent,
 )
-from agentkernel_distributed.mas.environment.components import RelationComponent
+from agentkernel_distributed.mas.environment.components import RelationComponent, get_or_create_component_class
 from agentkernel_distributed.mas.system.components import Messager, Timer
 from agentkernel_distributed.toolkit.models.api.openai import OpenAIProvider
 from agentkernel_distributed.toolkit.storages import RedisKVAdapter
@@ -23,6 +25,11 @@ from examples.west_world_test.WestWorldPodManager import WestWorldPodManager
 from examples.west_world_test.plugins.agent.invoke.WestWorldInvokePlugin import WestWorldInvokePlugin
 from examples.west_world_test.plugins.agent.perceive.WestWorldPerceivePlugin import WestWorldPerceivePlugin
 from examples.west_world_test.plugins.agent.plan.RandomWalkPlanPlugin import RandomWalkPlanPlugin
+from examples.west_world_test.plugins.environment.scene.LocationRecorderPlugin import make_scene_plugin_class
+from examples.west_world_test.worldmap.loader import load_world_map as _load_wm
+
+_WORLD = _load_wm(os.path.join(os.path.dirname(__file__), "data/map/locations.yaml"))
+_ACTIVE = sorted(_WORLD.active_ids())
 
 RESOURCES_MAPS = {
     "agent_components": {
@@ -51,9 +58,11 @@ RESOURCES_MAPS = {
     },
     "environment_components": {
         "relation": RelationComponent,
+        **{f"scene_{lid}": get_or_create_component_class(f"scene_{lid}") for lid in _ACTIVE},
     },
     "environment_plugins": {
         "BasicRelationPlugin": BasicRelationPlugin,
+        **{f"Scene_{lid}_Plugin": make_scene_plugin_class(lid) for lid in _ACTIVE},
     },
     "system_components": {
         "messager": Messager,

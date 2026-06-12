@@ -5,3 +5,63 @@ components:
       BasicRelationPlugin:
         adapters: {}
         relations: "agents_relation"
+  scene_sweetwater_saloon:
+    plugin:
+      Scene_sweetwater_saloon_Plugin:
+        adapters: {}
+        location_id: sweetwater_saloon
+  scene_abernathy_ranch:
+    plugin:
+      Scene_abernathy_ranch_Plugin:
+        adapters: {}
+        location_id: abernathy_ranch
+  scene_sweetwater:
+    plugin:
+      Scene_sweetwater_Plugin:
+        adapters: {}
+        location_id: sweetwater
+  scene_sweetwater_plaza:
+    plugin:
+      Scene_sweetwater_plaza_Plugin:
+        adapters: {}
+        location_id: sweetwater_plaza
+  scene_sweetwater_sheriff:
+    plugin:
+      Scene_sweetwater_sheriff_Plugin:
+        adapters: {}
+        location_id: sweetwater_sheriff
+  scene_sweetwater_post_office:
+    plugin:
+      Scene_sweetwater_post_office_Plugin:
+        adapters: {}
+        location_id: sweetwater_post_office
+  scene_sweetwater_train_station:
+    plugin:
+      Scene_sweetwater_train_station_Plugin:
+        adapters: {}
+        location_id: sweetwater_train_station
+  scene_sweetwater_hotel:
+    plugin:
+      Scene_sweetwater_hotel_Plugin:
+        adapters: {}
+        location_id: sweetwater_hotel
+  scene_sweetwater_hospital:
+    plugin:
+      Scene_sweetwater_hospital_Plugin:
+        adapters: {}
+        location_id: sweetwater_hospital
+  scene_sweetwater_gunsmith:
+    plugin:
+      Scene_sweetwater_gunsmith_Plugin:
+        adapters: {}
+        location_id: sweetwater_gunsmith
+  scene_sweetwater_tailor:
+    plugin:
+      Scene_sweetwater_tailor_Plugin:
+        adapters: {}
+        location_id: sweetwater_tailor
+  scene_sweetwater_general_store:
+    plugin:
+      Scene_sweetwater_general_store_Plugin:
+        adapters: {}
+        location_id: sweetwater_general_store
