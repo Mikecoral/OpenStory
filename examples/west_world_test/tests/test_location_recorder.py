@@ -45,3 +45,42 @@ def test_enter_and_leave_update_presence():
     assert "dolores" in rec.chunks["present_agents"]
     rec.agent_leave("dolores")
     assert "dolores" not in rec.chunks["present_agents"]
+
+
+JUDGE_PICK_PHOTO = json.dumps({
+    "permission": True, "reason": "",
+    "private_feedback": "你捡起照片：照片上是现代都市夜景。",
+    "broadcast_level": "none", "event_summary": "",
+}, ensure_ascii=False)
+
+JUDGE_BREAK_GLASS = json.dumps({
+    "permission": True, "reason": "",
+    "private_feedback": "杯子在你手里碎了。",
+    "broadcast_level": "location", "event_summary": "有人打碎了一只酒杯。",
+}, ensure_ascii=False)
+
+
+def test_submit_action_secret_leaks_only_via_private_feedback():
+    rec = make_recorder([JUDGE_PICK_PHOTO])
+    result = rec.submit_action("dolores", "偷偷捡起角落里的旧照片")
+    assert result["permission"] is True
+    assert "现代都市" in result["private_feedback"]
+    assert rec._pending_actions[0]["broadcast_level"] == "none"
+    # 公开块此刻仍无泄露
+    assert "现代都市" not in json.dumps(rec.read("teddy", list(rec.chunks)), ensure_ascii=False)
+
+
+def test_submit_action_broadcast_queues_event():
+    rec = make_recorder([JUDGE_BREAK_GLASS])
+    result = rec.submit_action("maeve", "把酒杯摔在地上")
+    assert result["broadcast_level"] == "location"
+    assert rec._pending_actions[0]["event_summary"]
+
+
+def test_submit_action_invalid_json_retries_then_degrades():
+    rec = make_recorder(["不是JSON", "还不是JSON"])
+    result = rec.submit_action("teddy", "推开后门")
+    assert result["permission"] is True          # 降级：允许
+    assert result["private_feedback"] == ""      # 降级：无反馈
+    assert result["broadcast_level"] == "none"   # 降级：不广播
+    assert len(rec.llm.calls) == 2               # 重试了一次

@@ -56,3 +56,26 @@ class LocationRecorder:
     def _present_set(self) -> set[str]:
         raw = self.chunks["present_agents"]
         return set() if raw == EMPTY_PRESENCE else {x for x in raw.split("、") if x}
+
+    # ---- 动作裁决（每动作一次 LLM） ----
+    def submit_action(self, agent_id: str, action_text: str) -> Dict[str, Any]:
+        prompt = prompts.render_judge(self.location.name, self.chunks, agent_id, action_text)
+        judgement = self._chat_json(prompt, retries=1)
+        if judgement is None:
+            logger.warning("[%s] 裁决 JSON 解析失败，降级为允许/无反馈/不广播: %s", self.location.id, action_text)
+            judgement = dict(FALLBACK_JUDGEMENT)
+        record = {"agent_id": agent_id, "action": action_text, **judgement}
+        self._pending_actions.append(record)
+        return judgement
+
+    def _chat_json(self, prompt: str, retries: int) -> Optional[Dict[str, Any]]:
+        for _ in range(retries + 1):
+            raw = self.llm.chat(prompt)
+            try:
+                text = raw.strip()
+                if text.startswith("```"):
+                    text = text.split("```")[1].lstrip("json").strip()
+                return json.loads(text)
+            except (json.JSONDecodeError, IndexError):
+                continue
+        return None
