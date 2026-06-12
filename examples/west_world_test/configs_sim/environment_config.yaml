@@ -1,0 +1,7 @@
+name: WestWorldEnvironment
+components:
+  relation:
+    plugin:
+      BasicRelationPlugin:
+        adapters: {}
+        relations: "agents_relation"
