@@ -1,11 +1,23 @@
 """执行插件：落实 plan 决策。M2 只处理 move/stay；M3 追加 Recorder 联动。"""
 from __future__ import annotations
 
+import os
 from typing import Any, Dict, Optional, Tuple
 
 from agentkernel_distributed.mas.agent.base.plugin_base import InvokePlugin
 
-from examples.west_world_test.worldmap.loader import WorldMap
+from examples.west_world_test.worldmap.loader import WorldMap, load_world_map
+
+_DEFAULT_MAP_PATH = os.path.join(
+    os.path.dirname(__file__), "..", "..", "..", "data", "map", "locations.yaml"
+)
+
+
+def _load_default_world() -> Optional[WorldMap]:
+    path = os.path.normpath(_DEFAULT_MAP_PATH)
+    if os.path.exists(path):
+        return load_world_map(path)
+    return None
 
 
 def apply_move(world: WorldMap, state: Dict[str, Any], target: str) -> Tuple[Dict[str, Any], bool, str]:
@@ -24,9 +36,16 @@ def apply_move(world: WorldMap, state: Dict[str, Any], target: str) -> Tuple[Dic
 class WestWorldInvokePlugin(InvokePlugin):
     """M2 执行插件：读取 plan 决策，落实 move/stay，更新 state。"""
 
-    def __init__(self, world: Optional[WorldMap] = None, **_: Any) -> None:
+    def __init__(
+        self,
+        world: Optional[WorldMap] = None,
+        locations: Any = None,
+        **_: Any,
+    ) -> None:
         super().__init__()
-        self._world = world
+        # Builder injects locations per-agent (keyed by agent ID) which won't match
+        # map location IDs — fall back to loading from the default data file path.
+        self._world = world or _load_default_world()
 
     async def init(self) -> None:
         pass

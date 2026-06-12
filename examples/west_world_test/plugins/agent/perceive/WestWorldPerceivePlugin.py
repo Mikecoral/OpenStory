@@ -1,12 +1,17 @@
 """感知插件：M2 用地图静态信息占位；M3 在 execute 中追加 Recorder read。"""
 from __future__ import annotations
 
+import os
 from typing import Any, Dict, List, Optional
 
 from agentkernel_distributed.mas.agent.base.plugin_base import PerceivePlugin
 from agentkernel_distributed.types.schemas.message import Message
 
-from examples.west_world_test.worldmap.loader import WorldMap
+from examples.west_world_test.worldmap.loader import WorldMap, load_world_map
+
+_DEFAULT_MAP_PATH = os.path.join(
+    os.path.dirname(__file__), "..", "..", "..", "data", "map", "locations.yaml"
+)
 
 
 def build_percept(world: WorldMap, agent_id: str, state: Dict[str, Any]) -> Dict[str, Any]:
@@ -19,18 +24,27 @@ def build_percept(world: WorldMap, agent_id: str, state: Dict[str, Any]) -> Dict
     }
 
 
-def _rows(locations: Any) -> list:
-    if isinstance(locations, dict):
-        return list(locations.values())
-    return list(locations or [])
+def _load_default_world() -> Optional[WorldMap]:
+    """从默认数据文件路径加载 WorldMap。"""
+    path = os.path.normpath(_DEFAULT_MAP_PATH)
+    if os.path.exists(path):
+        return load_world_map(path)
+    return None
 
 
 class WestWorldPerceivePlugin(PerceivePlugin):
     """M2 感知插件：从地图静态信息构建 percept，写入 state。"""
 
-    def __init__(self, world: Optional[WorldMap] = None, **_: Any) -> None:
+    def __init__(
+        self,
+        world: Optional[WorldMap] = None,
+        locations: Any = None,
+        **_: Any,
+    ) -> None:
         super().__init__()
-        self._world = world
+        # Builder injects locations per-agent (keyed by agent ID) which won't match
+        # map location IDs — fall back to loading from the default data file path.
+        self._world = world or _load_default_world()
         self._messages: List[Message] = []
 
     async def init(self) -> None:
