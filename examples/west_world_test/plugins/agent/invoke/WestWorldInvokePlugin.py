@@ -5,8 +5,11 @@ import os
 from typing import Any, Dict, Optional, Tuple
 
 from agentkernel_distributed.mas.agent.base.plugin_base import InvokePlugin
+from agentkernel_distributed.toolkit.logger import get_logger
 
 from examples.west_world_test.worldmap.loader import WorldMap, load_world_map
+
+logger = get_logger(__name__)
 
 _DEFAULT_MAP_PATH = os.path.join(
     os.path.dirname(__file__), "..", "..", "..", "data", "map", "locations.yaml"
@@ -56,20 +59,42 @@ class WestWorldInvokePlugin(InvokePlugin):
         state_component = self.agent.get_component("state")
         state_plugin = state_component.get_plugin()
 
-        decision = await state_plugin.get_state("plan_decision") or {}
-        action = decision.get("action", "stay")
-        target = decision.get("target", "")
+        # 读 plan 决策（state key 为 plan_decision）
+        decision = await state_plugin.get_state("plan_decision") or {"action": "stay"}
+        controller = self.agent.controller
+        location = await state_plugin.get_state("location")
+        current_state = {
+            "location": location,
+            "known_map": await state_plugin.get_state("known_map") or [],
+        }
 
-        if action == "move" and target:
-            location = await state_plugin.get_state("location")
-            known_map = await state_plugin.get_state("known_map") or []
-            current_state = {"location": location, "known_map": known_map}
+        if decision.get("action") == "move":
+            new_state, ok, reason = apply_move(self._world, current_state, decision.get("target", ""))
+            if not ok:
+                await state_plugin.set_state("feedback", reason)
+                return
+            # Recorder: leave 旧地点，enter 新地点
+            await self._scene_call(controller, location, "agent_leave", self.agent.agent_id)
+            first_sight = await self._scene_call(controller, new_state["location"], "agent_enter", self.agent.agent_id)
+            # 更新 state
+            await state_plugin.set_state("location", new_state["location"])
+            await state_plugin.set_state("known_map", new_state["known_map"])
+            await state_plugin.set_state("feedback", first_sight or "")
+            logger.info("[%s] tick %s 移动 %s -> %s", self.agent.agent_id, current_tick, location, new_state["location"])
+        elif decision.get("action") == "do":
+            result = await self._scene_call(controller, location, "submit_action",
+                                            self.agent.agent_id, decision.get("detail", ""))
+            feedback = (result or {}).get("private_feedback", "") if isinstance(result, dict) else ""
+            await state_plugin.set_state("feedback", feedback)
+        else:
+            await state_plugin.set_state("feedback", "")
 
-            new_state, ok, reason = apply_move(self._world, current_state, target)
-            if ok:
-                await state_plugin.set_state("location", new_state["location"])
-                await state_plugin.set_state("known_map", new_state["known_map"])
-            # If move failed, stay in place silently
+    async def _scene_call(self, controller, location_id: str, method: str, *args):
+        try:
+            return await controller.run_environment(f"scene_{location_id}", method, *args)
+        except Exception as exc:
+            logger.warning("scene_%s.%s 调用失败: %s", location_id, method, exc)
+            return None
 
     async def save_to_db(self) -> None:
         return None

@@ -10,11 +10,11 @@ from examples.west_world_test.recorder.location_recorder import LocationRecorder
 from examples.west_world_test.worldmap.loader import Location, load_world_map
 
 _DEFAULT_MAP_PATH = os.path.normpath(os.path.join(
-    os.path.dirname(__file__), "..", "..", "..", "..", "data", "map", "locations.yaml"
+    os.path.dirname(__file__), "..", "..", "..", "data", "map", "locations.yaml"
 ))
 
 _DEFAULT_MODELS_CONFIG = os.path.normpath(os.path.join(
-    os.path.dirname(__file__), "..", "..", "..", "..", "configs", "models_config.yaml"
+    os.path.dirname(__file__), "..", "..", "..", "configs", "models_config.yaml"
 ))
 
 

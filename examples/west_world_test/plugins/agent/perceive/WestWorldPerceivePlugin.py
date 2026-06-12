@@ -5,9 +5,12 @@ import os
 from typing import Any, Dict, List, Optional
 
 from agentkernel_distributed.mas.agent.base.plugin_base import PerceivePlugin
+from agentkernel_distributed.toolkit.logger import get_logger
 from agentkernel_distributed.types.schemas.message import Message
 
 from examples.west_world_test.worldmap.loader import WorldMap, load_world_map
+
+logger = get_logger(__name__)
 
 _DEFAULT_MAP_PATH = os.path.join(
     os.path.dirname(__file__), "..", "..", "..", "data", "map", "locations.yaml"
@@ -64,6 +67,21 @@ class WestWorldPerceivePlugin(PerceivePlugin):
         current_state = {"location": location, "known_map": known_map}
 
         percept = build_percept(self._world, self.agent.agent_id, current_state)
+
+        # 追加 Recorder read（M3 新增）
+        controller = self.agent.controller
+        try:
+            # 先看 plan 上一 tick 想读的 chunks；没有则用默认三块
+            next_read = await state_plugin.get_state("next_read") or ["present_agents", "recent_events", "dynamic_objects"]
+            chunks = await controller.run_environment(
+                f"scene_{location}", "read",
+                self.agent.agent_id, next_read)
+            percept["scene"] = chunks
+        except Exception as exc:
+            logger.warning("[%s] 读取 scene_%s 失败，使用静态感知: %s",
+                           self.agent.agent_id, location, exc)
+            percept["scene"] = {}
+
         await state_plugin.set_state("percept", percept)
 
     async def save_to_db(self) -> None:
