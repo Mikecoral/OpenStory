@@ -16,6 +16,7 @@ logger = logging.getLogger(__name__)
 
 RECENT_EVENTS_WINDOW = 10
 READABLE_CHUNKS = {"static_facilities", "dynamic_objects", "present_agents", "recent_events"}
+EMPTY_PRESENCE = "（无人）"
 FALLBACK_JUDGEMENT = {
     "permission": True, "reason": "", "private_feedback": "",
     "broadcast_level": "none", "event_summary": "",
@@ -30,7 +31,7 @@ class LocationRecorder:
         self.chunks: Dict[str, Any] = {
             "static_facilities": f"{location.description.strip()} 设施与陈设：{visible}",
             "dynamic_objects": "暂无特别状态。",
-            "present_agents": "、".join(location.default_occupants) or "（无人）",
+            "present_agents": "、".join(location.default_occupants) or EMPTY_PRESENCE,
             "recent_events": [],
             "hidden_notes": "\n".join(f"{o['name']}: {o.get('secret', '')}" for o in location.hidden_objects()) or "（无）",
         }
@@ -50,8 +51,8 @@ class LocationRecorder:
     def agent_leave(self, agent_id: str) -> None:
         present = self._present_set()
         present.discard(agent_id)
-        self.chunks["present_agents"] = "、".join(sorted(present)) or "（无人）"
+        self.chunks["present_agents"] = "、".join(sorted(present)) or EMPTY_PRESENCE
 
-    def _present_set(self) -> set:
+    def _present_set(self) -> set[str]:
         raw = self.chunks["present_agents"]
-        return set() if raw == "（无人）" else {x for x in raw.split("、") if x}
+        return set() if raw == EMPTY_PRESENCE else {x for x in raw.split("、") if x}
