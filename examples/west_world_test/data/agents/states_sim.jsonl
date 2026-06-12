@@ -1,0 +1,6 @@
+{"id": "dolores", "health": 5, "energy": 100, "fullness": 100, "mood": 100, "emotion": "平静", "items": [], "location": "abernathy_ranch", "known_map": ["abernathy_ranch", "sweetwater", "sweetwater_plaza", "sweetwater_general_store"]}
+{"id": "teddy", "health": 5, "energy": 100, "fullness": 100, "mood": 100, "emotion": "警觉", "items": [], "location": "sweetwater_train_station", "known_map": ["sweetwater_train_station", "sweetwater", "sweetwater_saloon", "sweetwater_plaza"]}
+{"id": "maeve", "health": 5, "energy": 100, "fullness": 100, "mood": 80, "emotion": "淡漠", "items": [], "location": "sweetwater_saloon", "known_map": ["sweetwater_saloon", "sweetwater", "sweetwater_plaza"]}
+{"id": "clementine", "health": 5, "energy": 100, "fullness": 100, "mood": 90, "emotion": "空洞的平静", "items": [], "location": "sweetwater_saloon", "known_map": ["sweetwater_saloon", "sweetwater"]}
+{"id": "peter_abernathy", "health": 5, "energy": 90, "fullness": 100, "mood": 70, "emotion": "忧虑", "items": [], "location": "abernathy_ranch", "known_map": ["abernathy_ranch", "sweetwater"]}
+{"id": "sheriff_pickett", "health": 5, "energy": 100, "fullness": 100, "mood": 85, "emotion": "严肃", "items": [], "location": "sweetwater_sheriff", "known_map": ["sweetwater_sheriff", "sweetwater", "sweetwater_plaza", "sweetwater_saloon"]}
