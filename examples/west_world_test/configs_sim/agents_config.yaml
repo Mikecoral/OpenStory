@@ -24,7 +24,7 @@ templates:
 
       plan:
         plugin:
-          RandomWalkPlanPlugin:
+          WestWorldPlanPlugin:
             adapters: {}
             locations: "map_locations"
 

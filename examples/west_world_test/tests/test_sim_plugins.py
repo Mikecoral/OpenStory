@@ -50,3 +50,17 @@ def test_apply_move_updates_state_and_known_map():
     )
     new_state2, ok2, reason2 = apply_move(WORLD, state, non_neighbor)
     assert not ok2 and new_state2["location"] == "sweetwater_saloon" and reason2
+
+
+def test_plan_prompt_contains_loop_percept_feedback_and_neighbors():
+    from examples.west_world_test.plugins.agent.plan.WestWorldPlanPlugin import render_plan_prompt, parse_decision
+    profile = {"姓名": "德洛丽丝", "性格": "温柔好奇", "narrative_loop": "清晨在农场醒来，上午去镇上采购。"}
+    percept = {"location": "abernathy_ranch", "here_description": "农场。",
+               "neighbors": ["sweetwater"], "known_map": ["abernathy_ranch"],
+               "scene": {"present_agents": "peter_abernathy", "recent_events": []}}
+    prompt = render_plan_prompt(profile, percept, feedback="你捡起了一支画笔。", tick=5)
+    for needle in ("德洛丽丝", "清晨在农场醒来", "农场。", "sweetwater", "画笔"):
+        assert needle in prompt
+    decision = parse_decision('{"action": "move", "target": "sweetwater", "detail": "", "next_read": ["recent_events"]}')
+    assert decision["action"] == "move" and decision["target"] == "sweetwater"
+    assert parse_decision("乱七八糟")["action"] == "stay"     # 解析失败降级为 stay

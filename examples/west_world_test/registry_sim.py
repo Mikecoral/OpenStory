@@ -25,6 +25,7 @@ from examples.west_world_test.WestWorldPodManager import WestWorldPodManager
 from examples.west_world_test.plugins.agent.invoke.WestWorldInvokePlugin import WestWorldInvokePlugin
 from examples.west_world_test.plugins.agent.perceive.WestWorldPerceivePlugin import WestWorldPerceivePlugin
 from examples.west_world_test.plugins.agent.plan.RandomWalkPlanPlugin import RandomWalkPlanPlugin
+from examples.west_world_test.plugins.agent.plan.WestWorldPlanPlugin import WestWorldPlanPlugin
 from examples.west_world_test.plugins.environment.scene.LocationRecorderPlugin import make_scene_plugin_class
 from examples.west_world_test.worldmap.loader import load_world_map as _load_wm
 
@@ -44,6 +45,7 @@ RESOURCES_MAPS = {
         "BasicStatePlugin": BasicStatePlugin,
         "WestWorldPerceivePlugin": WestWorldPerceivePlugin,
         "RandomWalkPlanPlugin": RandomWalkPlanPlugin,
+        "WestWorldPlanPlugin": WestWorldPlanPlugin,
         "WestWorldInvokePlugin": WestWorldInvokePlugin,
     },
     "action_components": {
