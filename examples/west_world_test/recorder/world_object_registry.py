@@ -74,9 +74,53 @@ class WorldObjectRegistry:
         ]
         return [copy.deepcopy(r) for r in rows]
 
+    def relocate_holdings(self, agent_id: str, to_location: str) -> None:
+        for row in self._objects.values():
+            if row["held_by"] == agent_id and not row["destroyed"]:
+                before = copy.deepcopy(row)
+                row["location_id"] = to_location
+                self._log("relocate", row["object_id"], before, copy.deepcopy(row), agent_id, None)
+
+    def seed_from_world(self, world_map: Any) -> None:
+        if self._seeded:
+            return
+        for lid in sorted(world_map.active_ids()):
+            location = world_map.get(lid)
+            for item in location.objects:
+                fields = {"state": item.get("note", "状态正常")}
+                if item.get("secret"):
+                    fields["secret"] = item["secret"]
+                self.create(
+                    name=item["name"], location_id=lid, by="__seed__", tick=None,
+                    action="__seed__", fields=fields, hidden=bool(item.get("hidden")),
+                )
+        self._seeded = True
+
+    def snapshot(self) -> Dict[str, Any]:
+        return {
+            "objects": [copy.deepcopy(r) for r in self._objects.values()],
+            "ledger": copy.deepcopy(self.ledger),
+        }
+
     def _log(self, op: str, object_id: str, before: Optional[Dict[str, Any]],
              after: Optional[Dict[str, Any]], by: Optional[str], tick: Optional[int]) -> None:
         self.ledger.append({
             "op": op, "object_id": object_id,
             "before": before, "after": after, "by": by, "tick": tick,
         })
+
+
+_REGISTRY: Optional[WorldObjectRegistry] = None
+
+
+def get_object_registry() -> WorldObjectRegistry:
+    global _REGISTRY
+    if _REGISTRY is None:
+        _REGISTRY = WorldObjectRegistry()
+    return _REGISTRY
+
+
+def reset_object_registry() -> None:
+    """测试隔离用：清空进程内单例。"""
+    global _REGISTRY
+    _REGISTRY = None

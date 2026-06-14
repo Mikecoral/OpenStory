@@ -54,3 +54,52 @@ def test_objects_at_filters_by_location_and_hidden():
     assert [r["name"] for r in visible] == ["可见杯"]
     with_hidden = reg.objects_at("saloon", include_hidden=True)
     assert {r["name"] for r in with_hidden} == {"可见杯", "密照"}
+
+
+from examples.west_world_test.recorder.world_object_registry import (
+    WorldObjectRegistry, get_object_registry, reset_object_registry,
+)
+from examples.west_world_test.worldmap.loader import Location
+
+
+def test_relocate_holdings_moves_held_objects_with_agent():
+    reg = WorldObjectRegistry()
+    held = reg.create(name="左轮", location_id="saloon", by="t", tick=1, action="a",
+                      fields={}, held_by="hector")
+    ground = reg.create(name="酒桶", location_id="saloon", by="t", tick=1, action="a", fields={})
+    reg.relocate_holdings("hector", "ranch")
+    assert reg.get(held)["location_id"] == "ranch"      # 持有物跟随
+    assert reg.get(ground)["location_id"] == "saloon"   # 地上物不动
+    assert any(e["op"] == "relocate" for e in reg.ledger)
+
+
+def test_seed_from_world_is_idempotent():
+    world = {
+        "saloon": Location(id="saloon", name="酒馆", region="r", type="interior",
+                           active=True, bbox=[0, 0, 0, 0], adjacency=[],
+                           objects=[{"name": "酒杯", "note": "完整"},
+                                    {"name": "密照", "hidden": True, "secret": "现代照片"}]),
+    }
+
+    class _World:
+        def active_ids(self):
+            return {"saloon"}
+
+        def get(self, lid):
+            return world[lid]
+
+    reg = WorldObjectRegistry()
+    reg.seed_from_world(_World())
+    reg.seed_from_world(_World())  # 第二次应无副作用
+    assert len(reg.objects_at("saloon", include_hidden=True)) == 2
+    secret = next(r for r in reg.objects_at("saloon", include_hidden=True) if r["hidden"])
+    assert secret["hidden"] is True
+
+
+def test_singleton_returns_same_instance_until_reset():
+    reset_object_registry()
+    a = get_object_registry()
+    b = get_object_registry()
+    assert a is b
+    reset_object_registry()
+    assert get_object_registry() is not a
