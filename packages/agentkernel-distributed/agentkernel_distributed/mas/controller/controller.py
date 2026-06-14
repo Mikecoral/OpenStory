@@ -108,6 +108,11 @@ class ControllerImpl(BaseController):
             return {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}
         return self._model_router.reset_token_usage()
 
+    def drain_model_attempt_traces(self) -> List[Dict[str, Any]]:
+        if self._model_router is None:
+            return []
+        return self._model_router.drain_attempt_traces()
+
     async def run_agent_method(
         self, agent_id: str, component_name: str, method_name: str, *args: Any, **kwargs: Any
     ) -> Any:

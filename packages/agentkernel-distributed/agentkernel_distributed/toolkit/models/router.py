@@ -29,6 +29,7 @@ class ModelRouter:
         system_prompt: str = "",
         model_name: Optional[str] = None,
         timeout: int = 300,
+        max_attempts: int = 3,
         **kwargs: Union[str, float, int],
     ) -> Optional[str]:
         """
@@ -39,6 +40,7 @@ class ModelRouter:
             system_prompt (str): Optional system prompt steering the LLM behaviour. Defaults to an empty string.
             model_name (Optional[str]): Optional identifier for the model to use.
             timeout (int): Maximum time to wait for a response in seconds. Defaults to 300 seconds.
+            max_attempts (int): Maximum total provider attempts. Defaults to 3.
             **kwargs (Union[str, float, int]): Additional sampling parameters forwarded to the backend.
 
         Returns:
@@ -51,6 +53,7 @@ class ModelRouter:
             system_prompt=system_prompt,
             model_name=model_name,
             timeout=timeout,
+            max_attempts=max_attempts,
             **kwargs,
         )
         
@@ -109,6 +112,9 @@ class ModelRouter:
 
     def reset_token_usage(self) -> Dict[str, int]:
         return self._router.reset_token_usage()
+
+    def drain_attempt_traces(self) -> List[Dict[str, Any]]:
+        return self._router.drain_attempt_traces()
 
     async def close(self) -> None:
         """Release resources held by the underlying backend."""
