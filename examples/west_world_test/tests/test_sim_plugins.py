@@ -1,4 +1,5 @@
 """M2 插件逻辑测试：占位感知、随机游走、移动落实（无 Ray/Redis）。"""
+import json
 from pathlib import Path
 
 from examples.west_world_test.plugins.agent.perceive.WestWorldPerceivePlugin import build_percept
@@ -64,3 +65,18 @@ def test_plan_prompt_contains_loop_percept_feedback_and_neighbors():
     decision = parse_decision('{"action": "move", "target": "sweetwater", "detail": "", "next_read": ["recent_events"]}')
     assert decision["action"] == "move" and decision["target"] == "sweetwater"
     assert parse_decision("乱七八糟")["action"] == "stay"     # 解析失败降级为 stay
+
+
+def test_real_sim_profile_fields_are_rendered_in_plan_prompt():
+    from examples.west_world_test.plugins.agent.plan.WestWorldPlanPlugin import render_plan_prompt
+
+    profile_path = Path(__file__).parents[1] / "data" / "agents" / "profiles_sim.jsonl"
+    profile = json.loads(profile_path.read_text(encoding="utf-8").splitlines()[0])
+    prompt = render_plan_prompt(
+        profile,
+        {"location": "abernathy_ranch", "here_description": "农场", "neighbors": [], "scene": {}},
+        feedback="",
+        tick=0,
+    )
+    assert profile["name"] in prompt
+    assert profile["persona"] in prompt

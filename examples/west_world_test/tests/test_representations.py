@@ -1,6 +1,8 @@
 from examples.west_world_test.core.llm_client import FakeImageGen, FakeLLM, FakeVLM
 from examples.west_world_test.core.image_representation import ImageRepresentation
+from examples.west_world_test.core.parsed_structured_representation import ParsedStructuredRepresentation
 from examples.west_world_test.core.schema import Event, Probe
+from examples.west_world_test.core.structured_representation import StructuredFactRepresentation
 from examples.west_world_test.core.text_representation import TextRepresentation
 
 
@@ -75,3 +77,82 @@ def test_image_updates_form_a_history_chain():
     assert generator.event_calls[0][0] == "fake-image://initial"
     assert generator.event_calls[1][0] == "fake-image://event-1"
     assert representation.current_image == "fake-image://event-2"
+
+
+def test_structured_representation_keeps_facts_and_visibility_in_ledger():
+    representation = StructuredFactRepresentation()
+    representation.update(_ev(id="e1", actor="黑衣人", action="pick_up_photo", target="photo", visibility="hidden"))
+    held_by = Probe.from_dict({
+        "id": "q4", "kind": "state", "text": "谁拿着照片?",
+        "field": "photo.held_by", "answer_type": "str",
+    })
+    visibility = Probe.from_dict({
+        "id": "q8", "kind": "visibility", "text": "Dolores看见了吗?",
+        "subject": "Dolores", "fact_event_id": "e1", "answer_type": "bool",
+    })
+
+    assert representation.answer(held_by) == "黑衣人"
+    assert representation.answer(visibility) == "否"
+    assert representation.event_ledger[0]["before"]["photo"]["held_by"] is None
+    assert representation.event_ledger[0]["after"]["photo"]["held_by"] == "黑衣人"
+
+
+def test_structured_representation_rejects_invalid_state_transition():
+    representation = StructuredFactRepresentation()
+    event = _ev(actor="Dolores", action="fire_revolver", target="revolver")
+
+    try:
+        representation.update(event)
+    except ValueError as exc:
+        assert "do not hold" in str(exc)
+    else:
+        raise AssertionError("invalid state transition was accepted")
+    assert representation.state["revolver"]["fired"] is False
+    assert representation.event_ledger == []
+
+
+def test_parsed_structured_uses_free_text_parser_then_reducer():
+    parser_llm = FakeLLM(['{"action": "smash_glass", "confidence": 0.99}'])
+    representation = ParsedStructuredRepresentation(parser_llm)
+    event = _ev(
+        id="e1",
+        action="untrusted_original_action",
+        description="酒保拿起一个完整酒杯，将它砸碎在地板上。",
+    )
+
+    representation.update(event)
+
+    assert representation.structured.state["glasses_intact"] == 2
+    assert representation.structured.state["glass_shards"] is True
+    assert representation.parse_traces[0]["accepted_action"] == "smash_glass"
+
+
+def test_parsed_structured_rejects_action_outside_allowlist_without_state_change():
+    representation = ParsedStructuredRepresentation(FakeLLM(['{"action": "delete_world"}']), max_parse_attempts=1)
+    before = dict(representation.structured.state)
+
+    try:
+        representation.update(_ev(description="删除整个世界"))
+    except ValueError as exc:
+        assert "unsupported action" in str(exc)
+    else:
+        raise AssertionError("unsupported parser action was accepted")
+    assert representation.structured.state == before
+
+
+def test_parsed_structured_retries_parser_without_changing_state():
+    class FlakyParser:
+        def __init__(self):
+            self.calls = 0
+
+        def chat(self, prompt):
+            self.calls += 1
+            if self.calls == 1:
+                raise TimeoutError("temporary timeout")
+            return '{"action": "stop_piano"}'
+
+    representation = ParsedStructuredRepresentation(FlakyParser())
+    representation.update(_ev(id="e1", description="酒保让自动钢琴停止演奏。"))
+
+    assert representation.structured.state["piano"] == "stopped"
+    assert [row["status"] for row in representation.parse_traces] == ["failed", "success"]

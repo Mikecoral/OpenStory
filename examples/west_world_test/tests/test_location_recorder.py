@@ -47,6 +47,14 @@ def test_enter_and_leave_update_presence():
     assert "dolores" not in rec.chunks["present_agents"]
 
 
+def test_set_present_agents_rebuilds_presence_from_agent_state_truth():
+    rec = make_recorder()
+    rec.set_present_agents(["teddy", "teddy", "dolores"])
+    assert rec.chunks["present_agents"] == "dolores、teddy"
+    rec.set_present_agents([])
+    assert rec.chunks["present_agents"] == "（无人）"
+
+
 JUDGE_PICK_PHOTO = json.dumps({
     "permission": True, "reason": "",
     "private_feedback": "你捡起照片：照片上是现代都市夜景。",
@@ -103,6 +111,14 @@ def test_tick_update_merges_pending_and_clears_queue():
     assert len(rec.llm.calls) == 2          # 裁决 1 次 + 更新 1 次
 
 
+def test_tick_update_cannot_overwrite_deterministic_presence():
+    rec = make_recorder([JUDGE_BREAK_GLASS, UPDATE_OK])
+    rec.set_present_agents(["maeve"])
+    rec.submit_action("maeve", "把酒杯摔在地上")
+    rec.tick_update(tick=3)
+    assert rec.chunks["present_agents"] == "maeve"
+
+
 def test_tick_update_no_pending_skips_llm():
     rec = make_recorder()
     rec.tick_update(tick=1)
@@ -128,3 +144,36 @@ def test_recent_events_rolling_window():
     rec.tick_update(tick=4)
     assert len(rec.chunks["recent_events"]) == 10
     assert rec.chunks["recent_events"][-1] == "新事件"
+
+
+def test_snapshot_public_hides_secrets_and_internal_trace_is_drained_once():
+    rec = make_recorder([JUDGE_PICK_PHOTO])
+    rec.submit_action("dolores", "查看旧照片")
+
+    public = rec.snapshot()
+    internal = rec.snapshot(include_hidden=True, include_pending=True)
+    assert "hidden_notes" not in public["chunks"]
+    assert "现代都市" in internal["chunks"]["hidden_notes"]
+    assert internal["pending_actions"][0]["agent_id"] == "dolores"
+
+    traces = rec.drain_llm_traces()
+    assert traces[0]["call_type"] == "recorder_judge"
+    assert traces[0]["prompt"]
+    assert traces[0]["raw_response"] == JUDGE_PICK_PHOTO
+    assert rec.drain_llm_traces() == []
+
+
+def test_network_errors_are_recorded_and_retried_before_fallback():
+    class FailingLLM:
+        def chat(self, prompt):
+            raise TimeoutError("model timed out")
+
+    rec = LocationRecorder(location=SALOON, llm=FailingLLM())
+    result = rec.submit_action("teddy", "等待")
+    traces = rec.drain_llm_traces()
+
+    assert result["permission"] is True
+    assert len(traces) == 2
+    assert all(trace["status"] == "failed" for trace in traces)
+    assert all(trace["error_type"] == "TimeoutError" for trace in traces)
+    assert traces[0]["request_id"] == traces[1]["request_id"]
