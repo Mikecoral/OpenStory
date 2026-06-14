@@ -34,11 +34,15 @@ class OpenAICompatibleLLM:
         )
 
     def chat(self, prompt: str) -> str:
-        response = self.client.chat.completions.create(
-            model=self.config["model"],
-            messages=[{"role": "user", "content": prompt}],
-            temperature=self.config.get("temperature", 0),
-        )
+        kwargs: Dict[str, Any] = {
+            "model": self.config["model"],
+            "messages": [{"role": "user", "content": prompt}],
+            "temperature": self.config.get("temperature", 0),
+        }
+        if self.config.get("disable_thinking", True):
+            # Qwen3.5 does not honour the /no_think soft switch; use the API-level parameter instead.
+            kwargs["extra_body"] = {"enable_thinking": False}
+        response = self.client.chat.completions.create(**kwargs)
         answer = response.choices[0].message.content or ""
         usage = getattr(response, "usage", None)
         self.last_usage = usage.model_dump() if usage and hasattr(usage, "model_dump") else {}
