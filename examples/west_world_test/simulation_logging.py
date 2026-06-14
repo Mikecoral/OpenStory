@@ -104,6 +104,7 @@ class SimulationLogArchive:
                 "model_attempt_rows": 0,
                 "consistency_violations": 0,
                 "scene_errors": 0,
+                "world_object_snapshots": 0,
             },
             "files": {
                 "timeline": "timeline.jsonl",
@@ -114,6 +115,7 @@ class SimulationLogArchive:
                 "model_traces": "model_traces.jsonl",
                 "llm_requests": "raw/llm_requests.jsonl",
                 "llm_attempts": "raw/llm_attempts.jsonl",
+                "world_objects_snapshots": "world_objects_snapshots.jsonl",
             },
         }
         self._write_provenance()
@@ -180,6 +182,7 @@ class SimulationLogArchive:
 - `agent_states.jsonl`: one full state row per agent and snapshot.
 - `scene_snapshots_public.jsonl`: replay-safe scene state without hidden notes.
 - `scene_snapshots_internal.jsonl`: private diagnostics with hidden notes and pending actions.
+- `world_objects_snapshots.jsonl`: world-level object registry snapshots (objects + ledger) per tick.
 - `model_traces.jsonl`: full plan/recorder prompts, raw responses, parsed outputs, errors, and available usage.
 - `events.jsonl`: ordered lifecycle and phase events.
 - `raw/llm_attempts.jsonl`: one row per provider attempt, including failures, retries, latency, and exact usage.
@@ -296,6 +299,11 @@ Do not expose `scene_snapshots_internal.jsonl` to agents or a public frontend.
                 **attempt,
             })
         self.manifest["record_counts"]["model_attempt_rows"] += len(attempts)
+        self._write_manifest()
+
+    def record_world_objects(self, tick: int, snapshot: Dict[str, Any]) -> None:
+        self._append_jsonl("world_objects_snapshots.jsonl", {"tick": tick, **snapshot})
+        self.manifest["record_counts"]["world_object_snapshots"] += 1
         self._write_manifest()
 
     def _read_jsonl(self, relative_path: str) -> list[Dict[str, Any]]:

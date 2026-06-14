@@ -91,6 +91,10 @@ class LocationRecorderPlugin(GenericPlugin):
             snapshot["llm_traces"] = self.recorder.drain_llm_traces()
         return snapshot
 
+    async def world_snapshot(self) -> Dict[str, Any]:
+        from examples.west_world_test.recorder.world_object_registry import get_object_registry
+        return get_object_registry().snapshot()
+
     async def save_to_db(self) -> None:
         return None
 

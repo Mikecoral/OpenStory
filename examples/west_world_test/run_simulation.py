@@ -62,6 +62,13 @@ async def _collect_scene_snapshots(pod_manager, internal: bool) -> Dict[str, Dic
     return snapshots
 
 
+async def _collect_world_objects(pod_manager) -> Dict[str, Any]:
+    any_scene = _ACTIVE_LIDS[0]
+    return await pod_manager.run_environment.remote(
+        f"scene_{any_scene}", "world_snapshot",
+    )
+
+
 async def _synchronize_initial_presence(pod_manager, agent_states: Dict[str, Dict[str, Any]]) -> None:
     by_location: Dict[str, list[str]] = {location_id: [] for location_id in _ACTIVE_LIDS}
     for agent_id, state in agent_states.items():
@@ -97,6 +104,7 @@ async def main() -> None:
             {"initialization": time.perf_counter() - init_started}, [],
             phase="initial", count_completed_tick=False,
         )
+        archive.record_world_objects(-1, await _collect_world_objects(pod_manager))
         archive.record_event("initial_snapshot_recorded", tick=-1, consistency=initial_consistency)
         for i in range(max_ticks):
             tick = await system.run("timer", "get_tick")
@@ -141,6 +149,7 @@ async def main() -> None:
             consistency = archive.record_tick(
                 tick, agent_states, public_scenes, internal_scenes, timings, scene_errors,
             )
+            archive.record_world_objects(tick, await _collect_world_objects(pod_manager))
             archive.record_event("tick_snapshot_recorded", tick=tick, consistency=consistency)
 
             await system.run("timer", "add_tick", duration_seconds=TICK_DURATION)

@@ -136,3 +136,28 @@ def test_archive_builds_summary_views_and_queryable_attempt_logs(tmp_path):
     assert len((run_dir / "views/slow_requests.jsonl").read_text(encoding="utf-8").splitlines()) == 2
     assert len((run_dir / "views/failures.jsonl").read_text(encoding="utf-8").splitlines()) == 1
     assert "attempt-1" in (run_dir / "report/report.md").read_text(encoding="utf-8")
+
+
+def test_record_world_objects_writes_jsonl(tmp_path):
+    project = tmp_path / "project"
+    project.mkdir()
+    run_dir = tmp_path / "run"
+    archive = SimulationLogArchive(project, 1, ["alice"], ["a"], run_dir=run_dir)
+    snapshot = {"objects": [{"object_id": "obj_0", "name": "手枪"}], "ledger": [{"op": "create"}]}
+    archive.record_world_objects(0, snapshot)
+    archive.complete()
+
+    lines = [
+        json.loads(line)
+        for line in (run_dir / "world_objects_snapshots.jsonl").read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    assert len(lines) == 1
+    assert lines[0]["tick"] == 0
+    assert lines[0]["objects"] == snapshot["objects"]
+    assert lines[0]["ledger"] == snapshot["ledger"]
+
+    manifest = json.loads((run_dir / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest["record_counts"]["world_object_snapshots"] == 1
+    assert manifest["files"]["world_objects_snapshots"] == "world_objects_snapshots.jsonl"
+
