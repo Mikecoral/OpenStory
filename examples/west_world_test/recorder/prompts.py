@@ -30,19 +30,18 @@ JUDGE_PROMPT = """你是西部世界主题乐园中地点「{location_name}」�
 """
 
 UPDATE_PROMPT = """你是西部世界主题乐园中地点「{location_name}」的场景记录员。一个时间刻（tick {tick}）刚结束，
-请根据本 tick 发生的动作，更新场景的三个状态块。要求：忠实于已发生的裁决结果，不要发明未发生的事；
+请根据本 tick 发生的动作，更新场景的两个状态块。要求：忠实于已发生的裁决结果，不要发明未发生的事；
 保持简洁的客观描述；没有变化的内容原样保留。
 
 ## 更新前状态
 [可变物品] {dynamic_objects}
-[在场角色] {present_agents}
 [近期事件] {recent_events}
 
 ## 本 tick 已裁决的动作（含裁决结果，视为既定事实）
 {actions_log}
 
 只输出 JSON，不要输出其他内容：
-{{"dynamic_objects": "...", "present_agents": "...", "recent_events": ["最新事件一句话", "..."]}}
+{{"dynamic_objects": "...", "recent_events": ["最新事件一句话", "..."]}}
 """
 
 
@@ -58,7 +57,7 @@ def render_judge(location_name: str, chunks: Dict[str, Any], agent_id: str, acti
 def render_update(location_name: str, tick: int, chunks: Dict[str, Any], actions_log: List[Dict[str, Any]]) -> str:
     return UPDATE_PROMPT.format(
         location_name=location_name, tick=tick,
-        dynamic_objects=chunks["dynamic_objects"], present_agents=chunks["present_agents"],
+        dynamic_objects=chunks["dynamic_objects"],
         recent_events="\n".join(chunks["recent_events"]),
         actions_log=json.dumps(actions_log, ensure_ascii=False, indent=1),
     )
