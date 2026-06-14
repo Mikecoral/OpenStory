@@ -43,10 +43,6 @@ _PROPOSAL_PROMPT = """你是地点「{location_name}」的动作解析器与场�
 "event_summary": "", "patches": [{{"object_id": "obj_0", "state": "新状态"}}]}}
 """
 
-# Fields that belong to the object schema itself and must not be overwritten via patch.
-# We use the registry's META_FIELDS plus enforce the "name" protection explicitly in validation.
-_META_FIELDS = META_FIELDS
-
 
 class StructuredLocationRecorder(LocationRecorder):
     """Formal-simulation Recorder: LLM proposes free-form object patches, reducer applies atomically."""
@@ -59,8 +55,7 @@ class StructuredLocationRecorder(LocationRecorder):
         self._render_dynamic_objects()
 
     def _seed_location(self) -> None:
-        # 若单例已被其它 scene seed 过本地点则跳过（幂等）
-        if self.registry.objects_at(self.location.id, include_hidden=True):
+        if self.registry.is_location_seeded(self.location.id):
             return
         for item in self.location.objects:
             fields = {"state": item.get("note", "状态正常")}
@@ -70,6 +65,7 @@ class StructuredLocationRecorder(LocationRecorder):
                 name=item["name"], location_id=self.location.id, by="__seed__",
                 tick=None, action="__seed__", fields=fields, hidden=bool(item.get("hidden")),
             )
+        self.registry.mark_location_seeded(self.location.id)
 
     def submit_action(self, agent_id: str, action_text: str, tick: Optional[int] = None) -> Dict[str, Any]:
         # Only expose non-hidden objects to the LLM
@@ -104,9 +100,9 @@ class StructuredLocationRecorder(LocationRecorder):
             return {**FALLBACK_JUDGEMENT, "permission": False, "reason": str(exc)}
         if not proposal.get("permission", False):
             patches = []
-        before = self.registry.snapshot()
+        before = self.registry.objects_at(self.location.id, include_hidden=True)
         self._apply_patches(patches)
-        after = self.registry.snapshot()
+        after = self.registry.objects_at(self.location.id, include_hidden=True)
         judgement = {
             key: proposal.get(key, FALLBACK_JUDGEMENT[key])
             for key in FALLBACK_JUDGEMENT
@@ -148,7 +144,7 @@ class StructuredLocationRecorder(LocationRecorder):
             for key, value in patch.items():
                 if key == "object_id":
                     continue
-                if key in _META_FIELDS:
+                if key in META_FIELDS:
                     raise ValueError(f"不允许修改保留字段: {key}")
                 if not isinstance(value, str):
                     raise ValueError(f"字段 {key} 的值必须是字符串，收到: {type(value).__name__}")

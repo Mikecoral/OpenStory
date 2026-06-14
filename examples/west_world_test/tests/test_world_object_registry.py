@@ -108,3 +108,10 @@ def test_singleton_returns_same_instance_until_reset():
     assert a is b
     reset_object_registry()
     assert get_object_registry() is not a
+
+
+def test_location_seeded_tracking_is_idempotent_even_for_empty_locations():
+    reg = WorldObjectRegistry()
+    assert reg.is_location_seeded("empty") is False
+    reg.mark_location_seeded("empty")
+    assert reg.is_location_seeded("empty") is True

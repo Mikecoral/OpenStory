@@ -16,6 +16,7 @@ class WorldObjectRegistry:
         self._next_id = 0
         self.ledger: List[Dict[str, Any]] = []
         self._seeded = False
+        self._seeded_locations: set = set()
 
     # ---- 写 ----
     def create(self, name: str, location_id: str, by: str, tick: Optional[int],
@@ -95,6 +96,12 @@ class WorldObjectRegistry:
                     action="__seed__", fields=fields, hidden=bool(item.get("hidden")),
                 )
         self._seeded = True
+
+    def is_location_seeded(self, location_id: str) -> bool:
+        return location_id in self._seeded_locations
+
+    def mark_location_seeded(self, location_id: str) -> None:
+        self._seeded_locations.add(location_id)
 
     def snapshot(self) -> Dict[str, Any]:
         return {

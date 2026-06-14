@@ -70,6 +70,7 @@ def test_unknown_object_id_is_rejected_atomically():
     assert "未知 object_id" in result["reason"]
     # visible object state unchanged
     assert _reg_state("saloon", "酒杯")["state"] == "完整"
+    assert _reg_state("saloon", "旧照片")["state"] == "状态正常"
     assert recorder.fact_ledger == []
 
 
