@@ -185,9 +185,59 @@ def test_patch_targeting_hidden_object_is_dropped_without_failing_action():
     assert _reg_state("saloon", "旧照片")["hidden"] is True      # never migrates to visible
 
 
-@pytest.mark.skip(reason="reworked in Task 6: held objects follow holder instead of being dropped")
-def test_held_object_followed_when_holder_moves():
-    pass
+def _proposal_full(**overrides):
+    value = {
+        "permission": True, "reason": "", "private_feedback": "做了点事。",
+        "broadcast_level": "location", "event_summary": "",
+        "patches": [], "new_objects": [], "destroy": [], "ambient": "",
+    }
+    value.update(overrides)
+    return json.dumps(value, ensure_ascii=False)
+
+
+def test_new_objects_are_created_with_provenance():
+    recorder = StructuredLocationRecorder(
+        LOCATION,
+        FakeLLM([_proposal_full(new_objects=[{"name": "地上的血", "state": "暗红一滩", "held_by": ""}])]),
+    )
+    recorder.submit_action("hector", "开枪", tick=5)
+    blood = _reg_state("saloon", "地上的血")
+    assert blood["state"] == "暗红一滩"
+    assert blood["provenance"]["created_by"] == "hector"
+    assert blood["provenance"]["created_tick"] == 5
+
+
+def test_destroy_soft_deletes_object():
+    recorder = StructuredLocationRecorder(LOCATION, FakeLLM([_proposal_full(destroy=["obj_0"])]))
+    recorder.submit_action("maeve", "把酒杯扔进火里", tick=6)
+    reg = get_object_registry()
+    assert reg.get("obj_0")["destroyed"] is True
+
+
+def test_ambient_is_rewritten_and_readable():
+    recorder = StructuredLocationRecorder(LOCATION, FakeLLM([_proposal_full(ambient="灯光昏暗，弥漫硝烟味。")]))
+    recorder.submit_action("maeve", "环顾四周", tick=7)
+    assert recorder.chunks["ambient"] == "灯光昏暗，弥漫硝烟味。"
+    assert recorder.read("maeve", ["ambient"])["ambient"] == "灯光昏暗，弥漫硝烟味。"
+
+
+def test_new_object_cannot_be_hidden():
+    recorder = StructuredLocationRecorder(
+        LOCATION,
+        FakeLLM([_proposal_full(new_objects=[{"name": "暗格", "hidden": True}])]),
+    )
+    recorder.submit_action("maeve", "藏东西", tick=8)
+    created = _reg_state("saloon", "暗格")
+    assert created["hidden"] is False
+
+
+def test_destroy_unknown_id_is_dropped_without_failing_action():
+    recorder = StructuredLocationRecorder(
+        LOCATION,
+        FakeLLM([_proposal_full(destroy=["obj_999"], event_summary="无效销毁")]),
+    )
+    judgement = recorder.submit_action("maeve", "试图销毁不存在的东西", tick=9)
+    assert judgement["permission"] is True
 
 
 def test_leaving_does_not_release_objects_held_by_others():

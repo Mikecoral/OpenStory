@@ -18,7 +18,7 @@ from . import prompts
 logger = logging.getLogger(__name__)
 
 RECENT_EVENTS_WINDOW = 10
-READABLE_CHUNKS = {"static_facilities", "dynamic_objects", "present_agents", "recent_events"}
+READABLE_CHUNKS = {"static_facilities", "dynamic_objects", "present_agents", "recent_events", "ambient"}
 EMPTY_PRESENCE = "（无人）"
 FALLBACK_JUDGEMENT = {
     "permission": True, "reason": "", "private_feedback": "",
@@ -36,6 +36,7 @@ class LocationRecorder:
             "dynamic_objects": "暂无特别状态。",
             "present_agents": "、".join(location.default_occupants) or EMPTY_PRESENCE,
             "recent_events": [],
+            "ambient": "（无特别氛围）",
             "hidden_notes": "\n".join(f"{o['name']}: {o.get('secret', '')}" for o in location.hidden_objects()) or "（无）",
         }
         self._pending_actions: List[Dict[str, Any]] = []
