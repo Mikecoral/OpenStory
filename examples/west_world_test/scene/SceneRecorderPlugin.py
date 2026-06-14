@@ -10,6 +10,7 @@ from examples.west_world_test.core.image_representation import ImageRepresentati
 from examples.west_world_test.core.metrics import is_correct, normalize
 from examples.west_world_test.core.oracle import OracleState
 from examples.west_world_test.core.schema import Event, Probe
+from examples.west_world_test.core.structured_representation import StructuredFactRepresentation
 from examples.west_world_test.core.text_representation import TextRepresentation
 
 
@@ -43,10 +44,12 @@ class SceneRecorderPlugin(GenericPlugin):
             self._llm_factory = lambda: build_llm(self.config_path)
             self._image_gen_factory = lambda: build_image_gen(self.config_path)
             self._vlm_factory = lambda: build_vlm(self.config_path)
-        if self.method in ("text", "both") and "text" not in self.reps:
+        if self.method in ("text", "both", "all") and "text" not in self.reps:
             self.reps["text"] = TextRepresentation(self._llm_factory())
-        if self.method in ("image", "both") and "image" not in self.reps:
+        if self.method in ("image", "both", "all") and "image" not in self.reps:
             self.reps["image"] = ImageRepresentation(self._image_gen_factory(), self._vlm_factory())
+        if self.method in ("structured", "all") and "structured" not in self.reps:
+            self.reps["structured"] = StructuredFactRepresentation()
 
     async def apply_event(self, event_dict: Dict[str, Any]) -> None:
         if not self.reps:

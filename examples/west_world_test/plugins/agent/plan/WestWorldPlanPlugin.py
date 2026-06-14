@@ -2,6 +2,10 @@
 from __future__ import annotations
 
 import json
+import os
+import time
+import uuid
+from datetime import datetime
 from typing import Any, Dict
 
 from agentkernel_distributed.mas.agent.base.plugin_base import PlanPlugin
@@ -31,8 +35,8 @@ PLAN_PROMPT = """你是西部世界中的角色「{name}」。
 
 def render_plan_prompt(profile: Dict[str, Any], percept: Dict[str, Any], feedback: str, tick: int) -> str:
     return PLAN_PROMPT.format(
-        name=profile.get("姓名", ""),
-        personality=profile.get("性格", ""),
+        name=profile.get("name", profile.get("姓名", "")),
+        personality=profile.get("persona", profile.get("性格", "")),
         narrative_loop=profile.get("narrative_loop", ""),
         tick=tick,
         location=percept.get("location", ""),
@@ -94,15 +98,44 @@ class WestWorldPlanPlugin(PlanPlugin):
         prompt = render_plan_prompt(profile, percept, feedback, current_tick)
 
         raw = ""
+        error = ""
+        request_id = f"req_{uuid.uuid4().hex}"
+        started = time.perf_counter()
         if self.model:
             try:
-                raw = await self.model.chat(prompt)
+                raw = await self.model.chat(
+                    prompt,
+                    timeout=int(os.environ.get("WW_LLM_TIMEOUT_SECONDS", "120")),
+                    max_attempts=int(os.environ.get("WW_LLM_MAX_ATTEMPTS", "3")),
+                    _trace_context={
+                        "request_id": request_id,
+                        "request_type": "agent_plan",
+                        "tick": current_tick,
+                        "agent_id": self.agent.agent_id,
+                        "location_id": percept.get("location", ""),
+                    },
+                )
             except Exception as exc:
+                error = f"{type(exc).__name__}: {exc}"
                 logger.warning("[%s] plan LLM 调用失败，降级为 stay: %s", self.agent.agent_id, exc)
 
-        decision = parse_decision(raw)
+        raw_text = raw if isinstance(raw, str) else json.dumps(raw, ensure_ascii=False, default=str)
+        decision = parse_decision(raw_text)
         await state_plugin.set_state("plan_decision", decision)
         await state_plugin.set_state("next_read", decision.get("next_read") or [])
+        await state_plugin.set_state("plan_trace", {
+            "timestamp": datetime.now().astimezone().isoformat(),
+            "request_id": request_id,
+            "call_type": "agent_plan",
+            "prompt": prompt,
+            "raw_response": raw,
+            "error": error,
+            "duration_ms": round((time.perf_counter() - started) * 1000, 3),
+            "parsed_decision": decision,
+            "parse_fallback": decision["action"] == "stay" and raw_text.strip() not in (
+                '{"action": "stay", "target": "", "detail": "", "next_read": []}', ""
+            ),
+        })
         logger.info("[%s] tick %s 决策: %s", self.agent.agent_id, current_tick,
                     json.dumps(decision, ensure_ascii=False))
 
