@@ -7,11 +7,7 @@ from typing import Any, Callable, Dict, List, Optional, Type
 from agentkernel_distributed.mas.environment.base.plugin_base import GenericPlugin
 
 from examples.west_world_test.recorder.location_recorder import LocationRecorder
-from examples.west_world_test.worldmap.loader import Location, load_world_map
-
-_DEFAULT_MAP_PATH = os.path.normpath(os.path.join(
-    os.path.dirname(__file__), "..", "..", "..", "data", "map", "locations.yaml"
-))
+from examples.west_world_test.worldmap.loader import Location, get_world_map
 
 _DEFAULT_MODELS_CONFIG = os.path.normpath(os.path.join(
     os.path.dirname(__file__), "..", "..", "..", "configs", "models_config.yaml"
@@ -37,8 +33,7 @@ class LocationRecorderPlugin(GenericPlugin):
         if locations is not None and isinstance(locations, list) and len(locations) > 0:
             loc = self._find_location(location_id, locations)
         else:
-            world = load_world_map(_DEFAULT_MAP_PATH)
-            loc = world.get(location_id)
+            loc = get_world_map().get(location_id)
         self._location = loc
 
     @staticmethod
@@ -53,10 +48,19 @@ class LocationRecorderPlugin(GenericPlugin):
         raise KeyError(f"location '{location_id}' not found in provided locations list")
 
     async def init(self) -> None:
+        recorder_mode = os.environ.get("WW_RECORDER_MODE", "structured").lower()
         if self._llm_factory is None:
             from examples.west_world_test.recorder.factory import build_llm
-            self._llm_factory = lambda: build_llm(self._models_config_path)
-        self.recorder = LocationRecorder(location=self._location, llm=self._llm_factory())
+            if recorder_mode == "structured":
+                parse_timeout = float(os.environ.get("WW_PARSE_TIMEOUT_SECONDS", "240"))
+                self._llm_factory = lambda: build_llm(self._models_config_path, timeout_override=parse_timeout)
+            else:
+                self._llm_factory = lambda: build_llm(self._models_config_path)
+        recorder_class = LocationRecorder
+        if recorder_mode == "structured":
+            from examples.west_world_test.recorder.structured_location_recorder import StructuredLocationRecorder
+            recorder_class = StructuredLocationRecorder
+        self.recorder = recorder_class(location=self._location, llm=self._llm_factory())
 
     async def execute(self, current_tick: int) -> None:
         if self.recorder:
@@ -65,14 +69,27 @@ class LocationRecorderPlugin(GenericPlugin):
     async def read(self, agent_id: str, chunks: List[str]) -> Dict[str, Any]:
         return self.recorder.read(agent_id, chunks)
 
-    async def submit_action(self, agent_id: str, action_text: str) -> Dict[str, Any]:
-        return self.recorder.submit_action(agent_id, action_text)
+    async def submit_action(self, agent_id: str, action_text: str, tick: Optional[int] = None) -> Dict[str, Any]:
+        return self.recorder.submit_action(agent_id, action_text, tick)
 
     async def agent_enter(self, agent_id: str) -> str:
         return self.recorder.agent_enter(agent_id)
 
     async def agent_leave(self, agent_id: str) -> None:
         self.recorder.agent_leave(agent_id)
+
+    async def set_present_agents(self, agent_ids: List[str]) -> None:
+        self.recorder.set_present_agents(agent_ids)
+
+    async def snapshot(self, include_hidden: bool = False, include_pending: bool = False,
+                       drain_traces: bool = False) -> Dict[str, Any]:
+        snapshot = self.recorder.snapshot(
+            include_hidden=include_hidden,
+            include_pending=include_pending,
+        )
+        if drain_traces:
+            snapshot["llm_traces"] = self.recorder.drain_llm_traces()
+        return snapshot
 
     async def save_to_db(self) -> None:
         return None

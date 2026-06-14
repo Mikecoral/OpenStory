@@ -1,20 +1,15 @@
 """感知插件：M2 用地图静态信息占位；M3 在 execute 中追加 Recorder read。"""
 from __future__ import annotations
 
-import os
 from typing import Any, Dict, List, Optional
 
 from agentkernel_distributed.mas.agent.base.plugin_base import PerceivePlugin
 from agentkernel_distributed.toolkit.logger import get_logger
 from agentkernel_distributed.types.schemas.message import Message
 
-from examples.west_world_test.worldmap.loader import WorldMap, load_world_map
+from examples.west_world_test.worldmap.loader import WorldMap, get_world_map
 
 logger = get_logger(__name__)
-
-_DEFAULT_MAP_PATH = os.path.join(
-    os.path.dirname(__file__), "..", "..", "..", "data", "map", "locations.yaml"
-)
 
 
 def build_percept(world: WorldMap, agent_id: str, state: Dict[str, Any]) -> Dict[str, Any]:
@@ -28,11 +23,8 @@ def build_percept(world: WorldMap, agent_id: str, state: Dict[str, Any]) -> Dict
 
 
 def _load_default_world() -> Optional[WorldMap]:
-    """从默认数据文件路径加载 WorldMap。"""
-    path = os.path.normpath(_DEFAULT_MAP_PATH)
-    if os.path.exists(path):
-        return load_world_map(path)
-    return None
+    """缓存的 WorldMap（同一路径全进程只加载一次）。"""
+    return get_world_map()
 
 
 class WestWorldPerceivePlugin(PerceivePlugin):

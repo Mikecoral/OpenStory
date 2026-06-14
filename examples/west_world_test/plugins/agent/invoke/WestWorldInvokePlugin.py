@@ -1,26 +1,19 @@
 """执行插件：落实 plan 决策。M2 只处理 move/stay；M3 追加 Recorder 联动。"""
 from __future__ import annotations
 
-import os
 from typing import Any, Dict, Optional, Tuple
 
 from agentkernel_distributed.mas.agent.base.plugin_base import InvokePlugin
 from agentkernel_distributed.toolkit.logger import get_logger
 
-from examples.west_world_test.worldmap.loader import WorldMap, load_world_map
+from examples.west_world_test.worldmap.loader import WorldMap, get_world_map
 
 logger = get_logger(__name__)
 
-_DEFAULT_MAP_PATH = os.path.join(
-    os.path.dirname(__file__), "..", "..", "..", "data", "map", "locations.yaml"
-)
-
 
 def _load_default_world() -> Optional[WorldMap]:
-    path = os.path.normpath(_DEFAULT_MAP_PATH)
-    if os.path.exists(path):
-        return load_world_map(path)
-    return None
+    """缓存的 WorldMap（同一路径全进程只加载一次）。"""
+    return get_world_map()
 
 
 def apply_move(world: WorldMap, state: Dict[str, Any], target: str) -> Tuple[Dict[str, Any], bool, str]:
@@ -83,7 +76,7 @@ class WestWorldInvokePlugin(InvokePlugin):
             logger.info("[%s] tick %s 移动 %s -> %s", self.agent.agent_id, current_tick, location, new_state["location"])
         elif decision.get("action") == "do":
             result = await self._scene_call(controller, location, "submit_action",
-                                            self.agent.agent_id, decision.get("detail", ""))
+                                            self.agent.agent_id, decision.get("detail", ""), current_tick)
             feedback = (result or {}).get("private_feedback", "") if isinstance(result, dict) else ""
             await state_plugin.set_state("feedback", feedback)
         else:

@@ -3,7 +3,13 @@ from pathlib import Path
 
 import pytest
 
-from examples.west_world_test.worldmap.loader import Location, WorldMap, load_world_map
+from examples.west_world_test.worldmap.loader import (
+    Location,
+    WorldMap,
+    default_map_path,
+    get_world_map,
+    load_world_map,
+)
 
 LOCATIONS_PATH = str(Path(__file__).parents[1] / "data" / "map" / "locations.yaml")
 
@@ -50,6 +56,20 @@ def test_can_move_rules(world):
     assert ok is False and "相邻" in reason
     ok, reason = world.can_move("sweetwater", "wilderness")
     assert ok is False and reason
+
+
+def test_default_map_path_points_to_real_file():
+    path = default_map_path()
+    assert Path(path).is_file()
+    assert path.endswith("locations.yaml")
+
+
+def test_get_world_map_is_cached_singleton():
+    # 缓存访问器对同一路径只加载一次，返回同一实例（避免每个 agent/plugin 各 load 一遍）
+    a = get_world_map()
+    b = get_world_map()
+    assert a is b
+    assert a.get("sweetwater_saloon").name == "甜水镇酒馆"
 
 
 def test_hidden_objects_and_visible_objects(world):

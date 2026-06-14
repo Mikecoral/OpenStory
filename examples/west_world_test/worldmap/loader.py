@@ -1,8 +1,10 @@
 """地图真值的加载、校验与查询。locations.yaml 是唯一真值源。"""
 from __future__ import annotations
 
+import os
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Tuple
+from functools import lru_cache
+from typing import Any, Dict, List, Optional, Tuple
 
 import yaml
 
@@ -70,3 +72,19 @@ def load_world_map(path: str) -> WorldMap:
     with open(path, "r", encoding="utf-8") as f:
         rows = yaml.safe_load(f)
     return WorldMap([Location(**row) for row in rows])
+
+
+def default_map_path() -> str:
+    """data/map/locations.yaml 的稳健绝对路径（锚定在 example 根，loader.py 上一级）。"""
+    return str(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                            "data", "map", "locations.yaml"))
+
+
+@lru_cache(maxsize=None)
+def get_world_map(path: Optional[str] = None) -> WorldMap:
+    """缓存的地图访问器：同一路径只加载一次，返回共享只读实例。
+
+    插件热路径（每 agent / 每 plugin）用它替代各自 load，避免地图被重复加载 N 次。
+    WorldMap 是只读真值，agent 只改自己的 state，不改地图，故共享安全。
+    """
+    return load_world_map(path or default_map_path())
