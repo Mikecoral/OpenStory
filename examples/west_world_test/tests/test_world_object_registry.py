@@ -1,4 +1,6 @@
-from examples.west_world_test.recorder.world_object_registry import WorldObjectRegistry
+from examples.west_world_test.recorder.world_object_registry import (
+    WorldObjectRegistry, get_object_registry, reset_object_registry,
+)
 
 _META = {"object_id", "name", "hidden", "destroyed", "provenance"}
 
@@ -56,9 +58,6 @@ def test_objects_at_filters_by_location_and_hidden():
     assert {r["name"] for r in with_hidden} == {"可见杯", "密照"}
 
 
-from examples.west_world_test.recorder.world_object_registry import (
-    WorldObjectRegistry, get_object_registry, reset_object_registry,
-)
 from examples.west_world_test.worldmap.loader import Location
 
 
@@ -70,7 +69,11 @@ def test_relocate_holdings_moves_held_objects_with_agent():
     reg.relocate_holdings("hector", "ranch")
     assert reg.get(held)["location_id"] == "ranch"      # 持有物跟随
     assert reg.get(ground)["location_id"] == "saloon"   # 地上物不动
-    assert any(e["op"] == "relocate" for e in reg.ledger)
+    relocate_entries = [e for e in reg.ledger if e["op"] == "relocate"]
+    assert len(relocate_entries) == 1
+    assert relocate_entries[0]["before"]["location_id"] == "saloon"
+    assert relocate_entries[0]["after"]["location_id"] == "ranch"
+    assert relocate_entries[0]["tick"] is None
 
 
 def test_seed_from_world_is_idempotent():
@@ -94,6 +97,8 @@ def test_seed_from_world_is_idempotent():
     assert len(reg.objects_at("saloon", include_hidden=True)) == 2
     secret = next(r for r in reg.objects_at("saloon", include_hidden=True) if r["hidden"])
     assert secret["hidden"] is True
+    cup = next(r for r in reg.objects_at("saloon", include_hidden=True) if r["name"] == "酒杯")
+    assert cup["state"] == "完整"
 
 
 def test_singleton_returns_same_instance_until_reset():

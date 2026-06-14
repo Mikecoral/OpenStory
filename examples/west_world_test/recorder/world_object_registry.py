@@ -74,12 +74,12 @@ class WorldObjectRegistry:
         ]
         return [copy.deepcopy(r) for r in rows]
 
-    def relocate_holdings(self, agent_id: str, to_location: str) -> None:
+    def relocate_holdings(self, agent_id: str, to_location: str, tick: Optional[int] = None) -> None:
         for row in self._objects.values():
             if row["held_by"] == agent_id and not row["destroyed"]:
                 before = copy.deepcopy(row)
                 row["location_id"] = to_location
-                self._log("relocate", row["object_id"], before, copy.deepcopy(row), agent_id, None)
+                self._log("relocate", row["object_id"], before, copy.deepcopy(row), agent_id, tick)
 
     def seed_from_world(self, world_map: Any) -> None:
         if self._seeded:
