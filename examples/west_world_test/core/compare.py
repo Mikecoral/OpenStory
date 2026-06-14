@@ -107,20 +107,27 @@ def run_comparison(
 def _build_real_reps(method: str, config_path: str) -> Dict[str, Callable[[], Any]]:
     from ..adapters.model_clients import build_image_gen, build_llm, build_vlm
     from .image_representation import ImageRepresentation
+    from .structured_representation import StructuredFactRepresentation
     from .text_representation import TextRepresentation
 
     factories: Dict[str, Callable[[], Any]] = {}
-    if method in ("text", "both"):
+    if method in ("text", "both", "all"):
         factories["text"] = lambda: TextRepresentation(build_llm(config_path))
-    if method in ("image", "both"):
+    if method in ("image", "both", "all"):
         factories["image"] = lambda: ImageRepresentation(build_image_gen(config_path), build_vlm(config_path))
+    if method in ("structured", "all"):
+        factories["structured"] = StructuredFactRepresentation
     return factories
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
     project = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-    parser.add_argument("--method", choices=["text", "image", "both"], default="both")
+    parser.add_argument(
+        "--method",
+        choices=["text", "image", "structured", "both", "all"],
+        default="both",
+    )
     parser.add_argument("--data-dir", default=os.path.join(project, "data"))
     parser.add_argument("--config", default=os.path.join(project, "configs", "models_config.yaml"))
     parser.add_argument("--out", default=os.path.join(project, "results.jsonl"))
