@@ -7,6 +7,7 @@ from agentkernel_distributed.mas.agent.base.plugin_base import InvokePlugin
 from agentkernel_distributed.toolkit.logger import get_logger
 
 from examples.west_world_test.recorder.world_object_registry import get_object_registry
+from examples.west_world_test.worldmap.loader import WorldMap, get_world_map
 
 logger = get_logger(__name__)
 
