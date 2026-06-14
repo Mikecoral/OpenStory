@@ -9,3 +9,9 @@ __pycache__/
 # Local West World model endpoints and credentials
 examples/west_world_test/configs/models_config.yaml
 examples/west_world_test/output/
+
+# 运行时/工具产物
+.story_server.pid
+*.pid
+.superpowers/
+2026-05-03-202535-usershongyuechengpython-learnzjuopenstoryex.txt
