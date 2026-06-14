@@ -1,6 +1,7 @@
 """把 LocationRecorder 接入内核环境组件体系：每地点一个 scene_<id> 组件。"""
 from __future__ import annotations
 
+import asyncio
 import os
 from typing import Any, Callable, Dict, List, Optional, Type
 
@@ -25,6 +26,7 @@ class LocationRecorderPlugin(GenericPlugin):
         self._llm_factory = llm_factory
         self._models_config_path = models_config_path or _DEFAULT_MODELS_CONFIG
         self.recorder: Optional[LocationRecorder] = None
+        self._recorder_lock = asyncio.Lock()
 
         # If locations is provided (list of dicts or list of Location), use it.
         # Otherwise fall back to loading from the default data file path.
@@ -64,36 +66,73 @@ class LocationRecorderPlugin(GenericPlugin):
 
     async def execute(self, current_tick: int) -> None:
         if self.recorder:
-            self.recorder.tick_update(current_tick)
+            async with self._recorder_lock:
+                await asyncio.to_thread(self.recorder.tick_update, current_tick)
 
     async def read(self, agent_id: str, chunks: List[str]) -> Dict[str, Any]:
-        return self.recorder.read(agent_id, chunks)
+        async with self._recorder_lock:
+            return self.recorder.read(agent_id, chunks)
 
-    async def submit_action(self, agent_id: str, action_text: str, tick: Optional[int] = None) -> Dict[str, Any]:
-        return self.recorder.submit_action(agent_id, action_text, tick)
+    async def submit_action(
+        self,
+        agent_id: str,
+        action_text: str,
+        tick: Optional[int] = None,
+        action_type: str = "do",
+    ) -> Dict[str, Any]:
+        # Enqueue only — no LLM call here. Lock protects list append.
+        async with self._recorder_lock:
+            return self.recorder.submit_action(agent_id, action_text, tick, action_type)
+
+    async def read_feedback(self, agent_id: str) -> Optional[Dict[str, Any]]:
+        async with self._recorder_lock:
+            return self.recorder.read_feedback(agent_id)
 
     async def agent_enter(self, agent_id: str) -> str:
-        return self.recorder.agent_enter(agent_id)
+        async with self._recorder_lock:
+            return self.recorder.agent_enter(agent_id)
 
     async def agent_leave(self, agent_id: str) -> None:
-        self.recorder.agent_leave(agent_id)
+        async with self._recorder_lock:
+            self.recorder.agent_leave(agent_id)
 
     async def set_present_agents(self, agent_ids: List[str]) -> None:
-        self.recorder.set_present_agents(agent_ids)
+        async with self._recorder_lock:
+            self.recorder.set_present_agents(agent_ids)
+
+    async def record_event(self, event_summary: str) -> None:
+        async with self._recorder_lock:
+            self.recorder.record_event(event_summary)
 
     async def snapshot(self, include_hidden: bool = False, include_pending: bool = False,
                        drain_traces: bool = False) -> Dict[str, Any]:
-        snapshot = self.recorder.snapshot(
-            include_hidden=include_hidden,
-            include_pending=include_pending,
-        )
-        if drain_traces:
-            snapshot["llm_traces"] = self.recorder.drain_llm_traces()
-        return snapshot
+        async with self._recorder_lock:
+            snapshot = self.recorder.snapshot(
+                include_hidden=include_hidden,
+                include_pending=include_pending,
+            )
+            if drain_traces:
+                snapshot["llm_traces"] = self.recorder.drain_llm_traces()
+            return snapshot
 
     async def world_snapshot(self) -> Dict[str, Any]:
         from examples.west_world_test.recorder.world_object_registry import get_object_registry
-        return get_object_registry().snapshot()
+        async with self._recorder_lock:
+            return get_object_registry().snapshot()
+
+    async def restore_world_snapshot(self, snapshot: Dict[str, Any]) -> None:
+        from examples.west_world_test.recorder.world_object_registry import get_object_registry
+        async with self._recorder_lock:
+            get_object_registry().restore(snapshot)
+
+    async def restore_snapshot(self, snapshot: Dict[str, Any]) -> None:
+        if not self.recorder:
+            raise RuntimeError("scene recorder is not initialized")
+        restore = getattr(self.recorder, "restore", None)
+        if not restore:
+            raise RuntimeError("selected recorder does not support restore")
+        async with self._recorder_lock:
+            restore(snapshot)
 
     async def save_to_db(self) -> None:
         return None

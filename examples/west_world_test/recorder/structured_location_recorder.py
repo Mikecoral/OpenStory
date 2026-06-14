@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import copy
 import json
+import os
+import re
 from typing import Any, Dict, List, Optional
 
 from examples.west_world_test.worldmap.loader import Location
@@ -12,6 +14,49 @@ from .location_recorder import (
     LocationRecorder,
 )
 from .world_object_registry import META_FIELDS, get_object_registry
+
+_BATCH_PROPOSAL_PROMPT = """你是地点「{location_name}」的动作解析器与场景裁判。
+本 tick 有 {n} 个角色同时采取了行动，请统一裁决并输出每个角色的结果。
+
+可见对象（patch 只能使用这些 object_id；destroy 只能使用这些 object_id）：
+{objects}
+
+可见对象当前事实：
+{facts}
+
+隐藏秘密（仅你可见，严禁直接照抄给角色；隐藏物件不得出现在 patches 中）：
+{hidden_secrets}
+
+在场角色（present_agents）：{present_agents}
+
+本 tick 角色动作列表（按提交顺序，顺序不代表优先级，由你裁决）：
+{actions_list}
+
+规则：
+- 所有角色的动作视为同时发生，由你决定裁决结果（如争抢同一对象时谁获得）。
+- patches 只能针对【可见对象】；隐藏物件严禁出现在 patches 中。
+- 可以更新任意字段（state、quantity、container 等），字段值为简短中文字符串（不超过 100 字）。
+- state 是主要状态描述，优先用它记录对象当前状况。
+- held_by 只能设为持有者 agent_id、空字符串（表示放下），或本地点在场角色。
+- 只更新确实发生变化的字段，未变化的字段不要出现在 patch 中。
+- 动作完全不涉及任何可见对象时 patches 为空数组。
+- new_objects：当动作产生新的可见物时声明，每项含 name 与初始字段；不得标 hidden。
+- destroy：当可见物被彻底消灭时列其 object_id。
+- 动作类型为 do 时，角色始终留在「{location_name}」，不得声称离开或到达其他地点。
+- 秘密揭示：仅当动作确实触及隐藏秘密时，在 private_feedback 中渐进式透露。
+- 所有字段值必须使用中文，严禁使用英文。
+
+只输出 JSON，actions 数组顺序必须与输入动作列表顺序一致（顺序：{agent_ids}）：
+{{"actions": [
+  {{"agent_id": "角色id", "permission": true, "reason": "", "private_feedback": "...",
+    "patches": [{{"object_id": "obj_0", "state": "新状态"}}],
+    "new_objects": [{{"name": "地上的血", "state": "暗红一滩", "held_by": ""}}],
+    "destroy": []}}
+],
+"ambient": "",
+"broadcast_level": "none|location",
+"event_summary": ""}}
+"""
 
 _PROPOSAL_PROMPT = """你是地点「{location_name}」的动作解析器与场景裁判。
 把角色的自由文本动作转换成对【可见对象】的字段更新（patch），并判断动作是否触及隐藏秘密。你可以创造新对象或销毁现有对象。
@@ -28,6 +73,7 @@ _PROPOSAL_PROMPT = """你是地点「{location_name}」的动作解析器与场�
 在场角色（present_agents）：{present_agents}
 
 角色：{agent_id}
+动作类型：{action_type}
 动作：{action_text}
 
 规则：
@@ -40,6 +86,7 @@ _PROPOSAL_PROMPT = """你是地点「{location_name}」的动作解析器与场�
 - new_objects：当动作产生新的可见物（倒出的酒、地上的血、掉落的弹壳）时声明，每项含 name 与初始字段；不得标 hidden。
 - destroy：当可见物被彻底消灭（烧毁、击碎丢弃）时列其 object_id。
 - ambient：当整体环境氛围（光线/气味/声音/气氛）变化时给一句中文自由文本；无变化则空串。
+- 动作类型为 do，表示角色始终留在「{location_name}」。不得声称角色离开、前往、进入或到达其他地点，也不得通过 patches 改变角色位置。
 - 秘密揭示由你裁决：仅当动作确实触及某个隐藏秘密时，在 private_feedback 中按动作触及的深浅渐进式透露其内容（不要照抄原文，浅尝辄止则只给模糊线索，深入查看才完整揭示）；动作未触及秘密时，private_feedback 只描述动作的直接结果，绝不提及任何秘密。
 - 所有字段值必须使用中文，严禁使用英文。
 
@@ -60,6 +107,9 @@ class StructuredLocationRecorder(LocationRecorder):
         self.registry = get_object_registry()
         self._seed_location()
         self.fact_ledger: List[Dict[str, Any]] = []
+        self._unresolved_actions: List[Dict[str, Any]] = []
+        self._intent_queue: List[Dict[str, Any]] = []
+        self._pending_feedback: Dict[str, Dict[str, Any]] = {}
         self._render_dynamic_objects()
 
     def _seed_location(self) -> None:
@@ -75,79 +125,197 @@ class StructuredLocationRecorder(LocationRecorder):
             )
         self.registry.mark_location_seeded(self.location.id)
 
-    def submit_action(self, agent_id: str, action_text: str, tick: Optional[int] = None) -> Dict[str, Any]:
-        # Only expose non-hidden objects to the LLM
+    def submit_action(
+        self,
+        agent_id: str,
+        action_text: str,
+        tick: Optional[int] = None,
+        action_type: str = "do",
+        retry_count: int = 0,
+    ) -> Dict[str, Any]:
+        """Queue this action intent; actual LLM processing happens in tick_update."""
+        self._intent_queue.append({
+            "agent_id": agent_id,
+            "action_text": action_text,
+            "action_type": action_type,
+            "tick": tick,
+            "retry_count": retry_count,
+        })
+        return {**FALLBACK_JUDGEMENT, "status": "queued", "permission": None}
+
+    def _batch_resolve(self, intents: List[Dict[str, Any]], tick: Optional[int] = None) -> None:
+        """Process all queued intents with a single batch LLM call."""
+        if not intents:
+            return
+        self._render_dynamic_objects()
         visible_rows = self.registry.objects_at(self.location.id, include_hidden=False)
         visible_objects = [
-            {"object_id": row["object_id"], "name": row["name"]}
-            for row in visible_rows
+            {"object_id": row["object_id"], "name": row["name"]} for row in visible_rows
         ]
         visible_facts = {
             row["object_id"]: {k: v for k, v in row.items() if k != "hidden"}
             for row in visible_rows
         }
         present_agents = self.chunks.get("present_agents") or "（无人）"
-        prompt = _PROPOSAL_PROMPT.format(
+        actions_list = [
+            {"agent_id": i["agent_id"], "action_type": i["action_type"], "action_text": i["action_text"]}
+            for i in intents
+        ]
+        agent_ids_str = "、".join(i["agent_id"] for i in intents)
+        prompt = _BATCH_PROPOSAL_PROMPT.format(
             location_name=self.location.name,
+            n=len(intents),
             objects=json.dumps(visible_objects, ensure_ascii=False),
             facts=json.dumps(visible_facts, ensure_ascii=False),
             hidden_secrets=self.chunks.get("hidden_notes") or "（无）",
             present_agents=present_agents,
-            agent_id=agent_id,
-            action_text=action_text,
+            actions_list=json.dumps(actions_list, ensure_ascii=False),
+            agent_ids=agent_ids_str,
         )
-        proposal = self._chat_json(
+        response = self._chat_json(
             prompt,
             retries=1,
-            call_type="structured_action_parse",
-            metadata={"agent_id": agent_id, "action_text": action_text, "tick": tick},
+            call_type="batch_action_resolve",
+            metadata={"tick": tick, "agent_ids": [i["agent_id"] for i in intents]},
         )
-        if proposal is None:
-            return {**FALLBACK_JUDGEMENT, "permission": False, "reason": "动作解析失败"}
-        try:
-            patches = self._validate_patches(proposal.get("patches", []), agent_id)
-        except ValueError as exc:
-            return {**FALLBACK_JUDGEMENT, "permission": False, "reason": str(exc)}
-        if not proposal.get("permission", False):
-            patches, new_objects, destroy_ids, ambient = [], [], [], None
-        else:
-            new_objects = self._validate_new_objects(proposal.get("new_objects", []), agent_id)
-            destroy_ids = self._validate_destroy(proposal.get("destroy", []))
-            ambient = proposal.get("ambient") or None
-        before = self.registry.snapshot()
-        for spec in new_objects:
-            self.registry.create(
-                name=spec["name"], location_id=self.location.id, by=agent_id,
-                tick=tick, action=action_text, fields=spec["fields"], hidden=False,
-                held_by=spec["held_by"],
-            )
-        self._apply_patches(patches)
-        for oid in destroy_ids:
-            self.registry.destroy(oid, by=agent_id, tick=tick)
+        if response is None or not isinstance(response.get("actions"), list):
+            for intent in intents:
+                judgement = self._record_unresolved(
+                    intent["agent_id"], intent["action_text"], tick,
+                    intent["action_type"], "批量动作解析失败", intent.get("retry_count", 0),
+                )
+                self._pending_feedback[intent["agent_id"]] = judgement
+            return
+        result_by_agent = {
+            r["agent_id"]: r
+            for r in response["actions"]
+            if isinstance(r, dict) and "agent_id" in r
+        }
+        with self.registry.transaction():
+            for intent in intents:
+                agent_id = intent["agent_id"]
+                action_text = intent["action_text"]
+                action_type = intent["action_type"]
+                retry_count = intent.get("retry_count", 0)
+                action_result = result_by_agent.get(agent_id)
+                if action_result is None:
+                    judgement = self._record_unresolved(
+                        agent_id, action_text, tick, action_type,
+                        "LLM 未返回该角色的结果", retry_count,
+                    )
+                    self._pending_feedback[agent_id] = judgement
+                    continue
+                action_ledger_start = self.registry.ledger_size()
+                try:
+                    patches = self._validate_patches(action_result.get("patches", []), agent_id)
+                    if not action_result.get("permission", False):
+                        patches, new_objects, destroy_ids = [], [], []
+                    else:
+                        new_objects = self._validate_new_objects(action_result.get("new_objects", []), agent_id)
+                        destroy_ids = self._validate_destroy(action_result.get("destroy", []))
+                    for spec in new_objects:
+                        self.registry.create(
+                            name=spec["name"], location_id=self.location.id, by=agent_id,
+                            tick=tick, action=action_text, fields=spec["fields"], hidden=False,
+                            held_by=spec["held_by"],
+                        )
+                    self._apply_patches(patches)
+                    for oid in destroy_ids:
+                        self.registry.destroy(oid, by=agent_id, tick=tick)
+                except ValueError as exc:
+                    judgement = self._record_unresolved(
+                        agent_id, action_text, tick, action_type, str(exc), retry_count,
+                    )
+                    self._pending_feedback[agent_id] = judgement
+                    continue
+                registry_events = self.registry.ledger_since(action_ledger_start)
+                judgement = {
+                    key: action_result.get(key, FALLBACK_JUDGEMENT[key])
+                    for key in FALLBACK_JUDGEMENT
+                }
+                judgement = self._normalize_judgement(judgement, agent_id, action_type)
+                self.fact_ledger.append({
+                    "status": "resolved",
+                    "tick": tick,
+                    "agent_id": agent_id,
+                    "action_text": action_text,
+                    "patches": patches,
+                    "new_objects": new_objects,
+                    "destroy": destroy_ids,
+                    "ambient": None,
+                    "registry_events": registry_events,
+                    "judgement": judgement,
+                })
+                self._pending_feedback[agent_id] = judgement
+        ambient = response.get("ambient") or None
         if ambient:
             self.chunks["ambient"] = str(ambient)[:200]
-        after = self.registry.snapshot()
+        broadcast_level = response.get("broadcast_level", "none")
+        event_summary = str(response.get("event_summary", ""))
+        if broadcast_level not in ("none", "location"):
+            broadcast_level = "location" if event_summary else "none"
+        # do 动作不得通过 event_summary 声称跨地点移动
+        if event_summary and re.search(r"(离开|前往|到达|进入|走出|赶往|返回到)", event_summary):
+            agent_ids_list = "、".join(i["agent_id"] for i in intents)
+            event_summary = f"{agent_ids_list}在{self.location.name}采取了行动。"
+            broadcast_level = "location"
+        if broadcast_level == "location" and event_summary:
+            self.chunks["recent_events"] = (
+                self.chunks["recent_events"] + [event_summary]
+            )[-RECENT_EVENTS_WINDOW:]
+
+    def read_feedback(self, agent_id: str) -> Optional[Dict[str, Any]]:
+        """Return and clear the pending feedback for this agent, or None if absent."""
+        return self._pending_feedback.pop(agent_id, None)
+
+    def _record_unresolved(
+        self, agent_id: str, action_text: str, tick: Optional[int],
+        action_type: str, reason: str, retry_count: int,
+    ) -> Dict[str, Any]:
+        failed_attempts = retry_count + 1
+        retry_limit = max(1, int(os.environ.get("WW_ACTION_RETRY_LIMIT", "3")))
+        retry_scheduled = failed_attempts < retry_limit
         judgement = {
-            key: proposal.get(key, FALLBACK_JUDGEMENT[key])
-            for key in FALLBACK_JUDGEMENT
+            **FALLBACK_JUDGEMENT,
+            "permission": False,
+            "reason": reason,
+            "private_feedback": f"动作已提交，但场景状态暂未解析完成：{reason}",
+            "status": "unresolved",
         }
-        self.fact_ledger.append({
+        record = {
+            "status": "unresolved",
             "tick": tick,
             "agent_id": agent_id,
             "action_text": action_text,
-            "patches": patches,
-            "new_objects": new_objects,
-            "destroy": destroy_ids,
-            "ambient": ambient,
-            "before": before,
-            "after": after,
-            "judgement": judgement,
-        })
-        if judgement["event_summary"]:
-            self.chunks["recent_events"] = (
-                self.chunks["recent_events"] + [str(judgement["event_summary"])]
-            )[-RECENT_EVENTS_WINDOW:]
-        self._render_dynamic_objects()
+            "action_type": action_type,
+            "reason": reason,
+            "retry_count": failed_attempts,
+            "retry_scheduled": retry_scheduled,
+            "judgement": copy.deepcopy(judgement),
+        }
+        self.fact_ledger.append(record)
+        if retry_scheduled:
+            self._unresolved_actions.append({
+                "agent_id": agent_id,
+                "action_text": action_text,
+                "tick": tick,
+                "action_type": action_type,
+                "retry_count": failed_attempts,
+            })
+        return judgement
+
+    def _normalize_judgement(
+        self, judgement: Dict[str, Any], agent_id: str, action_type: str,
+    ) -> Dict[str, Any]:
+        if judgement.get("broadcast_level") not in ("none", "location"):
+            judgement["broadcast_level"] = (
+                "location" if judgement.get("event_summary") else "none"
+            )
+        if action_type != "do":
+            return judgement
+        summary = str(judgement.get("event_summary") or "")
+        if re.search(r"(离开|前往|到达|进入|走出|赶往|返回到)", summary):
+            judgement["event_summary"] = f"{agent_id}在{self.location.name}采取了行动。"
         return judgement
 
     def _allowed_holders(self, agent_id: str) -> set:
@@ -238,11 +406,42 @@ class StructuredLocationRecorder(LocationRecorder):
         self.chunks["dynamic_objects"] = "；".join(parts) or "暂无可变物品。"
 
     def tick_update(self, tick: int) -> None:
-        return None
+        # Re-queue unresolved retries from the previous tick
+        pending_retry, self._unresolved_actions = self._unresolved_actions, []
+        for action in pending_retry:
+            self._intent_queue.append(action)
+        # Drain and process the intent queue atomically
+        intents, self._intent_queue = self._intent_queue, []
+        self._batch_resolve(intents, tick)
+        self._render_dynamic_objects()
+
+    def read(self, agent_id: str, chunk_names: List[str]) -> Dict[str, Any]:
+        self._render_dynamic_objects()
+        return super().read(agent_id, chunk_names)
 
     def snapshot(self, include_hidden: bool = False, include_pending: bool = False) -> Dict[str, Any]:
+        self._render_dynamic_objects()
         snapshot = super().snapshot(include_hidden=include_hidden, include_pending=include_pending)
         if include_hidden:
             snapshot["object_facts"] = self.registry.objects_at(self.location.id, include_hidden=True)
             snapshot["fact_ledger"] = copy.deepcopy(self.fact_ledger)
+            snapshot["unresolved_actions"] = copy.deepcopy(self._unresolved_actions)
+        snapshot["intent_queue"] = copy.deepcopy(self._intent_queue)
+        snapshot["pending_feedback"] = copy.deepcopy(self._pending_feedback)
         return snapshot
+
+    def restore(self, snapshot: Dict[str, Any], restore_registry: bool = False) -> None:
+        """Restore per-location chunks and, optionally, the shared registry."""
+        if restore_registry:
+            registry_snapshot = snapshot.get("registry")
+            if not isinstance(registry_snapshot, dict):
+                raise ValueError("structured recorder restore requires registry snapshot")
+            self.registry.restore(registry_snapshot)
+        chunks = snapshot.get("chunks")
+        if isinstance(chunks, dict):
+            self.chunks.update(copy.deepcopy(chunks))
+        self.fact_ledger = copy.deepcopy(snapshot.get("fact_ledger", []))
+        self._unresolved_actions = copy.deepcopy(snapshot.get("unresolved_actions", []))
+        self._intent_queue = copy.deepcopy(snapshot.get("intent_queue", []))
+        self._pending_feedback = copy.deepcopy(snapshot.get("pending_feedback", {}))
+        self._render_dynamic_objects()

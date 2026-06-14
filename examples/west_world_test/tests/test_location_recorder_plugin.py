@@ -37,6 +37,16 @@ def test_plugin_exposes_public_and_internal_snapshots():
     assert internal["llm_traces"] == []
 
 
+def test_plugin_records_authoritative_event_without_llm():
+    plugin = _make_plugin()
+    asyncio.run(plugin.init())
+
+    asyncio.run(plugin.record_event("teddy从火车站到达酒馆。"))
+
+    events = asyncio.run(plugin.read("teddy", ["recent_events"]))["recent_events"]
+    assert events == ["teddy从火车站到达酒馆。"]
+
+
 def test_plugin_can_select_structured_recorder_without_replacing_default(monkeypatch):
     from examples.west_world_test.recorder.structured_location_recorder import StructuredLocationRecorder
 
@@ -45,3 +55,23 @@ def test_plugin_can_select_structured_recorder_without_replacing_default(monkeyp
     asyncio.run(plugin.init())
 
     assert isinstance(plugin.recorder, StructuredLocationRecorder)
+
+
+def test_submit_action_is_instant_and_returns_queued():
+    """submit_action now only queues the intent; it must return immediately without LLM."""
+    plugin = _make_plugin()
+    asyncio.run(plugin.init())
+
+    result = asyncio.run(plugin.submit_action("maeve", "等待", 1))
+
+    assert result["status"] == "queued"
+    assert result["permission"] is None
+
+
+def test_read_feedback_returns_none_when_no_pending():
+    plugin = _make_plugin()
+    asyncio.run(plugin.init())
+
+    result = asyncio.run(plugin.read_feedback("maeve"))
+
+    assert result is None

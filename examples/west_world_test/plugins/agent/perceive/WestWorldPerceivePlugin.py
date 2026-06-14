@@ -48,6 +48,19 @@ class WestWorldPerceivePlugin(PerceivePlugin):
     async def add_message(self, message: Message) -> None:
         self._messages.append(message)
 
+    def _consume_messages(self) -> List[Dict[str, Any]]:
+        messages, self._messages = self._messages, []
+        agent_id = getattr(self.agent, "agent_id", None)
+        return [
+            {
+                "from_id": message.from_id,
+                "content": message.content,
+                "kind": getattr(message.kind, "value", str(message.kind)),
+            }
+            for message in messages
+            if message.from_id != agent_id
+        ]
+
     async def execute(self, current_tick: int) -> None:
         if self._world is None or self.agent is None:
             return
@@ -58,7 +71,19 @@ class WestWorldPerceivePlugin(PerceivePlugin):
         known_map = await state_plugin.get_state("known_map") or []
         current_state = {"location": location, "known_map": known_map}
 
+        # Consume pending feedback from last tick's queued action
+        controller = self.agent.controller
+        try:
+            feedback = await controller.run_environment(
+                f"scene_{location}", "read_feedback", self.agent.agent_id
+            )
+            if feedback and isinstance(feedback, dict):
+                await state_plugin.set_state("feedback", feedback.get("private_feedback", ""))
+        except Exception as exc:
+            logger.warning("[%s] 读取 feedback 失败: %s", self.agent.agent_id, exc)
+
         percept = build_percept(self._world, self.agent.agent_id, current_state)
+        percept["messages"] = self._consume_messages()
 
         # 追加 Recorder read（M3 新增）
         controller = self.agent.controller

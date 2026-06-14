@@ -5,6 +5,7 @@ from typing import Any, Dict, Optional, Tuple
 
 from agentkernel_distributed.mas.agent.base.plugin_base import InvokePlugin
 from agentkernel_distributed.toolkit.logger import get_logger
+from agentkernel_distributed.types.schemas.message import Message, MessageKind
 
 from examples.west_world_test.recorder.world_object_registry import get_object_registry
 from examples.west_world_test.worldmap.loader import WorldMap, get_world_map
@@ -28,6 +29,19 @@ def apply_move(world: WorldMap, state: Dict[str, Any], target: str) -> Tuple[Dic
         known.append(target)
     new_state["known_map"] = known
     return new_state, True, ""
+
+
+def eligible_recipients(agent_id: str, requested: Any, present_agents: Any) -> list[str]:
+    if not isinstance(requested, list):
+        return []
+    if isinstance(present_agents, str):
+        present = {item for item in present_agents.split("、") if item and item != "（无人）"}
+    else:
+        present = set()
+    return list(dict.fromkeys(
+        recipient for recipient in requested
+        if isinstance(recipient, str) and recipient != agent_id and recipient in present
+    ))
 
 
 class WestWorldInvokePlugin(InvokePlugin):
@@ -70,6 +84,14 @@ class WestWorldInvokePlugin(InvokePlugin):
             # Recorder: leave 旧地点，enter 新地点
             await self._scene_call(controller, location, "agent_leave", self.agent.agent_id)
             first_sight = await self._scene_call(controller, new_state["location"], "agent_enter", self.agent.agent_id)
+            await self._scene_call(
+                controller, location, "record_event",
+                f"{self.agent.agent_id}离开了{location}，前往{new_state['location']}。"
+            )
+            await self._scene_call(
+                controller, new_state["location"], "record_event",
+                f"{self.agent.agent_id}从{location}到达了{new_state['location']}。"
+            )
             # 更新 state
             await state_plugin.set_state("location", new_state["location"])
             await state_plugin.set_state("known_map", new_state["known_map"])
@@ -78,10 +100,15 @@ class WestWorldInvokePlugin(InvokePlugin):
             get_object_registry().relocate_holdings(self.agent.agent_id, new_state["location"], tick=current_tick)
             logger.info("[%s] tick %s 移动 %s -> %s", self.agent.agent_id, current_tick, location, new_state["location"])
         elif decision.get("action") == "do":
-            result = await self._scene_call(controller, location, "submit_action",
-                                            self.agent.agent_id, decision.get("detail", ""), current_tick)
-            feedback = (result or {}).get("private_feedback", "") if isinstance(result, dict) else ""
-            await state_plugin.set_state("feedback", feedback)
+            await self._scene_call(controller, location, "submit_action",
+                                   self.agent.agent_id, decision.get("detail", ""), current_tick, "do")
+            delivered = await self._deliver_messages(
+                controller, location, decision.get("recipient_ids"), decision.get("detail", ""), current_tick
+            )
+            if delivered:
+                await state_plugin.set_state(
+                    "feedback", f"消息已送达：{'、'.join(delivered)}"
+                )
         else:
             await state_plugin.set_state("feedback", "")
 
@@ -91,6 +118,31 @@ class WestWorldInvokePlugin(InvokePlugin):
         except Exception as exc:
             logger.warning("scene_%s.%s 调用失败: %s", location_id, method, exc)
             return None
+
+    async def _deliver_messages(
+        self, controller: Any, location_id: str, requested: Any, content: str, tick: int,
+    ) -> list[str]:
+        if not requested or not content:
+            return []
+        scene = await self._scene_call(controller, location_id, "read", self.agent.agent_id, ["present_agents"])
+        recipients = eligible_recipients(
+            self.agent.agent_id, requested, (scene or {}).get("present_agents", "")
+        )
+        delivered = []
+        for recipient in recipients:
+            message = Message(
+                self.agent.agent_id,
+                recipient,
+                MessageKind.FROM_AGENT_TO_AGENT,
+                content,
+                extra={"tick": tick, "location_id": location_id},
+            )
+            try:
+                await controller.run_system("messager", "send_message", message)
+                delivered.append(recipient)
+            except Exception as exc:
+                logger.warning("[%s] 向 %s 投递消息失败: %s", self.agent.agent_id, recipient, exc)
+        return delivered
 
     async def save_to_db(self) -> None:
         return None
