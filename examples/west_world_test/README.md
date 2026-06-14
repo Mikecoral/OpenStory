@@ -53,6 +53,19 @@ previous world-state image + event
 The Image Recorder does not keep `scene_text` or use a text LLM to update its
 state. Its only persistent dynamic state is the current image handle.
 
+### Structured Fact-Ledger Recorder
+
+```text
+validated event action
+  -> deterministic reducer
+  -> structured world facts + append-only event ledger
+  -> probes read facts directly
+```
+
+This method is an additional drift-control experiment. It does not replace the
+original Text and Image Recorder tests. Invalid transitions, duplicate events,
+and non-increasing ticks are rejected atomically.
+
 This comparison intentionally changes both the storage medium and the update
 mechanism. Errors can therefore come from image generation/editing, accumulated
 visual drift, or visual question answering.
@@ -111,6 +124,29 @@ PYTHONPATH=packages/agentkernel-distributed:. \
 python -m examples.west_world_test.eval.run_archived_comparison
 ```
 
+Run the original Text Recorder against the new Structured Recorder:
+
+```bash
+PYTHONPATH=packages/agentkernel-distributed:. \
+python -m examples.west_world_test.eval.run_recorder_drift_ab
+```
+
+The A/B run archives the same event/probe inputs, every baseline model call,
+raw scored results, wrong baseline records, summary metrics, and a report.
+
+Run the free-text parser plus constrained reducer A/B:
+
+```bash
+PYTHONPATH=packages/agentkernel-distributed:. \
+python -m examples.west_world_test.eval.run_free_text_reducer_ab
+```
+
+This comparison includes:
+
+- original Text Recorder;
+- free-text action parsing followed by validated reducers;
+- structured-action upper bound.
+
 Each archived run contains every model request and response in
 `model_traces/all_calls.jsonl`, every image state, raw scored results,
 event-by-event statistics, a global report, provenance, and checksums.
@@ -159,7 +195,17 @@ python -m examples.west_world_test.run_simulation
 
 # 快速调试（只跑 5 tick）
 WW_MAX_TICKS=5 python -m examples.west_world_test.run_simulation
+
+# 可选：启用自由文本解析 + 受约束对象事实更新
+WW_RECORDER_MODE=structured WW_MAX_TICKS=5 \
+python -m examples.west_world_test.run_simulation
 ```
+
+`WW_RECORDER_MODE` defaults to `legacy`. Structured mode preserves the same
+Recorder API, but the LLM may only propose operations against known object IDs.
+Unknown objects, unsupported operations, and assigning an object to someone
+other than the acting agent are rejected without changing facts. Internal
+snapshots include `object_facts` and the append-only `fact_ledger`.
 
 ### MVE 对照实验（独立）
 
