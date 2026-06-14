@@ -107,7 +107,16 @@ OpenStory/
      - ⚠️ 动作组件 `move/communication/otheractions` 在 registry/actions_config 里注册了但**两个 example（含 sots）都不调用**——移动逻辑内联在 invoke 的 `apply_move`。这是框架既有模式，非缺陷。
    - 运行命令示例：`WW_MAX_TICKS=20 PYTHONPATH=$PWD:$PWD/packages/agentkernel-distributed python -m examples.west_world_test.run_simulation`
 
-## 8. 想深入某块时，直接读这些源码
+## 8. west_world_test 工作流约定
+
+处理 `examples/west_world_test/` 时按以下节奏：
+
+1. **开工前必读** `examples/west_world_test/DEVELOPMENT_NOTES.md`。
+2. 根据其中的「已完成 / 待办」确认：哪些已做、哪些是当前任务、下一步该做什么。
+3. **每完成一个任务，立即回写 `DEVELOPMENT_NOTES.md`**：把新完成项移入「已完成」，更新或删除已解决的待办。
+4. **保持精简**：删除过时、重复、已实现的历史描述；不要把它写成流水账。它应该只反映「当前状态 + 下一步动作」。
+
+## 9. 想深入某块时，直接读这些源码
 
 - 启动/装配：`mas/builder.py`
 - 环境组件机制与自定义扩展：`mas/environment/environment.py`、`mas/environment/components/generic.py`、`mas/environment/base/plugin_base.py`
