@@ -1,6 +1,6 @@
 templates:
   - name: WestWorldHost
-    component_order: ["perceive", "plan", "invoke", "state"]
+    component_order: ["perceive", "plan", "invoke", "state", "reflect"]
     components:
       profile:
         plugin:
@@ -33,3 +33,8 @@ templates:
           WestWorldInvokePlugin:
             adapters: {}
             locations: "map_locations"
+
+      reflect:
+        plugin:
+          WestWorldReflectPlugin:
+            adapters: {}

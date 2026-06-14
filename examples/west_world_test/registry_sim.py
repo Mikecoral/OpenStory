@@ -1,12 +1,11 @@
 """正式仿真的资源注册表（与 MVE 的 registry.py 并存）。"""
-import os
-
 from agentkernel_distributed.mas.action.components import CommunicationComponent, OtherActionsComponent
 from agentkernel_distributed.mas.agent.components import (
     InvokeComponent,
     PerceiveComponent,
     PlanComponent,
     ProfileComponent,
+    ReflectComponent,
 )
 from agentkernel_distributed.mas.environment.components import RelationComponent, get_or_create_component_class
 from agentkernel_distributed.mas.system.components import Messager, Timer
@@ -26,10 +25,11 @@ from examples.west_world_test.plugins.agent.invoke.WestWorldInvokePlugin import 
 from examples.west_world_test.plugins.agent.perceive.WestWorldPerceivePlugin import WestWorldPerceivePlugin
 from examples.west_world_test.plugins.agent.plan.RandomWalkPlanPlugin import RandomWalkPlanPlugin
 from examples.west_world_test.plugins.agent.plan.WestWorldPlanPlugin import WestWorldPlanPlugin
+from examples.west_world_test.plugins.agent.reflect.WestWorldReflectPlugin import WestWorldReflectPlugin
 from examples.west_world_test.plugins.environment.scene.LocationRecorderPlugin import make_scene_plugin_class
-from examples.west_world_test.worldmap.loader import load_world_map as _load_wm
+from examples.west_world_test.worldmap.loader import get_world_map
 
-_WORLD = _load_wm(os.path.join(os.path.dirname(__file__), "data/map/locations.yaml"))
+_WORLD = get_world_map()
 _ACTIVE = sorted(_WORLD.active_ids())
 
 RESOURCES_MAPS = {
@@ -39,6 +39,7 @@ RESOURCES_MAPS = {
         "plan": PlanComponent,
         "invoke": InvokeComponent,
         "state": BasicStateComponent,
+        "reflect": ReflectComponent,
     },
     "agent_plugins": {
         "BasicProfilePlugin": BasicProfilePlugin,
@@ -47,6 +48,7 @@ RESOURCES_MAPS = {
         "RandomWalkPlanPlugin": RandomWalkPlanPlugin,
         "WestWorldPlanPlugin": WestWorldPlanPlugin,
         "WestWorldInvokePlugin": WestWorldInvokePlugin,
+        "WestWorldReflectPlugin": WestWorldReflectPlugin,
     },
     "action_components": {
         "communication": CommunicationComponent,
