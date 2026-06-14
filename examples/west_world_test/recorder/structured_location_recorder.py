@@ -111,7 +111,7 @@ class StructuredLocationRecorder(LocationRecorder):
         if not proposal.get("permission", False):
             patches, new_objects, destroy_ids, ambient = [], [], [], None
         else:
-            new_objects = self._validate_new_objects(proposal.get("new_objects", []))
+            new_objects = self._validate_new_objects(proposal.get("new_objects", []), agent_id)
             destroy_ids = self._validate_destroy(proposal.get("destroy", []))
             ambient = proposal.get("ambient") or None
         before = self.registry.snapshot()
@@ -150,6 +150,9 @@ class StructuredLocationRecorder(LocationRecorder):
         self._render_dynamic_objects()
         return judgement
 
+    def _allowed_holders(self, agent_id: str) -> set:
+        return {"", agent_id} | self._present_set()
+
     def _validate_patches(self, patches: Any, agent_id: str) -> List[Dict[str, Any]]:
         if not isinstance(patches, list):
             raise ValueError("patches 必须是数组")
@@ -177,8 +180,9 @@ class StructuredLocationRecorder(LocationRecorder):
                     raise ValueError(f"字段 {key} 的值必须是字符串，收到: {type(value).__name__}")
                 if len(value) > 100:
                     raise ValueError(f"字段 {key} 的值不能超过 100 字符")
-                if key == "held_by" and value not in ("", agent_id):
-                    raise ValueError("只能把对象交给行动者或放下")
+                if key == "held_by" and value not in self._allowed_holders(agent_id):
+                    # silently skip invalid held_by transfer
+                    continue
                 updates[key] = value
             validated.append({"object_id": object_id, "updates": updates})
         return validated
@@ -187,10 +191,11 @@ class StructuredLocationRecorder(LocationRecorder):
         for patch in patches:
             self.registry.apply_patch(patch["object_id"], patch["updates"])
 
-    def _validate_new_objects(self, raw: Any) -> List[Dict[str, Any]]:
+    def _validate_new_objects(self, raw: Any, agent_id: str) -> List[Dict[str, Any]]:
         result = []
         if not isinstance(raw, list):
             return result
+        allowed = self._allowed_holders(agent_id)
         for spec in raw:
             if not isinstance(spec, dict) or not spec.get("name"):
                 continue
@@ -200,7 +205,7 @@ class StructuredLocationRecorder(LocationRecorder):
                 if key in ("name", "hidden", "object_id", "destroyed", "provenance", "location_id"):
                     continue
                 if key == "held_by":
-                    held_by = value if isinstance(value, str) else ""
+                    held_by = value if isinstance(value, str) and value in allowed else ""
                     continue
                 if isinstance(value, str) and len(value) <= 100:
                     fields[key] = value

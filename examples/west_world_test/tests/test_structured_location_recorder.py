@@ -82,9 +82,34 @@ def test_held_by_cannot_be_assigned_to_another_agent():
 
     result = recorder.submit_action("maeve", "把酒杯交给泰迪", tick=4)
 
-    assert result["permission"] is False
+    assert result["permission"] is True
     assert _reg_state("saloon", "酒杯")["held_by"] == ""
 
+
+def test_held_by_can_pass_to_present_agent():
+    recorder = StructuredLocationRecorder(
+        LOCATION,
+        FakeLLM([_proposal(patches=[{"object_id": "obj_0", "held_by": "teddy"}])]),
+    )
+    recorder.set_present_agents(["maeve", "teddy"])
+
+    result = recorder.submit_action("maeve", "把酒杯交给泰迪", tick=4)
+
+    assert result["permission"] is True
+    assert _reg_state("saloon", "酒杯")["held_by"] == "teddy"
+
+
+def test_held_by_to_absent_agent_is_rejected():
+    recorder = StructuredLocationRecorder(
+        LOCATION,
+        FakeLLM([_proposal(patches=[{"object_id": "obj_0", "held_by": "ghost"}])]),
+    )
+    recorder.set_present_agents(["maeve"])
+
+    result = recorder.submit_action("maeve", "把酒杯交给幽灵", tick=4)
+
+    assert result["permission"] is True
+    assert _reg_state("saloon", "酒杯")["held_by"] == ""
 
 def test_tick_update_does_not_call_llm():
     llm = FakeLLM([_proposal()])
