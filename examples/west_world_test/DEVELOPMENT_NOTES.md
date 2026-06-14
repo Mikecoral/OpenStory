@@ -49,16 +49,21 @@
 - `test_reflect_plugin.py` / `test_worldmap.py`
 - `test_sim_plugins.py` / `test_sim_skeleton.py`
 
+## 已完成（最近）
+
+### Structured Recorder 对象模型重构
+
+通过 `recorder/world_object_registry.py` 中的 `WorldObjectRegistry` 把对象所有权从 location-anchored 升级为世界级真值源，`StructuredLocationRecorder` 退化为 location 视图。设计见 `docs/superpowers/specs/2026-06-14-west-world-world-object-model-design.md`，实现见 `docs/superpowers/plans/2026-06-14-west-world-world-object-model.md`。
+
+已解决的架构缺口：
+
+- ✅ 自由创造/销毁对象：`new_objects` / `destroy` 字段，无模板/白名单/硬上限，reducer 分配全局 `obj_*` id 并记录 provenance。
+- ✅ 跨地点对象转移：持有物随持有者移动，`invoke.apply_move` 成功后调 `registry.relocate_holdings(...)`。
+- ✅ `held_by` 可在在场 agent 间传递：校验 `held_by ∈ {"", 行动者} ∪ 本地点在场 agent`。
+- ✅ ambient 环境态：新增 `ambient` chunk，可记录光线/气味/声音/气氛等整体环境文本。
+- ✅ 世界级审计：每 tick 落盘 `world_objects_snapshots.jsonl`，含完整对象状态与 append-only ledger。
+
 ## 待办
-
-### Structured Recorder 未解架构缺口
-
-根因：对象所有权锚定在 location 而非 agent/world。已从固定 op-code 白名单升级为 free-form patch + reducer，但仍有结构性限制（需单独 brainstorm）：
-
-- 无法创造/销毁对象（涌现实体，如新倒的酒、地上的血）
-- 跨地点对象转移结构不可能（每个 LocationRecorder 独占 object_facts，无跨 recorder 通路）
-- `held_by` 不能在 agent 间传递（限死当前 actor 或空）
-- 丢失 ambient / 非对象环境态（`dynamic_objects` 现纯由对象派生）
 
 ### 正式仿真与 MVE 实验的融合方案
 
