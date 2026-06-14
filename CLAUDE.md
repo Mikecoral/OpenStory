@@ -101,7 +101,10 @@ OpenStory/
      - 地图真值：`examples/west_world_test/data/map/locations.yaml` + `worldmap/loader.py`（31 地点，12 激活）
      - Recorder：`examples/west_world_test/recorder/` （`LocationRecorder`、`prompts`、`factory`）
      - 环境插件：`examples/west_world_test/plugins/environment/scene/LocationRecorderPlugin.py`
-     - Agent 插件：`plugins/agent/perceive/WestWorldPerceivePlugin.py`、`plugins/agent/plan/WestWorldPlanPlugin.py`、`plugins/agent/invoke/WestWorldInvokePlugin.py`
+     - Agent 插件：`plugins/agent/perceive/WestWorldPerceivePlugin.py`、`plugins/agent/plan/WestWorldPlanPlugin.py`、`plugins/agent/invoke/WestWorldInvokePlugin.py`、`plugins/agent/reflect/WestWorldReflectPlugin.py`
+     - 生命周期为 5 段 `perceive→plan→invoke→state→reflect`。reflect 是 west_world 原生实现（**不复用 sots 的 BasicReflectPlugin**——后者绑死在每日 hourly-plan/LongTask 模型上）：每 tick 由 state 组装短期记忆，每 `WW_REFLECT_INTERVAL`（默认 6）tick 用 LLM 总结进长期记忆并清空。
+     - 地图加载统一走 `worldmap/loader.py` 的 `get_world_map()`（lru_cache 单例）+ `default_map_path()`，全进程只 load 一次；勿在插件里各自 `load_world_map(...)`。
+     - ⚠️ 动作组件 `move/communication/otheractions` 在 registry/actions_config 里注册了但**两个 example（含 sots）都不调用**——移动逻辑内联在 invoke 的 `apply_move`。这是框架既有模式，非缺陷。
    - 运行命令示例：`WW_MAX_TICKS=20 PYTHONPATH=$PWD:$PWD/packages/agentkernel-distributed python -m examples.west_world_test.run_simulation`
 
 ## 8. 想深入某块时，直接读这些源码
