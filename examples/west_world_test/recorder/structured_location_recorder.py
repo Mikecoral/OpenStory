@@ -11,9 +11,7 @@ from .location_recorder import (
     RECENT_EVENTS_WINDOW,
     LocationRecorder,
 )
-
-# Fields that belong to the object schema itself and must not be overwritten via patch.
-_META_FIELDS = {"object_id", "name", "hidden"}
+from .world_object_registry import META_FIELDS, get_object_registry
 
 _PROPOSAL_PROMPT = """你是地点「{location_name}」的动作解析器与场景裁判。
 把角色的自由文本动作转换成对【可见对象】的字段更新（patch），并判断动作是否触及隐藏秘密。你不能凭空创造新对象。
@@ -45,36 +43,44 @@ _PROPOSAL_PROMPT = """你是地点「{location_name}」的动作解析器与场�
 "event_summary": "", "patches": [{{"object_id": "obj_0", "state": "新状态"}}]}}
 """
 
+# Fields that belong to the object schema itself and must not be overwritten via patch.
+# We use the registry's META_FIELDS plus enforce the "name" protection explicitly in validation.
+_META_FIELDS = META_FIELDS
+
 
 class StructuredLocationRecorder(LocationRecorder):
     """Formal-simulation Recorder: LLM proposes free-form object patches, reducer applies atomically."""
 
     def __init__(self, location: Location, llm: Any) -> None:
         super().__init__(location, llm)
-        self.object_facts: Dict[str, Dict[str, Any]] = {
-            f"obj_{index}": {
-                "object_id": f"obj_{index}",
-                "name": item["name"],
-                "state": item.get("note", "状态正常"),
-                "held_by": "",
-                "hidden": bool(item.get("hidden")),
-            }
-            for index, item in enumerate(location.objects)
-        }
+        self.registry = get_object_registry()
+        self._seed_location()
         self.fact_ledger: List[Dict[str, Any]] = []
         self._render_dynamic_objects()
 
+    def _seed_location(self) -> None:
+        # 若单例已被其它 scene seed 过本地点则跳过（幂等）
+        if self.registry.objects_at(self.location.id, include_hidden=True):
+            return
+        for item in self.location.objects:
+            fields = {"state": item.get("note", "状态正常")}
+            if item.get("secret"):
+                fields["secret"] = item["secret"]
+            self.registry.create(
+                name=item["name"], location_id=self.location.id, by="__seed__",
+                tick=None, action="__seed__", fields=fields, hidden=bool(item.get("hidden")),
+            )
+
     def submit_action(self, agent_id: str, action_text: str, tick: Optional[int] = None) -> Dict[str, Any]:
         # Only expose non-hidden objects to the LLM
+        visible_rows = self.registry.objects_at(self.location.id, include_hidden=False)
         visible_objects = [
             {"object_id": row["object_id"], "name": row["name"]}
-            for row in self.object_facts.values()
-            if not row["hidden"]
+            for row in visible_rows
         ]
         visible_facts = {
-            oid: {k: v for k, v in row.items() if k != "hidden"}
-            for oid, row in self.object_facts.items()
-            if not row["hidden"]
+            row["object_id"]: {k: v for k, v in row.items() if k != "hidden"}
+            for row in visible_rows
         }
         prompt = _PROPOSAL_PROMPT.format(
             location_name=self.location.name,
@@ -98,8 +104,9 @@ class StructuredLocationRecorder(LocationRecorder):
             return {**FALLBACK_JUDGEMENT, "permission": False, "reason": str(exc)}
         if not proposal.get("permission", False):
             patches = []
-        before = copy.deepcopy(self.object_facts)
+        before = self.registry.snapshot()
         self._apply_patches(patches)
+        after = self.registry.snapshot()
         judgement = {
             key: proposal.get(key, FALLBACK_JUDGEMENT[key])
             for key in FALLBACK_JUDGEMENT
@@ -110,7 +117,7 @@ class StructuredLocationRecorder(LocationRecorder):
             "action_text": action_text,
             "patches": patches,
             "before": before,
-            "after": copy.deepcopy(self.object_facts),
+            "after": after,
             "judgement": judgement,
         })
         if judgement["event_summary"]:
@@ -128,11 +135,14 @@ class StructuredLocationRecorder(LocationRecorder):
             if not isinstance(patch, dict):
                 raise ValueError("每条 patch 必须是对象")
             object_id = patch.get("object_id")
-            if object_id not in self.object_facts:
+            # Check existence: must be known to registry and belong to this location
+            if not self.registry.has(object_id):
                 raise ValueError(f"未知 object_id: {object_id}")
-            if self.object_facts[object_id]["hidden"]:
+            obj = self.registry.get(object_id)
+            if obj["location_id"] != self.location.id or obj["destroyed"]:
+                raise ValueError(f"未知 object_id: {object_id}")
+            if obj["hidden"]:
                 # 隐藏对象永远保持 hidden：丢弃针对它的 patch，但不让整个动作失败
-                # （秘密只通过 private_feedback 定向告知发现者，对象状态不迁移）
                 continue
             updates: Dict[str, str] = {}
             for key, value in patch.items():
@@ -152,14 +162,12 @@ class StructuredLocationRecorder(LocationRecorder):
 
     def _apply_patches(self, patches: List[Dict[str, Any]]) -> None:
         for patch in patches:
-            self.object_facts[patch["object_id"]].update(patch["updates"])
+            self.registry.apply_patch(patch["object_id"], patch["updates"])
 
     def _render_dynamic_objects(self) -> None:
         parts = []
-        skip = _META_FIELDS | {"state", "held_by"}
-        for row in self.object_facts.values():
-            if row["hidden"]:
-                continue
+        skip = {"object_id", "name", "hidden", "destroyed", "provenance", "location_id", "state", "held_by", "secret"}
+        for row in self.registry.objects_at(self.location.id):
             text = f"{row['name']}：{row.get('state', '')}"
             extras = [(k, v) for k, v in row.items() if k not in skip and v]
             if extras:
@@ -169,27 +177,12 @@ class StructuredLocationRecorder(LocationRecorder):
             parts.append(text)
         self.chunks["dynamic_objects"] = "；".join(parts) or "暂无可变物品。"
 
-    def agent_leave(self, agent_id: str) -> None:
-        # 离开地点时释放该 agent 在本地点持有的对象，避免留下「由不在场的人持有」的鬼魂状态。
-        # 注：当前对象锚定在地点、无跨地点流动，离开等价于「放下」。
-        super().agent_leave(agent_id)
-        self._release_holdings(agent_id)
-
-    def _release_holdings(self, agent_id: str) -> None:
-        released = False
-        for row in self.object_facts.values():
-            if row.get("held_by") == agent_id:
-                row["held_by"] = ""
-                released = True
-        if released:
-            self._render_dynamic_objects()
-
     def tick_update(self, tick: int) -> None:
         return None
 
     def snapshot(self, include_hidden: bool = False, include_pending: bool = False) -> Dict[str, Any]:
         snapshot = super().snapshot(include_hidden=include_hidden, include_pending=include_pending)
         if include_hidden:
-            snapshot["object_facts"] = copy.deepcopy(self.object_facts)
+            snapshot["object_facts"] = self.registry.objects_at(self.location.id, include_hidden=True)
             snapshot["fact_ledger"] = copy.deepcopy(self.fact_ledger)
         return snapshot
