@@ -41,6 +41,8 @@ class WorldObjectRegistry:
         return oid
 
     def apply_patch(self, object_id: str, updates: Dict[str, Any]) -> None:
+        if object_id not in self._objects:
+            raise KeyError(f"unknown object_id: {object_id}")
         row = self._objects[object_id]
         before = copy.deepcopy(row)
         for key, value in updates.items():
@@ -50,6 +52,8 @@ class WorldObjectRegistry:
         self._log("patch", object_id, before, copy.deepcopy(row), None, None)
 
     def destroy(self, object_id: str, by: str, tick: Optional[int]) -> None:
+        if object_id not in self._objects:
+            raise KeyError(f"unknown object_id: {object_id}")
         row = self._objects[object_id]
         before = copy.deepcopy(row)
         row["destroyed"] = True
@@ -57,7 +61,7 @@ class WorldObjectRegistry:
 
     # ---- 读 ----
     def get(self, object_id: str) -> Dict[str, Any]:
-        return self._objects[object_id]
+        return copy.deepcopy(self._objects[object_id])
 
     def has(self, object_id: str) -> bool:
         return object_id in self._objects

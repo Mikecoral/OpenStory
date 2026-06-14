@@ -26,6 +26,15 @@ def test_apply_patch_updates_free_fields_and_protects_meta():
     assert row["state"] == "破碎"
     assert row["quantity"] == "一片"
 
+    # 所有 meta 字段都不可被 patch 覆盖（包括 location_id）
+    from examples.west_world_test.recorder.world_object_registry import META_FIELDS
+    reg.apply_patch(oid, {m: "ATTACK" for m in META_FIELDS})
+    row2 = reg.get(oid)
+    assert row2["location_id"] == "saloon"
+    assert row2["name"] == "酒杯"
+    assert row2["object_id"] == oid
+    assert row2["destroyed"] is False
+
 
 def test_destroy_is_soft_delete_and_recorded():
     reg = WorldObjectRegistry()
