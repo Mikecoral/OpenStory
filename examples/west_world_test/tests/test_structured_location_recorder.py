@@ -265,14 +265,23 @@ def test_destroy_unknown_id_is_dropped_without_failing_action():
     assert judgement["permission"] is True
 
 
-def test_leaving_does_not_release_objects_held_by_others():
-    """Only the leaving agent's holdings are released; others' holdings are preserved."""
+def test_held_object_not_dropped_on_leave_and_follows_via_registry():
+    """agent_leave must NOT drop held objects; holdings follow via registry relocate_holdings."""
     recorder = StructuredLocationRecorder(
         LOCATION,
         FakeLLM([_proposal(patches=[{"object_id": "obj_0", "held_by": "maeve"}])]),
     )
     recorder.submit_action("maeve", "拿起酒杯", tick=1)
-
-    recorder.agent_leave("teddy")  # a different agent leaves
-
     assert _reg_state("saloon", "酒杯")["held_by"] == "maeve"
+
+    # Leave does NOT drop the object
+    recorder.agent_leave("maeve")
+    assert _reg_state("saloon", "酒杯")["held_by"] == "maeve"
+
+    # Relocate via registry moves the object to the new location
+    get_object_registry().relocate_holdings("maeve", "ranch")
+    assert _reg_state("ranch", "酒杯")["location_id"] == "ranch"
+    # Re-render so the saloon recorder reflects the new state
+    recorder._render_dynamic_objects()
+    # Saloon recorder no longer lists the object
+    assert recorder.chunks["dynamic_objects"] == "暂无可变物品。"

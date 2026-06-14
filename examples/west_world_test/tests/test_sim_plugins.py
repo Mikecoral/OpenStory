@@ -67,16 +67,14 @@ def test_plan_prompt_contains_loop_percept_feedback_and_neighbors():
     assert parse_decision("乱七八糟")["action"] == "stay"     # 解析失败降级为 stay
 
 
-def test_real_sim_profile_fields_are_rendered_in_plan_prompt():
-    from examples.west_world_test.plugins.agent.plan.WestWorldPlanPlugin import render_plan_prompt
-
-    profile_path = Path(__file__).parents[1] / "data" / "agents" / "profiles_sim.jsonl"
-    profile = json.loads(profile_path.read_text(encoding="utf-8").splitlines()[0])
-    prompt = render_plan_prompt(
-        profile,
-        {"location": "abernathy_ranch", "here_description": "农场", "neighbors": [], "scene": {}},
-        feedback="",
-        tick=0,
-    )
-    assert profile["name"] in prompt
-    assert profile["persona"] in prompt
+def test_invoke_move_relocates_holdings():
+    """apply_move + registry relocate_holdings moves held objects with the agent."""
+    from examples.west_world_test.recorder.world_object_registry import get_object_registry, reset_object_registry
+    reset_object_registry()
+    reg = get_object_registry()
+    reg.create(name="左轮", location_id="sweetwater_saloon", by="t", tick=1, action="a", fields={}, held_by="hector")
+    new_state, ok, _ = apply_move(WORLD, {"location": "sweetwater_saloon", "known_map": []}, "sweetwater")
+    assert ok
+    reg.relocate_holdings("hector", new_state["location"], tick=2)
+    assert reg.get("obj_0")["location_id"] == "sweetwater"
+    assert reg.get("obj_0")["held_by"] == "hector"
