@@ -65,6 +65,7 @@
 - ✅ `WestWorldInvokePlugin`：`do` 分支去掉读取 result 并写 feedback 的逻辑。
 - ✅ `snapshot()`/`restore()` 新增 `intent_queue` 和 `pending_feedback` 字段。
 - ✅ 测试：136 passed（含 8 个新增用例：tick 冻结验证、双 agent 争抢、batch 失败、单条非法 patch 隔离等）。
+- ✅ Qwen3.5-flash non-thinking 修复：`/no_think` 软开关仅 Qwen3 支持，Qwen3.5 需用 `extra_body={"enable_thinking": False}`；修复后测试耗时从 10 分钟降至 44 秒。
 
 ### Structured Recorder 对象模型重构
 
