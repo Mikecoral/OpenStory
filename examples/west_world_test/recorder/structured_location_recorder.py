@@ -423,6 +423,72 @@ class StructuredLocationRecorder(LocationRecorder):
         self._render_dynamic_objects()
         return super().read(agent_id, chunk_names)
 
+    # ---- Recorder 主导感知（per-agent） ----
+
+    _RENDER_SKIP = frozenset({
+        "object_id", "name", "hidden", "destroyed", "provenance",
+        "location_id", "state", "held_by", "secret", "_uncanny",
+    })
+
+    def _render_dynamic_objects_for_viewer(
+        self, discovered_ids: List[str], awakening: int
+    ) -> str:
+        parts = []
+        for row in self.registry.objects_at_for_viewer(
+            self.location.id, set(discovered_ids), awakening
+        ):
+            text = f"{row['name']}：{row.get('state', '')}"
+            extras = [(k, v) for k, v in row.items() if k not in self._RENDER_SKIP and v]
+            if extras:
+                text += "（" + "，".join(f"{k}：{v}" for k, v in extras) + "）"
+            if row.get("held_by"):
+                text += f"，由 {row['held_by']} 持有"
+            if row.get("_uncanny"):
+                text += f"【似有异样：{row['_uncanny']}】"
+            parts.append(text)
+        return "；".join(parts) or "暂无可变物品。"
+
+    def perceive(self, agent_id: str, agent_context: dict) -> Dict[str, Any]:
+        """Recorder 主导感知：按该 agent 的 context 千人千面决定告知内容。
+
+        基础在场信息（present_agents / recent_events）对同地点所有人一致；
+        dynamic_objects 按 discovered_ids + awakening 做 per-agent 过滤。
+        agent 可通过 focus 给出软关注点提示，但不能借此越权看不可见信息。
+        """
+        from typing import List as _List  # noqa: avoid shadowing outer scope
+
+        discovered_ids: _List[str] = list(agent_context.get("discovered_ids") or [])
+        awakening: int = int(agent_context.get("awakening") or 0)
+        focus = agent_context.get("focus")
+
+        from .location_recorder import READABLE_CHUNKS
+        if isinstance(focus, list) and focus:
+            requested = {c for c in focus if c in READABLE_CHUNKS}
+            if not requested:
+                requested = {"present_agents", "recent_events", "dynamic_objects"}
+        else:
+            requested = {"present_agents", "recent_events", "dynamic_objects"}
+
+        result: Dict[str, Any] = {}
+
+        # Base: identical for all agents at this location
+        if "present_agents" in requested:
+            result["present_agents"] = self.chunks.get("present_agents", "（无人）")
+        if "recent_events" in requested:
+            result["recent_events"] = self.chunks.get("recent_events", [])
+        if "static_facilities" in requested:
+            result["static_facilities"] = self.chunks.get("static_facilities", "")
+        if "ambient" in requested:
+            result["ambient"] = self.chunks.get("ambient", "")
+
+        # Per-agent: filter objects by viewer's knowledge
+        if "dynamic_objects" in requested:
+            result["dynamic_objects"] = self._render_dynamic_objects_for_viewer(
+                discovered_ids, awakening
+            )
+
+        return result
+
     def snapshot(self, include_hidden: bool = False, include_pending: bool = False) -> Dict[str, Any]:
         self._render_dynamic_objects()
         snapshot = super().snapshot(include_hidden=include_hidden, include_pending=include_pending)

@@ -85,14 +85,24 @@ class WestWorldPerceivePlugin(PerceivePlugin):
         percept = build_percept(self._world, self.agent.agent_id, current_state)
         percept["messages"] = self._consume_messages()
 
-        # 追加 Recorder read（M3 新增）
-        controller = self.agent.controller
+        # Recorder 主导感知（per-agent 千人千面）
         try:
-            # 先看 plan 上一 tick 想读的 chunks；没有则用默认三块
-            next_read = await state_plugin.get_state("next_read") or ["present_agents", "recent_events", "dynamic_objects"]
+            try:
+                profile_component = self.agent.get_component("profile")
+                profile = profile_component.get_plugin().get_agent_profile() or {}
+            except Exception:
+                profile = {}
+            agent_context = {
+                "location": location,
+                "discovered_ids": await state_plugin.get_state("discovered_ids") or [],
+                "awakening": await state_plugin.get_state("awakening") or 0,
+                "traits": profile.get("traits") or profile.get("character") or "",
+                "last_action": (await state_plugin.get_state("plan_decision") or {}).get("detail", ""),
+                "focus": await state_plugin.get_state("next_read") or [],
+            }
             chunks = await controller.run_environment(
-                f"scene_{location}", "read",
-                self.agent.agent_id, next_read)
+                f"scene_{location}", "perceive",
+                self.agent.agent_id, agent_context)
             percept["scene"] = chunks
         except Exception as exc:
             logger.warning("[%s] 读取 scene_%s 失败，使用静态感知: %s",

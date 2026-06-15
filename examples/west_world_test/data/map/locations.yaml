@@ -224,7 +224,7 @@
   name: 荒野
   region: wilderness
   type: wilderness
-  active: false
+  active: true
   bbox: [0, 0, 0, 0]
   adjacency: [sweetwater, pariah, frontier_town, mine, church, river, desert_bandit_hideout]
   description: >
@@ -241,7 +241,7 @@
   name: 火车
   region: wilderness
   type: interior
-  active: false
+  active: true
   bbox: [177.3, 16.0, 589.3, 61.3]
   adjacency: [sweetwater_train_station, sweetwater]
   description: >
@@ -258,7 +258,7 @@
   name: 河流
   region: wilderness
   type: wilderness
-  active: false
+  active: true
   bbox: [1920.0, 4.0, 0.0, 0.0]
   adjacency: [wilderness]
   description: >
@@ -275,7 +275,7 @@
   name: 矿洞
   region: wilderness
   type: wilderness
-  active: false
+  active: true
   bbox: [1294.0, -2.0, 580.0, 132.0]
   adjacency: [wilderness]
   description: >
@@ -293,7 +293,7 @@
   name: 教堂
   region: frontier
   type: interior
-  active: false
+  active: true
   bbox: [1649.3, 134.7, 433.3, 177.3]
   adjacency: [wilderness, frontier_town]
   description: >
@@ -311,7 +311,7 @@
   name: 沙漠土匪家
   region: wilderness
   type: interior
-  active: false
+  active: true
   bbox: [2216.0, 432.0, 170.7, 221.3]
   adjacency: [wilderness]
   description: >
@@ -329,7 +329,7 @@
   name: 帕里亚
   region: pariah
   type: town
-  active: false
+  active: true
   bbox: [12.0, 356.0, 364.0, 794.0]
   adjacency: [wilderness, pariah_casino, pariah_fight_pit]
   description: >
@@ -346,7 +346,7 @@
   name: 赌场
   region: pariah
   type: interior
-  active: false
+  active: true
   bbox: [42.0, 388.0, 318.0, 424.0]
   adjacency: [pariah]
   description: >
@@ -364,7 +364,7 @@
   name: 格斗场
   region: pariah
   type: interior
-  active: false
+  active: true
   bbox: [48.0, 902.0, 282.0, 230.0]
   adjacency: [pariah]
   description: >
@@ -382,7 +382,7 @@
   name: 边境小镇
   region: frontier
   type: town
-  active: false
+  active: true
   bbox: [1308.0, 170.0, 0.0, 0.0]
   adjacency: [wilderness, frontier_outpost, church, host_room_1, host_home_2, ranch_farm]
   description: >
@@ -399,7 +399,7 @@
   name: 边境驿站
   region: frontier
   type: interior
-  active: false
+  active: true
   bbox: [1922.7, 948.0, 264.0, 218.7]
   adjacency: [frontier_town]
   description: >
@@ -417,7 +417,7 @@
   name: 接待员房间1
   region: frontier
   type: interior
-  active: false
+  active: true
   bbox: [1378.0, 182.7, 76.0, 150.0]
   adjacency: [frontier_town]
   description: >
@@ -435,7 +435,7 @@
   name: 接待员家2
   region: frontier
   type: interior
-  active: false
+  active: true
   bbox: [1490.7, 184.0, 107.3, 229.3]
   adjacency: [frontier_town]
   description: >
@@ -453,7 +453,7 @@
   name: 养殖场
   region: frontier
   type: interior
-  active: false
+  active: true
   bbox: [1626.0, 329.0, 0.0, 0.0]
   adjacency: [frontier_town]
   description: >
@@ -471,7 +471,7 @@
   name: 地表维修站
   region: backstage
   type: backstage
-  active: false
+  active: true
   bbox: [101.0, 134.0, 229.0, 214.0]
   adjacency: [backstage_control]
   description: >
@@ -489,7 +489,7 @@
   name: 后方控制区
   region: backstage
   type: backstage
-  active: false
+  active: true
   bbox: [2509.3, 930.7, 0.0, 0.0]
   adjacency: [surface_maintenance_station, cold_storage, staff_dormitory, programmer_workspace]
   description: >
@@ -507,7 +507,7 @@
   name: 冷库存放区
   region: backstage
   type: backstage
-  active: false
+  active: true
   bbox: [2562.7, 1000.0, 397.3, 182.7]
   adjacency: [backstage_control]
   description: >
@@ -525,7 +525,7 @@
   name: 员工宿舍
   region: backstage
   type: backstage
-  active: false
+  active: true
   bbox: [2257.3, 14.7, 222.7, 93.3]
   adjacency: [backstage_control]
   description: >
@@ -543,7 +543,7 @@
   name: 程序员工作区
   region: backstage
   type: backstage
-  active: false
+  active: true
   bbox: [2532.0, 4.0, 461.3, 101.3]
   adjacency: [backstage_control]
   description: >

@@ -125,18 +125,9 @@ async def main() -> None:
             timings["message_dispatch"] = time.perf_counter() - started
             archive.record_event("message_dispatch_completed", tick=tick, duration_seconds=timings["message_dispatch"])
 
-            # 每 tick 末显式触发各 scene 组件的 tick_update（环境 execute 不被自动调用）
-            scene_errors = []
-            started = time.perf_counter()
-            for lid in _ACTIVE_LIDS:
-                try:
-                    await pod_manager.run_environment.remote(f"scene_{lid}", "execute", tick)
-                except Exception as exc:
-                    logger.warning("scene_%s execute 失败: %s", lid, exc)
-                    error = {"location_id": lid, "error": f"{type(exc).__name__}: {exc}"}
-                    scene_errors.append(error)
-                    archive.record_event("scene_execute_failed", tick=tick, **error)
-            timings["scene_updates"] = time.perf_counter() - started
+            # scene execute 已移入 WestWorldPodManager.step_agent（tick_update 栅栏）
+            scene_errors: list = []
+            timings["scene_updates"] = 0.0
             archive.record_model_attempts(
                 tick, await pod_manager.drain_model_attempt_traces.remote()
             )

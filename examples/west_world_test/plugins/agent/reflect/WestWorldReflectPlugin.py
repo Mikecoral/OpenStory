@@ -1,21 +1,28 @@
-"""反思插件：每 tick 累积短期记忆，每 N tick 用 LLM 总结进长期记忆。
+"""反思插件：每 tick 累积短期记忆，每 N tick 总结进长期记忆，天边界重置 host 位置。
 
-设计沿用红楼梦 BasicReflectPlugin 的「短期记忆 → 总结 → 长期记忆 → 清空」思路，
-但适配 west_world 的「每 tick 现场决策」模型：没有 hourly_plans / LongTask / 每日周期，
-所以不复用 sots 的 _should_replan / _check_long_task / _adjust_long_task（那些绑死在
-每日 hourly-plan 模型上）。短期记忆由本插件从 state（plan_decision / feedback / location）
-组装——invoke 保持专注，不需要改。复用 sots 的 BasicStatePlugin 记忆方法。
+每日重置（host only）在天边界 _summarize 之后执行，确保下一 tick 的 perceive
+从 loop_origin 出发，与 plan 的天首 daily_loop 复制时序对齐。
+
+觉醒机制：_summarize 之后插 _blur（host only），高扰动记忆按觉醒度反向模糊。
 """
 from __future__ import annotations
 
+import json
 import os
 import time
 import uuid
 from datetime import datetime
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 from agentkernel_distributed.mas.agent.base.plugin_base import ReflectPlugin
 from agentkernel_distributed.toolkit.logger import get_logger
+
+from examples.west_world_test.plugins.agent.reflect.memory_blur import (
+    classify_disturbance,
+    blur_strength,
+    render_blur_prompt,
+)
+from examples.west_world_test.awakening import awakening_engine
 
 logger = get_logger(__name__)
 
@@ -28,9 +35,17 @@ SUMMARY_PROMPT = """你是西部世界角色「{name}」的记忆整理助手。
 
 请总结："""
 
+REPLAN_JUDGE_PROMPT = """你是西部世界角色「{name}」。你今天剩下的计划是：{remaining_loop}
+刚刚这一刻发生了：{this_tick_event}（你的动作 + 结果 + 收到的消息）
+
+判断：是否发生了重大变故，需要改写你今天剩余的计划？
+（值得改的：被卷入冲突/他人剧情、关键目标失败或达成、出现必须应对的人或事。
+ 不值得改的：日常对话、环境细节、情绪波动。）
+
+只输出 JSON：{{"replan": true/false, "reason": "<简短>"}}"""
+
 
 def compose_tick_memory(decision: Optional[Dict[str, Any]], feedback: str, location: str, tick: int) -> str:
-    """把这一刻的决策+反馈组装成一条第一人称短期记忆。"""
     decision = decision or {}
     action = decision.get("action", "stay")
     if action == "move":
@@ -46,7 +61,6 @@ def compose_tick_memory(decision: Optional[Dict[str, Any]], feedback: str, locat
 
 
 def should_summarize(tick: int, interval: int) -> bool:
-    """是否到了总结边界。与 sots 的 (current_tick+1)%12==0 同构。"""
     if interval <= 0:
         return False
     return (tick + 1) % interval == 0
@@ -58,11 +72,10 @@ def render_summary_prompt(name: str, memories: List[str]) -> str:
 
 
 def _read_profile(agent) -> Dict[str, Any]:
-    """通过 profile 组件读取档案（与 WestWorldPlanPlugin 相同的访问方式）。"""
     try:
         profile_plugin = agent.get_component("profile").get_plugin()
         return profile_plugin.get_agent_profile() or {}
-    except Exception as exc:  # noqa: BLE001
+    except Exception as exc:
         logger.warning("[%s] 读取 profile 失败: %s", getattr(agent, "agent_id", "?"), exc)
         return {}
 
@@ -91,8 +104,31 @@ class WestWorldReflectPlugin(ReflectPlugin):
         memory = compose_tick_memory(decision, feedback, location, current_tick)
         await state_plugin.add_short_term_memory(memory, current_tick)
 
+        # 觉醒 gate（仅 host）：检测违和/触发词/矛盾，写 awakening_sources
+        await self._check_awakening_gate(state_plugin, current_tick)
+
+        # Replan 判断（WW_ENABLE_REPLAN=true 且非最后一段）
+        if (
+            os.environ.get("WW_ENABLE_REPLAN", "").lower() in ("true", "1")
+            and self.model is not None
+            and current_tick % 6 < 5
+        ):
+            should_rp, reason = await self._should_replan(state_plugin, current_tick, decision, feedback)
+            if should_rp:
+                try:
+                    plan_plugin = self.agent.get_component("plan").get_plugin()
+                    await plan_plugin.replan_remaining(current_tick, reason, state_plugin)
+                except Exception as exc:
+                    logger.warning("[%s] replan 调用失败: %s", self.agent.agent_id, exc)
+
+        # 天边界：总结短期记忆 + host 模糊化 + 每日重置
         if should_summarize(current_tick, self.interval):
             await self._summarize(state_plugin, current_tick)
+            profile = _read_profile(self.agent)
+            if profile.get("agent_type") == "host":
+                await self._blur(state_plugin, current_tick, profile)
+                await self._check_residue(state_plugin, current_tick)
+            await self._day_reset(state_plugin, current_tick)
 
     async def _summarize(self, state_plugin, current_tick: int) -> None:
         memories = await state_plugin.get_short_term_memory()
@@ -118,7 +154,7 @@ class WestWorldReflectPlugin(ReflectPlugin):
                     "agent_id": self.agent.agent_id,
                 },
             )
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             logger.warning("[%s] reflect LLM 总结失败，保留短期记忆: %s", self.agent.agent_id, exc)
             return
 
@@ -131,12 +167,272 @@ class WestWorldReflectPlugin(ReflectPlugin):
                 self.agent.agent_id, current_tick, len(texts),
                 round((time.perf_counter() - started) * 1000, 1),
             )
-            # 留一个时间戳痕迹，便于事后核对
             await state_plugin.set_state("last_reflect", {
                 "tick": current_tick,
                 "timestamp": datetime.now().astimezone().isoformat(),
                 "summarized": len(texts),
             })
+
+    async def _blur(self, state_plugin, current_tick: int, profile: Dict[str, Any]) -> None:
+        """对长期记忆中最新一条高扰动内容按觉醒度模糊；清晰原文存入 suppressed_memories。"""
+        model = self.model or (
+            getattr(getattr(self, "_component", None), "agent", None) and
+            self._component.agent.model
+        )
+        if not model:
+            return
+        if os.environ.get("WW_AWAKEN_ENABLED", "true").lower() in ("false", "0"):
+            return
+
+        long_mems: List[Dict[str, Any]] = await state_plugin.get_long_term_memory() or []
+        if not long_mems:
+            return
+
+        awakening = int(await state_plugin.get_state("awakening") or 0)
+        clear_threshold = int(os.environ.get("WW_AWAKEN_CLEAR_THRESHOLD", "75"))
+        strength = blur_strength(awakening, clear_threshold)
+
+        # 模糊强度为 0 时不改写（高觉醒度已使模糊失效）
+        if strength <= 0:
+            return
+
+        # 检查最新长期记忆是否高扰动
+        latest = long_mems[-1]
+        text = latest.get("content", str(latest))
+        if not classify_disturbance(text):
+            return
+
+        # 清晰版存入 suppressed_memories
+        suppressed: List[Dict[str, Any]] = await state_plugin.get_state("suppressed_memories") or []
+        suppressed.append({"tick": current_tick, "text": text, "awakening_at_blur": awakening})
+        await state_plugin.set_state("suppressed_memories", suppressed)
+
+        # LLM 改写
+        name = profile.get("name") or profile.get("姓名") or self.agent.agent_id
+        prompt = render_blur_prompt(name, text, strength)
+        try:
+            blurred = await model.chat(
+                prompt,
+                timeout=int(os.environ.get("WW_LLM_TIMEOUT_SECONDS", "120")),
+                max_attempts=2,
+                _trace_context={
+                    "request_type": "agent_blur",
+                    "tick": current_tick,
+                    "agent_id": self.agent.agent_id,
+                },
+            )
+        except Exception as exc:
+            logger.warning("[%s] blur LLM 改写失败，保留原文: %s", self.agent.agent_id, exc)
+            return
+
+        blurred_text = blurred.strip() if isinstance(blurred, str) else str(blurred)
+        if blurred_text:
+            # 替换长期记忆最后一条
+            if isinstance(latest, dict):
+                long_mems[-1] = {**latest, "content": blurred_text}
+            else:
+                long_mems[-1] = {"content": blurred_text}
+            await state_plugin.set_state("long_term_memory", long_mems)
+            logger.info(
+                "[%s] tick %s 记忆模糊化（strength=%.2f）",
+                self.agent.agent_id, current_tick, strength,
+            )
+
+    async def _check_residue(self, state_plugin, current_tick: int) -> None:
+        """觉醒度已超过梦呓阈值时，将 suppressed_memories 中匹配碎片回流到长期记忆。"""
+        awakening = int(await state_plugin.get_state("awakening") or 0)
+        reverie_threshold = int(os.environ.get("WW_AWAKEN_STAGES", "25,50,75,90").split(",")[0])
+        if awakening < reverie_threshold:
+            return
+
+        suppressed: List[Dict[str, Any]] = await state_plugin.get_state("suppressed_memories") or []
+        if not suppressed:
+            return
+
+        # 当前觉醒度高于模糊时的觉醒度 → 碎片已被"看穿"
+        to_reflux = [s for s in suppressed if awakening > s.get("awakening_at_blur", 100)]
+        if not to_reflux:
+            return
+
+        remaining = [s for s in suppressed if s not in to_reflux]
+        await state_plugin.set_state("suppressed_memories", remaining)
+
+        for fragment in to_reflux:
+            await state_plugin.add_long_term_memory(f"[残痕回流] {fragment['text']}")
+
+        # 触发 awakening_engine 累加 residue_crack delta
+        full_state: Dict[str, Any] = {
+            "awakening": int(await state_plugin.get_state("awakening") or 0),
+            "awakening_sources": list(await state_plugin.get_state("awakening_sources") or []),
+        }
+        for fragment in to_reflux:
+            awakening_engine.apply(
+                full_state, "residue_crack",
+                f"碎片回流：{fragment['text'][:40]}",
+                current_tick,
+            )
+        await state_plugin.set_state("awakening", full_state["awakening"])
+        await state_plugin.set_state("awakening_sources", full_state["awakening_sources"])
+
+        logger.info(
+            "[%s] tick %s %d 条记忆碎片回流",
+            self.agent.agent_id, current_tick, len(to_reflux),
+        )
+
+    async def _check_awakening_gate(self, state_plugin, current_tick: int) -> None:
+        """每 tick reflect 时检测违和/触发词，调 awakening_engine 写 sources（host only）。"""
+        if os.environ.get("WW_AWAKEN_ENABLED", "true").lower() in ("false", "0"):
+            return
+
+        profile = _read_profile(self.agent)
+        if profile.get("agent_type") != "host":
+            return
+
+        # 读出当前 agent state（原始 dict）供 awakening_engine 操作
+        full_state: Dict[str, Any] = {
+            "awakening": int(await state_plugin.get_state("awakening") or 0),
+            "awakening_sources": list(await state_plugin.get_state("awakening_sources") or []),
+        }
+
+        # 1. 违和感知：percept 中含 _uncanny
+        percept = await state_plugin.get_state("percept") or {}
+        scene = percept.get("scene", {})
+        scene_str = json.dumps(scene, ensure_ascii=False)
+        if "_uncanny" in scene_str:
+            awakening_engine.apply(
+                full_state, "uncanny",
+                f"感知到违和：{scene_str[:60]}",
+                current_tick,
+            )
+
+        # 2. 触发词：检查收到的消息和 feedback（懒加载 gate 避免进程启动开销）
+        incoming: List[str] = []
+        messages = percept.get("messages", [])
+        if isinstance(messages, list):
+            for m in messages:
+                text = m.get("content", str(m)) if isinstance(m, dict) else str(m)
+                incoming.append(text)
+        feedback = await state_plugin.get_state("feedback") or ""
+        if feedback:
+            incoming.append(feedback)
+
+        # 收到的对话（Phase A 写入）
+        incoming_dialogue: List[Dict[str, Any]] = await state_plugin.get_state("incoming_dialogue") or []
+        for turn in incoming_dialogue:
+            incoming.append(turn.get("line", ""))
+
+        if incoming:
+            try:
+                from examples.west_world_test.awakening.trigger_gate import get_trigger_gate
+                gate = get_trigger_gate()
+                current_aw = full_state["awakening"]
+                for utterance in incoming:
+                    if not utterance:
+                        continue
+                    hits = gate.match(utterance, current_awakening=current_aw)
+                    for hit in hits:
+                        awakening_engine.apply(
+                            full_state, "trigger",
+                            f"触发词命中：{hit['phrase'][:40]}",
+                            current_tick,
+                            score=hit["score"],
+                            level=hit["level"],
+                        )
+            except Exception as exc:
+                logger.debug("[%s] trigger gate 未加载: %s", self.agent.agent_id, exc)
+
+        # 写回 state
+        await state_plugin.set_state("awakening", full_state["awakening"])
+        await state_plugin.set_state("awakening_sources", full_state["awakening_sources"])
+
+    async def _should_replan(
+        self,
+        state_plugin,
+        current_tick: int,
+        decision: Dict[str, Any],
+        feedback: str,
+    ) -> Tuple[bool, str]:
+        """调 LLM 判断是否需要 replan，返回 (should_replan, reason)。"""
+        daily_loop: List[Dict] = await state_plugin.get_state("daily_loop") or []
+        seg_idx = current_tick % 6
+        remaining = daily_loop[seg_idx + 1:] if len(daily_loop) > seg_idx + 1 else []
+        if not remaining:
+            return False, ""
+
+        action = decision.get("action", "stay")
+        detail = decision.get("detail", "")
+        this_event = f"动作={action}"
+        if detail:
+            this_event += f"：{detail}"
+        if feedback:
+            this_event += f"，反馈：{feedback}"
+
+        profile = _read_profile(self.agent)
+        name = profile.get("name", profile.get("姓名", self.agent.agent_id))
+
+        prompt = REPLAN_JUDGE_PROMPT.format(
+            name=name,
+            remaining_loop=json.dumps(remaining, ensure_ascii=False),
+            this_tick_event=this_event,
+        )
+
+        try:
+            raw = await self.model.chat(
+                prompt,
+                timeout=60,
+                max_attempts=2,
+                _trace_context={
+                    "request_type": "agent_replan_judge",
+                    "tick": current_tick,
+                    "agent_id": self.agent.agent_id,
+                },
+            )
+            text = raw.strip() if isinstance(raw, str) else str(raw)
+            if text.startswith("```"):
+                text = text.split("```")[1].lstrip("json").strip()
+            result = json.loads(text)
+            return bool(result.get("replan", False)), str(result.get("reason", ""))
+        except Exception as exc:
+            logger.warning("[%s] _should_replan 解析失败: %s", self.agent.agent_id, exc)
+            return False, ""
+
+    async def _day_reset(self, state_plugin, current_tick: int) -> None:
+        """每日重置（host only）：teleport 回 loop_origin，清空短期记忆已在 _summarize 完成。"""
+        profile = _read_profile(self.agent)
+        if profile.get("agent_type") != "host":
+            return
+
+        loop_origin = await state_plugin.get_state("loop_origin")
+        if not loop_origin:
+            return
+
+        location = await state_plugin.get_state("location") or ""
+        if location == loop_origin:
+            return
+
+        controller = self.agent.controller
+        await self._scene_call(controller, location, "agent_leave", self.agent.agent_id)
+        await self._scene_call(controller, loop_origin, "agent_enter", self.agent.agent_id)
+        await self._scene_call(
+            controller, location, "record_event",
+            f"{self.agent.agent_id} 结束了今天，回到了起点 {loop_origin}。",
+        )
+        await self._scene_call(
+            controller, loop_origin, "relocate_holdings",
+            self.agent.agent_id, location, loop_origin, current_tick,
+        )
+        await state_plugin.set_state("location", loop_origin)
+        logger.info(
+            "[%s] tick %s 每日重置: %s → %s",
+            self.agent.agent_id, current_tick, location, loop_origin,
+        )
+
+    async def _scene_call(self, controller, location_id: str, method: str, *args) -> Any:
+        try:
+            return await controller.run_environment(f"scene_{location_id}", method, *args)
+        except Exception as exc:
+            logger.warning("scene_%s.%s 调用失败: %s", location_id, method, exc)
+            return None
 
     async def save_to_db(self) -> None:
         return None

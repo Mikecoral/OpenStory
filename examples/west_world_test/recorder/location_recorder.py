@@ -47,6 +47,20 @@ class LocationRecorder:
         wanted = [c for c in chunk_names if c in READABLE_CHUNKS]
         return {c: self.chunks[c] for c in wanted}
 
+    def perceive(self, agent_id: str, agent_context: dict) -> Dict[str, Any]:
+        """Recorder 主导感知：根据 agent_context 决定返回哪些信息。
+
+        legacy recorder 无 per-agent 可见性，直接按 focus 软提示委托给 read()。
+        """
+        focus = agent_context.get("focus")
+        if isinstance(focus, list) and focus:
+            chunk_names = [c for c in focus if c in READABLE_CHUNKS]
+            if not chunk_names:
+                chunk_names = ["present_agents", "recent_events", "dynamic_objects"]
+        else:
+            chunk_names = ["present_agents", "recent_events", "dynamic_objects"]
+        return self.read(agent_id, chunk_names)
+
     def agent_enter(self, agent_id: str) -> str:
         present = self._present_set()
         present.add(agent_id)

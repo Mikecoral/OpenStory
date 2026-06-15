@@ -163,6 +163,61 @@ class AgentManager:
         await self.step_pre_reflect(tick)
         await self.step_reflect(tick)
 
+    async def step_perceive_plan(self, tick: int) -> None:
+        """Run perceive and plan components for all local agents (first half of pre-reflect)."""
+        tasks = [agent.run(tick, components_to_run=["perceive", "plan"]) for agent in self._agents.values()]
+        if tasks:
+            await asyncio.gather(*tasks)
+
+    async def step_invoke_state(self, tick: int) -> None:
+        """Run invoke and state components for all local agents (second half of pre-reflect)."""
+        tasks = [agent.run(tick, components_to_run=["invoke", "state"]) for agent in self._agents.values()]
+        if tasks:
+            await asyncio.gather(*tasks)
+
+    async def run_agent_plugin_method(
+        self, agent_id: str, component_name: str, method_name: str, *args: Any, **kwargs: Any
+    ) -> Any:
+        """Execute a method on the PLUGIN belonging to a specific agent's component.
+
+        Unlike run_agent_method (which calls on the Component), this calls on the Plugin.
+        """
+        agent = self._agents.get(agent_id)
+        if agent is None:
+            raise ValueError(f"[{self._pod_id}] Agent ID '{agent_id}' not found in this pod.")
+        component = agent.get_component(component_name)
+        if component is None:
+            raise ValueError(f"[{self._pod_id}] Component '{component_name}' not found in agent '{agent_id}'.")
+        plugin = component.get_plugin()
+        if plugin is None:
+            raise ValueError(f"[{self._pod_id}] Plugin not found in component '{component_name}' of agent '{agent_id}'.")
+        member = getattr(plugin, method_name)
+        if callable(member):
+            if inspect.iscoroutinefunction(member):
+                return await member(*args, **kwargs)
+            return member(*args, **kwargs)
+        if args or kwargs:
+            raise TypeError(f"Plugin attribute '{method_name}' is not callable.")
+        return member
+
+    async def collect_talk_intents(self) -> Dict[str, str]:
+        """Return {agent_id: target_agent_id} for agents whose plan_decision is action='talk'."""
+        result: Dict[str, str] = {}
+        for agent_id, agent in self._agents.items():
+            try:
+                state_comp = agent.get_component("state")
+                if state_comp is None:
+                    continue
+                state_plugin = state_comp.get_plugin()
+                decision = await state_plugin.get_state("plan_decision") or {}
+                if decision.get("action") == "talk":
+                    target = decision.get("target", "")
+                    if target:
+                        result[agent_id] = target
+            except Exception:
+                pass
+        return result
+
     async def run_agent_method(
         self, agent_id: str, component_name: str, method_name: str, *args: Any, **kwargs: Any
     ) -> Any:

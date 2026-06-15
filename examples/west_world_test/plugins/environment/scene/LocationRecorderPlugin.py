@@ -73,6 +73,10 @@ class LocationRecorderPlugin(GenericPlugin):
         async with self._recorder_lock:
             return self.recorder.read(agent_id, chunks)
 
+    async def perceive(self, agent_id: str, agent_context: dict) -> Dict[str, Any]:
+        async with self._recorder_lock:
+            return self.recorder.perceive(agent_id, agent_context)
+
     async def submit_action(
         self,
         agent_id: str,
@@ -133,6 +137,14 @@ class LocationRecorderPlugin(GenericPlugin):
             raise RuntimeError("selected recorder does not support restore")
         async with self._recorder_lock:
             restore(snapshot)
+
+    async def relocate_holdings(
+        self, agent_id: str, from_location: str, to_location: str,
+        tick: Optional[int] = None,
+    ) -> None:
+        from examples.west_world_test.recorder.world_object_registry import get_object_registry
+        async with self._recorder_lock:
+            get_object_registry().relocate_holdings(agent_id, to_location, tick)
 
     async def save_to_db(self) -> None:
         return None

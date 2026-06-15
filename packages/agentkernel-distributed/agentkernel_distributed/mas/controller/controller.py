@@ -98,6 +98,36 @@ class ControllerImpl(BaseController):
         current_tick = await self.run_system("timer", "get_tick")
         await self._agent_manager.step_reflect(current_tick)
 
+    async def step_perceive_plan(self) -> None:
+        """Run perceive + plan for all local agents (first half of pre-reflect)."""
+        if not self._agent_manager:
+            raise RuntimeError("AgentManager is not initialized.")
+        current_tick = await self.run_system("timer", "get_tick")
+        await self._agent_manager.step_perceive_plan(current_tick)
+
+    async def step_invoke_state(self) -> None:
+        """Run invoke + state for all local agents (second half of pre-reflect)."""
+        if not self._agent_manager:
+            raise RuntimeError("AgentManager is not initialized.")
+        current_tick = await self.run_system("timer", "get_tick")
+        await self._agent_manager.step_invoke_state(current_tick)
+
+    async def run_agent_plugin_method(
+        self, agent_id: str, component_name: str, method_name: str, *args: Any, **kwargs: Any
+    ) -> Any:
+        """Delegate a method call to the plugin of a specific agent's component."""
+        if not self._agent_manager:
+            raise RuntimeError("AgentManager is not initialized.")
+        return await self._agent_manager.run_agent_plugin_method(
+            agent_id, component_name, method_name, *args, **kwargs
+        )
+
+    async def collect_talk_intents(self) -> Dict[str, str]:
+        """Return {agent_id: target_id} for agents whose plan_decision is action='talk'."""
+        if not self._agent_manager:
+            return {}
+        return await self._agent_manager.collect_talk_intents()
+
     def get_token_usage(self) -> Dict[str, int]:
         if self._model_router is None:
             return {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}
@@ -349,6 +379,9 @@ class ControllerImpl(BaseController):
         """
         Execute a method on an environment component.
 
+        If the component is found in the local environment, executes it there.
+        Otherwise forwards to the pod manager so the world pod can handle it.
+
         Args:
             component_name (str): Environment component exposing the method.
             method_name (str): Name of the method to execute.
@@ -359,11 +392,15 @@ class ControllerImpl(BaseController):
             Any: Result produced by the environment method.
 
         Raises:
-            RuntimeError: If the environment proxy is unavailable.
+            RuntimeError: If neither local environment nor pod manager can serve the request.
         """
-        if not self._environment:
-            raise RuntimeError("Environment is not initialized in the System.")
-        return await self._environment.run(component_name, method_name, *args, **kwargs)
+        if self._environment and component_name in self._environment.components:
+            return await self._environment.run(component_name, method_name, *args, **kwargs)
+        if self._pod_manager:
+            return await self._pod_manager.run_environment.remote(component_name, method_name, *args, **kwargs)
+        raise RuntimeError(
+            f"Environment component '{component_name}' not found locally and no pod_manager available."
+        )
 
     async def list_action_components(self) -> List[str]:
         """

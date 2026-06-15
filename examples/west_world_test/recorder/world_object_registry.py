@@ -93,6 +93,42 @@ class WorldObjectRegistry:
             ]
             return [copy.deepcopy(r) for r in rows]
 
+    @property
+    def _AWAKENING_UNCANNY_THRESHOLD(self) -> int:
+        import os
+        return int(os.environ.get("WW_UNCANNY_THRESHOLD", "30"))
+
+    def objects_at_for_viewer(
+        self,
+        location_id: str,
+        viewer_discovered: set,
+        viewer_awakening: int = 0,
+    ) -> List[Dict[str, Any]]:
+        """返回对特定 viewer 可见的对象列表（per-agent 过滤）。
+
+        规则：
+        - 非 hidden 对象：对所有 viewer 可见。
+        - hidden 对象：仅当 object_id ∈ viewer_discovered 时对该 viewer 可见。
+        - 非 hidden 且有 secret 字段：viewer_awakening 达阈值时在副本中附 _uncanny 键。
+        不改变 registry 内部状态——纯读路径。
+        """
+        with self._lock:
+            result = []
+            for r in self._objects.values():
+                if r["location_id"] != location_id or r["destroyed"]:
+                    continue
+                if r["hidden"] and r["object_id"] not in viewer_discovered:
+                    continue
+                row = copy.deepcopy(r)
+                if (
+                    not r["hidden"]
+                    and row.get("secret")
+                    and viewer_awakening >= self._AWAKENING_UNCANNY_THRESHOLD
+                ):
+                    row["_uncanny"] = row["secret"]
+                result.append(row)
+            return result
+
     def relocate_holdings(self, agent_id: str, to_location: str, tick: Optional[int] = None) -> None:
         with self._lock:
             for row in self._objects.values():
