@@ -1,25 +1,23 @@
 # West World Test - 开发笔记
 
-> 最后更新：2026-06-14
+> 最后更新：2026-06-15
 >
-> 正式仿真（M0–M3）的状态卡片。只保留「已完成」和「待办」两部分。
+> 正式仿真（M0–M3+）的状态卡片。只保留「已完成」和「待办」两部分。
 
 ## 已完成
 
 ### 正式仿真的完整 5 段生命周期（Agent）
 
-- `perceive`：`WestWorldPerceivePlugin` 抓取当前位置可见信息到 `percept`。
+- `perceive`：`WestWorldPerceivePlugin` 调 `recorder.perceive(agent_id, agent_context)` 获取个性化感知（5 因子：location/discovered_ids/awakening/traits/last_action+focus）。
 - `plan`：`WestWorldPlanPlugin` 基于 percept 用 LLM 做决策，写 `plan_decision` 和 `next_read`。
-- `invoke`：`WestWorldInvokePlugin` 执行动作（move/do/stay），传给 Recorder。
+- `invoke`：`WestWorldInvokePlugin` 执行动作（move/do/stay），传给 Recorder；`relocate_holdings` 已改为路由调用，不在 agent 进程直接访问 registry。
 - `state`：`BasicStatePlugin` 更新 agent 本地状态。
 - `reflect`：`WestWorldReflectPlugin` 每 tick 累积短期记忆，每 `WW_REFLECT_INTERVAL`（默认 6）tick 用 LLM 总结进长期记忆并清空。
-
-都已在 `registry_sim.py` 和 `configs_sim/agents_config.yaml` 注册且写入 `component_order`。
 
 ### 地图与资源管理
 
 - `worldmap/loader.py`：`get_world_map(path)` 带 `@lru_cache`，确保地图单例加载；`default_map_path()` 提供相对安全的路径解析。
-- 所有插件使用 `get_world_map()` 替代各自 load，避免重复加载。
+- **全地图激活**（2026-06-15）：31 个地点全部 `active: true`。Backstage 5 个地点（backstage_control/cold_storage/staff_dormitory/programmer_workspace/surface_maintenance_station）邻接孤岛——B 阶段建"维修传送门"才进入。
 
 ### 结构化日志与快照系统
 
@@ -28,97 +26,100 @@
 - `manifest.json` / `provenance.json`：元数据与运行环境。
 - `timeline.jsonl`：每 tick 的可安全查询聚合快照（初始 + 动作结果）。
 - `agent_states.jsonl`：逐 agent 逐 tick 的可安全查询状态；私有反馈、消息、记忆与完整 plan trace 写入 `internal/agent_states.jsonl`。
-- `scene_snapshots_public.jsonl` / `scene_snapshots_internal.jsonl`：场景状态（分别对外与内部诊断）。
-- `model_traces.jsonl` / `raw/llm_requests.jsonl`：可安全查询的调用摘要，不含 prompt、模型原始输出和隐藏场景信息。
-- `internal/model_traces.jsonl`：内部诊断用完整 prompt/response/parse；不可对外暴露。
-- `raw/llm_attempts.jsonl`：ModelRouter 调用尝试记录。
-- `summary.json`：汇总所有 agent 与 Recorder 调用的 token、延迟、失败和重试指标。
-
-可用 `log_cli` 查询。
+- `scene_snapshots_public.jsonl` / `scene_snapshots_internal.jsonl`：场景状态。
+- `model_traces.jsonl` / `raw/llm_requests.jsonl`：调用摘要（不含隐藏信息）。
 
 ### Recorder 两种模式
 
-- **Structured**（`WW_RECORDER_MODE=structured`，**当前默认**）：`StructuredLocationRecorder`。LLM 把自由文本动作解析成对已注册对象的 free-form patch（`patches:[{object_id, <任意字段>}]`），走确定性 reducer；世界级 registry ledger 保留对象级 before/after，location fact ledger 只引用本次 registry events，避免重复嵌套完整世界快照。
+- **Structured**（`WW_RECORDER_MODE=structured`，**当前默认**）：`StructuredLocationRecorder`。
 - **Legacy**（`WW_RECORDER_MODE=legacy`）：原始 Text Recorder，baseline 对照用。
 
-两者并存，支持对比测试。
+### Recorder 主导感知（P/R 阶段，2026-06-15）
 
-### 测试覆盖
+**感知协议变更**：放弃"agent 自选 next_read 拉取"，改成 recorder 千人千面决定告知内容。
 
-所有关键模块已有单元测试（当前 `127 passed, 1 skipped`）：
-- `test_location_recorder.py` / `test_structured_location_recorder.py`
-- `test_reflect_plugin.py` / `test_worldmap.py`
-- `test_sim_plugins.py` / `test_sim_skeleton.py`
+- ✅ `WorldObjectRegistry.objects_at_for_viewer(location_id, viewer_discovered, viewer_awakening)`：per-agent 可见性过滤。hidden 对象仅在 `discovered_ids` 中的 viewer 可见；非隐藏对象觉醒度 ≥ 30 时附 `_uncanny` 揭示 secret 字段。
+- ✅ `StructuredLocationRecorder.perceive(agent_id, agent_context)`：基础在场信息对同地点所有人一致；dynamic_objects 按 viewer 过滤；agent 可通过 focus 给软关注点提示，但不能越权。
+- ✅ `LocationRecorder.perceive(agent_id, agent_context)`：legacy 版本，按 focus 委托 read()（无 per-agent 可见性）。
+- ✅ `LocationRecorderPlugin.perceive`：异步包装。
+- ✅ `LocationRecorderPlugin.relocate_holdings`：异步包装，路由至 registry（不要 agent 进程直接访问）。
+- ✅ `WestWorldPerceivePlugin`：组装 5 因子 agent_context → 调 `perceive` 接口。
+- ✅ `WestWorldInvokePlugin`：移除 `get_object_registry()` 直接 import；`relocate_holdings` 改为 `_scene_call` 路由。
 
-## 已完成（最近）
+### A2 多 pod 并发重设计（P 阶段，2026-06-15）
+
+**世界 pod 模式**：`pod_world`（agents=[]，完整 environment）+ N 个 agent pod（environment=None）。
+
+- ✅ `WestWorldPodManager`：完整重写。world pod 为 pods[0]（与内核 `save_to_db("all")` 约定一致）。`step_agent` 实现三段 barrier：pre_reflect → world tick_update（所有 scene.execute 并发）→ reflect。
+- ✅ `controller.run_environment`：本地无组件时转发到 pod_manager（agent pod 自动路由环境调用到世界 pod）。
+- ✅ `run_simulation.py`：移除 scene execute 循环，已移入 `step_agent`。
 
 ### Tick-Atomic Recorder 并发重构
 
-将 Recorder 并发模型从"即时处理"改为"冻结-收集-批处理"，消除同 tick 内的隐式顺序。设计见 `docs/superpowers/specs/2026-06-14-west-world-tick-atomic-recorder-design.md`。
+- ✅ `submit_action()` 改为只入队，`tick_update()` 统一 batch 裁决。
+- ✅ `read_feedback(agent_id)`：返回并清除上一 tick per-agent feedback。
+- ✅ Qwen3.5-flash non-thinking 修复：`extra_body={"enable_thinking": False}`。
 
-- ✅ `submit_action()` 改为只入队，立即返回 `status="queued"` 占位，不触发 LLM。
-- ✅ `tick_update()` 统一处理本 tick 所有意图：drain 队列 → 一次 batch LLM 调用 → 原子 apply patches → 写 `pending_feedback`。
-- ✅ 同一地点 N 个 agent 的动作一次 LLM 调用裁决（`_BATCH_PROPOSAL_PROMPT` + `actions[]` 输出），无顺序依赖。
-- ✅ `do` 类型全局 event_summary 移动关键词规范化（同单 agent 路径一致）。
-- ✅ `read_feedback(agent_id)` 新方法：返回并清除上一 tick 动作的 per-agent feedback。
-- ✅ `WestWorldPerceivePlugin`：perceive 开头调 `read_feedback`，替代 invoke 写 state feedback。
-- ✅ `WestWorldInvokePlugin`：`do` 分支去掉读取 result 并写 feedback 的逻辑。
-- ✅ `snapshot()`/`restore()` 新增 `intent_queue` 和 `pending_feedback` 字段。
-- ✅ 测试：136 passed（含 8 个新增用例：tick 冻结验证、双 agent 争抢、batch 失败、单条非法 patch 隔离等）。
-- ✅ Qwen3.5-flash non-thinking 修复：`/no_think` 软开关仅 Qwen3 支持，Qwen3.5 需用 `extra_body={"enable_thinking": False}`；修复后测试耗时从 10 分钟降至 44 秒。
+### Structured Recorder 对象模型
 
-### Structured Recorder 对象模型重构
+- ✅ `WorldObjectRegistry`：世界级真值源（create/destroy/apply_patch/relocate_holdings）。
+- ✅ 自由创造/销毁对象、跨地点转移、held_by、ambient chunk、世界级审计 ledger。
+- ✅ location 视图实时刷新（不返回缓存旧状态）。
 
-通过 `recorder/world_object_registry.py` 中的 `WorldObjectRegistry` 把对象所有权从 location-anchored 升级为世界级真值源，`StructuredLocationRecorder` 退化为 location 视图。设计见 `docs/superpowers/specs/2026-06-14-west-world-world-object-model-design.md`，实现见 `docs/superpowers/plans/2026-06-14-west-world-world-object-model.md`。
+### 角色扩编（E 阶段，2026-06-15）
 
-已解决的架构缺口：
+新增 8 名角色（host 6 + guest 2）：
 
-- ✅ 自由创造/销毁对象：`new_objects` / `destroy` 字段，无模板/白名单/硬上限，reducer 分配全局 `obj_*` id 并记录 provenance。
-- ✅ 跨地点对象转移：持有物随持有者移动，`invoke.apply_move` 成功后调 `registry.relocate_holdings(...)`。
-- ✅ `held_by` 可在在场 agent 间传递：校验 `held_by ∈ {"", 行动者} ∪ 本地点在场 agent`。
-- ✅ ambient 环境态：新增 `ambient` chunk，可记录光线/气味/声音/气氛等整体环境文本。
-- ✅ 世界级审计：每 tick 落盘 `world_objects_snapshots.jsonl`，含完整对象状态与 append-only ledger。
+| id | 角色 | 初始位置 |
+|---|---|---|
+| kissy | 马里波萨酒保 | sweetwater_saloon |
+| rebus | 地痞/打手 | sweetwater_plaza |
+| hector_escaton | 帕里亚匪帮头目 | pariah_casino |
+| armistice | 匪帮副手 | pariah_fight_pit |
+| lawrence | 荒野流浪者 | wilderness |
+| william | 访客（新人） | sweetwater_train_station |
+| logan | 访客（老手） | sweetwater_train_station |
 
-### 正确性与可观测性修复
+`profiles_sim.jsonl` / `states_sim.jsonl`（含 `discovered_ids`/`awakening`）/ `relations_sim.jsonl` 均已更新。
 
-- ✅ location 视图实时刷新：对象被转移后，旧地点与新地点读取时都会从 registry 重绘 `dynamic_objects`，不再返回缓存旧状态。
-- ✅ 消息进入决策链：agent 收到的消息在下一次 perceive 中消费一次，并进入 plan prompt。
-- ✅ 广播范围生效：只有 `broadcast_level=location` 的事件会进入地点公共 `recent_events`。
-- ✅ 快照恢复接口：registry、structured recorder 和 scene plugin 支持显式恢复快照。
-- ✅ 单 pod 安全约束：当前 process-local 世界真值仅允许单 pod；初始化或动态加人将产生第二 pod 时直接报错，避免静默分裂世界状态。
-- ✅ 日志统计与脱敏：Recorder 调用计入 token、延迟、失败与重试汇总；失败尝试与最终失败业务请求分开计数；包含隐藏场景的完整请求仅写入 `internal/`。
-- ✅ Recorder 不再阻塞 pod：同步 Recorder/模型请求通过工作线程执行，地点级锁保证同一地点的写入、读取、进出场与快照一致。
-- ✅ `do` 不再静默丢失：解析失败或非法提案写入 `fact_ledger` 的 `unresolved` 记录，并按 `WW_ACTION_RETRY_LIMIT`（默认 3）有限重试；失败原因返回给行动者。
-- ✅ 角色对话真实投递：plan 可输出 `recipient_ids`；Invoke 校验接收者在同一地点后，通过 Kernel Messager 投递并在下一 tick 进入接收者感知。
-- ✅ `do` / `move` 语义隔离：plan 与 Recorder prompt 明确禁止 `do` 跨地点移动；Recorder 对声称离场/到达的 `do` 公共事件进行确定性规范化；真实 `move` 由系统向起点与终点写入权威事件。
-- ✅ 正式仿真反馈修复：过滤 Kernel Messager 回送给发送者的自消息；非法 `broadcast_level` 自动规范化；Recorder 默认使用 `/no_think`，与 agent Plan Router 保持一致。
-- ✅ 正式仿真启动清理：移除西部世界未使用且不满足当前抽象接口的红楼梦 Action Plugin 注册；移动与通信继续由 Invoke / Kernel Messager 负责。
+### Narrative Loop（N 阶段，2026-06-15）
 
-- ✅ 结构化物品所有权生效：Recorder prompt 明确把「拿起/手持/接过」等动作与 `held_by` 字段绑定，并给出带 `held_by` 的 patch 示例；真实 LLM 现在会在 pickup/放下时正确设置 `held_by`，`relocate_holdings` 不再是死代码。
-- ✅ Patch ledger 可审计：`WorldObjectRegistry.apply_patch` 记录 `by` 与 `tick`，ledger 能追溯到谁在哪个 tick 修改了对象。
-- ✅ Report 完整展示 batch 请求：`report/report.md` 慢请求表对 location_recorder batch 请求展示 `agent_ids` 列表与 `model`，不再留空。
+**零移动问题根治**：引入每日循环脚本，驱动角色按 loop 地点移动、相遇。
+
+- ✅ `profiles_sim.jsonl`：13 角色各加 `agent_type`（host/guest）+ `daily_loop`（6 段固定脚本）。
+- ✅ `WestWorldPlanPlugin`：天首（`tick % 6 == 0`）复制固定 loop 到 state，每 tick 取当前段注入 prompt 软骨架；加 `replan_remaining()` 供 reflect 调用。
+- ✅ `WestWorldReflectPlugin`：加 `_should_replan`（`WW_ENABLE_REPLAN=true` 时调 LLM 判断，默认关闭）、天边界 `_day_reset`（host only: teleport 回 loop_origin）。
+- 关键交汇点：下午@sweetwater（dolores×teddy）、傍晚@sweetwater_saloon（hector+armistice 突袭×maeve 迎接）。
+- 运行参数：`WW_ENABLE_REPLAN=true` 开启 replan；默认关闭。
+
+### 测试覆盖
+
+当前 **184 passed**（含新增的 `test_narrative_loop.py`：33 个 loop 数据校验 + 机制单测）。
 
 ## 待办
 
-### 暂缓：正式仿真 legacy / structured 同协议对比
+### B 阶段：监管者后台系统
 
-只有用户明确要求时才设计或执行；平时不主动询问、不作为默认下一步。
+- 5 个 backstage 地点与主世界邻接孤岛，等 B 阶段建"维修传送门"路由。
+- staff 类角色（Ford/Bernard/Stubbs）尚未加入，需要非标准生命周期（不走 host 五段式）。
 
-### 多 pod 共享世界真值
+### A 阶段：叙事机制
 
-当前通过 fail-fast 保证单 pod 下的正确性。若后续需要超过单 pod 容量，应把 `WorldObjectRegistry` 和 scene 状态迁移到共享服务，而不是移除安全检查。
+- 验证 Narrative Loop 实际效果：跑 12-tick 仿真，断言 move 次数 > 0、角色按 loop 地点流动、host 在 tick 6 回到起点。
+- 多 host 之间的叙事链（quest/narrative_loop 动态分配）。
+- 觉醒度累积机制（何时 +awakening，如何触发 _uncanny 揭示）。
 
 ### 框架级 rollback 集成
 
-当前已提供 registry / recorder / scene 的显式 restore 接口，但尚未接入 AgentKernel 的统一持久化与 rollback 生命周期。
+registry / recorder / scene 的显式 restore 接口已存在，尚未接入 AgentKernel 统一 snapshot/rollback 生命周期。
 
-### 自由文本动作解析的完整覆盖
+### 自由文本动作解析完整覆盖
 
-当前 A/B 测试（`eval/run_free_text_reducer_ab.py`）仍基于固定脚本数据。正式仿真的真实 LLM 动作更自由，解析链路需继续演进：
+继续演进 Recorder prompt 和 reducer，定期与真实数据对比评估。
 
-- 扩大动作类型白名单。
-- 改进多步动作拆解；当前失败动作会持久化并有限重试，但尚未提供人工对账/重新入队工具。
-- 定期与真实数据对比评估。
+### 暂缓：MVE 对照实验（core/）
+
+推迟到论文写作阶段。
 
 ---
 
@@ -127,11 +128,6 @@
 ### 运行正式仿真
 
 ```bash
-# Baseline（legacy Recorder）
-PYTHONPATH=$PWD:$PWD/packages/agentkernel-distributed \
-WW_MAX_TICKS=10 python -m examples.west_world_test.run_simulation
-
-# Structured Recorder
 PYTHONPATH=$PWD:$PWD/packages/agentkernel-distributed \
 WW_RECORDER_MODE=structured WW_MAX_TICKS=10 \
 python -m examples.west_world_test.run_simulation
@@ -146,20 +142,15 @@ PYTHONPATH=$PWD:$PWD/packages/agentkernel-distributed \
 pytest examples/west_world_test/tests -q
 ```
 
-### 查询日志
-
-```bash
-python -m examples.west_world_test.log_cli summary <run_id>
-python -m examples.west_world_test.log_cli tick <run_id> <tick_num>
-python -m examples.west_world_test.log_cli agent <run_id> <agent_id>
-```
-
 ### 关键源码位置
 
 | 模块 | 路径 |
 |---|---|
+| Pod 管理（A2） | `WestWorldPodManager.py` |
 | Agent 生命周期 | `plugins/agent/{perceive,plan,invoke,reflect}/` |
 | Recorder（两种） | `recorder/{location_recorder.py,structured_location_recorder.py}` |
+| per-agent 感知 | `recorder/world_object_registry.py → objects_at_for_viewer` |
 | 环境场景 | `plugins/environment/scene/LocationRecorderPlugin.py` |
 | 地图加载器 | `worldmap/loader.py`（真值数据在 `data/map/locations.yaml`） |
 | 注册表与配置 | `registry_sim.py` / `configs_sim/` |
+| 角色数据 | `data/agents/profiles_sim.jsonl` / `states_sim.jsonl` |
