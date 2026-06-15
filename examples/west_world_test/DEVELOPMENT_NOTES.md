@@ -94,6 +94,10 @@
 - ✅ 正式仿真反馈修复：过滤 Kernel Messager 回送给发送者的自消息；非法 `broadcast_level` 自动规范化；Recorder 默认使用 `/no_think`，与 agent Plan Router 保持一致。
 - ✅ 正式仿真启动清理：移除西部世界未使用且不满足当前抽象接口的红楼梦 Action Plugin 注册；移动与通信继续由 Invoke / Kernel Messager 负责。
 
+- ✅ 结构化物品所有权生效：Recorder prompt 明确把「拿起/手持/接过」等动作与 `held_by` 字段绑定，并给出带 `held_by` 的 patch 示例；真实 LLM 现在会在 pickup/放下时正确设置 `held_by`，`relocate_holdings` 不再是死代码。
+- ✅ Patch ledger 可审计：`WorldObjectRegistry.apply_patch` 记录 `by` 与 `tick`，ledger 能追溯到谁在哪个 tick 修改了对象。
+- ✅ Report 完整展示 batch 请求：`report/report.md` 慢请求表对 location_recorder batch 请求展示 `agent_ids` 列表与 `model`，不再留空。
+
 ## 待办
 
 ### 暂缓：正式仿真 legacy / structured 同协议对比

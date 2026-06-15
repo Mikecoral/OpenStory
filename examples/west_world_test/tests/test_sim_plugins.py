@@ -1,10 +1,16 @@
 """M2 插件逻辑测试：占位感知、随机游走、移动落实（无 Ray/Redis）。"""
 import json
+import asyncio
 from pathlib import Path
 
+from agentkernel_distributed.types.schemas.message import Message, MessageKind
 from examples.west_world_test.plugins.agent.perceive.WestWorldPerceivePlugin import build_percept
 from examples.west_world_test.plugins.agent.plan.RandomWalkPlanPlugin import decide
-from examples.west_world_test.plugins.agent.invoke.WestWorldInvokePlugin import apply_move
+from examples.west_world_test.plugins.agent.invoke.WestWorldInvokePlugin import (
+    WestWorldInvokePlugin,
+    apply_move,
+    eligible_recipients,
+)
 from examples.west_world_test.worldmap.loader import load_world_map
 
 WORLD = load_world_map(str(Path(__file__).parents[1] / "data" / "map" / "locations.yaml"))
@@ -58,12 +64,16 @@ def test_plan_prompt_contains_loop_percept_feedback_and_neighbors():
     profile = {"姓名": "德洛丽丝", "性格": "温柔好奇", "narrative_loop": "清晨在农场醒来，上午去镇上采购。"}
     percept = {"location": "abernathy_ranch", "here_description": "农场。",
                "neighbors": ["sweetwater"], "known_map": ["abernathy_ranch"],
-               "scene": {"present_agents": "peter_abernathy", "recent_events": []}}
+               "scene": {"present_agents": "peter_abernathy", "recent_events": []},
+               "messages": [{"from_id": "teddy", "content": "我在镇上等你"}]}
     prompt = render_plan_prompt(profile, percept, feedback="你捡起了一支画笔。", tick=5)
-    for needle in ("德洛丽丝", "清晨在农场醒来", "农场。", "sweetwater", "画笔"):
+    for needle in ("德洛丽丝", "清晨在农场醒来", "农场。", "sweetwater", "画笔", "我在镇上等你"):
         assert needle in prompt
+    assert "严禁描述离开" in prompt
+    assert "recipient_ids" in prompt
     decision = parse_decision('{"action": "move", "target": "sweetwater", "detail": "", "next_read": ["recent_events"]}')
     assert decision["action"] == "move" and decision["target"] == "sweetwater"
+    assert decision["recipient_ids"] == []
     assert parse_decision("乱七八糟")["action"] == "stay"     # 解析失败降级为 stay
 
 
@@ -78,3 +88,74 @@ def test_invoke_move_relocates_holdings():
     reg.relocate_holdings("hector", new_state["location"], tick=2)
     assert reg.get("obj_0")["location_id"] == "sweetwater"
     assert reg.get("obj_0")["held_by"] == "hector"
+
+
+def test_perceive_consumes_messages_once():
+    from examples.west_world_test.plugins.agent.perceive.WestWorldPerceivePlugin import WestWorldPerceivePlugin
+
+    plugin = WestWorldPerceivePlugin(world=WORLD)
+    message = Message("teddy", "dolores", MessageKind.FROM_AGENT_TO_AGENT, "我在镇上等你")
+    asyncio.run(plugin.add_message(message))
+
+    assert plugin._consume_messages() == [{
+        "from_id": "teddy",
+        "content": "我在镇上等你",
+        "kind": "from_agent_to_agent",
+    }]
+    assert plugin._consume_messages() == []
+
+
+def test_perceive_filters_sender_echo_from_kernel_messager():
+    from examples.west_world_test.plugins.agent.perceive.WestWorldPerceivePlugin import WestWorldPerceivePlugin
+
+    plugin = WestWorldPerceivePlugin(world=WORLD)
+    plugin._component = type("Component", (), {
+        "agent": type("Agent", (), {"agent_id": "maeve"})()
+    })()
+    asyncio.run(plugin.add_message(
+        Message("maeve", "clementine", MessageKind.FROM_AGENT_TO_AGENT, "清理牌桌")
+    ))
+    asyncio.run(plugin.add_message(
+        Message("clementine", "maeve", MessageKind.FROM_AGENT_TO_AGENT, "已经清理好了")
+    ))
+
+    assert plugin._consume_messages() == [{
+        "from_id": "clementine",
+        "content": "已经清理好了",
+        "kind": "from_agent_to_agent",
+    }]
+
+
+def test_message_recipients_must_be_present_and_unique():
+    assert eligible_recipients(
+        "maeve", ["clementine", "ghost", "clementine", "maeve"],
+        "maeve、clementine",
+    ) == ["clementine"]
+
+
+def test_invoke_delivers_explicit_dialogue_through_messager():
+    class Controller:
+        def __init__(self):
+            self.messages = []
+
+        async def run_environment(self, _component, method, *_args):
+            assert method == "read"
+            return {"present_agents": "maeve、clementine"}
+
+        async def run_system(self, component, method, message):
+            assert (component, method) == ("messager", "send_message")
+            self.messages.append(message)
+
+    plugin = WestWorldInvokePlugin(world=WORLD)
+    plugin._component = type("Component", (), {
+        "agent": type("Agent", (), {"agent_id": "maeve"})()
+    })()
+    controller = Controller()
+
+    delivered = asyncio.run(plugin._deliver_messages(
+        controller, "sweetwater_saloon", ["clementine", "ghost"], "把碎玻璃清理掉。", 2
+    ))
+
+    assert delivered == ["clementine"]
+    assert controller.messages[0].to_id == "clementine"
+    assert controller.messages[0].content == "把碎玻璃清理掉。"

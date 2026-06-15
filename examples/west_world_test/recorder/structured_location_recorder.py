@@ -37,7 +37,7 @@ _BATCH_PROPOSAL_PROMPT = """你是地点「{location_name}」的动作解析器�
 - patches 只能针对【可见对象】；隐藏物件严禁出现在 patches 中。
 - 可以更新任意字段（state、quantity、container 等），字段值为简短中文字符串（不超过 100 字）。
 - state 是主要状态描述，优先用它记录对象当前状况。
-- held_by 只能设为持有者 agent_id、空字符串（表示放下），或本地点在场角色。
+- held_by 是结构化所有权：当动作涉及「拿起、手持、接过、握住、抓起、拾起」某可见对象时，必须同时将该对象的 held_by 设为行动者 agent_id；涉及「放下、递出、交给、丢弃」时，必须将 held_by 改为空字符串或接收者 agent_id。
 - 只更新确实发生变化的字段，未变化的字段不要出现在 patch 中。
 - 动作完全不涉及任何可见对象时 patches 为空数组。
 - new_objects：当动作产生新的可见物时声明，每项含 name 与初始字段；不得标 hidden。
@@ -49,7 +49,7 @@ _BATCH_PROPOSAL_PROMPT = """你是地点「{location_name}」的动作解析器�
 只输出 JSON，actions 数组顺序必须与输入动作列表顺序一致（顺序：{agent_ids}）：
 {{"actions": [
   {{"agent_id": "角色id", "permission": true, "reason": "", "private_feedback": "...",
-    "patches": [{{"object_id": "obj_0", "state": "新状态"}}],
+    "patches": [{{"object_id": "obj_0", "state": "被角色握在手中", "held_by": "角色id"}}],
     "new_objects": [{{"name": "地上的血", "state": "暗红一滩", "held_by": ""}}],
     "destroy": []}}
 ],
@@ -80,7 +80,7 @@ _PROPOSAL_PROMPT = """你是地点「{location_name}」的动作解析器与场�
 - patches 只能针对【可见对象】，每条包含 object_id 以及要修改的字段；隐藏物件严禁出现在 patches 中。
 - 可以更新任意字段（state、quantity、container 等），字段值为简短中文字符串（不超过 100 字）。
 - state 是主要状态描述，优先用它记录对象当前状况。
-- held_by 只能设为行动者 id（{agent_id}）、空字符串（表示放下），或本地点在场的任意角色（present_agents）。
+- held_by 是结构化所有权：当动作涉及「拿起、手持、接过、握住、抓起、拾起」某可见对象时，必须同时将该对象的 held_by 设为行动者 id（{agent_id}）；涉及「放下、递出、交给、丢弃」时，必须将 held_by 改为空字符串或接收者 agent_id。
 - 只更新确实发生变化的字段，未变化的字段不要出现在 patch 中。
 - 动作完全不涉及任何可见对象时 patches 为空数组。
 - new_objects：当动作产生新的可见物（倒出的酒、地上的血、掉落的弹壳）时声明，每项含 name 与初始字段；不得标 hidden。
@@ -92,7 +92,7 @@ _PROPOSAL_PROMPT = """你是地点「{location_name}」的动作解析器与场�
 
 只输出 JSON：
 {{"permission": true, "reason": "", "private_feedback": "...", "broadcast_level": "none|location",
-"event_summary": "", "patches": [{{"object_id": "obj_0", "state": "新状态"}}],
+"event_summary": "", "patches": [{{"object_id": "obj_0", "state": "被{agent_id}握在手中", "held_by": "{agent_id}"}}],
 "new_objects": [{{"name": "地上的血", "state": "暗红一滩", "held_by": ""}}],
 "destroy": ["obj_5"],
 "ambient": ""}}
@@ -219,7 +219,7 @@ class StructuredLocationRecorder(LocationRecorder):
                             tick=tick, action=action_text, fields=spec["fields"], hidden=False,
                             held_by=spec["held_by"],
                         )
-                    self._apply_patches(patches)
+                    self._apply_patches(patches, agent_id, tick)
                     for oid in destroy_ids:
                         self.registry.destroy(oid, by=agent_id, tick=tick)
                 except ValueError as exc:
@@ -355,9 +355,13 @@ class StructuredLocationRecorder(LocationRecorder):
             validated.append({"object_id": object_id, "updates": updates})
         return validated
 
-    def _apply_patches(self, patches: List[Dict[str, Any]]) -> None:
+    def _apply_patches(
+        self, patches: List[Dict[str, Any]], agent_id: str, tick: Optional[int],
+    ) -> None:
         for patch in patches:
-            self.registry.apply_patch(patch["object_id"], patch["updates"])
+            self.registry.apply_patch(
+                patch["object_id"], patch["updates"], by=agent_id, tick=tick,
+            )
 
     def _validate_new_objects(self, raw: Any, agent_id: str) -> List[Dict[str, Any]]:
         result = []

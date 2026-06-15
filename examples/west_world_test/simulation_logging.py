@@ -1,6 +1,7 @@
 """Structured, append-only logging for the West World simulation track."""
 from __future__ import annotations
 
+import copy
 import json
 import os
 import platform
@@ -32,6 +33,43 @@ def _redacted_models_config(path: Path) -> Any:
             if isinstance(row, dict) and "api_key" in row:
                 row["api_key"] = "REDACTED"
     return rows
+
+
+_SENSITIVE_TRACE_FIELDS = {"prompt", "raw_response", "parsed_response", "pending_actions"}
+_SENSITIVE_AGENT_STATE_FIELDS = {"feedback", "short_term_memory", "long_term_memory"}
+
+
+def _trace_summary(row: Dict[str, Any]) -> Dict[str, Any]:
+    """Return a query-safe trace without prompts, model output, or hidden context."""
+    return {
+        key: value
+        for key, value in row.items()
+        if key not in _SENSITIVE_TRACE_FIELDS
+    }
+
+
+def _public_agent_state(state: Dict[str, Any]) -> Dict[str, Any]:
+    """Strip private state and full model traces from query-facing logs."""
+    public = copy.deepcopy(state)
+    for key in _SENSITIVE_AGENT_STATE_FIELDS:
+        public.pop(key, None)
+    trace = public.get("plan_trace")
+    if isinstance(trace, dict):
+        public["plan_trace"] = _trace_summary(trace)
+    percept = public.get("percept")
+    if isinstance(percept, dict):
+        percept.pop("messages", None)
+    return public
+
+
+def _usage_from_rows(rows: Iterable[Dict[str, Any]]) -> Counter:
+    usage = Counter()
+    for row in rows:
+        for key in ("prompt_tokens", "completion_tokens", "total_tokens"):
+            value = row.get("usage", {}).get(key)
+            if isinstance(value, int):
+                usage[key] += value
+    return usage
 
 
 def check_state_consistency(
@@ -110,9 +148,11 @@ class SimulationLogArchive:
                 "timeline": "timeline.jsonl",
                 "events": "events.jsonl",
                 "agent_states": "agent_states.jsonl",
+                "agent_states_internal": "internal/agent_states.jsonl",
                 "scene_snapshots_public": "scene_snapshots_public.jsonl",
                 "scene_snapshots_internal": "scene_snapshots_internal.jsonl",
                 "model_traces": "model_traces.jsonl",
+                "model_traces_internal": "internal/model_traces.jsonl",
                 "llm_requests": "raw/llm_requests.jsonl",
                 "llm_attempts": "raw/llm_attempts.jsonl",
                 "world_objects_snapshots": "world_objects_snapshots.jsonl",
@@ -179,18 +219,20 @@ class SimulationLogArchive:
             """# West World Simulation Run
 
 - `timeline.jsonl`: initial and tick-end aggregate snapshots.
-- `agent_states.jsonl`: one full state row per agent and snapshot.
+- `agent_states.jsonl`: query-safe state rows without private feedback, messages, memory, or full plan traces.
+- `internal/agent_states.jsonl`: full state rows for private diagnostics.
 - `scene_snapshots_public.jsonl`: replay-safe scene state without hidden notes.
 - `scene_snapshots_internal.jsonl`: private diagnostics with hidden notes and pending actions.
 - `world_objects_snapshots.jsonl`: world-level object registry snapshots (objects + ledger) per tick.
-- `model_traces.jsonl`: full plan/recorder prompts, raw responses, parsed outputs, errors, and available usage.
+- `model_traces.jsonl`: query-safe request summaries without prompts or model output.
+- `internal/model_traces.jsonl`: full prompts, model output, parsed output, and available usage.
 - `events.jsonl`: ordered lifecycle and phase events.
 - `raw/llm_attempts.jsonl`: one row per provider attempt, including failures, retries, latency, and exact usage.
 - `views/`: query-oriented tick, agent, location, slow-request, and failure views.
 - `summary.json` and `report/report.md`: aggregate run diagnostics.
 - `inputs/`: archived inputs; model credentials are redacted.
 
-Do not expose `scene_snapshots_internal.jsonl` to agents or a public frontend.
+Do not expose `scene_snapshots_internal.jsonl` or `internal/` to agents or a public frontend.
 """,
             encoding="utf-8",
         )
@@ -223,6 +265,10 @@ Do not expose `scene_snapshots_internal.jsonl` to agents or a public frontend.
         count_completed_tick: bool = True,
     ) -> Dict[str, Any]:
         consistency = check_state_consistency(agent_states, public_scenes)
+        public_agent_states = {
+            agent_id: _public_agent_state(state)
+            for agent_id, state in agent_states.items()
+        }
         row = {
             "tick": tick,
             "phase": phase,
@@ -230,7 +276,7 @@ Do not expose `scene_snapshots_internal.jsonl` to agents or a public frontend.
             "phase_timings_seconds": phase_timings_seconds,
             "scene_errors": scene_errors,
             "consistency": consistency,
-            "agents": agent_states,
+            "agents": public_agent_states,
             "scenes": public_scenes,
         }
         self._append_jsonl("timeline.jsonl", row)
@@ -241,6 +287,10 @@ Do not expose `scene_snapshots_internal.jsonl` to agents or a public frontend.
 
         for agent_id, state in agent_states.items():
             self._append_jsonl("agent_states.jsonl", {
+                "tick": tick, "phase": phase, "timestamp": row["timestamp"],
+                "agent_id": agent_id, "state": public_agent_states[agent_id],
+            })
+            self._append_jsonl("internal/agent_states.jsonl", {
                 "tick": tick, "phase": phase, "timestamp": row["timestamp"],
                 "agent_id": agent_id, "state": state,
             })
@@ -253,8 +303,9 @@ Do not expose `scene_snapshots_internal.jsonl` to agents or a public frontend.
                     "tick": tick, "phase": phase, "timestamp": row["timestamp"], "source": "agent_plan",
                     "agent_id": agent_id, **trace,
                 }
-                self._append_jsonl("model_traces.jsonl", request_row)
-                self._append_jsonl("raw/llm_requests.jsonl", request_row)
+                self._append_jsonl("internal/model_traces.jsonl", request_row)
+                self._append_jsonl("model_traces.jsonl", _trace_summary(request_row))
+                self._append_jsonl("raw/llm_requests.jsonl", _trace_summary(request_row))
                 counts["model_trace_rows"] += 1
 
         for location_id, snapshot in public_scenes.items():
@@ -279,8 +330,9 @@ Do not expose `scene_snapshots_internal.jsonl` to agents or a public frontend.
                     "source": "location_recorder",
                     "location_id": location_id, **trace,
                 }
-                self._append_jsonl("model_traces.jsonl", request_row)
-                self._append_jsonl("raw/llm_requests.jsonl", request_row)
+                self._append_jsonl("internal/model_traces.jsonl", request_row)
+                self._append_jsonl("model_traces.jsonl", _trace_summary(request_row))
+                self._append_jsonl("raw/llm_requests.jsonl", _trace_summary(request_row))
                 counts["model_trace_rows"] += 1
 
         if count_completed_tick:
@@ -337,31 +389,45 @@ Do not expose `scene_snapshots_internal.jsonl` to agents or a public frontend.
                     "tick": tick, "phase": snapshot.get("phase"), "scene": scene,
                 })
 
-        failed_attempts = [row for row in attempts if row.get("status") == "failed"]
-        failed_requests = [
-            row for row in requests
-            if row.get("status") == "failed" or row.get("error") or row.get("parse_ok") is False
-        ]
         recorder_attempts = [row for row in requests if row.get("source") == "location_recorder"]
+        combined_attempts = attempts + recorder_attempts
+        failed_attempts = [row for row in combined_attempts if row.get("status") == "failed"]
+        attempts_by_request: Dict[str, list[Dict[str, Any]]] = {}
+        for index, row in enumerate(combined_attempts):
+            request_id = str(row.get("request_id") or f"unidentified-{index}")
+            attempts_by_request.setdefault(request_id, []).append(row)
+
+        def request_succeeded(rows: list[Dict[str, Any]]) -> bool:
+            return any(
+                row.get("status") == "success"
+                or (
+                    row.get("source") == "agent_plan"
+                    and not row.get("error")
+                    and row.get("parse_fallback") is not True
+                )
+                for row in rows
+            )
+
+        failed_request_groups = {
+            request_id: rows
+            for request_id, rows in attempts_by_request.items()
+            if not request_succeeded(rows)
+        }
+        failed_requests = [rows[-1] for rows in failed_request_groups.values()]
         slow_attempts = sorted(
-            attempts + recorder_attempts,
+            combined_attempts,
             key=lambda row: row.get("duration_ms", 0),
             reverse=True,
         )
         for row in slow_attempts:
-            self._append_jsonl("views/slow_requests.jsonl", row)
+            self._append_jsonl("views/slow_requests.jsonl", _trace_summary(row))
         for row in failed_attempts:
             self._append_jsonl("views/failures.jsonl", {"record_type": "provider_attempt", **row})
         for row in failed_requests:
             self._append_jsonl("views/failures.jsonl", {"record_type": "business_request", **row})
 
-        usage = Counter()
-        for row in attempts:
-            for key in ("prompt_tokens", "completion_tokens", "total_tokens"):
-                value = row.get("usage", {}).get(key)
-                if isinstance(value, int):
-                    usage[key] += value
-        latencies = sorted(row.get("duration_ms", 0) for row in attempts)
+        usage = _usage_from_rows(combined_attempts)
+        latencies = sorted(row.get("duration_ms", 0) for row in combined_attempts)
         percentile = lambda p: latencies[min(int((len(latencies) - 1) * p), len(latencies) - 1)] if latencies else None
         summary = {
             "run_id": self.manifest["run_id"],
@@ -375,12 +441,14 @@ Do not expose `scene_snapshots_internal.jsonl` to agents or a public frontend.
                     row.get("request_id") or f"unidentified-{index}"
                     for index, row in enumerate(requests)
                 }),
-                "attempts": len(attempts),
+                "attempts": len(combined_attempts),
                 "failed_attempts": len(failed_attempts),
-                "failed_requests": len(failed_requests),
+                "failed_requests": len(failed_request_groups),
                 "retries": max(
                     0,
-                    len(attempts) - len({row["request_id"] for row in attempts if row.get("request_id")}),
+                    len(combined_attempts) - len({
+                        row["request_id"] for row in combined_attempts if row.get("request_id")
+                    }),
                 ),
                 "usage": dict(usage),
                 "p50_latency_ms": percentile(0.50),
@@ -389,7 +457,7 @@ Do not expose `scene_snapshots_internal.jsonl` to agents or a public frontend.
             },
             "consistency_violations": self.manifest["record_counts"]["consistency_violations"],
             "scene_errors": self.manifest["record_counts"]["scene_errors"],
-            "slowest_requests": slow_attempts[:10],
+            "slowest_requests": [_trace_summary(row) for row in slow_attempts[:10]],
             "failed_events": [row for row in events if "failed" in row.get("event_type", "")],
         }
         self._write_json("summary.json", summary)
@@ -407,9 +475,10 @@ Do not expose `scene_snapshots_internal.jsonl` to agents or a public frontend.
             "|---|---|---|---|---|---:|",
         ]
         for row in slow_attempts[:10]:
+            agent_value = row.get("agent_id") or ", ".join(row.get("agent_ids") or [])
             lines.append(
                 f"| `{row.get('request_id', '')}` | `{row.get('attempt_id', '')}` | "
-                f"{row.get('agent_id', '')} | "
+                f"{agent_value} | "
                 f"{row.get('model', '')} | {row.get('status', '')} | {row.get('duration_ms', 0)} |"
             )
         (self.run_dir / "report").mkdir(exist_ok=True)

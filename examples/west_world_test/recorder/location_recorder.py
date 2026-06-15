@@ -61,12 +61,24 @@ class LocationRecorder:
     def set_present_agents(self, agent_ids: List[str]) -> None:
         self.chunks["present_agents"] = "、".join(sorted(set(agent_ids))) or EMPTY_PRESENCE
 
+    def record_event(self, event_summary: str) -> None:
+        if event_summary:
+            self.chunks["recent_events"] = (
+                self.chunks["recent_events"] + [str(event_summary)]
+            )[-RECENT_EVENTS_WINDOW:]
+
     def _present_set(self) -> set[str]:
         raw = self.chunks["present_agents"]
         return set() if raw == EMPTY_PRESENCE else {x for x in raw.split("、") if x}
 
     # ---- 动作裁决（每动作一次 LLM） ----
-    def submit_action(self, agent_id: str, action_text: str, tick: Optional[int] = None) -> Dict[str, Any]:
+    def submit_action(
+        self,
+        agent_id: str,
+        action_text: str,
+        tick: Optional[int] = None,
+        action_type: str = "do",
+    ) -> Dict[str, Any]:
         prompt = prompts.render_judge(self.location.name, self.chunks, agent_id, action_text)
         judgement = self._chat_json(
             prompt, retries=1, call_type="recorder_judge",
@@ -87,6 +99,7 @@ class LocationRecorder:
         metadata: Optional[Dict[str, Any]] = None,
     ) -> Optional[Dict[str, Any]]:
         request_id = str((metadata or {}).get("request_id") or f"req_{uuid.uuid4().hex}")
+        model_name = getattr(self.llm, "config", {}).get("model", "")
         for attempt in range(retries + 1):
             attempt_id = f"attempt_{uuid.uuid4().hex}"
             started = time.perf_counter()
@@ -105,6 +118,7 @@ class LocationRecorder:
                     "status": "failed",
                     "error_type": type(exc).__name__,
                     "error": str(exc),
+                    "model": model_name,
                     **(metadata or {}),
                 })
                 continue
@@ -118,6 +132,7 @@ class LocationRecorder:
                 "prompt": prompt,
                 "raw_response": raw,
                 "status": "success",
+                "model": model_name,
                 **(metadata or {}),
             }
             usage = getattr(self.llm, "last_usage", None)

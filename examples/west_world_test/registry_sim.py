@@ -1,5 +1,4 @@
 """正式仿真的资源注册表（与 MVE 的 registry.py 并存）。"""
-from agentkernel_distributed.mas.action.components import CommunicationComponent, OtherActionsComponent
 from agentkernel_distributed.mas.agent.components import (
     InvokeComponent,
     PerceiveComponent,
@@ -13,9 +12,6 @@ from agentkernel_distributed.toolkit.models.api.openai import OpenAIProvider
 from agentkernel_distributed.toolkit.storages import RedisKVAdapter
 
 from examples.story_of_the_stone.BasicController import BasicController
-from examples.story_of_the_stone.plugins.action.communication.BasicCommunicationPlugin import BasicCommunicationPlugin
-from examples.story_of_the_stone.plugins.action.move.BasicMovePlugin import BasicMovePlugin
-from examples.story_of_the_stone.plugins.action.other.BasicOtherActionPlugin import BasicOtherActionPlugin
 from examples.story_of_the_stone.plugins.agent.profile.BasicProfliePlugin import BasicProfilePlugin
 from examples.story_of_the_stone.plugins.agent.state.BasicStatePlugin import BasicStatePlugin
 from examples.story_of_the_stone.plugins.agent.state.component import BasicStateComponent
@@ -50,16 +46,8 @@ RESOURCES_MAPS = {
         "WestWorldInvokePlugin": WestWorldInvokePlugin,
         "WestWorldReflectPlugin": WestWorldReflectPlugin,
     },
-    "action_components": {
-        "communication": CommunicationComponent,
-        "move": OtherActionsComponent,
-        "otheractions": OtherActionsComponent,
-    },
-    "action_plugins": {
-        "BasicCommunicationPlugin": BasicCommunicationPlugin,
-        "BasicMovePlugin": BasicMovePlugin,
-        "BasicOtherActionPlugin": BasicOtherActionPlugin,
-    },
+    "action_components": {},
+    "action_plugins": {},
     "environment_components": {
         "relation": RelationComponent,
         **{f"scene_{lid}": get_or_create_component_class(f"scene_{lid}") for lid in _ACTIVE},

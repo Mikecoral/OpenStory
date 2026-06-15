@@ -20,16 +20,18 @@ PLAN_PROMPT = """你是西部世界中的角色「{name}」。
 ## 当前情况（tick {tick}）
 你在：{location}。{here_description}
 场景信息：{scene}
+收到的消息：{messages}
 上一个动作的结果：{feedback}
 可以前往的相邻地点：{neighbors}
 
 ## 决定你这一刻要做什么
-- 继续待在这里做某件事：action 用 "do"，detail 写具体动作（一句话，第一人称行为描述）
+- 继续待在这里做某件事：action 用 "do"，detail 写具体动作（一句话，第一人称行为描述）。do 必须能在当前位置内完成，严禁描述离开、前往、进入或到达其他地点
 - 移动到相邻地点：action 用 "move"，target 填地点 id
 - 什么都不做：action 用 "stay"
+- 如果要对在场角色说话、下命令或交谈，仍使用 do，并把接收者的角色 id 写入 recipient_ids；没有明确接收者则填空数组
 - next_read 填你下一刻想了解的场景信息块，可选项: ["present_agents", "recent_events", "dynamic_objects", "static_facilities"]
 
-只输出 JSON：{{"action": "do|move|stay", "target": "", "detail": "", "next_read": []}}
+只输出 JSON：{{"action": "do|move|stay", "target": "", "detail": "", "recipient_ids": [], "next_read": []}}
 """
 
 
@@ -42,6 +44,7 @@ def render_plan_prompt(profile: Dict[str, Any], percept: Dict[str, Any], feedbac
         location=percept.get("location", ""),
         here_description=percept.get("here_description", ""),
         scene=json.dumps(percept.get("scene", {}), ensure_ascii=False),
+        messages=json.dumps(percept.get("messages", []), ensure_ascii=False),
         feedback=feedback or "（无）",
         neighbors=", ".join(percept.get("neighbors", [])),
     )
@@ -54,10 +57,15 @@ def parse_decision(raw: str) -> Dict[str, Any]:
             text = text.split("```")[1].lstrip("json").strip()
         decision = json.loads(text)
         if decision.get("action") in ("do", "move", "stay"):
+            recipients = decision.get("recipient_ids", [])
+            decision["recipient_ids"] = [
+                recipient for recipient in recipients
+                if isinstance(recipient, str) and recipient.strip()
+            ] if isinstance(recipients, list) else []
             return decision
     except (json.JSONDecodeError, IndexError):
         pass
-    return {"action": "stay", "target": "", "detail": "", "next_read": []}
+    return {"action": "stay", "target": "", "detail": "", "recipient_ids": [], "next_read": []}
 
 
 async def _read_profile(agent) -> Dict[str, Any]:

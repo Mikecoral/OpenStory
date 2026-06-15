@@ -1,3 +1,5 @@
+from concurrent.futures import ThreadPoolExecutor
+
 from examples.west_world_test.recorder.world_object_registry import (
     WorldObjectRegistry, get_object_registry, reset_object_registry,
 )
@@ -115,3 +117,33 @@ def test_location_seeded_tracking_is_idempotent_even_for_empty_locations():
     assert reg.is_location_seeded("empty") is False
     reg.mark_location_seeded("empty")
     assert reg.is_location_seeded("empty") is True
+
+
+def test_snapshot_restore_recovers_objects_ledger_and_next_id():
+    reg = WorldObjectRegistry()
+    oid = reg.create("左轮", "saloon", "hector", 1, "拿枪", {"state": "上膛"})
+    snapshot = reg.snapshot()
+    reg.destroy(oid, "hector", 2)
+    reg.create("弹壳", "saloon", "hector", 2, "开枪", {})
+
+    reg.restore(snapshot)
+
+    assert reg.get(oid)["destroyed"] is False
+    assert len(reg.ledger) == 1
+    assert reg.create("酒杯", "saloon", "maeve", 3, "倒酒", {}) == "obj_1"
+
+
+def test_concurrent_creates_allocate_unique_ids():
+    reg = WorldObjectRegistry()
+
+    def create(index):
+        return reg.create(
+            name=f"物品{index}", location_id="saloon", by="test",
+            tick=1, action="create", fields={},
+        )
+
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        object_ids = list(pool.map(create, range(50)))
+
+    assert len(set(object_ids)) == 50
+    assert reg.ledger_size() == 50
