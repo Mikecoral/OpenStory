@@ -98,6 +98,36 @@ class ControllerImpl(BaseController):
         current_tick = await self.run_system("timer", "get_tick")
         await self._agent_manager.step_reflect(current_tick)
 
+    async def step_perceive_plan(self) -> None:
+        """Run perceive + plan for all local agents (first half of pre-reflect)."""
+        if not self._agent_manager:
+            raise RuntimeError("AgentManager is not initialized.")
+        current_tick = await self.run_system("timer", "get_tick")
+        await self._agent_manager.step_perceive_plan(current_tick)
+
+    async def step_invoke_state(self) -> None:
+        """Run invoke + state for all local agents (second half of pre-reflect)."""
+        if not self._agent_manager:
+            raise RuntimeError("AgentManager is not initialized.")
+        current_tick = await self.run_system("timer", "get_tick")
+        await self._agent_manager.step_invoke_state(current_tick)
+
+    async def run_agent_plugin_method(
+        self, agent_id: str, component_name: str, method_name: str, *args: Any, **kwargs: Any
+    ) -> Any:
+        """Delegate a method call to the plugin of a specific agent's component."""
+        if not self._agent_manager:
+            raise RuntimeError("AgentManager is not initialized.")
+        return await self._agent_manager.run_agent_plugin_method(
+            agent_id, component_name, method_name, *args, **kwargs
+        )
+
+    async def collect_talk_intents(self) -> Dict[str, str]:
+        """Return {agent_id: target_id} for agents whose plan_decision is action='talk'."""
+        if not self._agent_manager:
+            return {}
+        return await self._agent_manager.collect_talk_intents()
+
     def get_token_usage(self) -> Dict[str, int]:
         if self._model_router is None:
             return {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}

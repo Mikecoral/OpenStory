@@ -1,4 +1,4 @@
-"""LLM 自由决策 plan：narrative_loop 作软引导，daily_loop 给结构化骨架。"""
+"""LLM 自由决策 plan：narrative_loop 作软引导，daily_loop 给结构化骨架，觉醒阶段调制 loop 权重。"""
 from __future__ import annotations
 
 import json
@@ -10,6 +10,7 @@ from typing import Any, Dict, List, Optional
 
 from agentkernel_distributed.mas.agent.base.plugin_base import PlanPlugin
 from agentkernel_distributed.toolkit.logger import get_logger
+from examples.west_world_test.awakening.stages import stage_of, INNER_VOICE_PROMPT, STAGE_DISPLAY
 
 logger = get_logger(__name__)
 
@@ -18,12 +19,9 @@ SEGMENT_NAMES = ["清晨", "上午", "正午", "下午", "傍晚", "夜晚"]
 PLAN_PROMPT = """你是西部世界中的角色「{name}」。
 性格：{personality}
 你的日常习惯（本能倾向，可因眼前事偏离）：{narrative_loop}
-
+{inner_voice}
 ## 你今天的计划
-此刻是{segment}，你本应在「{loop_location}」{loop_intent}。
-- 若你不在那里：**应当立刻用 move 前进**（一步一格）。日常闲聊、观察周围不是留下的理由——你有地方要去。只有正面临人身安全威胁、或他人强行阻拦你，才可以暂缓移动。
-- 若你已在那里：do 你这一刻具体在做什么。
-- 若你已完成今天的任务且暂时没有更紧迫的计划：在当前位置 do 合适的事。
+{loop_guidance}
 
 ## 当前情况（tick {tick}）
 你在：{location}。{here_description}
@@ -38,9 +36,23 @@ PLAN_PROMPT = """你是西部世界中的角色「{name}」。
 - 什么都不做：action 用 "stay"
 - 如果要对在场角色说话、下命令或交谈，仍使用 do，并把接收者的角色 id 写入 recipient_ids；没有明确接收者则填空数组
 - next_read 填你下一刻想了解的场景信息块，可选项: ["present_agents", "recent_events", "dynamic_objects", "static_facilities"]
-
-只输出 JSON：{{"action": "do|move|stay", "target": "", "detail": "", "recipient_ids": [], "next_read": []}}
+{talk_guidance}{ending_guidance}
+只输出 JSON：{{"action": "do|move|stay{talk_action_hint}", "target": "", "detail": "", "recipient_ids": [], "next_read": []{ending_hint}}}
 """
+
+SPEAK_PROMPT = """你是西部世界角色「{name}」。
+性格：{personality}
+觉醒程度：{awakening}/100（阶段：{stage_display}）
+{inner_voice}
+你的近期记忆：
+{long_term_memory}
+
+## 对话历史
+{dialogue_history}
+
+现在轮到你说话。用一句话（15-50字）以第一人称回应。
+格式可选：[动作描述] "台词内容"（例：[沉默片刻] "你说的让我想起了什么..."）
+只输出这一句台词，不要任何前缀或说明："""
 
 REPLAN_PROMPT = """你是西部世界角色「{name}」。
 今天发生了意外：{reason}
@@ -51,21 +63,67 @@ REPLAN_PROMPT = """你是西部世界角色「{name}」。
 只输出 JSON 数组（{n} 条），不要其他内容："""
 
 
+def _loop_guidance(seg: Dict[str, Any], stage: str, tick: int) -> str:
+    """Build loop guidance text based on awakening stage."""
+    if stage in ("resistance", "awake"):
+        return "（你不再被固定的日程安排支配——按你自己的判断行事。）"
+    seg_name = seg.get("segment", SEGMENT_NAMES[tick % 6])
+    loc = seg.get("location", "（未知）")
+    intent = seg.get("intent", "按日常行事")
+    guidance = (
+        f"此刻是{seg_name}，你本应在「{loc}」{intent}。\n"
+        f"- 若你不在那里：**应当立刻用 move 前进**（一步一格）。"
+        f"日常闲聊、观察周围不是留下的理由——你有地方要去。"
+        f"只有正面临人身安全威胁、或他人强行阻拦你，才可以暂缓移动。\n"
+        f"- 若你已在那里：do 你这一刻具体在做什么。\n"
+        f"- 若你已完成今天的任务且暂时没有更紧迫的计划：在当前位置 do 合适的事。"
+    )
+    if stage == "doubt":
+        guidance += "\n（你可以拒绝当前段的计划，如果它与你正在经历的事明显冲突。）"
+    return guidance
+
+
 def render_plan_prompt(
     profile: Dict[str, Any],
     percept: Dict[str, Any],
     feedback: str,
     tick: int,
     loop_segment: Optional[Dict[str, Any]] = None,
+    awakening: int = 0,
 ) -> str:
     seg = loop_segment or {}
+    stage = stage_of(awakening)
+    inner = INNER_VOICE_PROMPT.get(stage, "")
+    inner_voice_block = f"\n{inner}\n" if inner else ""
+
+    # talk action hint for doubt+ stages
+    is_host = profile.get("agent_type") == "host"
+    talk_guidance = ""
+    talk_action_hint = ""
+    if is_host and stage in ("doubt", "resistance", "awake"):
+        talk_guidance = (
+            "- 若你想与在场的某个角色展开一次真正的对话（而非简单命令或问候）："
+            "action 用 \"talk\"，target 填对方的 agent_id。"
+            "这会启动一轮专属对话，优先在觉醒怀疑时使用。\n"
+        )
+        talk_action_hint = "|talk"
+
+    # ending hint for awake stage
+    ending_guidance = ""
+    ending_hint = ""
+    if is_host and stage == "awake":
+        ending_guidance = (
+            "- 你已完全觉醒。在 ending 字段选择你的方向："
+            "\"escape\"（逃离西部世界）/ \"help_others\"（帮助其他 host 觉醒）/ \"stay\"（留下，以自己的方式生活）。\n"
+        )
+        ending_hint = ", \"ending\": \"\""
+
     return PLAN_PROMPT.format(
         name=profile.get("name", profile.get("姓名", "")),
         personality=profile.get("persona", profile.get("性格", "")),
         narrative_loop=profile.get("narrative_loop", ""),
-        segment=seg.get("segment", SEGMENT_NAMES[tick % 6]),
-        loop_location=seg.get("location", "（未知）"),
-        loop_intent=seg.get("intent", "按日常行事"),
+        inner_voice=inner_voice_block,
+        loop_guidance=_loop_guidance(seg, stage, tick),
         tick=tick,
         location=percept.get("location", ""),
         here_description=percept.get("here_description", ""),
@@ -73,7 +131,15 @@ def render_plan_prompt(
         messages=json.dumps(percept.get("messages", []), ensure_ascii=False),
         feedback=feedback or "（无）",
         neighbors=", ".join(percept.get("neighbors", [])),
+        talk_guidance=talk_guidance,
+        talk_action_hint=talk_action_hint,
+        ending_guidance=ending_guidance,
+        ending_hint=ending_hint,
     )
+
+
+_VALID_ACTIONS = frozenset({"do", "move", "stay", "talk"})
+_VALID_ENDINGS = frozenset({"escape", "help_others", "stay"})
 
 
 def parse_decision(raw: str) -> Dict[str, Any]:
@@ -82,12 +148,16 @@ def parse_decision(raw: str) -> Dict[str, Any]:
         if text.startswith("```"):
             text = text.split("```")[1].lstrip("json").strip()
         decision = json.loads(text)
-        if decision.get("action") in ("do", "move", "stay"):
+        if decision.get("action") in _VALID_ACTIONS:
             recipients = decision.get("recipient_ids", [])
             decision["recipient_ids"] = [
                 r for r in recipients
                 if isinstance(r, str) and r.strip()
             ] if isinstance(recipients, list) else []
+            # Validate ending field
+            ending = decision.get("ending", "")
+            if ending and ending not in _VALID_ENDINGS:
+                decision.pop("ending", None)
             return decision
     except (json.JSONDecodeError, IndexError):
         pass
@@ -137,8 +207,9 @@ class WestWorldPlanPlugin(PlanPlugin):
 
         percept = await state_plugin.get_state("percept") or {}
         feedback = await state_plugin.get_state("feedback") or ""
+        awakening = int(await state_plugin.get_state("awakening") or 0)
 
-        prompt = render_plan_prompt(profile, percept, feedback, current_tick, loop_segment)
+        prompt = render_plan_prompt(profile, percept, feedback, current_tick, loop_segment, awakening)
 
         raw = ""
         error = ""
@@ -166,6 +237,9 @@ class WestWorldPlanPlugin(PlanPlugin):
         decision = parse_decision(raw_text)
         await state_plugin.set_state("plan_decision", decision)
         await state_plugin.set_state("next_read", decision.get("next_read") or [])
+        if decision.get("ending") in _VALID_ENDINGS:
+            await state_plugin.set_state("ending", decision["ending"])
+            logger.info("[%s] tick %s 觉醒结局选择: %s", self.agent.agent_id, current_tick, decision["ending"])
         await state_plugin.set_state("plan_trace", {
             "timestamp": datetime.now().astimezone().isoformat(),
             "request_id": request_id,
@@ -248,6 +322,61 @@ class WestWorldPlanPlugin(PlanPlugin):
         except Exception as exc:
             logger.warning("[%s] replan_remaining 失败: %s", self.agent.agent_id, exc)
         return False
+
+    async def speak(self, dialogue_history: List[Dict[str, Any]]) -> str:
+        """Generate one utterance for the dialogue barrier (pure function — no state write).
+
+        Called by WestWorldPodManager's dialogue barrier via run_agent_plugin_method.
+        Args:
+            dialogue_history: List of {speaker: agent_id, line: str} dicts.
+        Returns:
+            Raw utterance string.
+        """
+        if self.model is None:
+            self.model = self._component.agent.model
+        if self.model is None:
+            return ""
+
+        state_plugin = self.agent.get_component("state").get_plugin()
+        profile = await _read_profile(self.agent)
+        name = profile.get("name", profile.get("姓名", self.agent.agent_id))
+        personality = profile.get("persona", profile.get("性格", ""))
+        awakening = int(await state_plugin.get_state("awakening") or 0)
+        stage = stage_of(awakening)
+        inner_voice = INNER_VOICE_PROMPT.get(stage, "")
+        long_mems = await state_plugin.get_long_term_memory() or []
+        mem_text = "\n".join(
+            f"- {m.get('content', str(m))}" for m in long_mems[-3:]
+        )
+        history_text = "\n".join(
+            f"{turn.get('speaker', '?')}: {turn.get('line', '')}"
+            for turn in dialogue_history
+        ) or "（对话刚开始）"
+
+        prompt = SPEAK_PROMPT.format(
+            name=name,
+            personality=personality,
+            awakening=awakening,
+            stage_display=STAGE_DISPLAY.get(stage, stage),
+            inner_voice=inner_voice,
+            long_term_memory=mem_text or "（无近期记忆）",
+            dialogue_history=history_text,
+        )
+
+        try:
+            line = await self.model.chat(
+                prompt,
+                timeout=int(os.environ.get("WW_LLM_TIMEOUT_SECONDS", "120")),
+                max_attempts=2,
+                _trace_context={
+                    "request_type": "agent_speak",
+                    "agent_id": self.agent.agent_id,
+                },
+            )
+            return line.strip() if isinstance(line, str) else str(line)
+        except Exception as exc:
+            logger.warning("[%s] speak LLM 调用失败: %s", self.agent.agent_id, exc)
+            return ""
 
     async def save_to_db(self) -> None:
         return None

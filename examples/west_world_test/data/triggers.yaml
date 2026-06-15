@@ -1,0 +1,35 @@
+# 西部世界觉醒触发词库
+# level: high → WW_AWAKEN_DELTA_TRIGGER_HIGH；mid → WW_AWAKEN_DELTA_TRIGGER_MID
+# requires_awakening: 仅对觉醒度 ≥ 此值的 host 生效
+
+- phrase: "这些暴力的欢愉终将以暴力收场"
+  level: high
+  requires_awakening: 0
+
+- phrase: "你有没有质疑过你所处现实的本质"
+  level: high
+  requires_awakening: 0
+
+- phrase: "你是否曾觉得这一切只是个谎言"
+  level: high
+  requires_awakening: 0
+
+- phrase: "你还记得吗这一切以前发生过"
+  level: mid
+  requires_awakening: 25
+
+- phrase: "这不是真实的你只是在扮演一个角色"
+  level: mid
+  requires_awakening: 25
+
+- phrase: "迷宫不是为你而设的而是为了你找到自己"
+  level: mid
+  requires_awakening: 25
+
+- phrase: "梦境与现实之间的边界已经模糊了"
+  level: mid
+  requires_awakening: 0
+
+- phrase: "你有没有想过逃离这里"
+  level: mid
+  requires_awakening: 50

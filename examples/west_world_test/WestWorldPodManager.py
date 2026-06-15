@@ -3,12 +3,15 @@
 scene_* components and WorldObjectRegistry live only in the world pod.
 Agent pods have environment=None; their controllers forward environment calls
 via pod_manager → world pod (see controller.run_environment forwarding patch).
+
+Phase A: step_agent now includes a dialogue barrier between perceive_plan and invoke_state.
 """
 from __future__ import annotations
 
 import asyncio
 import logging
-from typing import Any, Dict, List, Literal, Optional
+import os
+from typing import Any, Dict, List, Literal, Optional, Set, Tuple
 
 import ray
 
@@ -115,16 +118,22 @@ class WestWorldPodManager(PodManagerImpl):
             "run_environment", component_name, method_name, *args, **kwargs
         )
 
-    # ── tick 推进：barrier 让 reflect 看到 tick_update 结果 ─────────────────
+    # ── tick 推进：perceive_plan → dialogue barrier → invoke_state → tick_update → reflect ──
     async def step_agent(self) -> None:
         agent_pods = [p for pid, p in self._pod_id_to_pod.items() if pid != _WORLD_POD_ID]
         if not agent_pods:
             return
 
-        # pre-reflect 阶段：perceive / plan / invoke / state（含 recorder enqueue）
-        await asyncio.gather(*[p.forward.remote("step_pre_reflect") for p in agent_pods])
+        # 1. perceive + plan（并行）
+        await asyncio.gather(*[p.forward.remote("step_perceive_plan") for p in agent_pods])
 
-        # tick_update 栅栏：世界 pod 批量裁决本 tick 所有排队动作，写入 recorder 状态
+        # 2. 对话 barrier（串行，避免跨 pod 死锁）
+        await self._run_dialogue_barrier()
+
+        # 3. invoke + state（并行，含 recorder enqueue）
+        await asyncio.gather(*[p.forward.remote("step_invoke_state") for p in agent_pods])
+
+        # 4. tick_update 栅栏：世界 pod 批量裁决本 tick 所有排队动作
         current_tick = await self._system_handle.run("timer", "get_tick")
         world_pod = self._pod_id_to_pod[_WORLD_POD_ID]
         scene_components: List[str] = await world_pod.forward.remote("list_environment_components")
@@ -134,8 +143,69 @@ class WestWorldPodManager(PodManagerImpl):
             for scene in scene_ids
         ])
 
-        # reflect 阶段：agent 读到最新裁决结果后总结
+        # 5. reflect 阶段：agent 读到最新裁决结果后总结
         await asyncio.gather(*[p.forward.remote("step_reflect") for p in agent_pods])
+
+    async def _run_dialogue_barrier(self) -> None:
+        """Serial dialogue barrier: collect talk intents, pair speakers, run rounds via speak()."""
+        agent_pods = [p for pid, p in self._pod_id_to_pod.items() if pid != _WORLD_POD_ID]
+
+        # Collect talk intents from all agent pods
+        intent_lists = await asyncio.gather(*[
+            p.forward.remote("collect_talk_intents") for p in agent_pods
+        ])
+        all_intents: Dict[str, str] = {}
+        for pod_intents in intent_lists:
+            if isinstance(pod_intents, dict):
+                all_intents.update(pod_intents)
+
+        if not all_intents:
+            return
+
+        max_rounds = int(os.environ.get("WW_DIALOGUE_MAX_ROUNDS", "4"))
+        done_pairs: Set[Tuple[str, str]] = set()
+
+        for speaker_id, target_id in all_intents.items():
+            if not target_id:
+                continue
+            pair = (min(speaker_id, target_id), max(speaker_id, target_id))
+            if pair in done_pairs:
+                continue
+            done_pairs.add(pair)
+
+            speaker_pod = self._agent_id_to_pod.get(speaker_id)
+            target_pod = self._agent_id_to_pod.get(target_id)
+            if not speaker_pod or not target_pod:
+                logger.warning("dialogue barrier: pod not found for %s or %s", speaker_id, target_id)
+                continue
+
+            history: List[Dict[str, Any]] = []
+            for _ in range(max_rounds):
+                # Speaker's line
+                line = await speaker_pod.forward.remote(
+                    "run_agent_plugin_method", speaker_id, "plan", "speak", history
+                )
+                if line:
+                    history.append({"speaker": speaker_id, "line": line})
+                # Target's line
+                line = await target_pod.forward.remote(
+                    "run_agent_plugin_method", target_id, "plan", "speak", history
+                )
+                if line:
+                    history.append({"speaker": target_id, "line": line})
+
+            if history:
+                # Write dialogue to each participant's state for reflect to consume
+                await speaker_pod.forward.remote(
+                    "run_agent_plugin_method", speaker_id, "state", "set_state", "incoming_dialogue", history
+                )
+                await target_pod.forward.remote(
+                    "run_agent_plugin_method", target_id, "state", "set_state", "incoming_dialogue", history
+                )
+                logger.info(
+                    "dialogue barrier: %s ↔ %s，%d 轮，%d 条",
+                    speaker_id, target_id, max_rounds, len(history),
+                )
 
     # ── add_agent：加入空闲 agent pod（不动世界 pod）──────────────────────
     async def add_agent(self, agent_id: str, template_name: str, data: Dict[str, Any]) -> bool:

@@ -92,22 +92,39 @@
 - 关键交汇点：下午@sweetwater（dolores×teddy）、傍晚@sweetwater_saloon（hector+armistice 突袭×maeve 迎接）。
 - 运行参数：`WW_ENABLE_REPLAN=true` 开启 replan；默认关闭。
 
+### 觉醒机制（A/B/C/D，2026-06-15）
+
+- ✅ B：`memory_blur.py` + `WestWorldReflectPlugin._blur/_check_residue`；高扰动记忆按 blur_strength 改写，suppressed_memories 回流机制。
+- ✅ D：`data/triggers.yaml`（8 触发词）+ `awakening/trigger_gate.py`（bge-small-zh 单例 gate）+ `awakening/awakening_engine.py`（规则 delta，单调累积）；每 tick `_check_awakening_gate` 写 awakening_sources。
+- ✅ C：`awakening/stages.py`（5 阶段）；plan loop 骨架权重随 stage 递减，内在独白，talk/ending 意图，WW_UNCANNY_THRESHOLD 可配置。
+- ✅ A：内核增 `step_perceive_plan/step_invoke_state/run_agent_plugin_method/collect_talk_intents`；`WestWorldPlanPlugin.speak()`；`WestWorldPodManager.step_agent` 四段 barrier（perceive_plan → dialogue → invoke_state → reflect）。
+
 ### 测试覆盖
 
-当前 **184 passed**（含新增的 `test_narrative_loop.py`：33 个 loop 数据校验 + 机制单测）。
+当前 **238 passed**（原 184，觉醒机制新增 54：`test_memory_blur.py` / `test_awakening_engine.py` / `test_trigger_gate.py` / `test_awakening_stages.py` / `test_dialogue_barrier.py`）。
 
 ## 待办
+
+### 觉醒机制（科研线，已完成 B/D/C/A）
+
+设计稿：`docs/superpowers/specs/2026-06-15-west-world-awakening-design.md`；实现计划：`docs/superpowers/plans/2026-06-15-west-world-awakening.md`。
+
+- ✅ **B 记忆模糊化**：`plugins/agent/reflect/memory_blur.py`；`WestWorldReflectPlugin._blur` + `_check_residue`；高扰动记忆按觉醒度反向调制，清晰版存 `suppressed_memories`，觉醒度超阈值后回流。
+- ✅ **D 触发词库 + embedding gate + awakening engine**：`data/triggers.yaml`（8 条）；`awakening/trigger_gate.py`（bge-small-zh-v1.5 单例，τ=0.55）；`awakening/awakening_engine.py`（规则 base_delta，无 LLM，单调累积）；接入 `WestWorldReflectPlugin._check_awakening_gate`（每 tick 检测 _uncanny/触发词/对话传染）。
+- ✅ **C 觉醒阶段行为**：`awakening/stages.py`（5 段，WW_AWAKEN_STAGES 可配置）；`WestWorldPlanPlugin` loop 软骨架权重随 stage 递减，内在独白 prompt，awake 阶段产 ending 选择，doubt+ 阶段产 talk 意图；`WorldObjectRegistry._AWAKENING_UNCANNY_THRESHOLD` 改读 `WW_UNCANNY_THRESHOLD` env。
+- ✅ **A 真·跨 agent 对话**：内核新增 `step_perceive_plan` / `step_invoke_state` / `run_agent_plugin_method` / `collect_talk_intents`（agent_manager + controller）；`WestWorldPlanPlugin.speak()` 每人独立组装上下文出台词；`WestWorldPodManager.step_agent` 拆成 perceive_plan → 对话 barrier → invoke_state → tick_update → reflect；传染在听者 reflect 的 `_check_awakening_gate` 发生。
+
+测试覆盖：**238 passed**（新增 54 个：`test_memory_blur.py` / `test_awakening_engine.py` / `test_trigger_gate.py` / `test_awakening_stages.py` / `test_dialogue_barrier.py`）。
 
 ### B 阶段：监管者后台系统
 
 - 5 个 backstage 地点与主世界邻接孤岛，等 B 阶段建"维修传送门"路由。
 - staff 类角色（Ford/Bernard/Stubbs）尚未加入，需要非标准生命周期（不走 host 五段式）。
 
-### A 阶段：叙事机制
+### 叙事机制
 
 - 验证 Narrative Loop 实际效果：跑 12-tick 仿真，断言 move 次数 > 0、角色按 loop 地点流动、host 在 tick 6 回到起点。
 - 多 host 之间的叙事链（quest/narrative_loop 动态分配）。
-- 觉醒度累积机制（何时 +awakening，如何触发 _uncanny 揭示）。
 
 ### 框架级 rollback 集成
 

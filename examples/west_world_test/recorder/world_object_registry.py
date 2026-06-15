@@ -93,8 +93,10 @@ class WorldObjectRegistry:
             ]
             return [copy.deepcopy(r) for r in rows]
 
-    # 觉醒度达到此阈值时，非隐藏对象的 secret 字段作为违和细节揭示给该 viewer
-    _AWAKENING_UNCANNY_THRESHOLD = 30
+    @property
+    def _AWAKENING_UNCANNY_THRESHOLD(self) -> int:
+        import os
+        return int(os.environ.get("WW_UNCANNY_THRESHOLD", "30"))
 
     def objects_at_for_viewer(
         self,
