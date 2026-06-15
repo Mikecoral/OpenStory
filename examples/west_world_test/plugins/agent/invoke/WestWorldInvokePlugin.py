@@ -7,7 +7,6 @@ from agentkernel_distributed.mas.agent.base.plugin_base import InvokePlugin
 from agentkernel_distributed.toolkit.logger import get_logger
 from agentkernel_distributed.types.schemas.message import Message, MessageKind
 
-from examples.west_world_test.recorder.world_object_registry import get_object_registry
 from examples.west_world_test.worldmap.loader import WorldMap, get_world_map
 
 logger = get_logger(__name__)
@@ -96,8 +95,11 @@ class WestWorldInvokePlugin(InvokePlugin):
             await state_plugin.set_state("location", new_state["location"])
             await state_plugin.set_state("known_map", new_state["known_map"])
             await state_plugin.set_state("feedback", first_sight or "")
-            # 持有物品跟随移动
-            get_object_registry().relocate_holdings(self.agent.agent_id, new_state["location"], tick=current_tick)
+            # 持有物品跟随移动（路由到世界 pod，不在 agent 进程直接访问 registry）
+            await self._scene_call(
+                controller, new_state["location"], "relocate_holdings",
+                self.agent.agent_id, location, new_state["location"], current_tick,
+            )
             logger.info("[%s] tick %s 移动 %s -> %s", self.agent.agent_id, current_tick, location, new_state["location"])
         elif decision.get("action") == "do":
             await self._scene_call(controller, location, "submit_action",
