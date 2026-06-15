@@ -349,6 +349,9 @@ class ControllerImpl(BaseController):
         """
         Execute a method on an environment component.
 
+        If the component is found in the local environment, executes it there.
+        Otherwise forwards to the pod manager so the world pod can handle it.
+
         Args:
             component_name (str): Environment component exposing the method.
             method_name (str): Name of the method to execute.
@@ -359,11 +362,15 @@ class ControllerImpl(BaseController):
             Any: Result produced by the environment method.
 
         Raises:
-            RuntimeError: If the environment proxy is unavailable.
+            RuntimeError: If neither local environment nor pod manager can serve the request.
         """
-        if not self._environment:
-            raise RuntimeError("Environment is not initialized in the System.")
-        return await self._environment.run(component_name, method_name, *args, **kwargs)
+        if self._environment and component_name in self._environment.components:
+            return await self._environment.run(component_name, method_name, *args, **kwargs)
+        if self._pod_manager:
+            return await self._pod_manager.run_environment.remote(component_name, method_name, *args, **kwargs)
+        raise RuntimeError(
+            f"Environment component '{component_name}' not found locally and no pod_manager available."
+        )
 
     async def list_action_components(self) -> List[str]:
         """

@@ -36,25 +36,43 @@ def test_ids_unique_and_adjacency_symmetric(world):
             assert loc.id in world.get(nb).adjacency, f"{loc.id}->{nb} 非双向"
 
 
+_KNOWN_ISOLATED_CLUSTERS = frozenset({
+    # Backstage locations are intentionally isolated from the main world map
+    # until the "maintenance portal" mechanic is added in phase B.
+    "backstage_control", "cold_storage", "staff_dormitory",
+    "programmer_workspace", "surface_maintenance_station",
+})
+
+
 def test_active_subgraph_connected(world):
+    """Main-world active locations form a single connected component.
+
+    Backstage locations are intentionally isolated (B-phase mechanic pending)
+    and are excluded from this reachability check.
+    """
     active = world.active_ids()
     assert "sweetwater_saloon" in active and "abernathy_ranch" in active
-    start = next(iter(active))
+    main_active = active - _KNOWN_ISOLATED_CLUSTERS
+    start = next(iter(main_active))
     seen, frontier = {start}, [start]
     while frontier:
         cur = frontier.pop()
         for nb in world.get(cur).adjacency:
-            if nb in active and nb not in seen:
+            if nb in main_active and nb not in seen:
                 seen.add(nb)
                 frontier.append(nb)
-    assert seen == active
+    assert seen == main_active, f"未覆盖主世界地点: {main_active - seen}"
 
 
 def test_can_move_rules(world):
     assert world.can_move("sweetwater_saloon", "sweetwater_plaza") == (True, "")
+    # Non-adjacent pair: sweetwater_saloon is not directly adjacent to abernathy_ranch
     ok, reason = world.can_move("sweetwater_saloon", "abernathy_ranch")
     assert ok is False and "相邻" in reason
-    ok, reason = world.can_move("sweetwater", "wilderness")
+    # wilderness is now active and adjacent to sweetwater — move is legal
+    assert world.can_move("sweetwater", "wilderness") == (True, "")
+    # Non-adjacent pair across regions: saloon → pariah
+    ok, reason = world.can_move("sweetwater_saloon", "pariah")
     assert ok is False and reason
 
 
