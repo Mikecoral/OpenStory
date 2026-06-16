@@ -5,6 +5,10 @@ components:
       BasicRelationPlugin:
         adapters: {}
         relations: "agents_relation"
+  overseer:
+    plugin:
+      OverseerPlugin:
+        adapters: {}
   scene_sweetwater_saloon:
     plugin:
       Scene_sweetwater_saloon_Plugin:

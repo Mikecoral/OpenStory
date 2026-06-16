@@ -22,6 +22,7 @@ from examples.west_world_test.plugins.agent.perceive.WestWorldPerceivePlugin imp
 from examples.west_world_test.plugins.agent.plan.RandomWalkPlanPlugin import RandomWalkPlanPlugin
 from examples.west_world_test.plugins.agent.plan.WestWorldPlanPlugin import WestWorldPlanPlugin
 from examples.west_world_test.plugins.agent.reflect.WestWorldReflectPlugin import WestWorldReflectPlugin
+from examples.west_world_test.plugins.environment.overseer.OverseerPlugin import OverseerPlugin
 from examples.west_world_test.plugins.environment.scene.LocationRecorderPlugin import make_scene_plugin_class
 from examples.west_world_test.worldmap.loader import get_world_map
 
@@ -50,10 +51,12 @@ RESOURCES_MAPS = {
     "action_plugins": {},
     "environment_components": {
         "relation": RelationComponent,
+        "overseer": get_or_create_component_class("overseer"),
         **{f"scene_{lid}": get_or_create_component_class(f"scene_{lid}") for lid in _ACTIVE},
     },
     "environment_plugins": {
         "BasicRelationPlugin": BasicRelationPlugin,
+        "OverseerPlugin": OverseerPlugin,
         **{f"Scene_{lid}_Plugin": make_scene_plugin_class(lid) for lid in _ACTIVE},
     },
     "system_components": {

@@ -122,6 +122,18 @@ class AgentManager:
         await perception_component.add_message(message)
         logger.debug(f"[{self._pod_id}] Delivered message to local agent '{to_id}'.")
 
+    async def _is_agent_active(self, agent: Any) -> bool:
+        """Return False if the agent's state plugin marks it inactive; True by default."""
+        try:
+            state_comp = agent.get_component("state")
+            if state_comp is not None:
+                plugin = state_comp.get_plugin()
+                if plugin is not None and hasattr(plugin, "is_active"):
+                    return await plugin.is_active()
+        except Exception:
+            pass
+        return True
+
     async def step_pre_reflect(self, tick: int) -> None:
         """
         Run all local agents through the pre-reflect phase for one tick.
@@ -130,8 +142,9 @@ class AgentManager:
             tick (int): Current simulation tick.
         """
         pre_reflect_components = ["perceive", "plan", "invoke", "state"]
+        active = [a for a in self._agents.values() if await self._is_agent_active(a)]
         pre_reflect_tasks = [
-            agent.run(tick, components_to_run=pre_reflect_components) for agent in self._agents.values()
+            agent.run(tick, components_to_run=pre_reflect_components) for agent in active
         ]
         if pre_reflect_tasks:
             await asyncio.gather(*pre_reflect_tasks)
@@ -143,7 +156,8 @@ class AgentManager:
         Args:
             tick (int): Current simulation tick.
         """
-        reflect_tasks = [agent.run(tick, components_to_run=["reflect"]) for agent in self._agents.values()]
+        active = [a for a in self._agents.values() if await self._is_agent_active(a)]
+        reflect_tasks = [agent.run(tick, components_to_run=["reflect"]) for agent in active]
         if reflect_tasks:
             await asyncio.gather(*reflect_tasks)
 
@@ -165,13 +179,15 @@ class AgentManager:
 
     async def step_perceive_plan(self, tick: int) -> None:
         """Run perceive and plan components for all local agents (first half of pre-reflect)."""
-        tasks = [agent.run(tick, components_to_run=["perceive", "plan"]) for agent in self._agents.values()]
+        active = [a for a in self._agents.values() if await self._is_agent_active(a)]
+        tasks = [agent.run(tick, components_to_run=["perceive", "plan"]) for agent in active]
         if tasks:
             await asyncio.gather(*tasks)
 
     async def step_invoke_state(self, tick: int) -> None:
         """Run invoke and state components for all local agents (second half of pre-reflect)."""
-        tasks = [agent.run(tick, components_to_run=["invoke", "state"]) for agent in self._agents.values()]
+        active = [a for a in self._agents.values() if await self._is_agent_active(a)]
+        tasks = [agent.run(tick, components_to_run=["invoke", "state"]) for agent in active]
         if tasks:
             await asyncio.gather(*tasks)
 

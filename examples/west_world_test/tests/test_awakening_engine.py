@@ -116,3 +116,60 @@ def test_apply_multiple_sources_accumulate(monkeypatch):
     apply(state, "mismatch", "y", tick=2)
     assert state["awakening"] == 23
     assert len(state["awakening_sources"]) == 2
+
+
+# ── overseer_reset (O2) ──────────────────────────────────────────────────────
+
+def test_overseer_reset_descends_one_stage(monkeypatch):
+    """doubt (60) → reverie upper bound (49)."""
+    monkeypatch.setenv("WW_AWAKEN_ENABLED", "true")
+    monkeypatch.setenv("WW_OVERSEER_ENABLED", "true")
+    monkeypatch.setenv("WW_AWAKEN_STAGES", "25,50,75,90")
+    state = {"awakening": 60}
+    delta = apply(state, "overseer_reset", "监管者重置", tick=1)
+    assert state["awakening"] == 49
+    assert delta == 49 - 60  # negative delta
+
+
+def test_overseer_reset_records_negative_delta_in_sources(monkeypatch):
+    monkeypatch.setenv("WW_AWAKEN_ENABLED", "true")
+    monkeypatch.setenv("WW_OVERSEER_ENABLED", "true")
+    monkeypatch.setenv("WW_AWAKEN_STAGES", "25,50,75,90")
+    state = {"awakening": 60}
+    apply(state, "overseer_reset", "测试", tick=3)
+    src = state["awakening_sources"]
+    assert len(src) == 1
+    assert src[0]["delta"] < 0
+    assert src[0]["source"] == "overseer_reset"
+
+
+def test_overseer_reset_sleep_stage_clamps_to_zero(monkeypatch):
+    """Host already in sleep stage cannot go lower than 0."""
+    monkeypatch.setenv("WW_AWAKEN_ENABLED", "true")
+    monkeypatch.setenv("WW_OVERSEER_ENABLED", "true")
+    monkeypatch.setenv("WW_AWAKEN_STAGES", "25,50,75,90")
+    state = {"awakening": 10}
+    delta = apply(state, "overseer_reset", "测试", tick=1)
+    assert state["awakening"] == 0
+    assert delta == -10
+
+
+def test_overseer_reset_disabled_by_env(monkeypatch):
+    monkeypatch.setenv("WW_AWAKEN_ENABLED", "true")
+    monkeypatch.setenv("WW_OVERSEER_ENABLED", "false")
+    monkeypatch.setenv("WW_AWAKEN_STAGES", "25,50,75,90")
+    state = {"awakening": 60}
+    delta = apply(state, "overseer_reset", "测试", tick=1)
+    assert delta == 0
+    assert state["awakening"] == 60
+
+
+def test_monotonic_sources_still_positive_after_o2(monkeypatch):
+    """Existing monotonic sources must not be affected by the overseer_reset change."""
+    monkeypatch.setenv("WW_AWAKEN_ENABLED", "true")
+    monkeypatch.setenv("WW_AWAKEN_DELTA_TRIGGER_HIGH", "15")
+    monkeypatch.setenv("WW_AWAKEN_STAGES", "25,50,75,90")
+    state = {"awakening": 10}
+    delta = apply(state, "trigger", "x", tick=1, level="high")
+    assert delta > 0
+    assert state["awakening"] > 10

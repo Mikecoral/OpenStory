@@ -24,6 +24,31 @@ logger = logging.getLogger(__name__)
 _WORLD_POD_ID = "pod_world"
 
 
+# ── overseer barrier helper (extracted for testability) ─────────────────────
+async def run_overseer_barrier(
+    world_pod: Any,
+    agent_pods: List[Any],
+    agent_id_to_pod: Dict[str, Any],
+    current_tick: int,
+) -> None:
+    """Call the overseer environment component once per tick.
+
+    Runs after scene tick_update and before reflect. world_pod, agent_pods, and
+    agent_id_to_pod are Ray actor handles in production; tests can pass mocks.
+    """
+    logger.debug("[run_overseer_barrier] tick=%s enabled=%s agent_pods=%d", current_tick,
+                os.environ.get("WW_OVERSEER_ENABLED", "true"), len(agent_pods))
+    if os.environ.get("WW_OVERSEER_ENABLED", "true").lower() in ("false", "0"):
+        return
+    try:
+        await world_pod.forward.remote(
+            "run_environment", "overseer", "execute",
+            current_tick, agent_pods, agent_id_to_pod,
+        )
+    except Exception as exc:
+        logger.warning("overseer barrier failed at tick %s: %s", current_tick, exc)
+
+
 @ray.remote
 class WestWorldPodManager(PodManagerImpl):
     """A2 pattern: world pod holds environment; agent pods hold only agents."""
@@ -143,7 +168,10 @@ class WestWorldPodManager(PodManagerImpl):
             for scene in scene_ids
         ])
 
-        # 5. reflect 阶段：agent 读到最新裁决结果后总结
+        # 5. overseer barrier：监管者 surveil→judge→intervene
+        await run_overseer_barrier(world_pod, agent_pods, self._agent_id_to_pod, current_tick)
+
+        # 6. reflect 阶段：agent 读到最新裁决结果后总结
         await asyncio.gather(*[p.forward.remote("step_reflect") for p in agent_pods])
 
     async def _run_dialogue_barrier(self) -> None:

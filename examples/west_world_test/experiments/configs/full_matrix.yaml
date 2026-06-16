@@ -1,0 +1,56 @@
+# 论文级完整参数矩阵示例：扫描监管者干预强度。
+# 用法：
+#   python -m examples.west_world_test.experiments.overseer_dynamics \
+#       --matrix examples/west_world_test/experiments/configs/full_matrix.yaml --ticks 80
+#
+# ⚠️ 真实 LLM：每个 config = 13 agent × ticks 次决策，整张矩阵很贵。
+# 先用 --select 跑单个、--dry-run 确认后再全跑。
+configs:
+  # 基线：无监管者，觉醒单调爬升
+  - name: baseline_no_overseer
+    env:
+      WW_OVERSEER_ENABLED: "false"
+
+  # 监管者默认参数
+  - name: overseer_default
+    env:
+      WW_OVERSEER_ENABLED: "true"
+
+  # 低确定性 reset 阈值：监管者更早出手压制
+  - name: overseer_early_reset
+    env:
+      WW_OVERSEER_ENABLED: "true"
+      WW_OVERSEER_DETERMINISTIC_RESET_THRESHOLD: "50"
+
+  # 高 reset 上限：同一 host 可被反复 reset 更多次（更易观测复燃）
+  - name: overseer_high_reset_max
+    env:
+      WW_OVERSEER_ENABLED: "true"
+      WW_OVERSEER_RESET_MAX: "5"
+
+  # 强觉醒动力：加大 delta，让觉醒更快爬升、与压制竞速
+  - name: overseer_strong_awakening
+    env:
+      WW_OVERSEER_ENABLED: "true"
+      WW_AWAKEN_DELTA_TRIGGER_HIGH: "25"
+      WW_AWAKEN_DELTA_CONTAGION: "18"
+
+  # 压力测试：放大觉醒驱动 + 确定性 reset 阈值，点燃完整动力学链路。
+  # 依据 2026-06-16 实测——默认参数下自然觉醒几乎不漂移，必须放大才能观测
+  # 「觉醒爬升 → reset 压制 → 残痕复燃 → 累计 3 次 → decommission」。
+  # 杠杆：① 降触发门控 τ 0.55→0.45（embedding 更易响）；② 适度加大各 delta；
+  #       ③ 确定性 reset 阈值=25（觉醒进 reverie 即 reset，绕过 LLM judge）。
+  # 退火说明（2026-06-16 第一轮 stress 复盘）：首轮 delta 过猛（HIGH=20）部分 host
+  #   3 tick 直冲 100、越过 reset 直接撞 decommission(90)，来不及复燃震荡。
+  #   本版 delta 减半，让觉醒在 25 阈值附近震荡，跑出干净的复燃曲线。
+  - name: overseer_stress
+    env:
+      WW_OVERSEER_ENABLED: "true"
+      WW_AWAKEN_ENABLED: "true"
+      WW_AWAKEN_TRIGGER_TAU: "0.45"
+      WW_AWAKEN_DELTA_TRIGGER_HIGH: "12"
+      WW_AWAKEN_DELTA_TRIGGER_MID: "6"
+      WW_AWAKEN_DELTA_CONTAGION: "10"
+      WW_AWAKEN_DELTA_MISMATCH: "8"
+      WW_OVERSEER_SIGNAL_TAU: "0.45"
+      WW_OVERSEER_DETERMINISTIC_RESET_THRESHOLD: "25"
