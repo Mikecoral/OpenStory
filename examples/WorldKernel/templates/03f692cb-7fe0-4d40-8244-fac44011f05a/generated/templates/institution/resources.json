@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "assets",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "territory",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "magical_items_inventory",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "spiritual_energy_density",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "divine_troops_count",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "treasury_wealth",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "immortal_plantations",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

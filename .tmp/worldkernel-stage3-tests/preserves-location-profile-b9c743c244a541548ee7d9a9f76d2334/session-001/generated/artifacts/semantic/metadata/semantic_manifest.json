@@ -1,0 +1,9 @@
+{
+  "world_id": "world-001",
+  "artifact_files": {
+    "location_profile": "locations/locations.json",
+    "character_profile": "characters/characters.json",
+    "path_edge": "path_graph/path_graph.json",
+    "relation_edge": "relation_graph/relation_graph.json"
+  }
+}

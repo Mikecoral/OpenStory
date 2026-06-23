@@ -1,0 +1,13 @@
+dim_name: PersonalityDim
+traits:
+  type: list_str
+values:
+  type: list_str
+speech_style:
+  type: str
+moral_alignment:
+  type: str
+  option: true
+attitude_toward_authority:
+  type: str
+  option: true

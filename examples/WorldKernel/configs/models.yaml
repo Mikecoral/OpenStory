@@ -1,0 +1,6 @@
+- name: OpenAIProvider
+  model: deepseek-v4-flash
+  api_key:          # 通过 .env 文件中的 WORLDKERNEL_API_KEY 设置
+  base_url: https://api.deepseek.com
+  capabilities:
+    - chat

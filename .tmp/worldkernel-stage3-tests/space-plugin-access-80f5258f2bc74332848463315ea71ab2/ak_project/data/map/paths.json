@@ -1,0 +1,47 @@
+[
+  {
+    "id": "path-1",
+    "name": "Hall to Vault",
+    "type": "door",
+    "from_location_id": "loc-open",
+    "to_location_id": "loc-closed",
+    "from_location": "Open Hall",
+    "to_location": "Closed Vault",
+    "bidirectional": true,
+    "access_level": "restricted",
+    "danger_level": "low",
+    "required_items": "",
+    "gender_rule": "",
+    "traffic_restriction": "",
+    "centerline": [
+      {
+        "x": 2,
+        "y": 2
+      },
+      {
+        "x": 8,
+        "y": 2
+      }
+    ],
+    "movement_cost": 1.0,
+    "access_tags": [
+      "restricted"
+    ],
+    "raw": {
+      "identity": {
+        "id": "path-1",
+        "name": "Hall to Vault",
+        "type": "door"
+      },
+      "endpoints": {
+        "from_id": "loc-open",
+        "to_id": "loc-closed",
+        "bidirectional": true
+      },
+      "conditions": {
+        "access_level": "restricted",
+        "danger_level": "low"
+      }
+    }
+  }
+]

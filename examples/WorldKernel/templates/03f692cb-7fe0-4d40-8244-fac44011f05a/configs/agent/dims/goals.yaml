@@ -1,0 +1,13 @@
+dim_name: GoalsDim
+short_term_goal:
+  type: str
+long_term_goal:
+  type: str
+motivation:
+  type: str
+ambition_level:
+  type: str
+  option: true
+desire_for_freedom:
+  type: str
+  option: true

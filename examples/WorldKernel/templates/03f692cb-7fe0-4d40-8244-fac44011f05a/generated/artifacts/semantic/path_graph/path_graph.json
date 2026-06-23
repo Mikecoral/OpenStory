@@ -1,0 +1,797 @@
+{
+  "artifact_type": "path_edge",
+  "items": [
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:026",
+        "name": "南天门至战场通道",
+        "type": "云路",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:017",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:018",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "无",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:019",
+        "name": "南天门正道",
+        "type": "云路",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:017",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:011",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "无",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:020",
+        "name": "战场至广场",
+        "type": "广场通道",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:018",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:011",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:018",
+        "name": "白玉台阶",
+        "type": "阶梯",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:011",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:012",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "无",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:023",
+        "name": "殿后通道",
+        "type": "走廊",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:012",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:019",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "受限",
+        "danger_level": "低",
+        "required_items": "宫内令牌",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:021",
+        "name": "西南回廊",
+        "type": "回廊",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:012",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:013",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:022",
+        "name": "宴殿连廊",
+        "type": "长廊",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:012",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:016",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:015",
+        "name": "通明后径",
+        "type": "小径",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:019",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:008",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:017",
+        "name": "披香瑶池路",
+        "type": "云廊",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:016",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:009",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:016",
+        "name": "瑶池园道",
+        "type": "园林小径",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:009",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:015",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "受限",
+        "danger_level": "低",
+        "required_items": "园丁令牌",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:014",
+        "name": "园林连道",
+        "type": "花径",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:015",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:008",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "受限",
+        "danger_level": "低",
+        "required_items": "仙官令牌",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:013",
+        "name": "后苑北门",
+        "type": "通道",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:008",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:014",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "受限",
+        "danger_level": "安全",
+        "required_items": "玉帝通行旨",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:025",
+        "name": "北殿密道",
+        "type": "密道",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:014",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:019",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "受限",
+        "danger_level": "安全",
+        "required_items": "玉帝旨意",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:008",
+        "name": "东门府道",
+        "type": "云路",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:005",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:006",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:003",
+        "name": "府监小道",
+        "type": "小径",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:006",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:002",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:004",
+        "name": "云衢通道",
+        "type": "云路",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:002",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:017",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:005",
+        "name": "丹房通道",
+        "type": "内廊",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:004",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:003",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "受限",
+        "danger_level": "低",
+        "required_items": "老君令牌",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:006",
+        "name": "后院门",
+        "type": "门户",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:004",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:010",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "受限",
+        "danger_level": "低",
+        "required_items": "老君许可",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:001",
+        "name": "废墟路径",
+        "type": "断壁",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:003",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:001",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "受限",
+        "danger_level": "中",
+        "required_items": "无",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:011",
+        "name": "花果山道",
+        "type": "山路",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:007",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:020",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "低",
+        "required_items": "无",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:010",
+        "name": "天凡通道",
+        "type": "云路",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:007",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:017",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "受限",
+        "danger_level": "高",
+        "required_items": "武力突破",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:009",
+        "name": "府苑小路",
+        "type": "小径",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:006",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:008",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:024",
+        "name": "候宴通道",
+        "type": "回廊",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:013",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:016",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:012",
+        "name": "花园连道",
+        "type": "花径",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:009",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:008",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "开放",
+        "danger_level": "安全",
+        "required_items": "无",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:007",
+        "name": "老君取桃道",
+        "type": "云路",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:004",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:015",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "受限",
+        "danger_level": "低",
+        "required_items": "太上老君信物",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    },
+    {
+      "identity": {
+        "id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:002",
+        "name": "废墟后院",
+        "type": "残垣",
+        "surface_material": "",
+        "has_restriction": "",
+        "connected_to_vein": "",
+        "transformable": ""
+      },
+      "endpoints": {
+        "from_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:001",
+        "to_id": "e:03f692cb_7fe0_4d40_8244_fac44011f05a:loc:010",
+        "bidirectional": true,
+        "gate_type": "",
+        "teleportable": "",
+        "unidirectional_allowed": "",
+        "war_status": ""
+      },
+      "conditions": {
+        "access_level": "受限",
+        "danger_level": "中",
+        "required_items": "无",
+        "need_permission": "",
+        "minimum_magic_level": "",
+        "allowed_for_celestial": "",
+        "forbidden_for_demon": ""
+      }
+    }
+  ],
+  "source_ids": [
+    "primary"
+  ],
+  "produced_refs": [
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:026",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:019",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:020",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:018",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:023",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:021",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:022",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:015",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:017",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:016",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:014",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:013",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:025",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:008",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:003",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:004",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:005",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:006",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:001",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:011",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:010",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:009",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:024",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:012",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:007",
+    "e:03f692cb_7fe0_4d40_8244_fac44011f05a:path:002"
+  ],
+  "upstream_step_ids": [
+    "generate_paths"
+  ],
+  "warnings": [],
+  "provenance": {
+    "result_count": 1
+  }
+}

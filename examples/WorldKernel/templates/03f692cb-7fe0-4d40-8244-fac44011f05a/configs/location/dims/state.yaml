@@ -1,0 +1,22 @@
+dim_name: StateDim
+current_state:
+  type: str
+ownership:
+  type: str
+capacity:
+  type: int
+integrity_level:
+  type: str
+  option: true
+spiritual_energy:
+  type: str
+  option: true
+combat_state:
+  type: str
+  option: true
+fortification_status:
+  type: str
+  option: true
+contamination_level:
+  type: str
+  option: true

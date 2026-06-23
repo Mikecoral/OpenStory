@@ -1,0 +1,33 @@
+{
+  "artifact_type": "path_edge",
+  "items": [
+    {
+      "identity": {
+        "id": "path-1",
+        "name": "Hall to Vault",
+        "type": "door"
+      },
+      "endpoints": {
+        "from_id": "loc-open",
+        "to_id": "loc-closed",
+        "bidirectional": true
+      },
+      "conditions": {
+        "access_level": "restricted",
+        "danger_level": "low"
+      }
+    },
+    {
+      "identity": {
+        "id": "path-bad",
+        "name": "Bad Path"
+      },
+      "endpoints": {
+        "from_id": "loc-open",
+        "to_id": "missing",
+        "bidirectional": true
+      },
+      "conditions": {}
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "world_name": "水浒传世界",
+  "world_origin_summary": "衍生自《水浒传》原著，还原北宋末年梁山好汉反抗朝廷腐败的江湖世界",
+  "primary": "rebel_stronghold",
+  "secondary": "feudal_court",
+  "tags": [
+    "古代中国",
+    "宋代",
+    "江湖义气",
+    "农民起义",
+    "武打战斗",
+    "108将",
+    "朝廷腐败",
+    "衍生世界"
+  ],
+  "scope": "region",
+  "simulation_start": {
+    "time_point": "晁盖等七人智取生辰纲后上梁山，火并王伦",
+    "trigger_event": "晁盖成为梁山之主，梁山进入聚义初期",
+    "year": "北宋宣和年间（约1119年）",
+    "narrative_context": "晁盖领导下的梁山招纳四方好汉，初具规模，与朝廷的冲突逐渐升级"
+  },
+  "world_constraints": [
+    {
+      "constraint_id": "loyalty_before_all",
+      "name": "忠义信条优先",
+      "description": "梁山好汉以兄弟义气为最高准则，背叛兄弟者将遭集体排斥甚至处死，这一原则贯穿所有行动",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "court_oppression",
+      "name": "朝廷黑暗压迫",
+      "description": "北宋朝廷从上到下腐败盛行，奸臣当道，普通百姓和正直官员备受压迫，这一局面是好汉们落草的根本原因",
+      "scope": "global"
+    },
+    {
+      "constraint_id": "outlaw_identity",
+      "name": "草寇身份限制",
+      "description": "梁山上下均为朝廷通缉的罪犯，无法在正常社会立足，只能通过武力对抗或招安改变命运",
+      "scope": "faction"
+    },
+    {
+      "constraint_id": "destiny_of_stars",
+      "name": "天罡地煞宿命",
+      "description": "108将为天罡地煞星下凡，聚义和最终结局均有天意安排，悲剧结局不可避免",
+      "scope": "global"
+    }
+  ]
+}

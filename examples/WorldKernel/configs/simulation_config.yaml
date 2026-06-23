@@ -1,0 +1,21 @@
+simulation:
+  pod_size: 5
+  init_batch_size: 5
+  max_ticks: 100
+
+configs:
+  environment: "environment_config.yaml"
+  actions: "actions_config.yaml"
+  agent_templates: "agents_config.yaml"
+  system: "system_config.yaml"
+  database: "db_config.yaml"
+  models: "models.yaml"
+
+data:
+  agent_profiles: "data/agents/profiles.jsonl"
+  agent_states: "data/agents/states.jsonl"
+  agents_relation: "data/relations/relations.jsonl"
+  map_agents: "data/map/agents.jsonl"
+  map_locations: "data/map/locations.json"
+  map_paths: "data/map/paths.json"
+  world_background: "data/world/background.json"

@@ -1,0 +1,34 @@
+{
+  "fields": [
+    {
+      "name": "short_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "long_term_goal",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "motivation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "ambition_level",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "desire_for_freedom",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

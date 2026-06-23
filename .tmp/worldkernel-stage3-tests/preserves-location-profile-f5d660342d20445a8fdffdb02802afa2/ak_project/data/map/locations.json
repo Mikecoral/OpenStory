@@ -1,0 +1,120 @@
+[
+  {
+    "id": "loc-open",
+    "name": "Open Hall",
+    "type": "hall",
+    "description": "A public hall.",
+    "access": {
+      "permissions": "all",
+      "access_level": "open",
+      "access_conditions": "",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "busy",
+      "ownership": "",
+      "capacity": 20,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 20,
+    "tags": [
+      "hall",
+      "open"
+    ],
+    "symbolic_meaning": "public order",
+    "key_plot_events": "gatherings",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 1,
+      "y": 1,
+      "w": 5,
+      "h": 5
+    },
+    "entrance": {
+      "x": 2,
+      "y": 2
+    },
+    "raw": {
+      "identity": {
+        "id": "loc-open",
+        "name": "Open Hall",
+        "type": "hall",
+        "description": "A public hall.",
+        "symbolic_meaning": "public order",
+        "key_plot_events": "gatherings"
+      },
+      "access": {
+        "access_level": "open",
+        "permissions": "all"
+      },
+      "state": {
+        "current_state": "busy",
+        "capacity": 20
+      }
+    }
+  },
+  {
+    "id": "loc-closed",
+    "name": "Closed Vault",
+    "type": "vault",
+    "description": "A sealed vault.",
+    "access": {
+      "permissions": "forbidden",
+      "access_level": "closed",
+      "access_conditions": "",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "blocked",
+      "ownership": "",
+      "capacity": 2,
+      "seasonal_state": "",
+      "maintenance_condition": "",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 2,
+    "tags": [
+      "vault",
+      "closed"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 8,
+      "y": 1,
+      "w": 3,
+      "h": 3
+    },
+    "entrance": {
+      "x": 8,
+      "y": 2
+    },
+    "raw": {
+      "identity": {
+        "id": "loc-closed",
+        "name": "Closed Vault",
+        "type": "vault",
+        "description": "A sealed vault."
+      },
+      "access": {
+        "access_level": "closed",
+        "permissions": "forbidden"
+      },
+      "state": {
+        "current_state": "blocked",
+        "capacity": 2
+      }
+    }
+  }
+]

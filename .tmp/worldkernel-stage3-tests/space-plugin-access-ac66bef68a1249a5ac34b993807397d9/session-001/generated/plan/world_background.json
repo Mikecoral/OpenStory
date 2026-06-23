@@ -1,0 +1,7 @@
+{
+  "world_name": "Test World",
+  "theme": "truth and access",
+  "world_constraints": [
+    "Stay grounded in generated locations."
+  ]
+}

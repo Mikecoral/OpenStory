@@ -1,0 +1,28 @@
+{
+  "fields": [
+    {
+      "name": "relation_ids",
+      "type": "list_str",
+      "required": true,
+      "ref": "relation"
+    },
+    {
+      "name": "family_relations",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "mentor_relations",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "rival_list",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

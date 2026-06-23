@@ -1,0 +1,12 @@
+name: WorldKernelEnvironment
+components:
+  relation:
+    plugin:
+      WKRelationPlugin:
+        relations: agents_relation
+  space:
+    plugin:
+      WKSpacePlugin:
+        locations: map_locations
+        paths: map_paths
+        agents: map_agents

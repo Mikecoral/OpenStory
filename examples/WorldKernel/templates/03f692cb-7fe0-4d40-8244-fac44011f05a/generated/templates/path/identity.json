@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "name",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "type",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "surface_material",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "has_restriction",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "connected_to_vein",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "transformable",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}

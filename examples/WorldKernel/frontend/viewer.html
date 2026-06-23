@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>openstory - 语义图谱展示</title>
+    <style>
+        /* ================= 视觉变量与重置 ================= */
+        :root {
+            --bg-gradient: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            --card-bg: rgba(255, 255, 255, 0.45);
+            --card-border: rgba(255, 255, 255, 0.6);
+            --text-main: #2c3e50;
+            --text-muted: #596a7b;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Microsoft YaHei", sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        /* ================= 布局与排版 ================= */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #1a252f;
+        }
+        .header p {
+            margin-top: 10px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            color: #34495e;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        /* ================= 毛玻璃卡片 ================= */
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .card img {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            object-fit: cover;
+            background: #fff;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            color: #2c3e50;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* ================= 模态框 ================= */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid white;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 30px;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px; right: 20px;
+            background: none; border: none;
+            font-size: 1.5rem; cursor: pointer; color: #7f8c8d;
+        }
+        
+        .data-tree { font-size: 0.95rem; line-height: 1.6; }
+        .data-key { font-weight: 600; color: #34495e; }
+        .data-val { color: #555; }
+        .data-indent { margin-left: 20px; padding-left: 15px; border-left: 2px solid #ecf0f1; margin-top: 5px; margin-bottom: 5px;}
+        
+        #error-msg { text-align: center; color: #e74c3c; margin-top: 20px; display: none; }
+        .loader { text-align: center; margin-top: 50px; color: var(--text-muted); font-size: 1.1rem; }
+        
+        /* 加载动画特效 */
+        .translating-pulse { animation: pulse 1.5s infinite; color: #3498db; }
+        @keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>openstory 语义图谱</h1>
+        <p id="session-display">正在初始化...</p>
+        <p id="error-msg"></p>
+    </div>
+
+    <div class="section-container" id="characters-section" style="display: none;">
+        <h2 class="section-title">◈ 世界角色</h2>
+        <div class="grid" id="characters-grid"></div>
+    </div>
+
+    <div class="section-container" id="locations-section" style="display: none;">
+        <h2 class="section-title">◈ 核心风物</h2>
+        <div class="grid" id="locations-grid"></div>
+    </div>
+
+    <div class="loader" id="loader">拼命读取数据中...</div>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <h2 id="modal-title" style="margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px;">详细档案</h2>
+            <div id="modal-body" class="data-tree"></div>
+        </div>
+    </div>
+
+    <script>
+        // 本地基础字典：处理通用的变量名
+        const keyMap = {
+            "identity": "身份标识", "id": "系统ID", "name": "名称", "role": "设定角色", 
+            "type": "实体类型", "description": "详细描述", "state": "当前状态", 
+            "position": "物理坐标", "x": "X轴坐标", "y": "Y轴坐标",
+            "psychological_state_label": "心理状态标签", "deceased_relationship": "与逝者的关系", 
+            "era_background": "时代背景", "residence_status": "居住状态", 
+            "student_movement_involvement": "学运参与度", "social_profile": "社会关系画像", 
+            "group_id": "所属圈子", "reputation": "声望与名誉", "group_affiliation": "派系归属", 
+            "reputation_label": "社会评价", "emotional_dependency_object": "情感依赖对象", 
+            "circle_of_trust": "信任圈名单", "stigma_related_to_trauma": "创伤相关阴影",
+            "capabilities": "能力与属性", "skills": "掌握技能", "level": "综合水平", 
+            "weaknesses": "弱点与缺陷", "instrument_playing_skill": "乐器演奏能力", 
+            "writing_ability": "写作能力", "coping_mechanism": "压力应对机制", 
+            "alcohol_tolerance": "酒精耐受度", "psychotherapy_receptiveness": "心理治疗接受度", 
+            "memory_vividness": "记忆清晰度", "personality": "性格特征", "traits": "性格特质", 
+            "values": "核心价值观", "speech_style": "语言风格", "inner_monologue_tendency": "内心独白倾向", 
+            "attitude_toward_death": "对死亡的态度", "attitude_toward_suicide": "对自杀的态度", 
+            "music_taste": "音乐品味", "loneliness_intensity": "孤独程度", 
+            "social_avoidance_level": "社交回避程度", "nostalgia_frequency": "怀旧频率",
+            "goals": "动机与目标", "short_term_goal": "短期目标", "long_term_goal": "长期目标", 
+            "motivation": "核心驱动力", "alleviate_mental_pain": "缓解精神痛苦", 
+            "find_meaning_in_life": "寻找生命意义", "process_loss": "处理丧失与悲痛", 
+            "maintain_connection_with_deceased": "与逝者保持联系", 
+            "escape_into_isolation": "逃避与自我隔离倾向", "memories": "记忆与经历库", 
+            "knowledge": "常识与知识", "world_knowledge": "世界背景常识", "social_knowledge": "社交人际情报", 
+            "background_summary": "个人背景摘要", "key_events": "人生关键事件", "secrets": "隐藏的秘密", 
+            "memory_of_deceased_person": "对逝者的特定记忆", "memory_of_specific_well": "对特定地点的记忆", 
+            "memory_of_amibe_sanatorium": "对疗养院的记忆", "music_associated_memory": "关于音乐的回忆", 
+            "traumatic_recollection": "创伤性画面闪回", "childhood_attachment_memory": "童年依恋记忆",
+            "location": "当前所在位置", "location_id": "地点引用ID", "emotional_state": "即时情绪状态", 
+            "season": "季节", "year": "当前年份", "flashback_triggered": "是否正触发闪回", 
+            "current_drunkenness_level": "当前醉酒程度", "location_mood_projection": "环境情感投射",
+            "emotional_aura": "环境情感氛围", "associated_characters": "主要关联人物", 
+            "historical_period": "历史时间段", "narrative_significance": "叙事意义", 
+            "symbolic_theme": "象征主题", "access": "出入与访问权限", "permissions": "访问许可规定", 
+            "access_level": "开放级别", "access_conditions": "准入前置条件", "visiting_hours": "可访问时段", 
+            "entry_ritual": "进入仪式或习惯", "seasonal_availability": "季节性开放情况", 
+            "social_restrictions": "社交规范与限制", "psychological_barrier": "心理屏障与门槛",
+            "current_state": "当前运营/使用现状", "ownership": "所有权归属", "capacity": "最大容纳人数", 
+            "atmospheric_condition": "气象与空气环境", "occupancy_rate": "人员满载率", 
+            "maintenance_level": "维护与修缮水平", "temporal_phase": "时间流逝相位", 
+            "weather_affinity": "天气氛围契合度"
+        };
+
+        // 本地安全值字典：秒翻常用的枚举值，不用浪费 API
+        const safeValueMap = {
+            "spring": "春季", "summer": "夏季", "autumn": "秋季", "winter": "冬季",
+            "university_student": "大学生", "sanatorium_resident": "疗养院住客", 
+            "doctor": "医生", "urban_professional": "都市职业人", 
+            "musician_performer": "音乐演奏者", "deceased_memory": "已故者记忆", 
+            "elite_youth": "精英青年", "university_campus": "大学校园",
+            "classroom_building": "教学楼", "library": "图书馆", "cafeteria": "食堂",
+            "leisure_social": "休闲场所", "residential_space": "居住空间",
+            "natural_landscape": "自然景观", "transit_node": "交通节点",
+            "sanatorium": "疗养院", "public": "完全公开", "private": "私人空间",
+            "restricted": "受限进入", "highly restricted": "高度受限",
+            "open": "开放"
+        };
+
+        const dynamicKeyCache = {};
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+
+        const elements = {
+            sessionDisplay: document.getElementById('session-display'),
+            errorMsg: document.getElementById('error-msg'),
+            loader: document.getElementById('loader'),
+            charsSection: document.getElementById('characters-section'),
+            charsGrid: document.getElementById('characters-grid'),
+            locsSection: document.getElementById('locations-section'),
+            locsGrid: document.getElementById('locations-grid'),
+            modal: document.getElementById('modal'),
+            modalTitle: document.getElementById('modal-title'),
+            modalBody: document.getElementById('modal-body')
+        };
+
+        if (!sessionId) {
+            showError("错误：URL 中缺失 session_id 参数。");
+        } else {
+            elements.sessionDisplay.innerText = `当前记录序列: ${sessionId}`;
+            loadWorldData();
+        }
+
+        function showError(msg) {
+            elements.loader.style.display = 'none';
+            elements.errorMsg.style.display = 'block';
+            elements.errorMsg.innerText = msg;
+        }
+
+        async function fetchTranslation(textStr) {
+            try {
+                const response = await fetch('/api/utils/translate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: textStr })
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    return data.translated || textStr;
+                }
+            } catch (e) {
+                console.error("翻译请求失败:", e);
+            }
+            return textStr;
+        }
+
+        async function translateDynamicData(obj) {
+            if (!obj) return;
+            if (Array.isArray(obj)) {
+                for (let i = 0; i < obj.length; i++) {
+                    await translateDynamicData(obj[i]);
+                }
+            } else if (typeof obj === 'object') {
+                for (let key in obj) {
+                    if (key === 'id' || key === 'location_id' || key === 'items' || key === 'artifact_type') continue;
+                    
+                    if (!keyMap[key] && !dynamicKeyCache[key] && /[a-zA-Z]/.test(key)) {
+                        const readableKey = key.split('_').join(' ');
+                        const translatedKey = await fetchTranslation(readableKey);
+                        dynamicKeyCache[key] = translatedKey;
+                    }
+
+                    if (typeof obj[key] === 'string') {
+                        const val = obj[key].trim();
+                        if (/[a-zA-Z]{4,}/.test(val)) {
+                            const lowerVal = val.toLowerCase();
+                            if (safeValueMap[lowerVal]) {
+                                obj[key] = safeValueMap[lowerVal];
+                            } else {
+                                obj[key] = await fetchTranslation(val);
+                            }
+                        }
+                    } else if (typeof obj[key] === 'object') {
+                        await translateDynamicData(obj[key]);
+                    }
+                }
+            }
+        }
+
+        async function loadWorldData() {
+            try {
+                // 🚨 核心修复：更新了 fetch 路径，加上了 /semantic/
+                const charUrl = `/api/stage1/session/${sessionId}/generated/artifacts/semantic/characters/characters.json`;
+                const locUrl = `/api/stage1/session/${sessionId}/generated/artifacts/semantic/locations/locations.json`;
+
+                const [charRes, locRes] = await Promise.allSettled([
+                    fetch(charUrl).then(r => r.ok ? r.json() : null),
+                    fetch(locUrl).then(r => r.ok ? r.json() : null)
+                ]);
+
+                const charData = charRes.value?.items || charRes.value || [];
+                const locData = locRes.value?.items || locRes.value || [];
+
+                if (charData.length === 0 && locData.length === 0) {
+                    showError("未找到该会话的语义生成数据。");
+                    return;
+                }
+
+                elements.loader.innerHTML = '正在呼叫 Agent 进行动态语义解析 <span class="translating-pulse">...</span>';
+                
+                await Promise.all([
+                    translateDynamicData(charData),
+                    translateDynamicData(locData)
+                ]);
+
+                elements.loader.style.display = 'none';
+
+                if (charData.length > 0) renderCards(charData, 'character');
+                if (locData.length > 0) renderCards(locData, 'location');
+
+            } catch (err) {
+                showError("请求数据失败，请确保服务已启动。");
+                console.error(err);
+            }
+        }
+
+        function renderCards(dataArray, type) {
+            const grid = type === 'character' ? elements.charsGrid : elements.locsGrid;
+            const section = type === 'character' ? elements.charsSection : elements.locsSection;
+            section.style.display = 'block';
+
+            const rawCharSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f1f5f9"/><circle cx="50" cy="38" r="16" fill="#94a3b8"/><path d="M22 85c0-16 13-26 28-26s28 10 28 26" fill="#94a3b8"/></svg>`;
+            const charAvatarUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(rawCharSvg)}`;
+            const rawLocSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f1f5f9"/><path d="M15 80L40 45l15 20 20-30 15 25v20H15z" fill="#94a3b8"/><circle cx="75" cy="30" r="8" fill="#cbd5e1"/></svg>`;
+            const locAvatarUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(rawLocSvg)}`;
+
+            dataArray.forEach(item => {
+                const identity = item.identity || {};
+                const name = identity.name || '未知实体';
+                const avatarUrl = type === 'character' ? charAvatarUrl : locAvatarUrl;
+
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `<img src="${avatarUrl}" alt="档案图片"><h3>${name}</h3>`;
+                card.onclick = () => openModal(name, item);
+                grid.appendChild(card);
+            });
+        }
+
+        function openModal(title, dataObj) {
+            elements.modalTitle.innerText = title;
+            elements.modalBody.innerHTML = formatJSON(dataObj);
+            elements.modal.classList.add('active');
+        }
+
+        function closeModal() { elements.modal.classList.remove('active'); }
+        elements.modal.addEventListener('click', (e) => { if(e.target === elements.modal) closeModal(); });
+
+        function formatJSON(obj) {
+            if (typeof obj !== 'object' || obj === null) {
+                let displayVal = obj;
+                if (obj === "true" || obj === true) displayVal = "是";
+                if (obj === "false" || obj === false) displayVal = "否";
+                return `<span class="data-val">${displayVal}</span>`;
+            }
+            if (Array.isArray(obj)) {
+                if(obj.length === 0) return '<span class="data-val">无</span>';
+                return `<div class="data-indent">` + obj.map(item => `<div>- ${formatJSON(item)}</div>`).join('') + `</div>`;
+            }
+            let html = '<div class="data-indent">';
+            for (let key in obj) {
+                if(key === 'id' && typeof obj[key] === 'string' && obj[key].startsWith('e:')) continue;
+                if(key === 'location_id' && typeof obj[key] === 'string' && obj[key].startsWith('e:')) continue;
+                
+                let displayKey = keyMap[key] || dynamicKeyCache[key];
+                if (!displayKey) {
+                    displayKey = key.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+                }
+                
+                html += `<div><span class="data-key">${displayKey}:</span> ${formatJSON(obj[key])}</div>`;
+            }
+            html += '</div>';
+            return html;
+        }
+    </script>
+</body>
+</html>

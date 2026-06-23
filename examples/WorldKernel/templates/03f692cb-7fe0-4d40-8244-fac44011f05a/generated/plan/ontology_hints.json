@@ -1,0 +1,36 @@
+{
+  "character_hints": [
+    "身份（identity）需明确是天庭神职、散仙、妖猴还是外部神佛",
+    "神力等级（power_level）从凡人到至圣，影响战斗胜负",
+    "阵营（faction）分为天庭、花果山、灵山等",
+    "不死性（immortality）标注神佛是否可被杀或转生",
+    "立场（stance）分为支持统治、中立、反抗、镇压等"
+  ],
+  "location_hints": [
+    "空间层级（spatial_hierarchy）区分天庭/凡间/秘境",
+    "功能（function）如朝会、炼丹、关隘、居住、战场",
+    "禁制（restriction）如蟠桃园有守卫，兜率宫有结界",
+    "容量（capacity）可容纳角色数量，影响冲突规模",
+    "关联事件（associated_event）如蟠桃会、偷丹、八卦炉"
+  ],
+  "relation_hints": [
+    "统治关系（ruler_subject）：玉帝-天兵、玉帝-神仙",
+    "敌对关系（enemy）：孙悟空-天庭全阵营",
+    "联盟关系（ally）：孙悟空-花果山猴子；玉帝-如来",
+    "师徒关系（master_apprentice）：太上老君-金童",
+    "战斗关系（combat）：李靖-孙悟空、哪吒-孙悟空",
+    "任命关系（appointment）：玉帝-太白金星招安"
+  ],
+  "institution_hints": [
+    "天庭机构（celestial_bureau）：如御马监、蟠桃会、天兵营",
+    "天规体系（heavenly_rules）：如不得私闯瑶池、不得偷丹",
+    "等级编制（rank_system）：从玉帝到天兵，九品仙职",
+    "神佛组织（deity_organization）：如来领导灵山，玉帝领导天庭"
+  ],
+  "rule_hints": [
+    "天规（heavenly_laws）：禁止私自下凡、禁止偷盗仙物",
+    "任命规则（appointment_rules）：须有玉帝诏书，神仙科举或功德晋升",
+    "战斗规则（combat_rules）：神佛不死，法宝克制，斩仙台处刑",
+    "禁忌规则（taboo_rules）：不得擅闯三十三重天，不得触碰玉帝法器"
+  ]
+}

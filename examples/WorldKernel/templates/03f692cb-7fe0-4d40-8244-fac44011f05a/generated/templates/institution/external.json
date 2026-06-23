@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "name": "relations_to_others",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "public_reputation",
+      "type": "str",
+      "required": true,
+      "ref": ""
+    },
+    {
+      "name": "alliance_network",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "rival_bureau",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "mythological_significance",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "public_relation_strategy",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    },
+    {
+      "name": "heavenly_audit_frequency",
+      "type": "str",
+      "required": false,
+      "ref": ""
+    }
+  ]
+}
