@@ -11,6 +11,9 @@
 
 ## 🌟  重要新闻
 
+**✨ 我们的 OpenStory Launcher 客户端上线啦！**  
+之前各位穿越者经常反馈不知道如何安装游戏，让我们意识到了当前的门槛太高的问题。于是我们连夜开发了客户端版本，支持一键点击即玩！前往 [release](https://github.com/ZJU-LLMs/OpenStory/releases) 下载！快点参与到红楼梦世界来吧！
+
 **✨ 我们的项目被《新智元》报道啦！**  
 https://mp.weixin.qq.com/s/1Z9LAoombuvMGBkpyyMCrg
 
