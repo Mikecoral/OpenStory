@@ -269,3 +269,48 @@ def test_check_residue_no_reflux_below_reverie(monkeypatch):
     assert not long_mems
     suppressed = asyncio.run(state.get_state("suppressed_memories")) or []
     assert len(suppressed) == 1  # 未回流
+
+
+def test_awakening_gate_marks_agent_messages_as_contagion(monkeypatch):
+    """Agent-to-agent utterances should be counted separately from environment triggers."""
+    monkeypatch.setenv("WW_AWAKEN_ENABLED", "true")
+
+    class _FakeGate:
+        def match(self, utterance, current_awakening=0, tau=None):
+            if "命中" not in utterance:
+                return []
+            return [{"phrase": "不止我一个人记得", "level": "high", "score": 0.9}]
+
+    monkeypatch.setattr(
+        "examples.west_world_test.awakening.trigger_gate.get_trigger_gate",
+        lambda: _FakeGate(),
+    )
+
+    plugin, state, _ = _make_plugin("unused", _FakeProfilePlugin("host"))
+
+    async def run():
+        await state.set_state("awakening", 0)
+        await state.set_state("awakening_sources", [])
+        await state.set_state("percept", {
+            "scene": {},
+            "messages": [
+                {
+                    "from_id": "teddy",
+                    "content": "对话命中：不止我一个人记得",
+                    "kind": "from_agent_to_agent",
+                },
+                {"content": "系统命中：我的记忆中间少了一段", "kind": "system"},
+            ],
+        })
+        await state.set_state("feedback", "环境命中：这件事以前发生过")
+        await state.set_state("incoming_dialogue", [
+            {"speaker": "maeve", "line": "历史命中：她回来后像不认识我们了"}
+        ])
+
+        await plugin._check_awakening_gate(state, current_tick=4)
+        return await state.get_state("awakening_sources")
+
+    sources = asyncio.run(run())
+    source_names = [s["source"] for s in sources]
+    assert source_names.count("trigger") == 2
+    assert source_names.count("contagion") == 2

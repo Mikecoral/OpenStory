@@ -66,7 +66,20 @@ async def main() -> None:
     validate_protocol(events, probes)
 
     python_path = os.pathsep.join([PROJECT_ROOT, PACKAGE_PATH, os.environ.get("PYTHONPATH", "")])
-    runtime_env = {"working_dir": PROJECT_PATH, "env_vars": {"PYTHONPATH": python_path}}
+    runtime_env = {
+        "working_dir": PROJECT_PATH,
+        "env_vars": {"PYTHONPATH": python_path},
+        "excludes": [
+            "output/",
+            "output/**",
+            "logs/",
+            "logs/**",
+            ".pytest_cache/",
+            ".pytest_cache/**",
+            "__pycache__/",
+            "**/__pycache__/**",
+        ],
+    }
     ray.init(runtime_env=runtime_env)
     builder = Builder(PROJECT_PATH, RESOURCES_MAPS)
     pod_manager, _ = await builder.init()

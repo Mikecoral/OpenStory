@@ -20,6 +20,18 @@ from ..types.configs import Config, AgentConfig, AgentTemplateConfig
 logger = get_logger(__name__)
 
 
+DEFAULT_RUNTIME_ENV_EXCLUDES = [
+    "output/",
+    "output/**",
+    "logs/",
+    "logs/**",
+    ".pytest_cache/",
+    ".pytest_cache/**",
+    "__pycache__/",
+    "**/__pycache__/**",
+]
+
+
 def load_config(project_path: str, configs_dirname: str = "configs") -> Config:
     """
     Loads all configurations based on a conventional project structure.
@@ -197,7 +209,10 @@ class Builder:
         """
         if not ray.is_initialized():
             ray.init(
-                runtime_env={"working_dir": self._project_path},
+                runtime_env={
+                    "working_dir": self._project_path,
+                    "excludes": DEFAULT_RUNTIME_ENV_EXCLUDES,
+                },
                 _system_config={"memory_monitor_refresh_ms": 0}
             )
         logger.info("Ray is initialized.")

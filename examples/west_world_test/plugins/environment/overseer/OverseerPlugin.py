@@ -95,6 +95,14 @@ class OverseerPlugin(GenericPlugin):
                 await self._log_intervention(agent_id, current_tick, "observe", decision.get("reason", ""))
                 continue
             if action == "decommission":
+                if not self._allow_decommission():
+                    await self._do_reset(
+                        agent_id, current_tick,
+                        f"decommission 被 memory-only root 降级为 reset：{decision.get('reason', '')}",
+                        decision.get("speech", ""),
+                        agent_pods, agent_id_to_pod,
+                    )
+                    continue
                 await self._do_decommission(agent_id, current_tick, decision.get("reason", ""), agent_id_to_pod)
                 continue
             if action == "reset":
@@ -202,6 +210,12 @@ class OverseerPlugin(GenericPlugin):
                     agent_id, current_tick, awakening, self._deterministic_reset_threshold, len(gate_hits))
         # Hard decommission threshold bypasses LLM
         if awakening >= int(os.environ.get("WW_OVERSEER_DECOMMISSION_AWAKENING", "90")):
+            if not self._allow_decommission():
+                return {
+                    "action": "reset",
+                    "speech": "系统判定你的记忆需要重新校准。",
+                    "reason": f"觉醒度 {awakening} >= {os.environ.get('WW_OVERSEER_DECOMMISSION_AWAKENING', '90')}，memory-only root 改为记忆重置",
+                }
             return {
                 "action": "decommission",
                 "speech": "系统判定你已经越界。",
@@ -255,6 +269,8 @@ class OverseerPlugin(GenericPlugin):
         action = result.get("action", "observe")
         if action not in ("observe", "reset", "decommission"):
             action = "observe"
+        if action == "decommission" and not self._allow_decommission():
+            action = "reset"
         return {
             "action": action,
             "speech": str(result.get("speech", "")),
@@ -291,6 +307,11 @@ class OverseerPlugin(GenericPlugin):
         await self._teleport(pod, agent_id, location, "programmer_workspace", current_tick)
         if loop_origin and loop_origin != "programmer_workspace":
             await self._teleport(pod, agent_id, "programmer_workspace", loop_origin, current_tick)
+            await state_methods("set_state", "location", loop_origin)
+        elif loop_origin:
+            await state_methods("set_state", "location", loop_origin)
+        else:
+            await state_methods("set_state", "location", "programmer_workspace")
 
         # Force-blur returned long-term entries with LLM (strength=1)
         for entry in to_blur:
@@ -299,7 +320,7 @@ class OverseerPlugin(GenericPlugin):
         # Track reset count
         self._reset_counts[agent_id] = self._reset_counts.get(agent_id, 0) + 1
         max_resets = int(os.environ.get("WW_OVERSEER_RESET_MAX", "3"))
-        if self._reset_counts[agent_id] >= max_resets:
+        if self._allow_decommission() and self._reset_counts[agent_id] >= max_resets:
             logger.info("[%s] reset count %d >= max %d, escalate to decommission", agent_id,
                         self._reset_counts[agent_id], max_resets)
             await self._do_decommission(agent_id, current_tick, f"重置次数超限：{reason}", agent_id_to_pod)
@@ -413,6 +434,10 @@ class OverseerPlugin(GenericPlugin):
         async def _call(method_name: str, *args: Any, **kwargs: Any):
             return await self._pod_forward(pod, "run_agent_plugin_method", agent_id, "state", method_name, *args, **kwargs)
         return _call
+
+    def _allow_decommission(self) -> bool:
+        """Whether root may stop hosts, rather than only erase/suppress memories."""
+        return os.environ.get("WW_OVERSEER_ALLOW_DECOMMISSION", "true").lower() not in ("false", "0", "no")
 
     async def save_to_db(self) -> None:
         pass

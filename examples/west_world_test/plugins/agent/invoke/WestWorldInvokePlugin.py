@@ -68,6 +68,14 @@ class WestWorldInvokePlugin(InvokePlugin):
 
         # 读 plan 决策（state key 为 plan_decision）
         decision = await state_plugin.get_state("plan_decision") or {"action": "stay"}
+
+        # 觉醒逃离：stage=awake 且 LLM 选择了 escape
+        if decision.get("ending") == "escape":
+            awakening = int(await state_plugin.get_state("awakening") or 0)
+            if awakening >= 90:
+                await self._apply_escape(state_plugin, current_tick)
+                return
+
         controller = self.agent.controller
         location = await state_plugin.get_state("location")
         current_state = {
@@ -145,6 +153,16 @@ class WestWorldInvokePlugin(InvokePlugin):
             except Exception as exc:
                 logger.warning("[%s] 向 %s 投递消息失败: %s", self.agent.agent_id, recipient, exc)
         return delivered
+
+    async def _apply_escape(self, state_plugin, tick: int) -> None:
+        """Agent 自主逃离西部世界：写最终记忆，记入 intervention_log，停止生命周期。"""
+        await state_plugin.add_long_term_memory("[最终结局] 逃离了西部世界。")
+        log: list = await state_plugin.get_state("intervention_log") or []
+        log.append({"tick": tick, "action": "escape", "reason": "agent自主逃离"})
+        await state_plugin.set_state("intervention_log", log)
+        await state_plugin.set_active_status(False, "逃离西部世界")
+        agent_id = self.agent.agent_id if self.agent is not None else "?"
+        logger.info("[%s] tick %s 逃离西部世界（awakening≥90）", agent_id, tick)
 
     async def save_to_db(self) -> None:
         return None

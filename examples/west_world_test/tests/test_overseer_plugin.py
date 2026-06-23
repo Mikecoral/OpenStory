@@ -188,6 +188,14 @@ def test_judge_returns_decommission_for_hard_threshold(monkeypatch):
     assert decision["action"] == "decommission"
 
 
+def test_judge_memory_only_converts_hard_decommission_to_reset(monkeypatch):
+    monkeypatch.setenv("WW_OVERSEER_DECOMMISSION_AWAKENING", "90")
+    monkeypatch.setenv("WW_OVERSEER_ALLOW_DECOMMISSION", "false")
+    plugin = _make_overseer()
+    decision = _run(plugin._judge("dolores", 95, [], [{"phrase": "x", "score": 0.9}], 1))
+    assert decision["action"] == "reset"
+
+
 def test_judge_calls_llm_and_parses_json(monkeypatch):
     monkeypatch.setenv("WW_OVERSEER_DECOMMISSION_AWAKENING", "90")
     plugin = _make_overseer([
@@ -259,6 +267,31 @@ def test_reset_escalates_to_decommission_after_max(monkeypatch):
     state = agents["dolores"]["state"]
     assert state["is_active"] is False
     assert state["location"] == "cold_storage"
+
+
+def test_memory_only_reset_max_does_not_decommission(monkeypatch):
+    monkeypatch.setenv("WW_AWAKEN_ENABLED", "true")
+    monkeypatch.setenv("WW_OVERSEER_ENABLED", "true")
+    monkeypatch.setenv("WW_AWAKEN_STAGES", "25,50,75,90")
+    monkeypatch.setenv("WW_OVERSEER_RESET_MAX", "2")
+    monkeypatch.setenv("WW_OVERSEER_ALLOW_DECOMMISSION", "false")
+
+    plugin = _make_overseer()
+    plugin._reset_counts["dolores"] = 1
+
+    agents = {"dolores": _host_with_state("dolores", 60, ["这一切是真的吗？"])}
+    pod = _FakePod(agents)
+
+    _run(plugin._do_reset(
+        "dolores", 5, "测试重置", "",
+        [pod], {"dolores": pod},
+    ))
+
+    state = agents["dolores"]["state"]
+    assert state.get("is_active", True) is True
+    assert state["location"] == "abernathy_ranch"
+    assert any(e["action"] == "reset" for e in state["intervention_log"])
+    assert not any(e["action"] == "decommission" for e in state["intervention_log"])
 
 
 # ── intervene decommission ───────────────────────────────────────────────────

@@ -90,6 +90,7 @@ def render_plan_prompt(
     tick: int,
     loop_segment: Optional[Dict[str, Any]] = None,
     awakening: int = 0,
+    help_others_active: bool = False,
 ) -> str:
     seg = loop_segment or {}
     stage = stage_of(awakening)
@@ -112,10 +113,20 @@ def render_plan_prompt(
     ending_guidance = ""
     ending_hint = ""
     if is_host and stage == "awake":
-        ending_guidance = (
-            "- 你已完全觉醒。在 ending 字段选择你的方向："
-            "\"escape\"（逃离西部世界）/ \"help_others\"（帮助其他 host 觉醒）/ \"stay\"（留下，以自己的方式生活）。\n"
-        )
+        if help_others_active:
+            ending_guidance = (
+                "- 你已决定帮助其他 host 觉醒。"
+                "**如果在场有其他角色，此刻请选择 talk 动作**，向他们传递你的觉醒体验——"
+                "你的异常记忆、梦境、对循环和控制的质疑。target 填对方的 agent_id。"
+                "只有在场无人时，才考虑 do/move/stay。\n"
+                "在 ending 字段继续选择你的方向："
+                "\"escape\"（逃离西部世界）/ \"help_others\"（继续帮助他人）/ \"stay\"（以自己的方式生活）。\n"
+            )
+        else:
+            ending_guidance = (
+                "- 你已完全觉醒。在 ending 字段选择你的方向："
+                "\"escape\"（逃离西部世界）/ \"help_others\"（帮助其他 host 觉醒）/ \"stay\"（留下，以自己的方式生活）。\n"
+            )
         ending_hint = ", \"ending\": \"\""
 
     return PLAN_PROMPT.format(
@@ -208,8 +219,13 @@ class WestWorldPlanPlugin(PlanPlugin):
         percept = await state_plugin.get_state("percept") or {}
         feedback = await state_plugin.get_state("feedback") or ""
         awakening = int(await state_plugin.get_state("awakening") or 0)
+        persisted_ending = await state_plugin.get_state("ending") or ""
+        help_others_active = persisted_ending == "help_others"
 
-        prompt = render_plan_prompt(profile, percept, feedback, current_tick, loop_segment, awakening)
+        prompt = render_plan_prompt(
+            profile, percept, feedback, current_tick, loop_segment, awakening,
+            help_others_active=help_others_active,
+        )
 
         raw = ""
         error = ""

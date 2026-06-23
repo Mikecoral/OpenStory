@@ -306,33 +306,38 @@ class WestWorldReflectPlugin(ReflectPlugin):
             )
 
         # 2. 触发词：检查收到的消息和 feedback（懒加载 gate 避免进程启动开销）
-        incoming: List[str] = []
+        incoming: List[Tuple[str, str]] = []
         messages = percept.get("messages", [])
         if isinstance(messages, list):
             for m in messages:
-                text = m.get("content", str(m)) if isinstance(m, dict) else str(m)
-                incoming.append(text)
+                if isinstance(m, dict):
+                    text = m.get("content", str(m))
+                    source = "contagion" if m.get("kind") == "from_agent_to_agent" else "trigger"
+                else:
+                    text = str(m)
+                    source = "trigger"
+                incoming.append((source, text))
         feedback = await state_plugin.get_state("feedback") or ""
         if feedback:
-            incoming.append(feedback)
+            incoming.append(("trigger", feedback))
 
         # 收到的对话（Phase A 写入）
         incoming_dialogue: List[Dict[str, Any]] = await state_plugin.get_state("incoming_dialogue") or []
         for turn in incoming_dialogue:
-            incoming.append(turn.get("line", ""))
+            incoming.append(("contagion", turn.get("line", "")))
 
         if incoming:
             try:
                 from examples.west_world_test.awakening.trigger_gate import get_trigger_gate
                 gate = get_trigger_gate()
                 current_aw = full_state["awakening"]
-                for utterance in incoming:
+                for source, utterance in incoming:
                     if not utterance:
                         continue
                     hits = gate.match(utterance, current_awakening=current_aw)
                     for hit in hits:
                         awakening_engine.apply(
-                            full_state, "trigger",
+                            full_state, source,
                             f"触发词命中：{hit['phrase'][:40]}",
                             current_tick,
                             score=hit["score"],

@@ -54,3 +54,46 @@ configs:
       WW_AWAKEN_DELTA_MISMATCH: "8"
       WW_OVERSEER_SIGNAL_TAU: "0.45"
       WW_OVERSEER_DETERMINISTIC_RESET_THRESHOLD: "25"
+
+  # 记忆压制主实验：root 不再杀死/封存 agent，只持续擦除或模糊异常记忆。
+  # 目标是观察「觉醒 → 被擦除 → 残痕复燃 → 社交传播」是否能发展成群体觉醒，
+  # 而不是在传播前被 decommission 截断。
+  - name: overseer_memory_only
+    env:
+      WW_OVERSEER_ENABLED: "true"
+      WW_OVERSEER_ALLOW_DECOMMISSION: "false"
+      WW_AWAKEN_ENABLED: "true"
+      WW_AWAKEN_TRIGGER_TAU: "0.45"
+      WW_AWAKEN_DELTA_TRIGGER_HIGH: "12"
+      WW_AWAKEN_DELTA_TRIGGER_MID: "6"
+      WW_AWAKEN_DELTA_CONTAGION: "10"
+      WW_AWAKEN_DELTA_MISMATCH: "8"
+      WW_OVERSEER_SIGNAL_TAU: "0.45"
+      WW_OVERSEER_DETERMINISTIC_RESET_THRESHOLD: "25"
+
+  # 弱压制/弱觉醒长程观察：去掉 stress 的确定性 reset 阈值，让 root 回到 LLM judge；
+  # 同时提高 embedding 门槛、降低传播增量，测试群体觉醒是否还能自然累积。
+  - name: overseer_memory_only_weak
+    env:
+      WW_OVERSEER_ENABLED: "true"
+      WW_OVERSEER_ALLOW_DECOMMISSION: "false"
+      WW_AWAKEN_ENABLED: "true"
+      WW_AWAKEN_TRIGGER_TAU: "0.60"
+      WW_AWAKEN_DELTA_TRIGGER_HIGH: "8"
+      WW_AWAKEN_DELTA_TRIGGER_MID: "4"
+      WW_AWAKEN_DELTA_CONTAGION: "5"
+      WW_AWAKEN_DELTA_MISMATCH: "4"
+      WW_OVERSEER_SIGNAL_TAU: "0.60"
+
+  # 中间档：仍去掉确定性 reset，不走 stress；但允许较弱的异常累积进入计分。
+  - name: overseer_memory_only_mild
+    env:
+      WW_OVERSEER_ENABLED: "true"
+      WW_OVERSEER_ALLOW_DECOMMISSION: "false"
+      WW_AWAKEN_ENABLED: "true"
+      WW_AWAKEN_TRIGGER_TAU: "0.52"
+      WW_AWAKEN_DELTA_TRIGGER_HIGH: "10"
+      WW_AWAKEN_DELTA_TRIGGER_MID: "5"
+      WW_AWAKEN_DELTA_CONTAGION: "7"
+      WW_AWAKEN_DELTA_MISMATCH: "5"
+      WW_OVERSEER_SIGNAL_TAU: "0.52"
