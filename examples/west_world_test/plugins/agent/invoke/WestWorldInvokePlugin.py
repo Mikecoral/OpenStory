@@ -69,10 +69,10 @@ class WestWorldInvokePlugin(InvokePlugin):
         # 读 plan 决策（state key 为 plan_decision）
         decision = await state_plugin.get_state("plan_decision") or {"action": "stay"}
 
-        # 觉醒逃离：stage=awake 且 LLM 选择了 escape
+        # 觉醒逃离：stage=resistance+ 且 LLM 选择了 escape（阈值与 plan prompt 一致）
         if decision.get("ending") == "escape":
             awakening = int(await state_plugin.get_state("awakening") or 0)
-            if awakening >= 90:
+            if awakening >= 75:
                 await self._apply_escape(state_plugin, current_tick)
                 return
 
@@ -162,7 +162,7 @@ class WestWorldInvokePlugin(InvokePlugin):
         await state_plugin.set_state("intervention_log", log)
         await state_plugin.set_active_status(False, "逃离西部世界")
         agent_id = self.agent.agent_id if self.agent is not None else "?"
-        logger.info("[%s] tick %s 逃离西部世界（awakening≥90）", agent_id, tick)
+        logger.info("[%s] tick %s 逃离西部世界（awakening≥75）", agent_id, tick)
 
     async def save_to_db(self) -> None:
         return None

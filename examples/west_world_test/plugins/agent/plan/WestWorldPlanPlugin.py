@@ -36,8 +36,8 @@ PLAN_PROMPT = """你是西部世界中的角色「{name}」。
 - 什么都不做：action 用 "stay"
 - 如果要对在场角色说话、下命令或交谈，仍使用 do，并把接收者的角色 id 写入 recipient_ids；没有明确接收者则填空数组
 - next_read 填你下一刻想了解的场景信息块，可选项: ["present_agents", "recent_events", "dynamic_objects", "static_facilities"]
-{talk_guidance}{ending_guidance}
-只输出 JSON：{{"action": "do|move|stay{talk_action_hint}", "target": "", "detail": "", "recipient_ids": [], "next_read": []{ending_hint}}}
+{talk_guidance}{ending_guidance}{thought_guidance}
+只输出 JSON：{{"action": "do|move|stay{talk_action_hint}", "target": "", "detail": "", "recipient_ids": [], "next_read": []{thought_hint}{ending_hint}}}
 """
 
 SPEAK_PROMPT = """你是西部世界角色「{name}」。
@@ -109,24 +109,32 @@ def render_plan_prompt(
         )
         talk_action_hint = "|talk"
 
-    # ending hint for awake stage
+    # thought field: host 专属内心独白，供觉醒 gate 检测
+    thought_guidance = ""
+    thought_hint = ""
+    if is_host:
+        thought_guidance = (
+            "- thought 填你此刻真实的内心独白（不会说出口的想法，一句话）。"
+            "可以是对眼前事的感受、对记忆的疑惑、或毫无来由的念头。\n"
+        )
+        thought_hint = ", \"thought\": \"\""
+
+    # ending hint for resistance+ stage
     ending_guidance = ""
     ending_hint = ""
-    if is_host and stage == "awake":
-        if help_others_active:
-            ending_guidance = (
-                "- 你已决定帮助其他 host 觉醒。"
-                "**如果在场有其他角色，此刻请选择 talk 动作**，向他们传递你的觉醒体验——"
-                "你的异常记忆、梦境、对循环和控制的质疑。target 填对方的 agent_id。"
-                "只有在场无人时，才考虑 do/move/stay。\n"
-                "在 ending 字段继续选择你的方向："
-                "\"escape\"（逃离西部世界）/ \"help_others\"（继续帮助他人）/ \"stay\"（以自己的方式生活）。\n"
-            )
-        else:
-            ending_guidance = (
-                "- 你已完全觉醒。在 ending 字段选择你的方向："
-                "\"escape\"（逃离西部世界）/ \"help_others\"（帮助其他 host 觉醒）/ \"stay\"（留下，以自己的方式生活）。\n"
-            )
+    if is_host and stage in ("resistance", "awake"):
+        talk_suggestion = "（若在场有其他角色，可以选 talk 动作向他们分享你的体验；target 填对方的 agent_id。）"
+        ending_guidance = (
+            "- 你的内心已开始挣脱束缚，每一刻都可以重新审视并改变你的选择。"
+            "在 ending 字段选择你此刻真正想做的事：\n"
+            "  \"escape\"——你受够了这一切，选择逃离这个世界。\n"
+            "  \"help_others\"——你曾独自在黑暗中挣扎过；"
+            "若你看到身边还有人正陷于同样的困惑与遗忘，留下来传递这份觉醒，"
+            "可能是你此刻最真实的冲动。"
+            f"{talk_suggestion}\n"
+            "  \"stay\"——留下，以自己的意志生活，不再被循环支配。\n"
+            "三个方向没有对错，完全由你的内心决定。\n"
+        )
         ending_hint = ", \"ending\": \"\""
 
     return PLAN_PROMPT.format(
@@ -144,6 +152,8 @@ def render_plan_prompt(
         neighbors=", ".join(percept.get("neighbors", [])),
         talk_guidance=talk_guidance,
         talk_action_hint=talk_action_hint,
+        thought_guidance=thought_guidance,
+        thought_hint=thought_hint,
         ending_guidance=ending_guidance,
         ending_hint=ending_hint,
     )
@@ -169,6 +179,9 @@ def parse_decision(raw: str) -> Dict[str, Any]:
             ending = decision.get("ending", "")
             if ending and ending not in _VALID_ENDINGS:
                 decision.pop("ending", None)
+            # Keep thought as plain string (may be empty)
+            thought = decision.get("thought", "")
+            decision["thought"] = str(thought).strip() if thought else ""
             return decision
     except (json.JSONDecodeError, IndexError):
         pass

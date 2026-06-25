@@ -35,12 +35,13 @@ SUMMARY_PROMPT = """你是西部世界角色「{name}」的记忆整理助手。
 
 请总结："""
 
-REPLAN_JUDGE_PROMPT = """你是西部世界角色「{name}」。你今天剩下的计划是：{remaining_loop}
+REPLAN_JUDGE_PROMPT = """你是西部世界角色「{name}」。{inner_voice}
+你此刻的想法：{thought}
+你今天剩下的计划是：{remaining_loop}
 刚刚这一刻发生了：{this_tick_event}（你的动作 + 结果 + 收到的消息）
 
-判断：是否发生了重大变故，需要改写你今天剩余的计划？
-（值得改的：被卷入冲突/他人剧情、关键目标失败或达成、出现必须应对的人或事。
- 不值得改的：日常对话、环境细节、情绪波动。）
+基于你此刻真实的内心状态和刚刚发生的事，你是否想要改写今天剩余的计划？
+（日常对话、环境细节、情绪波动不值得改计划。）
 
 只输出 JSON：{{"replan": true/false, "reason": "<简短>"}}"""
 
@@ -305,8 +306,18 @@ class WestWorldReflectPlugin(ReflectPlugin):
                 current_tick,
             )
 
-        # 2. 触发词：检查收到的消息和 feedback（懒加载 gate 避免进程启动开销）
+        # 2. 触发词：自身决策文本（最主要来源）+ 收到的消息 + feedback
         incoming: List[Tuple[str, str]] = []
+
+        # 自身 plan_decision 的 detail / thought — agent 自己说出/想到的话
+        # source="self_trigger"，与外部 trigger 分槽，strict 模式下各自最多触发一次
+        decision = await state_plugin.get_state("plan_decision") or {}
+        if isinstance(decision, dict):
+            for key in ("detail", "thought"):
+                val = decision.get(key)
+                if val:
+                    incoming.append(("self_trigger", str(val)))
+
         messages = percept.get("messages", [])
         if isinstance(messages, list):
             for m in messages:
@@ -331,18 +342,21 @@ class WestWorldReflectPlugin(ReflectPlugin):
                 from examples.west_world_test.awakening.trigger_gate import get_trigger_gate
                 gate = get_trigger_gate()
                 current_aw = full_state["awakening"]
+                fired_sources: set = set()  # each source fires at most once per tick
                 for source, utterance in incoming:
-                    if not utterance:
+                    if not utterance or source in fired_sources:
                         continue
                     hits = gate.match(utterance, current_awakening=current_aw)
-                    for hit in hits:
+                    if hits:
+                        best = hits[0]  # already sorted by score desc
                         awakening_engine.apply(
                             full_state, source,
-                            f"触发词命中：{hit['phrase'][:40]}",
+                            f"触发词命中：{best['phrase'][:40]}",
                             current_tick,
-                            score=hit["score"],
-                            level=hit["level"],
+                            score=best["score"],
+                            level=best["level"],
                         )
+                        fired_sources.add(source)
             except Exception as exc:
                 logger.debug("[%s] trigger gate 未加载: %s", self.agent.agent_id, exc)
 
@@ -374,9 +388,15 @@ class WestWorldReflectPlugin(ReflectPlugin):
 
         profile = _read_profile(self.agent)
         name = profile.get("name", profile.get("姓名", self.agent.agent_id))
+        awakening = int(await state_plugin.get_state("awakening") or 0)
+        from examples.west_world_test.awakening.stages import stage_of, INNER_VOICE_PROMPT
+        inner_voice = INNER_VOICE_PROMPT.get(stage_of(awakening), "")
+        thought = decision.get("thought", "") or ""
 
         prompt = REPLAN_JUDGE_PROMPT.format(
             name=name,
+            inner_voice=f"\n{inner_voice}" if inner_voice else "",
+            thought=thought or "（无）",
             remaining_loop=json.dumps(remaining, ensure_ascii=False),
             this_tick_event=this_event,
         )

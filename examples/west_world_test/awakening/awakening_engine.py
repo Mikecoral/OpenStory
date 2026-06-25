@@ -12,7 +12,7 @@ import os
 from typing import Any, Dict, List, Optional
 
 # Sources that MUST produce positive delta only (monotonic invariant)
-_MONOTONIC_SOURCES = frozenset({"trigger", "uncanny", "mismatch", "contagion", "residue_crack"})
+_MONOTONIC_SOURCES = frozenset({"trigger", "self_trigger", "uncanny", "mismatch", "contagion", "residue_crack"})
 
 
 def _env_int(key: str, default: int) -> int:
@@ -26,7 +26,7 @@ def _env_int(key: str, default: int) -> int:
 
 def _delta_for(source: str, level: Optional[str] = None) -> int:
     """Return base delta for a given source + optional level string."""
-    if source == "trigger":
+    if source in ("trigger", "self_trigger"):
         if level == "high":
             return _env_int("WW_AWAKEN_DELTA_TRIGGER_HIGH", 15)
         return _env_int("WW_AWAKEN_DELTA_TRIGGER_MID", 8)

@@ -148,6 +148,10 @@ def run_experiment(
         _write_jsonl(exp_dir / "events.jsonl", [
             {"config_name": config["name"], **ev} for ev in summary["intervention_events"]
         ])
+        _write_jsonl(exp_dir / "events.jsonl", [
+            {"config_name": config["name"], "action": "contagion", **ev}
+            for ev in metrics.contagion_events(rows)
+        ])
         _write_json(exp_dir / "manifest.json", manifest)
 
     manifest["completed_at"] = datetime.now().astimezone().isoformat()

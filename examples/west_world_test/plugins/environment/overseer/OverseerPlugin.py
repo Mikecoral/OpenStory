@@ -238,6 +238,15 @@ class OverseerPlugin(GenericPlugin):
         if not gate_hits:
             return None
 
+        # Embedding-only mode (default): skip LLM judge, decide purely from gate_hits.
+        # Set WW_OVERSEER_EMBEDDING_ONLY=false to re-enable LLM judge.
+        if os.environ.get("WW_OVERSEER_EMBEDDING_ONLY", "true").lower() not in ("false", "0"):
+            return {
+                "action": "reset",
+                "speech": "系统检测到异常信号，启动记忆校准。",
+                "reason": f"embedding gate 命中 {len(gate_hits)} 条（embedding-only 模式）",
+            }
+
         if self._llm is None:
             # No model available: default to observe to avoid unsafe actions
             return {"action": "observe", "speech": "", "reason": "无可用模型，默认观察"}

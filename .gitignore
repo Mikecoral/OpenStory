@@ -6,8 +6,9 @@ __pycache__/
 
 .DS_Store
 
-# Local West World model endpoints and credentials
+# Local model endpoints and credentials (never commit)
 examples/west_world_test/configs/models_config.yaml
+examples/story_of_the_stone/configs/models_config.yaml
 examples/west_world_test/output/
 
 # 运行时/工具产物
