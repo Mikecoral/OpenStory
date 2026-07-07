@@ -52,6 +52,108 @@ button#submitBtn {
 button#submitBtn:hover { background: #6d28d9; }
 button#submitBtn:disabled { background: #4c1d95; cursor: not-allowed; }
 
+.quick-entry-section {
+  background: #1e2130;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.quick-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.quick-entry-header h2 {
+  color: #a78bfa;
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+}
+
+.quick-entry-header p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.quick-entry-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+}
+
+#generatedWorldSelect {
+  min-width: 0;
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  background: #141824;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+#generatedWorldSelect:focus { border-color: #38bdf8; }
+#generatedWorldSelect:disabled { color: #64748b; cursor: not-allowed; }
+
+.secondary-btn,
+.secondary-link,
+#enterSelectedSimulationBtn {
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.secondary-btn {
+  padding: 0.45rem 0.9rem;
+  background: #141824;
+  border: 1px solid #475569;
+  color: #cbd5e1;
+}
+
+.secondary-btn:hover { border-color: #38bdf8; color: #e0f2fe; }
+.secondary-btn:disabled { color: #64748b; cursor: not-allowed; }
+
+#enterSelectedSimulationBtn {
+  padding: 0.65rem 1.1rem;
+  background: #059669;
+  border: none;
+  color: white;
+  white-space: nowrap;
+}
+
+#enterSelectedSimulationBtn:hover { background: #047857; }
+#enterSelectedSimulationBtn:disabled { background: #064e3b; cursor: not-allowed; }
+
+.quick-entry-info {
+  margin-top: 0.85rem;
+  color: #94a3b8;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  white-space: pre-line;
+}
+
+.secondary-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.48rem 0.8rem;
+  border: 1px solid #475569;
+  color: #bfdbfe;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.secondary-link:hover {
+  background: #172033;
+  border-color: #3b82f6;
+}
+
 .status-section {
   display: flex;
   align-items: center;
@@ -222,4 +324,20 @@ button#spatialBtn:disabled { background: #064e3b; cursor: not-allowed; }
   height: 100%;
   background: #7c3aed;
   border-radius: 3px;
+}
+
+@media (max-width: 640px) {
+  .quick-entry-header,
+  .quick-entry-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-entry-header {
+    display: grid;
+  }
+
+  .secondary-btn,
+  #enterSelectedSimulationBtn {
+    width: 100%;
+  }
 }

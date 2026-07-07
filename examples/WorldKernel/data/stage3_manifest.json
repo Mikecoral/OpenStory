@@ -1,13 +1,13 @@
 {
   "schema_version": "stage3-agentkernel-adapter-v1",
-  "world_id": "a92e2977-ea26-4f10-a071-b1954afdb99e",
-  "source_session_root": "E:\\OpenStory\\examples\\WorldKernel\\templates\\a92e2977-ea26-4f10-a071-b1954afdb99e",
+  "world_id": "c95bbbf6-8018-4790-9053-bd323b892175",
+  "source_session_root": "E:\\OpenStory\\examples\\WorldKernel\\templates\\c95bbbf6-8018-4790-9053-bd323b892175",
   "counts": {
-    "characters": 15,
-    "locations": 19,
-    "paths": 27,
-    "relations": 20,
-    "spawn_points": 15
+    "characters": 14,
+    "locations": 16,
+    "paths": 23,
+    "relations": 31,
+    "spawn_points": 14
   },
   "warnings": [],
   "data_paths": {

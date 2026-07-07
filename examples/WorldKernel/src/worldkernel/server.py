@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 from contextlib import asynccontextmanager
+import json
 from pathlib import Path
 
-import uvicorn
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
@@ -14,6 +14,7 @@ from worldkernel.constraints import load_generation_constraints
 from worldkernel.llm import client as llm_client
 from worldkernel.stage1.pipeline import Stage1Error, run_stage1
 from worldkernel.stage3.runtime import Stage3RuntimeManager
+from worldkernel.stage3.sessions import list_stage3_ready_session_summaries
 
 BASE_DIR = Path(__file__).parent.parent.parent
 CONFIGS_DIR = BASE_DIR / "configs"
@@ -89,6 +90,12 @@ async def parse(req: ParseRequest):
     return session
 
 
+@app.get("/api/stage3/sessions")
+async def list_stage3_ready_sessions():
+    """List local sessions that already have the artifacts needed to enter Stage3."""
+    return {"sessions": list_stage3_ready_session_summaries(TEMPLATES_DIR)}
+
+
 @app.get("/api/stage1/session/{session_id}")
 async def get_session(session_id: str):
     session_dir = TEMPLATES_DIR / session_id
@@ -106,7 +113,6 @@ async def get_session_file(session_id: str, path: str):
     file_path = TEMPLATES_DIR / session_id / path
     if not file_path.exists() or file_path.suffix not in (".json", ".yaml"):
         raise HTTPException(status_code=404, detail="file not found")
-    import json
     if file_path.suffix == ".yaml":
         import yaml
         return yaml.safe_load(file_path.read_text(encoding="utf-8"))
@@ -350,6 +356,8 @@ app.mount("/", StaticFiles(directory=str(FRONTEND_DIR), html=True), name="fronte
 
 
 if __name__ == "__main__":
+    import uvicorn
+
     uvicorn.run(
         "worldkernel.server:app",
         host="0.0.0.0",

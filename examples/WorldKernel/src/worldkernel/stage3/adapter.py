@@ -680,6 +680,9 @@ def _ensure_optional_dependency_stubs() -> None:
             def __init__(self, *args: Any, **kwargs: Any) -> None:
                 pass
 
+        class JSONResponse(Response):  # pragma: no cover
+            pass
+
         class CORSMiddleware:  # pragma: no cover
             pass
 
@@ -693,6 +696,7 @@ def _ensure_optional_dependency_stubs() -> None:
         fastapi_stub.WebSocketDisconnect = WebSocketDisconnect
         fastapi_stub.Request = Request
         responses_stub.Response = Response
+        responses_stub.JSONResponse = JSONResponse
         cors_stub.CORSMiddleware = CORSMiddleware
         staticfiles_stub.StaticFiles = StaticFiles
         sys.modules["fastapi"] = fastapi_stub

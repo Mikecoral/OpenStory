@@ -278,6 +278,30 @@ def test_stage3_adapter_preserves_location_profile() -> None:
         assert ada_profile["raw"]["memories"]["key_events"] == ["arrived"]
 
 
+def test_stage3_ready_session_summary_requires_complete_stage2_artifacts() -> None:
+    from worldkernel.stage3.sessions import build_stage3_session_summary
+
+    root = _case_root("stage3-session-summary")
+    session = _make_stage2_session(root)
+    incomplete_session = root / "incomplete-session"
+    _write_json(
+        incomplete_session / "generated" / "artifacts" / "semantic" / "metadata" / "semantic_manifest.json",
+        {"world_id": "incomplete", "artifact_files": {}},
+    )
+
+    summary = build_stage3_session_summary(session)
+    incomplete_summary = build_stage3_session_summary(incomplete_session)
+
+    assert summary is not None
+    assert summary["session_id"] == "session-001"
+    assert summary["world_name"] == "Test World"
+    assert summary["counts"]["characters"] == 2
+    assert summary["counts"]["locations"] == 2
+    assert summary["counts"]["regions"] == 2
+    assert summary["counts"]["spawn_points"] == 1
+    assert incomplete_summary is None
+
+
 def test_generated_space_plugin_filters_accessible_locations() -> None:
     root = _case_root("space-plugin-access")
     session = _make_stage2_session(root)

@@ -15,8 +15,7 @@
 
 **任务一：扩展实体种子列表（entity_plan）**
 
-基于上方每种 archetype 中的候选实例，**按 archetype 分组**将地点和人物扩充为该世界的完整列表。
-每种 archetype 下覆盖该类型所有值得生成的典型实例，数量视世界规模而定（单一场所 3-8 个/archetype，城市级 5-15 个/archetype）。
+基于上方每种 archetype 中的候选实例，**按 archetype 分组**将地点和人物扩充为该世界的完整列表。注意，如果是有来源的世界，例如书籍，影视作品，某段历史等。主要人物与地点一定要有。每种 archetype 下覆盖该类型所有值得生成的典型实例，数量视世界规模而定（单一场所 3-8 个/archetype，城市级 5-15 个/archetype）。
 
 只需要两类：
 - locations：按地点类型分组（如 teaching_space、communal_space、dormitory 各自一个列表）

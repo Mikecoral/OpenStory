@@ -1,1445 +1,1249 @@
 [
   {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:010",
-    "name": "水泊梁山",
-    "type": "山寨据点",
-    "description": "梁山泊位于山东济州，方圆八百余里水泊，中央突起险峻山岭，四周芦苇丛生、港汊交错。大寨依山势而建，前三关、后三关、断金亭、聚义厅层层递进，寨墙高耸，旗帜飘扬。这里是天罡地煞汇聚之地，朝廷多次征讨皆铩羽而归，百姓称其为‘净土’，官府视之为心腹之患。",
+    "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:003",
+    "name": "黑魔法防御术教室",
+    "type": "teaching_space",
+    "description": "原本宽敞明亮的教室如今被阴森的黑色帷幔遮掩，窗边挂着食死徒标志与摄魂怪的照片。讲台上钉着一根带血迹的教鞭，教室中央的地板上留有咒语灼烧的痕迹。阿米库斯·卡罗常在这里对学生施放钻心咒作为‘示范’，墙壁上残留着学生痛苦挣扎的划痕。空气中弥漫着铁锈与汗水的腥味，偶尔传来低沉的呻吟。",
     "access": {
-      "permissions": "仅梁山好汉及经引荐的客商、百姓可入，官府细作格杀勿论",
-      "access_level": "极高机密，山寨重地",
-      "access_conditions": "需通过水泊暗号或由头领亲领，否则船只无法穿行芦苇荡",
+      "permissions": "仅限食死徒教职工及被点名的学生进入",
+      "access_level": "严格控制",
+      "access_conditions": "上课时必须经卡罗兄妹亲自点名，迟到或擅自闯入者将被施以酷刑",
       "access_scope": "",
       "gender_restriction": "",
       "time_restriction": "",
       "special_event_access": ""
     },
     "state": {
-      "current_state": "兴盛，聚义初期，规模扩大中",
-      "ownership": "以晁盖为首，宋江为辅，统领全体好汉",
-      "capacity": 5000,
+      "current_state": "被改造为刑讯与恐惧的象征，墙壁斑驳，地板裂缝中渗出暗红色污渍",
+      "ownership": "卡罗兄妹实际控制，名义上属于霍格沃茨",
+      "capacity": 30,
       "seasonal_state": "",
-      "maintenance_condition": "",
+      "maintenance_condition": "刻意保留可怖痕迹以制造恐怖",
       "function_changed": "",
       "current_resident": ""
     },
-    "capacity": 5000,
+    "capacity": 30,
     "tags": [
-      "山寨据点",
-      "极高机密，山寨重地",
-      "以晁盖为首，宋江为辅，统领全体好汉"
+      "teaching_space",
+      "严格控制",
+      "卡罗兄妹实际控制，名义上属于霍格沃茨"
     ],
     "symbolic_meaning": "",
     "key_plot_events": "",
     "literary_imagery": "",
     "bounds": {
-      "x": 97,
-      "y": 47,
+      "x": 66,
+      "y": 30,
       "w": 15,
       "h": 11
     },
     "entrance": {
-      "x": 104,
-      "y": 57
+      "x": 73,
+      "y": 40
     },
     "raw": {
       "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:010",
-        "name": "水泊梁山",
-        "type": "山寨据点",
-        "description": "梁山泊位于山东济州，方圆八百余里水泊，中央突起险峻山岭，四周芦苇丛生、港汊交错。大寨依山势而建，前三关、后三关、断金亭、聚义厅层层递进，寨墙高耸，旗帜飘扬。这里是天罡地煞汇聚之地，朝廷多次征讨皆铩羽而归，百姓称其为‘净土’，官府视之为心腹之患。",
-        "political_allegiance": "梁山义军",
-        "landmark_status": "天下闻名，朝廷眼中钉",
-        "function_type": "总部大寨、聚义抗敌、粮草屯积",
-        "historical_event_ref": "晁盖火并王伦、宋江上山、三打祝家庄、大破连环马等核心事件发生地",
-        "reputation_level": "威震四方，百姓景仰，朝廷畏惧"
+        "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:003",
+        "name": "黑魔法防御术教室",
+        "type": "teaching_space",
+        "description": "原本宽敞明亮的教室如今被阴森的黑色帷幔遮掩，窗边挂着食死徒标志与摄魂怪的照片。讲台上钉着一根带血迹的教鞭，教室中央的地板上留有咒语灼烧的痕迹。阿米库斯·卡罗常在这里对学生施放钻心咒作为‘示范’，墙壁上残留着学生痛苦挣扎的划痕。空气中弥漫着铁锈与汗水的腥味，偶尔传来低沉的呻吟。",
+        "security_level": "极高",
+        "faction_allegiance": "食死徒",
+        "has_secret_passage": "false",
+        "historical_significance": "在1997-1998学年成为卡罗兄妹恐怖统治的核心刑场",
+        "secret_function": "无"
       },
       "access": {
-        "permissions": "仅梁山好汉及经引荐的客商、百姓可入，官府细作格杀勿论",
-        "access_level": "极高机密，山寨重地",
-        "access_conditions": "需通过水泊暗号或由头领亲领，否则船只无法穿行芦苇荡",
-        "security_features": "水泊天然屏障、暗桩、鹿砦、弩台、金沙滩哨楼，明暗哨探密布",
-        "entry_requirements": "誓与朝廷为敌，接纳忠义之人；若为投降官军则须验明身份、卸下兵器",
-        "access_restrictions": "严禁夜间外岛出行；非头领不得进入军器库与金银库",
-        "hidden_passages": "水底有暗道通往岸上秘密码头，用于紧急撤退或隐秘往来",
-        "guard_presence": "日夜轮值，金沙滩头领亲自巡查，水军战船不断巡逻"
+        "permissions": "仅限食死徒教职工及被点名的学生进入",
+        "access_level": "严格控制",
+        "access_conditions": "上课时必须经卡罗兄妹亲自点名，迟到或擅自闯入者将被施以酷刑",
+        "password_required": "false",
+        "special_permission_required": "true",
+        "magical_barrier_type": "反幻影移形咒、隔音咒、防窥咒",
+        "surveillance_level": "全程监控，卡罗兄妹轮流值岗",
+        "secret_entry_available": "false",
+        "patrol_frequency": "每节课间有巡逻猫头鹰检查"
       },
       "state": {
-        "current_state": "兴盛，聚义初期，规模扩大中",
-        "ownership": "以晁盖为首，宋江为辅，统领全体好汉",
-        "capacity": 5000,
-        "current_mood": "严阵以待又意气风发，兄弟一心，誓与朝廷周旋",
-        "resource_level": "丰足，粮草、兵器、银两均通过劫富济贫与山寨自给积累",
-        "alert_status": "高度警戒，知州府常派探子刺探，官军随时可能来犯",
-        "construction_quality": "坚固，利用山势悬崖修筑，墙高堑深，易守难攻",
-        "weather_effect": "汛期水泊大涨、秋冬季雾重易迷航；暴风雪时山路艰险，但反利于伏击"
+        "current_state": "被改造为刑讯与恐惧的象征，墙壁斑驳，地板裂缝中渗出暗红色污渍",
+        "ownership": "卡罗兄妹实际控制，名义上属于霍格沃茨",
+        "capacity": 30,
+        "usage_status": "每日都有惩罚课程，非授课时间改为禁闭室",
+        "maintenance_condition": "刻意保留可怖痕迹以制造恐怖",
+        "defensive_spells": "加固咒、驱散咒（防止学生窃听）",
+        "lighting_condition": "昏暗的绿色磷火从天花板的黑曜石吊灯中渗出，角落常暗着",
+        "curse_status": "教室本身被施放了恐惧诅咒，进入者会感到无由的焦虑",
+        "occupancy_status": "使用时满员，其余时间锁闭且有多个警戒咒语"
       }
     }
   },
   {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:007",
-    "name": "二龙山",
-    "type": "山寨据点",
-    "description": "二龙山位于青州地面，山势如双龙对峙，林深草密。山寨由宝珠寺改建而成，经过鲁智深、杨志、武松等人经营，修有寨墙、箭楼、聚义台。这里是江湖豪杰避祸落草的重要据点之一，与桃花山、白虎山互为犄角。",
+    "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:016",
+    "name": "变形课教室",
+    "type": "teaching_space",
+    "description": "麦格教授的教室总是保持着一丝不苟的秩序，讲台上的每一根粉笔都摆放得整整齐齐。教室左侧的玻璃柜里陈列着各种变形标本，但如今几只甲虫标本被偷偷替换成了带微雕信息的赝品。麦格教授在授课时会故意制造一些‘小失误’，让课本翻到含有抵抗暗示的页面，或者将门钥匙伪装成练习用的火柴。",
     "access": {
-      "permissions": "本寨头领及兄弟，以及经引荐的绿林好汉",
-      "access_level": "中等机密，寨内事务不向外传",
-      "access_conditions": "需经山门通报，由头领许可；陌生人须验明来历",
+      "permissions": "所有选修变形课的学生及获得特许的教职工",
+      "access_level": "正常开放，但下课后立即锁门",
+      "access_conditions": "须持有课表或麦格教授亲自开锁，食死徒巡查时会被麦格以‘需要备课’为由阻拦",
       "access_scope": "",
       "gender_restriction": "",
       "time_restriction": "",
       "special_event_access": ""
     },
     "state": {
-      "current_state": "运转良好，但已开始与梁山联络，准备合并",
-      "ownership": "鲁智深（大头领）、杨志（二头领）、武松（三头领）",
-      "capacity": 1200,
+      "current_state": "维持整洁但略带紧迫感，个别座椅被施展了临时变形的标记咒",
+      "ownership": "米勒娃·麦格教授",
+      "capacity": 40,
       "seasonal_state": "",
-      "maintenance_condition": "",
+      "maintenance_condition": "良好，每日打扫",
       "function_changed": "",
       "current_resident": ""
     },
-    "capacity": 1200,
+    "capacity": 40,
     "tags": [
-      "山寨据点",
-      "中等机密，寨内事务不向外传",
-      "鲁智深（大头领）、杨志（二头领）、武松（三头领）"
+      "teaching_space",
+      "正常开放，但下课后立即锁门",
+      "米勒娃·麦格教授"
     ],
     "symbolic_meaning": "",
     "key_plot_events": "",
     "literary_imagery": "",
     "bounds": {
-      "x": 26,
-      "y": 46,
-      "w": 15,
-      "h": 11
-    },
-    "entrance": {
-      "x": 33,
-      "y": 56
-    },
-    "raw": {
-      "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:007",
-        "name": "二龙山",
-        "type": "山寨据点",
-        "description": "二龙山位于青州地面，山势如双龙对峙，林深草密。山寨由宝珠寺改建而成，经过鲁智深、杨志、武松等人经营，修有寨墙、箭楼、聚义台。这里是江湖豪杰避祸落草的重要据点之一，与桃花山、白虎山互为犄角。",
-        "political_allegiance": "梁山附属联盟（后并入梁山）",
-        "landmark_status": "青州一带知名山寨",
-        "function_type": "独立山寨据点，后期为梁山前哨",
-        "historical_event_ref": "鲁智深、杨志夺回宝珠寺；武松血溅鸳鸯楼后归附；三山聚义打青州后并入梁山",
-        "reputation_level": "威震青州，官府忌惮"
-      },
-      "access": {
-        "permissions": "本寨头领及兄弟，以及经引荐的绿林好汉",
-        "access_level": "中等机密，寨内事务不向外传",
-        "access_conditions": "需经山门通报，由头领许可；陌生人须验明来历",
-        "security_features": "山道狭窄、关隘设卡，两侧树林中藏有滚木擂石",
-        "entry_requirements": "献上投名状（杀一贪官或污吏）或由寨主认可",
-        "access_restrictions": "外人不准进入藏兵洞与兵器库",
-        "hidden_passages": "有荒径通往山下小镇，供紧急补给或逃遁",
-        "guard_presence": "寨门与山腰各有五六名哨兵，夜间加双哨"
-      },
-      "state": {
-        "current_state": "运转良好，但已开始与梁山联络，准备合并",
-        "ownership": "鲁智深（大头领）、杨志（二头领）、武松（三头领）",
-        "capacity": 1200,
-        "current_mood": "豪气冲天，众兄弟尚武，日常操练与饮酒并行",
-        "resource_level": "自给自足，靠劫掠贪官和山下富户补充，略有盈余",
-        "alert_status": "中高度，青州知府派兵多次围剿均被击退",
-        "construction_quality": "中等，宝珠寺原有石墙较厚，但部分木制寨棚较简陋",
-        "weather_effect": "雨天山道泥滑，易发生滚石；冬季大雪封山反而有利防御"
-      }
-    }
-  },
-  {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:014",
-    "name": "桃花山",
-    "type": "山寨据点",
-    "description": "桃花山位于青州境内，山不高而多桃树，春季花开如锦。山寨规模较小，仅有百余人把守，寨墙以木石混合搭建，简陋但稳固。打虎将李忠与跳涧虎周通占山为王，以劫掠过往客商和附近庄院为生，后归附梁山。",
-    "access": {
-      "permissions": "仅本寨喽啰及头领亲信可入内寨",
-      "access_level": "较低，寨中布防简单",
-      "access_conditions": "需经山门两座简易哨楼盘问，报上名号",
-      "access_scope": "",
-      "gender_restriction": "",
-      "time_restriction": "",
-      "special_event_access": ""
-    },
-    "state": {
-      "current_state": "勉强维持，依赖劫掠过日子",
-      "ownership": "李忠（大头领）、周通（二头领）",
-      "capacity": 300,
-      "seasonal_state": "",
-      "maintenance_condition": "",
-      "function_changed": "",
-      "current_resident": ""
-    },
-    "capacity": 300,
-    "tags": [
-      "山寨据点",
-      "较低，寨中布防简单",
-      "李忠（大头领）、周通（二头领）"
-    ],
-    "symbolic_meaning": "",
-    "key_plot_events": "",
-    "literary_imagery": "",
-    "bounds": {
-      "x": 49,
-      "y": 49,
-      "w": 15,
-      "h": 11
-    },
-    "entrance": {
-      "x": 56,
-      "y": 59
-    },
-    "raw": {
-      "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:014",
-        "name": "桃花山",
-        "type": "山寨据点",
-        "description": "桃花山位于青州境内，山不高而多桃树，春季花开如锦。山寨规模较小，仅有百余人把守，寨墙以木石混合搭建，简陋但稳固。打虎将李忠与跳涧虎周通占山为王，以劫掠过往客商和附近庄院为生，后归附梁山。",
-        "political_allegiance": "梁山外围附庸（后正式并入）",
-        "landmark_status": "地方上的小股绿林势力",
-        "function_type": "小型山寨，劫掠补给",
-        "historical_event_ref": "鲁智深路过借宿，周通强娶刘太公之女，被鲁智深教训；三山聚义后随同并入梁山",
-        "reputation_level": "青州本地知晓，官府不视为大患"
-      },
-      "access": {
-        "permissions": "仅本寨喽啰及头领亲信可入内寨",
-        "access_level": "较低，寨中布防简单",
-        "access_conditions": "需经山门两座简易哨楼盘问，报上名号",
-        "security_features": "山道狭窄，设有一道木栅栏，无复杂机关",
-        "entry_requirements": "愿入伙者需纳投名状或经头领应允",
-        "access_restrictions": "不信任新来者，需观察数日",
-        "hidden_passages": "无",
-        "guard_presence": "寨门有两名喽啰日夜轮值，其他松散"
-      },
-      "state": {
-        "current_state": "勉强维持，依赖劫掠过日子",
-        "ownership": "李忠（大头领）、周通（二头领）",
-        "capacity": 300,
-        "current_mood": "散漫，李忠为人悭吝，周通好色，喽啰纪律一般",
-        "resource_level": "不足，常需下山打粮，金银短缺",
-        "alert_status": "日常低，遇到官军扫荡时才紧张",
-        "construction_quality": "粗糙，木寨墙有缝隙，部分房屋茅草顶",
-        "weather_effect": "大风可掀翻屋顶，夏季多雨易致寨内泥泞"
-      }
-    }
-  },
-  {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:004",
-    "name": "东京汴梁",
-    "type": "州府城池",
-    "description": "东京汴梁为北宋都城，城墙周回四十余里，城门十二座，御街宽阔，市井繁盛。内城皇宫殿宇巍峨，外城商贾云集、勾栏瓦舍鳞次栉比。然而繁华之下，高俅、蔡京等奸臣把持朝政，禁军腐败，百姓敢怒不敢言。这里是朝廷权力的心脏，也是梁山对立的终极象征。",
-    "access": {
-      "permissions": "官员、百姓、商贾均可出入，但宵禁严格；皇城与各大衙门禁地严加看守",
-      "access_level": "通常开放，但重要节点（皇城、枢密院、太师府等）极其难进",
-      "access_conditions": "白天凭城门查验身份入城，夜晚需有官府文号或熟识门卒",
-      "access_scope": "",
-      "gender_restriction": "",
-      "time_restriction": "",
-      "special_event_access": ""
-    },
-    "state": {
-      "current_state": "表面太平熙攘，实则暗流涌动，梁山与朝廷的矛盾日益激化",
-      "ownership": "北宋朝廷，实际由徽宗皇帝与蔡京、高俅集团操控",
-      "capacity": 80000,
-      "seasonal_state": "",
-      "maintenance_condition": "",
-      "function_changed": "",
-      "current_resident": ""
-    },
-    "capacity": 80000,
-    "tags": [
-      "州府城池",
-      "通常开放，但重要节点（皇城、枢密院、太师府等）极其难进",
-      "北宋朝廷，实际由徽宗皇帝与蔡京、高俅集团操控"
-    ],
-    "symbolic_meaning": "",
-    "key_plot_events": "",
-    "literary_imagery": "",
-    "bounds": {
-      "x": 93,
-      "y": 22,
-      "w": 22,
-      "h": 16
-    },
-    "entrance": {
-      "x": 104,
-      "y": 37
-    },
-    "raw": {
-      "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:004",
-        "name": "东京汴梁",
-        "type": "州府城池",
-        "description": "东京汴梁为北宋都城，城墙周回四十余里，城门十二座，御街宽阔，市井繁盛。内城皇宫殿宇巍峨，外城商贾云集、勾栏瓦舍鳞次栉比。然而繁华之下，高俅、蔡京等奸臣把持朝政，禁军腐败，百姓敢怒不敢言。这里是朝廷权力的心脏，也是梁山对立的终极象征。",
-        "political_allegiance": "北宋朝廷",
-        "landmark_status": "天下之首，帝都",
-        "function_type": "政治、经济、文化中心，军事指挥中枢",
-        "historical_event_ref": "林冲误入白虎堂、鲁智深倒拔垂杨柳、宋江元宵闹东京、李逵寿张坐衙等事件发生地",
-        "reputation_level": "天下仰望，亦被江湖视为龙潭虎穴"
-      },
-      "access": {
-        "permissions": "官员、百姓、商贾均可出入，但宵禁严格；皇城与各大衙门禁地严加看守",
-        "access_level": "通常开放，但重要节点（皇城、枢密院、太师府等）极其难进",
-        "access_conditions": "白天凭城门查验身份入城，夜晚需有官府文号或熟识门卒",
-        "security_features": "城墙高厚，马面、敌楼、吊桥齐全；城内禁军巡逻交防",
-        "entry_requirements": "平民可自由进出，但携带武器需报备；通缉犯若入城极易被认出",
-        "access_restrictions": "皇城禁地擅闯者斩；枢密院、太师府等有亲兵护卫，无召不得近",
-        "hidden_passages": "存在传闻中从皇宫通往城外的密道，但无人确知",
-        "guard_presence": "处处有巡城兵卒、禁军、府衙差役；夜间更夫与武侯铺遍布"
-      },
-      "state": {
-        "current_state": "表面太平熙攘，实则暗流涌动，梁山与朝廷的矛盾日益激化",
-        "ownership": "北宋朝廷，实际由徽宗皇帝与蔡京、高俅集团操控",
-        "capacity": 80000,
-        "current_mood": "市民麻木中带愤懑，权贵奢靡享乐，官僚勾心斗角",
-        "resource_level": "极度丰富，但分配严重不均，府库银钱多用于享乐与军费",
-        "alert_status": "日常松弛，禁军衰朽；但每当有梁山细作或闹市事件时，瞬间全城戒严",
-        "construction_quality": "雄伟精良，城墙砖石坚固，民房官署均讲究，但坊墙也阻碍了交通",
-        "weather_effect": "夏季炎热多雨，汴河易涨；冬季干冷，大雪时泥泞满街"
-      }
-    }
-  },
-  {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:002",
-    "name": "大名府",
-    "type": "州府城池",
-    "description": "河北重镇，城墙高厚，护城河宽深，四门各设瓮城。府内街市繁华，商贾云集，梁中书府邸气派非凡，元宵灯会更是盛极一时。府衙内外戒备森严，尤以牢狱为重，曾囚禁卢俊义等好汉。城郊有翠云楼、校场等险要之地，梁山好汉曾在此劫法场、救兄弟。",
-    "access": {
-      "permissions": "朝廷官员、本地百姓可自由出入；梁山好汉及通缉犯严禁入城",
-      "access_level": "需经城门盘查，无路引者不得入内",
-      "access_conditions": "出示官府路引或通行凭证；夜间宵禁，严禁外出",
-      "access_scope": "",
-      "gender_restriction": "",
-      "time_restriction": "",
-      "special_event_access": ""
-    },
-    "state": {
-      "current_state": "戒备森严，梁中书因生辰纲被劫而加强防范，城内暗流涌动",
-      "ownership": "梁中书（蔡京女婿）",
-      "capacity": 80000,
-      "seasonal_state": "",
-      "maintenance_condition": "",
-      "function_changed": "",
-      "current_resident": ""
-    },
-    "capacity": 80000,
-    "tags": [
-      "州府城池",
-      "需经城门盘查，无路引者不得入内",
-      "梁中书（蔡京女婿）"
-    ],
-    "symbolic_meaning": "",
-    "key_plot_events": "",
-    "literary_imagery": "",
-    "bounds": {
-      "x": 72,
-      "y": 48,
-      "w": 15,
-      "h": 11
-    },
-    "entrance": {
-      "x": 79,
-      "y": 58
-    },
-    "raw": {
-      "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:002",
-        "name": "大名府",
-        "type": "州府城池",
-        "description": "河北重镇，城墙高厚，护城河宽深，四门各设瓮城。府内街市繁华，商贾云集，梁中书府邸气派非凡，元宵灯会更是盛极一时。府衙内外戒备森严，尤以牢狱为重，曾囚禁卢俊义等好汉。城郊有翠云楼、校场等险要之地，梁山好汉曾在此劫法场、救兄弟。",
-        "political_allegiance": "",
-        "landmark_status": "",
-        "function_type": "",
-        "historical_event_ref": "",
-        "reputation_level": ""
-      },
-      "access": {
-        "permissions": "朝廷官员、本地百姓可自由出入；梁山好汉及通缉犯严禁入城",
-        "access_level": "需经城门盘查，无路引者不得入内",
-        "access_conditions": "出示官府路引或通行凭证；夜间宵禁，严禁外出",
-        "security_features": "城墙四角有敌楼，日夜哨兵巡逻；府衙内外有铁甲护卫，牢狱设有多重铁门和地牢",
-        "entry_requirements": "路引、身份证明",
-        "access_restrictions": "严禁携带兵器入城（特许除外）；对可疑人员立时拘捕",
-        "hidden_passages": "府衙内有通往城外的密道（梁中书逃生用），城南有废弃水门可潜入",
-        "guard_presence": "常驻守军三千，府衙护卫两百，牢狱狱卒五十"
-      },
-      "state": {
-        "current_state": "戒备森严，梁中书因生辰纲被劫而加强防范，城内暗流涌动",
-        "ownership": "梁中书（蔡京女婿）",
-        "capacity": 80000,
-        "current_mood": "紧张焦虑，百姓怕战事殃及，官府严阵以待",
-        "resource_level": "储备充足，粮仓、兵器库均满，可支撑长期围困",
-        "alert_status": "高度警惕，已多次搜捕梁山细作，城门盘查加倍",
-        "construction_quality": "城墙坚固，近年增修了女墙和弩台",
-        "weather_effect": "秋冬多北风，城楼旗杆易折；夏季暴雨可能致护城河泛滥"
-      }
-    }
-  },
-  {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:012",
-    "name": "青州",
-    "type": "州府城池",
-    "description": "山东名城，城周十里，市井繁盛。慕容知府府邸位于城北，衙门威严。城外有桃花山、二龙山等山寨，匪患频仍。城墙较旧，多处需要修缮。慕容彦达仗势欺民，百姓怨声载道。清风寨、清风山在其管辖境内，是秦明、花荣等好汉被逼上梁山的导火索地。",
-    "access": {
-      "permissions": "所有人员需经城门登记放行，梁山好汉禁止入城",
-      "access_level": "中等防范，守门军士常有懈怠",
-      "access_conditions": "寻常日子只需口述来历，似不禁细查",
-      "access_scope": "",
-      "gender_restriction": "",
-      "time_restriction": "",
-      "special_event_access": ""
-    },
-    "state": {
-      "current_state": "相对平静，但慕容知府因梁山声势日大而忧虑常发调兵文书",
-      "ownership": "慕容彦达（朝廷命官）",
-      "capacity": 50000,
-      "seasonal_state": "",
-      "maintenance_condition": "",
-      "function_changed": "",
-      "current_resident": ""
-    },
-    "capacity": 50000,
-    "tags": [
-      "州府城池",
-      "中等防范，守门军士常有懈怠",
-      "慕容彦达（朝廷命官）"
-    ],
-    "symbolic_meaning": "",
-    "key_plot_events": "",
-    "literary_imagery": "",
-    "bounds": {
-      "x": 28,
-      "y": 8,
-      "w": 15,
-      "h": 11
-    },
-    "entrance": {
-      "x": 42,
-      "y": 13
-    },
-    "raw": {
-      "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:012",
-        "name": "青州",
-        "type": "州府城池",
-        "description": "山东名城，城周十里，市井繁盛。慕容知府府邸位于城北，衙门威严。城外有桃花山、二龙山等山寨，匪患频仍。城墙较旧，多处需要修缮。慕容彦达仗势欺民，百姓怨声载道。清风寨、清风山在其管辖境内，是秦明、花荣等好汉被逼上梁山的导火索地。",
-        "political_allegiance": "",
-        "landmark_status": "",
-        "function_type": "",
-        "historical_event_ref": "",
-        "reputation_level": ""
-      },
-      "access": {
-        "permissions": "所有人员需经城门登记放行，梁山好汉禁止入城",
-        "access_level": "中等防范，守门军士常有懈怠",
-        "access_conditions": "寻常日子只需口述来历，似不禁细查",
-        "security_features": "城楼有警鼓，夜间关闭四门；府衙有家丁护卫",
-        "entry_requirements": "",
-        "access_restrictions": "",
-        "hidden_passages": "",
-        "guard_presence": ""
-      },
-      "state": {
-        "current_state": "相对平静，但慕容知府因梁山声势日大而忧虑常发调兵文书",
-        "ownership": "慕容彦达（朝廷命官）",
-        "capacity": 50000,
-        "current_mood": "百姓苟安，官民矛盾暗藏",
-        "resource_level": "",
-        "alert_status": "",
-        "construction_quality": "",
-        "weather_effect": ""
-      }
-    }
-  },
-  {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:008",
-    "name": "济州",
-    "type": "州府城池",
-    "description": "水泊梁山以南的州府，城临运河，水陆交通便利。府衙门常处理与梁山相关的案件，吏治腐败，捕快何涛曾受命追查生辰纲一案。城中酒楼勾栏众多，三教九流汇集，常有梁山眼线活动。城墙低矮，守备薄弱，百姓对梁山既怕又羡。",
-    "access": {
-      "permissions": "平民可自由出入，朝廷通缉犯需躲避盘查",
-      "access_level": "宽松，城门检查敷衍",
-      "access_conditions": "无严格路引要求",
-      "access_scope": "",
-      "gender_restriction": "",
-      "time_restriction": "",
-      "special_event_access": ""
-    },
-    "state": {
-      "current_state": "日常运作，捕盗厅时有捕快出差，府尹对梁山态度暧昧",
-      "ownership": "济州府尹（朝廷任命）",
-      "capacity": 40000,
-      "seasonal_state": "",
-      "maintenance_condition": "",
-      "function_changed": "",
-      "current_resident": ""
-    },
-    "capacity": 40000,
-    "tags": [
-      "州府城池",
-      "宽松，城门检查敷衍",
-      "济州府尹（朝廷任命）"
-    ],
-    "symbolic_meaning": "",
-    "key_plot_events": "",
-    "literary_imagery": "",
-    "bounds": {
-      "x": 124,
-      "y": 25,
-      "w": 15,
-      "h": 11
-    },
-    "entrance": {
-      "x": 131,
-      "y": 35
-    },
-    "raw": {
-      "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:008",
-        "name": "济州",
-        "type": "州府城池",
-        "description": "水泊梁山以南的州府，城临运河，水陆交通便利。府衙门常处理与梁山相关的案件，吏治腐败，捕快何涛曾受命追查生辰纲一案。城中酒楼勾栏众多，三教九流汇集，常有梁山眼线活动。城墙低矮，守备薄弱，百姓对梁山既怕又羡。",
-        "political_allegiance": "",
-        "landmark_status": "",
-        "function_type": "",
-        "historical_event_ref": "",
-        "reputation_level": ""
-      },
-      "access": {
-        "permissions": "平民可自由出入，朝廷通缉犯需躲避盘查",
-        "access_level": "宽松，城门检查敷衍",
-        "access_conditions": "无严格路引要求",
-        "security_features": "",
-        "entry_requirements": "",
-        "access_restrictions": "",
-        "hidden_passages": "",
-        "guard_presence": ""
-      },
-      "state": {
-        "current_state": "日常运作，捕盗厅时有捕快出差，府尹对梁山态度暧昧",
-        "ownership": "济州府尹（朝廷任命）",
-        "capacity": 40000,
-        "current_mood": "民间对梁山草寇议论纷纷，官府虚应故事",
-        "resource_level": "",
-        "alert_status": "",
-        "construction_quality": "",
-        "weather_effect": ""
-      }
-    }
-  },
-  {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:016",
-    "name": "郓城县",
-    "type": "县城",
-    "description": "山东郓州下辖小县，地势平坦，以农耕为主。县衙简陋，知县时文彬为官尚可。城东有宋家庄（宋江故里）、东溪村（晁盖庄）、西溪村交错。县内多有豪杰，宋江、晁盖、吴用、雷横、朱仝等都出身于此。街道不宽，却常有江湖人物往来。",
-    "access": {
-      "permissions": "所有人员可自由进出，无严格盘查",
-      "access_level": "开放，几乎不设防",
-      "access_conditions": "无",
-      "access_scope": "",
-      "gender_restriction": "",
-      "time_restriction": "",
-      "special_event_access": ""
-    },
-    "state": {
-      "current_state": "表面安宁，实则因宋江怒杀阎婆惜、晁盖智取生辰纲后成为朝廷关注之地",
-      "ownership": "知县时文彬（县令）",
-      "capacity": 15000,
-      "seasonal_state": "",
-      "maintenance_condition": "",
-      "function_changed": "",
-      "current_resident": ""
-    },
-    "capacity": 15000,
-    "tags": [
-      "县城",
-      "开放，几乎不设防",
-      "知县时文彬（县令）"
-    ],
-    "symbolic_meaning": "",
-    "key_plot_events": "",
-    "literary_imagery": "",
-    "bounds": {
-      "x": 139,
-      "y": 62,
-      "w": 15,
-      "h": 11
-    },
-    "entrance": {
-      "x": 146,
-      "y": 72
-    },
-    "raw": {
-      "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:016",
-        "name": "郓城县",
-        "type": "县城",
-        "description": "山东郓州下辖小县，地势平坦，以农耕为主。县衙简陋，知县时文彬为官尚可。城东有宋家庄（宋江故里）、东溪村（晁盖庄）、西溪村交错。县内多有豪杰，宋江、晁盖、吴用、雷横、朱仝等都出身于此。街道不宽，却常有江湖人物往来。",
-        "political_allegiance": "",
-        "landmark_status": "",
-        "function_type": "",
-        "historical_event_ref": "",
-        "reputation_level": ""
-      },
-      "access": {
-        "permissions": "所有人员可自由进出，无严格盘查",
-        "access_level": "开放，几乎不设防",
-        "access_conditions": "无",
-        "security_features": "",
-        "entry_requirements": "",
-        "access_restrictions": "",
-        "hidden_passages": "",
-        "guard_presence": ""
-      },
-      "state": {
-        "current_state": "表面安宁，实则因宋江怒杀阎婆惜、晁盖智取生辰纲后成为朝廷关注之地",
-        "ownership": "知县时文彬（县令）",
-        "capacity": 15000,
-        "current_mood": "乡民淳朴，但近年官府差役走动频繁，人心浮动",
-        "resource_level": "",
-        "alert_status": "",
-        "construction_quality": "",
-        "weather_effect": ""
-      }
-    }
-  },
-  {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:006",
-    "name": "独龙冈",
-    "type": "乡野村落",
-    "description": "独龙冈位于梁山泊东北方向，是一片丘陵环绕的乡村区域。祝家庄、扈家庄、李家庄三座庄院错落分布，用土墙和壕沟互为犄角，形成联防体系。庄内青石铺路，木栅栏纵横，庄丁持刀巡逻，充满紧张戒备的气氛。此地是地方豪强对抗梁山的前哨，也是梁山初期面临的最大外部威胁。",
-    "access": {
-      "permissions": "仅允许三庄村民及明媒正娶的亲属进入，外人需由庄主亲信担保",
-      "access_level": "受限",
-      "access_conditions": "必须通过庄门盘查，缴验身份凭证；陌生人一律不得靠近庄墙",
-      "access_scope": "",
-      "gender_restriction": "",
-      "time_restriction": "",
-      "special_event_access": ""
-    },
-    "state": {
-      "current_state": "严阵以待，庄内外都在准备抵御梁山进攻",
-      "ownership": "祝家庄主祝朝奉、扈家庄主扈太公、李家庄主李应共同治理",
-      "capacity": 2500,
-      "seasonal_state": "",
-      "maintenance_condition": "",
-      "function_changed": "",
-      "current_resident": ""
-    },
-    "capacity": 2500,
-    "tags": [
-      "乡野村落",
-      "受限",
-      "祝家庄主祝朝奉、扈家庄主扈太公、李家庄主李应共同治理"
-    ],
-    "symbolic_meaning": "",
-    "key_plot_events": "",
-    "literary_imagery": "",
-    "bounds": {
-      "x": 118,
-      "y": 65,
-      "w": 15,
-      "h": 11
-    },
-    "entrance": {
-      "x": 118,
-      "y": 70
-    },
-    "raw": {
-      "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:006",
-        "name": "独龙冈",
-        "type": "乡野村落",
-        "description": "独龙冈位于梁山泊东北方向，是一片丘陵环绕的乡村区域。祝家庄、扈家庄、李家庄三座庄院错落分布，用土墙和壕沟互为犄角，形成联防体系。庄内青石铺路，木栅栏纵横，庄丁持刀巡逻，充满紧张戒备的气氛。此地是地方豪强对抗梁山的前哨，也是梁山初期面临的最大外部威胁。",
-        "political_allegiance": "地方豪强（祝朝奉为首）",
-        "landmark_status": "地方军事据点",
-        "function_type": "防御居住",
-        "historical_event_ref": "梁山三打祝家庄",
-        "reputation_level": "凶险之地"
-      },
-      "access": {
-        "permissions": "仅允许三庄村民及明媒正娶的亲属进入，外人需由庄主亲信担保",
-        "access_level": "受限",
-        "access_conditions": "必须通过庄门盘查，缴验身份凭证；陌生人一律不得靠近庄墙",
-        "security_features": "土墙高约两丈，墙顶设箭垛；壕沟宽三丈，底部插满竹签；入口处设有吊桥和木栅",
-        "entry_requirements": "持有三庄认可的令牌或由庄丁引路",
-        "access_restrictions": "禁止携带兵器进入庄内核心区（招待所除外）",
-        "hidden_passages": "庄内有秘密地道连通三庄，供紧急联络",
-        "guard_presence": "日夜有庄丁值守瞭望塔，每庄常备五十名武装家丁巡逻"
-      },
-      "state": {
-        "current_state": "严阵以待，庄内外都在准备抵御梁山进攻",
-        "ownership": "祝家庄主祝朝奉、扈家庄主扈太公、李家庄主李应共同治理",
-        "capacity": 2500,
-        "current_mood": "紧张亢奋，庄民既恐惧又仇恨梁山",
-        "resource_level": "充足，粮草器械囤积丰富",
-        "alert_status": "高度警戒，灯火管制，夜间禁止出入",
-        "construction_quality": "坚固，土墙厚实，庄内房屋多为砖石结构",
-        "weather_effect": "雨天泥泞，壕沟水位上涨，防守更容易"
-      }
-    }
-  },
-  {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:013",
-    "name": "石碣村",
-    "type": "乡野村落",
-    "description": "石碣村坐落在梁山泊西南岸，被纵横的河汊和茂密的芦苇荡包围。村子不大，只有百来户人家，房屋多为茅草顶的渔棚，岸边系着许多小渔船。阮氏三雄的家就在村头大树下，院中还挂着渔网。这里曾是晁盖、吴用等人智取生辰纲后的第一批避难所，也是梁山好汉最早的水军据点。",
-    "access": {
-      "permissions": "对所有人开放，但陌生人进村会被村民警觉地打量",
-      "access_level": "公开",
-      "access_conditions": "无正式限制，但最佳进入方式是乘小船沿水道入村",
-      "access_scope": "",
-      "gender_restriction": "",
-      "time_restriction": "",
-      "special_event_access": ""
-    },
-    "state": {
-      "current_state": "平静如常，村民照常打鱼晒网",
-      "ownership": "村民共有，村落公推阮氏兄弟为头领",
-      "capacity": 400,
-      "seasonal_state": "",
-      "maintenance_condition": "",
-      "function_changed": "",
-      "current_resident": ""
-    },
-    "capacity": 400,
-    "tags": [
-      "乡野村落",
-      "公开",
-      "村民共有，村落公推阮氏兄弟为头领"
-    ],
-    "symbolic_meaning": "",
-    "key_plot_events": "",
-    "literary_imagery": "",
-    "bounds": {
-      "x": 120,
+      "x": 98,
       "y": 82,
       "w": 15,
       "h": 11
     },
     "entrance": {
-      "x": 127,
+      "x": 105,
       "y": 92
     },
     "raw": {
       "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:013",
-        "name": "石碣村",
-        "type": "乡野村落",
-        "description": "石碣村坐落在梁山泊西南岸，被纵横的河汊和茂密的芦苇荡包围。村子不大，只有百来户人家，房屋多为茅草顶的渔棚，岸边系着许多小渔船。阮氏三雄的家就在村头大树下，院中还挂着渔网。这里曾是晁盖、吴用等人智取生辰纲后的第一批避难所，也是梁山好汉最早的水军据点。",
-        "political_allegiance": "中立，但村民心向梁山",
-        "landmark_status": "普通村落",
-        "function_type": "渔村",
-        "historical_event_ref": "智取生辰纲后避难、阮氏兄弟加入梁山",
-        "reputation_level": "宁静渔村"
+        "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:016",
+        "name": "变形课教室",
+        "type": "teaching_space",
+        "description": "麦格教授的教室总是保持着一丝不苟的秩序，讲台上的每一根粉笔都摆放得整整齐齐。教室左侧的玻璃柜里陈列着各种变形标本，但如今几只甲虫标本被偷偷替换成了带微雕信息的赝品。麦格教授在授课时会故意制造一些‘小失误’，让课本翻到含有抵抗暗示的页面，或者将门钥匙伪装成练习用的火柴。",
+        "security_level": "中等",
+        "faction_allegiance": "霍格沃茨教工（表面中立）",
+        "has_secret_passage": "false",
+        "historical_significance": "麦格教授在此秘密传递反抗情报的据点",
+        "secret_function": "讲台底部的暗格存放着用于联络成员的折叠双面镜碎片"
       },
       "access": {
-        "permissions": "对所有人开放，但陌生人进村会被村民警觉地打量",
-        "access_level": "公开",
-        "access_conditions": "无正式限制，但最佳进入方式是乘小船沿水道入村",
-        "security_features": "天然的芦苇迷宫，不熟悉水路的人容易迷路",
-        "entry_requirements": "无",
-        "access_restrictions": "无",
-        "hidden_passages": "芦苇荡中有多条秘密水道可通往梁山泊深处",
-        "guard_presence": "无专业守卫，但渔民自带警觉，夜间有狗群"
+        "permissions": "所有选修变形课的学生及获得特许的教职工",
+        "access_level": "正常开放，但下课后立即锁门",
+        "access_conditions": "须持有课表或麦格教授亲自开锁，食死徒巡查时会被麦格以‘需要备课’为由阻拦",
+        "password_required": "false",
+        "special_permission_required": "false",
+        "magical_barrier_type": "普通的防扰咒",
+        "surveillance_level": "低（麦格暗中反监控）",
+        "secret_entry_available": "true",
+        "patrol_frequency": "偶尔有级长巡逻，但麦格总会提前移除可疑物品"
       },
       "state": {
-        "current_state": "平静如常，村民照常打鱼晒网",
-        "ownership": "村民共有，村落公推阮氏兄弟为头领",
-        "capacity": 400,
-        "current_mood": "安详中带着对梁山的亲近感",
-        "resource_level": "中等，以鱼虾和莲藕为生",
-        "alert_status": "低，偶有官差路过才会警惕",
-        "construction_quality": "简陋，多为木竹结构",
-        "weather_effect": "风雨天河道涨水，部分低洼房屋会淹；雾天犹如世外桃源"
+        "current_state": "维持整洁但略带紧迫感，个别座椅被施展了临时变形的标记咒",
+        "ownership": "米勒娃·麦格教授",
+        "capacity": 40,
+        "usage_status": "正常教学，偶尔有学生被麦格以‘补习’名义留下进行秘密谈话",
+        "maintenance_condition": "良好，每日打扫",
+        "defensive_spells": "麦格施加了窃听反制咒，任何监听咒语都会触发粉笔自动写出恶作剧台词",
+        "lighting_condition": "自然光通过高窗透入，下午时分会折射出猫形阴影",
+        "curse_status": "无诅咒",
+        "occupancy_status": "上课时满员，其余时间麦格独自备课"
       }
     }
   },
   {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:011",
-    "name": "梁山泊水域",
-    "type": "战场区域",
-    "description": "梁山泊水域是梁山泊外围最为辽阔的水面，方圆八百里烟波浩渺，港汊如网，芦苇似障。水色浑黄暗流涌动，水下暗藏沉船和礁石，只有熟悉地形的梁山水军才能自如穿梭。这里是梁山的天堑，水寨战船一字排开，艨艟斗舰隐于芦苇深处。官军多次来犯皆在此处遭遇伏击，葬身鱼腹者不计其数。白天的水鸟惊飞常常预示着一场恶战即将到来。",
+    "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:011",
+    "name": "魔药课教室",
+    "type": "teaching_space",
+    "description": "地下教室常年弥漫着草药与硫磺的混合气味，锅架上挂着一排排铜锅，表面被火焰熏得发黑。斯拉格霍恩教授表面上仍按部就班教学，但会在课间‘不小心’把装有缓和剂的坩埚放在显眼位置供受伤学生取用，或者将某些反追踪魔药的配方夹在教材页缝里。角落里一个旧橱柜实际上被施了无痕伸展咒，藏匿着抵抗组织所需的医疗用品。",
     "access": {
-      "permissions": "仅限梁山好汉及受梁山保护的水民",
-      "access_level": "严格受限",
-      "access_conditions": "必须由梁山水军头领引领，或持有金沙滩渡船令牌；外来船只未经许可进入会立即遭到弓箭和火攻",
+      "permissions": "所有选修魔药课的学生及斯拉格霍恩邀请的人",
+      "access_level": "常规开放，但斯拉格霍恩常在课后锁门进行检查",
+      "access_conditions": "需持有课表或斯拉格霍恩本人的许可，食死徒一般不会进入（认为这里无关紧要）",
       "access_scope": "",
       "gender_restriction": "",
       "time_restriction": "",
       "special_event_access": ""
     },
     "state": {
-      "current_state": "战备状态，水军每日操练，战舰齐整，士气高昂",
-      "ownership": "梁山泊全权控制",
-      "capacity": 800,
+      "current_state": "整洁有序，但药柜中的某些标签被故意贴错以混淆检查",
+      "ownership": "霍拉斯·斯拉格霍恩教授",
+      "capacity": 35,
       "seasonal_state": "",
-      "maintenance_condition": "",
+      "maintenance_condition": "良好，斯拉格霍恩对用具很讲究",
       "function_changed": "",
       "current_resident": ""
     },
-    "capacity": 800,
+    "capacity": 35,
     "tags": [
-      "战场区域",
-      "严格受限",
-      "梁山泊全权控制"
+      "teaching_space",
+      "常规开放，但斯拉格霍恩常在课后锁门进行检查",
+      "霍拉斯·斯拉格霍恩教授"
     ],
     "symbolic_meaning": "",
     "key_plot_events": "",
     "literary_imagery": "",
     "bounds": {
-      "x": 120,
-      "y": 45,
+      "x": 125,
+      "y": 67,
       "w": 15,
       "h": 11
     },
     "entrance": {
-      "x": 127,
-      "y": 55
+      "x": 132,
+      "y": 77
     },
     "raw": {
       "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:011",
-        "name": "梁山泊水域",
-        "type": "战场区域",
-        "description": "梁山泊水域是梁山泊外围最为辽阔的水面，方圆八百里烟波浩渺，港汊如网，芦苇似障。水色浑黄暗流涌动，水下暗藏沉船和礁石，只有熟悉地形的梁山水军才能自如穿梭。这里是梁山的天堑，水寨战船一字排开，艨艟斗舰隐于芦苇深处。官军多次来犯皆在此处遭遇伏击，葬身鱼腹者不计其数。白天的水鸟惊飞常常预示着一场恶战即将到来。",
-        "political_allegiance": "梁山泊",
-        "landmark_status": "战略天险",
-        "function_type": "防御水域与战场",
-        "historical_event_ref": "梁山数次水战，如大败童贯、高俅水军",
-        "reputation_level": "令官军闻风丧胆的死亡水域"
+        "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:011",
+        "name": "魔药课教室",
+        "type": "teaching_space",
+        "description": "地下教室常年弥漫着草药与硫磺的混合气味，锅架上挂着一排排铜锅，表面被火焰熏得发黑。斯拉格霍恩教授表面上仍按部就班教学，但会在课间‘不小心’把装有缓和剂的坩埚放在显眼位置供受伤学生取用，或者将某些反追踪魔药的配方夹在教材页缝里。角落里一个旧橱柜实际上被施了无痕伸展咒，藏匿着抵抗组织所需的医疗用品。",
+        "security_level": "中等偏低",
+        "faction_allegiance": "霍格沃茨（斯拉格霍恩两面讨好）",
+        "has_secret_passage": "true",
+        "historical_significance": "斯拉格霍恩在此庇护学生并提供魔药援助",
+        "secret_function": "橱柜中的密道连接至地窖深处的秘密储藏室"
       },
       "access": {
-        "permissions": "仅限梁山好汉及受梁山保护的水民",
-        "access_level": "严格受限",
-        "access_conditions": "必须由梁山水军头领引领，或持有金沙滩渡船令牌；外来船只未经许可进入会立即遭到弓箭和火攻",
-        "security_features": "水下安置暗桩和铁链，水面浮标为假，只有梁山水军才识得安全航道；芦苇荡中隐藏伏兵和火箭手",
-        "entry_requirements": "需在靠近前发出特定号灯信号，经哨船确认后方可进入",
-        "access_restrictions": "严禁官军船只接近，违者格杀勿论",
-        "hidden_passages": "有多条秘密水道连接石碣村、金沙滩和鸭嘴滩，便于快速调兵",
-        "guard_presence": "水军巡逻船昼夜不停，每半个时辰有哨船穿梭；水域附近常有数艘快船隐蔽在芦苇中"
+        "permissions": "所有选修魔药课的学生及斯拉格霍恩邀请的人",
+        "access_level": "常规开放，但斯拉格霍恩常在课后锁门进行检查",
+        "access_conditions": "需持有课表或斯拉格霍恩本人的许可，食死徒一般不会进入（认为这里无关紧要）",
+        "password_required": "false",
+        "special_permission_required": "false",
+        "magical_barrier_type": "无特殊屏障，只有普通锁门咒",
+        "surveillance_level": "极低（食死徒忽视这里）",
+        "secret_entry_available": "true",
+        "patrol_frequency": "偶尔有卡罗兄妹路过，但斯拉格霍恩总能以教学名义支开他们"
       },
       "state": {
-        "current_state": "战备状态，水军每日操练，战舰齐整，士气高昂",
-        "ownership": "梁山泊全权控制",
-        "capacity": 800,
-        "current_mood": "严阵以待且自信昂扬，水兵坚信水道就是官军的坟场",
-        "resource_level": "丰富，渔船供应充足，浅滩养殖大量鱼虾",
-        "alert_status": "常备不懈，一有风吹草动全军迅速到位",
-        "construction_quality": "坚固，水寨用粗木搭建，能抗风浪和火箭",
-        "weather_effect": "雾天对防守方极为有利，可近距离突袭；暴风雨时战舰需回港，但水下游桩依然威胁敌船"
+        "current_state": "整洁有序，但药柜中的某些标签被故意贴错以混淆检查",
+        "ownership": "霍拉斯·斯拉格霍恩教授",
+        "capacity": 35,
+        "usage_status": "正常进行教学，每周额外开放两次‘课后助手’时段供学生求援",
+        "maintenance_condition": "良好，斯拉格霍恩对用具很讲究",
+        "defensive_spells": "斯拉格霍恩给橱柜施加了厌恶咒，使外人不想靠近",
+        "lighting_condition": "昏暗的烛光，炉火偶尔跳动映出人影",
+        "curse_status": "无诅咒",
+        "occupancy_status": "使用时间固定，其余时间多由斯拉格霍恩独自整理"
       }
     }
   },
   {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:019",
-    "name": "祝家庄战场",
-    "type": "战场区域",
-    "description": "祝家庄战场位于独龙冈南面开阔地，是梁山三打祝家庄的主战场所在地。地面布满马蹄印、车辙和倒伏的草木，残留的陷马坑和铁蒺藜依然可见。庄墙外有一道宽深壕沟，沟壁斜插尖木，曾经血染沟底。东北角有被烧毁的敌楼残骸，西南土坡上是梁山军队的临时营垒遗迹。空气中偶尔还能嗅到焦土与锈铁的气味。这里见证了梁山从轻敌失利到智取内应、最终破庄的全过程。",
+    "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:002",
+    "name": "魔咒课教室",
+    "type": "teaching_space",
+    "description": "典型的霍格沃茨教授，黑板上画着复杂的咒语轨迹，桌椅整齐排列。弗立维教授虽然身材矮小，但总能以轻松的语气讲完课，并偷偷教学生一些用于自卫的无声咒或缴械咒的变体。他在讲台后的书堆里夹带了几本关于反诅咒的禁书残页，供有心的学生课间翻阅。这里相比黑魔法防御术教室显得安全得多。",
     "access": {
-      "permissions": "对所有人开放，但有一定危险（残留陷阱未完全清除）",
-      "access_level": "公开",
-      "access_conditions": "无需审批，但建议避开雨天以防塌陷",
+      "permissions": "所有选修魔咒课的学生及教职工",
+      "access_level": "完全开放，但弗立维会留意任何食死徒的突然造访",
+      "access_conditions": "正常上课时间，需有课表；课后弗立维常以‘批改作业’为由留在教室接待有请求的学生",
       "access_scope": "",
       "gender_restriction": "",
       "time_restriction": "",
       "special_event_access": ""
     },
     "state": {
-      "current_state": "荒废，野草覆盖，仅有少量残垣断壁和战争痕迹",
-      "ownership": "无主之地，附近村民认为是凶地不愿垦荒",
-      "capacity": 2000,
+      "current_state": "整洁明亮，墙上挂着历代优秀魔咒师的画像，画像有时会帮弗立维望风",
+      "ownership": "菲利乌斯·弗立维教授",
+      "capacity": 35,
       "seasonal_state": "",
-      "maintenance_condition": "",
+      "maintenance_condition": "完好，每天打扫",
       "function_changed": "",
       "current_resident": ""
     },
-    "capacity": 2000,
+    "capacity": 35,
     "tags": [
-      "战场区域",
-      "公开",
-      "无主之地，附近村民认为是凶地不愿垦荒"
+      "teaching_space",
+      "完全开放，但弗立维会留意任何食死徒的突然造访",
+      "菲利乌斯·弗立维教授"
     ],
     "symbolic_meaning": "",
     "key_plot_events": "",
     "literary_imagery": "",
     "bounds": {
-      "x": 123,
-      "y": 13,
-      "w": 8,
-      "h": 6
+      "x": 52,
+      "y": 65,
+      "w": 15,
+      "h": 11
     },
     "entrance": {
-      "x": 130,
-      "y": 16
+      "x": 59,
+      "y": 75
     },
     "raw": {
       "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:019",
-        "name": "祝家庄战场",
-        "type": "战场区域",
-        "description": "祝家庄战场位于独龙冈南面开阔地，是梁山三打祝家庄的主战场所在地。地面布满马蹄印、车辙和倒伏的草木，残留的陷马坑和铁蒺藜依然可见。庄墙外有一道宽深壕沟，沟壁斜插尖木，曾经血染沟底。东北角有被烧毁的敌楼残骸，西南土坡上是梁山军队的临时营垒遗迹。空气中偶尔还能嗅到焦土与锈铁的气味。这里见证了梁山从轻敌失利到智取内应、最终破庄的全过程。",
-        "political_allegiance": "原属祝家庄，战后被梁山废弃",
-        "landmark_status": "著名古战场",
-        "function_type": "攻坚战场",
-        "historical_event_ref": "梁山三打祝家庄（第一、二、三次战役）",
-        "reputation_level": "赫赫有名的义军胜利地"
+        "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:002",
+        "name": "魔咒课教室",
+        "type": "teaching_space",
+        "description": "典型的霍格沃茨教授，黑板上画着复杂的咒语轨迹，桌椅整齐排列。弗立维教授虽然身材矮小，但总能以轻松的语气讲完课，并偷偷教学生一些用于自卫的无声咒或缴械咒的变体。他在讲台后的书堆里夹带了几本关于反诅咒的禁书残页，供有心的学生课间翻阅。这里相比黑魔法防御术教室显得安全得多。",
+        "security_level": "低",
+        "faction_allegiance": "霍格沃茨（表面上服从斯内普法令）",
+        "has_secret_passage": "false",
+        "historical_significance": "弗立维教授秘密传授抵抗知识的教学场所",
+        "secret_function": "讲台抽屉底部的夹层藏有小型隐形斗篷碎片（供紧急联络用）"
       },
       "access": {
-        "permissions": "对所有人开放，但有一定危险（残留陷阱未完全清除）",
-        "access_level": "公开",
-        "access_conditions": "无需审批，但建议避开雨天以防塌陷",
-        "security_features": "无主动防御，但地面仍有锈铁蒺藜和残破木桩",
-        "entry_requirements": "无",
-        "access_restrictions": "禁止挖掘或取走战场遗留物品（当地习俗）",
-        "hidden_passages": "战场下方曾有祝家庄的地道入口，战后被堵塞",
-        "guard_presence": "无人守卫，偶有砍柴樵夫路过"
+        "permissions": "所有选修魔咒课的学生及教职工",
+        "access_level": "完全开放，但弗立维会留意任何食死徒的突然造访",
+        "access_conditions": "正常上课时间，需有课表；课后弗立维常以‘批改作业’为由留在教室接待有请求的学生",
+        "password_required": "false",
+        "special_permission_required": "false",
+        "magical_barrier_type": "无",
+        "surveillance_level": "低（卡罗兄妹认为魔咒课无害）",
+        "secret_entry_available": "false",
+        "patrol_frequency": "偶尔有级长巡查，但弗立维总能及时收起敏感材料"
       },
       "state": {
-        "current_state": "荒废，野草覆盖，仅有少量残垣断壁和战争痕迹",
-        "ownership": "无主之地，附近村民认为是凶地不愿垦荒",
-        "capacity": 2000,
-        "current_mood": "肃杀寂静，风穿过残墙发出呜咽",
-        "resource_level": "极低，土壤贫瘠，草木稀疏",
-        "alert_status": "无警戒",
-        "construction_quality": "损坏，原本的庄墙和工事大多坍塌",
-        "weather_effect": "雨后战场泥泞不堪，容易陷脚；晴天时视野开阔，能远眺独龙冈轮廓"
+        "current_state": "整洁明亮，墙上挂着历代优秀魔咒师的画像，画像有时会帮弗立维望风",
+        "ownership": "菲利乌斯·弗立维教授",
+        "capacity": 35,
+        "usage_status": "正常教学，偶尔在课后举办非正式的‘咒语练习组’（实际是抵抗训练）",
+        "maintenance_condition": "完好，每天打扫",
+        "defensive_spells": "弗立维在黑板框上施了警示咒，若有食死徒接近会轻微震动",
+        "lighting_condition": "自然光充足，加上漂浮的蜡烛",
+        "curse_status": "无诅咒",
+        "occupancy_status": "上课时满员，课后常有五六个学生留下‘问问题’"
       }
     }
   },
   {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:018",
-    "name": "曾头市战场",
-    "type": "战场区域",
-    "description": "位于曾头市外的开阔平野与丘陵地带，随处可见被马蹄踏碎的庄稼、折断的枪戟和暗红色血迹。中央偏东处立着一块新置的木牌，标记着梁山之主晁盖中箭殒命之地。四周弥漫着焦土与铁锈的气味，乌鸦低盘旋，草丛间散落着断箭和破碎的甲片。曾头市高筑的寨墙在远处隐约可见，墙上插着史文恭的旗帜。",
+    "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:005",
+    "name": "大礼堂",
+    "type": "communal_space",
+    "description": "被施了魔法的大礼堂穹顶映照着阴沉的乌云而非星空，四张学院长桌依旧排列，但斯莱特林的银绿色旗帜被高高悬挂，其他学院旗帜被压到最低。原本漂浮的蜡烛被暗淡的魔法火炬取代，中央过道尽头是斯内普校长的深色讲台，两侧各站一名阴森的食死徒。墙壁上挂满了新的标语“血统即力量”，邓布利多的肖像被移除。空气中弥漫着恐惧与压抑的气息，每日晚餐时卡罗兄妹在此公开惩罚反抗学生，有时会施放钻心咒作为威慑。这里也是伏地魔未来可能宣布最终胜利的场所。",
     "access": {
-      "permissions": "战后被曾头市占据，禁止梁山人员进入",
-      "access_level": "危险区域，非武装人员不宜接近",
-      "access_conditions": "需持有曾头市令箭或避开巡逻队从侧翼潜入",
+      "permissions": "全校师生强制参加每日三餐和集会；宵禁后禁止逗留",
+      "access_level": "公共但受严格监视",
+      "access_conditions": "需经过门口食死徒的魔杖检查，缺席者将被记录并处罚",
       "access_scope": "",
       "gender_restriction": "",
       "time_restriction": "",
       "special_event_access": ""
     },
     "state": {
-      "current_state": "战后荒废，杂草丛生，多处土地翻垦掩埋尸体",
-      "ownership": "曾头市豪强势力（曾涂、史文恭等）实际控制",
-      "capacity": 500,
+      "current_state": "被食死徒全面占领，气氛阴森肃杀",
+      "ownership": "霍格沃茨名义上归属学校，实际由伏地魔通过斯内普控制",
+      "capacity": 600,
       "seasonal_state": "",
-      "maintenance_condition": "",
+      "maintenance_condition": "外部整洁但内部装饰被篡改，石墙上有血迹和灼痕",
       "function_changed": "",
       "current_resident": ""
     },
-    "capacity": 500,
+    "capacity": 600,
     "tags": [
-      "战场区域",
-      "危险区域，非武装人员不宜接近",
-      "曾头市豪强势力（曾涂、史文恭等）实际控制"
-    ],
-    "symbolic_meaning": "",
-    "key_plot_events": "",
-    "literary_imagery": "",
-    "bounds": {
-      "x": 12,
-      "y": 67,
-      "w": 8,
-      "h": 6
-    },
-    "entrance": {
-      "x": 16,
-      "y": 72
-    },
-    "raw": {
-      "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:018",
-        "name": "曾头市战场",
-        "type": "战场区域",
-        "description": "位于曾头市外的开阔平野与丘陵地带，随处可见被马蹄踏碎的庄稼、折断的枪戟和暗红色血迹。中央偏东处立着一块新置的木牌，标记着梁山之主晁盖中箭殒命之地。四周弥漫着焦土与铁锈的气味，乌鸦低盘旋，草丛间散落着断箭和破碎的甲片。曾头市高筑的寨墙在远处隐约可见，墙上插着史文恭的旗帜。",
-        "political_allegiance": "无主之地，曾头市豪强与梁山势力冲突交界",
-        "landmark_status": "晁盖殒命处（被梁山好汉视为仇恨之地）",
-        "function_type": "伏击与正面作战场景",
-        "historical_event_ref": "晁盖率军攻打曾头市，遭曾涂、史文恭设计，晁盖面中毒箭身亡",
-        "reputation_level": "凶地——梁山好汉提及此处无不切齿痛恨"
-      },
-      "access": {
-        "permissions": "战后被曾头市占据，禁止梁山人员进入",
-        "access_level": "危险区域，非武装人员不宜接近",
-        "access_conditions": "需持有曾头市令箭或避开巡逻队从侧翼潜入",
-        "security_features": "曾头市设有瞭望塔、暗哨、陷阱和伏兵点",
-        "entry_requirements": "若无令箭，需夜间借助地形掩护通过",
-        "access_restrictions": "梁山人众被严格封锁，屡次冲突后双方仇杀不断",
-        "hidden_passages": "东北侧密林中有猎人小径可绕至曾头市后墙",
-        "guard_presence": "曾头市在战场边缘驻有百余人巡逻队，核心中箭地附近有暗桩"
-      },
-      "state": {
-        "current_state": "战后荒废，杂草丛生，多处土地翻垦掩埋尸体",
-        "ownership": "曾头市豪强势力（曾涂、史文恭等）实际控制",
-        "capacity": 500,
-        "current_mood": "恐惧与仇恨交织，常有梁山探子潜伏，曾头市守军戒惧",
-        "resource_level": "贫瘠——战场原有物资源已搜刮殆尽",
-        "alert_status": "高度戒备——曾头市日夜巡哨，防备梁山复仇",
-        "construction_quality": "无固定建筑，只有临时掩体和木栅栏",
-        "weather_effect": "雨季泥泞难行，冬季北风呼啸加速体力消耗"
-      }
-    }
-  },
-  {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:005",
-    "name": "汴梁府衙",
-    "type": "官府衙门",
-    "description": "坐落于东京汴梁城内御街东侧，青砖灰瓦、重檐斗拱，大门两侧立着两尊石狮，朱漆大门上镶着黄铜钉，上方悬挂“太尉府”匾额。正堂宽阔可容百余人，公案后设虎皮交椅，墙上悬“明镜高悬”匾却蒙尘倾斜。偏厅设有密议室，高俅与幕僚常在此策划陷害忠良、围剿梁山的计策。庭院中植有数株枯槐，树下时有差役低声议论朝中是非。后衙存放银车、军器图册与各处密报。整座府衙看似威严，实则充斥着权钱交易与阴毒谋划。",
-    "access": {
-      "permissions": "高俅亲信及朝廷高官可自由出入，普通百姓严禁靠近",
-      "access_level": "核心区仅限上厅级官员及高俅贴身护卫进入",
-      "access_conditions": "需有太尉手令或熟识的引荐人，外来官员需通报门房候见",
-      "access_scope": "",
-      "gender_restriction": "",
-      "time_restriction": "",
-      "special_event_access": ""
-    },
-    "state": {
-      "current_state": "运转正常，但内政腐败，案件积累无数",
-      "ownership": "太尉高俅及其家族",
-      "capacity": 80,
-      "seasonal_state": "",
-      "maintenance_condition": "",
-      "function_changed": "",
-      "current_resident": ""
-    },
-    "capacity": 80,
-    "tags": [
-      "官府衙门",
-      "核心区仅限上厅级官员及高俅贴身护卫进入",
-      "太尉高俅及其家族"
-    ],
-    "symbolic_meaning": "",
-    "key_plot_events": "",
-    "literary_imagery": "",
-    "bounds": {
-      "x": 61,
-      "y": 22,
-      "w": 22,
-      "h": 16
-    },
-    "entrance": {
-      "x": 72,
-      "y": 37
-    },
-    "raw": {
-      "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:005",
-        "name": "汴梁府衙",
-        "type": "官府衙门",
-        "description": "坐落于东京汴梁城内御街东侧，青砖灰瓦、重檐斗拱，大门两侧立着两尊石狮，朱漆大门上镶着黄铜钉，上方悬挂“太尉府”匾额。正堂宽阔可容百余人，公案后设虎皮交椅，墙上悬“明镜高悬”匾却蒙尘倾斜。偏厅设有密议室，高俅与幕僚常在此策划陷害忠良、围剿梁山的计策。庭院中植有数株枯槐，树下时有差役低声议论朝中是非。后衙存放银车、军器图册与各处密报。整座府衙看似威严，实则充斥着权钱交易与阴毒谋划。",
-        "political_allegiance": "朝廷——以太尉高俅为首的奸党核心机构",
-        "landmark_status": "汴梁城内最高军事刑名机构之一",
-        "function_type": "军事指挥、刑狱审理、密谋策划",
-        "historical_event_ref": "高俅在此陷害林冲、设计攻打梁山、操纵科举与军功",
-        "reputation_level": "民间畏若虎穴，正义之士不齿，奸佞趋之若鹜"
-      },
-      "access": {
-        "permissions": "高俅亲信及朝廷高官可自由出入，普通百姓严禁靠近",
-        "access_level": "核心区仅限上厅级官员及高俅贴身护卫进入",
-        "access_conditions": "需有太尉手令或熟识的引荐人，外来官员需通报门房候见",
-        "security_features": "门口有六名全副武装的禁军护卫，内部有持刀校尉巡行，密议室门外设暗岗",
-        "entry_requirements": "出示太尉府腰牌并登记姓名官职",
-        "access_restrictions": "可疑人员、江湖人物、无品级者一律不得入内",
-        "hidden_passages": "后衙书库有暗门通向隔壁高俅私宅，供紧急转移或秘密会面",
-        "guard_presence": "常驻禁军三十人，另有高俅私人护卫十余名，日夜轮值"
-      },
-      "state": {
-        "current_state": "运转正常，但内政腐败，案件积累无数",
-        "ownership": "太尉高俅及其家族",
-        "capacity": 80,
-        "current_mood": "压抑与虚伪并存，表面肃静实则暗流涌动",
-        "resource_level": "充裕——朝廷拨付粮饷军械，兼有各地孝敬",
-        "alert_status": "常规戒备，但因梁山威胁增大，偶尔加派人手",
-        "construction_quality": "官造顶级，木石结构坚固，但年久失修处可见裂痕",
-        "weather_effect": "天气晴朗时堂上光线明亮，阴雨天则灯烛昏暗更显阴沉"
-      }
-    }
-  },
-  {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:003",
-    "name": "大名府衙门",
-    "type": "官府衙门",
-    "description": "坐落于大名府城中轴线北端，面阔五间，进深三重，前有照壁与旗杆。正门上方悬“大名府”匾额，两侧对联“明刑弼教，除暴安良”已斑驳。前厅是梁中书审案之地，设公案、刑具，两侧衙役持水火棍分立。后堂为内衙，梁中书与夫人蔡氏（蔡京之女）居此，常与幕僚商议征收生辰纲等事务。偏院有监狱与刑讯室，关押过不少被陷害的好汉。整座衙门富丽堂皇，但暗藏贪赃枉法，冤狱遍地。",
-    "access": {
-      "permissions": "官员、胥吏及经传唤的民众可入",
-      "access_level": "前厅对公众开放（限诉讼），后堂及监狱需特别许可",
-      "access_conditions": "告状者需击鼓或递状纸，由门子通报",
-      "access_scope": "",
-      "gender_restriction": "",
-      "time_restriction": "",
-      "special_event_access": ""
-    },
-    "state": {
-      "current_state": "日常运行，但梁中书因生辰纲被劫而焦虑，加紧各项防范",
-      "ownership": "朝廷所有，由梁中书实际控制",
-      "capacity": 60,
-      "seasonal_state": "",
-      "maintenance_condition": "",
-      "function_changed": "",
-      "current_resident": ""
-    },
-    "capacity": 60,
-    "tags": [
-      "官府衙门",
-      "前厅对公众开放（限诉讼），后堂及监狱需特别许可",
-      "朝廷所有，由梁中书实际控制"
+      "communal_space",
+      "公共但受严格监视",
+      "霍格沃茨名义上归属学校，实际由伏地魔通过斯内普控制"
     ],
     "symbolic_meaning": "",
     "key_plot_events": "",
     "literary_imagery": "",
     "bounds": {
       "x": 77,
-      "y": 68,
+      "y": 53,
       "w": 15,
       "h": 11
     },
     "entrance": {
       "x": 84,
-      "y": 78
+      "y": 63
     },
     "raw": {
       "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:003",
-        "name": "大名府衙门",
-        "type": "官府衙门",
-        "description": "坐落于大名府城中轴线北端，面阔五间，进深三重，前有照壁与旗杆。正门上方悬“大名府”匾额，两侧对联“明刑弼教，除暴安良”已斑驳。前厅是梁中书审案之地，设公案、刑具，两侧衙役持水火棍分立。后堂为内衙，梁中书与夫人蔡氏（蔡京之女）居此，常与幕僚商议征收生辰纲等事务。偏院有监狱与刑讯室，关押过不少被陷害的好汉。整座衙门富丽堂皇，但暗藏贪赃枉法，冤狱遍地。",
-        "political_allegiance": "朝廷——大名府留守梁中书管辖",
-        "landmark_status": "大名府行政司法核心",
-        "function_type": "知府审案、政令发布、科举初试、赋税收缴",
-        "historical_event_ref": "梁中书每年征十万贯生辰纲，引发晁盖智取；卢俊义被陷害下狱处決未遂；石秀劫牢",
-        "reputation_level": "民间怨声载道，但敬畏其权势"
+        "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:005",
+        "name": "大礼堂",
+        "type": "communal_space",
+        "description": "被施了魔法的大礼堂穹顶映照着阴沉的乌云而非星空，四张学院长桌依旧排列，但斯莱特林的银绿色旗帜被高高悬挂，其他学院旗帜被压到最低。原本漂浮的蜡烛被暗淡的魔法火炬取代，中央过道尽头是斯内普校长的深色讲台，两侧各站一名阴森的食死徒。墙壁上挂满了新的标语“血统即力量”，邓布利多的肖像被移除。空气中弥漫着恐惧与压抑的气息，每日晚餐时卡罗兄妹在此公开惩罚反抗学生，有时会施放钻心咒作为威慑。这里也是伏地魔未来可能宣布最终胜利的场所。",
+        "security_level": "最高戒备",
+        "faction_allegiance": "食死徒/霍格沃茨校方（名义上由斯内普掌控）",
+        "has_secret_passage": "false",
+        "historical_significance": "曾是邓布利多主持分院仪式与圣诞舞会的地方，现沦为恐怖统治的中心舞台",
+        "secret_function": "部分凤凰社成员通过厨房通道偶尔夹带中草药或信息，但风险极高"
       },
       "access": {
-        "permissions": "官员、胥吏及经传唤的民众可入",
-        "access_level": "前厅对公众开放（限诉讼），后堂及监狱需特别许可",
-        "access_conditions": "告状者需击鼓或递状纸，由门子通报",
-        "security_features": "大门内常驻四名门卫，审案时衙役列队，监狱有铁栅与锁链",
-        "entry_requirements": "普通百姓凭身份证明或邻居担保，官员出示官凭",
-        "access_restrictions": "佩戴兵器者不得入内，江湖人士尤其受戒备",
-        "hidden_passages": "通往后院有一条夹道，可通往梁中书亲信家仆的住所，用于秘密押送犯人",
-        "guard_presence": "日间有十余个衙役轮值，夜间减至五人，但有紧急时可调动城中厢军"
+        "permissions": "全校师生强制参加每日三餐和集会；宵禁后禁止逗留",
+        "access_level": "公共但受严格监视",
+        "access_conditions": "需经过门口食死徒的魔杖检查，缺席者将被记录并处罚",
+        "password_required": "false",
+        "special_permission_required": "false",
+        "magical_barrier_type": "反幻影移形重叠咒、侦测敌意咒（可识别任何隐藏的抵抗意图）",
+        "surveillance_level": "极高：卡罗兄妹轮流巡视，墙角有摄魂怪飘动，施有窃听咒",
+        "secret_entry_available": "true",
+        "patrol_frequency": "每十五分钟一班巡逻，由食死徒或摄魂怪执行"
       },
       "state": {
-        "current_state": "日常运行，但梁中书因生辰纲被劫而焦虑，加紧各项防范",
-        "ownership": "朝廷所有，由梁中书实际控制",
-        "capacity": 60,
-        "current_mood": "表面威严，内里压抑，胥吏办事拖沓，百姓敢怒不敢言",
-        "resource_level": "中等偏丰——地方税收充裕，但部分被梁中书截留私用",
-        "alert_status": "提升——自生辰纲案件后，加强对出入可疑人等的盘查",
-        "construction_quality": "良好，近年有修缮，但后墙监狱区域潮湿破旧",
-        "weather_effect": "夏季炎热时公堂闷热，冬季有火盆取暖，雨雪天衙内泥泞"
+        "current_state": "被食死徒全面占领，气氛阴森肃杀",
+        "ownership": "霍格沃茨名义上归属学校，实际由伏地魔通过斯内普控制",
+        "capacity": 600,
+        "usage_status": "每日强制用餐和集会，附加惩罚仪式",
+        "maintenance_condition": "外部整洁但内部装饰被篡改，石墙上有血迹和灼痕",
+        "defensive_spells": "反侵入咒、无声无息咒（禁止不敬言论）、活点地图监测（食死徒版）",
+        "lighting_condition": "昏暗，主要由绿焰火把和几盏带有监视功能的魔法灯笼提供",
+        "curse_status": "多处施加了钻心咒残留气息，长期暴露可能影响士气",
+        "occupancy_status": "用餐时几乎满员，非用餐时段锁闭并驻有守卫"
       }
     }
   },
   {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:017",
-    "name": "郓城县衙",
-    "type": "官府衙门",
-    "description": "位于郓城县十字街口东北，是一座三进院落的小型官署。大门两侧各有一尊石狮，门内左右为班房，正中为县太爷审案的大堂。大堂后是二堂，用于商议政务；再后为内宅，住着知县时文彬及其家眷。东侧有押司房，宋江便曾在此办公，桌前堆满卷宗与笔墨，墙上贴着历年缉捕告示。县衙整体朴素，但也难逃小县衙特有的拉帮结派、上下其手之风，胥吏常借机鱼肉百姓。",
+    "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:006",
+    "name": "格兰芬多公共休息室",
+    "type": "communal_space",
+    "description": "温暖的红金色调房间，壁炉中的火焰是这里唯一的光源，但经常被故意压低。墙上挂毯中的狮子不再骄傲，而是被灰尘和蛛网覆盖。曾经舒适的天鹅绒扶手椅上坐满了面带忧色的学生，他们压低声音讨论抵抗计划。胖夫人画像虽然仍在，但多次在夜间遭受威胁，偶尔被换成卡多根爵士以增加警觉。通往宿舍的楼梯口常有暗号更改，纳威·隆巴顿在此组织秘密集会，传播哈利仍活着的消息。这里也藏有少量从有求必应屋转移来的防御物资。",
     "access": {
-      "permissions": "县官、胥吏、押司、部分士绅可常出入；百姓需堂鼓告状",
-      "access_level": "前堂半公开，二堂及内宅需经允许",
-      "access_conditions": "办事者持公文或由熟人带领，状告者需先写状纸",
+      "permissions": "仅限格兰芬多学生进入；密码由胖夫人每两周更换，抵抗成员可提前获知",
+      "access_level": "学院内部高限制",
+      "access_conditions": "需要正确密码才能通过胖夫人肖像，密码通常与抵抗行动相关（如“凤凰挽歌”）",
       "access_scope": "",
       "gender_restriction": "",
       "time_restriction": "",
       "special_event_access": ""
     },
     "state": {
-      "current_state": "正常办公，但自宋江出逃后气氛紧张，捕快常在周边巡逻",
-      "ownership": "朝廷所有，知县时文彬管辖",
-      "capacity": 40,
-      "seasonal_state": "",
-      "maintenance_condition": "",
-      "function_changed": "",
-      "current_resident": ""
-    },
-    "capacity": 40,
-    "tags": [
-      "官府衙门",
-      "前堂半公开，二堂及内宅需经允许",
-      "朝廷所有，知县时文彬管辖"
-    ],
-    "symbolic_meaning": "",
-    "key_plot_events": "",
-    "literary_imagery": "",
-    "bounds": {
-      "x": 55,
-      "y": 72,
-      "w": 15,
-      "h": 11
-    },
-    "entrance": {
-      "x": 62,
-      "y": 82
-    },
-    "raw": {
-      "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:017",
-        "name": "郓城县衙",
-        "type": "官府衙门",
-        "description": "位于郓城县十字街口东北，是一座三进院落的小型官署。大门两侧各有一尊石狮，门内左右为班房，正中为县太爷审案的大堂。大堂后是二堂，用于商议政务；再后为内宅，住着知县时文彬及其家眷。东侧有押司房，宋江便曾在此办公，桌前堆满卷宗与笔墨，墙上贴着历年缉捕告示。县衙整体朴素，但也难逃小县衙特有的拉帮结派、上下其手之风，胥吏常借机鱼肉百姓。",
-        "political_allegiance": "朝廷——郓城县知县时文彬执掌",
-        "landmark_status": "郓城县政治中心",
-        "function_type": "县政处理、案件审理、户籍管理、赋税征收",
-        "historical_event_ref": "宋江在此任押司，暗中结交江湖好汉；宋江因私放晁盖等人而被阎婆惜要挟，终致杀惜逃亡",
-        "reputation_level": "县民眼中尚算平正，但底层百姓仍感胥吏苛刻"
-      },
-      "access": {
-        "permissions": "县官、胥吏、押司、部分士绅可常出入；百姓需堂鼓告状",
-        "access_level": "前堂半公开，二堂及内宅需经允许",
-        "access_conditions": "办事者持公文或由熟人带领，状告者需先写状纸",
-        "security_features": "大门有门子看守，夜间有更夫巡逻",
-        "entry_requirements": "携带兵器者一律寄存门外",
-        "access_restrictions": "被通缉者不得靠近，但宋江当年利用押司身份可自由进出",
-        "hidden_passages": "押司房后有一扇小门通向后街，宋江曾多次从此处秘密会见私放的好汉",
-        "guard_presence": "日常只有两名捕快在班房值守，紧急时可调全县三班衙役约二三十人"
-      },
-      "state": {
-        "current_state": "正常办公，但自宋江出逃后气氛紧张，捕快常在周边巡逻",
-        "ownership": "朝廷所有，知县时文彬管辖",
-        "capacity": 40,
-        "current_mood": "警惕与不安——知县担心梁山势力蔓延，胥吏议论纷纷",
-        "resource_level": "低——郓城县税收有限，县衙经费常拮据",
-        "alert_status": "中等——已加强对出入人员的核查，但并未全面戒严",
-        "construction_quality": "普通，青瓦木结构，檐角有破损，部分窗纸已旧",
-        "weather_effect": "下雨时押司房漏雨，冬季无火炉则格外寒冷"
-      }
-    }
-  },
-  {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:001",
-    "name": "十字坡酒店",
-    "type": "酒馆客栈",
-    "description": "坐落于孟州道十字坡边，一座外表普通的村野酒肆，青布酒旗在风中飘摇。店内昏暗，几张歪斜的木桌，地上偶尔可见暗红色的污渍。后院隐蔽处设有地窖和解房，专门处理那些被蒙汗药迷倒的倒霉客人。孙二娘以卖酒为名，实为江湖黑店，人肉包子是其招牌——馅料多来自过往客商或官府爪牙。墙上挂着几幅粗陋的山林画，实则暗藏机关，通往地下密室，供梁山好汉联络和避难。",
-    "access": {
-      "permissions": "只对绿林好汉和梁山兄弟开放内部密室；普通客人可进入前厅，但易被暗算",
-      "access_level": "机密",
-      "access_conditions": "须通过暗号或熟人引荐才能进入后院密室；对外则装作寻常酒肆",
-      "access_scope": "",
-      "gender_restriction": "",
-      "time_restriction": "",
-      "special_event_access": ""
-    },
-    "state": {
-      "current_state": "正常营业，但近期因武松事件引起官府注意，稍有收敛",
-      "ownership": "孙二娘和张青共同经营，名义上归张青所有，实际是梁山的产业",
-      "capacity": 30,
-      "seasonal_state": "",
-      "maintenance_condition": "",
-      "function_changed": "",
-      "current_resident": ""
-    },
-    "capacity": 30,
-    "tags": [
-      "酒馆客栈",
-      "机密",
-      "孙二娘和张青共同经营，名义上归张青所有，实际是梁山的产业"
-    ],
-    "symbolic_meaning": "",
-    "key_plot_events": "",
-    "literary_imagery": "",
-    "bounds": {
-      "x": 26,
-      "y": 25,
-      "w": 15,
-      "h": 11
-    },
-    "entrance": {
-      "x": 33,
-      "y": 35
-    },
-    "raw": {
-      "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:001",
-        "name": "十字坡酒店",
-        "type": "酒馆客栈",
-        "description": "坐落于孟州道十字坡边，一座外表普通的村野酒肆，青布酒旗在风中飘摇。店内昏暗，几张歪斜的木桌，地上偶尔可见暗红色的污渍。后院隐蔽处设有地窖和解房，专门处理那些被蒙汗药迷倒的倒霉客人。孙二娘以卖酒为名，实为江湖黑店，人肉包子是其招牌——馅料多来自过往客商或官府爪牙。墙上挂着几幅粗陋的山林画，实则暗藏机关，通往地下密室，供梁山好汉联络和避难。",
-        "political_allegiance": "梁山泊",
-        "landmark_status": "江湖黑市地标",
-        "function_type": "隐蔽联络站/黑店",
-        "historical_event_ref": "武松途经十字坡，与孙二娘、张青结识，后成为梁山好汉",
-        "reputation_level": "恶名远扬"
-      },
-      "access": {
-        "permissions": "只对绿林好汉和梁山兄弟开放内部密室；普通客人可进入前厅，但易被暗算",
-        "access_level": "机密",
-        "access_conditions": "须通过暗号或熟人引荐才能进入后院密室；对外则装作寻常酒肆",
-        "security_features": "酒中常下蒙汗药，后院有陷阱和暗门；孙二娘和张青夫妇均身怀武艺，店内藏有刀斧",
-        "entry_requirements": "前厅无要求；密室需对切口（如‘风紧，扯呼’）或出示梁山信物",
-        "access_restrictions": "军差、官府官吏、不守规矩的客人会被优先‘处理’",
-        "hidden_passages": "厨房柴堆下有一暗道，直通三里外的野猪林；后院猪圈下另有地窖，可藏匿多人",
-        "guard_presence": "孙二娘、张青夫妇为主，偶尔有路过的梁山好汉暂驻"
-      },
-      "state": {
-        "current_state": "正常营业，但近期因武松事件引起官府注意，稍有收敛",
-        "ownership": "孙二娘和张青共同经营，名义上归张青所有，实际是梁山的产业",
-        "capacity": 30,
-        "current_mood": "警惕且嗜杀，对外人冷漠，对兄弟热情",
-        "resource_level": "丰富（人肉和财物来源充足）",
-        "alert_status": "高度戒备，附近有朝廷探子出没",
-        "construction_quality": "简陋但耐用，土木结构，易守难攻",
-        "weather_effect": "雨天店内漏水，泥泞难行；冬日寒风从破墙灌入，反而利于掩盖血腥味"
-      }
-    }
-  },
-  {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:009",
-    "name": "快活林酒店",
-    "type": "酒馆客栈",
-    "description": "位于孟州城东门外的一片茂密树林旁，原为施恩经营的酒肉店，兼营赌坊和妓院，是当地一霸。店面三开间，门口挂着“快活林”金字招牌，内设雅座和曲廊。后被蒋门神凭借张团练的势力强占，变得乌烟瘴气。武松为报施恩知遇之恩，醉打蒋门神，夺回此店。",
-    "access": {
-      "permissions": "对大众开放，但核心赌坊和雅间需要银两或熟人带领",
-      "access_level": "公开",
-      "access_conditions": "无严格条件，但仇家或官府人员可随意进出",
-      "access_scope": "",
-      "gender_restriction": "",
-      "time_restriction": "",
-      "special_event_access": ""
-    },
-    "state": {
-      "current_state": "被武松夺回后交还施恩经营，但蒋门神势力未灭，局势不稳",
-      "ownership": "施恩（名义经营，实际受制于官府和帮派）",
+      "current_state": "表面平稳实则紧绷，像是暴风雨前的宁静",
+      "ownership": "格兰芬多学院集体所有，但有效控制权在学生抵抗组织手中",
       "capacity": 80,
       "seasonal_state": "",
-      "maintenance_condition": "",
+      "maintenance_condition": "略显破旧，地毯上有污渍，几扇窗户被木板钉死以防止外部窥视",
       "function_changed": "",
       "current_resident": ""
     },
     "capacity": 80,
     "tags": [
-      "酒馆客栈",
-      "公开",
-      "施恩（名义经营，实际受制于官府和帮派）"
+      "communal_space",
+      "学院内部高限制",
+      "格兰芬多学院集体所有，但有效控制权在学生抵抗组织手中"
     ],
     "symbolic_meaning": "",
     "key_plot_events": "",
     "literary_imagery": "",
     "bounds": {
       "x": 26,
-      "y": 67,
+      "y": 35,
       "w": 15,
       "h": 11
     },
     "entrance": {
       "x": 33,
-      "y": 77
+      "y": 45
     },
     "raw": {
       "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:009",
-        "name": "快活林酒店",
-        "type": "酒馆客栈",
-        "description": "位于孟州城东门外的一片茂密树林旁，原为施恩经营的酒肉店，兼营赌坊和妓院，是当地一霸。店面三开间，门口挂着“快活林”金字招牌，内设雅座和曲廊。后被蒋门神凭借张团练的势力强占，变得乌烟瘴气。武松为报施恩知遇之恩，醉打蒋门神，夺回此店。",
-        "political_allegiance": "地方势力（施恩/蒋门神交替控制）",
-        "landmark_status": "地方娱乐地标",
-        "function_type": "酒馆/赌坊/娼寮",
-        "historical_event_ref": "武松醉打蒋门神，夺回快活林",
-        "reputation_level": "地头蛇产业，良莠不齐"
+        "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:006",
+        "name": "格兰芬多公共休息室",
+        "type": "communal_space",
+        "description": "温暖的红金色调房间，壁炉中的火焰是这里唯一的光源，但经常被故意压低。墙上挂毯中的狮子不再骄傲，而是被灰尘和蛛网覆盖。曾经舒适的天鹅绒扶手椅上坐满了面带忧色的学生，他们压低声音讨论抵抗计划。胖夫人画像虽然仍在，但多次在夜间遭受威胁，偶尔被换成卡多根爵士以增加警觉。通往宿舍的楼梯口常有暗号更改，纳威·隆巴顿在此组织秘密集会，传播哈利仍活着的消息。这里也藏有少量从有求必应屋转移来的防御物资。",
+        "security_level": "中戒备（相对其他学院休息室较高）",
+        "faction_allegiance": "格兰芬多学生/抵抗组织",
+        "has_secret_passage": "true",
+        "historical_significance": "邓布利多军曾在此秘密练习防御术，现为抵抗组织核心巢穴",
+        "secret_function": "壁炉后方藏有一条紧急通道（通过飞路网连接，但被食死徒监控，极少使用）"
       },
       "access": {
-        "permissions": "对大众开放，但核心赌坊和雅间需要银两或熟人带领",
-        "access_level": "公开",
-        "access_conditions": "无严格条件，但仇家或官府人员可随意进出",
-        "security_features": "雇有十余名打手，蒋门神在时亲自坐镇；后院有暗格存放私财",
-        "entry_requirements": "携带银两即可",
-        "access_restrictions": "无特殊限制",
-        "hidden_passages": "后厨有一暗道通往隔壁民宅，供紧急逃生",
-        "guard_presence": "平时有四五名无赖看场，蒋门神时期常驻二十余名打手"
+        "permissions": "仅限格兰芬多学生进入；密码由胖夫人每两周更换，抵抗成员可提前获知",
+        "access_level": "学院内部高限制",
+        "access_conditions": "需要正确密码才能通过胖夫人肖像，密码通常与抵抗行动相关（如“凤凰挽歌”）",
+        "password_required": "true",
+        "special_permission_required": "false",
+        "magical_barrier_type": "胖夫人肖像本身有防御魔法，可短暂抵抗强行破解",
+        "surveillance_level": "中等偏低：因城堡多数监视集中在公共区域，宿舍走廊偶有巡夜级长（部分被收买）",
+        "secret_entry_available": "true",
+        "patrol_frequency": "每晚三次不定时抽查，主要由斯莱特林级长或卡罗兄妹亲信执行"
       },
       "state": {
-        "current_state": "被武松夺回后交还施恩经营，但蒋门神势力未灭，局势不稳",
-        "ownership": "施恩（名义经营，实际受制于官府和帮派）",
+        "current_state": "表面平稳实则紧绷，像是暴风雨前的宁静",
+        "ownership": "格兰芬多学院集体所有，但有效控制权在学生抵抗组织手中",
         "capacity": 80,
-        "current_mood": "热闹中带着紧张，客人们谈论着武松的壮举",
-        "resource_level": "中等（收入可观但需要打点各方）",
-        "alert_status": "一般，蒋门神可能卷土重来",
-        "construction_quality": "砖木结构，装修华丽但已显旧",
-        "weather_effect": "晴天生意火爆，雨天泥泞客流减少；夏日林间蚊虫多，客人在店内饮酒避暑"
+        "usage_status": "课余时间作为集会、碰头和传递信息的据点，深夜常有秘密会议",
+        "maintenance_condition": "略显破旧，地毯上有污渍，几扇窗户被木板钉死以防止外部窥视",
+        "defensive_spells": "低级防窃听咒、闭耳塞听（Charms placed by older students）、紧急触发铁甲咒（仅能维持30秒）",
+        "lighting_condition": "暗淡，主要靠壁炉，有时点起魔杖进行秘密读图",
+        "curse_status": "无直接恶咒，但氛围受外界恐怖影响",
+        "occupancy_status": "随时有3-20人不等的学生，深夜人数减少但核心成员常在"
       }
     }
   },
   {
-    "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:015",
-    "name": "浔阳楼",
-    "type": "酒馆客栈",
-    "description": "矗立于江州浔阳江畔，飞檐斗拱，雕梁画栋，乃江南名楼。楼高三层，底层散座，二楼雅间，三楼凭栏可远眺长江烟波。匾额由苏东坡手书“浔阳楼”三字。店内以江鲜和名酒闻名，常有文人墨客题诗留墨。宋江在此醉酒后，于白粉壁上题下“他时若遂凌云志，敢笑黄巢不丈夫”的反诗，被黄文炳告发，险些丧命，终逼上梁山。",
+    "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:007",
+    "name": "格兰芬多塔楼宿舍",
+    "type": "dormitory",
+    "description": "五张四柱床围绕圆形房间，深红色幔帐低垂，床柱上雕刻着狮子图案。每张床旁边放着学生会用书包和魔杖，但许多抽屉里藏着秘密——被禁的书籍、从厨房偷来的食物、一小袋金加隆。窗户面向学校操场，但被施了窃听咒的窗框不得不常贴着防窃听的胶带（麻瓜制品）。夜间，学生们在熄灯后蒙着被子小声交流，传递当天发生的暴行或抵抗组织的暗号。高年级生负责在门口设置简易警报（如倒扣的坩埚并用细线连接门把手），以防卡罗兄妹突然查寝。",
     "access": {
-      "permissions": "对所有人开放，分三等消费区域；三楼需较高消费",
-      "access_level": "公开",
-      "access_conditions": "银两充足即可进入各层；文人可免费在墙上题诗",
+      "permissions": "仅限同年级的格兰芬多学生（按性别分楼层）",
+      "access_level": "私人且严格受限",
+      "access_conditions": "通过公共休息室楼梯自动识别，仅允许本年级学生进入",
       "access_scope": "",
       "gender_restriction": "",
       "time_restriction": "",
       "special_event_access": ""
     },
     "state": {
-      "current_state": "事件后曾被官府查封，但不久又恢复营业，墙上的题诗已被铲除重粉",
-      "ownership": "本地富商张氏家族所有",
-      "capacity": 150,
+      "current_state": "表面平静，内里暗流涌动",
+      "ownership": "格兰芬多学院，但实际由居住的学生共有",
+      "capacity": 5,
       "seasonal_state": "",
-      "maintenance_condition": "",
+      "maintenance_condition": "洁净但老旧，一些床幔有修补痕迹，地毯磨损",
       "function_changed": "",
       "current_resident": ""
     },
-    "capacity": 150,
+    "capacity": 5,
     "tags": [
-      "酒馆客栈",
-      "公开",
-      "本地富商张氏家族所有"
+      "dormitory",
+      "私人且严格受限",
+      "格兰芬多学院，但实际由居住的学生共有"
     ],
     "symbolic_meaning": "",
     "key_plot_events": "",
     "literary_imagery": "",
     "bounds": {
-      "x": 103,
-      "y": 77,
-      "w": 8,
-      "h": 6
+      "x": 26,
+      "y": 56,
+      "w": 15,
+      "h": 11
     },
     "entrance": {
-      "x": 107,
-      "y": 82
+      "x": 33,
+      "y": 66
     },
     "raw": {
       "identity": {
-        "id": "e:a92e2977_ea26_4f10_a071_b1954afdb99e:loc:015",
-        "name": "浔阳楼",
-        "type": "酒馆客栈",
-        "description": "矗立于江州浔阳江畔，飞檐斗拱，雕梁画栋，乃江南名楼。楼高三层，底层散座，二楼雅间，三楼凭栏可远眺长江烟波。匾额由苏东坡手书“浔阳楼”三字。店内以江鲜和名酒闻名，常有文人墨客题诗留墨。宋江在此醉酒后，于白粉壁上题下“他时若遂凌云志，敢笑黄巢不丈夫”的反诗，被黄文炳告发，险些丧命，终逼上梁山。",
-        "political_allegiance": "无（民间产业，受官府管辖）",
-        "landmark_status": "文化名胜",
-        "function_type": "酒楼/文化沙龙",
-        "historical_event_ref": "宋江浔阳楼题反诗，被逼上梁山",
-        "reputation_level": "名扬江南，文人雅士聚集之地"
+        "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:007",
+        "name": "格兰芬多塔楼宿舍",
+        "type": "dormitory",
+        "description": "五张四柱床围绕圆形房间，深红色幔帐低垂，床柱上雕刻着狮子图案。每张床旁边放着学生会用书包和魔杖，但许多抽屉里藏着秘密——被禁的书籍、从厨房偷来的食物、一小袋金加隆。窗户面向学校操场，但被施了窃听咒的窗框不得不常贴着防窃听的胶带（麻瓜制品）。夜间，学生们在熄灯后蒙着被子小声交流，传递当天发生的暴行或抵抗组织的暗号。高年级生负责在门口设置简易警报（如倒扣的坩埚并用细线连接门把手），以防卡罗兄妹突然查寝。",
+        "security_level": "低戒备（学生自设微量防护）",
+        "faction_allegiance": "格兰芬多学生（主要倾向抵抗）",
+        "has_secret_passage": "false",
+        "historical_significance": "曾是哈利·波特、罗恩·韦斯莱等人的住所，现被新一代继承",
+        "secret_function": "床底下暗藏的木板下是一个小储物空间，用于存放魔药材料及传单"
       },
       "access": {
-        "permissions": "对所有人开放，分三等消费区域；三楼需较高消费",
-        "access_level": "公开",
-        "access_conditions": "银两充足即可进入各层；文人可免费在墙上题诗",
-        "security_features": "有店小二和护院防止闹事，但整体防务薄弱",
-        "entry_requirements": "无",
-        "access_restrictions": "无",
-        "hidden_passages": "无特殊暗道，但楼后有通往江边的隐蔽小径",
-        "guard_presence": "白天有五六名杂役，夜间有更夫巡逻"
+        "permissions": "仅限同年级的格兰芬多学生（按性别分楼层）",
+        "access_level": "私人且严格受限",
+        "access_conditions": "通过公共休息室楼梯自动识别，仅允许本年级学生进入",
+        "password_required": "false",
+        "special_permission_required": "false",
+        "magical_barrier_type": "睡前的静音咒（学生自发施放）",
+        "surveillance_level": "低：食死徒很少直接闯入宿舍（怕激起大面积反抗），但偶尔有叛徒级长通过秘道窥探",
+        "secret_entry_available": "false",
+        "patrol_frequency": "每周两次随机抽查，由卡罗兄妹或斯莱特林男女学生会主席带领"
       },
       "state": {
-        "current_state": "事件后曾被官府查封，但不久又恢复营业，墙上的题诗已被铲除重粉",
-        "ownership": "本地富商张氏家族所有",
-        "capacity": 150,
-        "current_mood": "繁华依旧，但侍者谈及宋江题诗一事时多闭口不谈，气氛微带戒惧",
-        "resource_level": "丰富（客流量大，食材上等）",
-        "alert_status": "正常，官府已撤走监控",
-        "construction_quality": "精良，木质结构，彩绘鲜艳，年久常修",
-        "weather_effect": "晴天登楼远眺最宜，江风习习；雨天江雾迷蒙，别有意境；楼上风大，冬季寒冷需加衣"
+        "current_state": "表面平静，内里暗流涌动",
+        "ownership": "格兰芬多学院，但实际由居住的学生共有",
+        "capacity": 5,
+        "usage_status": "每日就寝时段启用，课间偶尔有人回宿舍取物",
+        "maintenance_condition": "洁净但老旧，一些床幔有修补痕迹，地毯磨损",
+        "defensive_spells": "学生自设的报警装置（非魔法如铜铃）以及低阶混淆咒保护私人物品",
+        "lighting_condition": "夜间只有壁炉残光或月光，少数学生用荧光闪烁照明",
+        "curse_status": "无直接诅咒，但部分学生因恐惧而难以入眠",
+        "occupancy_status": "夜晚满员，白天几乎空置"
+      }
+    }
+  },
+  {
+    "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:004",
+    "name": "禁林",
+    "type": "outdoor",
+    "description": "古老的黑暗森林，枝叶遮天蔽日，白天也如同黄昏。树干上爬满藤蔓，地面上覆盖着层层落叶和未知生物的足迹。食死徒在边缘设置了巡逻点，但森林深处仍有马人部族和夜骐群栖息。抵抗组织成员利用夜骐的隐形能力运送物资，并与马人首领贝恩秘密会晤，获取关于伏地魔动向的模糊预言。森林中还有巨型蜘蛛的领地，它们保持中立但厌恶外来者。这里的魔法波动因生物密集而混乱，使得食死徒的探测咒语往往失效。",
+    "access": {
+      "permissions": "无官方许可；霍格沃茨学生禁入（但抵抗成员凭勇气进入）",
+      "access_level": "严格限制且危险",
+      "access_conditions": "需要夜骐的信任或马人的引导；通常由熟悉路径的卢娜或纳威带队",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "狂野而未被征服，食死徒的控制仅停留在边界",
+      "ownership": "无明文所有者，马人认为属于自然",
+      "capacity": 1000,
+      "seasonal_state": "",
+      "maintenance_condition": "完全自然，无人维护，布满倒木、荆棘和沼泽",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 1000,
+    "tags": [
+      "outdoor",
+      "严格限制且危险",
+      "无明文所有者，马人认为属于自然"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 120,
+      "y": 46,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 127,
+      "y": 56
+    },
+    "raw": {
+      "identity": {
+        "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:004",
+        "name": "禁林",
+        "type": "outdoor",
+        "description": "古老的黑暗森林，枝叶遮天蔽日，白天也如同黄昏。树干上爬满藤蔓，地面上覆盖着层层落叶和未知生物的足迹。食死徒在边缘设置了巡逻点，但森林深处仍有马人部族和夜骐群栖息。抵抗组织成员利用夜骐的隐形能力运送物资，并与马人首领贝恩秘密会晤，获取关于伏地魔动向的模糊预言。森林中还有巨型蜘蛛的领地，它们保持中立但厌恶外来者。这里的魔法波动因生物密集而混乱，使得食死徒的探测咒语往往失效。",
+        "security_level": "高危险（生物威胁）但低监视（食死徒不敢深入）",
+        "faction_allegiance": "中性（马人、夜骐、巨型蜘蛛各自为政）",
+        "has_secret_passage": "false",
+        "historical_significance": "",
+        "secret_function": "夜骐栖息地的特定空地可作为秘密降落和起飞点，马人部落提供草药和情报"
+      },
+      "access": {
+        "permissions": "无官方许可；霍格沃茨学生禁入（但抵抗成员凭勇气进入）",
+        "access_level": "严格限制且危险",
+        "access_conditions": "需要夜骐的信任或马人的引导；通常由熟悉路径的卢娜或纳威带队",
+        "password_required": "false",
+        "special_permission_required": "true",
+        "magical_barrier_type": "森林外围有食死徒设下的警报咒语及灌木丛的铁桩诅咒",
+        "surveillance_level": "低：食死徒只在白天边缘巡逻，夜间因害怕生物而撤退",
+        "secret_entry_available": "true",
+        "patrol_frequency": "食死徒巡逻每日两次（上午和下午），巡查边缘地带"
+      },
+      "state": {
+        "current_state": "狂野而未被征服，食死徒的控制仅停留在边界",
+        "ownership": "无明文所有者，马人认为属于自然",
+        "capacity": 1000,
+        "usage_status": "频繁被抵抗组织秘密使用，马人集会和夜骐栖息保持原始状态",
+        "maintenance_condition": "完全自然，无人维护，布满倒木、荆棘和沼泽",
+        "defensive_spells": "森林自身产生的混乱魔法场（使定位咒失效），马人施有区域混淆咒",
+        "lighting_condition": "昏暗异常，树冠几乎遮蔽所有阳光，夜晚完全漆黑，仅靠生物荧光微弱照明",
+        "curse_status": "部分区域受到古老黑暗生物的诅咒（如八眼蜘蛛领域），但对人类无直接恶意",
+        "occupancy_status": "大部分时间空无人类，抵抗组织约每周秘密集会两次，马人定期巡逻"
+      }
+    }
+  },
+  {
+    "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:012",
+    "name": "魁地奇球场",
+    "type": "outdoor",
+    "description": "曾经充满欢呼和竞技的露天球场，如今被食死徒改造成公开惩罚与取乐的场所。看台上下散落着残破的旗帜，场地中央竖立着临时刑架，四周回荡着咒语的爆裂声与受罚者的哀嚎。",
+    "access": {
+      "permissions": "仅限食死徒及被押解受罚者进入，学生未经许可不得接近",
+      "access_level": "restricted",
+      "access_conditions": "全校宵禁期间有食死徒巡逻，擅自闯入者将受酷刑",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "被用作惩罚场和酷刑展示地，地面血迹斑斑，看台破败",
+      "ownership": "由阿米库斯·卡罗直接控制，定期安排公开惩罚",
+      "capacity": 20000,
+      "seasonal_state": "",
+      "maintenance_condition": "恶劣，刻意保持恐怖氛围",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 20000,
+    "tags": [
+      "outdoor",
+      "restricted",
+      "由阿米库斯·卡罗直接控制，定期安排公开惩罚"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 132,
+      "y": 25,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 139,
+      "y": 35
+    },
+    "raw": {
+      "identity": {
+        "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:012",
+        "name": "魁地奇球场",
+        "type": "outdoor",
+        "description": "曾经充满欢呼和竞技的露天球场，如今被食死徒改造成公开惩罚与取乐的场所。看台上下散落着残破的旗帜，场地中央竖立着临时刑架，四周回荡着咒语的爆裂声与受罚者的哀嚎。",
+        "security_level": "high",
+        "faction_allegiance": "食死徒",
+        "has_secret_passage": "false",
+        "historical_significance": "曾见证无数魁地奇赛事和学院荣誉，现沦为恐怖统治的工具",
+        "secret_function": ""
+      },
+      "access": {
+        "permissions": "仅限食死徒及被押解受罚者进入，学生未经许可不得接近",
+        "access_level": "restricted",
+        "access_conditions": "全校宵禁期间有食死徒巡逻，擅自闯入者将受酷刑",
+        "password_required": "",
+        "special_permission_required": "",
+        "magical_barrier_type": "",
+        "surveillance_level": "极高",
+        "secret_entry_available": "",
+        "patrol_frequency": "每日数次，尤其夜间"
+      },
+      "state": {
+        "current_state": "被用作惩罚场和酷刑展示地，地面血迹斑斑，看台破败",
+        "ownership": "由阿米库斯·卡罗直接控制，定期安排公开惩罚",
+        "capacity": 20000,
+        "usage_status": "活跃使用",
+        "maintenance_condition": "恶劣，刻意保持恐怖氛围",
+        "defensive_spells": "",
+        "lighting_condition": "夜间由魔法火炬照亮，阴森诡异",
+        "curse_status": "",
+        "occupancy_status": ""
+      }
+    }
+  },
+  {
+    "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:001",
+    "name": "黑湖",
+    "type": "outdoor",
+    "description": "城堡西南侧的一片深色湖水，水下栖息着人鱼和巨型乌贼。湖面常年幽暗，边缘长满芦苇，偶尔有气泡浮起。在食死徒统治下，这里成为少数学生秘密观察自然、短暂逃离压抑的隐蔽角落。",
+    "access": {
+      "permissions": "理论上全校师生可接近，但宵禁后湖岸纳入巡逻范围",
+      "access_level": "公开，但受夜间巡逻限制",
+      "access_conditions": "白天可在不引起注意的情况下短暂逗留，夜间严禁外出",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "自然状态，水面平静，水下生物活动正常",
+      "ownership": "霍格沃茨远古领土，无人正式管辖",
+      "capacity": 0,
+      "seasonal_state": "",
+      "maintenance_condition": "纯粹天然，无人维护",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 0,
+    "tags": [
+      "outdoor",
+      "公开，但受夜间巡逻限制",
+      "霍格沃茨远古领土，无人正式管辖"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 111,
+      "y": 25,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 118,
+      "y": 35
+    },
+    "raw": {
+      "identity": {
+        "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:001",
+        "name": "黑湖",
+        "type": "outdoor",
+        "description": "城堡西南侧的一片深色湖水，水下栖息着人鱼和巨型乌贼。湖面常年幽暗，边缘长满芦苇，偶尔有气泡浮起。在食死徒统治下，这里成为少数学生秘密观察自然、短暂逃离压抑的隐蔽角落。",
+        "security_level": "low",
+        "faction_allegiance": "中立",
+        "has_secret_passage": "false",
+        "historical_significance": "曾举办三强争霸赛第二项任务，现主要作为自然生态栖息地",
+        "secret_function": ""
+      },
+      "access": {
+        "permissions": "理论上全校师生可接近，但宵禁后湖岸纳入巡逻范围",
+        "access_level": "公开，但受夜间巡逻限制",
+        "access_conditions": "白天可在不引起注意的情况下短暂逗留，夜间严禁外出",
+        "password_required": "",
+        "special_permission_required": "",
+        "magical_barrier_type": "",
+        "surveillance_level": "中等，湖岸偶尔有费尔奇或巡逻食死徒路过",
+        "secret_entry_available": "",
+        "patrol_frequency": "夜间每两小时一次，白天不定期抽查"
+      },
+      "state": {
+        "current_state": "自然状态，水面平静，水下生物活动正常",
+        "ownership": "霍格沃茨远古领土，无人正式管辖",
+        "capacity": 0,
+        "usage_status": "间歇性被学生秘密造访",
+        "maintenance_condition": "纯粹天然，无人维护",
+        "defensive_spells": "",
+        "lighting_condition": "白天自然光，夜晚漆黑",
+        "curse_status": "",
+        "occupancy_status": ""
+      }
+    }
+  },
+  {
+    "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:014",
+    "name": "有求必应屋",
+    "type": "secret_space",
+    "description": "位于八楼巨怪挂毯对面的魔法空间，能够根据使用者的需求变幻出相应的房间。在食死徒控制期间，纳威·隆巴顿率抵抗组织将其改造成秘密司令部：墙壁上挂着标记食死徒动向的活点地图复制品，角落堆放着练功假人和缴获的魔杖，书架里藏着疗伤药水和防护用品，空气中弥漫着紧张而坚定的气息。这里也是卢娜、金妮等人传递情报、制定计划的核心据点，绝对安全，未被食死徒发现。",
+    "access": {
+      "permissions": "仅限抵抗组织核心成员及经纳威亲自认可的情报传递者",
+      "access_level": "绝密",
+      "access_conditions": "使用者必须在走廊来回三次，心中明确需要‘抵抗组织会议区’或类似需求。每次进出必须使用特定口令并确认身份",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "戒备森严的抵抗基地，内部整洁有序，各类物资分区存放，最深处存放危险魔法物品",
+      "ownership": "由纳威·隆巴顿实际控制，以邓布利多军名义使用",
+      "capacity": 50,
+      "seasonal_state": "",
+      "maintenance_condition": "良好，由成员轮流维护，施有防尘和修复咒",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 50,
+    "tags": [
+      "secret_space",
+      "绝密",
+      "由纳威·隆巴顿实际控制，以邓布利多军名义使用"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 26,
+      "y": 17,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 33,
+      "y": 27
+    },
+    "raw": {
+      "identity": {
+        "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:014",
+        "name": "有求必应屋",
+        "type": "secret_space",
+        "description": "位于八楼巨怪挂毯对面的魔法空间，能够根据使用者的需求变幻出相应的房间。在食死徒控制期间，纳威·隆巴顿率抵抗组织将其改造成秘密司令部：墙壁上挂着标记食死徒动向的活点地图复制品，角落堆放着练功假人和缴获的魔杖，书架里藏着疗伤药水和防护用品，空气中弥漫着紧张而坚定的气息。这里也是卢娜、金妮等人传递情报、制定计划的核心据点，绝对安全，未被食死徒发现。",
+        "security_level": "极高",
+        "faction_allegiance": "抵抗组织",
+        "has_secret_passage": "true",
+        "historical_significance": "曾作为邓布利多军的训练室、藏匿拉文克劳冠冕之处，现为抵抗运动的心脏",
+        "secret_function": "提供多功能战术空间，包括训练场、武器库、联络站、医疗点、避难所"
+      },
+      "access": {
+        "permissions": "仅限抵抗组织核心成员及经纳威亲自认可的情报传递者",
+        "access_level": "绝密",
+        "access_conditions": "使用者必须在走廊来回三次，心中明确需要‘抵抗组织会议区’或类似需求。每次进出必须使用特定口令并确认身份",
+        "password_required": "true",
+        "special_permission_required": "true",
+        "magical_barrier_type": "空间魔法屏障，外部无法探测，食死徒的搜索咒被扭曲或吸收",
+        "surveillance_level": "内部无监视，外部有抵抗组织的示警咒语链",
+        "secret_entry_available": "true",
+        "patrol_frequency": "全天，但食死徒从未发现入口"
+      },
+      "state": {
+        "current_state": "戒备森严的抵抗基地，内部整洁有序，各类物资分区存放，最深处存放危险魔法物品",
+        "ownership": "由纳威·隆巴顿实际控制，以邓布利多军名义使用",
+        "capacity": 50,
+        "usage_status": "持续高强度使用，每日有组织活动",
+        "maintenance_condition": "良好，由成员轮流维护，施有防尘和修复咒",
+        "defensive_spells": "入口处施有驱逐麻瓜咒、抗探测咒、秘密守护咒；内部有紧急加固咒和传送陷阱",
+        "lighting_condition": "魔法烛台提供柔和照明，可调亮暗",
+        "curse_status": "无诅咒，但施有反黑魔法警报咒",
+        "occupancy_status": ""
+      }
+    }
+  },
+  {
+    "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:010",
+    "name": "蜂蜜公爵密道",
+    "type": "secret_space",
+    "description": "连接霍格沃茨城堡与霍格莫德村蜂蜜公爵地窖的秘密通道，入口在一尊独眼驼背女巫雕像后面（需用特定口令）。通道内昏暗狭窄，泥土墙偶有松动。在食死徒占领时期，这条密道被少数学生用于逃离学校或悄悄带回外界情报和物资，但由于蒙顿格斯·弗莱奇曾走漏风声，食死徒已加强了对此地的监视，通道中部设有魔法感应陷阱。",
+    "access": {
+      "permissions": "仅限知晓入口口令和密道路线的学生使用，具有极高风险",
+      "access_level": "机密但已有泄露",
+      "access_conditions": "需要知道雕像入口口令（‘Dissendium’），并避开廊道巡逻。密道中段食死徒已布下警报咒和钳形陷阱，必须一一解除或绕行",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "部分功能可用但危险，入口伪装完好，内部有抵抗组织布置的反监视标记和紧急撤离触发装置",
+      "ownership": "名义上属于霍格沃茨所有，实际控制权为食死徒监控，抵抗组织秘密维护",
+      "capacity": 15,
+      "seasonal_state": "",
+      "maintenance_condition": "通道墙砖松动，需要定期修补；抵抗组织成员会补洒防追踪粉末",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 15,
+    "tags": [
+      "secret_space",
+      "机密但已有泄露",
+      "名义上属于霍格沃茨所有，实际控制权为食死徒监控，抵抗组织秘密维护"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 89,
+      "y": 25,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 96,
+      "y": 35
+    },
+    "raw": {
+      "identity": {
+        "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:010",
+        "name": "蜂蜜公爵密道",
+        "type": "secret_space",
+        "description": "连接霍格沃茨城堡与霍格莫德村蜂蜜公爵地窖的秘密通道，入口在一尊独眼驼背女巫雕像后面（需用特定口令）。通道内昏暗狭窄，泥土墙偶有松动。在食死徒占领时期，这条密道被少数学生用于逃离学校或悄悄带回外界情报和物资，但由于蒙顿格斯·弗莱奇曾走漏风声，食死徒已加强了对此地的监视，通道中部设有魔法感应陷阱。",
+        "security_level": "中高",
+        "faction_allegiance": "学生抵抗组织（实际使用）",
+        "has_secret_passage": "true",
+        "historical_significance": "曾是《活点地图》上标注的七条秘密通道之一，霍格沃茨大战中用于运送支援力量",
+        "secret_function": "秘密逃离与情报补给线，也用于连接校外抵抗网络"
+      },
+      "access": {
+        "permissions": "仅限知晓入口口令和密道路线的学生使用，具有极高风险",
+        "access_level": "机密但已有泄露",
+        "access_conditions": "需要知道雕像入口口令（‘Dissendium’），并避开廊道巡逻。密道中段食死徒已布下警报咒和钳形陷阱，必须一一解除或绕行",
+        "password_required": "",
+        "special_permission_required": "true",
+        "magical_barrier_type": "食死徒增设的追踪感应咒和粘性陷阱，抵抗组织成员设法部分中和",
+        "surveillance_level": "极高，食死徒知道密道存在但未完全掌握所有变通细节",
+        "secret_entry_available": "true",
+        "patrol_frequency": "入口处（三楼走廊）每天有费尔奇和食死徒轮流检查；霍格莫德端由卡罗兄妹派手下蹲守"
+      },
+      "state": {
+        "current_state": "部分功能可用但危险，入口伪装完好，内部有抵抗组织布置的反监视标记和紧急撤离触发装置",
+        "ownership": "名义上属于霍格沃茨所有，实际控制权为食死徒监控，抵抗组织秘密维护",
+        "capacity": 15,
+        "usage_status": "间歇使用，每次必须经过风险评估",
+        "maintenance_condition": "通道墙砖松动，需要定期修补；抵抗组织成员会补洒防追踪粉末",
+        "defensive_spells": "抵抗组织在通道内施有小范围屏障和误导咒，但未能彻底消除食死徒的印记",
+        "lighting_condition": "仅限魔杖发光，其余漆黑一片",
+        "curse_status": "无直接诅咒，但食死徒的警报咒对经过者施加追踪标记",
+        "occupancy_status": ""
+      }
+    }
+  },
+  {
+    "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:008",
+    "name": "校长办公室",
+    "type": "administrative",
+    "description": "一间圆形石质房间，四面墙壁上悬挂着历任校长肖像，他们沉默地注视着一切。中央一张高背椅后，邓布利多的肖像被斯内普用帘幔遮住。办公室内冥想盆散发着银白色的雾光，斯内普常在这里翻阅记忆，同时利用飞路网和凤凰社秘密联络。窗外是城堡顶楼的黑夜，室内烛光摇曳，弥漫着压迫与秘密的气息。",
+    "access": {
+      "permissions": "仅限现任校长及获得校长书面许可的人进入",
+      "access_level": "restricted",
+      "access_conditions": "需通过口令激活石兽守卫（口令每周更换）",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "被食死徒控制，但斯内普维持着整洁与学术氛围，部分区域（如邓布利多的物品柜）被秘密封锁",
+      "ownership": "西弗勒斯·斯内普（校长）",
+      "capacity": 12,
+      "seasonal_state": "",
+      "maintenance_condition": "良好",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 12,
+    "tags": [
+      "administrative",
+      "restricted",
+      "西弗勒斯·斯内普（校长）"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 101,
+      "y": 65,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 115,
+      "y": 70
+    },
+    "raw": {
+      "identity": {
+        "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:008",
+        "name": "校长办公室",
+        "type": "administrative",
+        "description": "一间圆形石质房间，四面墙壁上悬挂着历任校长肖像，他们沉默地注视着一切。中央一张高背椅后，邓布利多的肖像被斯内普用帘幔遮住。办公室内冥想盆散发着银白色的雾光，斯内普常在这里翻阅记忆，同时利用飞路网和凤凰社秘密联络。窗外是城堡顶楼的黑夜，室内烛光摇曳，弥漫着压迫与秘密的气息。",
+        "security_level": "high",
+        "faction_allegiance": "表面上效忠食死徒，实则为凤凰社和邓布利多计划服务",
+        "has_secret_passage": "false",
+        "historical_significance": "历任校长决策之地，在1997-1998学年成为食死徒统治霍格沃茨的象征，也是斯内普暗中保护学生的关键指挥中心。",
+        "secret_function": "斯内普利用冥想盆和肖像网络传递情报，同时通过飞路网与凤凰社成员秘密通信。"
+      },
+      "access": {
+        "permissions": "仅限现任校长及获得校长书面许可的人进入",
+        "access_level": "restricted",
+        "access_conditions": "需通过口令激活石兽守卫（口令每周更换）",
+        "password_required": "true",
+        "special_permission_required": "",
+        "magical_barrier_type": "石兽守卫与认知扭曲术",
+        "surveillance_level": "高（斯内普施有监控咒，且肖像群充当额外监视眼线）",
+        "secret_entry_available": "true",
+        "patrol_frequency": "低（斯内普本人常驻）"
+      },
+      "state": {
+        "current_state": "被食死徒控制，但斯内普维持着整洁与学术氛围，部分区域（如邓布利多的物品柜）被秘密封锁",
+        "ownership": "西弗勒斯·斯内普（校长）",
+        "capacity": 12,
+        "usage_status": "日常办公、召开食死徒会议、秘密联络凤凰社",
+        "maintenance_condition": "良好",
+        "defensive_spells": "反侵入咒、声波屏障（防止窃听）、若干探测咒（斯内普已部分解除以便传递消息）",
+        "lighting_condition": "昏暗的烛光，书桌上墨水瓶散发微光",
+        "curse_status": "无故意诅咒，但邓布利多留下的某些魔法物品（如冥想盆）仍有未解除的保护咒",
+        "occupancy_status": "斯内普每日使用数小时"
+      }
+    }
+  },
+  {
+    "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:015",
+    "name": "教师休息室",
+    "type": "administrative",
+    "description": "一间舒适的客厅，配有壁炉和几把旧扶手椅，墙上挂着霍格沃茨历届教师的合影。壁炉前的茶几上常常放着茶壶和饼干，但如今在卡罗兄妹的监视下，教授们低声交谈时总得警惕门缝里传出的脚步声。",
+    "access": {
+      "permissions": "仅限霍格沃茨在任教职员工",
+      "access_level": "staff_only",
+      "access_conditions": "必须是学校教职工，且不能携带学生进入",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "表面正常提供休息，实际气氛紧张压抑，部分教授刻意回避在此交谈",
+      "ownership": "霍格沃茨魔法学院",
+      "capacity": 20,
+      "seasonal_state": "",
+      "maintenance_condition": "一般（地毯有磨损，壁炉偶尔冒烟）",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 20,
+    "tags": [
+      "administrative",
+      "staff_only",
+      "霍格沃茨魔法学院"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 94,
+      "y": 8,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 108,
+      "y": 13
+    },
+    "raw": {
+      "identity": {
+        "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:015",
+        "name": "教师休息室",
+        "type": "administrative",
+        "description": "一间舒适的客厅，配有壁炉和几把旧扶手椅，墙上挂着霍格沃茨历届教师的合影。壁炉前的茶几上常常放着茶壶和饼干，但如今在卡罗兄妹的监视下，教授们低声交谈时总得警惕门缝里传出的脚步声。",
+        "security_level": "medium",
+        "faction_allegiance": "中立，但大部分教授暗中反对食死徒统治",
+        "has_secret_passage": "false",
+        "historical_significance": "普通教师休息室，在黑暗时期成为少数反抗教授私下交换信息的临时据点",
+        "secret_function": "有时被麦格教授用于与可靠同事简短商议，但风险极高"
+      },
+      "access": {
+        "permissions": "仅限霍格沃茨在任教职员工",
+        "access_level": "staff_only",
+        "access_conditions": "必须是学校教职工，且不能携带学生进入",
+        "password_required": "",
+        "special_permission_required": "",
+        "magical_barrier_type": "",
+        "surveillance_level": "中（阿米库斯·卡罗不定期闯入检查，门边可能有监听咒）",
+        "secret_entry_available": "",
+        "patrol_frequency": "低（每日1-2次由卡罗兄妹或费尔奇随机巡查）"
+      },
+      "state": {
+        "current_state": "表面正常提供休息，实际气氛紧张压抑，部分教授刻意回避在此交谈",
+        "ownership": "霍格沃茨魔法学院",
+        "capacity": 20,
+        "usage_status": "间歇使用，主要在课间和晚间",
+        "maintenance_condition": "一般（地毯有磨损，壁炉偶尔冒烟）",
+        "defensive_spells": "",
+        "lighting_condition": "白天自然光，晚间由魔法蜡烛提供明亮照明",
+        "curse_status": "无已知诅咒",
+        "occupancy_status": "每天2-3个高峰时段有3-5位教授在场"
+      }
+    }
+  },
+  {
+    "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:009",
+    "name": "霍格沃茨图书馆",
+    "type": "library_archive",
+    "description": "巨大的开间，两排橡木长桌延伸至远方，头顶漂浮着明亮的魔法蜡烛。书架高耸入云，布满灰尘的羊皮卷与闪亮的咒语书混杂在一起。平斯夫人像幽灵般穿梭于书架间，眼神锐利。食死徒将许多‘危险书籍’锁进了禁书区，并在入口处加强了防护咒语，但一些学生仍冒险寻找对抗黑魔法的知识。",
+    "access": {
+      "permissions": "学生及教师（禁书区需额外授权）",
+      "access_level": "大部分区域开放，禁书区 restricted",
+      "access_conditions": "遵守图书馆规则，禁书区需持有斯内普或经认可的教授的书面许可；违反规定将被扣分并处罚",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "被审查的图书馆：许多关于黑魔法、魂器、防御魔法的书籍被转移或封印，日常借阅量大幅下降",
+      "ownership": "霍格沃茨魔法学院（食死徒实际监控）",
+      "capacity": 200,
+      "seasonal_state": "",
+      "maintenance_condition": "良好（灰尘略多，禁书区锈迹较明显）",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 200,
+    "tags": [
+      "library_archive",
+      "大部分区域开放，禁书区 restricted",
+      "霍格沃茨魔法学院（食死徒实际监控）"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 74,
+      "y": 71,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 81,
+      "y": 81
+    },
+    "raw": {
+      "identity": {
+        "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:009",
+        "name": "霍格沃茨图书馆",
+        "type": "library_archive",
+        "description": "巨大的开间，两排橡木长桌延伸至远方，头顶漂浮着明亮的魔法蜡烛。书架高耸入云，布满灰尘的羊皮卷与闪亮的咒语书混杂在一起。平斯夫人像幽灵般穿梭于书架间，眼神锐利。食死徒将许多‘危险书籍’锁进了禁书区，并在入口处加强了防护咒语，但一些学生仍冒险寻找对抗黑魔法的知识。",
+        "security_level": "high",
+        "faction_allegiance": "中立（但平斯夫人私下保留了一些未被没收的书籍供反抗组织借阅）",
+        "has_secret_passage": "true",
+        "historical_significance": "存放了千年以来积累的魔法智慧，在黑暗时期成为学生获取抵抗知识的危险宝库",
+        "secret_function": "有隐藏的临时书架和夹层空间，平斯夫人曾允许纳威·隆巴顿等抵抗成员秘密查阅特定书籍"
+      },
+      "access": {
+        "permissions": "学生及教师（禁书区需额外授权）",
+        "access_level": "大部分区域开放，禁书区 restricted",
+        "access_conditions": "遵守图书馆规则，禁书区需持有斯内普或经认可的教授的书面许可；违反规定将被扣分并处罚",
+        "password_required": "",
+        "special_permission_required": "",
+        "magical_barrier_type": "禁书区入口有咒语铁链和防盗警报；普通书架无屏障",
+        "surveillance_level": "高（平斯夫人持续巡视，食死徒每天随机搜查，门边有探测入侵的咒语）",
+        "secret_entry_available": "true",
+        "patrol_frequency": "频繁（平斯夫人几乎全部时间驻守）"
+      },
+      "state": {
+        "current_state": "被审查的图书馆：许多关于黑魔法、魂器、防御魔法的书籍被转移或封印，日常借阅量大幅下降",
+        "ownership": "霍格沃茨魔法学院（食死徒实际监控）",
+        "capacity": 200,
+        "usage_status": "白天正常开放但人数稀少，学生多在廊道走动而非停留",
+        "maintenance_condition": "良好（灰尘略多，禁书区锈迹较明显）",
+        "defensive_spells": "反窃听咒、书页检测咒（防止撕书夹带）、警报咒（禁书区）",
+        "lighting_condition": "明亮的魔法烛光，但禁书区角落光线昏暗",
+        "curse_status": "禁书区书籍上残留古老诅咒（如文字灼伤），普通区域无诅咒",
+        "occupancy_status": "每日上午和下午各有约30名学生，晚间关闭后空无一人"
+      }
+    }
+  },
+  {
+    "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:013",
+    "name": "禁书区",
+    "type": "library_archive",
+    "description": "图书馆最深处的孤岛，由铁链栅栏和咒语封锁。成排的黑色书架上摆满用皮革装订的旧书，书页间弥漫着霉味与微弱魔力波动。几本关于魂器和黑魔法的典籍被锁链额外封印，食死徒定期检查是否有人动过。角落里有一张积灰的阅读桌，偶尔被纳威等人借着隐身衣的光顾。",
+    "access": {
+      "permissions": "仅限校长或经校长书面授权的高级教授（如斯内普或麦格）",
+      "access_level": "very_restricted",
+      "access_conditions": "必须出示斯内普或麦格亲笔签名许可条，且需在平斯夫人陪同下进入；违规者将面临斯内普的严厉惩罚",
+      "access_scope": "",
+      "gender_restriction": "",
+      "time_restriction": "",
+      "special_event_access": ""
+    },
+    "state": {
+      "current_state": "被严密封锁，大部分危险书籍用咒语链条锁住，书架积满灰尘，食死徒刚完成一次彻底清理（移走了关于魂器的几本关键书籍）",
+      "ownership": "霍格沃茨魔法学院（食死徒实际控制封闭）",
+      "capacity": 8,
+      "seasonal_state": "",
+      "maintenance_condition": "维护较差，一些书脊开裂，铁链生锈",
+      "function_changed": "",
+      "current_resident": ""
+    },
+    "capacity": 8,
+    "tags": [
+      "library_archive",
+      "very_restricted",
+      "霍格沃茨魔法学院（食死徒实际控制封闭）"
+    ],
+    "symbolic_meaning": "",
+    "key_plot_events": "",
+    "literary_imagery": "",
+    "bounds": {
+      "x": 98,
+      "y": 43,
+      "w": 15,
+      "h": 11
+    },
+    "entrance": {
+      "x": 105,
+      "y": 53
+    },
+    "raw": {
+      "identity": {
+        "id": "e:c95bbbf6_8018_4790_9053_bd323b892175:loc:013",
+        "name": "禁书区",
+        "type": "library_archive",
+        "description": "图书馆最深处的孤岛，由铁链栅栏和咒语封锁。成排的黑色书架上摆满用皮革装订的旧书，书页间弥漫着霉味与微弱魔力波动。几本关于魂器和黑魔法的典籍被锁链额外封印，食死徒定期检查是否有人动过。角落里有一张积灰的阅读桌，偶尔被纳威等人借着隐身衣的光顾。",
+        "security_level": "extreme",
+        "faction_allegiance": "中立（食死徒已封存大部分内容，但抵抗组织试图破译）",
+        "has_secret_passage": "false",
+        "historical_significance": "存放了最危险的黑魔法典籍，曾为哈利·波特研究魂器提供线索，在黑暗时期成为抵抗组织秘密研究的关键地点",
+        "secret_function": "纳威与卢娜通过复方汤剂或隐身衣偷偷进入，抄写关于魂器摧毁方法的片段"
+      },
+      "access": {
+        "permissions": "仅限校长或经校长书面授权的高级教授（如斯内普或麦格）",
+        "access_level": "very_restricted",
+        "access_conditions": "必须出示斯内普或麦格亲笔签名许可条，且需在平斯夫人陪同下进入；违规者将面临斯内普的严厉惩罚",
+        "password_required": "true",
+        "special_permission_required": "",
+        "magical_barrier_type": "铁链栅栏：接触时会触发灼烧和警报；书籍上还有防盗咒（书页会咬伤未经授权的手）",
+        "surveillance_level": "极高（平斯夫人目光几乎从不离开，食死徒每周搜查一次，门口有永久性窸窣咒监测动静）",
+        "secret_entry_available": "true",
+        "patrol_frequency": "经常（平斯夫人每日检查，食死徒不定期抽查）"
+      },
+      "state": {
+        "current_state": "被严密封锁，大部分危险书籍用咒语链条锁住，书架积满灰尘，食死徒刚完成一次彻底清理（移走了关于魂器的几本关键书籍）",
+        "ownership": "霍格沃茨魔法学院（食死徒实际控制封闭）",
+        "capacity": 8,
+        "usage_status": "极低，仅斯内普偶尔进入查阅，或抵抗成员冒死潜入",
+        "maintenance_condition": "维护较差，一些书脊开裂，铁链生锈",
+        "defensive_spells": "灼热警报咒、书页咬伤咒、隐形监测咒（可记录闯入者的魔杖芯）",
+        "lighting_condition": "昏暗的幽蓝光球，书脊上反射出诡异微光",
+        "curse_status": "多本黑魔法书籍自带诅咒（如失忆、精神干扰），书架本身无诅咒",
+        "occupancy_status": "99%时间无人"
       }
     }
   }
