@@ -1,0 +1,53 @@
+# WorldKernel generation constraints
+# 0 = unlimited
+
+generation_constraints:
+  max_locations: 20
+  max_characters: 15
+
+# Spatial generation config
+spatial_generation:
+  enabled: true
+  output_subdir: "stage2/spatial"
+
+  canvas:
+    grid_width: 160
+    grid_height: 100
+    tile_size: 16
+    margin_tiles: 6
+    default_region_min_size: [8, 6]
+    default_region_max_size: [22, 16]
+    corridor_width: 3
+
+  grid_values:
+    blocked: 0
+    walkable: 1
+
+  layout:
+    algorithm: "fr_constraint_rect_packing"
+    random_seed: 42
+    fr_iterations: 200
+    packing_max_attempts: 2000
+    default_layer_id: "ground"
+    min_region_gap: 6
+    preferred_region_gap: 10
+    edge_comfort_margin: 12
+    candidate_limit: 96
+
+  routing:
+    algorithm: "orthogonal_astar"
+    allow_diagonal: false
+    default_movement_cost: 1.0
+    secret_path_cost_multiplier: 1.5
+
+  rendering:
+    export_tiled_json: true
+    export_preview_png: true
+    background_mode: "simple_tile"
+    ai_art_enabled: false
+
+  validation:
+    require_all_locations_reachable: true
+    require_path_edges_routable: true
+    max_region_overlap_ratio: 0.0
+    min_entrances_per_location: 1

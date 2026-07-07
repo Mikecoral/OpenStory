@@ -1,0 +1,15 @@
+name: WorldKernelActions
+components:
+  communication:
+    plugins:
+      BasicCommunicationPlugin:
+        adapters:
+          redis: RedisKVAdapter
+  move:
+    plugins:
+      BasicMovePlugin:
+        adapters:
+          redis: RedisKVAdapter
+  otheractions:
+    plugins:
+      BasicOtherActionPlugin: {}
