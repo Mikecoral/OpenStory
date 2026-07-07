@@ -8,7 +8,11 @@ import json
 import random
 import sys
 import threading
-from typing import Dict, List, Optional
+import time
+import uuid
+from datetime import datetime
+from typing import Any, Dict, List, Optional
+from urllib.parse import urlparse
 
 import aiohttp
 
@@ -52,6 +56,8 @@ class AsyncModelRouter:
 
         self._token_usage = {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}
         self._token_lock = threading.Lock()
+        self._attempt_traces: List[Dict[str, Any]] = []
+        self._trace_lock = threading.Lock()
 
     async def _ensure_session(self) -> None:
         """Ensures the aiohttp session is open, recreating it if necessary."""
@@ -112,6 +118,7 @@ class AsyncModelRouter:
         system_prompt: str = "",
         model_name: Optional[str] = None,
         timeout: int = 300,
+        max_attempts: int = 3,
         **kwargs: object,
     ) -> Optional[str]:
         """
@@ -122,11 +129,16 @@ class AsyncModelRouter:
             system_prompt (str): Optional system prompt. Defaults to an empty string.
             model_name (Optional[str]): Optional model identifier.
             timeout (int): Request timeout in seconds. Defaults to 300 seconds.
+            max_attempts (int): Maximum total provider attempts. Defaults to 3.
             **kwargs (object): Additional provider-specific request parameters.
 
         Returns:
             Optional[str]: Response payload or None when all providers fail.
         """
+        trace_context = kwargs.pop("_trace_context", {})
+        request_id = str(trace_context.get("request_id") or f"req_{uuid.uuid4().hex}")
+        if max_attempts < 1:
+            raise ValueError("max_attempts must be at least 1")
         target_providers = self._get_target_providers(capability="chat", model_name=model_name)
         if not target_providers:
             logger.warning("No target providers available for chat request.")
@@ -135,12 +147,28 @@ class AsyncModelRouter:
         retry_delay = 1
         max_delay = 60
 
+        attempt_number = 0
         while True:
             await self._ensure_session()
 
             random.shuffle(target_providers)
             for provider in target_providers:
                 params = provider.get_request_params(user_prompt, system_prompt, **kwargs)
+                attempt_number += 1
+                attempt_id = f"attempt_{uuid.uuid4().hex}"
+                started_at = datetime.now().astimezone().isoformat()
+                started = time.perf_counter()
+                base_trace = {
+                    "request_id": request_id,
+                    "attempt_id": attempt_id,
+                    "attempt_number": attempt_number,
+                    "started_at": started_at,
+                    "provider": provider.__class__.__name__,
+                    "model": provider.model,
+                    "base_url_host": urlparse(params["url"]).netloc,
+                    "timeout_seconds": timeout,
+                    **trace_context,
+                }
                 try:
                     logger.debug("Attempting chat request with provider: %s", provider.model)
                     async with self.session.post(
@@ -151,6 +179,16 @@ class AsyncModelRouter:
                     ) as response:
                         if response.status >= 400:
                             error_body = (await response.text())[:500]
+                            self._record_attempt({
+                                **base_trace,
+                                "completed_at": datetime.now().astimezone().isoformat(),
+                                "duration_ms": round((time.perf_counter() - started) * 1000, 3),
+                                "status": "failed",
+                                "http_status": response.status,
+                                "error_type": "HTTPError",
+                                "error": error_body,
+                                "retry_delay_seconds": retry_delay,
+                            })
                             logger.warning(
                                 "%s chat request failed with %s: HTTP %s - %s",
                                 self,
@@ -158,20 +196,55 @@ class AsyncModelRouter:
                                 response.status,
                                 error_body,
                             )
+                            if attempt_number >= max_attempts:
+                                return None
                             continue
                         response.raise_for_status()
                         response_text = await response.text()
-                        self._accumulate_tokens(response_text)
+                        usage = self._accumulate_tokens(response_text)
+                        self._record_attempt({
+                            **base_trace,
+                            "completed_at": datetime.now().astimezone().isoformat(),
+                            "duration_ms": round((time.perf_counter() - started) * 1000, 3),
+                            "status": "success",
+                            "http_status": response.status,
+                            "usage": usage,
+                            "retry_delay_seconds": 0,
+                        })
                         return provider.parse_response(response_text)
                 except Exception as exc:
+                    self._record_attempt({
+                        **base_trace,
+                        "completed_at": datetime.now().astimezone().isoformat(),
+                        "duration_ms": round((time.perf_counter() - started) * 1000, 3),
+                        "status": "failed",
+                        "http_status": None,
+                        "error_type": type(exc).__name__,
+                        "error": str(exc),
+                        "retry_delay_seconds": retry_delay,
+                    })
                     logger.warning("%s chat request failed with %s: %s", self, provider.model, exc)
+                    if attempt_number >= max_attempts:
+                        return None
                     continue
 
+            if attempt_number >= max_attempts:
+                return None
             logger.error("All providers failed for chat request. Retrying in %d seconds...", retry_delay)
             await asyncio.sleep(retry_delay)
             retry_delay = min(retry_delay * 2, max_delay)
 
-    def _accumulate_tokens(self, response_text: str) -> None:
+    def _record_attempt(self, trace: Dict[str, Any]) -> None:
+        with self._trace_lock:
+            self._attempt_traces.append(trace)
+
+    def drain_attempt_traces(self) -> List[Dict[str, Any]]:
+        with self._trace_lock:
+            traces = self._attempt_traces
+            self._attempt_traces = []
+            return traces
+
+    def _accumulate_tokens(self, response_text: str) -> Dict[str, Any]:
         try:
             res = json.loads(response_text)
             usage = res.get("usage", {})
@@ -180,8 +253,9 @@ class AsyncModelRouter:
                     self._token_usage["prompt_tokens"] += usage.get("prompt_tokens", 0)
                     self._token_usage["completion_tokens"] += usage.get("completion_tokens", 0)
                     self._token_usage["total_tokens"] += usage.get("total_tokens", 0)
+            return usage
         except (json.JSONDecodeError, KeyError):
-            pass
+            return {}
 
     def get_token_usage(self) -> Dict[str, int]:
         with self._token_lock:

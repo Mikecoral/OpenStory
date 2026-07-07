@@ -20,12 +20,26 @@ from ..types.configs import Config, AgentConfig, AgentTemplateConfig
 logger = get_logger(__name__)
 
 
-def load_config(project_path: str) -> Config:
+DEFAULT_RUNTIME_ENV_EXCLUDES = [
+    "output/",
+    "output/**",
+    "logs/",
+    "logs/**",
+    ".pytest_cache/",
+    ".pytest_cache/**",
+    "__pycache__/",
+    "**/__pycache__/**",
+]
+
+
+def load_config(project_path: str, configs_dirname: str = "configs") -> Config:
     """
     Loads all configurations based on a conventional project structure.
 
     Args:
         project_path (str): The absolute path to the project's root directory.
+        configs_dirname (str): The name of the configs directory relative to
+            project_path. Defaults to "configs" for backwards compatibility.
 
     Returns:
         Config: A validated Pydantic Config object containing all simulation settings.
@@ -35,7 +49,7 @@ def load_config(project_path: str) -> Config:
     """
     logger.info(f"Loading configuration from project path: {project_path}")
 
-    configs_base_dir = os.path.join(project_path, "configs")
+    configs_base_dir = os.path.join(project_path, configs_dirname)
 
     if not os.path.isdir(configs_base_dir):
         raise FileNotFoundError(f"Configuration directory not found at: {configs_base_dir}")
@@ -114,7 +128,7 @@ class Builder:
     System object that holds the simulation state.
     """
 
-    def __init__(self, project_path: str, resource_maps: Dict[str, Any]) -> None:
+    def __init__(self, project_path: str, resource_maps: Dict[str, Any], configs_dirname: str = "configs") -> None:
         """
         Initializes the simulation builder.
 
@@ -122,10 +136,13 @@ class Builder:
             project_path (str): The absolute path to the project's root directory.
             resource_maps (Dict[str, Any]): A dictionary mapping resource keys
                 (like 'controller', 'pod_manager') to their respective classes.
+            configs_dirname (str): The name of the configs directory relative to
+                project_path. Defaults to "configs" for backwards compatibility.
         """
         logger.info("Initializing Simulation Engine (Builder)...")
         self._project_path = project_path
-        self._config: Config = load_config(project_path)
+        self._configs_dirname = configs_dirname
+        self._config: Config = load_config(project_path, configs_dirname=configs_dirname)
         self._resource_maps = resource_maps
         self._model_router_config: List[Dict[str, Any]] = []
         self._pod_manager: BasePodManager = None
@@ -192,7 +209,10 @@ class Builder:
         """
         if not ray.is_initialized():
             ray.init(
-                runtime_env={"working_dir": self._project_path},
+                runtime_env={
+                    "working_dir": self._project_path,
+                    "excludes": DEFAULT_RUNTIME_ENV_EXCLUDES,
+                },
                 _system_config={"memory_monitor_refresh_ms": 0}
             )
         logger.info("Ray is initialized.")

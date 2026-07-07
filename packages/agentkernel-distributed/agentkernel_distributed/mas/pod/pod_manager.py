@@ -324,6 +324,13 @@ class PodManagerImpl(BasePodManager):
         pod = self._agent_id_to_pod[agent_id]
         return await pod.forward.remote("run_agent_method", agent_id, component_name, method_name, *args, **kwargs)
 
+    async def drain_model_attempt_traces(self) -> List[Dict[str, Any]]:
+        rows: List[Dict[str, Any]] = []
+        for pod_id, pod in self._pod_id_to_pod.items():
+            traces = await pod.forward.remote("drain_model_attempt_traces")
+            rows.extend({"pod_id": pod_id, **trace} for trace in traces)
+        return rows
+
     async def add_agent(self, agent_id: str, template_name: str, data: Dict[str, Any]) -> bool:
         """
         Add an agent to an existing pod or provision a new pod when necessary.
