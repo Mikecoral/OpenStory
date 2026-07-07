@@ -42,7 +42,9 @@ async function loadGeneratedWorlds() {
     info.textContent = `找到 ${generatedWorlds.length} 个可进入 Stage3 的本地世界。`;
   } catch (error) {
     select.innerHTML = '<option value="">加载失败</option>';
-    info.textContent = error.message;
+    info.textContent = error.message === 'Failed to fetch'
+      ? '本地世界服务未连接。启动 WorldKernel 服务后可读取已生成世界。'
+      : error.message;
   } finally {
     refreshBtn.disabled = false;
   }
@@ -73,7 +75,7 @@ function selectGeneratedWorld() {
     `更新时间: ${modifiedAt}`,
   ].join('\n');
   viewerBtn.href = `/viewer.html?session_id=${encodeURIComponent(world.session_id)}`;
-  viewerBtn.style.display = 'inline-block';
+  viewerBtn.style.display = 'inline-flex';
   enterBtn.disabled = false;
 }
 
@@ -231,13 +233,13 @@ function showResult(session, stage2) {
   const viewerBtn = document.getElementById('jump-to-viewer-btn');
   if (viewerBtn) {
     viewerBtn.href = `/viewer.html?session_id=${encodeURIComponent(session.session_id)}`;
-    viewerBtn.style.display = 'inline-block';
+    viewerBtn.style.display = 'inline-flex';
   }
 
   const simulationBtn = document.getElementById('enterSimulationBtn');
   if (simulationBtn) {
     simulationBtn.disabled = false;
-    simulationBtn.style.display = 'block';
+    simulationBtn.style.display = 'inline-flex';
   }
 
   const spatialBtn = document.getElementById('spatialBtn');
@@ -346,6 +348,14 @@ function renderBlueprint(spatial) {
 
 document.getElementById('worldInput').addEventListener('keydown', (event) => {
   if (event.key === 'Enter' && (event.ctrlKey || event.metaKey)) submitInput();
+});
+
+document.querySelectorAll('.prompt-chip').forEach((button) => {
+  button.addEventListener('click', () => {
+    const input = document.getElementById('worldInput');
+    input.value = button.dataset.prompt || button.textContent.trim();
+    input.focus();
+  });
 });
 
 window.addEventListener('pageshow', () => {

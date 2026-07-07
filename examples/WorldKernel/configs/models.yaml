@@ -1,6 +1,7 @@
 - name: OpenAIProvider
-  model: deepseek-v4-flash
-  api_key:          # 通过 .env 文件中的 WORLDKERNEL_API_KEY 设置
-  base_url: https://api.deepseek.com
+  model: qwen3.5-flash
+  api_key: sk-1efd5e9c077c4d5db784611f1b4c00ca
+  base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
   capabilities:
-    - chat
+  - chat
+
