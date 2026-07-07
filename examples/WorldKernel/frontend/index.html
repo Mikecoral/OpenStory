@@ -18,6 +18,24 @@
       <button id="submitBtn" onclick="submitInput()">开始生成</button>
     </section>
 
+    <section class="quick-entry-section">
+      <div class="quick-entry-header">
+        <div>
+          <h2>本地已生成世界</h2>
+          <p>选择已经完成 Stage2 的世界，直接同步并进入 Stage3 模拟。</p>
+        </div>
+        <button id="refreshWorldsBtn" class="secondary-btn" onclick="loadGeneratedWorlds()">刷新</button>
+      </div>
+      <div class="quick-entry-controls">
+        <select id="generatedWorldSelect" onchange="selectGeneratedWorld()" disabled>
+          <option value="">正在加载本地世界...</option>
+        </select>
+        <button id="enterSelectedSimulationBtn" onclick="enterSelectedSimulation()" disabled>直接进入 Stage3</button>
+      </div>
+      <div id="generatedWorldInfo" class="quick-entry-info">尚未选择世界。</div>
+      <a id="selectedWorldViewerBtn" class="secondary-link" href="#" target="_blank" style="display:none">查看语义图谱</a>
+    </section>
+
     <section class="status-section" id="statusSection" style="display:none">
       <div class="spinner"></div>
       <span id="statusText">解析中…</span>
