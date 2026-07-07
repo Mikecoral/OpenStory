@@ -1,5 +1,97 @@
 let currentSessionId = null;
 let currentStage2 = null;
+let generatedWorlds = [];
+
+async function loadGeneratedWorlds() {
+  const select = document.getElementById('generatedWorldSelect');
+  const info = document.getElementById('generatedWorldInfo');
+  const enterBtn = document.getElementById('enterSelectedSimulationBtn');
+  const viewerBtn = document.getElementById('selectedWorldViewerBtn');
+  const refreshBtn = document.getElementById('refreshWorldsBtn');
+
+  if (!select) return;
+  refreshBtn.disabled = true;
+  select.disabled = true;
+  enterBtn.disabled = true;
+  viewerBtn.style.display = 'none';
+  select.innerHTML = '<option value="">正在加载本地世界...</option>';
+  info.textContent = '正在扫描 templates 目录...';
+
+  try {
+    const resp = await fetch('/api/stage3/sessions');
+    const data = await resp.json().catch(() => ({}));
+    if (!resp.ok) {
+      throw new Error(data.detail || data.error || '本地世界列表加载失败');
+    }
+
+    generatedWorlds = data.sessions || [];
+    if (!generatedWorlds.length) {
+      select.innerHTML = '<option value="">暂无可直接进入的世界</option>';
+      info.textContent = '没有找到同时包含语义数据和空间地图的本地世界。';
+      return;
+    }
+
+    select.innerHTML = [
+      '<option value="">请选择一个世界</option>',
+      ...generatedWorlds.map((world) => {
+        const label = `${world.world_name || world.session_id} (${world.session_id})`;
+        return `<option value="${escapeHtml(world.session_id)}">${escapeHtml(label)}</option>`;
+      }),
+    ].join('');
+    select.disabled = false;
+    info.textContent = `找到 ${generatedWorlds.length} 个可进入 Stage3 的本地世界。`;
+  } catch (error) {
+    select.innerHTML = '<option value="">加载失败</option>';
+    info.textContent = error.message;
+  } finally {
+    refreshBtn.disabled = false;
+  }
+}
+
+function selectGeneratedWorld() {
+  const select = document.getElementById('generatedWorldSelect');
+  const info = document.getElementById('generatedWorldInfo');
+  const enterBtn = document.getElementById('enterSelectedSimulationBtn');
+  const viewerBtn = document.getElementById('selectedWorldViewerBtn');
+  const world = generatedWorlds.find((item) => item.session_id === select.value);
+
+  if (!world) {
+    enterBtn.disabled = true;
+    viewerBtn.style.display = 'none';
+    info.textContent = generatedWorlds.length ? '尚未选择世界。' : '暂无可直接进入的世界。';
+    return;
+  }
+
+  const counts = world.counts || {};
+  const modifiedAt = world.modified_at
+    ? new Date(world.modified_at * 1000).toLocaleString()
+    : '未知时间';
+  info.textContent = [
+    `世界: ${world.world_name || world.world_id}`,
+    `角色 ${counts.characters || 0}, 地点 ${counts.locations || 0}, 路径 ${counts.paths || 0}`,
+    `地图区域 ${counts.regions || 0}, 出生点 ${counts.spawn_points || 0}`,
+    `更新时间: ${modifiedAt}`,
+  ].join('\n');
+  viewerBtn.href = `/viewer.html?session_id=${encodeURIComponent(world.session_id)}`;
+  viewerBtn.style.display = 'inline-block';
+  enterBtn.disabled = false;
+}
+
+function enterSelectedSimulation() {
+  const select = document.getElementById('generatedWorldSelect');
+  const btn = document.getElementById('enterSelectedSimulationBtn');
+  if (!select.value) return;
+  enterSimulation(select.value, btn);
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
 
 async function submitInput() {
   const input = document.getElementById('worldInput').value.trim();
@@ -41,15 +133,14 @@ async function submitInput() {
   }
 }
 
-async function enterSimulation() {
-  if (!currentSessionId) return;
-  const btn = document.getElementById('enterSimulationBtn');
+async function enterSimulation(sessionId = currentSessionId, btn = document.getElementById('enterSimulationBtn')) {
+  if (!sessionId) return;
   btn.disabled = true;
   setStatus(true, '正在同步 Stage3 数据并启动模拟...');
   hideError();
 
   try {
-    const adapterResp = await fetch(`/api/stage3/agentkernel/${currentSessionId}`, {
+    const adapterResp = await fetch(`/api/stage3/agentkernel/${encodeURIComponent(sessionId)}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ max_ticks: 100 }),
@@ -62,7 +153,7 @@ async function enterSimulation() {
       throw new Error('Stage3 adapter dry validation 未通过');
     }
 
-    const startResp = await fetch(`/api/stage3/runtime/start/${currentSessionId}`, {
+    const startResp = await fetch(`/api/stage3/runtime/start/${encodeURIComponent(sessionId)}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ max_ticks: 100 }),
@@ -72,7 +163,7 @@ async function enterSimulation() {
       throw new Error(started.detail || started.error || 'Stage3 runtime 启动失败');
     }
 
-    window.location.href = `/simulation.html?session_id=${encodeURIComponent(currentSessionId)}`;
+    window.location.href = `/simulation.html?session_id=${encodeURIComponent(sessionId)}`;
   } catch (error) {
     btn.disabled = false;
     setStatus(false);
@@ -263,4 +354,5 @@ window.addEventListener('pageshow', () => {
   if (submitBtn) submitBtn.disabled = false;
   const simulationBtn = document.getElementById('enterSimulationBtn');
   if (simulationBtn) simulationBtn.disabled = false;
+  loadGeneratedWorlds();
 });
