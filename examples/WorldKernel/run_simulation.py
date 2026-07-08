@@ -48,7 +48,7 @@ async def main(max_ticks: int | None = None) -> None:
                 runtime_env={
                     "working_dir": str(PROJECT_PATH),
                     "env_vars": {"PYTHONPATH": os.pathsep.join(sys.path)},
-                    "excludes": ["*.pyc", "__pycache__", ".pytest_cache"],
+                    "excludes": ["*.pyc", "__pycache__"],
                 }
             )
 

@@ -114,9 +114,6 @@ examples/WorldKernel/
 │       ├── configs/<entity>/            ← YAML 维度定义 (agent, location, path, relation)
 │       └── models/                      ← 自动生成的 Pydantic 模型 + schema_manifest.json
 │
-├── tests/
-│   └── test_stage1_stage2_visual_e2e.py ← E2E: starts server + runs Stage1 + Stage2
-│
 └── frontend/                       ← Static HTML/CSS/JS (Vite dev optional), served by FastAPI at /
     ├── index.html
     ├── app.js
@@ -135,8 +132,6 @@ cp examples/WorldKernel/.env.example examples/WorldKernel/.env  # fill API key
 
 python -m worldkernel.server          # http://localhost:8100/
 
-cd examples/WorldKernel
-python tests/test_stage1_stage2_visual_e2e.py   # E2E test
 ```
 
 ---

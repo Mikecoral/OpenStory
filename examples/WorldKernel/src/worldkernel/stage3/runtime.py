@@ -79,7 +79,7 @@ class Stage3RuntimeManager:
                     runtime_env={
                         "working_dir": str(self.project_root),
                         "env_vars": {"PYTHONPATH": os.pathsep.join(sys.path)},
-                        "excludes": ["*.pyc", "__pycache__", ".pytest_cache"],
+                        "excludes": ["*.pyc", "__pycache__"],
                     }
                 )
 

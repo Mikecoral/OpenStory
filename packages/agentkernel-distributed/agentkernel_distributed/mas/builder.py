@@ -25,8 +25,6 @@ DEFAULT_RUNTIME_ENV_EXCLUDES = [
     "output/**",
     "logs/",
     "logs/**",
-    ".pytest_cache/",
-    ".pytest_cache/**",
     "__pycache__/",
     "**/__pycache__/**",
 ]

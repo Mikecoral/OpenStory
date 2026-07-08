@@ -14,9 +14,35 @@ from __future__ import annotations
 import asyncio
 import json
 import os
+import sys
 import time
 from pathlib import Path
 from typing import Any, Dict
+
+PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(PROJECT_PATH, "..", ".."))
+PACKAGES_ROOT = os.path.join(PROJECT_ROOT, "packages")
+
+
+def _ensure_import_paths() -> str:
+    python_paths = [PROJECT_ROOT]
+    if os.path.exists(PACKAGES_ROOT):
+        for package in os.listdir(PACKAGES_ROOT):
+            package_path = os.path.join(PACKAGES_ROOT, package)
+            if os.path.isdir(package_path):
+                python_paths.append(package_path)
+
+    for path in reversed(python_paths):
+        if path not in sys.path:
+            sys.path.insert(0, path)
+
+    current_pythonpath = os.environ.get("PYTHONPATH")
+    if current_pythonpath:
+        python_paths.append(current_pythonpath)
+    return os.pathsep.join(python_paths)
+
+
+RUNTIME_PYTHONPATH = _ensure_import_paths()
 
 import ray
 import yaml as _yaml
@@ -24,11 +50,10 @@ import yaml as _yaml
 from agentkernel_distributed.mas.builder import Builder
 from agentkernel_distributed.toolkit.logger import get_logger
 
-from examples.west_world_test.registry_sim import RESOURCES_MAPS
+from examples.west_world_test.registry import RESOURCES_MAPS
 from examples.west_world_test.simulation_logging import SimulationLogArchive
 
 logger = get_logger(__name__)
-PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
 TICK_DURATION = 0.1  # seconds per tick for smoke test
 
 # 活跃地点 ID 列表（从 locations.yaml 加载）
@@ -84,7 +109,7 @@ async def _synchronize_initial_presence(pod_manager, agent_states: Dict[str, Dic
 
 async def main() -> None:
     configured_ticks = _yaml.safe_load(
-        Path(PROJECT_PATH, "configs_sim/simulation_config.yaml").read_text(encoding="utf-8")
+        Path(PROJECT_PATH, "configs/simulation_config.yaml").read_text(encoding="utf-8")
     )["simulation"]["max_ticks"]
     max_ticks = int(os.environ.get("WW_MAX_TICKS", "") or configured_ticks)
     archive = SimulationLogArchive(PROJECT_PATH, max_ticks, _AGENT_IDS, _ACTIVE_LIDS)
@@ -92,7 +117,25 @@ async def main() -> None:
     logger.info("Simulation starting: max_ticks=%s, active_lids=%s", max_ticks, _ACTIVE_LIDS)
     try:
         init_started = time.perf_counter()
-        builder = Builder(PROJECT_PATH, RESOURCES_MAPS, configs_dirname="configs_sim")
+        if not ray.is_initialized():
+            ray.init(
+                runtime_env={
+                    "working_dir": PROJECT_PATH,
+                    "env_vars": {
+                        "PYTHONPATH": RUNTIME_PYTHONPATH,
+                    },
+                    "excludes": [
+                        "output/",
+                        "output/**",
+                        "logs/",
+                        "logs/**",
+                        "__pycache__/",
+                        "**/__pycache__/**",
+                    ],
+                },
+                _system_config={"memory_monitor_refresh_ms": 0},
+            )
+        builder = Builder(PROJECT_PATH, RESOURCES_MAPS, configs_dirname="configs")
         pod_manager, system = await builder.init()
         archive.record_event("kernel_initialized", duration_seconds=time.perf_counter() - init_started)
         initial_agents = await _collect_agent_states(pod_manager)

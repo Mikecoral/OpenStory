@@ -202,14 +202,17 @@ class SimulationLogArchive:
     def _archive_inputs(self) -> None:
         inputs = self.run_dir / "inputs"
         inputs.mkdir(parents=True, exist_ok=True)
-        for name in ("configs_sim", "data"):
+        for name in ("configs", "data"):
             source = self.project_path / name
             if source.exists():
-                shutil.copytree(source, inputs / name)
+                if name == "configs":
+                    shutil.copytree(source, inputs / name, ignore=shutil.ignore_patterns("models_config.yaml"))
+                else:
+                    shutil.copytree(source, inputs / name)
         models = self.project_path / "configs" / "models_config.yaml"
         if models.exists():
             redacted = _redacted_models_config(models)
-            (inputs / "models_config.redacted.yaml").write_text(
+            (inputs / "configs" / "models_config.redacted.yaml").write_text(
                 yaml.safe_dump(redacted, allow_unicode=True, sort_keys=False),
                 encoding="utf-8",
             )

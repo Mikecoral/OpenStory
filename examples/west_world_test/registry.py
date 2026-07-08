@@ -1,27 +1,74 @@
-"""Resource registry for the West World recorder MVE."""
-from agentkernel_distributed.mas.agent.components import PlanComponent
-from agentkernel_distributed.mas.environment.components import get_or_create_component_class
+"""正式仿真的资源注册表。"""
+from agentkernel_distributed.mas.agent.components import (
+    InvokeComponent,
+    PerceiveComponent,
+    PlanComponent,
+    ProfileComponent,
+    ReflectComponent,
+)
+from agentkernel_distributed.mas.environment.components import RelationComponent, get_or_create_component_class
 from agentkernel_distributed.mas.system.components import Messager, Timer
 from agentkernel_distributed.toolkit.models.api.openai import OpenAIProvider
 from agentkernel_distributed.toolkit.storages import RedisKVAdapter
 
 from examples.story_of_the_stone.BasicController import BasicController
+from examples.story_of_the_stone.plugins.agent.profile.BasicProfliePlugin import BasicProfilePlugin
 from examples.story_of_the_stone.plugins.agent.state.BasicStatePlugin import BasicStatePlugin
 from examples.story_of_the_stone.plugins.agent.state.component import BasicStateComponent
+from examples.story_of_the_stone.plugins.environment.relation.BasicRelationPlugin import BasicRelationPlugin
 from examples.west_world_test.WestWorldPodManager import WestWorldPodManager
-from examples.west_world_test.plugins.agent.plan.ScriptedPlanPlugin import ScriptedPlanPlugin
-from examples.west_world_test.scene.SceneRecorderPlugin import SceneRecorderPlugin
+from examples.west_world_test.plugins.agent.invoke.WestWorldInvokePlugin import WestWorldInvokePlugin
+from examples.west_world_test.plugins.agent.perceive.WestWorldPerceivePlugin import WestWorldPerceivePlugin
+from examples.west_world_test.plugins.agent.plan.RandomWalkPlanPlugin import RandomWalkPlanPlugin
+from examples.west_world_test.plugins.agent.plan.WestWorldPlanPlugin import WestWorldPlanPlugin
+from examples.west_world_test.plugins.agent.reflect.WestWorldReflectPlugin import WestWorldReflectPlugin
+from examples.west_world_test.plugins.environment.overseer.OverseerPlugin import OverseerPlugin
+from examples.west_world_test.plugins.environment.scene.LocationRecorderPlugin import make_scene_plugin_class
+from examples.west_world_test.worldmap.loader import get_world_map
+
+_WORLD = get_world_map()
+_ACTIVE = sorted(_WORLD.active_ids())
 
 RESOURCES_MAPS = {
-    "agent_components": {"plan": PlanComponent, "state": BasicStateComponent},
-    "agent_plugins": {"ScriptedPlanPlugin": ScriptedPlanPlugin, "BasicStatePlugin": BasicStatePlugin},
+    "agent_components": {
+        "profile": ProfileComponent,
+        "perceive": PerceiveComponent,
+        "plan": PlanComponent,
+        "invoke": InvokeComponent,
+        "state": BasicStateComponent,
+        "reflect": ReflectComponent,
+    },
+    "agent_plugins": {
+        "BasicProfilePlugin": BasicProfilePlugin,
+        "BasicStatePlugin": BasicStatePlugin,
+        "WestWorldPerceivePlugin": WestWorldPerceivePlugin,
+        "RandomWalkPlanPlugin": RandomWalkPlanPlugin,
+        "WestWorldPlanPlugin": WestWorldPlanPlugin,
+        "WestWorldInvokePlugin": WestWorldInvokePlugin,
+        "WestWorldReflectPlugin": WestWorldReflectPlugin,
+    },
     "action_components": {},
     "action_plugins": {},
-    "environment_components": {"scene": get_or_create_component_class("scene")},
-    "environment_plugins": {"SceneRecorderPlugin": SceneRecorderPlugin},
-    "system_components": {"messager": Messager, "timer": Timer},
-    "models": {"OpenAIProvider": OpenAIProvider},
-    "adapters": {"RedisKVAdapter": RedisKVAdapter},
+    "environment_components": {
+        "relation": RelationComponent,
+        "overseer": get_or_create_component_class("overseer"),
+        **{f"scene_{lid}": get_or_create_component_class(f"scene_{lid}") for lid in _ACTIVE},
+    },
+    "environment_plugins": {
+        "BasicRelationPlugin": BasicRelationPlugin,
+        "OverseerPlugin": OverseerPlugin,
+        **{f"Scene_{lid}_Plugin": make_scene_plugin_class(lid) for lid in _ACTIVE},
+    },
+    "system_components": {
+        "messager": Messager,
+        "timer": Timer,
+    },
+    "models": {
+        "OpenAIProvider": OpenAIProvider,
+    },
+    "adapters": {
+        "RedisKVAdapter": RedisKVAdapter,
+    },
     "controller": BasicController,
     "pod_manager": WestWorldPodManager,
 }
