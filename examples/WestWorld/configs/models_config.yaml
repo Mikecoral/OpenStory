@@ -2,7 +2,7 @@
 - role: text
   name: OpenAIProvider
   model: qwen3.5-flash
-  api_key: sk-1efd5e9c077c4d5db784611f1b4c00ca
+  api_key: 
   base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
   temperature: 0
   capabilities: [chat]
@@ -10,7 +10,7 @@
 - role: vision
   name: OpenAIProvider
   model: qwen3.5-flash
-  api_key: sk-1efd5e9c077c4d5db784611f1b4c00ca
+  api_key: 
   base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
   temperature: 0
   capabilities: [chat]
@@ -18,8 +18,8 @@
 - role: image
   name: OpenAIProvider
   model: image-2
-  api_key: sk-03f0f699b8aefadbb36dcbac83c3474de88792d55de41bb95b25f7e4d8d66f72
-  base_url: https://sub2api.wolfholo.me
+  api_key: 
+  base_url: 
   size: 1024x1024
   input_fidelity: high
   capabilities: [image]
