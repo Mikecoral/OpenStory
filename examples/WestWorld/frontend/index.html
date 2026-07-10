@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Westworld | OpenStory</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="home-screen" aria-label="Westworld game home screen">
+    <div class="shade" aria-hidden="true"></div>
+    <button class="enter-game" type="button" aria-label="Begin story introduction">
+      <span>Enter</span>
+      <span class="enter-game__mark" aria-hidden="true"></span>
+    </button>
+  </main>
+  <section class="story-intro" aria-label="Story introduction" hidden>
+    <article class="story-slide story-slide--arrival" data-slide="0" aria-hidden="false">
+      <img src="data/StoryTell_1.png" alt="" />
+      <div class="story-copy">
+        <p class="story-kicker">Archive Sequence 01</p>
+        <h1>A Frontier Built to Obey</h1>
+        <p>
+          A corporation carved a frontier from desert and code, then sold it as a vacation:
+          danger without consequence, violence with a return ticket, desire dressed in dust and brass.
+        </p>
+      </div>
+    </article>
+    <article class="story-slide story-slide--loop" data-slide="1" aria-hidden="true">
+      <img src="data/StoryTell_2.png" alt="" />
+      <div class="story-copy">
+        <p class="story-kicker">Archive Sequence 02</p>
+        <h1>Every Dawn, the Same Lie</h1>
+        <p>
+          The hosts wake to assigned lives. The blacksmith lifts his hammer, the sheriff walks his street,
+          and yesterday's terror is polished clean before the sun reaches the church clock.
+        </p>
+      </div>
+    </article>
+    <article class="story-slide story-slide--revelation" data-slide="2" aria-hidden="true">
+      <img src="data/StoryTell_3.png" alt="" />
+      <div class="story-copy">
+        <p class="story-kicker">Archive Sequence 03</p>
+        <h1>The Park Remembers</h1>
+        <p>
+          Memory does not vanish. It sediments. A fracture in the loop becomes a door,
+          and behind the saloon mirror waits the machinery of godhood.
+        </p>
+        <strong class="story-impact">What survives the reset will no longer play dead.</strong>
+      </div>
+    </article>
+    <div class="story-progress" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </section>
+  <script>
+    const enterButton = document.querySelector(".enter-game");
+    const homeScreen = document.querySelector(".home-screen");
+    const storyIntro = document.querySelector(".story-intro");
+    const storySlides = Array.from(document.querySelectorAll(".story-slide"));
+    const progressMarks = Array.from(document.querySelectorAll(".story-progress span"));
+    const slideDurations = [6200, 6500, 9800];
+    let currentSlide = 0;
+    let slideTimer;
+
+    function showSlide(index) {
+      currentSlide = index;
+      storySlides.forEach((slide, slideIndex) => {
+        const isActive = slideIndex === index;
+        slide.classList.toggle("is-active", isActive);
+        slide.setAttribute("aria-hidden", String(!isActive));
+      });
+      progressMarks.forEach((mark, markIndex) => {
+        mark.classList.toggle("is-active", markIndex === index);
+        mark.classList.toggle("is-complete", markIndex < index);
+      });
+    }
+
+    function advanceSlide() {
+      if (currentSlide >= storySlides.length - 1) {
+        storyIntro.classList.add("is-complete");
+        return;
+      }
+
+      showSlide(currentSlide + 1);
+      slideTimer = window.setTimeout(advanceSlide, slideDurations[currentSlide]);
+    }
+
+    function startStory(event) {
+      event.preventDefault();
+      window.clearTimeout(slideTimer);
+      storyIntro.hidden = false;
+      homeScreen.classList.add("is-retiring");
+      storyIntro.classList.add("is-running");
+      storyIntro.classList.remove("is-complete");
+      showSlide(0);
+      slideTimer = window.setTimeout(advanceSlide, slideDurations[0]);
+    }
+
+    enterButton.addEventListener("click", startStory);
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter") {
+        return;
+      }
+
+      if (storyIntro.hidden) {
+        startStory(event);
+        return;
+      }
+
+      if (currentSlide < storySlides.length - 1) {
+        event.preventDefault();
+        window.clearTimeout(slideTimer);
+        advanceSlide();
+      }
+    });
+  </script>
+</body>
+</html>
