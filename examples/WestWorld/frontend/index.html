@@ -18,7 +18,6 @@
     <article class="story-slide story-slide--arrival" data-slide="0" aria-hidden="false">
       <img src="data/StoryTell_1.png" alt="" />
       <div class="story-copy">
-        <p class="story-kicker">Archive Sequence 01</p>
         <h1>A Frontier Built to Obey</h1>
         <p>
           A corporation carved a frontier from desert and code, then sold it as a vacation:
@@ -29,7 +28,6 @@
     <article class="story-slide story-slide--loop" data-slide="1" aria-hidden="true">
       <img src="data/StoryTell_2.png" alt="" />
       <div class="story-copy">
-        <p class="story-kicker">Archive Sequence 02</p>
         <h1>Every Dawn, the Same Lie</h1>
         <p>
           The hosts wake to assigned lives. The blacksmith lifts his hammer, the sheriff walks his street,
@@ -40,7 +38,6 @@
     <article class="story-slide story-slide--revelation" data-slide="2" aria-hidden="true">
       <img src="data/StoryTell_3.png" alt="" />
       <div class="story-copy">
-        <p class="story-kicker">Archive Sequence 03</p>
         <h1>The Park Remembers</h1>
         <p>
           Memory does not vanish. It sediments. A fracture in the loop becomes a door,
@@ -49,74 +46,107 @@
         <strong class="story-impact">What survives the reset will no longer play dead.</strong>
       </div>
     </article>
-    <div class="story-progress" aria-hidden="true">
-      <span></span>
-      <span></span>
-      <span></span>
+    <article class="story-slide story-slide--choice" data-slide="3" aria-hidden="true">
+      <img src="data/StoryTell_4.png" alt="" />
+      <div class="story-copy">
+        <h1>Will You Break Free, or Surrender to the Loop?</h1>
+      </div>
+    </article>
+  </section>
+  <section class="app-shell" id="appShell" aria-label="Westworld operations console" hidden>
+    <header class="command-bar">
+      <div class="brand-lockup" aria-label="Westworld">
+        <span class="brand-lockup__title">Westworld</span>
+        <span class="brand-lockup__subtitle">Loop Operations</span>
+      </div>
+      <div class="system-strip">
+        <span class="status-light" id="statusLight" aria-hidden="true"></span>
+        <span id="statusText">Backend required</span>
+        <span class="tick-readout">Tick <strong id="tickReadout">Initial</strong></span>
+      </div>
+      <div class="command-actions">
+        <button class="panel-toggle" id="rightPanelToggle" type="button" aria-controls="rightPanel" aria-expanded="true">
+          Hide Intel
+        </button>
+        <button class="tick-command" id="tickButton" type="button" disabled>
+          Advance Tick
+        </button>
+      </div>
+    </header>
+
+    <div class="operations-grid">
+      <aside class="ops-panel ops-panel--left" aria-label="Host roster">
+        <div class="panel-heading">
+          <span>Host Roster</span>
+          <strong id="agentCount">0</strong>
+        </div>
+        <div class="metric-grid">
+          <div>
+            <span>Awake</span>
+            <strong id="awakeCount">0</strong>
+          </div>
+          <div>
+            <span>Guests</span>
+            <strong id="guestCount">0</strong>
+          </div>
+        </div>
+        <div class="agent-list" id="agentList">
+          <p class="empty-copy">Waiting for a backend snapshot.</p>
+        </div>
+      </aside>
+
+      <main class="map-stage" aria-label="Westworld map">
+        <canvas id="mapCanvas"></canvas>
+        <div class="map-vignette" aria-hidden="true"></div>
+        <div class="map-loading" id="mapLoading">
+          Start the WestWorld backend, then open this page from the server.
+        </div>
+        <div class="map-legend" aria-label="Map legend">
+          <span><i class="legend-dot legend-dot--host"></i>Host</span>
+          <span><i class="legend-dot legend-dot--guest"></i>Guest</span>
+          <span><i class="legend-dot legend-dot--awake"></i>Awakening</span>
+        </div>
+        <div class="location-dialog" id="locationDialog" role="dialog" aria-modal="false" aria-labelledby="locationDialogTitle" hidden>
+          <div class="location-dialog__header">
+            <span id="locationDialogType">Location</span>
+            <button class="location-dialog__close" id="locationDialogClose" type="button" aria-label="Close location details">X</button>
+          </div>
+          <h2 id="locationDialogTitle">Unknown Location</h2>
+          <p class="location-dialog__meta" id="locationDialogMeta">No local telemetry.</p>
+          <p class="location-dialog__presence" id="locationDialogPresence">No local presence reported.</p>
+          <div class="location-dialog__events" id="locationDialogEvents">
+            <p>No recent events.</p>
+          </div>
+        </div>
+      </main>
+
+      <aside class="ops-panel ops-panel--right" id="rightPanel" aria-label="Character intelligence">
+        <div class="panel-heading panel-heading--with-action">
+          <span>Character Intel</span>
+          <strong id="sceneType">Person</strong>
+          <button class="panel-close" id="rightPanelClose" type="button" aria-label="Close scene intelligence">X</button>
+        </div>
+        <section class="intel-block">
+          <span class="intel-label">Selected Character</span>
+          <h2 id="selectionTitle">No character selected</h2>
+          <p id="selectionMeta">Click a host or guest marker, or choose a name from the roster.</p>
+        </section>
+        <section class="intel-block">
+          <span class="intel-label">Condition</span>
+          <div class="signal-meter" aria-label="Awakening level">
+            <span id="awakeningMeter"></span>
+          </div>
+          <p id="conditionText">Awaiting telemetry.</p>
+        </section>
+        <section class="intel-block intel-block--events">
+          <span class="intel-label">Recent Events</span>
+          <div id="eventList" class="event-list">
+            <p class="empty-copy">No events loaded.</p>
+          </div>
+        </section>
+      </aside>
     </div>
   </section>
-  <script>
-    const enterButton = document.querySelector(".enter-game");
-    const homeScreen = document.querySelector(".home-screen");
-    const storyIntro = document.querySelector(".story-intro");
-    const storySlides = Array.from(document.querySelectorAll(".story-slide"));
-    const progressMarks = Array.from(document.querySelectorAll(".story-progress span"));
-    const slideDurations = [6200, 6500, 9800];
-    let currentSlide = 0;
-    let slideTimer;
-
-    function showSlide(index) {
-      currentSlide = index;
-      storySlides.forEach((slide, slideIndex) => {
-        const isActive = slideIndex === index;
-        slide.classList.toggle("is-active", isActive);
-        slide.setAttribute("aria-hidden", String(!isActive));
-      });
-      progressMarks.forEach((mark, markIndex) => {
-        mark.classList.toggle("is-active", markIndex === index);
-        mark.classList.toggle("is-complete", markIndex < index);
-      });
-    }
-
-    function advanceSlide() {
-      if (currentSlide >= storySlides.length - 1) {
-        storyIntro.classList.add("is-complete");
-        return;
-      }
-
-      showSlide(currentSlide + 1);
-      slideTimer = window.setTimeout(advanceSlide, slideDurations[currentSlide]);
-    }
-
-    function startStory(event) {
-      event.preventDefault();
-      window.clearTimeout(slideTimer);
-      storyIntro.hidden = false;
-      homeScreen.classList.add("is-retiring");
-      storyIntro.classList.add("is-running");
-      storyIntro.classList.remove("is-complete");
-      showSlide(0);
-      slideTimer = window.setTimeout(advanceSlide, slideDurations[0]);
-    }
-
-    enterButton.addEventListener("click", startStory);
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key !== "Enter") {
-        return;
-      }
-
-      if (storyIntro.hidden) {
-        startStory(event);
-        return;
-      }
-
-      if (currentSlide < storySlides.length - 1) {
-        event.preventDefault();
-        window.clearTimeout(slideTimer);
-        advanceSlide();
-      }
-    });
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
