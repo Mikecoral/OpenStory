@@ -1,3 +1,0 @@
-{"schema_version": "1.0", "run_id": "20260710_142816_677485", "event_id": "evt_2fa530a266e54e22b64d8899d940d1b2", "sequence": 1, "timestamp": "2026-07-10T14:28:16.754568+08:00", "event_type": "run_started", "max_ticks": 40}
-{"schema_version": "1.0", "run_id": "20260710_142816_677485", "event_id": "evt_fd97d774cc25432c822fc11ae3eb8446", "sequence": 2, "timestamp": "2026-07-10T14:29:45.765370+08:00", "event_type": "kernel_initialized", "duration_seconds": 89.0086603000018}
-{"schema_version": "1.0", "run_id": "20260710_142816_677485", "event_id": "evt_d480e066d8954b71bbec4d741c2125c2", "sequence": 3, "timestamp": "2026-07-10T14:29:46.169501+08:00", "event_type": "initial_snapshot_recorded", "tick": -1, "consistency": {"ok": true, "agent_count": 13, "violations": []}}

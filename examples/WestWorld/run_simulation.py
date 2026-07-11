@@ -2,7 +2,7 @@
 
 用法（仓库根目录，需 Redis 在线）：
     PYTHONPATH=$PWD:$PWD/packages/agentkernel-distributed \\
-        python -m examples.west_world_test.run_simulation
+        python -m examples.WestWorld.run_simulation
 
 支持环境变量：
     WW_MAX_TICKS=5  覆盖 configs 里的 max_ticks（方便快速冒烟）
@@ -56,8 +56,8 @@ from agentkernel_distributed.mas.interface.server import broadcast_tick_data, st
 import agentkernel_distributed.mas.interface.server as server_module
 from agentkernel_distributed.toolkit.logger import get_logger
 
-from examples.west_world_test.registry import RESOURCES_MAPS
-from examples.west_world_test.simulation_logging import SimulationLogArchive
+from examples.WestWorld.registry import RESOURCES_MAPS
+from examples.WestWorld.simulation_logging import SimulationLogArchive
 
 logger = get_logger(__name__)
 TICK_DURATION = 0.1  # seconds per tick for smoke test

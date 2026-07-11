@@ -2,6 +2,7 @@
   const BACKEND_ORIGIN = window.location.protocol === "file:" ? "http://localhost:8000" : "";
   const MAP_URL = `${BACKEND_ORIGIN}/map_total/西部世界游戏地图.tmx`;
   const LOCATION_DATA_URL = `${BACKEND_ORIGIN}/data/map/locations.yaml`;
+  const PROFILE_DATA_URL = `${BACKEND_ORIGIN}/data/agents/profiles_sim.jsonl`;
   const WS_URL = window.location.protocol === "file:"
     ? "ws://localhost:8000/ws"
     : `${window.location.protocol === "https:" ? "wss" : "ws"}://${window.location.host}/ws`;
@@ -23,6 +24,22 @@
     lawrence: "Lawrence",
     william: "William",
     logan: "Logan",
+  };
+
+  const CHARACTER_PORTRAITS = {
+    dolores: "data/Dolores_Abernathy.png",
+    teddy: "data/Teddy_Flood.png",
+    maeve: "data/Maeve_Millay.png",
+    clementine: "data/Clementine.png",
+    peter_abernathy: "data/Peter_Abernathy.png",
+    sheriff_pickett: "data/Sheriff_Pickett.png",
+    kissy: "data/Kissy.png",
+    rebus: "data/Rebus.png",
+    hector_escaton: "data/Hector_Escaton.png",
+    armistice: "data/Armistice.png",
+    lawrence: "data/Lawrence.png",
+    william: "data/William.png",
+    logan: "data/Logan.png",
   };
 
   const LOCATION_LABELS = {
@@ -65,23 +82,35 @@
     storyIntro: document.querySelector(".story-intro"),
     storySlides: Array.from(document.querySelectorAll(".story-slide")),
     appShell: document.getElementById("appShell"),
+    leftPanel: document.getElementById("leftPanel"),
+    rightPanel: document.getElementById("rightPanel"),
+    rosterHeading: document.getElementById("rosterHeading"),
+    charactersTab: document.getElementById("charactersTab"),
+    locationsTab: document.getElementById("locationsTab"),
+    metricGrid: document.getElementById("metricGrid"),
     statusLight: document.getElementById("statusLight"),
     statusText: document.getElementById("statusText"),
     tickReadout: document.getElementById("tickReadout"),
+    totalCount: document.getElementById("totalCount"),
+    activeCount: document.getElementById("activeCount"),
+    globalAwakeCount: document.getElementById("globalAwakeCount"),
+    escapedCount: document.getElementById("escapedCount"),
     tickButton: document.getElementById("tickButton"),
-    rightPanel: document.getElementById("rightPanel"),
-    rightPanelToggle: document.getElementById("rightPanelToggle"),
-    rightPanelClose: document.getElementById("rightPanelClose"),
     mapStage: document.querySelector(".map-stage"),
     canvas: document.getElementById("mapCanvas"),
     mapLoading: document.getElementById("mapLoading"),
+    dialogueHints: document.getElementById("dialogueHints"),
     locationDialog: document.getElementById("locationDialog"),
     locationDialogClose: document.getElementById("locationDialogClose"),
     locationDialogType: document.getElementById("locationDialogType"),
     locationDialogTitle: document.getElementById("locationDialogTitle"),
     locationDialogMeta: document.getElementById("locationDialogMeta"),
+    locationDialogFacilities: document.getElementById("locationDialogFacilities"),
+    locationDialogAmbient: document.getElementById("locationDialogAmbient"),
+    locationDialogObjects: document.getElementById("locationDialogObjects"),
     locationDialogPresence: document.getElementById("locationDialogPresence"),
     locationDialogEvents: document.getElementById("locationDialogEvents"),
+    locationDialogEventsList: document.getElementById("locationDialogEventsList"),
     agentList: document.getElementById("agentList"),
     agentCount: document.getElementById("agentCount"),
     awakeCount: document.getElementById("awakeCount"),
@@ -92,6 +121,22 @@
     awakeningMeter: document.getElementById("awakeningMeter"),
     conditionText: document.getElementById("conditionText"),
     eventList: document.getElementById("eventList"),
+    characterAvatar: document.getElementById("characterAvatar"),
+    characterAvatarImage: document.getElementById("characterAvatarImage"),
+    avatarInitials: document.getElementById("avatarInitials"),
+    profileRole: document.getElementById("profileRole"),
+    profileGender: document.getElementById("profileGender"),
+    profilePersona: document.getElementById("profilePersona"),
+    profileBackground: document.getElementById("profileBackground"),
+    profileLoop: document.getElementById("profileLoop"),
+    agentPosition: document.getElementById("agentPosition"),
+    agentPlan: document.getElementById("agentPlan"),
+    agentThought: document.getElementById("agentThought"),
+    agentAction: document.getElementById("agentAction"),
+    agentFeedback: document.getElementById("agentFeedback"),
+    agentDialogue: document.getElementById("agentDialogue"),
+    conditionHistoryToggle: document.getElementById("conditionHistoryToggle"),
+    conditionHistory: document.getElementById("conditionHistory"),
   };
 
   const ctx = els.canvas.getContext("2d");
@@ -109,6 +154,7 @@
   let selectedAgentId = null;
   let selectedLocationId = null;
   let dragState = null;
+  let rosterMode = "characters";
 
   const simState = {
     tick: -1,
@@ -117,6 +163,8 @@
     locations: [],
     locationById: new Map(),
     locationByName: new Map(),
+    profiles: new Map(),
+    conditionHistory: new Map(),
   };
 
   const mapState = {
@@ -130,6 +178,8 @@
     layers: [],
     surface: null,
   };
+
+  const mapPortraits = new Map();
 
   const camera = {
     x: 0,
@@ -200,7 +250,12 @@
     els.appShell.hidden = false;
     requestAnimationFrame(() => els.appShell.classList.add("is-live"));
     resizeCanvas();
+    loadMapPortraits();
     connectBackend();
+    loadProfiles().catch((error) => {
+      console.warn("Character profiles unavailable", error);
+      updateInspector();
+    });
     loadWorldMap().catch((error) => {
       console.error(error);
       setMapLoading("Map unavailable. Start the backend and open http://localhost:8000/frontend/index.html.");
@@ -223,14 +278,6 @@
 
   function updateTickButton() {
     els.tickButton.disabled = !backendReady || !snapshotReady || tickInFlight || simulationFinished;
-  }
-
-  function setRightPanelOpen(open) {
-    els.rightPanel.hidden = !open;
-    els.appShell.classList.toggle("is-right-panel-closed", !open);
-    els.rightPanelToggle.textContent = open ? "Hide Intel" : "Show Intel";
-    els.rightPanelToggle.setAttribute("aria-expanded", String(open));
-    window.requestAnimationFrame(resizeCanvas);
   }
 
   function connectBackend() {
@@ -308,10 +355,15 @@
     simState.agents = payload.agents || {};
     simState.scenes = payload.scenes || {};
     simState.tick = Number.isInteger(payload.tick) ? payload.tick : fallbackTick;
+    recordConditionHistory(simState.agents, simState.tick);
     snapshotReady = true;
 
     els.tickReadout.textContent = simState.tick < 0 ? "Initial" : String(simState.tick);
     if (selectedAgentId && !simState.agents[selectedAgentId]) selectedAgentId = null;
+    if (!selectedAgentId) {
+      selectedAgentId = Object.keys(simState.agents)[0] || null;
+      selectedLocationId = selectedAgentId ? simState.agents[selectedAgentId].location : null;
+    }
     updateAgentList();
     updateInspector();
     if (!els.locationDialog.hidden && selectedLocationId) renderLocationDialog(selectedLocationId);
@@ -345,6 +397,7 @@
     fitMapToStage();
     mapReady = true;
     hideMapLoading();
+    updateAgentList();
     updateInspector();
     draw();
   }
@@ -353,6 +406,22 @@
     const response = await fetch(url);
     if (!response.ok) throw new Error(`Failed to fetch ${url}: ${response.status}`);
     return response.text();
+  }
+
+  async function loadProfiles() {
+    const text = await fetchText(PROFILE_DATA_URL);
+    const profiles = new Map();
+    text.split(/\r?\n/).forEach((line, index) => {
+      if (!line.trim()) return;
+      try {
+        const profile = JSON.parse(line);
+        if (profile && profile.id) profiles.set(profile.id, profile);
+      } catch (error) {
+        console.warn(`Ignoring malformed profile at line ${index + 1}`, error);
+      }
+    });
+    simState.profiles = profiles;
+    updateInspector();
   }
 
   function loadLocationsFromYaml(text) {
@@ -679,6 +748,7 @@
 
     drawLocations(viewX, viewY);
     drawAgents(viewX, viewY);
+    renderDialogueHints(viewX, viewY);
     ctx.restore();
   }
 
@@ -717,24 +787,43 @@
 
       const x = (point.x - viewX) * camera.zoom;
       const y = (point.y - viewY) * camera.zoom;
-      const awakening = Number(agent.awakening || 0);
-      const isGuest = getAgentType(agentId) === "guest";
       const isSelected = selectedAgentId === agentId;
-      const radius = Math.max(5, Math.min(10, 6 * Math.sqrt(camera.zoom)));
+      const radius = Math.max(9, Math.min(18, 11 * Math.sqrt(camera.zoom)));
+      const edgeColor = getAgentMarkerColor(agentId, agent);
 
       ctx.save();
       ctx.beginPath();
-      ctx.arc(x, y, radius + (awakening > 20 ? 5 : 2), 0, Math.PI * 2);
-      ctx.strokeStyle = awakening > 20 ? "rgba(117, 213, 226, 0.72)" : "rgba(238, 179, 91, 0.35)";
-      ctx.lineWidth = isSelected ? 3 : 1.5;
+      ctx.arc(x, y, radius + 2.5, 0, Math.PI * 2);
+      ctx.strokeStyle = edgeColor;
+      ctx.lineWidth = isSelected ? 3.5 : 2;
       ctx.stroke();
 
       ctx.beginPath();
       ctx.arc(x, y, radius, 0, Math.PI * 2);
-      ctx.fillStyle = isGuest ? "#e8d9a8" : awakening > 20 ? "#75d5e2" : "#c78642";
-      ctx.fill();
-      ctx.strokeStyle = "#111417";
-      ctx.lineWidth = 2;
+      ctx.clip();
+      const portrait = mapPortraits.get(agentId);
+      if (portrait) {
+        const sourceSide = Math.min(portrait.width, portrait.height);
+        const sourceX = (portrait.width - sourceSide) / 2;
+        const sourceY = (portrait.height - sourceSide) / 2;
+        ctx.drawImage(portrait, sourceX, sourceY, sourceSide, sourceSide, x - radius, y - radius, radius * 2, radius * 2);
+      } else {
+        ctx.fillStyle = "#292a27";
+        ctx.fillRect(x - radius, y - radius, radius * 2, radius * 2);
+        ctx.fillStyle = "#e8e1d5";
+        ctx.font = `800 ${Math.max(8, radius)}px 'Bahnschrift', 'Segoe UI', Arial, sans-serif`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        const initials = getAgentLabel(agentId).split(/\s+/).map((word) => word[0]).join("").slice(0, 2).toUpperCase();
+        ctx.fillText(initials, x, y + 0.5);
+      }
+      ctx.restore();
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.strokeStyle = "rgba(7, 9, 10, 0.82)";
+      ctx.lineWidth = 1;
       ctx.stroke();
 
       if (isSelected || camera.zoom > 0.9) {
@@ -743,9 +832,56 @@
         ctx.fillStyle = "#fff3d2";
         ctx.shadowColor = "rgba(0, 0, 0, 0.9)";
         ctx.shadowBlur = 5;
-        ctx.fillText(getAgentLabel(agentId), x, y - 13);
+        ctx.fillText(getAgentLabel(agentId), x, y - radius - 7);
       }
       ctx.restore();
+    });
+  }
+
+  function getAgentMarkerColor(agentId, agent) {
+    if (agent.is_active === false || agent.ending === "escape" || /escape|逃离/i.test(String(agent.inactive_reason || ""))) return "#a45743";
+    if (Number(agent.awakening || 0) >= 20) return "#75d5e2";
+    return getAgentType(agentId) === "guest" ? "#e8d9a8" : "#c78642";
+  }
+
+  function loadMapPortraits() {
+    Object.entries(CHARACTER_PORTRAITS).forEach(([agentId, source]) => {
+      const image = new Image();
+      image.onload = () => {
+        mapPortraits.set(agentId, image);
+        draw();
+      };
+      image.src = source;
+    });
+  }
+
+  function renderDialogueHints(viewX, viewY) {
+    const pairs = new Map();
+    Object.entries(simState.agents).forEach(([agentId, agent]) => {
+      const turns = Array.isArray(agent.incoming_dialogue) ? agent.incoming_dialogue : [];
+      if (!turns.length) return;
+      const other = turns.find((turn) => turn && turn.speaker && turn.speaker !== agentId);
+      if (!other) return;
+      const key = [agentId, other.speaker].sort().join("|");
+      pairs.set(key, { first: agentId, second: other.speaker, turns });
+    });
+
+    els.dialogueHints.innerHTML = "";
+    pairs.forEach(({ first, second, turns }) => {
+      if (!simState.agents[first] || !simState.agents[second]) return;
+      const a = getAgentWorldPoint(first, simState.agents[first]);
+      const b = getAgentWorldPoint(second, simState.agents[second]);
+      if (!a || !b) return;
+      const x = ((a.x + b.x) / 2 - viewX) * camera.zoom;
+      const y = ((a.y + b.y) / 2 - viewY) * camera.zoom;
+      const hint = document.createElement("button");
+      hint.type = "button";
+      hint.className = "dialogue-hint";
+      hint.style.left = `${x}px`;
+      hint.style.top = `${y}px`;
+      hint.innerHTML = `<span>${escapeHtml(getAgentLabel(first))} + ${escapeHtml(getAgentLabel(second))}</span><div class="dialogue-hint__detail">${turns.map((turn) => `<p><b>${escapeHtml(getAgentLabel(turn.speaker))}</b>${escapeHtml(turn.line || "")}</p>`).join("")}</div>`;
+      hint.addEventListener("click", () => hint.classList.toggle("is-expanded"));
+      els.dialogueHints.appendChild(hint);
     });
   }
 
@@ -765,7 +901,7 @@
       .sort();
     const index = Math.max(0, colocated.indexOf(agentId));
     const angle = (stableHash(agentId) % 360) * Math.PI / 180;
-    const ring = 10 + index * 6;
+    const ring = 18 + index * 11;
     return {
       x: centerX + Math.cos(angle) * ring,
       y: centerY + Math.sin(angle) * ring,
@@ -775,9 +911,23 @@
   function updateAgentList() {
     const entries = Object.entries(simState.agents)
       .sort((a, b) => Number(b[1].awakening || 0) - Number(a[1].awakening || 0));
-    els.agentCount.textContent = String(entries.length);
+    els.agentCount.textContent = String(rosterMode === "characters" ? entries.length : simState.locations.length);
     els.awakeCount.textContent = String(entries.filter(([, agent]) => Number(agent.awakening || 0) >= 20).length);
     els.guestCount.textContent = String(entries.filter(([id]) => getAgentType(id) === "guest").length);
+    els.totalCount.textContent = String(entries.length);
+    els.activeCount.textContent = String(entries.filter(([, agent]) => agent.is_active !== false).length);
+    els.globalAwakeCount.textContent = String(entries.filter(([, agent]) => Number(agent.awakening || 0) >= 20).length);
+    els.escapedCount.textContent = String(entries.filter(([, agent]) => {
+      const reason = String(agent.inactive_reason || "");
+      return agent.ending === "escape" || agent.escaped === true || /escape|逃离/i.test(reason);
+    }).length);
+
+    els.rosterHeading.textContent = rosterMode === "characters" ? "Characters" : "Locations";
+    els.metricGrid.hidden = rosterMode !== "characters";
+    if (rosterMode === "locations") {
+      renderLocationList();
+      return;
+    }
 
     if (!entries.length) {
       els.agentList.innerHTML = `<p class="empty-copy">Waiting for a backend snapshot.</p>`;
@@ -787,10 +937,18 @@
     els.agentList.innerHTML = "";
     entries.forEach(([agentId, agent]) => {
       const button = document.createElement("button");
+      const portrait = CHARACTER_PORTRAITS[agentId];
+      const markerClass = agent.is_active === false || agent.ending === "escape"
+        ? " agent-row__sigil--inactive"
+        : Number(agent.awakening || 0) >= 20
+          ? " agent-row__sigil--awake"
+          : getAgentType(agentId) === "guest"
+            ? " agent-row__sigil--guest"
+            : "";
       button.className = `agent-row${selectedAgentId === agentId ? " is-selected" : ""}`;
       button.type = "button";
       button.innerHTML = `
-        <span class="agent-row__sigil">${getAgentType(agentId) === "guest" ? "G" : "H"}</span>
+        <span class="agent-row__sigil${markerClass}"><img src="${escapeHtml(portrait)}" alt="" /></span>
         <span class="agent-row__body">
           <strong>${escapeHtml(getAgentLabel(agentId))}</strong>
           <small>${escapeHtml(getLocationLabel(agent.location))}</small>
@@ -802,21 +960,64 @@
     });
   }
 
+  function renderLocationList() {
+    const locations = simState.locations.slice()
+      .sort((left, right) => getLocationLabel(left.id).localeCompare(getLocationLabel(right.id)));
+    els.agentList.innerHTML = "";
+    if (!locations.length) {
+      els.agentList.innerHTML = `<p class="empty-copy">Waiting for map locations.</p>`;
+      return;
+    }
+    locations.forEach((location) => {
+      const button = document.createElement("button");
+      button.className = `location-row${selectedAgentId === null && selectedLocationId === location.id ? " is-selected" : ""}`;
+      button.type = "button";
+      button.innerHTML = `<span class="location-row__sigil">L</span><span><strong>${escapeHtml(getLocationLabel(location.id))}</strong><small>${escapeHtml(titleCase(location.region || "park"))} / ${escapeHtml(titleCase(location.type || "location"))}</small></span><em>${countAgentsAt(location.id)}</em>`;
+      button.addEventListener("click", () => selectLocation(location.id));
+      els.agentList.appendChild(button);
+    });
+  }
+
+  function selectLocation(locationId) {
+    selectedAgentId = null;
+    selectedLocationId = locationId;
+    updateAgentList();
+    updateInspector();
+    centerOnSelection();
+    draw();
+    const rect = els.mapStage.getBoundingClientRect();
+    openLocationDialog(locationId, {
+      clientX: rect.left + rect.width / 2,
+      clientY: rect.top + rect.height / 2,
+    });
+  }
+
+  function setRosterMode(mode) {
+    rosterMode = mode;
+    const charactersActive = mode === "characters";
+    els.charactersTab.classList.toggle("is-active", charactersActive);
+    els.locationsTab.classList.toggle("is-active", !charactersActive);
+    els.charactersTab.setAttribute("aria-selected", String(charactersActive));
+    els.locationsTab.setAttribute("aria-selected", String(!charactersActive));
+    updateAgentList();
+  }
+
   function selectAgent(agentId) {
     selectedAgentId = agentId;
     selectedLocationId = simState.agents[agentId] ? simState.agents[agentId].location : null;
     closeLocationDialog({ redraw: false });
     updateAgentList();
     updateInspector();
+    els.rightPanel.scrollTo({ top: 0, behavior: "smooth" });
     centerOnSelection();
     draw();
   }
 
   function openLocationDialog(locationId, event) {
     selectedLocationId = locationId;
+    els.locationDialog.hidden = false;
     renderLocationDialog(locationId);
     positionLocationDialog(event);
-    els.locationDialog.hidden = false;
     draw();
   }
 
@@ -830,15 +1031,34 @@
 
   function positionLocationDialog(event) {
     const rect = els.mapStage.getBoundingClientRect();
-    const width = Math.min(420, Math.max(260, rect.width - 32));
+    const padding = 12;
+    const width = Math.min(420, Math.max(1, rect.width - padding * 2));
     const rawX = event.clientX - rect.left;
     const rawY = event.clientY - rect.top;
-    const x = Math.min(Math.max(rawX, width / 2 + 16), rect.width - width / 2 - 16);
-    const y = Math.min(Math.max(rawY, 96), rect.height - 18);
     els.locationDialog.style.setProperty("--dialog-width", `${width}px`);
+    const dialogHeight = els.locationDialog.offsetHeight;
+    const x = Math.min(Math.max(rawX, width / 2 + padding), rect.width - width / 2 - padding);
+    const below = rawY + padding;
+    const above = rawY - dialogHeight - padding;
+    const maxTop = Math.max(padding, rect.height - dialogHeight - padding);
+    const y = below + dialogHeight <= rect.height - padding
+      ? below
+      : above >= padding
+        ? above
+        : Math.min(Math.max(below, padding), maxTop);
+
     els.locationDialog.style.left = `${x}px`;
     els.locationDialog.style.top = `${y}px`;
-    els.locationDialog.dataset.placement = rawY < 240 ? "below" : "above";
+    els.locationDialog.removeAttribute("data-placement");
+  }
+
+  function constrainLocationDialog() {
+    if (els.locationDialog.hidden) return;
+    const rect = els.mapStage.getBoundingClientRect();
+    const padding = 12;
+    const currentTop = parseFloat(els.locationDialog.style.top) || padding;
+    const maxTop = Math.max(padding, rect.height - els.locationDialog.offsetHeight - padding);
+    els.locationDialog.style.top = `${Math.min(Math.max(currentTop, padding), maxTop)}px`;
   }
 
   function renderLocationDialog(locationId) {
@@ -846,26 +1066,77 @@
     if (!location) return;
 
     const scene = simState.scenes[locationId] || {};
-    const present = scene.chunks && scene.chunks.present_agents
-      ? scene.chunks.present_agents
-      : "No local presence reported.";
+    const chunks = scene.chunks || {};
 
     els.locationDialogType.textContent = location.type ? titleCase(location.type) : "Location";
     els.locationDialogTitle.textContent = getLocationLabel(locationId);
     els.locationDialogMeta.textContent = `${titleCase(location.region || "park")} / ${countAgentsAt(locationId)} active signals`;
-    els.locationDialogPresence.textContent = Array.isArray(present) ? present.join(", ") : String(present);
-    renderLocationDialogEvents(getSceneEvents(locationId));
+    els.locationDialogFacilities.textContent = formatLocationChunk(chunks.static_facilities, "No static facilities reported.");
+    els.locationDialogAmbient.textContent = formatLocationChunk(chunks.ambient, "No ambient reading reported.");
+    els.locationDialogObjects.textContent = formatLocationChunk(chunks.dynamic_objects, "No dynamic object state reported.");
+    renderLocationPresence(locationId, chunks.present_agents);
+    renderLocationDialogEvents(chunks.recent_events);
+    if (!els.locationDialog.hidden) window.requestAnimationFrame(constrainLocationDialog);
   }
 
-  function renderLocationDialogEvents(events) {
-    if (!events.length) {
-      els.locationDialogEvents.innerHTML = `<p>No recent events.</p>`;
+  function renderLocationPresence(locationId, present) {
+    const agents = Object.entries(simState.agents)
+      .filter(([, agent]) => agent.location === locationId)
+      .sort(([left], [right]) => getAgentLabel(left).localeCompare(getAgentLabel(right)));
+    els.locationDialogPresence.innerHTML = "";
+
+    if (!agents.length) {
+      const empty = document.createElement("p");
+      empty.textContent = formatLocationChunk(present, "No local presence reported.");
+      els.locationDialogPresence.appendChild(empty);
       return;
     }
 
-    els.locationDialogEvents.innerHTML = events
+    agents.forEach(([agentId]) => {
+      const label = getAgentLabel(agentId);
+      const button = document.createElement("button");
+      button.className = "location-presence__agent";
+      button.type = "button";
+      button.title = label;
+      button.setAttribute("aria-label", `Open ${label} character record`);
+      const portrait = CHARACTER_PORTRAITS[agentId];
+      if (portrait) {
+        const image = document.createElement("img");
+        image.src = portrait;
+        image.alt = "";
+        button.appendChild(image);
+      } else {
+        const initials = label.split(/\s+/).map((word) => word[0]).join("").slice(0, 2).toUpperCase();
+        button.textContent = initials || "?";
+      }
+      button.addEventListener("click", () => selectAgent(agentId));
+      els.locationDialogPresence.appendChild(button);
+    });
+  }
+
+  function renderLocationDialogEvents(events) {
+    const items = Array.isArray(events) ? events : events ? [events] : [];
+    if (!items.length) {
+      els.locationDialogEventsList.innerHTML = `<p>No recent events.</p>`;
+      return;
+    }
+
+    els.locationDialogEventsList.innerHTML = items
       .map((event) => `<p>${escapeHtml(String(event))}</p>`)
       .join("");
+  }
+
+  function formatLocationChunk(value, fallback) {
+    if (Array.isArray(value)) {
+      return value.length ? value.map((item) => String(item)).join(", ") : fallback;
+    }
+    if (value && typeof value === "object") {
+      const details = Object.entries(value)
+        .map(([key, item]) => `${key}: ${String(item)}`)
+        .join("; ");
+      return details || fallback;
+    }
+    return value == null || value === "" ? fallback : String(value);
   }
 
   function updateInspector() {
@@ -881,6 +1152,10 @@
       : "Map telemetry is loading.";
     els.awakeningMeter.style.width = "0%";
     els.conditionText.textContent = snapshotReady ? "No character selected." : "Awaiting telemetry.";
+    renderAgentTelemetry(null);
+    renderAgentDialogue(null);
+    renderConditionHistory(null);
+    renderProfile(null, null);
     renderEvents([]);
   }
 
@@ -892,7 +1167,156 @@
     els.selectionMeta.textContent = `${getLocationLabel(agent.location)} / ${agent.emotion || "Neutral"}`;
     els.awakeningMeter.style.width = `${awakening}%`;
     els.conditionText.textContent = `Awakening ${awakening}/100. Health ${agent.health ?? "-"} / Energy ${agent.energy ?? "-"}.`;
+    renderAgentTelemetry(agent);
+    renderAgentDialogue(agentId);
+    renderConditionHistory(agentId);
+    renderProfile(agentId, simState.profiles.get(agentId));
     renderEvents(getSceneEvents(location && location.id));
+  }
+
+  function renderAgentTelemetry(agent) {
+    if (!agent) {
+      els.agentPosition.textContent = "Awaiting telemetry";
+      els.agentPlan.textContent = "-";
+      els.agentThought.textContent = "-";
+      els.agentAction.textContent = "-";
+      els.agentFeedback.textContent = "-";
+      return;
+    }
+    const decision = agent.plan_decision || {};
+    const plan = decision.action || "No plan recorded";
+    const target = decision.target ? ` -> ${getLocationLabel(decision.target)}` : "";
+    els.agentPosition.textContent = getLocationLabel(agent.location);
+    els.agentPlan.textContent = `${plan}${target}`;
+    els.agentThought.textContent = decision.thought || agent.plan_trace?.parsed_decision?.thought || "No thought recorded.";
+    els.agentAction.textContent = decision.detail || "No action detail recorded.";
+    els.agentFeedback.textContent = agent.feedback || "No feedback recorded.";
+  }
+
+  function renderAgentDialogue(agentId) {
+    const conversations = getAgentConversations(agentId);
+    if (!conversations.length) {
+      els.agentDialogue.innerHTML = `<p class="empty-copy">No dialogue recorded.</p>`;
+      return;
+    }
+    els.agentDialogue.innerHTML = conversations.map((conversation, index) => {
+      const speakers = Array.from(new Set([
+        ...(conversation.participants || []),
+        ...conversation.turns.map((turn) => turn.speaker),
+      ].filter(Boolean).map(getAgentLabel)));
+      const tick = Number.isInteger(conversation.tick) ? `Tick ${conversation.tick} / ` : "";
+      return `<details class="dialogue-conversation"${index === 0 ? " open" : ""}><summary><span>${escapeHtml(speakers.join(" / ") || "Conversation")}</span><strong>${escapeHtml(tick)}${conversation.turns.length} lines</strong></summary><div class="dialogue-conversation__turns">${conversation.turns.map((turn) => `<article><strong>${escapeHtml(getAgentLabel(turn.speaker || "Unknown"))}</strong><p>${escapeHtml(turn.line || "")}</p></article>`).join("")}</div></details>`;
+    }).join("");
+  }
+
+  function getAgentConversations(agentId) {
+    if (!agentId) return [];
+    const conversations = [];
+    const signatures = new Set();
+
+    function addConversation(entry, ownerId) {
+      const turns = (Array.isArray(entry) ? entry : entry?.turns || [])
+        .filter((turn) => turn && turn.line);
+      const participants = Array.isArray(entry?.participants) ? entry.participants : [];
+      const involvesAgent = ownerId === agentId
+        || participants.includes(agentId)
+        || turns.some((turn) => turn.speaker === agentId);
+      if (!turns.length || !involvesAgent) return;
+      const signature = JSON.stringify(turns.map((turn) => [turn.speaker || "", turn.line]));
+      if (signatures.has(signature)) return;
+      signatures.add(signature);
+      conversations.push({ tick: entry?.tick, participants, turns });
+    }
+
+    Object.entries(simState.agents).forEach(([ownerId, state]) => {
+      (Array.isArray(state.dialogue_history) ? state.dialogue_history : []).forEach((entry) => addConversation(entry, ownerId));
+      Object.values(state.dialogues || {}).forEach((entry) => addConversation(entry, ownerId));
+      if (Array.isArray(state.incoming_dialogue)) addConversation(state.incoming_dialogue, ownerId);
+    });
+
+    const messageGroups = new Map();
+    Object.entries(simState.agents).forEach(([ownerId, state]) => {
+      (Array.isArray(state.message_history) ? state.message_history : []).forEach((message) => {
+        const speaker = message.speaker || ownerId;
+        const recipient = message.recipient;
+        const line = message.line || message.content;
+        if (!recipient || !line || (speaker !== agentId && recipient !== agentId)) return;
+        const participants = [speaker, recipient].sort();
+        const key = participants.join("|");
+        const group = messageGroups.get(key) || { tick: -1, participants, turns: [] };
+        group.tick = Math.max(group.tick, Number(message.tick ?? -1));
+        group.turns.push({ speaker, line, tick: message.tick });
+        messageGroups.set(key, group);
+      });
+    });
+    messageGroups.forEach((group) => {
+      group.turns.sort((left, right) => Number(left.tick ?? -1) - Number(right.tick ?? -1));
+      addConversation(group, "");
+    });
+
+    return conversations.sort((left, right) => Number(right.tick ?? -1) - Number(left.tick ?? -1));
+  }
+
+  function recordConditionHistory(agents, tick) {
+    Object.entries(agents).forEach(([agentId, agent]) => {
+      const history = simState.conditionHistory.get(agentId) || [];
+      if (history.at(-1)?.tick === tick) return;
+      history.push({
+        tick,
+        awakening: Number(agent.awakening || 0),
+        sources: Array.isArray(agent.awakening_sources) ? agent.awakening_sources : [],
+        feedback: agent.feedback || "",
+        action: agent.plan_decision?.detail || agent.plan_decision?.action || "",
+      });
+      simState.conditionHistory.set(agentId, history);
+    });
+  }
+
+  function renderConditionHistory(agentId) {
+    const history = agentId ? simState.conditionHistory.get(agentId) || [] : [];
+    if (!history.length) {
+      els.conditionHistory.innerHTML = `<p class="empty-copy">No condition history recorded.</p>`;
+      return;
+    }
+    els.conditionHistory.innerHTML = history.slice().reverse().map((entry) => {
+      const factors = entry.sources.map((source) => typeof source === "string" ? source : source.detail || source.source || JSON.stringify(source)).filter(Boolean);
+      return `<article><strong>Tick ${escapeHtml(entry.tick)}</strong><span>Awakening ${escapeHtml(entry.awakening)}</span>${factors.length ? `<p>${escapeHtml(factors.join(" | "))}</p>` : ""}${entry.feedback ? `<p>${escapeHtml(entry.feedback)}</p>` : ""}${entry.action ? `<p>${escapeHtml(entry.action)}</p>` : ""}</article>`;
+    }).join("");
+  }
+
+  function renderProfile(agentId, profile) {
+    const label = agentId ? getAgentLabel(agentId) : "?";
+    const initials = label.split(/\s+/).filter(Boolean).map((word) => word[0]).join("").slice(0, 2).toUpperCase();
+    const portraitUrl = CHARACTER_PORTRAITS[agentId];
+
+    els.avatarInitials.textContent = initials || "?";
+    els.characterAvatar.dataset.agent = agentId || "";
+    els.characterAvatar.classList.toggle("character-avatar--portrait", Boolean(portraitUrl));
+    els.characterAvatarImage.hidden = !portraitUrl;
+    els.avatarInitials.hidden = Boolean(portraitUrl);
+
+    if (portraitUrl) {
+      els.characterAvatarImage.src = portraitUrl;
+      els.characterAvatarImage.alt = `${label} portrait`;
+    } else {
+      els.characterAvatarImage.removeAttribute("src");
+      els.characterAvatarImage.alt = "";
+    }
+
+    if (!profile) {
+      els.profileRole.textContent = agentId ? "Profile unavailable" : "Awaiting selection";
+      els.profileGender.textContent = "-";
+      els.profilePersona.textContent = agentId ? "No character profile was found for this signal." : "Character profile loads with the simulation data.";
+      els.profileBackground.textContent = "-";
+      els.profileLoop.textContent = "-";
+      return;
+    }
+
+    els.profileRole.textContent = profile.role || "Unspecified";
+    els.profileGender.textContent = profile.gender || "Unspecified";
+    els.profilePersona.textContent = profile.persona || "No persona recorded.";
+    els.profileBackground.textContent = profile.background || "No background recorded.";
+    els.profileLoop.textContent = profile.narrative_loop || "No daily loop recorded.";
   }
 
   function getSceneEvents(locationId) {
@@ -981,7 +1405,7 @@
       const point = getAgentWorldPoint(agentId, agent);
       if (!point) return;
       const distance = Math.hypot(point.x - world.x, point.y - world.y);
-      if (distance < bestDistance && distance < 18 / camera.zoom) {
+      if (distance < bestDistance && distance < 28 / camera.zoom) {
         best = agentId;
         bestDistance = distance;
       }
@@ -1042,10 +1466,13 @@
   els.enterButton.addEventListener("click", startStory);
   els.storyIntro.addEventListener("click", advanceFromInput);
   els.tickButton.addEventListener("click", sendStartTick);
-  els.rightPanelToggle.addEventListener("click", () => {
-    setRightPanelOpen(els.rightPanel.hidden);
+  els.charactersTab.addEventListener("click", () => setRosterMode("characters"));
+  els.locationsTab.addEventListener("click", () => setRosterMode("locations"));
+  els.conditionHistoryToggle.addEventListener("click", () => {
+    const open = els.conditionHistory.hidden;
+    els.conditionHistory.hidden = !open;
+    els.conditionHistoryToggle.setAttribute("aria-expanded", String(open));
   });
-  els.rightPanelClose.addEventListener("click", () => setRightPanelOpen(false));
   els.locationDialogClose.addEventListener("click", () => closeLocationDialog());
 
   document.addEventListener("keydown", (event) => {
@@ -1105,6 +1532,9 @@
     draw();
   }, { passive: false });
 
-  window.addEventListener("resize", resizeCanvas);
+  window.addEventListener("resize", () => {
+    resizeCanvas();
+    constrainLocationDialog();
+  });
   updateTickButton();
 })();
